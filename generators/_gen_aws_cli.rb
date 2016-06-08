@@ -1,24 +1,16 @@
 require File.join(File.dirname(__FILE__), 'Dash.rb')
 
-# directions below are relative to $docs_path
-    # had to download jquery 1.9.1, even though the link is also broken on the site
-        # named _static/jquery-1.9.1.min.js.html
+def add_fragment_for_dash(file, fragment, comment = '/* Added for Dash */')
+    File.open(file, 'r+') { |f|
+        content = f.read
 
-    # go into _static/bootstrap.min.css and add the following
-        # /* Added for Dash */
-        # .navbar.navbar-fixed-top {
-        #     display: none;
-        # }
+        break if content.include?(comment)
 
-    # go into _static/guzzle.css and add the following at the bottom:
-        # /* Added for Dash */
-        # .sphinxsidebar {
-        #   display: none;
-        # }
-        # .body {
-        #   float: none;
-        #   width: auto;
-        # }
+        f.rewind
+        f.puts content, comment, fragment
+        f.truncate(f.tell)
+    }
+end
 
 dash = Dash.new({
     :name           => 'AWS-CLI',
@@ -29,6 +21,21 @@ dash = Dash.new({
 
 puts "Beginning the generation of AWS CLI docset..."
 
+add_fragment_for_dash(File.expand_path('_static/guzzle.css', dash.docs_root), <<-'EOS')
+.sphinxsidebar {
+  display: none;
+}
+.body {
+  float: none;
+  width: auto;
+}
+EOS
+
+add_fragment_for_dash(File.expand_path('_static/bootstrap.min.css', dash.docs_root), <<-'EOS')
+.navbar.navbar-fixed-top {
+    display: none;
+}
+EOS
 
 # register the Getting Started link as a guide
 dash.sql_insert( 'Getting Started', 'Guide', 'tutorial/getting_started.html' )
