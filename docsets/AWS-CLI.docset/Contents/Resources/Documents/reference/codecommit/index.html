@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/codecommit/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:22:57 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>codecommit &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="batch-get-repositories" href="batch-get-repositories.html" />
+    <link rel="prev" title="set-alarm-state" href="../cloudwatch/set-alarm-state.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="batch-get-repositories.html" title="batch-get-repositories" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="../cloudwatch/set-alarm-state.html" title="set-alarm-state" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../cloudwatch/set-alarm-state.html" title="previous chapter (use the left arrow)">&#8592; set-alarm-state</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="batch-get-repositories.html" title="next chapter (use the right arrow)">batch-get-repositories &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">codecommit</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/codecommit/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="codecommit">
+<span id="cli-aws-codecommit"></span><h1>codecommit<a name="//apple_ref/cpp/Command/aws codecommit" class="dashAnchor" id="aws codecommit"></a><a class="headerlink" href="#codecommit" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>This is the <em>AWS CodeCommit API Reference</em> . This reference provides descriptions of the operations and data types for AWS CodeCommit API.</p>
+<p>You can use the AWS CodeCommit API to work with the following objects:</p>
+<ul class="simple">
+<li>Repositories, by calling the following:<ul>
+<li>batch-get-repositories , which returns information about one or more repositories associated with your AWS account</li>
+<li>create-repository , which creates an AWS CodeCommit repository</li>
+<li>delete-repository , which deletes an AWS CodeCommit repository</li>
+<li>get-repository , which returns information about a specified repository</li>
+<li>list-repositories , which lists all AWS CodeCommit repositories associated with your AWS account</li>
+<li>update-repository-description , which sets or updates the description of the repository</li>
+<li>update-repository-name , which changes the name of the repository. If you change the name of a repository, no other users of that repository will be able to access it until you send them the new HTTPS or SSH URL to use.</li>
+</ul>
+</li>
+<li>Branches, by calling the following:<ul>
+<li>create-branch , which creates a new branch in a specified repository</li>
+<li>get-branch , which returns information about a specified branch</li>
+<li>list-branches , which lists all branches for a specified repository</li>
+<li>update-default-branch , which changes the default branch for a repository</li>
+</ul>
+</li>
+<li>Information about committed code in a repository, by calling the following:<ul>
+<li>get-commit , which returns information about a commit, including commit messages and committer information.</li>
+</ul>
+</li>
+<li>Triggers, by calling the following:<ul>
+<li>get-repository-triggers , which returns information about triggers configured for a repository</li>
+<li>put-repository-triggers , which replaces all triggers for a repository and can be used to create or delete triggers</li>
+<li>test-repository-triggers , which tests the functionality of a repository trigger by sending data to the trigger target</li>
+</ul>
+</li>
+</ul>
+<p>For information about how to use AWS CodeCommit, see the <a class="reference external" href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a> .</p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a name="//apple_ref/cpp/Section/Available Commands" class="dashAnchor" id="Available Commands"></a><a class="headerlink" href="#available-commands" title="Permalink to this headline">&#182;</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/batch-get-repositories" class="dashAnchor" id="batch-get-repositories"></a><a class="reference internal" href="batch-get-repositories.html">batch-get-repositories</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-branch" class="dashAnchor" id="create-branch"></a><a class="reference internal" href="create-branch.html">create-branch</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-repository" class="dashAnchor" id="create-repository"></a><a class="reference internal" href="create-repository.html">create-repository</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/credential-helper" class="dashAnchor" id="credential-helper"></a><a class="reference internal" href="credential-helper/index.html">credential-helper</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-repository" class="dashAnchor" id="delete-repository"></a><a class="reference internal" href="delete-repository.html">delete-repository</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-branch" class="dashAnchor" id="get-branch"></a><a class="reference internal" href="get-branch.html">get-branch</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-commit" class="dashAnchor" id="get-commit"></a><a class="reference internal" href="get-commit.html">get-commit</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-repository" class="dashAnchor" id="get-repository"></a><a class="reference internal" href="get-repository.html">get-repository</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-repository-triggers" class="dashAnchor" id="get-repository-triggers"></a><a class="reference internal" href="get-repository-triggers.html">get-repository-triggers</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-branches" class="dashAnchor" id="list-branches"></a><a class="reference internal" href="list-branches.html">list-branches</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-repositories" class="dashAnchor" id="list-repositories"></a><a class="reference internal" href="list-repositories.html">list-repositories</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/put-repository-triggers" class="dashAnchor" id="put-repository-triggers"></a><a class="reference internal" href="put-repository-triggers.html">put-repository-triggers</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/test-repository-triggers" class="dashAnchor" id="test-repository-triggers"></a><a class="reference internal" href="test-repository-triggers.html">test-repository-triggers</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-default-branch" class="dashAnchor" id="update-default-branch"></a><a class="reference internal" href="update-default-branch.html">update-default-branch</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-repository-description" class="dashAnchor" id="update-repository-description"></a><a class="reference internal" href="update-repository-description.html">update-repository-description</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-repository-name" class="dashAnchor" id="update-repository-name"></a><a class="reference internal" href="update-repository-name.html">update-repository-name</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../cloudwatch/set-alarm-state.html" title="previous chapter (use the left arrow)">&#8592; set-alarm-state</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="batch-get-repositories.html" title="next chapter (use the right arrow)">batch-get-repositories &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="batch-get-repositories.html" title="batch-get-repositories">next</a> |</li>
+        <li class="right">
+          <a href="../cloudwatch/set-alarm-state.html" title="set-alarm-state">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/codecommit/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:23:03 GMT -->
+</html>

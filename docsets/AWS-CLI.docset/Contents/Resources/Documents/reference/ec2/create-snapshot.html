@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/create-snapshot.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>create-snapshot &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>create-snapshot &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="ec2" href="index.html" />
     <link rel="next" title="create-spot-datafeed-subscription" href="create-spot-datafeed-subscription.html" />
     <link rel="prev" title="create-security-group" href="create-security-group.html" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -61,7 +64,7 @@
           <a href="create-spot-datafeed-subscription.html" title="create-spot-datafeed-subscription" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="create-security-group.html" title="create-security-group" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">ec2</a> &#187;</li> 
       </ul>
@@ -82,23 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">create-snapshot</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,42 +112,136 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/ec2/create-snapshot">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ec2/create-snapshot">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>ec2</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-ec2"><em>ec2</em></a> ]</p>
 <div class="section" id="create-snapshot">
-<h1>create-snapshot<a class="headerlink" href="#create-snapshot" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-ec2-create-snapshot"></span><h1>create-snapshot<a name="//apple_ref/cpp/Command/aws ec2 create-snapshot" class="dashAnchor" id="aws ec2 create-snapshot"></a><a class="headerlink" href="#create-snapshot" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Create a snapshot of the volume identified by volume ID. A volume does not have to be detached at the time the snapshot is taken.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Snapshot creation requires that the system is in a consistent state. For instance, this means that if taking a snapshot of a database, the tables must be read-only locked to ensure that the snapshot will not contain a corrupted version of the database. Therefore, be careful when using this API to ensure that the system remains in the consistent state until the create snapshot status has returned.</p>
-</div>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Creates a snapshot of an EBS volume and stores it in Amazon S3. You can use snapshots for backups, to make copies of EBS volumes, and to save data before shutting down an instance.</p>
+<p>When a snapshot is created, any AWS Marketplace product codes that are associated with the source volume are propagated to the snapshot.</p>
+<p>You can take a snapshot of an attached volume that is in use. However, snapshots only capture data that has been written to your EBS volume at the time the snapshot command is issued; this may exclude any data that has been cached by any applications or the operating system. If you can pause any file systems on the volume long enough to take a snapshot, your snapshot should be complete. However, if you cannot pause all file writes to the volume, you should unmount the volume from within the instance, issue the snapshot command, and then remount the volume to ensure a consistent and complete snapshot. You may remount and use your volume while the snapshot status is <tt class="docutils literal"><span class="pre">pending</span></tt> .</p>
+<p>To create a snapshot for EBS volumes that serve as root devices, you should stop the instance before taking the snapshot.</p>
+<p>Snapshots that are taken from encrypted volumes are automatically encrypted. Volumes that are created from encrypted snapshots are also automatically encrypted. Your encrypted volumes and any associated snapshots always remain protected.</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon Elastic Block Store</a> and <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  create-snapshot
 [--dry-run | --no-dry-run]
 --volume-id &lt;value&gt;
-[--description &lt;value&gt;]</pre>
+[--description &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--no-dry-run" class="dashAnchor" id="no-dry-run"></a><span class="pre">--no-dry-run</span></tt> (boolean)</p>
-<p>Checks whether you have the required permissions for the action, without actually making the request. Using this option will result in one of two possible errorresponses. If you have the required permissions, the error response will be <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt>  . Otherwise it will be <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt>  .</p>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><span class="pre">--no-dry-run</span></tt> (boolean)</p>
+<blockquote>
+<div>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt> . Otherwise, it is <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt> .</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--volume-id" class="dashAnchor" id="volume-id"></a><span class="pre">--volume-id</span></tt> (string)</p>
 <blockquote>
-<div>The ID of the volume from which to create the snapshot.</div></blockquote>
+<div>The ID of the EBS volume.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--description" class="dashAnchor" id="description"></a><span class="pre">--description</span></tt> (string)</p>
 <blockquote>
-<div>The description for the new snapshot.</div></blockquote>
+<div>A description for the snapshot.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To create a snapshot</strong></p>
+<p>This example command creates a snapshot of the volume with a volume ID of <tt class="docutils literal"><span class="pre">vol-1234abcd</span></tt> and a short description to identify the snapshot.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 create-snapshot --volume-id vol-1234abcd --description "This is my root volume snapshot."</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"Description"</span><span class="p">:</span> <span class="s2">"This is my root volume snapshot."</span><span class="p">,</span>
+    <span class="s2">"Tags"</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="s2">"VolumeId"</span><span class="p">:</span> <span class="s2">"vol-1234abcd"</span><span class="p">,</span>
+    <span class="s2">"State"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+    <span class="s2">"VolumeSize"</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="s2">"StartTime"</span><span class="p">:</span> <span class="s2">"2014-02-28T21:06:01.000Z"</span><span class="p">,</span>
+    <span class="s2">"OwnerId"</span><span class="p">:</span> <span class="s2">"012345678910"</span><span class="p">,</span>
+    <span class="s2">"SnapshotId"</span><span class="p">:</span> <span class="s2">"snap-1a2b3c4d"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>SnapshotId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the snapshot. Each snapshot receives a unique identifier when it is created.</div></blockquote>
+<p>VolumeId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the volume that was used to create the snapshot.</div></blockquote>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div>The snapshot state.</div></blockquote>
+<p>StateMessage -&gt; (string)</p>
+<blockquote>
+<div>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the proper AWS Key Management Service (AWS KMS) permissions are not obtained) this field displays error state details to help you diagnose why the error occurred. This parameter is only returned by the  describe-snapshots API operation.</div></blockquote>
+<p>StartTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The time stamp when the snapshot was initiated.</div></blockquote>
+<p>Progress -&gt; (string)</p>
+<blockquote>
+<div>The progress of the snapshot, as a percentage.</div></blockquote>
+<p>OwnerId -&gt; (string)</p>
+<blockquote>
+<div>The AWS account ID of the EBS snapshot owner.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>The description for the snapshot.</div></blockquote>
+<p>VolumeSize -&gt; (integer)</p>
+<blockquote>
+<div>The size of the volume, in GiB.</div></blockquote>
+<p>OwnerAlias -&gt; (string)</p>
+<blockquote>
+<div>The AWS account alias (for example, <tt class="docutils literal"><span class="pre">amazon</span></tt> , <tt class="docutils literal"><span class="pre">self</span></tt> ) or AWS account ID that owns the snapshot.</div></blockquote>
+<p>Tags -&gt; (list)</p>
+<blockquote>
+<div><p>Any tags assigned to the snapshot.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a tag.</p>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div><p>The key of the tag.</p>
+<p>Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <tt class="docutils literal"><span class="pre">aws:</span></tt></p>
+</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div><p>The value of the tag.</p>
+<p>Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Encrypted -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether the snapshot is encrypted.</div></blockquote>
+<p>KmsKeyId -&gt; (string)</p>
+<blockquote>
+<div>The full ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the volume encryption key for the parent volume.</div></blockquote>
+<p>DataEncryptionKeyId -&gt; (string)</p>
+<blockquote>
+<div>The data encryption key identifier for the snapshot. This value is a unique identifier that corresponds to the data encryption key that was used to encrypt the original volume or snapshot copy. Because data encryption keys are inherited by volumes created from snapshots, and vice versa, if snapshots share the same data encryption key identifier, then they belong to the same volume/snapshot lineage. This parameter is only returned by the  describe-snapshots API operation.</div></blockquote>
 </div>
 </div>
 
@@ -164,6 +263,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -173,35 +281,21 @@
           <a href="create-spot-datafeed-subscription.html" title="create-spot-datafeed-subscription">next</a> |</li>
         <li class="right">
           <a href="create-security-group.html" title="create-security-group">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">ec2</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'create-security-group.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'create-spot-datafeed-subscription.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/create-snapshot.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
 </html>

@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/terminate-environment.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:18 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>terminate-environment &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>terminate-environment &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +25,10 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="elasticbeanstalk" href="index.html" />
     <link rel="next" title="update-application" href="update-application.html" />
-    <link rel="prev" title="swap-environment-cnam-es" href="swap-environment-cnam-es.html" />
+    <link rel="prev" title="swap-environment-cnames" href="swap-environment-cnames.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
   
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -60,8 +63,8 @@
         <li class="right">
           <a href="update-application.html" title="update-application" accesskey="N">next</a> |</li>
         <li class="right">
-          <a href="swap-environment-cnam-es.html" title="swap-environment-cnam-es" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="swap-environment-cnames.html" title="swap-environment-cnames" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">elasticbeanstalk</a> &#187;</li> 
       </ul>
@@ -71,7 +74,7 @@
     <div class="top-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="swap-environment-cnam-es.html" title="previous chapter (use the left arrow)">&#8592; swap-environment-cnam-es</a>
+          <a href="swap-environment-cnames.html" title="previous chapter (use the left arrow)">&#8592; swap-environment-cnames</a>
           <span class="divider">/</span>
           
         </li>
@@ -82,23 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">terminate-environment</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,54 +112,217 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/elasticbeanstalk/terminate-environment">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/elasticbeanstalk/terminate-environment">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>elasticbeanstalk</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-elasticbeanstalk"><em>elasticbeanstalk</em></a> ]</p>
 <div class="section" id="terminate-environment">
-<h1>terminate-environment<a class="headerlink" href="#terminate-environment" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-elasticbeanstalk-terminate-environment"></span><h1>terminate-environment<a name="//apple_ref/cpp/Command/aws elasticbeanstalk terminate-environment" class="dashAnchor" id="aws elasticbeanstalk terminate-environment"></a><a class="headerlink" href="#terminate-environment" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
 <p>Terminates the specified environment.</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  terminate-environment
 [--environment-id &lt;value&gt;]
 [--environment-name &lt;value&gt;]
-[--terminate-resources | --no-terminate-resources]</pre>
+[--terminate-resources | --no-terminate-resources]
+[--force-terminate | --no-force-terminate]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--environment-id" class="dashAnchor" id="environment-id"></a><span class="pre">--environment-id</span></tt> (string)</p>
 <blockquote>
 <div><p>The ID of the environment to terminate.</p>
-<p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <tt class="docutils literal"><span class="pre">MissingRequiredParameter</span></tt>  error.</p>
+<p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <tt class="docutils literal"><span class="pre">MissingRequiredParameter</span></tt> error.</p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--environment-name" class="dashAnchor" id="environment-name"></a><span class="pre">--environment-name</span></tt> (string)</p>
 <blockquote>
 <div><p>The name of the environment to terminate.</p>
-<p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <tt class="docutils literal"><span class="pre">MissingRequiredParameter</span></tt>  error.</p>
+<p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <tt class="docutils literal"><span class="pre">MissingRequiredParameter</span></tt> error.</p>
 </div></blockquote>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--terminate-resources" class="dashAnchor" id="terminate-resources"></a><span class="pre">--terminate-resources</span></tt> | <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--no-terminate-resources" class="dashAnchor" id="no-terminate-resources"></a><span class="pre">--no-terminate-resources</span></tt> (boolean)</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--terminate-resources" class="dashAnchor" id="terminate-resources"></a><span class="pre">--terminate-resources</span></tt> | <tt class="docutils literal"><span class="pre">--no-terminate-resources</span></tt> (boolean)</p>
 <blockquote>
 <div><p>Indicates whether the associated AWS resources should shut down when the environment is terminated:</p>
-<blockquote>
-<div><p><tt class="docutils literal"><span class="pre">true</span></tt>  : (default) The user AWS resources (for example, the Auto Scaling group, LoadBalancer, etc.) are terminated along with the environment.</p>
-<p><tt class="docutils literal"><span class="pre">false</span></tt>  : The environment is removed from the AWS Elastic Beanstalk but the AWS resources continue to operate.</p>
-</div></blockquote>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">true</span></tt>  : The specified environment as well as the associated AWS resources, such as Auto Scaling group and LoadBalancer, are terminated.</li>
-<li><tt class="docutils literal"><span class="pre">false</span></tt>  : AWS Elastic Beanstalk resource management is removed from the environment, but the AWS resources continue to operate.</li>
+<li><tt class="docutils literal"><span class="pre">true</span></tt> : The specified environment as well as the associated AWS resources, such as Auto Scaling group and LoadBalancer, are terminated.</li>
+<li><tt class="docutils literal"><span class="pre">false</span></tt> : AWS Elastic Beanstalk resource management is removed from the environment, but the AWS resources continue to operate.</li>
 </ul>
 <p>For more information, see the <a class="reference external" href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/">AWS Elastic Beanstalk User Guide.</a></p>
 <p>Default: <tt class="docutils literal"><span class="pre">true</span></tt></p>
-<p>Valid Values: <tt class="docutils literal"><span class="pre">true</span></tt>  | <tt class="docutils literal"><span class="pre">false</span></tt></p>
+<p>Valid Values: <tt class="docutils literal"><span class="pre">true</span></tt> | <tt class="docutils literal"><span class="pre">false</span></tt></p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--force-terminate" class="dashAnchor" id="force-terminate"></a><span class="pre">--force-terminate</span></tt> | <tt class="docutils literal"><span class="pre">--no-force-terminate</span></tt> (boolean)</p>
+<blockquote>
+<div>Terminates the target environment even if another environment in the same group is dependent on it.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To terminate an environment</strong></p>
+<p>The following command terminates an Elastic Beanstalk environment named <tt class="docutils literal"><span class="pre">my-env</span></tt>:</p>
+<div class="highlight-python"><pre>aws elasticbeanstalk terminate-environment --environment-name my-env</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"ApplicationName"</span><span class="p">:</span> <span class="s2">"my-app"</span><span class="p">,</span>
+    <span class="s2">"EnvironmentName"</span><span class="p">:</span> <span class="s2">"my-env"</span><span class="p">,</span>
+    <span class="s2">"Status"</span><span class="p">:</span> <span class="s2">"Terminating"</span><span class="p">,</span>
+    <span class="s2">"EnvironmentId"</span><span class="p">:</span> <span class="s2">"e-fh2eravpns"</span><span class="p">,</span>
+    <span class="s2">"EndpointURL"</span><span class="p">:</span> <span class="s2">"awseb-e-f-AWSEBLoa-1I9XUMP4-8492WNUP202574.us-west-2.elb.amazonaws.com"</span><span class="p">,</span>
+    <span class="s2">"SolutionStackName"</span><span class="p">:</span> <span class="s2">"64bit Amazon Linux 2015.03 v2.0.0 running Tomcat 8 Java 8"</span><span class="p">,</span>
+    <span class="s2">"CNAME"</span><span class="p">:</span> <span class="s2">"my-env.elasticbeanstalk.com"</span><span class="p">,</span>
+    <span class="s2">"Health"</span><span class="p">:</span> <span class="s2">"Grey"</span><span class="p">,</span>
+    <span class="s2">"AbortableOperationInProgress"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+    <span class="s2">"Tier"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"Version"</span><span class="p">:</span> <span class="s2">" "</span><span class="p">,</span>
+        <span class="s2">"Type"</span><span class="p">:</span> <span class="s2">"Standard"</span><span class="p">,</span>
+        <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"WebServer"</span>
+    <span class="p">},</span>
+    <span class="s2">"DateUpdated"</span><span class="p">:</span> <span class="s2">"2015-08-12T19:05:54.744Z"</span><span class="p">,</span>
+    <span class="s2">"DateCreated"</span><span class="p">:</span> <span class="s2">"2015-08-12T18:52:53.622Z"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>EnvironmentName -&gt; (string)</p>
+<blockquote>
+<div>The name of this environment.</div></blockquote>
+<p>EnvironmentId -&gt; (string)</p>
+<blockquote>
+<div>The ID of this environment.</div></blockquote>
+<p>ApplicationName -&gt; (string)</p>
+<blockquote>
+<div>The name of the application associated with this environment.</div></blockquote>
+<p>VersionLabel -&gt; (string)</p>
+<blockquote>
+<div>The application version deployed in this environment.</div></blockquote>
+<p>SolutionStackName -&gt; (string)</p>
+<blockquote>
+<div>The name of the <tt class="docutils literal"><span class="pre">SolutionStack</span></tt> deployed with this environment.</div></blockquote>
+<p>TemplateName -&gt; (string)</p>
+<blockquote>
+<div>The name of the configuration template used to originally launch this environment.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>Describes this environment.</div></blockquote>
+<p>EndpointURL -&gt; (string)</p>
+<blockquote>
+<div>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</div></blockquote>
+<p>CNAME -&gt; (string)</p>
+<blockquote>
+<div>The URL to the CNAME for this environment.</div></blockquote>
+<p>DateCreated -&gt; (timestamp)</p>
+<blockquote>
+<div>The creation date for this environment.</div></blockquote>
+<p>DateUpdated -&gt; (timestamp)</p>
+<blockquote>
+<div>The last modified date for this environment.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div><p>The current operational status of the environment:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Launching</span></tt> : Environment is in the process of initial deployment.</li>
+<li><tt class="docutils literal"><span class="pre">Updating</span></tt> : Environment is in the process of updating its configuration settings or application version.</li>
+<li><tt class="docutils literal"><span class="pre">Ready</span></tt> : Environment is available to have an action performed on it, such as update or terminate.</li>
+<li><tt class="docutils literal"><span class="pre">Terminating</span></tt> : Environment is in the shut-down process.</li>
+<li><tt class="docutils literal"><span class="pre">Terminated</span></tt> : Environment is not running.</li>
+</ul>
+</div></blockquote>
+<p>AbortableOperationInProgress -&gt; (boolean)</p>
+<blockquote>
+<div><p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">true:</span></tt> There is an update in progress.</p>
+<p><tt class="docutils literal"><span class="pre">false:</span></tt> There are no updates currently in progress.</p>
+</div></blockquote>
+</div></blockquote>
+<p>Health -&gt; (string)</p>
+<blockquote>
+<div><p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Red</span></tt> : Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</li>
+<li><tt class="docutils literal"><span class="pre">Yellow</span></tt> : Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</li>
+<li><tt class="docutils literal"><span class="pre">Green</span></tt> : Indicates the environment is healthy and fully functional.</li>
+<li><tt class="docutils literal"><span class="pre">Grey</span></tt> : Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <tt class="docutils literal"><span class="pre">update-environment</span></tt> or <tt class="docutils literal"><span class="pre">RestartEnvironement</span></tt> request.</li>
+</ul>
+<p>Default: <tt class="docutils literal"><span class="pre">Grey</span></tt></p>
+</div></blockquote>
+<p>HealthStatus -&gt; (string)</p>
+<blockquote>
+<div>Returns the health status of the application running in your environment. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a> .</div></blockquote>
+<p>Resources -&gt; (structure)</p>
+<blockquote>
+<div><p>The description of the AWS resources used by this environment.</p>
+<p>LoadBalancer -&gt; (structure)</p>
+<blockquote>
+<div><p>Describes the LoadBalancer.</p>
+<p>LoadBalancerName -&gt; (string)</p>
+<blockquote>
+<div>The name of the LoadBalancer.</div></blockquote>
+<p>Domain -&gt; (string)</p>
+<blockquote>
+<div>The domain name of the LoadBalancer.</div></blockquote>
+<p>Listeners -&gt; (list)</p>
+<blockquote>
+<div><p>A list of Listeners used by the LoadBalancer.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the properties of a Listener for the LoadBalancer.</p>
+<p>Protocol -&gt; (string)</p>
+<blockquote>
+<div>The protocol that is used by the Listener.</div></blockquote>
+<p>Port -&gt; (integer)</p>
+<blockquote>
+<div>The port that is used by the Listener.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Tier -&gt; (structure)</p>
+<blockquote>
+<div><p>Describes the current tier of this environment.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of this environment tier.</div></blockquote>
+<p>Type -&gt; (string)</p>
+<blockquote>
+<div>The type of this environment tier.</div></blockquote>
+<p>Version -&gt; (string)</p>
+<blockquote>
+<div>The version of this environment tier.</div></blockquote>
+</div></blockquote>
+<p>EnvironmentLinks -&gt; (list)</p>
+<blockquote>
+<div><p>A list of links to other environments in the same group.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A link to another environment, defined in the environment's manifest. Links provide connection information in system properties that can be used to connect to another environment in the same group. See <a class="reference external" href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
+<p>LinkName -&gt; (string)</p>
+<blockquote>
+<div>The name of the link.</div></blockquote>
+<p>EnvironmentName -&gt; (string)</p>
+<blockquote>
+<div>The name of the linked environment (the dependency).</div></blockquote>
+</div></blockquote>
 </div></blockquote>
 </div>
 </div>
@@ -167,7 +335,7 @@
     <div class="footer-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="swap-environment-cnam-es.html" title="previous chapter (use the left arrow)">&#8592; swap-environment-cnam-es</a>
+          <a href="swap-environment-cnames.html" title="previous chapter (use the left arrow)">&#8592; swap-environment-cnames</a>
           <span class="divider">/</span>
           
         </li>
@@ -177,6 +345,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -185,36 +362,22 @@
         <li class="right">
           <a href="update-application.html" title="update-application">next</a> |</li>
         <li class="right">
-          <a href="swap-environment-cnam-es.html" title="swap-environment-cnam-es">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="swap-environment-cnames.html" title="swap-environment-cnames">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">elasticbeanstalk</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'swap-environment-cnam-es.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'update-application.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/terminate-environment.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:18 GMT -->
 </html>

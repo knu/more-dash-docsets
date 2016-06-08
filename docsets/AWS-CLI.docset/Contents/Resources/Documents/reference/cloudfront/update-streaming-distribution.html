@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudfront/update-streaming-distribution.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:59 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>update-streaming-distribution &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="cloudfront" href="index.html" />
+    <link rel="next" title="wait" href="wait/index.html" />
+    <link rel="prev" title="update-distribution" href="update-distribution.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="wait/index.html" title="wait" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="update-distribution.html" title="update-distribution" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">cloudfront</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="update-distribution.html" title="previous chapter (use the left arrow)">&#8592; update-distribution</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="wait/index.html" title="next chapter (use the right arrow)">wait &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">update-streaming-distribution</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/cloudfront/update-streaming-distribution">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-cloudfront"><em>cloudfront</em></a> ]</p>
+<div class="section" id="update-streaming-distribution">
+<span id="cli-aws-cloudfront-update-streaming-distribution"></span><h1>update-streaming-distribution<a name="//apple_ref/cpp/Command/aws cloudfront update-streaming-distribution" class="dashAnchor" id="aws cloudfront update-streaming-distribution"></a><a class="headerlink" href="#update-streaming-distribution" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Update a streaming distribution.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>AWS CLI support for this service is only available in a preview stage.</strong> You can enable this service by running: <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">configure</span> <span class="pre">set</span> <span class="pre">preview.cloudfront</span> <span class="pre">true</span></tt></p>
+</div>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  update-streaming-distribution
+--streaming-distribution-config &lt;value&gt;
+--id &lt;value&gt;
+[--if-match &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--streaming-distribution-config" class="dashAnchor" id="streaming-distribution-config"></a><span class="pre">--streaming-distribution-config</span></tt> (structure)
+The streaming distribution's configuration information.</p>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>CallerReference=string,S3Origin={DomainName=string,OriginAccessIdentity=string},Aliases={Quantity=integer,Items=[string,string]},Comment=string,Logging={Enabled=boolean,Bucket=string,Prefix=string},TrustedSigners={Enabled=boolean,Quantity=integer,Items=[string,string]},PriceClass=string,Enabled=boolean</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"CallerReference"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"S3Origin"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"DomainName"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+    <span class="s2">"OriginAccessIdentity"</span><span class="p">:</span> <span class="s2">"string"</span>
+  <span class="p">},</span>
+  <span class="s2">"Aliases"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Quantity"</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+    <span class="s2">"Items"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"string"</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">"Comment"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"Logging"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Enabled"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+    <span class="s2">"Bucket"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+    <span class="s2">"Prefix"</span><span class="p">:</span> <span class="s2">"string"</span>
+  <span class="p">},</span>
+  <span class="s2">"TrustedSigners"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Enabled"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+    <span class="s2">"Quantity"</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+    <span class="s2">"Items"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"string"</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">"PriceClass"</span><span class="p">:</span> <span class="s2">"PriceClass_100"</span><span class="o">|</span><span class="s2">"PriceClass_200"</span><span class="o">|</span><span class="s2">"PriceClass_All"</span><span class="p">,</span>
+  <span class="s2">"Enabled"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--id" class="dashAnchor" id="id"></a><span class="pre">--id</span></tt> (string)
+The streaming distribution's id.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--if-match" class="dashAnchor" id="if-match"></a><span class="pre">--if-match</span></tt> (string)
+The value of the ETag header you received when retrieving the streaming distribution's configuration. For example: E2QWRUHAPOMQZL.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON id provided. The JSON id follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>StreamingDistribution -&gt; (structure)</p>
+<blockquote>
+<div><p>The streaming distribution's information.</p>
+<p>Id -&gt; (string)</p>
+<blockquote>
+<div>The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The current status of the streaming distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.</div></blockquote>
+<p>LastModifiedTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time the distribution was last modified.</div></blockquote>
+<p>DomainName -&gt; (string)</p>
+<blockquote>
+<div>The domain name corresponding to the streaming distribution. For example: s5c39gqb8ow64r.cloudfront.net.</div></blockquote>
+<p>ActiveTrustedSigners -&gt; (structure)</p>
+<blockquote>
+<div><p>CloudFront automatically adds this element to the response only if you've set up the distribution to serve private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.</p>
+<p>Enabled -&gt; (boolean)</p>
+<blockquote>
+<div>Each active trusted signer.</div></blockquote>
+<p>Quantity -&gt; (integer)</p>
+<blockquote>
+<div>The number of unique trusted signers included in all cache behaviors. For example, if three cache behaviors all list the same three AWS accounts, the value of Quantity for ActiveTrustedSigners will be 3.</div></blockquote>
+<p>Items -&gt; (list)</p>
+<blockquote>
+<div><p>A complex type that contains one Signer complex type for each unique trusted signer that is specified in the TrustedSigners complex type, including trusted signers in the default cache behavior and in all of the other cache behaviors.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A complex type that lists the AWS accounts that were included in the TrustedSigners complex type, as well as their active CloudFront key pair IDs, if any.</p>
+<p>AwsAccountNumber -&gt; (string)</p>
+<blockquote>
+<div>Specifies an AWS account that can create signed URLs. Values: self, which indicates that the AWS account that was used to create the distribution can created signed URLs, or an AWS account number. Omit the dashes in the account number.</div></blockquote>
+<p>KeyPairIds -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that lists the active CloudFront key pairs, if any, that are associated with AwsAccountNumber.</p>
+<p>Quantity -&gt; (integer)</p>
+<blockquote>
+<div>The number of active CloudFront key pairs for AwsAccountNumber.</div></blockquote>
+<p>Items -&gt; (list)</p>
+<blockquote>
+<div><p>A complex type that lists the active CloudFront key pairs, if any, that are associated with AwsAccountNumber.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>StreamingDistributionConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>The current configuration information for the streaming distribution.</p>
+<p>CallerReference -&gt; (string)</p>
+<blockquote>
+<div>A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the streaming-distribution-config object), a new streaming distribution is created. If the CallerReference is a value you already sent in a previous request to create a streaming distribution, and the content of the streaming-distribution-config is identical to the original request (ignoring white space), the response includes the same information returned to the original request. If the CallerReference is a value you already sent in a previous request to create a streaming distribution but the content of the streaming-distribution-config is different from the original request, CloudFront returns a DistributionAlreadyExists error.</div></blockquote>
+<p>S3Origin -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.</p>
+<p>DomainName -&gt; (string)</p>
+<blockquote>
+<div>The DNS name of the S3 origin.</div></blockquote>
+<p>OriginAccessIdentity -&gt; (string)</p>
+<blockquote>
+<div>Your S3 origin's origin access identity.</div></blockquote>
+</div></blockquote>
+<p>Aliases -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this streaming distribution.</p>
+<p>Quantity -&gt; (integer)</p>
+<blockquote>
+<div>The number of CNAMEs, if any, for this distribution.</div></blockquote>
+<p>Items -&gt; (list)</p>
+<blockquote>
+<div><p>Optional: A complex type that contains CNAME elements, if any, for this distribution. If Quantity is 0, you can omit Items.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+<p>Comment -&gt; (string)</p>
+<blockquote>
+<div>Any comments you want to include about the streaming distribution.</div></blockquote>
+<p>Logging -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that controls whether access logs are written for the streaming distribution.</p>
+<p>Enabled -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to enable logging when you create a streaming distribution or if you want to disable logging for an existing streaming distribution, specify false for Enabled, and specify empty Bucket and Prefix elements. If you specify false for Enabled but you specify values for Bucket and Prefix, the values are automatically deleted.</div></blockquote>
+<p>Bucket -&gt; (string)</p>
+<blockquote>
+<div>The Amazon S3 bucket to store the access logs in, for example, myawslogbucket.s3.amazonaws.com.</div></blockquote>
+<p>Prefix -&gt; (string)</p>
+<blockquote>
+<div>An optional id that you want CloudFront to prefix to the access log filenames for this streaming distribution, for example, myprefix/. If you want to enable logging, but you do not want to specify a prefix, you still must include an empty Prefix element in the Logging element.</div></blockquote>
+</div></blockquote>
+<p>TrustedSigners -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content. If you want to require signed URLs in requests for objects in the target origin that match the PathPattern for this cache behavior, specify true for Enabled, and specify the applicable values for Quantity and Items. For more information, go to Using a Signed URL to Serve Private Content in the Amazon CloudFront Developer Guide. If you don't want to require signed URLs in requests for objects that match PathPattern, specify false for Enabled and 0 for Quantity. Omit Items. To add, change, or remove one or more trusted signers, change Enabled to true (if it's currently false), change Quantity as applicable, and specify all of the trusted signers that you want to include in the updated distribution.</p>
+<p>Enabled -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether you want to require end users to use signed URLs to access the files specified by PathPattern and TargetOriginId.</div></blockquote>
+<p>Quantity -&gt; (integer)</p>
+<blockquote>
+<div>The number of trusted signers for this cache behavior.</div></blockquote>
+<p>Items -&gt; (list)</p>
+<blockquote>
+<div><p>Optional: A complex type that contains trusted signers for this cache behavior. If Quantity is 0, you can omit Items.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+<p>PriceClass -&gt; (string)</p>
+<blockquote>
+<div>A complex type that contains information about price class for this streaming distribution.</div></blockquote>
+<p>Enabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the streaming distribution is enabled to accept end user requests for content.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ETag -&gt; (string)</p>
+<blockquote>
+<div>The current version of the configuration. For example: E2QWRUHAPOMQZL.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="update-distribution.html" title="previous chapter (use the left arrow)">&#8592; update-distribution</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="wait/index.html" title="next chapter (use the right arrow)">wait &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="wait/index.html" title="wait">next</a> |</li>
+        <li class="right">
+          <a href="update-distribution.html" title="update-distribution">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">cloudfront</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudfront/update-streaming-distribution.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:59 GMT -->
+</html>

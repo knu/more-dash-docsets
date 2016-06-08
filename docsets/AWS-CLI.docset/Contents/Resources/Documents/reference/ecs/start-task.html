@@ -1,0 +1,397 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ecs/start-task.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:15 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>start-task &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="ecs" href="index.html" />
+    <link rel="next" title="stop-task" href="stop-task.html" />
+    <link rel="prev" title="run-task" href="run-task.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="stop-task.html" title="stop-task" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="run-task.html" title="run-task" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">ecs</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="run-task.html" title="previous chapter (use the left arrow)">&#8592; run-task</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="stop-task.html" title="next chapter (use the right arrow)">stop-task &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">start-task</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ecs/start-task">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-ecs"><em>ecs</em></a> ]</p>
+<div class="section" id="start-task">
+<span id="cli-aws-ecs-start-task"></span><h1>start-task<a name="//apple_ref/cpp/Command/aws ecs start-task" class="dashAnchor" id="aws ecs start-task"></a><a class="headerlink" href="#start-task" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Starts a new task from the specified task definition on the specified container instance or instances. To use the default Amazon ECS scheduler to place your task, use <tt class="docutils literal"><span class="pre">run-task</span></tt> instead.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The list of container instances to start tasks on is limited to 10.</p>
+</div>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  start-task
+[--cluster &lt;value&gt;]
+--task-definition &lt;value&gt;
+[--overrides &lt;value&gt;]
+--container-instances &lt;value&gt;
+[--started-by &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cluster" class="dashAnchor" id="cluster"></a><span class="pre">--cluster</span></tt> (string)</p>
+<blockquote>
+<div>The short name or full Amazon Resource Name (ARN) of the cluster on which to start your task. If you do not specify a cluster, the default cluster is assumed..</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--task-definition" class="dashAnchor" id="task-definition"></a><span class="pre">--task-definition</span></tt> (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">family</span></tt> and <tt class="docutils literal"><span class="pre">revision</span></tt> (<tt class="docutils literal"><span class="pre">family:revision</span></tt> ) or full Amazon Resource Name (ARN) of the task definition to start. If a <tt class="docutils literal"><span class="pre">revision</span></tt> is not specified, the latest <tt class="docutils literal"><span class="pre">ACTIVE</span></tt> revision is used.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--overrides" class="dashAnchor" id="overrides"></a><span class="pre">--overrides</span></tt> (structure)</p>
+<blockquote>
+<div><p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it should receive. You can override the default command for a container (that is specified in the task definition or Docker image) with a <tt class="docutils literal"><span class="pre">command</span></tt> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <tt class="docutils literal"><span class="pre">environment</span></tt> override.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p>
+</div>
+</div></blockquote>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{
+  "containerOverrides": [
+    {
+      "name": "string",
+      "command": ["string", ...],
+      "environment": [
+        {
+          "name": "string",
+          "value": "string"
+        }
+        ...
+      ]
+    }
+    ...
+  ]
+}</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--container-instances" class="dashAnchor" id="container-instances"></a><span class="pre">--container-instances</span></tt> (list)</p>
+<blockquote>
+<div><p>The container instance IDs or full Amazon Resource Name (ARN) entries for the container instances on which you would like to place your task.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The list of container instances to start tasks on is limited to 10.</p>
+</div>
+</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>"string" "string" ...</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--started-by" class="dashAnchor" id="started-by"></a><span class="pre">--started-by</span></tt> (string)</p>
+<blockquote>
+<div><p>An optional tag specified when a task is started. For example if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <tt class="docutils literal"><span class="pre">startedBy</span></tt> parameter. You can then identify which tasks belong to that job by filtering the results of a  list-tasks call with the <tt class="docutils literal"><span class="pre">startedBy</span></tt> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
+<p>If a task is started by an Amazon ECS service, then the <tt class="docutils literal"><span class="pre">startedBy</span></tt> parameter contains the deployment ID of the service that starts it.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>tasks -&gt; (list)</p>
+<blockquote>
+<div><p>A full description of the tasks that were started. Each task that was successfully placed on your container instances are described here.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Details on a task in a cluster.</p>
+<p>taskArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the task.</div></blockquote>
+<p>clusterArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the cluster that hosts the task.</div></blockquote>
+<p>taskDefinitionArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the task definition that creates the task.</div></blockquote>
+<p>containerInstanceArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the container instances that host the task.</div></blockquote>
+<p>overrides -&gt; (structure)</p>
+<blockquote>
+<div><p>One or more container overrides.</p>
+<p>containerOverrides -&gt; (list)</p>
+<blockquote>
+<div><p>One or more container overrides sent to a task.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The overrides that should be sent to a container.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name of the container that receives the override.</div></blockquote>
+<p>command -&gt; (list)</p>
+<blockquote>
+<div><p>The command to send to the container that overrides the default command from the Docker image or the task definition.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>environment -&gt; (list)</p>
+<blockquote>
+<div><p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A key and value pair object.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name of the key value pair. For environment variables, this is the name of the environment variable.</div></blockquote>
+<p>value -&gt; (string)</p>
+<blockquote>
+<div>The value of the key value pair. For environment variables, this is the value of the environment variable.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>lastStatus -&gt; (string)</p>
+<blockquote>
+<div>The last known status of the task.</div></blockquote>
+<p>desiredStatus -&gt; (string)</p>
+<blockquote>
+<div>The desired status of the task.</div></blockquote>
+<p>containers -&gt; (list)</p>
+<blockquote>
+<div><p>The containers associated with the task.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A Docker container that is part of a task.</p>
+<p>containerArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the container.</div></blockquote>
+<p>taskArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the task.</div></blockquote>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name of the container.</div></blockquote>
+<p>lastStatus -&gt; (string)</p>
+<blockquote>
+<div>The last known status of the container.</div></blockquote>
+<p>exitCode -&gt; (integer)</p>
+<blockquote>
+<div>The exit code returned from the container.</div></blockquote>
+<p>reason -&gt; (string)</p>
+<blockquote>
+<div>A short (255 max characters) human-readable string to provide additional detail about a running or stopped container.</div></blockquote>
+<p>networkBindings -&gt; (list)</p>
+<blockquote>
+<div><p>The network bindings associated with the container.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Details on the network bindings between a container and its host container instance. After a task reaches the <tt class="docutils literal"><span class="pre">RUNNING</span></tt> status, manual and automatic host and container port assignments are visible in the <tt class="docutils literal"><span class="pre">networkBindings</span></tt> section of  describe-tasks API responses.</p>
+<p>bindIP -&gt; (string)</p>
+<blockquote>
+<div>The IP address that the container is bound to on the container instance.</div></blockquote>
+<p>containerPort -&gt; (integer)</p>
+<blockquote>
+<div>The port number on the container that is be used with the network binding.</div></blockquote>
+<p>hostPort -&gt; (integer)</p>
+<blockquote>
+<div>The port number on the host that is used with the network binding.</div></blockquote>
+<p>protocol -&gt; (string)</p>
+<blockquote>
+<div>The protocol used for the network binding.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>startedBy -&gt; (string)</p>
+<blockquote>
+<div>The tag specified when a task is started. If the task is started by an Amazon ECS service, then the <tt class="docutils literal"><span class="pre">startedBy</span></tt> parameter contains the deployment ID of the service that starts it.</div></blockquote>
+<p>stoppedReason -&gt; (string)</p>
+<blockquote>
+<div>The reason the task was stopped.</div></blockquote>
+<p>createdAt -&gt; (timestamp)</p>
+<blockquote>
+<div>The Unix time in seconds and milliseconds when the task was created (the task entered the <tt class="docutils literal"><span class="pre">PENDING</span></tt> state).</div></blockquote>
+<p>startedAt -&gt; (timestamp)</p>
+<blockquote>
+<div>The Unix time in seconds and milliseconds when the task was started (the task transitioned from the <tt class="docutils literal"><span class="pre">PENDING</span></tt> state to the <tt class="docutils literal"><span class="pre">RUNNING</span></tt> state).</div></blockquote>
+<p>stoppedAt -&gt; (timestamp)</p>
+<blockquote>
+<div>The Unix time in seconds and milliseconds when the task was stopped (the task transitioned from the <tt class="docutils literal"><span class="pre">RUNNING</span></tt> state to the <tt class="docutils literal"><span class="pre">STOPPED</span></tt> state).</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>failures -&gt; (list)</p>
+<blockquote>
+<div><p>Any failures associated with the call.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A failed resource.</p>
+<p>arn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the failed resource.</div></blockquote>
+<p>reason -&gt; (string)</p>
+<blockquote>
+<div>The reason for the failure.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="run-task.html" title="previous chapter (use the left arrow)">&#8592; run-task</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="stop-task.html" title="next chapter (use the right arrow)">stop-task &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="stop-task.html" title="stop-task">next</a> |</li>
+        <li class="right">
+          <a href="run-task.html" title="run-task">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">ecs</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ecs/start-task.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:15 GMT -->
+</html>

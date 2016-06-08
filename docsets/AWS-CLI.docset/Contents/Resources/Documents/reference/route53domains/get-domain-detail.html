@@ -1,0 +1,781 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53domains/get-domain-detail.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:28 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-domain-detail &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="route53domains" href="index.html" />
+    <link rel="next" title="get-operation-detail" href="get-operation-detail.html" />
+    <link rel="prev" title="get-contact-reachability-status" href="get-contact-reachability-status.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="get-operation-detail.html" title="get-operation-detail" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="get-contact-reachability-status.html" title="get-contact-reachability-status" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">route53domains</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-contact-reachability-status.html" title="previous chapter (use the left arrow)">&#8592; get-contact-reachability-status</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="get-operation-detail.html" title="next chapter (use the right arrow)">get-operation-detail &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-domain-detail</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/route53domains/get-domain-detail">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-route53domains"><em>route53domains</em></a> ]</p>
+<div class="section" id="get-domain-detail">
+<span id="cli-aws-route53domains-get-domain-detail"></span><h1>get-domain-detail<a name="//apple_ref/cpp/Command/aws route53domains get-domain-detail" class="dashAnchor" id="aws route53domains get-domain-detail"></a><a class="headerlink" href="#get-domain-detail" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>This operation returns detailed information about the domain. The domain's contact information is also returned as part of the output.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  get-domain-detail
+--domain-name &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--domain-name" class="dashAnchor" id="domain-name"></a><span class="pre">--domain-name</span></tt> (string)</p>
+<blockquote>
+<div><p>The name of a domain.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not supported.</p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>DomainName -&gt; (string)</p>
+<blockquote>
+<div><p>The name of a domain.</p>
+<p>Type: String</p>
+</div></blockquote>
+<p>Nameservers -&gt; (list)</p>
+<blockquote>
+<div><p>The name of the domain.</p>
+<p>Type: String</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Nameserver includes the following elements.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div><p>The fully qualified host name of the name server.</p>
+<p>Type: String</p>
+<p>Constraint: Maximum 255 characterss</p>
+<p>Parent: <tt class="docutils literal"><span class="pre">Nameservers</span></tt></p>
+</div></blockquote>
+<p>GlueIps -&gt; (list)</p>
+<blockquote>
+<div><p>Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server is a subdomain of the domain. For example, if your domain is example.com and the name server for the domain is ns.example.com, you need to specify the IP address for ns.example.com.</p>
+<p>Type: List of IP addresses.</p>
+<p>Constraints: The list can contain only one IPv4 and one IPv6 address.</p>
+<p>Parent: <tt class="docutils literal"><span class="pre">Nameservers</span></tt></p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>AutoRenew -&gt; (boolean)</p>
+<blockquote>
+<div><p>Specifies whether the domain registration is set to renew automatically.</p>
+<p>Type: Boolean</p>
+</div></blockquote>
+<p>AdminContact -&gt; (structure)</p>
+<blockquote>
+<div><p>Provides details about the domain administrative contact.</p>
+<p>Type: Complex</p>
+<p>Children: <tt class="docutils literal"><span class="pre">FirstName</span></tt> , <tt class="docutils literal"><span class="pre">MiddleName</span></tt> , <tt class="docutils literal"><span class="pre">LastName</span></tt> , <tt class="docutils literal"><span class="pre">ContactType</span></tt> , <tt class="docutils literal"><span class="pre">OrganizationName</span></tt> , <tt class="docutils literal"><span class="pre">AddressLine1</span></tt> , <tt class="docutils literal"><span class="pre">AddressLine2</span></tt> , <tt class="docutils literal"><span class="pre">City</span></tt> , <tt class="docutils literal"><span class="pre">State</span></tt> , <tt class="docutils literal"><span class="pre">CountryCode</span></tt> , <tt class="docutils literal"><span class="pre">ZipCode</span></tt> , <tt class="docutils literal"><span class="pre">PhoneNumber</span></tt> , <tt class="docutils literal"><span class="pre">Email</span></tt> , <tt class="docutils literal"><span class="pre">Fax</span></tt> , <tt class="docutils literal"><span class="pre">ExtraParams</span></tt></p>
+<p>FirstName -&gt; (string)</p>
+<blockquote>
+<div><p>First name of contact.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>LastName -&gt; (string)</p>
+<blockquote>
+<div><p>Last name of contact.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>ContactType -&gt; (string)</p>
+<blockquote>
+<div><p>Indicates whether the contact is a person, company, association, or public organization. If you choose an option other than <tt class="docutils literal"><span class="pre">PERSON</span></tt> , you must enter an organization name, and you cant enable privacy protection for the contact.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Valid values: <tt class="docutils literal"><span class="pre">PERSON</span></tt> | <tt class="docutils literal"><span class="pre">COMPANY</span></tt> | <tt class="docutils literal"><span class="pre">ASSOCIATION</span></tt> | <tt class="docutils literal"><span class="pre">PUBLIC_BODY</span></tt></p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>OrganizationName -&gt; (string)</p>
+<blockquote>
+<div><p>Name of the organization for contact types other than <tt class="docutils literal"><span class="pre">PERSON</span></tt> .</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters. Contact type must not be <tt class="docutils literal"><span class="pre">PERSON</span></tt> .</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: No</p>
+</div></blockquote>
+<p>AddressLine1 -&gt; (string)</p>
+<blockquote>
+<div><p>First line of the contacts address.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>AddressLine2 -&gt; (string)</p>
+<blockquote>
+<div><p>Second line of contacts address, if any.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: No</p>
+</div></blockquote>
+<p>City -&gt; (string)</p>
+<blockquote>
+<div><p>The city of the contacts address.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div><p>The state or province of the contacts city.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: No</p>
+</div></blockquote>
+<p>CountryCode -&gt; (string)</p>
+<blockquote>
+<div><p>Code for the country of the contacts address.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>ZipCode -&gt; (string)</p>
+<blockquote>
+<div><p>The zip or postal code of the contacts address.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: No</p>
+</div></blockquote>
+<p>PhoneNumber -&gt; (string)</p>
+<blockquote>
+<div><p>The phone number of the contact.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might appear as <tt class="docutils literal"><span class="pre">"+1.1234567890"</span></tt> .</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>Email -&gt; (string)</p>
+<blockquote>
+<div><p>Email address of the contact.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 254 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>Fax -&gt; (string)</p>
+<blockquote>
+<div><p>Fax number of the contact.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code]". For example, a US phone number might appear as <tt class="docutils literal"><span class="pre">"+1.1234567890"</span></tt> .</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: No</p>
+</div></blockquote>
+<p>ExtraParams -&gt; (list)</p>
+<blockquote>
+<div><p>A list of name-value pairs for parameters required by certain top-level domains.</p>
+<p>Type: Complex</p>
+<p>Default: None</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Children: <tt class="docutils literal"><span class="pre">Name</span></tt> , <tt class="docutils literal"><span class="pre">Value</span></tt></p>
+<p>Required: No</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>ExtraParam includes the following elements.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div><p>Name of the additional parameter required by the top-level domain.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Valid values: <tt class="docutils literal"><span class="pre">DUNS_NUMBER</span></tt> | <tt class="docutils literal"><span class="pre">BRAND_NUMBER</span></tt> | <tt class="docutils literal"><span class="pre">BIRTH_DEPARTMENT</span></tt> | <tt class="docutils literal"><span class="pre">BIRTH_DATE_IN_YYYY_MM_DD</span></tt> | <tt class="docutils literal"><span class="pre">BIRTH_COUNTRY</span></tt> | <tt class="docutils literal"><span class="pre">BIRTH_CITY</span></tt> | <tt class="docutils literal"><span class="pre">DOCUMENT_NUMBER</span></tt> | <tt class="docutils literal"><span class="pre">AU_ID_NUMBER</span></tt> | <tt class="docutils literal"><span class="pre">AU_ID_TYPE</span></tt> | <tt class="docutils literal"><span class="pre">CA_LEGAL_TYPE</span></tt> | <tt class="docutils literal"><span class="pre">CA_BUSINESS_ENTITY_TYPE</span></tt> <a href="#id1"><span class="problematic" id="id2">|</span></a><tt class="docutils literal"><span class="pre">ES_IDENTIFICATION</span></tt> | <tt class="docutils literal"><span class="pre">ES_IDENTIFICATION_TYPE</span></tt> | <tt class="docutils literal"><span class="pre">ES_LEGAL_FORM</span></tt> | <tt class="docutils literal"><span class="pre">FI_BUSINESS_NUMBER</span></tt> | <tt class="docutils literal"><span class="pre">FI_ID_NUMBER</span></tt> | <tt class="docutils literal"><span class="pre">IT_PIN</span></tt> | <tt class="docutils literal"><span class="pre">RU_PASSPORT_DATA</span></tt> | <tt class="docutils literal"><span class="pre">SE_ID_NUMBER</span></tt> | <tt class="docutils literal"><span class="pre">SG_ID_NUMBER</span></tt> | <tt class="docutils literal"><span class="pre">VAT_NUMBER</span></tt></p>
+<p>Parent: <tt class="docutils literal"><span class="pre">ExtraParams</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div><p>Values corresponding to the additional parameter names required by some top-level domains.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 2048 characters.</p>
+<p>Parent: <tt class="docutils literal"><span class="pre">ExtraParams</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>RegistrantContact -&gt; (structure)</p>
+<blockquote>
+<div><p>Provides details about the domain registrant.</p>
+<p>Type: Complex</p>
+<p>Children: <tt class="docutils literal"><span class="pre">FirstName</span></tt> , <tt class="docutils literal"><span class="pre">MiddleName</span></tt> , <tt class="docutils literal"><span class="pre">LastName</span></tt> , <tt class="docutils literal"><span class="pre">ContactType</span></tt> , <tt class="docutils literal"><span class="pre">OrganizationName</span></tt> , <tt class="docutils literal"><span class="pre">AddressLine1</span></tt> , <tt class="docutils literal"><span class="pre">AddressLine2</span></tt> , <tt class="docutils literal"><span class="pre">City</span></tt> , <tt class="docutils literal"><span class="pre">State</span></tt> , <tt class="docutils literal"><span class="pre">CountryCode</span></tt> , <tt class="docutils literal"><span class="pre">ZipCode</span></tt> , <tt class="docutils literal"><span class="pre">PhoneNumber</span></tt> , <tt class="docutils literal"><span class="pre">Email</span></tt> , <tt class="docutils literal"><span class="pre">Fax</span></tt> , <tt class="docutils literal"><span class="pre">ExtraParams</span></tt></p>
+<p>FirstName -&gt; (string)</p>
+<blockquote>
+<div><p>First name of contact.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>LastName -&gt; (string)</p>
+<blockquote>
+<div><p>Last name of contact.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>ContactType -&gt; (string)</p>
+<blockquote>
+<div><p>Indicates whether the contact is a person, company, association, or public organization. If you choose an option other than <tt class="docutils literal"><span class="pre">PERSON</span></tt> , you must enter an organization name, and you cant enable privacy protection for the contact.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Valid values: <tt class="docutils literal"><span class="pre">PERSON</span></tt> | <tt class="docutils literal"><span class="pre">COMPANY</span></tt> | <tt class="docutils literal"><span class="pre">ASSOCIATION</span></tt> | <tt class="docutils literal"><span class="pre">PUBLIC_BODY</span></tt></p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>OrganizationName -&gt; (string)</p>
+<blockquote>
+<div><p>Name of the organization for contact types other than <tt class="docutils literal"><span class="pre">PERSON</span></tt> .</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters. Contact type must not be <tt class="docutils literal"><span class="pre">PERSON</span></tt> .</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: No</p>
+</div></blockquote>
+<p>AddressLine1 -&gt; (string)</p>
+<blockquote>
+<div><p>First line of the contacts address.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>AddressLine2 -&gt; (string)</p>
+<blockquote>
+<div><p>Second line of contacts address, if any.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: No</p>
+</div></blockquote>
+<p>City -&gt; (string)</p>
+<blockquote>
+<div><p>The city of the contacts address.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div><p>The state or province of the contacts city.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: No</p>
+</div></blockquote>
+<p>CountryCode -&gt; (string)</p>
+<blockquote>
+<div><p>Code for the country of the contacts address.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>ZipCode -&gt; (string)</p>
+<blockquote>
+<div><p>The zip or postal code of the contacts address.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: No</p>
+</div></blockquote>
+<p>PhoneNumber -&gt; (string)</p>
+<blockquote>
+<div><p>The phone number of the contact.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might appear as <tt class="docutils literal"><span class="pre">"+1.1234567890"</span></tt> .</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>Email -&gt; (string)</p>
+<blockquote>
+<div><p>Email address of the contact.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 254 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>Fax -&gt; (string)</p>
+<blockquote>
+<div><p>Fax number of the contact.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code]". For example, a US phone number might appear as <tt class="docutils literal"><span class="pre">"+1.1234567890"</span></tt> .</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: No</p>
+</div></blockquote>
+<p>ExtraParams -&gt; (list)</p>
+<blockquote>
+<div><p>A list of name-value pairs for parameters required by certain top-level domains.</p>
+<p>Type: Complex</p>
+<p>Default: None</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Children: <tt class="docutils literal"><span class="pre">Name</span></tt> , <tt class="docutils literal"><span class="pre">Value</span></tt></p>
+<p>Required: No</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>ExtraParam includes the following elements.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div><p>Name of the additional parameter required by the top-level domain.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Valid values: <tt class="docutils literal"><span class="pre">DUNS_NUMBER</span></tt> | <tt class="docutils literal"><span class="pre">BRAND_NUMBER</span></tt> | <tt class="docutils literal"><span class="pre">BIRTH_DEPARTMENT</span></tt> | <tt class="docutils literal"><span class="pre">BIRTH_DATE_IN_YYYY_MM_DD</span></tt> | <tt class="docutils literal"><span class="pre">BIRTH_COUNTRY</span></tt> | <tt class="docutils literal"><span class="pre">BIRTH_CITY</span></tt> | <tt class="docutils literal"><span class="pre">DOCUMENT_NUMBER</span></tt> | <tt class="docutils literal"><span class="pre">AU_ID_NUMBER</span></tt> | <tt class="docutils literal"><span class="pre">AU_ID_TYPE</span></tt> | <tt class="docutils literal"><span class="pre">CA_LEGAL_TYPE</span></tt> | <tt class="docutils literal"><span class="pre">CA_BUSINESS_ENTITY_TYPE</span></tt> <a href="#id3"><span class="problematic" id="id4">|</span></a><tt class="docutils literal"><span class="pre">ES_IDENTIFICATION</span></tt> | <tt class="docutils literal"><span class="pre">ES_IDENTIFICATION_TYPE</span></tt> | <tt class="docutils literal"><span class="pre">ES_LEGAL_FORM</span></tt> | <tt class="docutils literal"><span class="pre">FI_BUSINESS_NUMBER</span></tt> | <tt class="docutils literal"><span class="pre">FI_ID_NUMBER</span></tt> | <tt class="docutils literal"><span class="pre">IT_PIN</span></tt> | <tt class="docutils literal"><span class="pre">RU_PASSPORT_DATA</span></tt> | <tt class="docutils literal"><span class="pre">SE_ID_NUMBER</span></tt> | <tt class="docutils literal"><span class="pre">SG_ID_NUMBER</span></tt> | <tt class="docutils literal"><span class="pre">VAT_NUMBER</span></tt></p>
+<p>Parent: <tt class="docutils literal"><span class="pre">ExtraParams</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div><p>Values corresponding to the additional parameter names required by some top-level domains.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 2048 characters.</p>
+<p>Parent: <tt class="docutils literal"><span class="pre">ExtraParams</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>TechContact -&gt; (structure)</p>
+<blockquote>
+<div><p>Provides details about the domain technical contact.</p>
+<p>Type: Complex</p>
+<p>Children: <tt class="docutils literal"><span class="pre">FirstName</span></tt> , <tt class="docutils literal"><span class="pre">MiddleName</span></tt> , <tt class="docutils literal"><span class="pre">LastName</span></tt> , <tt class="docutils literal"><span class="pre">ContactType</span></tt> , <tt class="docutils literal"><span class="pre">OrganizationName</span></tt> , <tt class="docutils literal"><span class="pre">AddressLine1</span></tt> , <tt class="docutils literal"><span class="pre">AddressLine2</span></tt> , <tt class="docutils literal"><span class="pre">City</span></tt> , <tt class="docutils literal"><span class="pre">State</span></tt> , <tt class="docutils literal"><span class="pre">CountryCode</span></tt> , <tt class="docutils literal"><span class="pre">ZipCode</span></tt> , <tt class="docutils literal"><span class="pre">PhoneNumber</span></tt> , <tt class="docutils literal"><span class="pre">Email</span></tt> , <tt class="docutils literal"><span class="pre">Fax</span></tt> , <tt class="docutils literal"><span class="pre">ExtraParams</span></tt></p>
+<p>FirstName -&gt; (string)</p>
+<blockquote>
+<div><p>First name of contact.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>LastName -&gt; (string)</p>
+<blockquote>
+<div><p>Last name of contact.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>ContactType -&gt; (string)</p>
+<blockquote>
+<div><p>Indicates whether the contact is a person, company, association, or public organization. If you choose an option other than <tt class="docutils literal"><span class="pre">PERSON</span></tt> , you must enter an organization name, and you cant enable privacy protection for the contact.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Valid values: <tt class="docutils literal"><span class="pre">PERSON</span></tt> | <tt class="docutils literal"><span class="pre">COMPANY</span></tt> | <tt class="docutils literal"><span class="pre">ASSOCIATION</span></tt> | <tt class="docutils literal"><span class="pre">PUBLIC_BODY</span></tt></p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>OrganizationName -&gt; (string)</p>
+<blockquote>
+<div><p>Name of the organization for contact types other than <tt class="docutils literal"><span class="pre">PERSON</span></tt> .</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters. Contact type must not be <tt class="docutils literal"><span class="pre">PERSON</span></tt> .</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: No</p>
+</div></blockquote>
+<p>AddressLine1 -&gt; (string)</p>
+<blockquote>
+<div><p>First line of the contacts address.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>AddressLine2 -&gt; (string)</p>
+<blockquote>
+<div><p>Second line of contacts address, if any.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: No</p>
+</div></blockquote>
+<p>City -&gt; (string)</p>
+<blockquote>
+<div><p>The city of the contacts address.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div><p>The state or province of the contacts city.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: No</p>
+</div></blockquote>
+<p>CountryCode -&gt; (string)</p>
+<blockquote>
+<div><p>Code for the country of the contacts address.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>ZipCode -&gt; (string)</p>
+<blockquote>
+<div><p>The zip or postal code of the contacts address.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: No</p>
+</div></blockquote>
+<p>PhoneNumber -&gt; (string)</p>
+<blockquote>
+<div><p>The phone number of the contact.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might appear as <tt class="docutils literal"><span class="pre">"+1.1234567890"</span></tt> .</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>Email -&gt; (string)</p>
+<blockquote>
+<div><p>Email address of the contact.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 254 characters.</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>Fax -&gt; (string)</p>
+<blockquote>
+<div><p>Fax number of the contact.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code]". For example, a US phone number might appear as <tt class="docutils literal"><span class="pre">"+1.1234567890"</span></tt> .</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Required: No</p>
+</div></blockquote>
+<p>ExtraParams -&gt; (list)</p>
+<blockquote>
+<div><p>A list of name-value pairs for parameters required by certain top-level domains.</p>
+<p>Type: Complex</p>
+<p>Default: None</p>
+<p>Parents: <tt class="docutils literal"><span class="pre">RegistrantContact</span></tt> , <tt class="docutils literal"><span class="pre">AdminContact</span></tt> , <tt class="docutils literal"><span class="pre">TechContact</span></tt></p>
+<p>Children: <tt class="docutils literal"><span class="pre">Name</span></tt> , <tt class="docutils literal"><span class="pre">Value</span></tt></p>
+<p>Required: No</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>ExtraParam includes the following elements.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div><p>Name of the additional parameter required by the top-level domain.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Valid values: <tt class="docutils literal"><span class="pre">DUNS_NUMBER</span></tt> | <tt class="docutils literal"><span class="pre">BRAND_NUMBER</span></tt> | <tt class="docutils literal"><span class="pre">BIRTH_DEPARTMENT</span></tt> | <tt class="docutils literal"><span class="pre">BIRTH_DATE_IN_YYYY_MM_DD</span></tt> | <tt class="docutils literal"><span class="pre">BIRTH_COUNTRY</span></tt> | <tt class="docutils literal"><span class="pre">BIRTH_CITY</span></tt> | <tt class="docutils literal"><span class="pre">DOCUMENT_NUMBER</span></tt> | <tt class="docutils literal"><span class="pre">AU_ID_NUMBER</span></tt> | <tt class="docutils literal"><span class="pre">AU_ID_TYPE</span></tt> | <tt class="docutils literal"><span class="pre">CA_LEGAL_TYPE</span></tt> | <tt class="docutils literal"><span class="pre">CA_BUSINESS_ENTITY_TYPE</span></tt> <a href="#id5"><span class="problematic" id="id6">|</span></a><tt class="docutils literal"><span class="pre">ES_IDENTIFICATION</span></tt> | <tt class="docutils literal"><span class="pre">ES_IDENTIFICATION_TYPE</span></tt> | <tt class="docutils literal"><span class="pre">ES_LEGAL_FORM</span></tt> | <tt class="docutils literal"><span class="pre">FI_BUSINESS_NUMBER</span></tt> | <tt class="docutils literal"><span class="pre">FI_ID_NUMBER</span></tt> | <tt class="docutils literal"><span class="pre">IT_PIN</span></tt> | <tt class="docutils literal"><span class="pre">RU_PASSPORT_DATA</span></tt> | <tt class="docutils literal"><span class="pre">SE_ID_NUMBER</span></tt> | <tt class="docutils literal"><span class="pre">SG_ID_NUMBER</span></tt> | <tt class="docutils literal"><span class="pre">VAT_NUMBER</span></tt></p>
+<p>Parent: <tt class="docutils literal"><span class="pre">ExtraParams</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div><p>Values corresponding to the additional parameter names required by some top-level domains.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 2048 characters.</p>
+<p>Parent: <tt class="docutils literal"><span class="pre">ExtraParams</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>AdminPrivacy -&gt; (boolean)</p>
+<blockquote>
+<div><p>Specifies whether contact information for the admin contact is concealed from WHOIS queries. If the value is <tt class="docutils literal"><span class="pre">true</span></tt> , WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact information that you enter.</p>
+<p>Type: Boolean</p>
+</div></blockquote>
+<p>RegistrantPrivacy -&gt; (boolean)</p>
+<blockquote>
+<div><p>Specifies whether contact information for the registrant contact is concealed from WHOIS queries. If the value is <tt class="docutils literal"><span class="pre">true</span></tt> , WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact information that you enter.</p>
+<p>Type: Boolean</p>
+</div></blockquote>
+<p>TechPrivacy -&gt; (boolean)</p>
+<blockquote>
+<div><p>Specifies whether contact information for the tech contact is concealed from WHOIS queries. If the value is <tt class="docutils literal"><span class="pre">true</span></tt> , WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact information that you enter.</p>
+<p>Type: Boolean</p>
+</div></blockquote>
+<p>RegistrarName -&gt; (string)</p>
+<blockquote>
+<div><p>Name of the registrar of the domain as identified in the registry. Amazon Route 53 domains are registered by registrar Gandi. The value is <tt class="docutils literal"><span class="pre">"GANDI</span> <span class="pre">SAS"</span></tt> .</p>
+<p>Type: String</p>
+</div></blockquote>
+<p>WhoIsServer -&gt; (string)</p>
+<blockquote>
+<div><p>The fully qualified name of the WHOIS server that can answer the WHOIS query for the domain.</p>
+<p>Type: String</p>
+</div></blockquote>
+<p>RegistrarUrl -&gt; (string)</p>
+<blockquote>
+<div><p>Web address of the registrar.</p>
+<p>Type: String</p>
+</div></blockquote>
+<p>AbuseContactEmail -&gt; (string)</p>
+<blockquote>
+<div><p>Email address to contact to report incorrect contact information for a domain, to report that the domain is being used to send spam, to report that someone is cybersquatting on a domain name, or report some other type of abuse.</p>
+<p>Type: String</p>
+</div></blockquote>
+<p>AbuseContactPhone -&gt; (string)</p>
+<blockquote>
+<div><p>Phone number for reporting abuse.</p>
+<p>Type: String</p>
+</div></blockquote>
+<p>RegistryDomainId -&gt; (string)</p>
+<blockquote>
+<div>Reserved for future use.</div></blockquote>
+<p>CreationDate -&gt; (timestamp)</p>
+<blockquote>
+<div>The date when the domain was created as found in the response to a WHOIS query. The date format is Unix time.</div></blockquote>
+<p>UpdatedDate -&gt; (timestamp)</p>
+<blockquote>
+<div>The last updated date of the domain as found in the response to a WHOIS query. The date format is Unix time.</div></blockquote>
+<p>ExpirationDate -&gt; (timestamp)</p>
+<blockquote>
+<div>The date when the registration for the domain is set to expire. The date format is Unix time.</div></blockquote>
+<p>Reseller -&gt; (string)</p>
+<blockquote>
+<div><p>Reseller of the domain. Domains registered or transferred using Amazon Route 53 domains will have <tt class="docutils literal"><span class="pre">"Amazon"</span></tt> as the reseller.</p>
+<p>Type: String</p>
+</div></blockquote>
+<p>DnsSec -&gt; (string)</p>
+<blockquote>
+<div>Reserved for future use.</div></blockquote>
+<p>StatusList -&gt; (list)</p>
+<blockquote>
+<div><p>An array of domain name status codes, also known as Extensible Provisioning Protocol (EPP) status codes.</p>
+<p>ICANN, the organization that maintains a central database of domain names, has developed a set of domain name status codes that tell you the status of a variety of operations on a domain name, for example, registering a domain name, transferring a domain name to another registrar, renewing the registration for a domain name, and so on. All registrars use this same set of status codes.</p>
+<p>For a current list of domain name status codes and an explanation of what each code means, go to the <a class="reference external" href="https://www.icann.org/">ICANN website</a> and search for <tt class="docutils literal"><span class="pre">epp</span> <span class="pre">status</span> <span class="pre">codes</span></tt> . (Search on the ICANN website; web searches sometimes return an old version of the document.)</p>
+<p>Type: Array of String</p>
+<p>(string)</p>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-contact-reachability-status.html" title="previous chapter (use the left arrow)">&#8592; get-contact-reachability-status</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="get-operation-detail.html" title="next chapter (use the right arrow)">get-operation-detail &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="get-operation-detail.html" title="get-operation-detail">next</a> |</li>
+        <li class="right">
+          <a href="get-contact-reachability-status.html" title="get-contact-reachability-status">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">route53domains</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53domains/get-domain-detail.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:28 GMT -->
+</html>

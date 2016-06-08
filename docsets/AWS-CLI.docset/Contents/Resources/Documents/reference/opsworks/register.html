@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/opsworks/register.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:22 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>register &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="opsworks" href="index.html" />
+    <link rel="next" title="register-ecs-cluster" href="register-ecs-cluster.html" />
+    <link rel="prev" title="reboot-instance" href="reboot-instance.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="register-ecs-cluster.html" title="register-ecs-cluster" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="reboot-instance.html" title="reboot-instance" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">opsworks</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="reboot-instance.html" title="previous chapter (use the left arrow)">&#8592; reboot-instance</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="register-ecs-cluster.html" title="next chapter (use the right arrow)">register-ecs-cluster &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">register</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/opsworks/register">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-opsworks"><em>opsworks</em></a> ]</p>
+<div class="section" id="register">
+<span id="cli-aws-opsworks-register"></span><h1>register<a name="//apple_ref/cpp/Command/aws opsworks register" class="dashAnchor" id="aws opsworks register"></a><a class="headerlink" href="#register" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Registers an EC2 instance or machine with AWS OpsWorks.</p>
+<p>Registering a machine using this command will install the AWS OpsWorks
+agent on the target machine and register it with an existing OpsWorks
+stack.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  register
+--stack-id &lt;value&gt;
+--infrastructure-class &lt;value&gt;
+[--override-hostname &lt;value&gt;]
+[--override-private-ip &lt;value&gt;]
+[--override-public-ip &lt;value&gt;]
+[--override-ssh &lt;value&gt;]
+[--ssh-username &lt;value&gt;]
+[--ssh-private-key &lt;value&gt;]
+[--local]
+[&lt;target&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--stack-id" class="dashAnchor" id="stack-id"></a><span class="pre">--stack-id</span></tt> (string)
+A stack ID. The instance will be registered with the given stack.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--infrastructure-class" class="dashAnchor" id="infrastructure-class"></a><span class="pre">--infrastructure-class</span></tt> (string)
+Specifies whether to register an EC2 instance (<cite>ec2</cite>) or an on-premises instance (<cite>on-premises</cite>).</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--override-hostname" class="dashAnchor" id="override-hostname"></a><span class="pre">--override-hostname</span></tt> (string)
+The instance hostname. If not provided, the current hostname of the machine will be used.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--override-private-ip" class="dashAnchor" id="override-private-ip"></a><span class="pre">--override-private-ip</span></tt> (string)
+An IP address. If you set this parameter, the given IP address will be used as the private IP address within OpsWorks. Otherwise the private IP address will be determined automatically. Not to be used with EC2 instances.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--override-public-ip" class="dashAnchor" id="override-public-ip"></a><span class="pre">--override-public-ip</span></tt> (string)
+An IP address. If you set this parameter, the given IP address will be used as the public IP address within OpsWorks. Otherwise the public IP address will be determined automatically. Not to be used with EC2 instances.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--override-ssh" class="dashAnchor" id="override-ssh"></a><span class="pre">--override-ssh</span></tt> (string)
+If you set this parameter, the given command will be used to connect to the machine.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ssh-username" class="dashAnchor" id="ssh-username"></a><span class="pre">--ssh-username</span></tt> (string)
+If provided, this username will be used to connect to the host.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ssh-private-key" class="dashAnchor" id="ssh-private-key"></a><span class="pre">--ssh-private-key</span></tt> (string)
+If provided, the given private key file will be used to connect to the machine.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--local" class="dashAnchor" id="local"></a><span class="pre">--local</span></tt> (boolean)
+If given, instead of a remote machine, the local machine will be imported. Cannot be used together with <cite>target</cite>.</p>
+<p><tt class="docutils literal"><span class="pre">target</span></tt> (string)
+Either the EC2 instance ID or the hostname of the instance or machine to be registered with OpsWorks. Cannot be used together with <cite>--local</cite>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To register instances with a stack</strong></p>
+<p>The following examples show a variety of ways to register instances with a stack that were created outside of AWS Opsworks.
+You can run <tt class="docutils literal"><span class="pre">register</span></tt> from the instance to be registered, or from a separate workstation.
+For more information, see <a class="reference external" href="http://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register-registering.html">Registering Amazon EC2 and On-premises Instances</a> in the <em>AWS OpsWorks User Guide</em>.</p>
+<p><strong>Note</strong>: For brevity, the examples omit the <tt class="docutils literal"><span class="pre">region</span></tt> argument. AWS OpsWorks CLI commands should set <tt class="docutils literal"><span class="pre">region</span></tt>
+to us-east-1 regardless of the stack's location.</p>
+<p><em>To register an Amazon EC2 instance</em></p>
+<p>To indicate that you are registering an EC2 instance, set the <tt class="docutils literal"><span class="pre">--infrastructure-class</span></tt> argument
+to <tt class="docutils literal"><span class="pre">ec2</span></tt>.</p>
+<p>The following example registers an EC2 instance with the specified stack from a separate workstation.
+The instance is identified by its EC2 ID, <tt class="docutils literal"><span class="pre">i-12345678</span></tt>. The example uses the workstation's default SSH username and attempts
+to log in to the instance using authentication techniques that do not require a password,
+such as a default private SSH key. If that fails, <tt class="docutils literal"><span class="pre">register</span></tt> queries for the password.</p>
+<div class="highlight-python"><pre>aws opsworks register --infrastructure-class=ec2 --stack-id 935450cc-61e0-4b03-a3e0-160ac817d2bb i-12345678</pre>
+</div>
+<p>The following example registers an EC2 instance with the specifed stack from a separate workstation.
+It uses the <tt class="docutils literal"><span class="pre">--ssh-username</span></tt> and <tt class="docutils literal"><span class="pre">--ssh-private-key</span></tt> arguments to explicitly
+specify the SSH username and private key file that the command uses to log into the instance.
+<tt class="docutils literal"><span class="pre">ec2-user</span></tt> is the standard username for Amazon Linux instances. Use <tt class="docutils literal"><span class="pre">ubuntu</span></tt> for Ubuntu instances.</p>
+<div class="highlight-python"><pre>aws opsworks register --infrastructure-class=ec2 --stack-id 935450cc-61e0-4b03-a3e0-160ac817d2bb --ssh-username ec2-user --ssh-private-key ssh_private_key i-12345678</pre>
+</div>
+<p>The following example registers the EC2 instance that is running the <tt class="docutils literal"><span class="pre">register</span></tt> command.
+Log in to the instance with SSH and run <tt class="docutils literal"><span class="pre">register</span></tt> with the <tt class="docutils literal"><span class="pre">--local</span></tt> argument instead of an instance ID or hostname.</p>
+<div class="highlight-python"><pre>aws opsworks register --infrastructure-class ec2 --stack-id 935450cc-61e0-4b03-a3e0-160ac817d2bb --local</pre>
+</div>
+<p><em>To register an on-premises instance</em></p>
+<p>To indicate that you are registering an on-premises instance, set the <tt class="docutils literal"><span class="pre">--infrastructure-class</span></tt> argument
+to <tt class="docutils literal"><span class="pre">on-premises</span></tt>.</p>
+<p>The following example registers an existing on-premises instance with a specified stack from a separate workstation.
+The instance is identified by its IP address, <tt class="docutils literal"><span class="pre">192.0.2.3</span></tt>. The example uses the workstation's default SSH username and attempts
+to log in to the instance using authentication techniques that do not require a password,
+such as a default private SSH key. If that fails, <tt class="docutils literal"><span class="pre">register</span></tt> queries for the password.</p>
+<div class="highlight-python"><pre>aws opsworks register --infrastructure-class on-premises --stack-id 935450cc-61e0-4b03-a3e0-160ac817d2bb 192.0.2.3</pre>
+</div>
+<p>The following example registers an on-premises instance with a specified stack from a separate workstation.
+The instance is identified by its hostname, <tt class="docutils literal"><span class="pre">host1</span></tt>. The <tt class="docutils literal"><span class="pre">--override-...</span></tt> arguments direct AWS OpsWorks
+to display <tt class="docutils literal"><span class="pre">webserver1</span></tt> as the host name and <tt class="docutils literal"><span class="pre">192.0.2.3</span></tt> and <tt class="docutils literal"><span class="pre">10.0.0.2</span></tt> as the instance's public and
+private IP addresses, respectively.</p>
+<div class="highlight-python"><pre>aws opsworks register --infrastructure-class on-premises --stack-id 935450cc-61e0-4b03-a3e0-160ac817d2bb --override-hostname webserver1 --override-public-ip 192.0.2.3 --override-private-ip 10.0.0.2 host1</pre>
+</div>
+<p>The following example registers an on-premises instance with a specified stack from a separate workstation.
+The instance is identified by its IP address. <tt class="docutils literal"><span class="pre">register</span></tt> logs into the instance using the specified SSH username and private key file.</p>
+<div class="highlight-python"><pre>aws opsworks register --infrastructure-class on-premises --stack-id 935450cc-61e0-4b03-a3e0-160ac817d2bb --ssh-username admin --ssh-private-key ssh_private_key 192.0.2.3</pre>
+</div>
+<p>The following example registers an existing on-premises instance with a specified stack from a separate workstation.
+The command logs into the instance using a custom SSH command string that specifies
+the SSH password and the instance's IP address.</p>
+<div class="highlight-python"><pre>aws opsworks register --infrastructure-class on-premises --stack-id 935450cc-61e0-4b03-a3e0-160ac817d2bb --override-ssh "sshpass -p 'mypassword' ssh your-user@192.0.2.3"</pre>
+</div>
+<p>The following example registers the on-premises instance that is running the <tt class="docutils literal"><span class="pre">register</span></tt> command.
+Log in to the instance with SSH and run <tt class="docutils literal"><span class="pre">register</span></tt> with the <tt class="docutils literal"><span class="pre">--local</span></tt> argument instead of an instance ID or hostname.</p>
+<div class="highlight-python"><pre>aws opsworks register --infrastructure-class on-premises --stack-id 935450cc-61e0-4b03-a3e0-160ac817d2bb --local</pre>
+</div>
+<p><em>Output</em>: The following is typical output for registering an EC2 instance.</p>
+<div class="highlight-python"><pre>Warning: Permanently added '52.11.41.206' (ECDSA) to the list of known hosts.
+% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                               Dload  Upload   Total   Spent    Left  Speed
+100 6403k  100 6403k    0     0  2121k      0  0:00:03  0:00:03 --:--:-- 2121k
+[Tue, 24 Feb 2015 20:48:37 +0000] opsworks-init: Initializing AWS OpsWorks environment
+[Tue, 24 Feb 2015 20:48:37 +0000] opsworks-init: Running on Ubuntu
+[Tue, 24 Feb 2015 20:48:37 +0000] opsworks-init: Checking if OS is supported
+[Tue, 24 Feb 2015 20:48:37 +0000] opsworks-init: Running on supported OS
+[Tue, 24 Feb 2015 20:48:37 +0000] opsworks-init: Setup motd
+[Tue, 24 Feb 2015 20:48:37 +0000] opsworks-init: Executing: ln -sf --backup /etc/motd.opsworks-static /etc/motd
+[Tue, 24 Feb 2015 20:48:37 +0000] opsworks-init: Enabling multiverse repositories
+[Tue, 24 Feb 2015 20:48:37 +0000] opsworks-init: Customizing APT environment
+[Tue, 24 Feb 2015 20:48:37 +0000] opsworks-init: Installing system packages
+[Tue, 24 Feb 2015 20:48:37 +0000] opsworks-init: Executing: dpkg --configure -a
+[Tue, 24 Feb 2015 20:48:37 +0000] opsworks-init: Executing with retry: apt-get update
+[Tue, 24 Feb 2015 20:49:13 +0000] opsworks-init: Executing: apt-get install -y ruby ruby-dev libicu-dev libssl-dev libxslt-dev libxml2-dev libyaml-dev monit
+[Tue, 24 Feb 2015 20:50:13 +0000] opsworks-init: Using assets bucket from environment: 'opsworks-instance-assets-us-east-1.s3.amazonaws.com'.
+[Tue, 24 Feb 2015 20:50:13 +0000] opsworks-init: Installing Ruby for the agent
+[Tue, 24 Feb 2015 20:50:13 +0000] opsworks-init: Executing: /tmp/opsworks-agent-installer.YgGq8wF3UUre6yDy/opsworks-agent-installer/opsworks-agent/bin/installer_wrapper.sh -r -R opsworks-instance-assets-us-east-1.s3.amazonaws.com
+[Tue, 24 Feb 2015 20:50:44 +0000] opsworks-init: Starting the installer
+Instance successfully registered. Instance ID: 4d6d1710-ded9-42a1-b08e-b043ad7af1e2
+Connection to 52.11.41.206 closed.</pre>
+</div>
+<p><strong>More Information</strong></p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html">Registering an Instance with an AWS OpsWorks Stack</a> in the <em>AWS OpsWorks User Guide</em>.</p>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="reboot-instance.html" title="previous chapter (use the left arrow)">&#8592; reboot-instance</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="register-ecs-cluster.html" title="next chapter (use the right arrow)">register-ecs-cluster &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="register-ecs-cluster.html" title="register-ecs-cluster">next</a> |</li>
+        <li class="right">
+          <a href="reboot-instance.html" title="reboot-instance">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">opsworks</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/opsworks/register.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:22 GMT -->
+</html>

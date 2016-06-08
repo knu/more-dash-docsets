@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>import-image &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="ec2" href="index.html" />
+    <link rel="next" title="import-key-pair" href="import-key-pair.html" />
+    <link rel="prev" title="get-password-data" href="get-password-data.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="import-key-pair.html" title="import-key-pair" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="get-password-data.html" title="get-password-data" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">ec2</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-password-data.html" title="previous chapter (use the left arrow)">&#8592; get-password-data</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="import-key-pair.html" title="next chapter (use the right arrow)">import-key-pair &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">import-image</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ec2/import-image">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-ec2"><em>ec2</em></a> ]</p>
+<div class="section" id="import-image">
+<span id="cli-aws-ec2-import-image"></span><h1>import-image<a name="//apple_ref/cpp/Command/aws ec2 import-image" class="dashAnchor" id="aws ec2 import-image"></a><a class="headerlink" href="#import-image" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Import single or multi-volume disk images or EBS snapshots into an Amazon Machine Image (AMI).</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  import-image
+[--dry-run | --no-dry-run]
+[--description &lt;value&gt;]
+[--disk-containers &lt;value&gt;]
+[--license-type &lt;value&gt;]
+[--hypervisor &lt;value&gt;]
+[--architecture &lt;value&gt;]
+[--platform &lt;value&gt;]
+[--client-data &lt;value&gt;]
+[--client-token &lt;value&gt;]
+[--role-name &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><span class="pre">--no-dry-run</span></tt> (boolean)</p>
+<blockquote>
+<div>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt> . Otherwise, it is <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--description" class="dashAnchor" id="description"></a><span class="pre">--description</span></tt> (string)</p>
+<blockquote>
+<div>A description string for the import image task.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--disk-containers" class="dashAnchor" id="disk-containers"></a><span class="pre">--disk-containers</span></tt> (list)</p>
+<blockquote>
+<div>Information about the disk containers.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Description=string,Format=string,Url=string,UserBucket={S3Bucket=string,S3Key=string},DeviceName=string,SnapshotId=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    "Description": "string",
+    "Format": "string",
+    "Url": "string",
+    "UserBucket": {
+      "S3Bucket": "string",
+      "S3Key": "string"
+    },
+    "DeviceName": "string",
+    "SnapshotId": "string"
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--license-type" class="dashAnchor" id="license-type"></a><span class="pre">--license-type</span></tt> (string)</p>
+<blockquote>
+<div><p>The license type to be used for the Amazon Machine Image (AMI) after importing.</p>
+<p><strong>Note:</strong> You may only use BYOL if you have existing licenses with rights to use these licenses in a third party cloud like AWS. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">VM Import/Export Prerequisites</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
+<p>Valid values: <tt class="docutils literal"><span class="pre">AWS</span></tt> | <tt class="docutils literal"><span class="pre">BYOL</span></tt></p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--hypervisor" class="dashAnchor" id="hypervisor"></a><span class="pre">--hypervisor</span></tt> (string)</p>
+<blockquote>
+<div><p>The target hypervisor platform.</p>
+<p>Valid values: <tt class="docutils literal"><span class="pre">xen</span></tt></p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--architecture" class="dashAnchor" id="architecture"></a><span class="pre">--architecture</span></tt> (string)</p>
+<blockquote>
+<div><p>The architecture of the virtual machine.</p>
+<p>Valid values: <tt class="docutils literal"><span class="pre">i386</span></tt> | <tt class="docutils literal"><span class="pre">x86_64</span></tt></p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--platform" class="dashAnchor" id="platform"></a><span class="pre">--platform</span></tt> (string)</p>
+<blockquote>
+<div><p>The operating system of the virtual machine.</p>
+<p>Valid values: <tt class="docutils literal"><span class="pre">Windows</span></tt> | <tt class="docutils literal"><span class="pre">Linux</span></tt></p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--client-data" class="dashAnchor" id="client-data"></a><span class="pre">--client-data</span></tt> (structure)</p>
+<blockquote>
+<div>The client-specific data.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">UploadStart</span><span class="o">=</span><span class="n">timestamp</span><span class="p">,</span><span class="n">UploadEnd</span><span class="o">=</span><span class="n">timestamp</span><span class="p">,</span><span class="n">UploadSize</span><span class="o">=</span><span class="n">double</span><span class="p">,</span><span class="n">Comment</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"UploadStart"</span><span class="p">:</span> <span class="n">timestamp</span><span class="p">,</span>
+  <span class="s2">"UploadEnd"</span><span class="p">:</span> <span class="n">timestamp</span><span class="p">,</span>
+  <span class="s2">"UploadSize"</span><span class="p">:</span> <span class="n">double</span><span class="p">,</span>
+  <span class="s2">"Comment"</span><span class="p">:</span> <span class="s2">"string"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--client-token" class="dashAnchor" id="client-token"></a><span class="pre">--client-token</span></tt> (string)</p>
+<blockquote>
+<div>The token to enable idempotency for VM import requests.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--role-name" class="dashAnchor" id="role-name"></a><span class="pre">--role-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the role to use when not using the default role, 'vmimport'.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>ImportTaskId -&gt; (string)</p>
+<blockquote>
+<div>The task ID of the import image task.</div></blockquote>
+<p>Architecture -&gt; (string)</p>
+<blockquote>
+<div>The architecture of the virtual machine.</div></blockquote>
+<p>LicenseType -&gt; (string)</p>
+<blockquote>
+<div>The license type of the virtual machine.</div></blockquote>
+<p>Platform -&gt; (string)</p>
+<blockquote>
+<div>The operating system of the virtual machine.</div></blockquote>
+<p>Hypervisor -&gt; (string)</p>
+<blockquote>
+<div>The target hypervisor of the import task.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>A description of the import task.</div></blockquote>
+<p>SnapshotDetails -&gt; (list)</p>
+<blockquote>
+<div><p>Information about the snapshots.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the snapshot created from the imported disk.</p>
+<p>DiskImageSize -&gt; (double)</p>
+<blockquote>
+<div>The size of the disk in the snapshot, in GiB.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>A description for the snapshot.</div></blockquote>
+<p>Format -&gt; (string)</p>
+<blockquote>
+<div>The format of the disk image from which the snapshot is created.</div></blockquote>
+<p>Url -&gt; (string)</p>
+<blockquote>
+<div>The URL used to access the disk image.</div></blockquote>
+<p>UserBucket -&gt; (structure)</p>
+<blockquote>
+<div><p>The S3 bucket for the disk image.</p>
+<p>S3Bucket -&gt; (string)</p>
+<blockquote>
+<div>The S3 bucket from which the disk image was created.</div></blockquote>
+<p>S3Key -&gt; (string)</p>
+<blockquote>
+<div>The file name of the disk image.</div></blockquote>
+</div></blockquote>
+<p>DeviceName -&gt; (string)</p>
+<blockquote>
+<div>The block device mapping for the snapshot.</div></blockquote>
+<p>SnapshotId -&gt; (string)</p>
+<blockquote>
+<div>The snapshot ID of the disk being imported.</div></blockquote>
+<p>Progress -&gt; (string)</p>
+<blockquote>
+<div>The percentage of progress for the task.</div></blockquote>
+<p>StatusMessage -&gt; (string)</p>
+<blockquote>
+<div>A detailed status message for the snapshot creation.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>A brief status of the snapshot creation.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ImageId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the Amazon Machine Image (AMI) created by the import task.</div></blockquote>
+<p>Progress -&gt; (string)</p>
+<blockquote>
+<div>The progress of the task.</div></blockquote>
+<p>StatusMessage -&gt; (string)</p>
+<blockquote>
+<div>A detailed status message of the import task.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>A brief status of the task.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-password-data.html" title="previous chapter (use the left arrow)">&#8592; get-password-data</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="import-key-pair.html" title="next chapter (use the right arrow)">import-key-pair &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="import-key-pair.html" title="import-key-pair">next</a> |</li>
+        <li class="right">
+          <a href="get-password-data.html" title="get-password-data">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">ec2</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ds/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:24:59 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>ds &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="connect-directory" href="connect-directory.html" />
+    <link rel="prev" title="test-connection" href="../dms/test-connection.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="connect-directory.html" title="connect-directory" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="../dms/test-connection.html" title="test-connection" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../dms/test-connection.html" title="previous chapter (use the left arrow)">&#8592; test-connection</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="connect-directory.html" title="next chapter (use the right arrow)">connect-directory &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">ds</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ds/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="ds">
+<span id="cli-aws-ds"></span><h1>ds<a name="//apple_ref/cpp/Command/aws ds" class="dashAnchor" id="aws ds"></a><a class="headerlink" href="#ds" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>This is the <em>AWS Directory Service API Reference</em> . This guide provides detailed information about AWS Directory Service operations, data types, parameters, and errors.</p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a name="//apple_ref/cpp/Section/Available Commands" class="dashAnchor" id="Available Commands"></a><a class="headerlink" href="#available-commands" title="Permalink to this headline">&#182;</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/connect-directory" class="dashAnchor" id="connect-directory"></a><a class="reference internal" href="connect-directory.html">connect-directory</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-alias" class="dashAnchor" id="create-alias"></a><a class="reference internal" href="create-alias.html">create-alias</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-computer" class="dashAnchor" id="create-computer"></a><a class="reference internal" href="create-computer.html">create-computer</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-conditional-forwarder" class="dashAnchor" id="create-conditional-forwarder"></a><a class="reference internal" href="create-conditional-forwarder.html">create-conditional-forwarder</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-directory" class="dashAnchor" id="create-directory"></a><a class="reference internal" href="create-directory.html">create-directory</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-microsoft-ad" class="dashAnchor" id="create-microsoft-ad"></a><a class="reference internal" href="create-microsoft-ad.html">create-microsoft-ad</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-snapshot" class="dashAnchor" id="create-snapshot"></a><a class="reference internal" href="create-snapshot.html">create-snapshot</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-trust" class="dashAnchor" id="create-trust"></a><a class="reference internal" href="create-trust.html">create-trust</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-conditional-forwarder" class="dashAnchor" id="delete-conditional-forwarder"></a><a class="reference internal" href="delete-conditional-forwarder.html">delete-conditional-forwarder</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-directory" class="dashAnchor" id="delete-directory"></a><a class="reference internal" href="delete-directory.html">delete-directory</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-snapshot" class="dashAnchor" id="delete-snapshot"></a><a class="reference internal" href="delete-snapshot.html">delete-snapshot</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-trust" class="dashAnchor" id="delete-trust"></a><a class="reference internal" href="delete-trust.html">delete-trust</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/deregister-event-topic" class="dashAnchor" id="deregister-event-topic"></a><a class="reference internal" href="deregister-event-topic.html">deregister-event-topic</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-conditional-forwarders" class="dashAnchor" id="describe-conditional-forwarders"></a><a class="reference internal" href="describe-conditional-forwarders.html">describe-conditional-forwarders</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-directories" class="dashAnchor" id="describe-directories"></a><a class="reference internal" href="describe-directories.html">describe-directories</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-event-topics" class="dashAnchor" id="describe-event-topics"></a><a class="reference internal" href="describe-event-topics.html">describe-event-topics</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-snapshots" class="dashAnchor" id="describe-snapshots"></a><a class="reference internal" href="describe-snapshots.html">describe-snapshots</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-trusts" class="dashAnchor" id="describe-trusts"></a><a class="reference internal" href="describe-trusts.html">describe-trusts</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/disable-radius" class="dashAnchor" id="disable-radius"></a><a class="reference internal" href="disable-radius.html">disable-radius</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/disable-sso" class="dashAnchor" id="disable-sso"></a><a class="reference internal" href="disable-sso.html">disable-sso</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/enable-radius" class="dashAnchor" id="enable-radius"></a><a class="reference internal" href="enable-radius.html">enable-radius</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/enable-sso" class="dashAnchor" id="enable-sso"></a><a class="reference internal" href="enable-sso.html">enable-sso</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-directory-limits" class="dashAnchor" id="get-directory-limits"></a><a class="reference internal" href="get-directory-limits.html">get-directory-limits</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-snapshot-limits" class="dashAnchor" id="get-snapshot-limits"></a><a class="reference internal" href="get-snapshot-limits.html">get-snapshot-limits</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/register-event-topic" class="dashAnchor" id="register-event-topic"></a><a class="reference internal" href="register-event-topic.html">register-event-topic</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/restore-from-snapshot" class="dashAnchor" id="restore-from-snapshot"></a><a class="reference internal" href="restore-from-snapshot.html">restore-from-snapshot</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-conditional-forwarder" class="dashAnchor" id="update-conditional-forwarder"></a><a class="reference internal" href="update-conditional-forwarder.html">update-conditional-forwarder</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-radius" class="dashAnchor" id="update-radius"></a><a class="reference internal" href="update-radius.html">update-radius</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/verify-trust" class="dashAnchor" id="verify-trust"></a><a class="reference internal" href="verify-trust.html">verify-trust</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../dms/test-connection.html" title="previous chapter (use the left arrow)">&#8592; test-connection</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="connect-directory.html" title="next chapter (use the right arrow)">connect-directory &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="connect-directory.html" title="connect-directory">next</a> |</li>
+        <li class="right">
+          <a href="../dms/test-connection.html" title="test-connection">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ds/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:25:10 GMT -->
+</html>

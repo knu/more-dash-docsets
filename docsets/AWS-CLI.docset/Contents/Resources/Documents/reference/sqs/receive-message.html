@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/sqs/receive-message.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>receive-message &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>receive-message &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +25,10 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="sqs" href="index.html" />
     <link rel="next" title="remove-permission" href="remove-permission.html" />
-    <link rel="prev" title="list-queues" href="list-queues.html" />
+    <link rel="prev" title="purge-queue" href="purge-queue.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
   
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -60,8 +63,8 @@
         <li class="right">
           <a href="remove-permission.html" title="remove-permission" accesskey="N">next</a> |</li>
         <li class="right">
-          <a href="list-queues.html" title="list-queues" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="purge-queue.html" title="purge-queue" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">sqs</a> &#187;</li> 
       </ul>
@@ -71,7 +74,7 @@
     <div class="top-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="list-queues.html" title="previous chapter (use the left arrow)">&#8592; list-queues</a>
+          <a href="purge-queue.html" title="previous chapter (use the left arrow)">&#8592; purge-queue</a>
           <span class="divider">/</span>
           
         </li>
@@ -82,23 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">receive-message</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,54 +112,243 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/sqs/receive-message">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/sqs/receive-message">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>sqs</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-sqs"><em>sqs</em></a> ]</p>
 <div class="section" id="receive-message">
-<h1>receive-message<a class="headerlink" href="#receive-message" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-sqs-receive-message"></span><h1>receive-message<a name="//apple_ref/cpp/Command/aws sqs receive-message" class="dashAnchor" id="aws sqs receive-message"></a><a class="headerlink" href="#receive-message" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Retrieves one or more messages from the specified queue, including the message body and message ID of each message. Messages returned by this action stay in the queue until you delete them. However, once a message is returned to a <tt class="docutils literal"><span class="pre">receive-message</span></tt>  request, it is not returned on subsequent <tt class="docutils literal"><span class="pre">receive-message</span></tt>  requests for the duration of the <tt class="docutils literal"><span class="pre">--visibility-timeout</span></tt>  . If you do not specify a <tt class="docutils literal"><span class="pre">--visibility-timeout</span></tt>  in the request, the overall visibility timeout for the queue is used for the returned messages.</p>
-<p>If a message is available in the queue, the call will return immediately. Otherwise, it will wait up to <tt class="docutils literal"><span class="pre">--wait-time-seconds</span></tt>  for a message to arrive. If you do not specify <tt class="docutils literal"><span class="pre">--wait-time-seconds</span></tt>  in the request, the queue attribute ReceiveMessageWaitTimeSeconds is used to determine how long to wait.</p>
-<p>You could ask for additional information about each message through the attributes. Attributes that can be requested are <tt class="docutils literal"><span class="pre">[SenderId,</span> <span class="pre">ApproximateFirstReceiveTimestamp,</span> <span class="pre">ApproximateReceiveCount,</span> <span class="pre">SentTimestamp]</span></tt>  .</p>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Retrieves one or more messages, with a maximum limit of 10 messages, from the specified queue. Long poll support is enabled by using the <tt class="docutils literal"><span class="pre">WaitTimeSeconds</span></tt> parameter. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">Amazon SQS Long Poll</a> in the <em>Amazon SQS Developer Guide</em> .</p>
+<p>Short poll is the default behavior where a weighted random set of machines is sampled on a <tt class="docutils literal"><span class="pre">receive-message</span></tt> call. This means only the messages on the sampled machines are returned. If the number of messages in the queue is small (less than 1000), it is likely you will get fewer messages than you requested per <tt class="docutils literal"><span class="pre">receive-message</span></tt> call. If the number of messages in the queue is extremely small, you might not receive any messages in a particular <tt class="docutils literal"><span class="pre">receive-message</span></tt> response; in which case you should repeat the request.</p>
+<p>For each message returned, the response includes the following:</p>
+<ul class="simple">
+<li>Message body</li>
+<li>MD5 digest of the message body. For information about MD5, go to <a class="reference external" href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a> .</li>
+<li>Message ID you received when you sent the message to the queue.</li>
+<li>Receipt handle.</li>
+<li>Message attributes.</li>
+<li>MD5 digest of the message attributes.</li>
+</ul>
+<p>The receipt handle is the identifier you must provide when deleting the message. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue and Message Identifiers</a> in the <em>Amazon SQS Developer Guide</em> .</p>
+<p>You can provide the <tt class="docutils literal"><span class="pre">VisibilityTimeout</span></tt> parameter in your request, which will be applied to the messages that Amazon SQS returns in the response. If you do not include the parameter, the overall visibility timeout for the queue is used for the returned messages. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility Timeout</a> in the <em>Amazon SQS Developer Guide</em> .</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Going forward, new attributes might be added. If you are writing code that calls this action, we recommend that you structure your code so that it can handle new attributes gracefully.</p>
+</div>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  receive-message
 --queue-url &lt;value&gt;
 [--attribute-names &lt;value&gt;]
+[--message-attribute-names &lt;value&gt;]
 [--max-number-of-messages &lt;value&gt;]
 [--visibility-timeout &lt;value&gt;]
-[--wait-time-seconds &lt;value&gt;]</pre>
+[--wait-time-seconds &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--queue-url" class="dashAnchor" id="queue-url"></a><span class="pre">--queue-url</span></tt> (string)</p>
 <blockquote>
-<div>The URL of the SQS queue to take action on.</div></blockquote>
+<div><p>The URL of the Amazon SQS queue to take action on.</p>
+<p>Queue URLs are case-sensitive.</p>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--attribute-names" class="dashAnchor" id="attribute-names"></a><span class="pre">--attribute-names</span></tt> (list)</p>
 <blockquote>
-<div>A list of attributes that need to be returned along with each message. The set of valid attributes are [SenderId, ApproximateFirstReceiveTimestamp, ApproximateReceiveCount, SentTimestamp].</div></blockquote>
+<div><p>A list of attributes that need to be returned along with each message. These attributes include:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">All</span></tt> - returns all values.</li>
+<li><tt class="docutils literal"><span class="pre">ApproximateFirstReceiveTimestamp</span></tt> - returns the time when the message was first received from the queue (epoch time in milliseconds).</li>
+<li><tt class="docutils literal"><span class="pre">ApproximateReceiveCount</span></tt> - returns the number of times a message has been received from the queue but not deleted.</li>
+<li><tt class="docutils literal"><span class="pre">SenderId</span></tt> - returns the AWS account number (or the IP address, if anonymous access is allowed) of the sender.</li>
+<li><tt class="docutils literal"><span class="pre">SentTimestamp</span></tt> - returns the time when the message was sent to the queue (epoch time in milliseconds).</li>
+</ul>
+<p>Any other valid special request parameters that are specified (such as <tt class="docutils literal"><span class="pre">ApproximateNumberOfMessages</span></tt> , <tt class="docutils literal"><span class="pre">ApproximateNumberOfMessagesDelayed</span></tt> , <tt class="docutils literal"><span class="pre">ApproximateNumberOfMessagesNotVisible</span></tt> , <tt class="docutils literal"><span class="pre">CreatedTimestamp</span></tt> , <tt class="docutils literal"><span class="pre">DelaySeconds</span></tt> , <tt class="docutils literal"><span class="pre">LastModifiedTimestamp</span></tt> , <tt class="docutils literal"><span class="pre">MaximumMessageSize</span></tt> , <tt class="docutils literal"><span class="pre">MessageRetentionPeriod</span></tt> , <tt class="docutils literal"><span class="pre">Policy</span></tt> , <tt class="docutils literal"><span class="pre">QueueArn</span></tt> , <tt class="docutils literal"><span class="pre">ReceiveMessageWaitTimeSeconds</span></tt> , <tt class="docutils literal"><span class="pre">RedrivePolicy</span></tt> , and <tt class="docutils literal"><span class="pre">VisibilityTimeout</span></tt> ) will be ignored.</p>
+</div></blockquote>
 <p>Syntax:</p>
-<div class="highlight-python"><pre>"Policy"|"VisibilityTimeout"|"MaximumMessageSize"|"MessageRetentionPeriod"|"ApproximateNumberOfMessages"|"ApproximateNumberOfMessagesNotVisible"|"CreatedTimestamp"|"LastModifiedTimestamp"|"QueueArn"|"ApproximateNumberOfMessagesDelayed"|"DelaySeconds"|"ReceiveMessageWaitTimeSeconds" "Policy"|"VisibilityTimeout"|"MaximumMessageSize"|"MessageRetentionPeriod"|"ApproximateNumberOfMessages"|"ApproximateNumberOfMessagesNotVisible"|"CreatedTimestamp"|"LastModifiedTimestamp"|"QueueArn"|"ApproximateNumberOfMessagesDelayed"|"DelaySeconds"|"ReceiveMessageWaitTimeSeconds" ...</pre>
+<div class="highlight-python"><pre>"string" "string" ...
+
+Where valid values are:
+  Policy
+  VisibilityTimeout
+  MaximumMessageSize
+  MessageRetentionPeriod
+  ApproximateNumberOfMessages
+  ApproximateNumberOfMessagesNotVisible
+  CreatedTimestamp
+  LastModifiedTimestamp
+  QueueArn
+  ApproximateNumberOfMessagesDelayed
+  DelaySeconds
+  ReceiveMessageWaitTimeSeconds
+  RedrivePolicy</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--message-attribute-names" class="dashAnchor" id="message-attribute-names"></a><span class="pre">--message-attribute-names</span></tt> (list)</p>
+<blockquote>
+<div><p>The name of the message attribute, where <em>N</em> is the index. The message attribute name can contain the following characters: A-Z, a-z, 0-9, underscore (_), hyphen (-), and period (.). The name must not start or end with a period, and it should not have successive periods. The name is case sensitive and must be unique among all attribute names for the message. The name can be up to 256 characters long. The name cannot start with "AWS." or "Amazon." (or any variations in casing), because these prefixes are reserved for use by Amazon Web Services.</p>
+<p>When using <tt class="docutils literal"><span class="pre">receive-message</span></tt> , you can send a list of attribute names to receive, or you can return all of the attributes by specifying "All" or ".*" in your request. You can also use "bar.*" to return all message attributes starting with the "bar" prefix.</p>
+</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-number-of-messages" class="dashAnchor" id="max-number-of-messages"></a><span class="pre">--max-number-of-messages</span></tt> (integer)</p>
 <blockquote>
-<div><p>The maximum number of messages to return. Amazon SQS never returns more messages than this value but may return fewer.</p>
+<div><p>The maximum number of messages to return. Amazon SQS never returns more messages than this value but may return fewer. Values can be from 1 to 10. Default is 1.</p>
 <p>All of the messages are not necessarily returned.</p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--visibility-timeout" class="dashAnchor" id="visibility-timeout"></a><span class="pre">--visibility-timeout</span></tt> (integer)</p>
 <blockquote>
-<div>The duration (in seconds) that the received messages are hidden from subsequent retrieve requests after being retrieved by a <tt class="docutils literal"><span class="pre">receive-message</span></tt>  request.</div></blockquote>
+<div>The duration (in seconds) that the received messages are hidden from subsequent retrieve requests after being retrieved by a <tt class="docutils literal"><span class="pre">receive-message</span></tt> request.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--wait-time-seconds" class="dashAnchor" id="wait-time-seconds"></a><span class="pre">--wait-time-seconds</span></tt> (integer)</p>
 <blockquote>
 <div>The duration (in seconds) for which the call will wait for a message to arrive in the queue before returning. If a message is available, the call will return sooner than WaitTimeSeconds.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To receive a message</strong></p>
+<p>This example receives up to 10 available messages, returning all available attributes.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws sqs receive-message --queue-url https://sqs.us-east-1.amazonaws.com/80398EXAMPLE/MyQueue --attribute-names All --message-attribute-names All --max-number-of-messages 10</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"Messages"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"Body"</span><span class="p">:</span> <span class="s2">"My first message."</span><span class="p">,</span>
+      <span class="s2">"ReceiptHandle"</span><span class="p">:</span> <span class="s2">"AQEBzbVv...fqNzFw=="</span><span class="p">,</span>
+      <span class="s2">"MD5OfBody"</span><span class="p">:</span> <span class="s2">"1000f835...a35411fa"</span><span class="p">,</span>
+      <span class="s2">"MD5OfMessageAttributes"</span><span class="p">:</span> <span class="s2">"9424c491...26bc3ae7"</span><span class="p">,</span>
+      <span class="s2">"MessageId"</span><span class="p">:</span> <span class="s2">"d6790f8d-d575-4f01-bc51-40122EXAMPLE"</span><span class="p">,</span>
+      <span class="s2">"Attributes"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"ApproximateFirstReceiveTimestamp"</span><span class="p">:</span> <span class="s2">"1442428276921"</span><span class="p">,</span>
+        <span class="s2">"SenderId"</span><span class="p">:</span> <span class="s2">"AIDAIAZKMSNQ7TEXAMPLE"</span><span class="p">,</span>
+        <span class="s2">"ApproximateReceiveCount"</span><span class="p">:</span> <span class="s2">"5"</span><span class="p">,</span>
+        <span class="s2">"SentTimestamp"</span><span class="p">:</span> <span class="s2">"1442428276921"</span>
+      <span class="p">},</span>
+      <span class="s2">"MessageAttributes"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"PostalCode"</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">"DataType"</span><span class="p">:</span> <span class="s2">"String"</span><span class="p">,</span>
+          <span class="s2">"StringValue"</span><span class="p">:</span> <span class="s2">"ABC123"</span>
+        <span class="p">},</span>
+        <span class="s2">"City"</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">"DataType"</span><span class="p">:</span> <span class="s2">"String"</span><span class="p">,</span>
+          <span class="s2">"StringValue"</span><span class="p">:</span> <span class="s2">"Any City"</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This example receives the next available message, returning only the SenderId and SentTimestamp attributes as well as the PostalCode message attribute.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws sqs receive-message --queue-url https://sqs.us-east-1.amazonaws.com/80398EXAMPLE/MyQueue --attribute-names SenderId SentTimestamp --message-attribute-names PostalCode</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"Messages"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"Body"</span><span class="p">:</span> <span class="s2">"My first message."</span><span class="p">,</span>
+      <span class="s2">"ReceiptHandle"</span><span class="p">:</span> <span class="s2">"AQEB6nR4...HzlvZQ=="</span><span class="p">,</span>
+      <span class="s2">"MD5OfBody"</span><span class="p">:</span> <span class="s2">"1000f835...a35411fa"</span><span class="p">,</span>
+      <span class="s2">"MD5OfMessageAttributes"</span><span class="p">:</span> <span class="s2">"b8e89563...e088e74f"</span><span class="p">,</span>
+      <span class="s2">"MessageId"</span><span class="p">:</span> <span class="s2">"d6790f8d-d575-4f01-bc51-40122EXAMPLE"</span><span class="p">,</span>
+      <span class="s2">"Attributes"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"SenderId"</span><span class="p">:</span> <span class="s2">"AIDAIAZKMSNQ7TEXAMPLE"</span><span class="p">,</span>
+        <span class="s2">"SentTimestamp"</span><span class="p">:</span> <span class="s2">"1442428276921"</span>
+      <span class="p">},</span>
+      <span class="s2">"MessageAttributes"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"PostalCode"</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">"DataType"</span><span class="p">:</span> <span class="s2">"String"</span><span class="p">,</span>
+          <span class="s2">"StringValue"</span><span class="p">:</span> <span class="s2">"ABC123"</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Messages -&gt; (list)</p>
+<blockquote>
+<div><p>A list of messages.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>An Amazon SQS message.</p>
+<p>MessageId -&gt; (string)</p>
+<blockquote>
+<div>A unique identifier for the message. Message IDs are considered unique across all AWS accounts for an extended period of time.</div></blockquote>
+<p>ReceiptHandle -&gt; (string)</p>
+<blockquote>
+<div>An identifier associated with the act of receiving the message. A new receipt handle is returned every time you receive a message. When deleting a message, you provide the last received receipt handle to delete the message.</div></blockquote>
+<p>MD5OfBody -&gt; (string)</p>
+<blockquote>
+<div>An MD5 digest of the non-URL-encoded message body string.</div></blockquote>
+<p>Body -&gt; (string)</p>
+<blockquote>
+<div>The message's contents (not URL-encoded).</div></blockquote>
+<p>Attributes -&gt; (map)</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">SenderId</span></tt> , <tt class="docutils literal"><span class="pre">SentTimestamp</span></tt> , <tt class="docutils literal"><span class="pre">ApproximateReceiveCount</span></tt> , and/or <tt class="docutils literal"><span class="pre">ApproximateFirstReceiveTimestamp</span></tt> . <tt class="docutils literal"><span class="pre">SentTimestamp</span></tt> and <tt class="docutils literal"><span class="pre">ApproximateFirstReceiveTimestamp</span></tt> are each returned as an integer representing the <a class="reference external" href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds.</p>
+<p>Name -&gt; (string)</p>
+<p>Value -&gt; (string)</p>
+</div></blockquote>
+<p>MD5OfMessageAttributes -&gt; (string)</p>
+<blockquote>
+<div>An MD5 digest of the non-URL-encoded message attribute string. This can be used to verify that Amazon SQS received the message correctly. Amazon SQS first URL decodes the message before creating the MD5 digest. For information about MD5, go to <a class="reference external" href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a> .</div></blockquote>
+<p>MessageAttributes -&gt; (map)</p>
+<blockquote>
+<div><p>Each message attribute consists of a Name, Type, and Value. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message Attribute Items</a> .</p>
+<p>Name -&gt; (string)</p>
+<p>Value -&gt; (structure)</p>
+<blockquote>
+<div><p>The user-specified message attribute value. For string data types, the value attribute has the same restrictions on the content as the message body. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html">send-message</a> .</p>
+<p>Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes).</p>
+<p>StringValue -&gt; (string)</p>
+<blockquote>
+<div>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a class="reference external" href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a> .</div></blockquote>
+<p>BinaryValue -&gt; (blob)</p>
+<blockquote>
+<div>Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.</div></blockquote>
+<p>StringListValues -&gt; (list)</p>
+<blockquote>
+<div><p>Not implemented. Reserved for future use.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>BinaryListValues -&gt; (list)</p>
+<blockquote>
+<div><p>Not implemented. Reserved for future use.</p>
+<p>(blob)</p>
+</div></blockquote>
+<p>DataType -&gt; (string)</p>
+<blockquote>
+<div><p>Amazon SQS supports the following logical data types: String, Number, and Binary. For the Number data type, you must use StringValue.</p>
+<p>You can also append custom labels. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message Attribute Data Types</a> .</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
 </div>
 </div>
 
@@ -166,7 +360,7 @@
     <div class="footer-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="list-queues.html" title="previous chapter (use the left arrow)">&#8592; list-queues</a>
+          <a href="purge-queue.html" title="previous chapter (use the left arrow)">&#8592; purge-queue</a>
           <span class="divider">/</span>
           
         </li>
@@ -176,6 +370,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -184,36 +387,22 @@
         <li class="right">
           <a href="remove-permission.html" title="remove-permission">next</a> |</li>
         <li class="right">
-          <a href="list-queues.html" title="list-queues">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="purge-queue.html" title="purge-queue">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">sqs</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'list-queues.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'remove-permission.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/sqs/receive-message.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
 </html>

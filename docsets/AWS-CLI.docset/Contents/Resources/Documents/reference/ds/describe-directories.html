@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ds/describe-directories.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:01 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-directories &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="ds" href="index.html" />
+    <link rel="next" title="describe-event-topics" href="describe-event-topics.html" />
+    <link rel="prev" title="describe-conditional-forwarders" href="describe-conditional-forwarders.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="describe-event-topics.html" title="describe-event-topics" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="describe-conditional-forwarders.html" title="describe-conditional-forwarders" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">ds</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="describe-conditional-forwarders.html" title="previous chapter (use the left arrow)">&#8592; describe-conditional-forwarders</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="describe-event-topics.html" title="next chapter (use the right arrow)">describe-event-topics &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-directories</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ds/describe-directories">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-ds"><em>ds</em></a> ]</p>
+<div class="section" id="describe-directories">
+<span id="cli-aws-ds-describe-directories"></span><h1>describe-directories<a name="//apple_ref/cpp/Command/aws ds describe-directories" class="dashAnchor" id="aws ds describe-directories"></a><a class="headerlink" href="#describe-directories" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Obtains information about the directories that belong to this account.</p>
+<p>You can retrieve information about specific directories by passing the directory identifiers in the <em>directory-ids</em> parameter. Otherwise, all directories that belong to the current account are returned.</p>
+<p>This operation supports pagination with the use of the <em>next-token</em> request and response parameters. If more results are available, the <em>DescribeDirectoriesResult.NextToken</em> member contains a token that you pass in the next call to  describe-directories to retrieve the next set of items.</p>
+<p>You can also specify a maximum number of return results with the <em>limit</em> parameter.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  describe-directories
+[--directory-ids &lt;value&gt;]
+[--next-token &lt;value&gt;]
+[--limit &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--directory-ids" class="dashAnchor" id="directory-ids"></a><span class="pre">--directory-ids</span></tt> (list)</p>
+<blockquote>
+<div><p>A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned.</p>
+<p>An empty list results in an <tt class="docutils literal"><span class="pre">InvalidParameterException</span></tt> being thrown.</p>
+</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>"string" "string" ...</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--next-token" class="dashAnchor" id="next-token"></a><span class="pre">--next-token</span></tt> (string)</p>
+<blockquote>
+<div>The <em>DescribeDirectoriesResult.NextToken</em> value from a previous call to  describe-directories . Pass null if this is the first call.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--limit" class="dashAnchor" id="limit"></a><span class="pre">--limit</span></tt> (integer)</p>
+<blockquote>
+<div>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>DirectoryDescriptions -&gt; (list)</p>
+<blockquote>
+<div><p>The list of  DirectoryDescription objects that were retrieved.</p>
+<p>It is possible that this list contains less than the number of items specified in the <em>limit</em> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Contains information about an AWS Directory Service directory.</p>
+<p>DirectoryId -&gt; (string)</p>
+<blockquote>
+<div>The directory identifier.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The fully-qualified name of the directory.</div></blockquote>
+<p>ShortName -&gt; (string)</p>
+<blockquote>
+<div>The short name of the directory.</div></blockquote>
+<p>Size -&gt; (string)</p>
+<blockquote>
+<div>The directory size.</div></blockquote>
+<p>Alias -&gt; (string)</p>
+<blockquote>
+<div>The alias for the directory. If no alias has been created for the directory, the alias is the directory identifier, such as <tt class="docutils literal"><span class="pre">d-XXXXXXXXXX</span></tt> .</div></blockquote>
+<p>AccessUrl -&gt; (string)</p>
+<blockquote>
+<div>The access URL for the directory, such as <tt class="docutils literal"><span class="pre">http://alias.awsapps.com</span></tt> . If no alias has been created for the directory, <tt class="docutils literal"><span class="pre">alias</span></tt> is the directory identifier, such as <tt class="docutils literal"><span class="pre">d-XXXXXXXXXX</span></tt> .</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>The textual description for the directory.</div></blockquote>
+<p>DnsIpAddrs -&gt; (list)</p>
+<blockquote>
+<div><p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IP addresses of the DNS servers or domain controllers in the on-premises directory to which the AD Connector is connected.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>Stage -&gt; (string)</p>
+<blockquote>
+<div>The current stage of the directory.</div></blockquote>
+<p>LaunchTime -&gt; (timestamp)</p>
+<blockquote>
+<div>Specifies when the directory was created.</div></blockquote>
+<p>StageLastUpdatedDateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time that the stage was last updated.</div></blockquote>
+<p>Type -&gt; (string)</p>
+<blockquote>
+<div>The directory size.</div></blockquote>
+<p>VpcSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>A  DirectoryVpcSettingsDescription object that contains additional information about a directory. This member is only present if the directory is a Simple AD or Managed AD directory.</p>
+<p>VpcId -&gt; (string)</p>
+<blockquote>
+<div>The identifier of the VPC that the directory is in.</div></blockquote>
+<p>SubnetIds -&gt; (list)</p>
+<blockquote>
+<div><p>The identifiers of the subnets for the directory servers.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>SecurityGroupId -&gt; (string)</p>
+<blockquote>
+<div>The security group identifier for the directory. If the directory was created before 8/1/2014, this is the identifier of the directory members security group that was created when the directory was created. If the directory was created after this date, this value is null.</div></blockquote>
+<p>AvailabilityZones -&gt; (list)</p>
+<blockquote>
+<div><p>The list of Availability Zones that the directory is in.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+<p>ConnectSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>A  DirectoryConnectSettingsDescription object that contains additional information about an AD Connector directory. This member is only present if the directory is an AD Connector directory.</p>
+<p>VpcId -&gt; (string)</p>
+<blockquote>
+<div>The identifier of the VPC that the AD Connector is in.</div></blockquote>
+<p>SubnetIds -&gt; (list)</p>
+<blockquote>
+<div><p>A list of subnet identifiers in the VPC that the AD connector is in.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>CustomerUserName -&gt; (string)</p>
+<blockquote>
+<div>The username of the service account in the on-premises directory.</div></blockquote>
+<p>SecurityGroupId -&gt; (string)</p>
+<blockquote>
+<div>The security group identifier for the AD Connector directory.</div></blockquote>
+<p>AvailabilityZones -&gt; (list)</p>
+<blockquote>
+<div><p>A list of the Availability Zones that the directory is in.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>ConnectIps -&gt; (list)</p>
+<blockquote>
+<div><p>The IP addresses of the AD Connector servers.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+<p>RadiusSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>A  RadiusSettings object that contains information about the RADIUS server configured for this directory.</p>
+<p>RadiusServers -&gt; (list)</p>
+<blockquote>
+<div><p>An array of strings that contains the IP addresses of the RADIUS server endpoints, or the IP addresses of your RADIUS server load balancer.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>RadiusPort -&gt; (integer)</p>
+<blockquote>
+<div>The port that your RADIUS server is using for communications. Your on-premises network must allow inbound traffic over this port from the AWS Directory Service servers.</div></blockquote>
+<p>RadiusTimeout -&gt; (integer)</p>
+<blockquote>
+<div>The amount of time, in seconds, to wait for the RADIUS server to respond.</div></blockquote>
+<p>RadiusRetries -&gt; (integer)</p>
+<blockquote>
+<div>The maximum number of times that communication with the RADIUS server is attempted.</div></blockquote>
+<p>SharedSecret -&gt; (string)</p>
+<blockquote>
+<div>The shared secret code that was specified when your RADIUS endpoints were created.</div></blockquote>
+<p>AuthenticationProtocol -&gt; (string)</p>
+<blockquote>
+<div>The protocol specified for your RADIUS endpoints.</div></blockquote>
+<p>DisplayLabel -&gt; (string)</p>
+<blockquote>
+<div>Not currently used.</div></blockquote>
+<p>UseSameUsername -&gt; (boolean)</p>
+<blockquote>
+<div>Not currently used.</div></blockquote>
+</div></blockquote>
+<p>RadiusStatus -&gt; (string)</p>
+<blockquote>
+<div>The status of the RADIUS MFA server connection.</div></blockquote>
+<p>StageReason -&gt; (string)</p>
+<blockquote>
+<div>Additional information about the directory stage.</div></blockquote>
+<p>SsoEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates if single-sign on is enabled for the directory. For more information, see  enable-sso and  disable-sso .</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>If not null, more results are available. Pass this value for the <em>next-token</em> parameter in a subsequent call to  describe-directories to retrieve the next set of items.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="describe-conditional-forwarders.html" title="previous chapter (use the left arrow)">&#8592; describe-conditional-forwarders</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="describe-event-topics.html" title="next chapter (use the right arrow)">describe-event-topics &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="describe-event-topics.html" title="describe-event-topics">next</a> |</li>
+        <li class="right">
+          <a href="describe-conditional-forwarders.html" title="describe-conditional-forwarders">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">ds</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ds/describe-directories.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:01 GMT -->
+</html>

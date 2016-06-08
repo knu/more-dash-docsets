@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/run-instances.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>run-instances &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>run-instances &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,9 +25,9 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="ec2" href="index.html" />
-    <link rel="next" title="start-instances" href="start-instances.html" />
+    <link rel="next" title="run-scheduled-instances" href="run-scheduled-instances.html" />
     <link rel="prev" title="revoke-security-group-ingress" href="revoke-security-group-ingress.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -58,10 +61,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
         <li class="right">
-          <a href="start-instances.html" title="start-instances" accesskey="N">next</a> |</li>
+          <a href="run-scheduled-instances.html" title="run-scheduled-instances" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="revoke-security-group-ingress.html" title="revoke-security-group-ingress" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">ec2</a> &#187;</li> 
       </ul>
@@ -75,31 +78,32 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="start-instances.html" title="next chapter (use the right arrow)">start-instances &#8594;</a></li>
+          <li><a href="run-scheduled-instances.html" title="next chapter (use the right arrow)">run-scheduled-instances &#8594;</a></li>
       </ul>
     </div>
   
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">run-instances</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
 <li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -108,40 +112,38 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/ec2/run-instances">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ec2/run-instances">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>ec2</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-ec2"><em>ec2</em></a> ]</p>
 <div class="section" id="run-instances">
-<h1>run-instances<a class="headerlink" href="#run-instances" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-ec2-run-instances"></span><h1>run-instances<a name="//apple_ref/cpp/Command/aws ec2 run-instances" class="dashAnchor" id="aws ec2 run-instances"></a><a class="headerlink" href="#run-instances" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>The run-instances operation launches a specified number of instances.</p>
-<p>If Amazon EC2 cannot launch the minimum number AMIs you request, no instances launch. If there is insufficient capacity to launch the maximum number of AMIs you request, Amazon EC2 launches as many as possible to satisfy the requested maximum values.</p>
-<p>Every instance is launched in a security group. If you do not specify a security group at launch, the instances start in your default security group. For more information on creating security groups, see CreateSecurityGroup.</p>
-<p>An optional instance type can be specified. For information about instance types, see Instance Types.</p>
-<p>You can provide an optional key pair ID for each image in the launch request (for more information, see CreateKeyPair). All instances that are created from images that use this key pair will have access to the associated public key at boot. You can use this key to provide secure access to an instance of an image on a per-instance basis. Amazon EC2 public images use this feature to provide secure access without passwords.</p>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p>Launching public images without a key pair ID will leave them inaccessible.</p>
-<p>The public key material is made available to the instance at boot time by placing it in the <tt class="docutils literal"><span class="pre">openssh_id.pub</span></tt>  file on a logical device that is exposed to the instance as <tt class="docutils literal"><span class="pre">/dev/sda2</span></tt>  (the ephemeral store). The format of this file is suitable for use as an entry within <tt class="docutils literal"><span class="pre">~/.ssh/authorized_keys</span></tt>  (the OpenSSH format). This can be done at boot (e.g., as part of <tt class="docutils literal"><span class="pre">rc.local</span></tt>  ) allowing for secure access without passwords.</p>
-<p class="last">Optional user data can be provided in the launch request. All instances that collectively comprise the launch request have access to this data For more information, see Instance Metadata.</p>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If any of the AMIs have a product code attached for which the user has not subscribed, the run-instances call will fail.</p>
-</div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">We strongly recommend using the 2.6.18 Xen stock kernel with the <tt class="docutils literal"><span class="pre">c1.medium</span></tt>  and <tt class="docutils literal"><span class="pre">c1.xlarge</span></tt>  instances. Although the default Amazon EC2 kernels will work, the new kernels provide greater stability and performance for these instance types. For more information about kernels, see Kernels, RAM Disks, and Block Device Mappings.</p>
-</div>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Launches the specified number of instances using an AMI for which you have permissions.</p>
+<p>When you launch an instance, it enters the <tt class="docutils literal"><span class="pre">pending</span></tt> state. After the instance is ready for you, it enters the <tt class="docutils literal"><span class="pre">running</span></tt> state. To check the state of your instance, call  describe-instances .</p>
+<p>To ensure faster instance launches, break up large requests into smaller batches. For example, create five separate launch requests for 100 instances each instead of one launch request for 500 instances.</p>
+<p>To tag your instance, ensure that it is <tt class="docutils literal"><span class="pre">running</span></tt> as  create-tags requires a resource ID. For more information about tagging, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a> .</p>
+<p>If you don't specify a security group when launching an instance, Amazon EC2 uses the default security group. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security Groups</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
+<p>[EC2-VPC only accounts] If you don't specify a subnet in the request, we choose a default subnet from your default VPC for you.</p>
+<p>[EC2-Classic accounts] If you're launching into EC2-Classic and you don't specify an Availability Zone, we choose one for you.</p>
+<p>Linux instances have access to the public key of the key pair at boot. You can use this key to provide secure access to the instance. Amazon EC2 public images use this feature to provide secure access without passwords. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key Pairs</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
+<p>You can provide optional user data when launching an instance. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
+<p>If any of the AMIs have a product code attached for which the user has not subscribed, <tt class="docutils literal"><span class="pre">run-instances</span></tt> fails.</p>
+<p>Some instance types can only be launched into a VPC. If you do not have a default VPC, or if you do not specify a subnet ID in the request, <tt class="docutils literal"><span class="pre">run-instances</span></tt> fails. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance Types Available Only in a VPC</a> .</p>
+<p>For more information about troubleshooting, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What To Do If An Instance Immediately Terminates</a> , and <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting Connecting to Your Instance</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  run-instances
 [--dry-run | --no-dry-run]
 --image-id &lt;value&gt;
@@ -158,7 +160,6 @@
 [--subnet-id &lt;value&gt;]
 [--disable-api-termination | --enable-api-termination]
 [--instance-initiated-shutdown-behavior &lt;value&gt;]
-[--license &lt;value&gt;]
 [--private-ip-address &lt;value&gt;]
 [--client-token &lt;value&gt;]
 [--additional-info &lt;value&gt;]
@@ -166,59 +167,154 @@
 [--iam-instance-profile &lt;value&gt;]
 [--ebs-optimized | --no-ebs-optimized]
 [--count &lt;value&gt;]
---secondary-private-ip-addresses &lt;value&gt;
---secondary-private-ip-address-count &lt;value&gt;</pre>
+[--secondary-private-ip-addresses &lt;value&gt;]
+[--secondary-private-ip-address-count &lt;value&gt;]
+[--associate-public-ip-address | --no-associate-public-ip-address]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--no-dry-run" class="dashAnchor" id="no-dry-run"></a><span class="pre">--no-dry-run</span></tt> (boolean)</p>
-<p>Checks whether you have the required permissions for the action, without actually making the request. Using this option will result in one of two possible errorresponses. If you have the required permissions, the error response will be <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt>  . Otherwise it will be <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt>  .</p>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><span class="pre">--no-dry-run</span></tt> (boolean)</p>
+<blockquote>
+<div>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt> . Otherwise, it is <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt> .</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--image-id" class="dashAnchor" id="image-id"></a><span class="pre">--image-id</span></tt> (string)</p>
 <blockquote>
-<div>Unique ID of a machine image, returned by a call to DescribeImages.</div></blockquote>
+<div>The ID of the AMI, which you can get by calling  describe-images .</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--key-name" class="dashAnchor" id="key-name"></a><span class="pre">--key-name</span></tt> (string)</p>
 <blockquote>
-<div>The name of the key pair.</div></blockquote>
+<div><p>The name of the key pair. You can create a key pair using  create-key-pair or  import-key-pair .</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If you do not specify a key pair, you can't connect to the instance unless you choose an AMI that is configured to allow users another way to log in.</p>
+</div>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--security-groups" class="dashAnchor" id="security-groups"></a><span class="pre">--security-groups</span></tt> (list)</p>
 <blockquote>
-<div>The names of the security groups into which the instances will be launched.</div></blockquote>
+<div><p>[EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use security group IDs instead.</p>
+<p>Default: Amazon EC2 uses the default security group.</p>
+</div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--security-group-ids" class="dashAnchor" id="security-group-ids"></a><span class="pre">--security-group-ids</span></tt> (list)</p>
+<blockquote>
+<div><p>One or more security group IDs. You can create a security group using  create-security-group .</p>
+<p>Default: Amazon EC2 uses the default security group.</p>
+</div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--user-data" class="dashAnchor" id="user-data"></a><span class="pre">--user-data</span></tt> (blob)</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--user-data" class="dashAnchor" id="user-data"></a><span class="pre">--user-data</span></tt> (string)</p>
 <blockquote>
-<div>Specifies additional information to make available to the instance(s). This parameter must be passed as a Base64-encoded string.</div></blockquote>
+<div>Data to configure the instance, or a script to run during instance launch. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance at Launch</a> (Linux) and <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding User Data</a> (Windows). For API calls, the text must be base64-encoded. For command line tools, the encoding is performed for you, and you can load the text from a file.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--instance-type" class="dashAnchor" id="instance-type"></a><span class="pre">--instance-type</span></tt> (string)</p>
 <blockquote>
-<div>Specifies the instance type for the launched instances.</div></blockquote>
+<div><p>The instance type. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
+<p>Default: <tt class="docutils literal"><span class="pre">m1.small</span></tt></p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">t1.micro</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">m1.small</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">m1.medium</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">m1.large</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">m1.xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">m3.medium</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">m3.large</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">m3.xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">m3.2xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">m4.large</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">m4.xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">m4.2xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">m4.4xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">m4.10xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">t2.nano</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">t2.micro</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">t2.small</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">t2.medium</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">t2.large</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">m2.xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">m2.2xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">m2.4xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">cr1.8xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">x1.4xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">x1.8xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">x1.16xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">x1.32xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">i2.xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">i2.2xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">i2.4xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">i2.8xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">hi1.4xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">hs1.8xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">c1.medium</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">c1.xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">c3.large</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">c3.xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">c3.2xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">c3.4xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">c3.8xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">c4.large</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">c4.xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">c4.2xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">c4.4xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">c4.8xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">cc1.4xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">cc2.8xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">g2.2xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">g2.8xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">cg1.4xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">r3.large</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">r3.xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">r3.2xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">r3.4xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">r3.8xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">d2.xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">d2.2xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">d2.4xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">d2.8xlarge</span></tt></li>
+</ul>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--placement" class="dashAnchor" id="placement"></a><span class="pre">--placement</span></tt> (structure)</p>
 <blockquote>
-<div>Specifies the placement constraints (Availability Zones) for launching the instances.</div></blockquote>
+<div>The placement for the instance.</div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><pre>--placement AvailabilityZone=value,GroupName=value,Tenancy=value</pre>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">AvailabilityZone</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">GroupName</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">Tenancy</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">HostId</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">Affinity</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
 </div>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-  <span class="s">"AvailabilityZone"</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
-  <span class="s">"GroupName"</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
-  <span class="s">"Tenancy"</span><span class="p">:</span> <span class="s">"string"</span>
+  <span class="s2">"AvailabilityZone"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"GroupName"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"Tenancy"</span><span class="p">:</span> <span class="s2">"default"</span><span class="o">|</span><span class="s2">"dedicated"</span><span class="o">|</span><span class="s2">"host"</span><span class="p">,</span>
+  <span class="s2">"HostId"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"Affinity"</span><span class="p">:</span> <span class="s2">"string"</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--kernel-id" class="dashAnchor" id="kernel-id"></a><span class="pre">--kernel-id</span></tt> (string)</p>
 <blockquote>
-<div>The ID of the kernel with which to launch the instance.</div></blockquote>
+<div><p>The ID of the kernel.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">PV-GRUB</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
+</div>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ramdisk-id" class="dashAnchor" id="ramdisk-id"></a><span class="pre">--ramdisk-id</span></tt> (string)</p>
 <blockquote>
-<div>The ID of the RAM disk with which to launch the instance. Some kernels require additional drivers at launch. Check the kernel requirements for information on whether you need to specify a RAM disk. To find kernel requirements, go to the Resource Center and search for the kernel ID.</div></blockquote>
+<div><p>The ID of the RAM disk.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">PV-GRUB</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
+</div>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--block-device-mappings" class="dashAnchor" id="block-device-mappings"></a><span class="pre">--block-device-mappings</span></tt> (list)</p>
 <blockquote>
-<div>Specifies how block devices are exposed to the instance. Each mapping is made up of a virtualName and a deviceName.</div></blockquote>
+<div>The block device mapping.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>VirtualName=string,DeviceName=string,Ebs={SnapshotId=string,VolumeSize=integer,DeleteOnTermination=boolean,VolumeType=string,Iops=integer,Encrypted=boolean},NoDevice=string ...</pre>
+</div>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><pre>[
   {
@@ -228,8 +324,9 @@
       "SnapshotId": "string",
       "VolumeSize": integer,
       "DeleteOnTermination": true|false,
-      "VolumeType": "standard"|"io1",
-      "Iops": integer
+      "VolumeType": "standard"|"io1"|"gp2"|"sc1"|"st1",
+      "Iops": integer,
+      "Encrypted": true|false
     },
     "NoDevice": "string"
   }
@@ -238,43 +335,55 @@
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--monitoring" class="dashAnchor" id="monitoring"></a><span class="pre">--monitoring</span></tt> (structure)</p>
 <blockquote>
-<div>Enables monitoring for the instance.</div></blockquote>
+<div>The monitoring for the instance.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Enabled</span><span class="o">=</span><span class="n">boolean</span>
+</pre></div>
+</div>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-  <span class="s">"Enabled"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span>
+  <span class="s2">"Enabled"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--subnet-id" class="dashAnchor" id="subnet-id"></a><span class="pre">--subnet-id</span></tt> (string)</p>
 <blockquote>
-<div>Specifies the subnet ID within which to launch the instance(s) for Amazon Virtual Private Cloud.</div></blockquote>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--disable-api-termination" class="dashAnchor" id="disable-api-termination"></a><span class="pre">--disable-api-termination</span></tt> | <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--enable-api-termination" class="dashAnchor" id="enable-api-termination"></a><span class="pre">--enable-api-termination</span></tt> (boolean)</p>
+<div>[EC2-VPC] The ID of the subnet to launch the instance into.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--disable-api-termination" class="dashAnchor" id="disable-api-termination"></a><span class="pre">--disable-api-termination</span></tt> | <tt class="docutils literal"><span class="pre">--enable-api-termination</span></tt> (boolean)</p>
 <blockquote>
-<div>Specifies whether the instance can be terminated using the APIs. You must modify this attribute before you can terminate any "locked" instances from the APIs.</div></blockquote>
+<div><p>If you set this parameter to <tt class="docutils literal"><span class="pre">true</span></tt> , you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. If you set this parameter to <tt class="docutils literal"><span class="pre">true</span></tt> and then later want to be able to terminate the instance, you must first change the value of the <tt class="docutils literal"><span class="pre">disableApiTermination</span></tt> attribute to <tt class="docutils literal"><span class="pre">false</span></tt> using  modify-instance-attribute . Alternatively, if you set <tt class="docutils literal"><span class="pre">InstanceInitiatedShutdownBehavior</span></tt> to <tt class="docutils literal"><span class="pre">terminate</span></tt> , you can terminate the instance by running the shutdown command from the instance.</p>
+<p>Default: <tt class="docutils literal"><span class="pre">false</span></tt></p>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--instance-initiated-shutdown-behavior" class="dashAnchor" id="instance-initiated-shutdown-behavior"></a><span class="pre">--instance-initiated-shutdown-behavior</span></tt> (string)</p>
 <blockquote>
-<div>Specifies whether the instance's Amazon EBS volumes are stopped or terminated when the instance is shut down.</div></blockquote>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--license" class="dashAnchor" id="license"></a><span class="pre">--license</span></tt> (structure)</p>
-<blockquote>
-<div>Specifies active licenses in use and attached to an Amazon EC2 instance.</div></blockquote>
-<p>JSON Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-  <span class="s">"Pool"</span><span class="p">:</span> <span class="s">"string"</span>
-<span class="p">}</span>
-</pre></div>
-</div>
+<div><p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
+<p>Default: <tt class="docutils literal"><span class="pre">stop</span></tt></p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">stop</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">terminate</span></tt></li>
+</ul>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--private-ip-address" class="dashAnchor" id="private-ip-address"></a><span class="pre">--private-ip-address</span></tt> (string)</p>
 <blockquote>
-<div>If you're using Amazon Virtual Private Cloud, you can optionally use this parameter to assign the instance a specific available IP address from the subnet.</div></blockquote>
+<div><p>[EC2-VPC] The primary IP address. You must specify a value from the IP address range of the subnet.</p>
+<p>Only one private IP address can be designated as primary. Therefore, you can't specify this parameter if <tt class="docutils literal"><span class="pre">PrivateIpAddresses.n.Primary</span></tt> is set to <tt class="docutils literal"><span class="pre">true</span></tt> and <tt class="docutils literal"><span class="pre">PrivateIpAddresses.n.PrivateIpAddress</span></tt> is set to an IP address.</p>
+<p>Default: We select an IP address from the IP address range of the subnet.</p>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--client-token" class="dashAnchor" id="client-token"></a><span class="pre">--client-token</span></tt> (string)</p>
 <blockquote>
-<div>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, go to How to Ensure Idempotency in the Amazon Elastic Compute Cloud User Guide.</div></blockquote>
+<div><p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a> .</p>
+<p>Constraints: Maximum 64 ASCII characters</p>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--additional-info" class="dashAnchor" id="additional-info"></a><span class="pre">--additional-info</span></tt> (string)</p>
 <blockquote>
-<div>Do not use. Reserved for internal use.</div></blockquote>
+<div>Reserved.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--network-interfaces" class="dashAnchor" id="network-interfaces"></a><span class="pre">--network-interfaces</span></tt> (list)</p>
 <blockquote>
-<div>List of network interfaces associated with the instance.</div></blockquote>
+<div>One or more network interfaces.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>NetworkInterfaceId=string,DeviceIndex=integer,SubnetId=string,Description=string,PrivateIpAddress=string,Groups=string,string,DeleteOnTermination=boolean,PrivateIpAddresses=[{PrivateIpAddress=string,Primary=boolean},{PrivateIpAddress=string,Primary=boolean}],SecondaryPrivateIpAddressCount=integer,AssociatePublicIpAddress=boolean ...</pre>
+</div>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><pre>[
   {
@@ -299,92 +408,674 @@
 ]</pre>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--iam-instance-profile" class="dashAnchor" id="iam-instance-profile"></a><span class="pre">--iam-instance-profile</span></tt> (structure)</p>
+<blockquote>
+<div>The IAM instance profile.</div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><pre>--iam-instance-profile Arn=value,Name=value</pre>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Arn</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">Name</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
 </div>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-  <span class="s">"Arn"</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
-  <span class="s">"Name"</span><span class="p">:</span> <span class="s">"string"</span>
+  <span class="s2">"Arn"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"string"</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ebs-optimized" class="dashAnchor" id="ebs-optimized"></a><span class="pre">--ebs-optimized</span></tt> | <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--no-ebs-optimized" class="dashAnchor" id="no-ebs-optimized"></a><span class="pre">--no-ebs-optimized</span></tt> (boolean)</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ebs-optimized" class="dashAnchor" id="ebs-optimized"></a><span class="pre">--ebs-optimized</span></tt> | <tt class="docutils literal"><span class="pre">--no-ebs-optimized</span></tt> (boolean)</p>
+<blockquote>
+<div><p>Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized instance.</p>
+<p>Default: <tt class="docutils literal"><span class="pre">false</span></tt></p>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--count" class="dashAnchor" id="count"></a><span class="pre">--count</span></tt> (string)</p>
 <blockquote>
-<div>Number of instances to launch. If a single number is provided, it is assumed to be the minimum to launch (defaults to 1). If a range is provided in the form <tt class="docutils literal"><span class="pre">min:max</span></tt>  then the first number is interpreted as the minimum number of instances to launch and the second is interpreted as the maximum number of instances to launch.</div></blockquote>
+<div>Number of instances to launch. If a single number is provided, it is assumed to be the minimum to launch (defaults to 1). If a range is provided in the form <tt class="docutils literal"><span class="pre">min:max</span></tt> then the first number is interpreted as the minimum number of instances to launch and the second is interpreted as the maximum number of instances to launch.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--secondary-private-ip-addresses" class="dashAnchor" id="secondary-private-ip-addresses"></a><span class="pre">--secondary-private-ip-addresses</span></tt> (string)
 [EC2-VPC] A secondary private IP address for the network interface or instance. You can specify this multiple times to assign multiple secondary IP addresses. If you want additional private IP addresses but do not need a specific address, use the --secondary-private-ip-address-count option.</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--secondary-private-ip-address-count" class="dashAnchor" id="secondary-private-ip-address-count"></a><span class="pre">--secondary-private-ip-address-count</span></tt> (string)
 [EC2-VPC] The number of secondary IP addresses to assign to the network interface or instance.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--associate-public-ip-address" class="dashAnchor" id="associate-public-ip-address"></a><span class="pre">--associate-public-ip-address</span></tt> | <tt class="docutils literal"><span class="pre">--no-associate-public-ip-address</span></tt> (boolean)
+[EC2-VPC] If specified a public IP address will be assigned to the new instance in a VPC.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
 </div>
 <div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
-<p><strong>To launch an Amazon EC2 instance</strong></p>
-<p>This example launches a single Amazon EC2 instance of type t1.micro.</p>
-<p>The key pair and security group, named MyKeyPair and MySecurityGroup, must exist.</p>
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To launch an instance in EC2-Classic</strong></p>
+<p>This example launches a single instance of type <tt class="docutils literal"><span class="pre">t1.micro</span></tt>.</p>
+<p>The key pair and security group, named <tt class="docutils literal"><span class="pre">MyKeyPair</span></tt> and <tt class="docutils literal"><span class="pre">MySecurityGroup</span></tt>, must exist.</p>
 <p>Command:</p>
-<div class="highlight-python"><pre>aws ec2 run-instances --image-id ami-c3b8d6aa --count 1 --instance-type t1.micro --key-name MyKeyPair --security-groups MySecurityGroup</pre>
+<div class="highlight-python"><pre>aws ec2 run-instances --image-id ami-1a2b3c4d --count 1 --instance-type t1.micro --key-name MyKeyPair --security-groups MySecurityGroup</pre>
 </div>
 <p>Output:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-    <span class="s">"OwnerId"</span><span class="p">:</span> <span class="s">"123456789012"</span><span class="p">,</span>
-    <span class="s">"ReservationId"</span><span class="p">:</span> <span class="s">"r-5875ca20"</span><span class="p">,</span>
-    <span class="s">"Groups"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">"OwnerId"</span><span class="p">:</span> <span class="s2">"123456789012"</span><span class="p">,</span>
+    <span class="s2">"ReservationId"</span><span class="p">:</span> <span class="s2">"r-08626e73c547023b1"</span><span class="p">,</span>
+    <span class="s2">"Groups"</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
-            <span class="s">"GroupName"</span><span class="p">:</span> <span class="s">"MySecurityGroup"</span><span class="p">,</span>
-            <span class="s">"GroupId"</span><span class="p">:</span> <span class="s">"sg-903004f8"</span>
+            <span class="s2">"GroupName"</span><span class="p">:</span> <span class="s2">"MySecurityGroup"</span><span class="p">,</span>
+            <span class="s2">"GroupId"</span><span class="p">:</span> <span class="s2">"sg-903004f8"</span>
         <span class="p">}</span>
     <span class="p">],</span>
-    <span class="s">"Instances"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">"Instances"</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
-            <span class="s">"Monitoring"</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s">"State"</span><span class="p">:</span> <span class="s">"disabled"</span>
+            <span class="s2">"Monitoring"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"State"</span><span class="p">:</span> <span class="s2">"disabled"</span>
             <span class="p">},</span>
-            <span class="s">"PublicDnsName"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-            <span class="s">"Platform"</span><span class="p">:</span> <span class="s">"windows"</span><span class="p">,</span>
-            <span class="s">"State"</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s">"Code"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="s">"Name"</span><span class="p">:</span> <span class="s">"pending"</span>
+            <span class="s2">"PublicDnsName"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">"RootDeviceType"</span><span class="p">:</span> <span class="s2">"ebs"</span><span class="p">,</span>
+            <span class="s2">"State"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"Code"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"pending"</span>
             <span class="p">},</span>
-            <span class="s">"EbsOptimized"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-            <span class="s">"LaunchTime"</span><span class="p">:</span> <span class="s">"2013-07-19T02:42:39.000Z"</span><span class="p">,</span>
-            <span class="s">"ProductCodes"</span><span class="p">:</span> <span class="p">[],</span>
-            <span class="s">"InstanceId"</span><span class="p">:</span> <span class="s">"i-5203422c"</span><span class="p">,</span>
-            <span class="s">"ImageId"</span><span class="p">:</span> <span class="s">"ami-c3b8d6aa"</span><span class="p">,</span>
-            <span class="s">"PrivateDnsName"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-            <span class="s">"KeyName"</span><span class="p">:</span> <span class="s">"MyKeyPair"</span><span class="p">,</span>
-            <span class="s">"SecurityGroups"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">"EbsOptimized"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+            <span class="s2">"LaunchTime"</span><span class="p">:</span> <span class="s2">"2013-07-19T02:42:39.000Z"</span><span class="p">,</span>
+            <span class="s2">"ProductCodes"</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">"StateTransitionReason"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">"InstanceId"</span><span class="p">:</span> <span class="s2">"i-1234567890abcdef0"</span><span class="p">,</span>
+            <span class="s2">"ImageId"</span><span class="p">:</span> <span class="s2">"ami-1a2b3c4d"</span><span class="p">,</span>
+            <span class="s2">"PrivateDnsName"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">"KeyName"</span><span class="p">:</span> <span class="s2">"MyKeyPair"</span><span class="p">,</span>
+            <span class="s2">"SecurityGroups"</span><span class="p">:</span> <span class="p">[</span>
                 <span class="p">{</span>
-                    <span class="s">"GroupName"</span><span class="p">:</span> <span class="s">"MySecurityGroup"</span><span class="p">,</span>
-                    <span class="s">"GroupId"</span><span class="p">:</span> <span class="s">"sg-903004f8"</span>
+                    <span class="s2">"GroupName"</span><span class="p">:</span> <span class="s2">"MySecurityGroup"</span><span class="p">,</span>
+                    <span class="s2">"GroupId"</span><span class="p">:</span> <span class="s2">"sg-903004f8"</span>
                 <span class="p">}</span>
             <span class="p">],</span>
-            <span class="s">"ClientToken"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-            <span class="s">"InstanceType"</span><span class="p">:</span> <span class="s">"t1.micro"</span><span class="p">,</span>
-            <span class="s">"NetworkInterfaces"</span><span class="p">:</span> <span class="p">[],</span>
-            <span class="s">"Placement"</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s">"Tenancy"</span><span class="p">:</span> <span class="s">"default"</span><span class="p">,</span>
-                <span class="s">"GroupName"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-                <span class="s">"AvailabilityZone"</span><span class="p">:</span> <span class="s">"us-east-1b"</span>
+            <span class="s2">"ClientToken"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">"InstanceType"</span><span class="p">:</span> <span class="s2">"t1.micro"</span><span class="p">,</span>
+            <span class="s2">"NetworkInterfaces"</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">"Placement"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"Tenancy"</span><span class="p">:</span> <span class="s2">"default"</span><span class="p">,</span>
+                <span class="s2">"GroupName"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                <span class="s2">"AvailabilityZone"</span><span class="p">:</span> <span class="s2">"us-east-1b"</span>
             <span class="p">},</span>
-            <span class="s">"Hypervisor"</span><span class="p">:</span> <span class="s">"xen"</span><span class="p">,</span>
-            <span class="s">"BlockDeviceMappings"</span><span class="p">:</span> <span class="p">[],</span>
-            <span class="s">"Architecture"</span><span class="p">:</span> <span class="s">"x86_64"</span><span class="p">,</span>
-            <span class="s">"StateReason"</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s">"Message"</span><span class="p">:</span> <span class="s">"pending"</span><span class="p">,</span>
-                <span class="s">"Code"</span><span class="p">:</span> <span class="s">"pending"</span>
+            <span class="s2">"Hypervisor"</span><span class="p">:</span> <span class="s2">"xen"</span><span class="p">,</span>
+            <span class="s2">"BlockDeviceMappings"</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">"Architecture"</span><span class="p">:</span> <span class="s2">"x86_64"</span><span class="p">,</span>
+            <span class="s2">"StateReason"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"Message"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+                <span class="s2">"Code"</span><span class="p">:</span> <span class="s2">"pending"</span>
             <span class="p">},</span>
-            <span class="s">"RootDeviceName"</span><span class="p">:</span> <span class="s">"/dev/sda1"</span><span class="p">,</span>
-            <span class="s">"VirtualizationType"</span><span class="p">:</span> <span class="s">"hvm"</span><span class="p">,</span>
-            <span class="s">"RootDeviceType"</span><span class="p">:</span> <span class="s">"ebs"</span><span class="p">,</span>
-            <span class="s">"AmiLaunchIndex"</span><span class="p">:</span> <span class="mi">0</span>
+            <span class="s2">"RootDeviceName"</span><span class="p">:</span> <span class="s2">"/dev/sda1"</span><span class="p">,</span>
+            <span class="s2">"VirtualizationType"</span><span class="p">:</span> <span class="s2">"hvm"</span><span class="p">,</span>
+            <span class="s2">"AmiLaunchIndex"</span><span class="p">:</span> <span class="mi">0</span>
         <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/cli/latest/userguide/cli-ec2-launch.html">Using Amazon EC2 Instances</a> in the <em>AWS Command Line Interface User Guide</em>.</p>
+<p><strong>To launch an instance in EC2-VPC</strong></p>
+<p>This example launches a single instance of type <tt class="docutils literal"><span class="pre">t2.micro</span></tt> into the specified subnet.</p>
+<p>The key pair named <tt class="docutils literal"><span class="pre">MyKeyPair</span></tt> and the security group sg-903004f8 must exist.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 run-instances --image-id ami-abc12345 --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids sg-903004f8 --subnet-id subnet-6e7f829e</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"OwnerId"</span><span class="p">:</span> <span class="s2">"123456789012"</span><span class="p">,</span>
+    <span class="s2">"ReservationId"</span><span class="p">:</span> <span class="s2">"r-08626e73c547023b2"</span><span class="p">,</span>
+    <span class="s2">"Groups"</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="s2">"Instances"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"Monitoring"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"State"</span><span class="p">:</span> <span class="s2">"disabled"</span>
+            <span class="p">},</span>
+            <span class="s2">"PublicDnsName"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">"RootDeviceType"</span><span class="p">:</span> <span class="s2">"ebs"</span><span class="p">,</span>
+            <span class="s2">"State"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"Code"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"pending"</span>
+            <span class="p">},</span>
+            <span class="s2">"EbsOptimized"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+            <span class="s2">"LaunchTime"</span><span class="p">:</span> <span class="s2">"2013-07-19T02:42:39.000Z"</span><span class="p">,</span>
+            <span class="s2">"PrivateIpAddress"</span><span class="p">:</span> <span class="s2">"10.0.1.114"</span><span class="p">,</span>
+            <span class="s2">"ProductCodes"</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">"VpcId"</span><span class="p">:</span> <span class="s2">"vpc-1a2b3c4d"</span><span class="p">,</span>
+            <span class="s2">"InstanceId"</span><span class="p">:</span> <span class="s2">"i-1234567890abcdef5"</span><span class="p">,</span>
+            <span class="s2">"ImageId"</span><span class="p">:</span> <span class="s2">"ami-abc12345"</span><span class="p">,</span>
+            <span class="s2">"PrivateDnsName"</span><span class="p">:</span> <span class="s2">"ip-10-0-1-114.ec2.internal"</span><span class="p">,</span>
+            <span class="s2">"KeyName"</span><span class="p">:</span> <span class="s2">"MyKeyPair"</span><span class="p">,</span>
+            <span class="s2">"SecurityGroups"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">"GroupName"</span><span class="p">:</span> <span class="s2">"MySecurityGroup"</span><span class="p">,</span>
+                    <span class="s2">"GroupId"</span><span class="p">:</span> <span class="s2">"sg-903004f8"</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s2">"ClientToken"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s2">"SubnetId"</span><span class="p">:</span> <span class="s2">"subnet-6e7f829e"</span><span class="p">,</span>
+            <span class="s2">"InstanceType"</span><span class="p">:</span> <span class="s2">"t2.micro"</span><span class="p">,</span>
+            <span class="s2">"NetworkInterfaces"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">"Status"</span><span class="p">:</span> <span class="s2">"in-use"</span><span class="p">,</span>
+                    <span class="s2">"MacAddress"</span><span class="p">:</span> <span class="s2">"0e:ad:05:3b:60:52"</span><span class="p">,</span>
+                    <span class="s2">"SourceDestCheck"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+                    <span class="s2">"VpcId"</span><span class="p">:</span> <span class="s2">"vpc-1a2b3c4d"</span><span class="p">,</span>
+                    <span class="s2">"Description"</span><span class="p">:</span> <span class="s2">"null"</span><span class="p">,</span>
+                    <span class="s2">"NetworkInterfaceId"</span><span class="p">:</span> <span class="s2">"eni-a7edb1c9"</span><span class="p">,</span>
+                    <span class="s2">"PrivateIpAddresses"</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="s2">"PrivateDnsName"</span><span class="p">:</span> <span class="s2">"ip-10-0-1-114.ec2.internal"</span><span class="p">,</span>
+                            <span class="s2">"Primary"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+                            <span class="s2">"PrivateIpAddress"</span><span class="p">:</span> <span class="s2">"10.0.1.114"</span>
+                        <span class="p">}</span>
+                    <span class="p">],</span>
+                    <span class="s2">"PrivateDnsName"</span><span class="p">:</span> <span class="s2">"ip-10-0-1-114.ec2.internal"</span><span class="p">,</span>
+                    <span class="s2">"Attachment"</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s2">"Status"</span><span class="p">:</span> <span class="s2">"attached"</span><span class="p">,</span>
+                        <span class="s2">"DeviceIndex"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                        <span class="s2">"DeleteOnTermination"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+                        <span class="s2">"AttachmentId"</span><span class="p">:</span> <span class="s2">"eni-attach-52193138"</span><span class="p">,</span>
+                        <span class="s2">"AttachTime"</span><span class="p">:</span> <span class="s2">"2013-07-19T02:42:39.000Z"</span>
+                    <span class="p">},</span>
+                    <span class="s2">"Groups"</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="s2">"GroupName"</span><span class="p">:</span> <span class="s2">"MySecurityGroup"</span><span class="p">,</span>
+                            <span class="s2">"GroupId"</span><span class="p">:</span> <span class="s2">"sg-903004f8"</span>
+                        <span class="p">}</span>
+                    <span class="p">],</span>
+                    <span class="s2">"SubnetId"</span><span class="p">:</span> <span class="s2">"subnet-6e7f829e"</span><span class="p">,</span>
+                    <span class="s2">"OwnerId"</span><span class="p">:</span> <span class="s2">"123456789012"</span><span class="p">,</span>
+                    <span class="s2">"PrivateIpAddress"</span><span class="p">:</span> <span class="s2">"10.0.1.114"</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s2">"SourceDestCheck"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+            <span class="s2">"Placement"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"Tenancy"</span><span class="p">:</span> <span class="s2">"default"</span><span class="p">,</span>
+                <span class="s2">"GroupName"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                <span class="s2">"AvailabilityZone"</span><span class="p">:</span> <span class="s2">"us-east-1b"</span>
+            <span class="p">},</span>
+            <span class="s2">"Hypervisor"</span><span class="p">:</span> <span class="s2">"xen"</span><span class="p">,</span>
+            <span class="s2">"BlockDeviceMappings"</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">"Architecture"</span><span class="p">:</span> <span class="s2">"x86_64"</span><span class="p">,</span>
+            <span class="s2">"StateReason"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"Message"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+                <span class="s2">"Code"</span><span class="p">:</span> <span class="s2">"pending"</span>
+            <span class="p">},</span>
+            <span class="s2">"RootDeviceName"</span><span class="p">:</span> <span class="s2">"/dev/sda1"</span><span class="p">,</span>
+            <span class="s2">"VirtualizationType"</span><span class="p">:</span> <span class="s2">"hvm"</span><span class="p">,</span>
+            <span class="s2">"AmiLaunchIndex"</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The following example requests a public IP address for an instance that you're launching into a nondefault subnet:</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 run-instances --image-id ami-c3b8d6aa --count 1 --instance-type t1.micro --key-name MyKeyPair --security-group-ids sg-903004f8 --subnet-id subnet-6e7f829e --associate-public-ip-address</pre>
+</div>
+<p><strong>To launch an instance using a block device mapping</strong></p>
+<p>Add the following parameter to your <tt class="docutils literal"><span class="pre">run-instances</span></tt> command to specify block devices:</p>
+<div class="highlight-python"><pre>--block-device-mappings file://mapping.json</pre>
+</div>
+<p>To add an Amazon EBS volume with the device name <tt class="docutils literal"><span class="pre">/dev/sdh</span></tt> and a volume size of 100, specify the following in mapping.json:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">"DeviceName"</span><span class="p">:</span> <span class="s2">"/dev/sdh"</span><span class="p">,</span>
+    <span class="s2">"Ebs"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"VolumeSize"</span><span class="p">:</span> <span class="mi">100</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>To add <tt class="docutils literal"><span class="pre">ephemeral1</span></tt> as an instance store volume with the device name <tt class="docutils literal"><span class="pre">/dev/sdc</span></tt>, specify the following in mapping.json:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">"DeviceName"</span><span class="p">:</span> <span class="s2">"/dev/sdc"</span><span class="p">,</span>
+    <span class="s2">"VirtualName"</span><span class="p">:</span> <span class="s2">"ephemeral1"</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>To omit a device specified by the AMI used to launch the instance (for example, <tt class="docutils literal"><span class="pre">/dev/sdf</span></tt>), specify the following in mapping.json:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">"DeviceName"</span><span class="p">:</span> <span class="s2">"/dev/sdf"</span><span class="p">,</span>
+    <span class="s2">"NoDevice"</span><span class="p">:</span> <span class="s2">""</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>You can view only the Amazon EBS volumes in your block device mapping using the console or the <tt class="docutils literal"><span class="pre">describe-instances</span></tt> command. To view all volumes, including the instance store volumes, use the following command.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>curl http://169.254.169.254/latest/meta-data/block-device-mapping/</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">ami</span>
+<span class="n">ephemeral1</span>
+</pre></div>
+</div>
+<p>Note that <tt class="docutils literal"><span class="pre">ami</span></tt> represents the root volume. To get details about the instance store volume <tt class="docutils literal"><span class="pre">ephemeral1</span></tt>, use the following command.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>curl http://169.254.169.254/latest/meta-data/block-device-mapping/ephemeral1</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sdc</span>
+</pre></div>
+</div>
+<p><strong>To launch an instance with a modified block device mapping</strong></p>
+<p>You can change individual characteristics of existing AMI block device mappings to suit your needs. Perhaps you want to use an existing AMI, but you want a larger root volume than the usual 8 GiB. Or, you would like to use a General Purpose (SSD) volume for an AMI that currently uses a Magnetic volume.</p>
+<p>Use the <tt class="docutils literal"><span class="pre">describe-images</span></tt> command with the image ID of the AMI you want to use to find its existing block device mapping. You should see a block device mapping in the output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"DeviceName"</span><span class="p">:</span> <span class="s2">"/dev/sda1"</span><span class="p">,</span>
+  <span class="s2">"Ebs"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"DeleteOnTermination"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+    <span class="s2">"SnapshotId"</span><span class="p">:</span> <span class="s2">"snap-b047276d"</span><span class="p">,</span>
+    <span class="s2">"VolumeSize"</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="s2">"VolumeType"</span><span class="p">:</span> <span class="s2">"standard"</span><span class="p">,</span>
+    <span class="s2">"Encrypted"</span><span class="p">:</span> <span class="n">false</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>You can modify the above mapping by changing the individual parameters. For example, to launch an instance with a modified block device mapping, add the following parameter to your <tt class="docutils literal"><span class="pre">run-instances</span></tt> command to change the above mapping's volume size and type:</p>
+<div class="highlight-python"><pre>--block-device-mappings file://mapping.json</pre>
+</div>
+<p>Where mapping.json contains the following:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">"DeviceName"</span><span class="p">:</span> <span class="s2">"/dev/sda1"</span><span class="p">,</span>
+    <span class="s2">"Ebs"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"DeleteOnTermination"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">"SnapshotId"</span><span class="p">:</span> <span class="s2">"snap-b047276d"</span><span class="p">,</span>
+      <span class="s2">"VolumeSize"</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+      <span class="s2">"VolumeType"</span><span class="p">:</span> <span class="s2">"gp2"</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>To launch an instance with user data</strong></p>
+<p>You can launch an instance and specify user data that performs instance configuration, or that runs a script. The user data needs to be passed as normal string, base64 encoding is handled internally. The following example passes user data in a file called <tt class="docutils literal"><span class="pre">my_script.txt</span></tt> that contains a configuration script for your instance. The script runs at launch.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 run-instances --image-id ami-abc1234 --count 1 --instance-type m4.large --key-name keypair --user-data file://my_script.txt --subnet-id subnet-abcd1234 --security-group-ids sg-abcd1234</pre>
+</div>
+<p>For more information about launching instances, see <a class="reference external" href="../../userguide/cli-ec2-launch.html">Using Amazon EC2 Instances</a> in the <em>AWS Command Line Interface User Guide</em>.</p>
+<p><strong>To launch an instance with an instance profile</strong></p>
+<p>This example shows the use of the <tt class="docutils literal"><span class="pre">iam-instance-profile</span></tt> option to specify an <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html">IAM instance profile</a> by name.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 run-instances --iam-instance-profile Name=MyInstanceProfile --image-id ami-1a2b3c4d --count 1 --instance-type t2.micro --key-name MyKeyPair --security-groups MySecurityGroup</pre>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>ReservationId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the reservation.</div></blockquote>
+<p>OwnerId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the AWS account that owns the reservation.</div></blockquote>
+<p>RequesterId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the requester that launched the instances on your behalf (for example, AWS Management Console or Auto Scaling).</div></blockquote>
+<p>Groups -&gt; (list)</p>
+<blockquote>
+<div><p>[EC2-Classic only] One or more security groups.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a security group.</p>
+<p>GroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the security group.</div></blockquote>
+<p>GroupId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the security group.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Instances -&gt; (list)</p>
+<blockquote>
+<div><p>One or more instances.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes an instance.</p>
+<p>InstanceId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the instance.</div></blockquote>
+<p>ImageId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the AMI used to launch the instance.</div></blockquote>
+<p>State -&gt; (structure)</p>
+<blockquote>
+<div><p>The current state of the instance.</p>
+<p>Code -&gt; (integer)</p>
+<blockquote>
+<div><p>The low byte represents the state. The high byte is an opaque internal value and should be ignored.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">0</span></tt> : <tt class="docutils literal"><span class="pre">pending</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">16</span></tt> : <tt class="docutils literal"><span class="pre">running</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">32</span></tt> : <tt class="docutils literal"><span class="pre">shutting-down</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">48</span></tt> : <tt class="docutils literal"><span class="pre">terminated</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">64</span></tt> : <tt class="docutils literal"><span class="pre">stopping</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">80</span></tt> : <tt class="docutils literal"><span class="pre">stopped</span></tt></li>
+</ul>
+</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The current state of the instance.</div></blockquote>
+</div></blockquote>
+<p>PrivateDnsName -&gt; (string)</p>
+<blockquote>
+<div>The private DNS name assigned to the instance. This DNS name can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <tt class="docutils literal"><span class="pre">running</span></tt> state. For EC2-VPC, this name is only available if you've enabled DNS hostnames for your VPC.</div></blockquote>
+<p>PublicDnsName -&gt; (string)</p>
+<blockquote>
+<div>The public DNS name assigned to the instance. This name is not available until the instance enters the <tt class="docutils literal"><span class="pre">running</span></tt> state. For EC2-VPC, this name is only available if you've enabled DNS hostnames for your VPC.</div></blockquote>
+<p>StateTransitionReason -&gt; (string)</p>
+<blockquote>
+<div>The reason for the most recent state transition. This might be an empty string.</div></blockquote>
+<p>KeyName -&gt; (string)</p>
+<blockquote>
+<div>The name of the key pair, if this instance was launched with an associated key pair.</div></blockquote>
+<p>AmiLaunchIndex -&gt; (integer)</p>
+<blockquote>
+<div>The AMI launch index, which can be used to find this instance in the launch group.</div></blockquote>
+<p>ProductCodes -&gt; (list)</p>
+<blockquote>
+<div><p>The product codes attached to this instance, if applicable.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a product code.</p>
+<p>ProductCodeId -&gt; (string)</p>
+<blockquote>
+<div>The product code.</div></blockquote>
+<p>ProductCodeType -&gt; (string)</p>
+<blockquote>
+<div>The type of product code.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>InstanceType -&gt; (string)</p>
+<blockquote>
+<div>The instance type.</div></blockquote>
+<p>LaunchTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The time the instance was launched.</div></blockquote>
+<p>Placement -&gt; (structure)</p>
+<blockquote>
+<div><p>The location where the instance launched, if applicable.</p>
+<p>AvailabilityZone -&gt; (string)</p>
+<blockquote>
+<div>The Availability Zone of the instance.</div></blockquote>
+<p>GroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the placement group the instance is in (for cluster compute instances).</div></blockquote>
+<p>Tenancy -&gt; (string)</p>
+<blockquote>
+<div>The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of <tt class="docutils literal"><span class="pre">dedicated</span></tt> runs on single-tenant hardware. The <tt class="docutils literal"><span class="pre">host</span></tt> tenancy is not supported for the  import-instance command.</div></blockquote>
+<p>HostId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the Dedicted host on which the instance resides. This parameter is not support for the  import-instance command.</div></blockquote>
+<p>Affinity -&gt; (string)</p>
+<blockquote>
+<div>The affinity setting for the instance on the Dedicated host. This parameter is not supported for the  import-instance command.</div></blockquote>
+</div></blockquote>
+<p>KernelId -&gt; (string)</p>
+<blockquote>
+<div>The kernel associated with this instance, if applicable.</div></blockquote>
+<p>RamdiskId -&gt; (string)</p>
+<blockquote>
+<div>The RAM disk associated with this instance, if applicable.</div></blockquote>
+<p>Platform -&gt; (string)</p>
+<blockquote>
+<div>The value is <tt class="docutils literal"><span class="pre">Windows</span></tt> for Windows instances; otherwise blank.</div></blockquote>
+<p>Monitoring -&gt; (structure)</p>
+<blockquote>
+<div><p>The monitoring information for the instance.</p>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div>Indicates whether monitoring is enabled for the instance.</div></blockquote>
+</div></blockquote>
+<p>SubnetId -&gt; (string)</p>
+<blockquote>
+<div>[EC2-VPC] The ID of the subnet in which the instance is running.</div></blockquote>
+<p>VpcId -&gt; (string)</p>
+<blockquote>
+<div>[EC2-VPC] The ID of the VPC in which the instance is running.</div></blockquote>
+<p>PrivateIpAddress -&gt; (string)</p>
+<blockquote>
+<div>The private IP address assigned to the instance.</div></blockquote>
+<p>PublicIpAddress -&gt; (string)</p>
+<blockquote>
+<div>The public IP address assigned to the instance, if applicable.</div></blockquote>
+<p>StateReason -&gt; (structure)</p>
+<blockquote>
+<div><p>The reason for the most recent state transition.</p>
+<p>Code -&gt; (string)</p>
+<blockquote>
+<div>The reason code for the state change.</div></blockquote>
+<p>Message -&gt; (string)</p>
+<blockquote>
+<div><p>The message for the state change.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Server.SpotInstanceTermination</span></tt> : A Spot instance was terminated due to an increase in the market price.</li>
+<li><tt class="docutils literal"><span class="pre">Server.InternalError</span></tt> : An internal error occurred during instance launch, resulting in termination.</li>
+<li><tt class="docutils literal"><span class="pre">Server.InsufficientInstanceCapacity</span></tt> : There was insufficient instance capacity to satisfy the launch request.</li>
+<li><tt class="docutils literal"><span class="pre">Client.InternalError</span></tt> : A client error caused the instance to terminate on launch.</li>
+<li><tt class="docutils literal"><span class="pre">Client.InstanceInitiatedShutdown</span></tt> : The instance was shut down using the <tt class="docutils literal"><span class="pre">shutdown</span> <span class="pre">-h</span></tt> command from the instance.</li>
+<li><tt class="docutils literal"><span class="pre">Client.UserInitiatedShutdown</span></tt> : The instance was shut down using the Amazon EC2 API.</li>
+<li><tt class="docutils literal"><span class="pre">Client.VolumeLimitExceeded</span></tt> : The limit on the number of EBS volumes or total storage was exceeded. Decrease usage or request an increase in your limits.</li>
+<li><tt class="docutils literal"><span class="pre">Client.InvalidSnapshot.NotFound</span></tt> : The specified snapshot was not found.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p>Architecture -&gt; (string)</p>
+<blockquote>
+<div>The architecture of the image.</div></blockquote>
+<p>RootDeviceType -&gt; (string)</p>
+<blockquote>
+<div>The root device type used by the AMI. The AMI can use an EBS volume or an instance store volume.</div></blockquote>
+<p>RootDeviceName -&gt; (string)</p>
+<blockquote>
+<div>The root device name (for example, <tt class="docutils literal"><span class="pre">/dev/sda1</span></tt> or <tt class="docutils literal"><span class="pre">/dev/xvda</span></tt> ).</div></blockquote>
+<p>BlockDeviceMappings -&gt; (list)</p>
+<blockquote>
+<div><p>Any block device mapping entries for the instance.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a block device mapping.</p>
+<p>DeviceName -&gt; (string)</p>
+<blockquote>
+<div>The device name exposed to the instance (for example, <tt class="docutils literal"><span class="pre">/dev/sdh</span></tt> or <tt class="docutils literal"><span class="pre">xvdh</span></tt> ).</div></blockquote>
+<p>Ebs -&gt; (structure)</p>
+<blockquote>
+<div><p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
+<p>VolumeId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the EBS volume.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The attachment state.</div></blockquote>
+<p>AttachTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The time stamp when the attachment initiated.</div></blockquote>
+<p>DeleteOnTermination -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether the volume is deleted on instance termination.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>VirtualizationType -&gt; (string)</p>
+<blockquote>
+<div>The virtualization type of the instance.</div></blockquote>
+<p>InstanceLifecycle -&gt; (string)</p>
+<blockquote>
+<div>Indicates whether this is a Spot instance or a Scheduled Instance.</div></blockquote>
+<p>SpotInstanceRequestId -&gt; (string)</p>
+<blockquote>
+<div>If the request is a Spot instance request, the ID of the request.</div></blockquote>
+<p>ClientToken -&gt; (string)</p>
+<blockquote>
+<div>The idempotency token you provided when you launched the instance, if applicable.</div></blockquote>
+<p>Tags -&gt; (list)</p>
+<blockquote>
+<div><p>Any tags assigned to the instance.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a tag.</p>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div><p>The key of the tag.</p>
+<p>Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <tt class="docutils literal"><span class="pre">aws:</span></tt></p>
+</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div><p>The value of the tag.</p>
+<p>Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>SecurityGroups -&gt; (list)</p>
+<blockquote>
+<div><p>One or more security groups for the instance.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a security group.</p>
+<p>GroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the security group.</div></blockquote>
+<p>GroupId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the security group.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>SourceDestCheck -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether to enable an instance launched in a VPC to perform NAT. This controls whether source/destination checking is enabled on the instance. A value of <tt class="docutils literal"><span class="pre">true</span></tt> means checking is enabled, and <tt class="docutils literal"><span class="pre">false</span></tt> means checking is disabled. The value must be <tt class="docutils literal"><span class="pre">false</span></tt> for the instance to perform NAT. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the <em>Amazon Virtual Private Cloud User Guide</em> .</div></blockquote>
+<p>Hypervisor -&gt; (string)</p>
+<blockquote>
+<div>The hypervisor type of the instance.</div></blockquote>
+<p>NetworkInterfaces -&gt; (list)</p>
+<blockquote>
+<div><p>[EC2-VPC] One or more network interfaces for the instance.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a network interface.</p>
+<p>NetworkInterfaceId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the network interface.</div></blockquote>
+<p>SubnetId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the subnet.</div></blockquote>
+<p>VpcId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the VPC.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>The description.</div></blockquote>
+<p>OwnerId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the AWS account that created the network interface.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status of the network interface.</div></blockquote>
+<p>MacAddress -&gt; (string)</p>
+<blockquote>
+<div>The MAC address.</div></blockquote>
+<p>PrivateIpAddress -&gt; (string)</p>
+<blockquote>
+<div>The IP address of the network interface within the subnet.</div></blockquote>
+<p>PrivateDnsName -&gt; (string)</p>
+<blockquote>
+<div>The private DNS name.</div></blockquote>
+<p>SourceDestCheck -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether to validate network traffic to or from this network interface.</div></blockquote>
+<p>Groups -&gt; (list)</p>
+<blockquote>
+<div><p>One or more security groups.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a security group.</p>
+<p>GroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the security group.</div></blockquote>
+<p>GroupId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the security group.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Attachment -&gt; (structure)</p>
+<blockquote>
+<div><p>The network interface attachment.</p>
+<p>AttachmentId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the network interface attachment.</div></blockquote>
+<p>DeviceIndex -&gt; (integer)</p>
+<blockquote>
+<div>The index of the device on the instance for the network interface attachment.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The attachment state.</div></blockquote>
+<p>AttachTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The time stamp when the attachment initiated.</div></blockquote>
+<p>DeleteOnTermination -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether the network interface is deleted when the instance is terminated.</div></blockquote>
+</div></blockquote>
+<p>Association -&gt; (structure)</p>
+<blockquote>
+<div><p>The association information for an Elastic IP associated with the network interface.</p>
+<p>PublicIp -&gt; (string)</p>
+<blockquote>
+<div>The public IP address or Elastic IP address bound to the network interface.</div></blockquote>
+<p>PublicDnsName -&gt; (string)</p>
+<blockquote>
+<div>The public DNS name.</div></blockquote>
+<p>IpOwnerId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the owner of the Elastic IP address.</div></blockquote>
+</div></blockquote>
+<p>PrivateIpAddresses -&gt; (list)</p>
+<blockquote>
+<div><p>The private IP addresses associated with the network interface.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a private IP address.</p>
+<p>PrivateIpAddress -&gt; (string)</p>
+<blockquote>
+<div>The private IP address of the network interface.</div></blockquote>
+<p>PrivateDnsName -&gt; (string)</p>
+<blockquote>
+<div>The private DNS name.</div></blockquote>
+<p>Primary -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether this IP address is the primary private IP address of the network interface.</div></blockquote>
+<p>Association -&gt; (structure)</p>
+<blockquote>
+<div><p>The association information for an Elastic IP address for the network interface.</p>
+<p>PublicIp -&gt; (string)</p>
+<blockquote>
+<div>The public IP address or Elastic IP address bound to the network interface.</div></blockquote>
+<p>PublicDnsName -&gt; (string)</p>
+<blockquote>
+<div>The public DNS name.</div></blockquote>
+<p>IpOwnerId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the owner of the Elastic IP address.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>IamInstanceProfile -&gt; (structure)</p>
+<blockquote>
+<div><p>The IAM instance profile associated with the instance, if applicable.</p>
+<p>Arn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the instance profile.</div></blockquote>
+<p>Id -&gt; (string)</p>
+<blockquote>
+<div>The ID of the instance profile.</div></blockquote>
+</div></blockquote>
+<p>EbsOptimized -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</div></blockquote>
+<p>SriovNetSupport -&gt; (string)</p>
+<blockquote>
+<div>Specifies whether enhanced networking is enabled.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
 </div>
 </div>
 
@@ -400,50 +1091,45 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="start-instances.html" title="next chapter (use the right arrow)">start-instances &#8594;</a></li>
+          <li><a href="run-scheduled-instances.html" title="next chapter (use the right arrow)">run-scheduled-instances &#8594;</a></li>
       </ul>
     </div>
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index">index</a></li>
         <li class="right">
-          <a href="start-instances.html" title="start-instances">next</a> |</li>
+          <a href="run-scheduled-instances.html" title="run-scheduled-instances">next</a> |</li>
         <li class="right">
           <a href="revoke-security-group-ingress.html" title="revoke-security-group-ingress">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">ec2</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'revoke-security-group-ingress.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'start-instances.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/run-instances.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
 </html>

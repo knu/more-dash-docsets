@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/emr/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:28:11 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>emr &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="add-instance-groups" href="add-instance-groups.html" />
+    <link rel="prev" title="set-load-balancer-policies-of-listener" href="../elb/set-load-balancer-policies-of-listener.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="add-instance-groups.html" title="add-instance-groups" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="../elb/set-load-balancer-policies-of-listener.html" title="set-load-balancer-policies-of-listener" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../elb/set-load-balancer-policies-of-listener.html" title="previous chapter (use the left arrow)">&#8592; set-load-balancer-policies-of-listener</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="add-instance-groups.html" title="next chapter (use the right arrow)">add-instance-groups &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">emr</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/emr/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="emr">
+<span id="cli-aws-emr"></span><h1>emr<a name="//apple_ref/cpp/Command/aws emr" class="dashAnchor" id="aws emr"></a><a class="headerlink" href="#emr" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to process large amounts of data efficiently. Amazon EMR uses Hadoop processing combined with several AWS products to do tasks such as web indexing, data mining, log file analysis, machine learning, scientific simulation, and data warehousing.</p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a name="//apple_ref/cpp/Section/Available Commands" class="dashAnchor" id="Available Commands"></a><a class="headerlink" href="#available-commands" title="Permalink to this headline">&#182;</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/add-instance-groups" class="dashAnchor" id="add-instance-groups"></a><a class="reference internal" href="add-instance-groups.html">add-instance-groups</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/add-steps" class="dashAnchor" id="add-steps"></a><a class="reference internal" href="add-steps.html">add-steps</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/add-tags" class="dashAnchor" id="add-tags"></a><a class="reference internal" href="add-tags.html">add-tags</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-cluster" class="dashAnchor" id="create-cluster"></a><a class="reference internal" href="create-cluster.html">create-cluster</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-default-roles" class="dashAnchor" id="create-default-roles"></a><a class="reference internal" href="create-default-roles.html">create-default-roles</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-hbase-backup" class="dashAnchor" id="create-hbase-backup"></a><a class="reference internal" href="create-hbase-backup.html">create-hbase-backup</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-cluster" class="dashAnchor" id="describe-cluster"></a><a class="reference internal" href="describe-cluster.html">describe-cluster</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-step" class="dashAnchor" id="describe-step"></a><a class="reference internal" href="describe-step.html">describe-step</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/disable-hbase-backups" class="dashAnchor" id="disable-hbase-backups"></a><a class="reference internal" href="disable-hbase-backups.html">disable-hbase-backups</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get" class="dashAnchor" id="get"></a><a class="reference internal" href="get.html">get</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/install-applications" class="dashAnchor" id="install-applications"></a><a class="reference internal" href="install-applications.html">install-applications</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-clusters" class="dashAnchor" id="list-clusters"></a><a class="reference internal" href="list-clusters.html">list-clusters</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-instances" class="dashAnchor" id="list-instances"></a><a class="reference internal" href="list-instances.html">list-instances</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-steps" class="dashAnchor" id="list-steps"></a><a class="reference internal" href="list-steps.html">list-steps</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/modify-cluster-attributes" class="dashAnchor" id="modify-cluster-attributes"></a><a class="reference internal" href="modify-cluster-attributes.html">modify-cluster-attributes</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/modify-instance-groups" class="dashAnchor" id="modify-instance-groups"></a><a class="reference internal" href="modify-instance-groups.html">modify-instance-groups</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/put" class="dashAnchor" id="put"></a><a class="reference internal" href="put.html">put</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/remove-tags" class="dashAnchor" id="remove-tags"></a><a class="reference internal" href="remove-tags.html">remove-tags</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/restore-from-hbase-backup" class="dashAnchor" id="restore-from-hbase-backup"></a><a class="reference internal" href="restore-from-hbase-backup.html">restore-from-hbase-backup</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/schedule-hbase-backup" class="dashAnchor" id="schedule-hbase-backup"></a><a class="reference internal" href="schedule-hbase-backup.html">schedule-hbase-backup</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/socks" class="dashAnchor" id="socks"></a><a class="reference internal" href="socks.html">socks</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/ssh" class="dashAnchor" id="ssh"></a><a class="reference internal" href="ssh.html">ssh</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/terminate-clusters" class="dashAnchor" id="terminate-clusters"></a><a class="reference internal" href="terminate-clusters.html">terminate-clusters</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/wait" class="dashAnchor" id="wait"></a><a class="reference internal" href="wait/index.html">wait</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../elb/set-load-balancer-policies-of-listener.html" title="previous chapter (use the left arrow)">&#8592; set-load-balancer-policies-of-listener</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="add-instance-groups.html" title="next chapter (use the right arrow)">add-instance-groups &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="add-instance-groups.html" title="add-instance-groups">next</a> |</li>
+        <li class="right">
+          <a href="../elb/set-load-balancer-policies-of-listener.html" title="set-load-balancer-policies-of-listener">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/emr/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:28:21 GMT -->
+</html>

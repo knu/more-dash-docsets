@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/datapipeline/get-pipeline-definition.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:01 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-pipeline-definition &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="datapipeline" href="index.html" />
+    <link rel="next" title="list-pipelines" href="list-pipelines.html" />
+    <link rel="prev" title="evaluate-expression" href="evaluate-expression.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="list-pipelines.html" title="list-pipelines" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="evaluate-expression.html" title="evaluate-expression" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">datapipeline</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="evaluate-expression.html" title="previous chapter (use the left arrow)">&#8592; evaluate-expression</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="list-pipelines.html" title="next chapter (use the right arrow)">list-pipelines &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-pipeline-definition</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/datapipeline/get-pipeline-definition">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-datapipeline"><em>datapipeline</em></a> ]</p>
+<div class="section" id="get-pipeline-definition">
+<span id="cli-aws-datapipeline-get-pipeline-definition"></span><h1>get-pipeline-definition<a name="//apple_ref/cpp/Command/aws datapipeline get-pipeline-definition" class="dashAnchor" id="aws datapipeline get-pipeline-definition"></a><a class="headerlink" href="#get-pipeline-definition" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Gets the definition of the specified pipeline. You can call <tt class="docutils literal"><span class="pre">get-pipeline-definition</span></tt> to retrieve the pipeline definition that you provided using  put-pipeline-definition .</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  get-pipeline-definition
+--pipeline-id &lt;value&gt;
+[--pipeline-version &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--pipeline-id" class="dashAnchor" id="pipeline-id"></a><span class="pre">--pipeline-id</span></tt> (string)</p>
+<blockquote>
+<div>The ID of the pipeline.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--pipeline-version" class="dashAnchor" id="pipeline-version"></a><span class="pre">--pipeline-version</span></tt> (string)</p>
+<blockquote>
+<div>The version of the pipeline definition to retrieve. Set this parameter to <tt class="docutils literal"><span class="pre">latest</span></tt> (default) to use the last definition saved to the pipeline or <tt class="docutils literal"><span class="pre">active</span></tt> to use the last definition that was activated.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON pipeline-version provided. The JSON pipeline-version follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To get a pipeline definition</strong></p>
+<p>This example gets the pipeline definition for the specified pipeline:</p>
+<div class="highlight-python"><pre>aws datapipeline get-pipeline-definition --pipeline-id df-00627471SOVYZEXAMPLE</pre>
+</div>
+<p>The following is example output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"parameters"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"AWS::S3::ObjectKey"</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"myS3OutputLoc"</span><span class="p">,</span>
+          <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"S3 output folder"</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"s3://us-east-1.elasticmapreduce.samples/pig-apache-logs/data"</span><span class="p">,</span>
+          <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"AWS::S3::ObjectKey"</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"myS3InputLoc"</span><span class="p">,</span>
+          <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"S3 input folder"</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"grep -rc </span><span class="se">\"</span><span class="s2">GET</span><span class="se">\"</span><span class="s2"> ${INPUT1_STAGING_DIR}/* &gt; ${OUTPUT1_STAGING_DIR}/output.txt"</span><span class="p">,</span>
+          <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"String"</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"myShellCmd"</span><span class="p">,</span>
+          <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Shell command to run"</span>
+      <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"objects"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"Ec2Resource"</span><span class="p">,</span>
+          <span class="s2">"terminateAfter"</span><span class="p">:</span> <span class="s2">"20 Minutes"</span><span class="p">,</span>
+          <span class="s2">"instanceType"</span><span class="p">:</span> <span class="s2">"t1.micro"</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"EC2ResourceObj"</span><span class="p">,</span>
+          <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"EC2ResourceObj"</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Default"</span><span class="p">,</span>
+          <span class="s2">"failureAndRerunMode"</span><span class="p">:</span> <span class="s2">"CASCADE"</span><span class="p">,</span>
+          <span class="s2">"resourceRole"</span><span class="p">:</span> <span class="s2">"DataPipelineDefaultResourceRole"</span><span class="p">,</span>
+          <span class="s2">"schedule"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">"ref"</span><span class="p">:</span> <span class="s2">"DefaultSchedule"</span>
+          <span class="p">},</span>
+          <span class="s2">"role"</span><span class="p">:</span> <span class="s2">"DataPipelineDefaultRole"</span><span class="p">,</span>
+          <span class="s2">"scheduleType"</span><span class="p">:</span> <span class="s2">"cron"</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"Default"</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="s2">"directoryPath"</span><span class="p">:</span> <span class="s2">"#{myS3OutputLoc}/#{format(@scheduledStartTime, 'YYYY-MM-dd-HH-mm-ss')}"</span><span class="p">,</span>
+          <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"S3DataNode"</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"S3OutputLocation"</span><span class="p">,</span>
+          <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"S3OutputLocation"</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="s2">"directoryPath"</span><span class="p">:</span> <span class="s2">"#{myS3InputLoc}"</span><span class="p">,</span>
+          <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"S3DataNode"</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"S3InputLocation"</span><span class="p">,</span>
+          <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"S3InputLocation"</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="s2">"startAt"</span><span class="p">:</span> <span class="s2">"FIRST_ACTIVATION_DATE_TIME"</span><span class="p">,</span>
+          <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Every 15 minutes"</span><span class="p">,</span>
+          <span class="s2">"period"</span><span class="p">:</span> <span class="s2">"15 minutes"</span><span class="p">,</span>
+          <span class="s2">"occurrences"</span><span class="p">:</span> <span class="s2">"4"</span><span class="p">,</span>
+          <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"Schedule"</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"DefaultSchedule"</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"ShellCommandActivityObj"</span><span class="p">,</span>
+          <span class="s2">"command"</span><span class="p">:</span> <span class="s2">"#{myShellCmd}"</span><span class="p">,</span>
+          <span class="s2">"output"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">"ref"</span><span class="p">:</span> <span class="s2">"S3OutputLocation"</span>
+          <span class="p">},</span>
+          <span class="s2">"input"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">"ref"</span><span class="p">:</span> <span class="s2">"S3InputLocation"</span>
+          <span class="p">},</span>
+          <span class="s2">"stage"</span><span class="p">:</span> <span class="s2">"true"</span><span class="p">,</span>
+          <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"ShellCommandActivity"</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"ShellCommandActivityObj"</span><span class="p">,</span>
+          <span class="s2">"runsOn"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">"ref"</span><span class="p">:</span> <span class="s2">"EC2ResourceObj"</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"values"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"myS3OutputLoc"</span><span class="p">:</span> <span class="s2">"s3://my-s3-bucket/"</span><span class="p">,</span>
+      <span class="s2">"myS3InputLoc"</span><span class="p">:</span> <span class="s2">"s3://us-east-1.elasticmapreduce.samples/pig-apache-logs/data"</span><span class="p">,</span>
+      <span class="s2">"myShellCmd"</span><span class="p">:</span> <span class="s2">"grep -rc </span><span class="se">\"</span><span class="s2">GET</span><span class="se">\"</span><span class="s2"> ${INPUT1_STAGING_DIR}/* &gt; ${OUTPUT1_STAGING_DIR}/output.txt"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>The output of this command is the pipeline definition, which is documented in the <a class="reference external" href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-writing-pipeline-definition.html">Pipeline Definition File Syntax</a></p>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="evaluate-expression.html" title="previous chapter (use the left arrow)">&#8592; evaluate-expression</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="list-pipelines.html" title="next chapter (use the right arrow)">list-pipelines &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="list-pipelines.html" title="list-pipelines">next</a> |</li>
+        <li class="right">
+          <a href="evaluate-expression.html" title="evaluate-expression">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">datapipeline</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/datapipeline/get-pipeline-definition.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:01 GMT -->
+</html>

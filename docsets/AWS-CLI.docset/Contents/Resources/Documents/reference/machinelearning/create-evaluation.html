@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/machinelearning/create-evaluation.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:21 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-evaluation &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="machinelearning" href="index.html" />
+    <link rel="next" title="create-ml-model" href="create-ml-model.html" />
+    <link rel="prev" title="create-data-source-from-s3" href="create-data-source-from-s3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="create-ml-model.html" title="create-ml-model" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="create-data-source-from-s3.html" title="create-data-source-from-s3" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">machinelearning</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="create-data-source-from-s3.html" title="previous chapter (use the left arrow)">&#8592; create-data-source-from-s3</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-ml-model.html" title="next chapter (use the right arrow)">create-ml-model &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-evaluation</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/machinelearning/create-evaluation">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-machinelearning"><em>machinelearning</em></a> ]</p>
+<div class="section" id="create-evaluation">
+<span id="cli-aws-machinelearning-create-evaluation"></span><h1>create-evaluation<a name="//apple_ref/cpp/Command/aws machinelearning create-evaluation" class="dashAnchor" id="aws machinelearning create-evaluation"></a><a class="headerlink" href="#create-evaluation" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Creates a new <tt class="docutils literal"><span class="pre">Evaluation</span></tt> of an <tt class="docutils literal"><span class="pre">MLModel</span></tt> . An <tt class="docutils literal"><span class="pre">MLModel</span></tt> is evaluated on a set of observations associated to a <tt class="docutils literal"><span class="pre">DataSource</span></tt> . Like a <tt class="docutils literal"><span class="pre">DataSource</span></tt> for an <tt class="docutils literal"><span class="pre">MLModel</span></tt> , the <tt class="docutils literal"><span class="pre">DataSource</span></tt> for an <tt class="docutils literal"><span class="pre">Evaluation</span></tt> contains values for the <tt class="docutils literal"><span class="pre">Target</span> <span class="pre">Variable</span></tt> . The <tt class="docutils literal"><span class="pre">Evaluation</span></tt> compares the predicted result for each observation to the actual outcome and provides a summary so that you know how effective the <tt class="docutils literal"><span class="pre">MLModel</span></tt> functions on the test data. Evaluation generates a relevant performance metric, such as BinaryAUC, RegressionRMSE or MulticlassAvgFScore based on the corresponding <tt class="docutils literal"><span class="pre">MLModelType</span></tt> : <tt class="docutils literal"><span class="pre">BINARY</span></tt> , <tt class="docutils literal"><span class="pre">REGRESSION</span></tt> or <tt class="docutils literal"><span class="pre">MULTICLASS</span></tt> .</p>
+<p><tt class="docutils literal"><span class="pre">create-evaluation</span></tt> is an asynchronous operation. In response to <tt class="docutils literal"><span class="pre">create-evaluation</span></tt> , Amazon Machine Learning (Amazon ML) immediately returns and sets the evaluation status to <tt class="docutils literal"><span class="pre">PENDING</span></tt> . After the <tt class="docutils literal"><span class="pre">Evaluation</span></tt> is created and ready for use, Amazon ML sets the status to <tt class="docutils literal"><span class="pre">COMPLETED</span></tt> .</p>
+<p>You can use the <tt class="docutils literal"><span class="pre">get-evaluation</span></tt> operation to check progress of the evaluation during the creation operation.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  create-evaluation
+--evaluation-id &lt;value&gt;
+[--evaluation-name &lt;value&gt;]
+--ml-model-id &lt;value&gt;
+--evaluation-data-source-id &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--evaluation-id" class="dashAnchor" id="evaluation-id"></a><span class="pre">--evaluation-id</span></tt> (string)</p>
+<blockquote>
+<div>A user-supplied ID that uniquely identifies the <tt class="docutils literal"><span class="pre">Evaluation</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--evaluation-name" class="dashAnchor" id="evaluation-name"></a><span class="pre">--evaluation-name</span></tt> (string)</p>
+<blockquote>
+<div>A user-supplied name or description of the <tt class="docutils literal"><span class="pre">Evaluation</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ml-model-id" class="dashAnchor" id="ml-model-id"></a><span class="pre">--ml-model-id</span></tt> (string)</p>
+<blockquote>
+<div><p>The ID of the <tt class="docutils literal"><span class="pre">MLModel</span></tt> to evaluate.</p>
+<p>The schema used in creating the <tt class="docutils literal"><span class="pre">MLModel</span></tt> must match the schema of the <tt class="docutils literal"><span class="pre">DataSource</span></tt> used in the <tt class="docutils literal"><span class="pre">Evaluation</span></tt> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--evaluation-data-source-id" class="dashAnchor" id="evaluation-data-source-id"></a><span class="pre">--evaluation-data-source-id</span></tt> (string)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DataSource</span></tt> for the evaluation. The schema of the <tt class="docutils literal"><span class="pre">DataSource</span></tt> must match the schema used to create the <tt class="docutils literal"><span class="pre">MLModel</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>EvaluationId -&gt; (string)</p>
+<blockquote>
+<div>The user-supplied ID that uniquely identifies the <tt class="docutils literal"><span class="pre">Evaluation</span></tt> . This value should be identical to the value of the <tt class="docutils literal"><span class="pre">EvaluationId</span></tt> in the request.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="create-data-source-from-s3.html" title="previous chapter (use the left arrow)">&#8592; create-data-source-from-s3</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-ml-model.html" title="next chapter (use the right arrow)">create-ml-model &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="create-ml-model.html" title="create-ml-model">next</a> |</li>
+        <li class="right">
+          <a href="create-data-source-from-s3.html" title="create-data-source-from-s3">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">machinelearning</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/machinelearning/create-evaluation.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:21 GMT -->
+</html>

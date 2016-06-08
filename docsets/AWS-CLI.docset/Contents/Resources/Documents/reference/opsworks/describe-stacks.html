@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/opsworks/describe-stacks.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:22 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>describe-stacks &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>describe-stacks &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +25,10 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="opsworks" href="index.html" />
     <link rel="next" title="describe-time-based-auto-scaling" href="describe-time-based-auto-scaling.html" />
-    <link rel="prev" title="describe-service-errors" href="describe-service-errors.html" />
+    <link rel="prev" title="describe-stack-summary" href="describe-stack-summary.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
   
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -60,8 +63,8 @@
         <li class="right">
           <a href="describe-time-based-auto-scaling.html" title="describe-time-based-auto-scaling" accesskey="N">next</a> |</li>
         <li class="right">
-          <a href="describe-service-errors.html" title="describe-service-errors" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="describe-stack-summary.html" title="describe-stack-summary" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">opsworks</a> &#187;</li> 
       </ul>
@@ -71,7 +74,7 @@
     <div class="top-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="describe-service-errors.html" title="previous chapter (use the left arrow)">&#8592; describe-service-errors</a>
+          <a href="describe-stack-summary.html" title="previous chapter (use the left arrow)">&#8592; describe-stack-summary</a>
           <span class="divider">/</span>
           
         </li>
@@ -82,23 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">describe-stacks</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,34 +112,240 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/opsworks/describe-stacks">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/opsworks/describe-stacks">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>opsworks</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-opsworks"><em>opsworks</em></a> ]</p>
 <div class="section" id="describe-stacks">
-<h1>describe-stacks<a class="headerlink" href="#describe-stacks" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-opsworks-describe-stacks"></span><h1>describe-stacks<a name="//apple_ref/cpp/Command/aws opsworks describe-stacks" class="dashAnchor" id="aws opsworks describe-stacks"></a><a class="headerlink" href="#describe-stacks" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
 <p>Requests a description of one or more stacks.</p>
+<p><strong>Required Permissions</strong> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a class="reference external" href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a> .</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  describe-stacks
-[--stack-ids &lt;value&gt;]</pre>
+[--stack-ids &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--stack-ids" class="dashAnchor" id="stack-ids"></a><span class="pre">--stack-ids</span></tt> (list)</p>
 <blockquote>
-<div>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <tt class="docutils literal"><span class="pre">describe-stacks</span></tt>  returns a description of every stack.</div></blockquote>
+<div>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <tt class="docutils literal"><span class="pre">describe-stacks</span></tt> returns a description of every stack.</div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To describe stacks</strong></p>
+<p>The following <tt class="docutils literal"><span class="pre">describe-stacks</span></tt> command describes an account's stacks.</p>
+<div class="highlight-python"><pre>aws opsworks --region us-east-1 describe-stacks</pre>
+</div>
+<p><strong>Note</strong>: AWS OpsWorks CLI commands should set the region to us-east-1 regardless of the stack's location.</p>
+<p><em>Output</em>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"Stacks"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"ServiceRoleArn"</span><span class="p">:</span> <span class="s2">"arn:aws:iam::444455556666:role/aws-opsworks-service-role"</span><span class="p">,</span>
+      <span class="s2">"StackId"</span><span class="p">:</span> <span class="s2">"aeb7523e-7c8b-49d4-b866-03aae9d4fbcb"</span><span class="p">,</span>
+      <span class="s2">"DefaultRootDeviceType"</span><span class="p">:</span> <span class="s2">"instance-store"</span><span class="p">,</span>
+      <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"TomStack-sd"</span><span class="p">,</span>
+      <span class="s2">"ConfigurationManager"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"Version"</span><span class="p">:</span> <span class="s2">"11.4"</span><span class="p">,</span>
+        <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"Chef"</span>
+      <span class="p">},</span>
+      <span class="s2">"UseCustomCookbooks"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">"CustomJson"</span><span class="p">:</span> <span class="s2">"{</span><span class="se">\n</span><span class="s2">  </span><span class="se">\"</span><span class="s2">tomcat</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">base_version</span><span class="se">\"</span><span class="s2">: 7,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">java_opts</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-Djava.awt.headless=true -Xmx256m</span><span class="se">\"\n</span><span class="s2">  },</span><span class="se">\n</span><span class="s2">  </span><span class="se">\"</span><span class="s2">datasources</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">ROOT</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">jdbc/mydb</span><span class="se">\"\n</span><span class="s2">  }</span><span class="se">\n</span><span class="s2">}"</span><span class="p">,</span>
+      <span class="s2">"Region"</span><span class="p">:</span> <span class="s2">"us-east-1"</span><span class="p">,</span>
+      <span class="s2">"DefaultInstanceProfileArn"</span><span class="p">:</span> <span class="s2">"arn:aws:iam::444455556666:instance-profile/aws-opsworks-ec2-role"</span><span class="p">,</span>
+      <span class="s2">"CustomCookbooksSource"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"Url"</span><span class="p">:</span> <span class="s2">"git://github.com/example-repo/tomcustom.git"</span><span class="p">,</span>
+        <span class="s2">"Type"</span><span class="p">:</span> <span class="s2">"git"</span>
+      <span class="p">},</span>
+      <span class="s2">"DefaultAvailabilityZone"</span><span class="p">:</span> <span class="s2">"us-east-1a"</span><span class="p">,</span>
+      <span class="s2">"HostnameTheme"</span><span class="p">:</span> <span class="s2">"Layer_Dependent"</span><span class="p">,</span>
+      <span class="s2">"Attributes"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"Color"</span><span class="p">:</span> <span class="s2">"rgb(45, 114, 184)"</span>
+      <span class="p">},</span>
+      <span class="s2">"DefaultOs"</span><span class="p">:</span> <span class="s2">"Amazon Linux"</span><span class="p">,</span>
+      <span class="s2">"CreatedAt"</span><span class="p">:</span> <span class="s2">"2013-08-01T22:53:42+00:00"</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">"ServiceRoleArn"</span><span class="p">:</span> <span class="s2">"arn:aws:iam::444455556666:role/aws-opsworks-service-role"</span><span class="p">,</span>
+      <span class="s2">"StackId"</span><span class="p">:</span> <span class="s2">"40738975-da59-4c5b-9789-3e422f2cf099"</span><span class="p">,</span>
+      <span class="s2">"DefaultRootDeviceType"</span><span class="p">:</span> <span class="s2">"instance-store"</span><span class="p">,</span>
+      <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"MyStack"</span><span class="p">,</span>
+      <span class="s2">"ConfigurationManager"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"Version"</span><span class="p">:</span> <span class="s2">"11.4"</span><span class="p">,</span>
+        <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"Chef"</span>
+      <span class="p">},</span>
+      <span class="s2">"UseCustomCookbooks"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+      <span class="s2">"Region"</span><span class="p">:</span> <span class="s2">"us-east-1"</span><span class="p">,</span>
+      <span class="s2">"DefaultInstanceProfileArn"</span><span class="p">:</span> <span class="s2">"arn:aws:iam::444455556666:instance-profile/aws-opsworks-ec2-role"</span><span class="p">,</span>
+      <span class="s2">"CustomCookbooksSource"</span><span class="p">:</span> <span class="p">{},</span>
+      <span class="s2">"DefaultAvailabilityZone"</span><span class="p">:</span> <span class="s2">"us-east-1a"</span><span class="p">,</span>
+      <span class="s2">"HostnameTheme"</span><span class="p">:</span> <span class="s2">"Layer_Dependent"</span><span class="p">,</span>
+      <span class="s2">"Attributes"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"Color"</span><span class="p">:</span> <span class="s2">"rgb(45, 114, 184)"</span>
+      <span class="p">},</span>
+      <span class="s2">"DefaultOs"</span><span class="p">:</span> <span class="s2">"Amazon Linux"</span><span class="p">,</span>
+      <span class="s2">"CreatedAt"</span><span class="p">:</span> <span class="s2">"2013-10-25T19:24:30+00:00"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>More Information</strong></p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks.html">Stacks</a> in the <em>AWS OpsWorks User Guide</em>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Stacks -&gt; (list)</p>
+<blockquote>
+<div><p>An array of <tt class="docutils literal"><span class="pre">Stack</span></tt> objects that describe the stacks.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a stack.</p>
+<p>StackId -&gt; (string)</p>
+<blockquote>
+<div>The stack ID.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The stack name.</div></blockquote>
+<p>Arn -&gt; (string)</p>
+<blockquote>
+<div>The stack's ARN.</div></blockquote>
+<p>Region -&gt; (string)</p>
+<blockquote>
+<div>The stack AWS region, such as "us-east-1". For more information about AWS regions, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> .</div></blockquote>
+<p>VpcId -&gt; (string)</p>
+<blockquote>
+<div>The VPC ID; applicable only if the stack is running in a VPC.</div></blockquote>
+<p>Attributes -&gt; (map)</p>
+<blockquote>
+<div><p>The stack's attributes.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+<p>ServiceRoleArn -&gt; (string)</p>
+<blockquote>
+<div>The stack AWS Identity and Access Management (IAM) role.</div></blockquote>
+<p>DefaultInstanceProfileArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a> .</div></blockquote>
+<p>DefaultOs -&gt; (string)</p>
+<blockquote>
+<div>The stack's default operating system.</div></blockquote>
+<p>HostnameTheme -&gt; (string)</p>
+<blockquote>
+<div>The stack host name theme, with spaces replaced by underscores.</div></blockquote>
+<p>DefaultAvailabilityZone -&gt; (string)</p>
+<blockquote>
+<div>The stack's default Availability Zone. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> .</div></blockquote>
+<p>DefaultSubnetId -&gt; (string)</p>
+<blockquote>
+<div>The default subnet ID; applicable only if the stack is running in a VPC.</div></blockquote>
+<p>CustomJson -&gt; (string)</p>
+<blockquote>
+<div><p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format and must escape characters such as '"':</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"{\"key1\":</span> <span class="pre">\"value1\",</span> <span class="pre">\"key2\":</span> <span class="pre">\"value2\",...}"</span></tt></div></blockquote>
+<p>For more information on custom JSON, see <a class="reference external" href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a> .</p>
+</div></blockquote>
+<p>ConfigurationManager -&gt; (structure)</p>
+<blockquote>
+<div><p>The configuration manager.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name. This parameter must be set to "Chef".</div></blockquote>
+<p>Version -&gt; (string)</p>
+<blockquote>
+<div>The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux stacks, and to 12.2 for Windows stacks. The default value for Linux stacks is 11.4.</div></blockquote>
+</div></blockquote>
+<p>ChefConfiguration -&gt; (structure)</p>
+<blockquote>
+<div><p>A <tt class="docutils literal"><span class="pre">ChefConfiguration</span></tt> object that specifies whether to enable Berkshelf and the Berkshelf version. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a> .</p>
+<p>ManageBerkshelf -&gt; (boolean)</p>
+<blockquote>
+<div>Whether to enable Berkshelf.</div></blockquote>
+<p>BerkshelfVersion -&gt; (string)</p>
+<blockquote>
+<div>The Berkshelf version.</div></blockquote>
+</div></blockquote>
+<p>UseCustomCookbooks -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the stack uses custom cookbooks.</div></blockquote>
+<p>UseOpsworksSecurityGroups -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's layers.</div></blockquote>
+<p>CustomCookbooksSource -&gt; (structure)</p>
+<blockquote>
+<div><p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating Apps</a> or <a class="reference external" href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom Recipes and Cookbooks</a> .</p>
+<p>Type -&gt; (string)</p>
+<blockquote>
+<div>The repository type.</div></blockquote>
+<p>Url -&gt; (string)</p>
+<blockquote>
+<div>The source URL.</div></blockquote>
+<p>Username -&gt; (string)</p>
+<blockquote>
+<div><p>This parameter depends on the repository type.</p>
+<ul class="simple">
+<li>For Amazon S3 bundles, set <tt class="docutils literal"><span class="pre">Username</span></tt> to the appropriate IAM access key ID.</li>
+<li>For HTTP bundles, Git repositories, and Subversion repositories, set <tt class="docutils literal"><span class="pre">Username</span></tt> to the user name.</li>
+</ul>
+</div></blockquote>
+<p>Password -&gt; (string)</p>
+<blockquote>
+<div><p>When included in a request, the parameter depends on the repository type.</p>
+<ul class="simple">
+<li>For Amazon S3 bundles, set <tt class="docutils literal"><span class="pre">Password</span></tt> to the appropriate IAM secret access key.</li>
+<li>For HTTP bundles and Subversion repositories, set <tt class="docutils literal"><span class="pre">Password</span></tt> to the password.</li>
+</ul>
+<p>For more information on how to safely handle IAM credentials, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a> .</p>
+<p>In responses, AWS OpsWorks returns <tt class="docutils literal"><span class="pre">*****FILTERED*****</span></tt> instead of the actual value.</p>
+</div></blockquote>
+<p>SshKey -&gt; (string)</p>
+<blockquote>
+<div><p>In requests, the repository's SSH key.</p>
+<p>In responses, AWS OpsWorks returns <tt class="docutils literal"><span class="pre">*****FILTERED*****</span></tt> instead of the actual value.</p>
+</div></blockquote>
+<p>Revision -&gt; (string)</p>
+<blockquote>
+<div>The application's version. AWS OpsWorks enables you to easily deploy new versions of an application. One of the simplest approaches is to have branches or revisions in your repository that represent different versions that can potentially be deployed.</div></blockquote>
+</div></blockquote>
+<p>DefaultSshKeyName -&gt; (string)</p>
+<blockquote>
+<div>A default Amazon EC2 key pair for the stack's instances. You can override this value when you create or update an instance.</div></blockquote>
+<p>CreatedAt -&gt; (string)</p>
+<blockquote>
+<div>The date when the stack was created.</div></blockquote>
+<p>DefaultRootDeviceType -&gt; (string)</p>
+<blockquote>
+<div>The default root device type. This value is used by default for all instances in the stack, but you can override it when you create an instance. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a> .</div></blockquote>
+<p>AgentVersion -&gt; (string)</p>
+<blockquote>
+<div>The agent version. This parameter is set to <tt class="docutils literal"><span class="pre">LATEST</span></tt> for auto-update. or a version number for a fixed agent version.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
 </div>
 </div>
 
@@ -146,7 +357,7 @@
     <div class="footer-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="describe-service-errors.html" title="previous chapter (use the left arrow)">&#8592; describe-service-errors</a>
+          <a href="describe-stack-summary.html" title="previous chapter (use the left arrow)">&#8592; describe-stack-summary</a>
           <span class="divider">/</span>
           
         </li>
@@ -156,6 +367,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -164,36 +384,22 @@
         <li class="right">
           <a href="describe-time-based-auto-scaling.html" title="describe-time-based-auto-scaling">next</a> |</li>
         <li class="right">
-          <a href="describe-service-errors.html" title="describe-service-errors">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="describe-stack-summary.html" title="describe-stack-summary">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">opsworks</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'describe-service-errors.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'describe-time-based-auto-scaling.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/opsworks/describe-stacks.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:22 GMT -->
 </html>

@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/associate-address.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>associate-address &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>associate-address &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="ec2" href="index.html" />
     <link rel="next" title="associate-dhcp-options" href="associate-dhcp-options.html" />
     <link rel="prev" title="assign-private-ip-addresses" href="assign-private-ip-addresses.html" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -61,7 +64,7 @@
           <a href="associate-dhcp-options.html" title="associate-dhcp-options" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="assign-private-ip-addresses.html" title="assign-private-ip-addresses" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">ec2</a> &#187;</li> 
       </ul>
@@ -82,24 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">associate-address</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
 <li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -108,23 +112,31 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/ec2/associate-address">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ec2/associate-address">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>ec2</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-ec2"><em>ec2</em></a> ]</p>
 <div class="section" id="associate-address">
-<h1>associate-address<a class="headerlink" href="#associate-address" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-ec2-associate-address"></span><h1>associate-address<a name="//apple_ref/cpp/Command/aws ec2 associate-address" class="dashAnchor" id="aws ec2 associate-address"></a><a class="headerlink" href="#associate-address" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>The associate-address operation associates an elastic IP address with an instance.</p>
-<p>If the IP address is currently assigned to another instance, the IP address is assigned to the new instance. This is an idempotent operation. If you enter it more than once, Amazon EC2 does not return an error.</p>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Associates an Elastic IP address with an instance or a network interface.</p>
+<p>An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
+<p>[EC2-Classic, VPC in an EC2-VPC-only account] If the Elastic IP address is already associated with a different instance, it is disassociated from that instance and associated with the specified instance.</p>
+<p>[VPC in an EC2-Classic account] If you don't specify a private IP address, the Elastic IP address is associated with the primary IP address. If the Elastic IP address is already associated with a different instance or a network interface, you get an error unless you allow reassociation.</p>
+<p>This is an idempotent operation. If you perform the operation more than once, Amazon EC2 doesn't return an error.</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  associate-address
 [--dry-run | --no-dry-run]
 [--instance-id &lt;value&gt;]
@@ -132,51 +144,71 @@
 [--allocation-id &lt;value&gt;]
 [--network-interface-id &lt;value&gt;]
 [--private-ip-address &lt;value&gt;]
-[--allow-reassociation | --no-allow-reassociation]</pre>
+[--allow-reassociation | --no-allow-reassociation]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--no-dry-run" class="dashAnchor" id="no-dry-run"></a><span class="pre">--no-dry-run</span></tt> (boolean)</p>
-<p>Checks whether you have the required permissions for the action, without actually making the request. Using this option will result in one of two possible errorresponses. If you have the required permissions, the error response will be <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt>  . Otherwise it will be <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt>  .</p>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><span class="pre">--no-dry-run</span></tt> (boolean)</p>
+<blockquote>
+<div>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt> . Otherwise, it is <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt> .</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--instance-id" class="dashAnchor" id="instance-id"></a><span class="pre">--instance-id</span></tt> (string)</p>
 <blockquote>
-<div>The instance to associate with the IP address.</div></blockquote>
+<div>The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you can specify either the instance ID or the network interface ID, but not both. The operation fails if you specify an instance ID unless exactly one network interface is attached.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--public-ip" class="dashAnchor" id="public-ip"></a><span class="pre">--public-ip</span></tt> (string)</p>
 <blockquote>
-<div>IP address that you are assigning to the instance.</div></blockquote>
+<div>The Elastic IP address. This is required for EC2-Classic.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--allocation-id" class="dashAnchor" id="allocation-id"></a><span class="pre">--allocation-id</span></tt> (string)</p>
 <blockquote>
-<div>The allocation ID that AWS returned when you allocated the elastic IP address for use with Amazon VPC.</div></blockquote>
+<div>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--network-interface-id" class="dashAnchor" id="network-interface-id"></a><span class="pre">--network-interface-id</span></tt> (string)</p>
+<blockquote>
+<div>[EC2-VPC] The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--private-ip-address" class="dashAnchor" id="private-ip-address"></a><span class="pre">--private-ip-address</span></tt> (string)</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--allow-reassociation" class="dashAnchor" id="allow-reassociation"></a><span class="pre">--allow-reassociation</span></tt> | <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--no-allow-reassociation" class="dashAnchor" id="no-allow-reassociation"></a><span class="pre">--no-allow-reassociation</span></tt> (boolean)</p>
+<blockquote>
+<div>[EC2-VPC] The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--allow-reassociation" class="dashAnchor" id="allow-reassociation"></a><span class="pre">--allow-reassociation</span></tt> | <tt class="docutils literal"><span class="pre">--no-allow-reassociation</span></tt> (boolean)</p>
+<blockquote>
+<div>[EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is already associated with an instance or network interface to be reassociated with the specified instance or network interface. Otherwise, the operation fails. In a VPC in an EC2-VPC-only account, reassociation is automatic, therefore you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
 </div>
 <div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
 <p><strong>To associate an Elastic IP addresses in EC2-Classic</strong></p>
-<p>This example associates an Elastic IP address with an instance in EC2-Classic.</p>
+<p>This example associates an Elastic IP address with an instance in EC2-Classic. If the command succeeds, no output is returned.</p>
 <p>Command:</p>
-<div class="highlight-python"><pre>aws ec2 associate-address --instance-id i-5203422c --public-ip 198.51.100.0</pre>
-</div>
-<p>Output:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-    <span class="s">"return"</span><span class="p">:</span> <span class="s">"true"</span>
-<span class="p">}</span>
-</pre></div>
+<div class="highlight-python"><pre>aws ec2 associate-address --instance-id i-07ffe74c7330ebf53 --public-ip 198.51.100.0</pre>
 </div>
 <p><strong>To associate an Elastic IP address in EC2-VPC</strong></p>
 <p>This example associates an Elastic IP address with an instance in a VPC.</p>
 <p>Command:</p>
-<div class="highlight-python"><pre>aws ec2 associate-address --instance-id i-43a4412a --allocation-id eipalloc-64d5890a</pre>
+<div class="highlight-python"><pre>aws ec2 associate-address --instance-id i-0b263919b6498b123 --allocation-id eipalloc-64d5890a</pre>
 </div>
 <p>Output:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-    <span class="s">"AssociationId"</span><span class="p">:</span> <span class="s">"eipassoc-2bebb745"</span><span class="p">,</span>
-    <span class="s">"return"</span><span class="p">:</span> <span class="s">"true"</span>
+    <span class="s2">"AssociationId"</span><span class="p">:</span> <span class="s2">"eipassoc-2bebb745"</span>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>This example associates an Elastic IP address with a network interface.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 associate-address --allocation-id eipalloc-64d5890a --network-interface-id eni-1a2b3c4d</pre>
+</div>
+<p>This example associates an Elastic IP with a private IP address that's associated with a network interface.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 associate-address --allocation-id eipalloc-64d5890a --network-interface-id eni-1a2b3c4d --private-ip-address 10.0.0.85</pre>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>AssociationId -&gt; (string)</p>
+<blockquote>
+<div>[EC2-VPC] The ID that represents the association of the Elastic IP address with an instance.</div></blockquote>
 </div>
 </div>
 
@@ -198,6 +230,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -207,35 +248,21 @@
           <a href="associate-dhcp-options.html" title="associate-dhcp-options">next</a> |</li>
         <li class="right">
           <a href="assign-private-ip-addresses.html" title="assign-private-ip-addresses">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">ec2</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'assign-private-ip-addresses.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'associate-dhcp-options.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/associate-address.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
 </html>

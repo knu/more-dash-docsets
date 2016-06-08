@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/waf/update-web-acl.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>update-web-acl &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="waf" href="index.html" />
+    <link rel="next" title="update-xss-match-set" href="update-xss-match-set.html" />
+    <link rel="prev" title="update-sql-injection-match-set" href="update-sql-injection-match-set.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="update-xss-match-set.html" title="update-xss-match-set" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="update-sql-injection-match-set.html" title="update-sql-injection-match-set" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">waf</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="update-sql-injection-match-set.html" title="previous chapter (use the left arrow)">&#8592; update-sql-injection-match-set</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="update-xss-match-set.html" title="next chapter (use the right arrow)">update-xss-match-set &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">update-web-acl</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/waf/update-web-acl">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-waf"><em>waf</em></a> ]</p>
+<div class="section" id="update-web-acl">
+<span id="cli-aws-waf-update-web-acl"></span><h1>update-web-acl<a name="//apple_ref/cpp/Command/aws waf update-web-acl" class="dashAnchor" id="aws waf update-web-acl"></a><a class="headerlink" href="#update-web-acl" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Inserts or deletes  ActivatedRule objects in a <tt class="docutils literal"><span class="pre">WebACL</span></tt> . Each <tt class="docutils literal"><span class="pre">Rule</span></tt> identifies web requests that you want to allow, block, or count. When you update a <tt class="docutils literal"><span class="pre">WebACL</span></tt> , you specify the following values:</p>
+<ul class="simple">
+<li>A default action for the <tt class="docutils literal"><span class="pre">WebACL</span></tt> , either <tt class="docutils literal"><span class="pre">ALLOW</span></tt> or <tt class="docutils literal"><span class="pre">BLOCK</span></tt> . AWS WAF performs the default action if a request doesn't match the criteria in any of the <tt class="docutils literal"><span class="pre">Rules</span></tt> in a <tt class="docutils literal"><span class="pre">WebACL</span></tt> .</li>
+<li>The <tt class="docutils literal"><span class="pre">Rules</span></tt> that you want to add and/or delete. If you want to replace one <tt class="docutils literal"><span class="pre">Rule</span></tt> with another, you delete the existing <tt class="docutils literal"><span class="pre">Rule</span></tt> and add the new one.</li>
+<li>For each <tt class="docutils literal"><span class="pre">Rule</span></tt> , whether you want AWS WAF to allow requests, block requests, or count requests that match the conditions in the <tt class="docutils literal"><span class="pre">Rule</span></tt> .</li>
+<li>The order in which you want AWS WAF to evaluate the <tt class="docutils literal"><span class="pre">Rules</span></tt> in a <tt class="docutils literal"><span class="pre">WebACL</span></tt> . If you add more than one <tt class="docutils literal"><span class="pre">Rule</span></tt> to a <tt class="docutils literal"><span class="pre">WebACL</span></tt> , AWS WAF evaluates each request against the <tt class="docutils literal"><span class="pre">Rules</span></tt> in order based on the value of <tt class="docutils literal"><span class="pre">Priority</span></tt> . (The <tt class="docutils literal"><span class="pre">Rule</span></tt> that has the lowest value for <tt class="docutils literal"><span class="pre">Priority</span></tt> is evaluated first.) When a web request matches all of the predicates (such as <tt class="docutils literal"><span class="pre">ByteMatchSets</span></tt> and <tt class="docutils literal"><span class="pre">IPSets</span></tt> ) in a <tt class="docutils literal"><span class="pre">Rule</span></tt> , AWS WAF immediately takes the corresponding action, allow or block, and doesn't evaluate the request against the remaining <tt class="docutils literal"><span class="pre">Rules</span></tt> in the <tt class="docutils literal"><span class="pre">WebACL</span></tt> , if any.</li>
+<li>The CloudFront distribution that you want to associate with the <tt class="docutils literal"><span class="pre">WebACL</span></tt> .</li>
+</ul>
+<p>To create and configure a <tt class="docutils literal"><span class="pre">WebACL</span></tt> , perform the following steps:</p>
+<ul class="simple">
+<li>Create and update the predicates that you want to include in <tt class="docutils literal"><span class="pre">Rules</span></tt> . For more information, see  create-byte-match-set ,  update-byte-match-set ,  create-ip-set ,  update-ip-set ,  create-sql-injection-match-set , and  update-sql-injection-match-set .</li>
+<li>Create and update the <tt class="docutils literal"><span class="pre">Rules</span></tt> that you want to include in the <tt class="docutils literal"><span class="pre">WebACL</span></tt> . For more information, see  create-rule and  update-rule .</li>
+<li>Create a <tt class="docutils literal"><span class="pre">WebACL</span></tt> . See  create-web-acl .</li>
+<li>Use <tt class="docutils literal"><span class="pre">get-change-token</span></tt> to get the change token that you provide in the <tt class="docutils literal"><span class="pre">change-token</span></tt> parameter of an  update-web-acl request.</li>
+<li>Submit an <tt class="docutils literal"><span class="pre">update-web-acl</span></tt> request to specify the <tt class="docutils literal"><span class="pre">Rules</span></tt> that you want to include in the <tt class="docutils literal"><span class="pre">WebACL</span></tt> , to specify the default action, and to associate the <tt class="docutils literal"><span class="pre">WebACL</span></tt> with a CloudFront distribution.</li>
+</ul>
+<p>For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a class="reference external" href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a> .</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  update-web-acl
+--web-acl-id &lt;value&gt;
+--change-token &lt;value&gt;
+[--updates &lt;value&gt;]
+[--default-action &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--web-acl-id" class="dashAnchor" id="web-acl-id"></a><span class="pre">--web-acl-id</span></tt> (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">WebACLId</span></tt> of the  WebACL that you want to update. <tt class="docutils literal"><span class="pre">WebACLId</span></tt> is returned by  create-web-acl and by  list-web-acls .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--change-token" class="dashAnchor" id="change-token"></a><span class="pre">--change-token</span></tt> (string)</p>
+<blockquote>
+<div>The value returned by the most recent call to  get-change-token .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--updates" class="dashAnchor" id="updates"></a><span class="pre">--updates</span></tt> (list)</p>
+<blockquote>
+<div><p>An array of updates to make to the  WebACL .</p>
+<p>An array of <tt class="docutils literal"><span class="pre">WebACLUpdate</span></tt> objects that you want to insert into or delete from a  WebACL . For more information, see the applicable data types:</p>
+<ul class="simple">
+<li>WebACLUpdate : Contains <tt class="docutils literal"><span class="pre">Action</span></tt> and <tt class="docutils literal"><span class="pre">ActivatedRule</span></tt></li>
+<li>ActivatedRule : Contains <tt class="docutils literal"><span class="pre">Action</span></tt> , <tt class="docutils literal"><span class="pre">Priority</span></tt> , and <tt class="docutils literal"><span class="pre">RuleId</span></tt></li>
+<li>default-action : Contains <tt class="docutils literal"><span class="pre">Type</span></tt></li>
+</ul>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Action=string,ActivatedRule={Priority=integer,RuleId=string,Action={Type=string}} ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    "Action": "INSERT"|"DELETE",
+    "ActivatedRule": {
+      "Priority": integer,
+      "RuleId": "string",
+      "Action": {
+        "Type": "BLOCK"|"ALLOW"|"COUNT"
+      }
+    }
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--default-action" class="dashAnchor" id="default-action"></a><span class="pre">--default-action</span></tt> (structure)</p>
+<blockquote>
+<div>For the action that is associated with a rule in a <tt class="docutils literal"><span class="pre">WebACL</span></tt> , specifies the action that you want AWS WAF to perform when a web request matches all of the conditions in a rule. For the default action in a <tt class="docutils literal"><span class="pre">WebACL</span></tt> , specifies the action that you want AWS WAF to take when a web request doesn't match all of the conditions in any of the rules in a <tt class="docutils literal"><span class="pre">WebACL</span></tt> .</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Type</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"Type"</span><span class="p">:</span> <span class="s2">"BLOCK"</span><span class="o">|</span><span class="s2">"ALLOW"</span><span class="o">|</span><span class="s2">"COUNT"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>ChangeToken -&gt; (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">change-token</span></tt> that you used to submit the <tt class="docutils literal"><span class="pre">update-web-acl</span></tt> request. You can also use this value to query the status of the request. For more information, see  get-change-token-status .</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="update-sql-injection-match-set.html" title="previous chapter (use the left arrow)">&#8592; update-sql-injection-match-set</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="update-xss-match-set.html" title="next chapter (use the right arrow)">update-xss-match-set &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="update-xss-match-set.html" title="update-xss-match-set">next</a> |</li>
+        <li class="right">
+          <a href="update-sql-injection-match-set.html" title="update-sql-injection-match-set">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">waf</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/waf/update-web-acl.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+</html>

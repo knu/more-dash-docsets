@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ses/describe-active-receipt-rule-set.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-active-receipt-rule-set &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="ses" href="index.html" />
+    <link rel="next" title="describe-receipt-rule" href="describe-receipt-rule.html" />
+    <link rel="prev" title="delete-receipt-rule-set" href="delete-receipt-rule-set.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="describe-receipt-rule.html" title="describe-receipt-rule" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="delete-receipt-rule-set.html" title="delete-receipt-rule-set" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">ses</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="delete-receipt-rule-set.html" title="previous chapter (use the left arrow)">&#8592; delete-receipt-rule-set</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="describe-receipt-rule.html" title="next chapter (use the right arrow)">describe-receipt-rule &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-active-receipt-rule-set</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ses/describe-active-receipt-rule-set">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-ses"><em>ses</em></a> ]</p>
+<div class="section" id="describe-active-receipt-rule-set">
+<span id="cli-aws-ses-describe-active-receipt-rule-set"></span><h1>describe-active-receipt-rule-set<a name="//apple_ref/cpp/Command/aws ses describe-active-receipt-rule-set" class="dashAnchor" id="aws ses describe-active-receipt-rule-set"></a><a class="headerlink" href="#describe-active-receipt-rule-set" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Returns the metadata and receipt rules for the receipt rule set that is currently active.</p>
+<p>For information about setting up receipt rule sets, see the <a class="reference external" href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a> .</p>
+<p>This action is throttled at one request per second.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  describe-active-receipt-rule-set
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Metadata -&gt; (structure)</p>
+<blockquote>
+<div><p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and a timestamp of when the rule set was created.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div><p>The name of the receipt rule set. The name must:</p>
+<ul class="simple">
+<li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-).</li>
+<li>Start and end with a letter or number.</li>
+<li>Contain less than 64 characters.</li>
+</ul>
+</div></blockquote>
+<p>CreatedTimestamp -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time the receipt rule set was created.</div></blockquote>
+</div></blockquote>
+<p>Rules -&gt; (list)</p>
+<blockquote>
+<div><p>The receipt rules that belong to the active rule set.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Receipt rules enable you to specify which actions Amazon SES should take when it receives mail on behalf of one or more email addresses or domains that you own.</p>
+<p>Each receipt rule defines a set of email addresses or domains to which it applies. If the email addresses or domains match at least one recipient address of the message, Amazon SES executes all of the receipt rule's actions on the message.</p>
+<p>For information about setting up receipt rules, see the <a class="reference external" href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a> .</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div><p>The name of the receipt rule. The name must:</p>
+<ul class="simple">
+<li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-).</li>
+<li>Start and end with a letter or number.</li>
+<li>Contain less than 64 characters.</li>
+</ul>
+</div></blockquote>
+<p>Enabled -&gt; (boolean)</p>
+<blockquote>
+<div>If <tt class="docutils literal"><span class="pre">true</span></tt> , the receipt rule is active. The default value is <tt class="docutils literal"><span class="pre">false</span></tt> .</div></blockquote>
+<p>TlsPolicy -&gt; (string)</p>
+<blockquote>
+<div>Specifies whether Amazon SES should require that incoming email is delivered over a connection encrypted with Transport Layer Security (TLS). If this parameter is set to <tt class="docutils literal"><span class="pre">Require</span></tt> , Amazon SES will bounce emails that are not received over TLS. The default is <tt class="docutils literal"><span class="pre">Optional</span></tt> .</div></blockquote>
+<p>Recipients -&gt; (list)</p>
+<blockquote>
+<div><p>The recipient domains and email addresses to which the receipt rule applies. If this field is not specified, this rule will match all recipients under all verified domains.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>Actions -&gt; (list)</p>
+<blockquote>
+<div><p>An ordered list of actions to perform on messages that match at least one of the recipient email addresses or domains specified in the receipt rule.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>An action that Amazon SES can take when it receives an email on behalf of one or more email addresses or domains that you own. An instance of this data type can represent only one action.</p>
+<p>For information about setting up receipt rules, see the <a class="reference external" href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a> .</p>
+<p>S3Action -&gt; (structure)</p>
+<blockquote>
+<div><p>Saves the received message to an Amazon Simple Storage Service (Amazon S3) bucket and, optionally, publishes a notification to Amazon SNS.</p>
+<p>TopicArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the Amazon SNS topic to notify when the message is saved to the Amazon S3 bucket. An example of an Amazon SNS topic ARN is <tt class="docutils literal"><span class="pre">arn:aws:sns:us-west-2:123456789012:MyTopic</span></tt> . For more information about Amazon SNS topics, see the <a class="reference external" href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a> .</div></blockquote>
+<p>BucketName -&gt; (string)</p>
+<blockquote>
+<div>The name of the Amazon S3 bucket to which to save the received email.</div></blockquote>
+<p>ObjectKeyPrefix -&gt; (string)</p>
+<blockquote>
+<div>The key prefix of the Amazon S3 bucket. The key prefix is similar to a directory name that enables you to store similar data under the same directory in a bucket.</div></blockquote>
+<p>KmsKeyArn -&gt; (string)</p>
+<blockquote>
+<div><p>The customer master key that Amazon SES should use to encrypt your emails before saving them to the Amazon S3 bucket. You can use the default master key or a custom master key you created in AWS KMS as follows:</p>
+<ul class="simple">
+<li>To use the default master key, provide an ARN in the form of <tt class="docutils literal"><span class="pre">arn:aws:kms:REGION:ACCOUNT-ID-WITHOUT-HYPHENS:alias/aws/ses</span></tt> . For example, if your AWS account ID is 123456789012 and you want to use the default master key in the US West (Oregon) region, the ARN of the default master key would be <tt class="docutils literal"><span class="pre">arn:aws:kms:us-west-2:123456789012:alias/aws/ses</span></tt> . If you use the default master key, you don't need to perform any extra steps to give Amazon SES permission to use the key.</li>
+<li>To use a custom master key you created in AWS KMS, provide the ARN of the master key and ensure that you add a statement to your key's policy to give Amazon SES permission to use it. For more information about giving permissions, see the <a class="reference external" href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a> .</li>
+</ul>
+<p>For more information about key policies, see the <a class="reference external" href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS KMS Developer Guide</a> . If you do not specify a master key, Amazon SES will not encrypt your emails.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Your mail is encrypted by Amazon SES using the Amazon S3 encryption client before the mail is submitted to Amazon S3 for storage. It is not encrypted using Amazon S3 server-side encryption. This means that you must use the Amazon S3 encryption client to decrypt the email after retrieving it from Amazon S3, as the service has no access to use your AWS KMS keys for decryption. This encryption client is currently available with the <a class="reference external" href="https://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a class="reference external" href="https://aws.amazon.com/sdk-for-ruby/">AWS Ruby SDK</a> only. For more information about client-side encryption using AWS KMS master keys, see the <a class="reference external" href="http://alpha-docs-aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer Guide</a> .</p>
+</div>
+</div></blockquote>
+</div></blockquote>
+<p>BounceAction -&gt; (structure)</p>
+<blockquote>
+<div><p>Rejects the received email by returning a bounce response to the sender and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p>
+<p>TopicArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the bounce action is taken. An example of an Amazon SNS topic ARN is <tt class="docutils literal"><span class="pre">arn:aws:sns:us-west-2:123456789012:MyTopic</span></tt> . For more information about Amazon SNS topics, see the <a class="reference external" href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a> .</div></blockquote>
+<p>SmtpReplyCode -&gt; (string)</p>
+<blockquote>
+<div>The SMTP reply code, as defined by <a class="reference external" href="https://tools.ietf.org/html/rfc5321">RFC 5321</a> .</div></blockquote>
+<p>StatusCode -&gt; (string)</p>
+<blockquote>
+<div>The SMTP enhanced status code, as defined by <a class="reference external" href="https://tools.ietf.org/html/rfc3463">RFC 3463</a> .</div></blockquote>
+<p>Message -&gt; (string)</p>
+<blockquote>
+<div>Human-readable text to include in the bounce message.</div></blockquote>
+<p>Sender -&gt; (string)</p>
+<blockquote>
+<div>The email address of the sender of the bounced email. This is the address from which the bounce message will be sent.</div></blockquote>
+</div></blockquote>
+<p>WorkmailAction -&gt; (structure)</p>
+<blockquote>
+<div><p>Calls Amazon WorkMail and, optionally, publishes a notification to Amazon SNS.</p>
+<p>TopicArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the WorkMail action is called. An example of an Amazon SNS topic ARN is <tt class="docutils literal"><span class="pre">arn:aws:sns:us-west-2:123456789012:MyTopic</span></tt> . For more information about Amazon SNS topics, see the <a class="reference external" href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a> .</div></blockquote>
+<p>OrganizationArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the Amazon WorkMail organization. An example of an Amazon WorkMail organization ARN is <tt class="docutils literal"><span class="pre">arn:aws:workmail:us-west-2:123456789012:organization/m-68755160c4cb4e29a2b2f8fb58f359d7</span></tt> . For information about Amazon WorkMail organizations, see the <a class="reference external" href="http://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon WorkMail Administrator Guide</a> .</div></blockquote>
+</div></blockquote>
+<p>LambdaAction -&gt; (structure)</p>
+<blockquote>
+<div><p>Calls an AWS Lambda function, and optionally, publishes a notification to Amazon SNS.</p>
+<p>TopicArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the Lambda action is taken. An example of an Amazon SNS topic ARN is <tt class="docutils literal"><span class="pre">arn:aws:sns:us-west-2:123456789012:MyTopic</span></tt> . For more information about Amazon SNS topics, see the <a class="reference external" href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a> .</div></blockquote>
+<p>FunctionArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the AWS Lambda function. An example of an AWS Lambda function ARN is <tt class="docutils literal"><span class="pre">arn:aws:lambda:us-west-2:account-id:function:MyFunction</span></tt> . For more information about AWS Lambda, see the <a class="reference external" href="http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS Lambda Developer Guide</a> .</div></blockquote>
+<p>InvocationType -&gt; (string)</p>
+<blockquote>
+<div><p>The invocation type of the AWS Lambda function. An invocation type of <tt class="docutils literal"><span class="pre">RequestResponse</span></tt> means that the execution of the function will immediately result in a response, and a value of <tt class="docutils literal"><span class="pre">Event</span></tt> means that the function will be invoked asynchronously. The default value is <tt class="docutils literal"><span class="pre">Event</span></tt> . For information about AWS Lambda invocation types, see the <a class="reference external" href="http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS Lambda Developer Guide</a> .</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">There is a 30-second timeout on <tt class="docutils literal"><span class="pre">RequestResponse</span></tt> invocations. You should use <tt class="docutils literal"><span class="pre">Event</span></tt> invocation in most cases. Use <tt class="docutils literal"><span class="pre">RequestResponse</span></tt> only when you want to make a mail flow decision, such as whether to stop the receipt rule or the receipt rule set.</p>
+</div>
+</div></blockquote>
+</div></blockquote>
+<p>StopAction -&gt; (structure)</p>
+<blockquote>
+<div><p>Terminates the evaluation of the receipt rule set and optionally publishes a notification to Amazon SNS.</p>
+<p>Scope -&gt; (string)</p>
+<blockquote>
+<div>The scope to which the Stop action applies. That is, what is being stopped.</div></blockquote>
+<p>TopicArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the stop action is taken. An example of an Amazon SNS topic ARN is <tt class="docutils literal"><span class="pre">arn:aws:sns:us-west-2:123456789012:MyTopic</span></tt> . For more information about Amazon SNS topics, see the <a class="reference external" href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a> .</div></blockquote>
+</div></blockquote>
+<p>AddHeaderAction -&gt; (structure)</p>
+<blockquote>
+<div><p>Adds a header to the received email.</p>
+<p>HeaderName -&gt; (string)</p>
+<blockquote>
+<div>The name of the header to add. Must be between 1 and 50 characters, inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes only.</div></blockquote>
+<p>HeaderValue -&gt; (string)</p>
+<blockquote>
+<div>Must be less than 2048 characters, and must not contain newline characters ("r" or "n").</div></blockquote>
+</div></blockquote>
+<p>SNSAction -&gt; (structure)</p>
+<blockquote>
+<div><p>Publishes the email content within a notification to Amazon SNS.</p>
+<p>TopicArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify. An example of an Amazon SNS topic ARN is <tt class="docutils literal"><span class="pre">arn:aws:sns:us-west-2:123456789012:MyTopic</span></tt> . For more information about Amazon SNS topics, see the <a class="reference external" href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a> .</div></blockquote>
+<p>Encoding -&gt; (string)</p>
+<blockquote>
+<div>The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier to use, but may not preserve all special characters when a message was encoded with a different encoding format. Base64 preserves all special characters. The default value is UTF-8.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ScanEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>If <tt class="docutils literal"><span class="pre">true</span></tt> , then messages to which this receipt rule applies are scanned for spam and viruses. The default value is <tt class="docutils literal"><span class="pre">false</span></tt> .</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="delete-receipt-rule-set.html" title="previous chapter (use the left arrow)">&#8592; delete-receipt-rule-set</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="describe-receipt-rule.html" title="next chapter (use the right arrow)">describe-receipt-rule &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="describe-receipt-rule.html" title="describe-receipt-rule">next</a> |</li>
+        <li class="right">
+          <a href="delete-receipt-rule-set.html" title="delete-receipt-rule-set">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">ses</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ses/describe-active-receipt-rule-set.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+</html>

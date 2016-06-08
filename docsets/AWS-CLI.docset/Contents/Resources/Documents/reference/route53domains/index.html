@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53domains/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:33:13 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>route53domains &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="check-domain-availability" href="check-domain-availability.html" />
+    <link rel="prev" title="resource-record-sets-changed" href="../route53/wait/resource-record-sets-changed.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="check-domain-availability.html" title="check-domain-availability" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="../route53/wait/resource-record-sets-changed.html" title="resource-record-sets-changed" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../route53/wait/resource-record-sets-changed.html" title="previous chapter (use the left arrow)">&#8592; resource-record-sets-changed</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="check-domain-availability.html" title="next chapter (use the right arrow)">check-domain-availability &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">route53domains</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/route53domains/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="route53domains">
+<span id="cli-aws-route53domains"></span><h1>route53domains<a name="//apple_ref/cpp/Command/aws route53domains" class="dashAnchor" id="aws route53domains"></a><a class="headerlink" href="#route53domains" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a name="//apple_ref/cpp/Section/Available Commands" class="dashAnchor" id="Available Commands"></a><a class="headerlink" href="#available-commands" title="Permalink to this headline">&#182;</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/check-domain-availability" class="dashAnchor" id="check-domain-availability"></a><a class="reference internal" href="check-domain-availability.html">check-domain-availability</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-tags-for-domain" class="dashAnchor" id="delete-tags-for-domain"></a><a class="reference internal" href="delete-tags-for-domain.html">delete-tags-for-domain</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/disable-domain-auto-renew" class="dashAnchor" id="disable-domain-auto-renew"></a><a class="reference internal" href="disable-domain-auto-renew.html">disable-domain-auto-renew</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/disable-domain-transfer-lock" class="dashAnchor" id="disable-domain-transfer-lock"></a><a class="reference internal" href="disable-domain-transfer-lock.html">disable-domain-transfer-lock</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/enable-domain-auto-renew" class="dashAnchor" id="enable-domain-auto-renew"></a><a class="reference internal" href="enable-domain-auto-renew.html">enable-domain-auto-renew</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/enable-domain-transfer-lock" class="dashAnchor" id="enable-domain-transfer-lock"></a><a class="reference internal" href="enable-domain-transfer-lock.html">enable-domain-transfer-lock</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-contact-reachability-status" class="dashAnchor" id="get-contact-reachability-status"></a><a class="reference internal" href="get-contact-reachability-status.html">get-contact-reachability-status</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-domain-detail" class="dashAnchor" id="get-domain-detail"></a><a class="reference internal" href="get-domain-detail.html">get-domain-detail</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-operation-detail" class="dashAnchor" id="get-operation-detail"></a><a class="reference internal" href="get-operation-detail.html">get-operation-detail</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-domains" class="dashAnchor" id="list-domains"></a><a class="reference internal" href="list-domains.html">list-domains</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-operations" class="dashAnchor" id="list-operations"></a><a class="reference internal" href="list-operations.html">list-operations</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-tags-for-domain" class="dashAnchor" id="list-tags-for-domain"></a><a class="reference internal" href="list-tags-for-domain.html">list-tags-for-domain</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/register-domain" class="dashAnchor" id="register-domain"></a><a class="reference internal" href="register-domain.html">register-domain</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/resend-contact-reachability-email" class="dashAnchor" id="resend-contact-reachability-email"></a><a class="reference internal" href="resend-contact-reachability-email.html">resend-contact-reachability-email</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/retrieve-domain-auth-code" class="dashAnchor" id="retrieve-domain-auth-code"></a><a class="reference internal" href="retrieve-domain-auth-code.html">retrieve-domain-auth-code</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/transfer-domain" class="dashAnchor" id="transfer-domain"></a><a class="reference internal" href="transfer-domain.html">transfer-domain</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-domain-contact" class="dashAnchor" id="update-domain-contact"></a><a class="reference internal" href="update-domain-contact.html">update-domain-contact</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-domain-contact-privacy" class="dashAnchor" id="update-domain-contact-privacy"></a><a class="reference internal" href="update-domain-contact-privacy.html">update-domain-contact-privacy</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-domain-nameservers" class="dashAnchor" id="update-domain-nameservers"></a><a class="reference internal" href="update-domain-nameservers.html">update-domain-nameservers</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-tags-for-domain" class="dashAnchor" id="update-tags-for-domain"></a><a class="reference internal" href="update-tags-for-domain.html">update-tags-for-domain</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../route53/wait/resource-record-sets-changed.html" title="previous chapter (use the left arrow)">&#8592; resource-record-sets-changed</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="check-domain-availability.html" title="next chapter (use the right arrow)">check-domain-availability &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="check-domain-availability.html" title="check-domain-availability">next</a> |</li>
+        <li class="right">
+          <a href="../route53/wait/resource-record-sets-changed.html" title="resource-record-sets-changed">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53domains/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:33:21 GMT -->
+</html>

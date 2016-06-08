@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53/list-hosted-zones.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:28 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>list-hosted-zones &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>list-hosted-zones &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,9 +25,9 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="route53" href="index.html" />
-    <link rel="next" title="list-resource-record-sets" href="list-resource-record-sets.html" />
+    <link rel="next" title="list-hosted-zones-by-name" href="list-hosted-zones-by-name.html" />
     <link rel="prev" title="list-health-checks" href="list-health-checks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -58,10 +61,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
         <li class="right">
-          <a href="list-resource-record-sets.html" title="list-resource-record-sets" accesskey="N">next</a> |</li>
+          <a href="list-hosted-zones-by-name.html" title="list-hosted-zones-by-name" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="list-health-checks.html" title="list-health-checks" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">route53</a> &#187;</li> 
       </ul>
@@ -75,30 +78,32 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="list-resource-record-sets.html" title="next chapter (use the right arrow)">list-resource-record-sets &#8594;</a></li>
+          <li><a href="list-hosted-zones-by-name.html" title="next chapter (use the right arrow)">list-hosted-zones-by-name &#8594;</a></li>
       </ul>
     </div>
   
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">list-hosted-zones</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,39 +112,118 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/route53/list-hosted-zones">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/route53/list-hosted-zones">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>route53</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-route53"><em>route53</em></a> ]</p>
 <div class="section" id="list-hosted-zones">
-<h1>list-hosted-zones<a class="headerlink" href="#list-hosted-zones" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-route53-list-hosted-zones"></span><h1>list-hosted-zones<a name="//apple_ref/cpp/Command/aws route53 list-hosted-zones" class="dashAnchor" id="aws route53 list-hosted-zones"></a><a class="headerlink" href="#list-hosted-zones" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>To retrieve a list of your hosted zones, send a <tt class="docutils literal"><span class="pre">GET</span></tt>  request to the <tt class="docutils literal"><span class="pre">2012-12-12/hostedzone</span></tt>  resource. The response to this request includes a <tt class="docutils literal"><span class="pre">HostedZones</span></tt>  element with zero, one, or multiple <tt class="docutils literal"><span class="pre">HostedZone</span></tt>  child elements. By default, the list of hosted zones is displayed on a single page. You can control the length of the page that is displayed by using the <tt class="docutils literal"><span class="pre">--max-items</span></tt>  parameter. You can use the <tt class="docutils literal"><span class="pre">--marker</span></tt>  parameter to control the hosted zone that the list begins with.</p>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>To retrieve a list of your hosted zones, send a <tt class="docutils literal"><span class="pre">GET</span></tt> request to the <tt class="docutils literal"><span class="pre">/*Route</span> <span class="pre">53</span> <span class="pre">API</span> <span class="pre">version*</span> <span class="pre">/hostedzone</span></tt> resource. The response to this request includes a <tt class="docutils literal"><span class="pre">HostedZones</span></tt> element with zero, one, or multiple <tt class="docutils literal"><span class="pre">HostedZone</span></tt> child elements. By default, the list of hosted zones is displayed on a single page. You can control the length of the page that is displayed by using the <tt class="docutils literal"><span class="pre">MaxItems</span></tt> parameter. You can use the <tt class="docutils literal"><span class="pre">Marker</span></tt> parameter to control the hosted zone that the list begins with.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Amazon Route 53 returns a maximum of 100 items. If you set --max-items to a value greater than 100, Amazon Route 53 returns only the first 100.</p>
+<p class="last">Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value greater than 100, Amazon Route 53 returns only the first 100.</p>
 </div>
+<p><tt class="docutils literal"><span class="pre">list-hosted-zones</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">HostedZones</span></tt></p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  list-hosted-zones
-[--marker &lt;value&gt;]
-[--max-items &lt;value&gt;]</pre>
+[--max-items &lt;value&gt;]
+[--delegation-set-id &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--starting-token &lt;value&gt;]
+[--page-size &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--marker" class="dashAnchor" id="marker"></a><span class="pre">--marker</span></tt> (string)</p>
-<blockquote>
-<div>If the request returned more than one page of results, submit another request and specify the value of <tt class="docutils literal"><span class="pre">NextMarker</span></tt>  from the last response in the <tt class="docutils literal"><span class="pre">marker</span></tt>  parameter to get the next page of results.</div></blockquote>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-items" class="dashAnchor" id="max-items"></a><span class="pre">--max-items</span></tt> (string)</p>
 <blockquote>
-<div>Specify the maximum number of hosted zones to return per page of results.</div></blockquote>
+<div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">NextToken</span></tt> will be provided in the output that you can use to resume pagination. This <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element should <strong>not</strong> be used directly outside of the AWS CLI.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--delegation-set-id" class="dashAnchor" id="delegation-set-id"></a><span class="pre">--delegation-set-id</span></tt> (string)</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--starting-token" class="dashAnchor" id="starting-token"></a><span class="pre">--starting-token</span></tt> (string)</p>
+<blockquote>
+<div>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--page-size" class="dashAnchor" id="page-size"></a><span class="pre">--page-size</span></tt> (string)</p>
+<blockquote>
+<div>The size of each page.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To list the hosted zones associated with the current AWS account</strong></p>
+<p>The following <tt class="docutils literal"><span class="pre">list-hosted-zones</span></tt> command lists summary information about the first 100 hosted zones that are associated with the current AWS account.:</p>
+<div class="highlight-python"><pre>aws route53 list-hosted-zones</pre>
+</div>
+<p>If you have more than 100 hosted zones, or if you want to list them in groups smaller than 100, include the <tt class="docutils literal"><span class="pre">--maxitems</span></tt> parameter. For example, to list hosted zones one at a time, use the following command:</p>
+<div class="highlight-python"><pre>aws route53 list-hosted-zones --max-items 1</pre>
+</div>
+<p>To view information about the next hosted zone, take the value of <tt class="docutils literal"><span class="pre">NextToken</span></tt> from the response to the previous command, and include it in the <tt class="docutils literal"><span class="pre">--starting-token</span></tt> parameter, for example:</p>
+<div class="highlight-python"><pre>aws route53 list-hosted-zones --max-items 1 --starting-token Z3M3LMPEXAMPLE</pre>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>HostedZones -&gt; (list)</p>
+<blockquote>
+<div><p>A complex type that contains information about the hosted zones associated with the current AWS account.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A complex type that contain information about the specified hosted zone.</p>
+<p>Id -&gt; (string)</p>
+<blockquote>
+<div>The ID of the specified hosted zone.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div><p>The name of the domain. This must be a fully-specified domain, for example, www.example.com. The trailing dot is optional; Amazon Route 53 assumes that the domain name is fully qualified. This means that Amazon Route 53 treats www.example.com (without a trailing dot) and www.example.com. (with a trailing dot) as identical.</p>
+<p>This is the name you have registered with your DNS registrar. You should ask your registrar to change the authoritative name servers for your domain to the set of <tt class="docutils literal"><span class="pre">NameServers</span></tt> elements returned in <tt class="docutils literal"><span class="pre">DelegationSet</span></tt> .</p>
+</div></blockquote>
+<p>CallerReference -&gt; (string)</p>
+<blockquote>
+<div>A unique string that identifies the request to create the hosted zone.</div></blockquote>
+<p>Config -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that contains the <tt class="docutils literal"><span class="pre">Comment</span></tt> element.</p>
+<p>Comment -&gt; (string)</p>
+<blockquote>
+<div>An optional comment about your hosted zone. If you don't want to specify a comment, you can omit the <tt class="docutils literal"><span class="pre">HostedZoneConfig</span></tt> and <tt class="docutils literal"><span class="pre">Comment</span></tt> elements from the XML document.</div></blockquote>
+<p>PrivateZone -&gt; (boolean)</p>
+</div></blockquote>
+<p>ResourceRecordSetCount -&gt; (long)</p>
+<blockquote>
+<div>Total number of resource record sets in the hosted zone.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Marker -&gt; (string)</p>
+<blockquote>
+<div>If the request returned more than one page of results, submit another request and specify the value of <tt class="docutils literal"><span class="pre">NextMarker</span></tt> from the last response in the <tt class="docutils literal"><span class="pre">marker</span></tt> parameter to get the next page of results.</div></blockquote>
+<p>IsTruncated -&gt; (boolean)</p>
+<blockquote>
+<div><p>A flag indicating whether there are more hosted zones to be listed. If your results were truncated, you can make a follow-up request for the next page of results by using the <tt class="docutils literal"><span class="pre">Marker</span></tt> element.</p>
+<p>Valid Values: <tt class="docutils literal"><span class="pre">true</span></tt> | <tt class="docutils literal"><span class="pre">false</span></tt></p>
+</div></blockquote>
+<p>NextMarker -&gt; (string)</p>
+<blockquote>
+<div>Indicates where to continue listing hosted zones. If  ListHostedZonesResponse$IsTruncated is <tt class="docutils literal"><span class="pre">true</span></tt> , make another request to <tt class="docutils literal"><span class="pre">list-hosted-zones</span></tt> and include the value of the <tt class="docutils literal"><span class="pre">NextMarker</span></tt> element in the <tt class="docutils literal"><span class="pre">Marker</span></tt> element to get the next page of results.</div></blockquote>
+<p>MaxItems -&gt; (string)</p>
+<blockquote>
+<div>The maximum number of hosted zones to be included in the response body. If the number of hosted zones associated with this AWS account exceeds <tt class="docutils literal"><span class="pre">MaxItems</span></tt> , the value of  ListHostedZonesResponse$IsTruncated in the response is <tt class="docutils literal"><span class="pre">true</span></tt> . Call <tt class="docutils literal"><span class="pre">list-hosted-zones</span></tt> again and specify the value of  ListHostedZonesResponse$NextMarker in the  ListHostedZonesRequest$Marker element to get the next page of results.</div></blockquote>
 </div>
 </div>
 
@@ -155,50 +239,45 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="list-resource-record-sets.html" title="next chapter (use the right arrow)">list-resource-record-sets &#8594;</a></li>
+          <li><a href="list-hosted-zones-by-name.html" title="next chapter (use the right arrow)">list-hosted-zones-by-name &#8594;</a></li>
       </ul>
     </div>
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index">index</a></li>
         <li class="right">
-          <a href="list-resource-record-sets.html" title="list-resource-record-sets">next</a> |</li>
+          <a href="list-hosted-zones-by-name.html" title="list-hosted-zones-by-name">next</a> |</li>
         <li class="right">
           <a href="list-health-checks.html" title="list-health-checks">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">route53</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'list-health-checks.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'list-resource-record-sets.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53/list-hosted-zones.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:28 GMT -->
 </html>

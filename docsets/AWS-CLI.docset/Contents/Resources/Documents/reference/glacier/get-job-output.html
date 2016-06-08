@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/glacier/get-job-output.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:19 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-job-output &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="glacier" href="index.html" />
+    <link rel="next" title="get-vault-access-policy" href="get-vault-access-policy.html" />
+    <link rel="prev" title="get-data-retrieval-policy" href="get-data-retrieval-policy.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="get-vault-access-policy.html" title="get-vault-access-policy" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="get-data-retrieval-policy.html" title="get-data-retrieval-policy" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">glacier</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-data-retrieval-policy.html" title="previous chapter (use the left arrow)">&#8592; get-data-retrieval-policy</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="get-vault-access-policy.html" title="next chapter (use the right arrow)">get-vault-access-policy &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-job-output</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/glacier/get-job-output">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-glacier"><em>glacier</em></a> ]</p>
+<div class="section" id="get-job-output">
+<span id="cli-aws-glacier-get-job-output"></span><h1>get-job-output<a name="//apple_ref/cpp/Command/aws glacier get-job-output" class="dashAnchor" id="aws glacier get-job-output"></a><a class="headerlink" href="#get-job-output" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>This operation downloads the output of the job you initiated using  initiate-job . Depending on the job type you specified when you initiated the job, the output will be either the content of an archive or a vault inventory.</p>
+<p>A job ID will not expire for at least 24 hours after Amazon Glacier completes the job. That is, you can download the job output within the 24 hours period after Amazon Glacier completes the job.</p>
+<p>If the job output is large, then you can use the <tt class="docutils literal"><span class="pre">Range</span></tt> request header to retrieve a portion of the output. This allows you to download the entire output in smaller chunks of bytes. For example, suppose you have 1 GB of job output you want to download and you decide to download 128 MB chunks of data at a time, which is a total of eight Get Job Output requests. You use the following process to download the job output:</p>
+<ul class="simple">
+<li>Download a 128 MB chunk of output by specifying the appropriate byte range using the <tt class="docutils literal"><span class="pre">Range</span></tt> header.</li>
+<li>Along with the data, the response includes a SHA256 tree hash of the payload. You compute the checksum of the payload on the client and compare it with the checksum you received in the response to ensure you received all the expected data.</li>
+<li>Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying the appropriate byte range.</li>
+<li>After downloading all the parts of the job output, you have a list of eight checksum values. Compute the tree hash of these values to find the checksum of the entire output. Using the  describe-job API, obtain job information of the job that provided you the output. The response includes the checksum of the entire archive stored in Amazon Glacier. You compare this value with the checksum you computed to ensure you have downloaded the entire archive content with no errors.</li>
+</ul>
+<p>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access Control Using AWS Identity and Access Management (IAM)</a> .</p>
+<p>For conceptual information and the underlying REST API, go to <a class="reference external" href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html">Downloading a Vault Inventory</a> , <a class="reference external" href="http://docs.aws.amazon.com/amazonglacier/latest/dev/downloading-an-archive.html">Downloading an Archive</a> , and <a class="reference external" href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html">Get Job Output</a></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  get-job-output
+--account-id &lt;value&gt;
+--vault-name &lt;value&gt;
+--job-id &lt;value&gt;
+[--range &lt;value&gt;]
+outfile &lt;value&gt;</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--account-id" class="dashAnchor" id="account-id"></a><span class="pre">--account-id</span></tt> (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">AccountId</span></tt> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos``-`` apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--vault-name" class="dashAnchor" id="vault-name"></a><span class="pre">--vault-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the vault.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--job-id" class="dashAnchor" id="job-id"></a><span class="pre">--job-id</span></tt> (string)</p>
+<blockquote>
+<div>The job ID whose data is downloaded.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--range" class="dashAnchor" id="range"></a><span class="pre">--range</span></tt> (string)</p>
+<blockquote>
+<div>The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576 bytes, specify "Range: bytes=0-1048575". By default, this operation downloads the entire output.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">outfile</span></tt> (string)
+Filename where the content will be saved</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p>The following command saves the output from a vault inventory job to a file in the current directory named <tt class="docutils literal"><span class="pre">output.json</span></tt>:</p>
+<div class="highlight-python"><pre>aws glacier get-job-output --account-id - --vault-name my-vault --job-id zbxcm3Z_3z5UkoroF7SuZKrxgGoDc3RloGduS7Eg-RO47Yc6FxsdGBgf_Q2DK5Ejh18CnTS5XW4_XqlNHS61dsO4CnMW output.json</pre>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">job-id</span></tt> is available in the output of <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">glacier</span> <span class="pre">list-jobs</span></tt>. Note that the output file name is a positional argument that is not prefixed by an option name. Amazon Glacier requires an account ID argument when performing operations, but you can use a hyphen to specify the in-use account.</p>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"status"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="s2">"acceptRanges"</span><span class="p">:</span> <span class="s2">"bytes"</span><span class="p">,</span>
+    <span class="s2">"contentType"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">output.json</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="s2">"VaultARN"</span><span class="p">:</span><span class="s2">"arn:aws:glacier:us-west-2:0123456789012:vaults/my-vault"</span><span class="p">,</span><span class="s2">"InventoryDate"</span><span class="p">:</span><span class="s2">"2015-04-07T00:26:18Z"</span><span class="p">,</span><span class="s2">"ArchiveList"</span><span class="p">:[{</span><span class="s2">"ArchiveId"</span><span class="p">:</span><span class="s2">"kKB7ymWJVpPSwhGP6ycSOAekp9ZYe_--zM_mw6k76ZFGEIWQX-ybtRDvc2VkPSDtfKmQrj0IRQLSGsNuDp-AJVlu2ccmDSyDUmZwKbwbpAdGATGDiB3hHO0bjbGehXTcApVud_wyDw"</span><span class="p">,</span><span class="s2">"ArchiveDescription"</span><span class="p">:</span><span class="s2">"multipart upload test"</span><span class="p">,</span><span class="s2">"CreationDate"</span><span class="p">:</span><span class="s2">"2015-04-06T22:24:34Z"</span><span class="p">,</span><span class="s2">"Size"</span><span class="p">:</span><span class="mi">3145728</span><span class="p">,</span><span class="s2">"SHA256TreeHash"</span><span class="p">:</span><span class="s2">"9628195fcdbcbbe76cdde932d4646fa7de5f219fb39823836d81f0cc0e18aa67"</span><span class="p">}]}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>body -&gt; (blob)</p>
+<blockquote>
+<div>The job data, either archive data or inventory data.</div></blockquote>
+<p>checksum -&gt; (string)</p>
+<blockquote>
+<div><p>The checksum of the data in the response. This header is returned only when retrieving the output for an archive retrieval job. Furthermore, this header appears only under the following conditions:</p>
+<ul class="simple">
+<li>You get the entire range of the archive.</li>
+<li>You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the x-amz-sha256-tree-hash is returned as a response header.</li>
+<li>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.</li>
+</ul>
+</div></blockquote>
+<p>status -&gt; (integer)</p>
+<blockquote>
+<div>The HTTP response code for a job output request. The value depends on whether a range was specified in the request.</div></blockquote>
+<p>contentRange -&gt; (string)</p>
+<blockquote>
+<div>The range of bytes returned by Amazon Glacier. If only partial output is downloaded, the response provides the range of bytes Amazon Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</div></blockquote>
+<p>acceptRanges -&gt; (string)</p>
+<blockquote>
+<div>Indicates the range units accepted. For more information, go to <a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a> .</div></blockquote>
+<p>contentType -&gt; (string)</p>
+<blockquote>
+<div>The Content-Type depends on whether the job output is an archive or a vault inventory. For archive data, the Content-Type is application/octet-stream. For vault inventory, if you requested CSV format when you initiated the job, the Content-Type is text/csv. Otherwise, by default, vault inventory is returned as JSON, and the Content-Type is application/json.</div></blockquote>
+<p>archiveDescription -&gt; (string)</p>
+<blockquote>
+<div>The description of an archive.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-data-retrieval-policy.html" title="previous chapter (use the left arrow)">&#8592; get-data-retrieval-policy</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="get-vault-access-policy.html" title="next chapter (use the right arrow)">get-vault-access-policy &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="get-vault-access-policy.html" title="get-vault-access-policy">next</a> |</li>
+        <li class="right">
+          <a href="get-data-retrieval-policy.html" title="get-data-retrieval-policy">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">glacier</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/glacier/get-job-output.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:19 GMT -->
+</html>

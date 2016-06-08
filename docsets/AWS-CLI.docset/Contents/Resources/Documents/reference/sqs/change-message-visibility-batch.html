@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/sqs/change-message-visibility-batch.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>change-message-visibility-batch &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>change-message-visibility-batch &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="sqs" href="index.html" />
     <link rel="next" title="create-queue" href="create-queue.html" />
     <link rel="prev" title="change-message-visibility" href="change-message-visibility.html" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -61,7 +64,7 @@
           <a href="create-queue.html" title="create-queue" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="change-message-visibility.html" title="change-message-visibility" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">sqs</a> &#187;</li> 
       </ul>
@@ -82,23 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">change-message-visibility-batch</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,38 +112,56 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/sqs/change-message-visibility-batch">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/sqs/change-message-visibility-batch">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>sqs</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-sqs"><em>sqs</em></a> ]</p>
 <div class="section" id="change-message-visibility-batch">
-<h1>change-message-visibility-batch<a class="headerlink" href="#change-message-visibility-batch" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-sqs-change-message-visibility-batch"></span><h1>change-message-visibility-batch<a name="//apple_ref/cpp/Command/aws sqs change-message-visibility-batch" class="dashAnchor" id="aws sqs change-message-visibility-batch"></a><a class="headerlink" href="#change-message-visibility-batch" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>This is a batch version of  change-message-visibility . It takes multiple receipt handles and performs the operation on each of the them. The result of the operation on each message is reported individually in the response.</p>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Changes the visibility timeout of multiple messages. This is a batch version of  change-message-visibility . The result of the action on each message is reported individually in the response. You can send up to 10  change-message-visibility requests with each <tt class="docutils literal"><span class="pre">change-message-visibility-batch</span></tt> action.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Because the batch request can result in a combination of successful and unsuccessful actions, you should check for batch errors even when the call returns an HTTP status code of 200.</p>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Some API actions take lists of parameters. These lists are specified using the <tt class="docutils literal"><span class="pre">param.n</span></tt> notation. Values of <tt class="docutils literal"><span class="pre">n</span></tt> are integers starting from 1. For example, a parameter list with two elements looks like this:</p>
+</div>
+<hr class="docutils" />
+</div>
+<hr class="docutils" />
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  change-message-visibility-batch
 --queue-url &lt;value&gt;
---entries &lt;value&gt;</pre>
+--entries &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--queue-url" class="dashAnchor" id="queue-url"></a><span class="pre">--queue-url</span></tt> (string)</p>
 <blockquote>
-<div>The URL of the SQS queue to take action on.</div></blockquote>
+<div><p>The URL of the Amazon SQS queue to take action on.</p>
+<p>Queue URLs are case-sensitive.</p>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--entries" class="dashAnchor" id="entries"></a><span class="pre">--entries</span></tt> (list)</p>
 <blockquote>
 <div>A list of receipt handles of the messages for which the visibility timeout must be changed.</div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><pre>  Key value pairs, with multiple values separated by a space.
---entries Id=string,ReceiptHandle=string,VisibilityTimeout=integer</pre>
+<div class="highlight-python"><pre>Id=string,ReceiptHandle=string,VisibilityTimeout=integer ...</pre>
 </div>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><pre>[
@@ -150,6 +173,80 @@
   ...
 ]</pre>
 </div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To change multiple messages' timeout visibilities as a batch</strong></p>
+<p>This example changes the 2 specified messages' timeout visibilities to 10 hours (10 hours * 60 minutes * 60 seconds).</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws sqs change-message-visibility-batch --queue-url https://sqs.us-east-1.amazonaws.com/80398EXAMPLE/MyQueue --entries file://change-message-visibility-batch.json</pre>
+</div>
+<p>Input file (change-message-visibility-batch.json):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">"Id"</span><span class="p">:</span> <span class="s2">"FirstMessage"</span><span class="p">,</span>
+        <span class="s2">"ReceiptHandle"</span><span class="p">:</span> <span class="s2">"AQEBhz2q...Jf3kaw=="</span><span class="p">,</span>
+        <span class="s2">"VisibilityTimeout"</span><span class="p">:</span> <span class="mi">36000</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">"Id"</span><span class="p">:</span> <span class="s2">"SecondMessage"</span><span class="p">,</span>
+        <span class="s2">"ReceiptHandle"</span><span class="p">:</span> <span class="s2">"AQEBkTUH...HifSnw=="</span><span class="p">,</span>
+        <span class="s2">"VisibilityTimeout"</span><span class="p">:</span> <span class="mi">36000</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"Successful"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"Id"</span><span class="p">:</span> <span class="s2">"SecondMessage"</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">"Id"</span><span class="p">:</span> <span class="s2">"FirstMessage"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Successful -&gt; (list)</p>
+<blockquote>
+<div><p>A list of  ChangeMessageVisibilityBatchResultEntry items.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Encloses the id of an entry in  change-message-visibility-batch .</p>
+<p>Id -&gt; (string)</p>
+<blockquote>
+<div>Represents a message whose visibility timeout has been changed successfully.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Failed -&gt; (list)</p>
+<blockquote>
+<div><p>A list of  BatchResultErrorEntry items.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>This is used in the responses of batch API to give a detailed description of the result of an action on each entry in the request.</p>
+<p>Id -&gt; (string)</p>
+<blockquote>
+<div>The id of an entry in a batch request.</div></blockquote>
+<p>SenderFault -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the error happened due to the sender's fault.</div></blockquote>
+<p>Code -&gt; (string)</p>
+<blockquote>
+<div>An error code representing why the action failed on this entry.</div></blockquote>
+<p>Message -&gt; (string)</p>
+<blockquote>
+<div>A message explaining why the action failed on this entry.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
 </div>
 </div>
 
@@ -171,6 +268,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -180,35 +286,21 @@
           <a href="create-queue.html" title="create-queue">next</a> |</li>
         <li class="right">
           <a href="change-message-visibility.html" title="change-message-visibility">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">sqs</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'change-message-visibility.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'create-queue.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/sqs/change-message-visibility-batch.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
 </html>

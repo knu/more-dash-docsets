@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/lambda/update-event-source-mapping.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:21 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>update-event-source-mapping &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="lambda" href="index.html" />
+    <link rel="next" title="update-function-code" href="update-function-code.html" />
+    <link rel="prev" title="update-alias" href="update-alias.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="update-function-code.html" title="update-function-code" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="update-alias.html" title="update-alias" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">lambda</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="update-alias.html" title="previous chapter (use the left arrow)">&#8592; update-alias</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="update-function-code.html" title="next chapter (use the right arrow)">update-function-code &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">update-event-source-mapping</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/lambda/update-event-source-mapping">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-lambda"><em>lambda</em></a> ]</p>
+<div class="section" id="update-event-source-mapping">
+<span id="cli-aws-lambda-update-event-source-mapping"></span><h1>update-event-source-mapping<a name="//apple_ref/cpp/Command/aws lambda update-event-source-mapping" class="dashAnchor" id="aws lambda update-event-source-mapping"></a><a class="headerlink" href="#update-event-source-mapping" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>You can update an event source mapping. This is useful if you want to change the parameters of the existing mapping without losing your position in the stream. You can change which function will receive the stream records, but to change the stream itself, you must create a new mapping.</p>
+<p>If you are using the versioning feature, you can update the event source mapping to map to a specific Lambda function version or alias as described in the <tt class="docutils literal"><span class="pre">function-name</span></tt> parameter. For information about the versioning feature, see <a class="reference external" href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda Function Versioning and Aliases</a> .</p>
+<p>If you disable the event source mapping, AWS Lambda stops polling. If you enable again, it will resume polling from the time it had stopped polling, so you don't lose processing of any records. However, if you delete event source mapping and create it again, it will reset.</p>
+<p>This operation requires permission for the <tt class="docutils literal"><span class="pre">lambda:UpdateEventSourceMapping</span></tt> action.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  update-event-source-mapping
+--uuid &lt;value&gt;
+[--function-name &lt;value&gt;]
+[--enabled | --no-enabled]
+[--batch-size &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--uuid" class="dashAnchor" id="uuid"></a><span class="pre">--uuid</span></tt> (string)</p>
+<blockquote>
+<div>The event source mapping identifier.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--function-name" class="dashAnchor" id="function-name"></a><span class="pre">--function-name</span></tt> (string)</p>
+<blockquote>
+<div><p>The Lambda function to which you want the stream records sent.</p>
+<p>You can specify a function name (for example, <tt class="docutils literal"><span class="pre">Thumbnail</span></tt> ) or you can specify Amazon Resource Name (ARN) of the function (for example, <tt class="docutils literal"><span class="pre">arn:aws:lambda:us-west-2:account-id:function:ThumbNail</span></tt> ). AWS Lambda also allows you to specify a partial ARN (for example, <tt class="docutils literal"><span class="pre">account-id:Thumbnail</span></tt> ).</p>
+<p>If you are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function version or alias name as suffix). For more information about versioning, see <a class="reference external" href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda Function Versioning and Aliases</a></p>
+<p>Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--enabled" class="dashAnchor" id="enabled"></a><span class="pre">--enabled</span></tt> | <tt class="docutils literal"><span class="pre">--no-enabled</span></tt> (boolean)</p>
+<blockquote>
+<div>Specifies whether AWS Lambda should actively poll the stream or not. If disabled, AWS Lambda will not poll the stream.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--batch-size" class="dashAnchor" id="batch-size"></a><span class="pre">--batch-size</span></tt> (integer)</p>
+<blockquote>
+<div>The maximum number of stream records that can be sent to your Lambda function for a single invocation.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>UUID -&gt; (string)</p>
+<blockquote>
+<div>The AWS Lambda assigned opaque identifier for the mapping.</div></blockquote>
+<p>BatchSize -&gt; (integer)</p>
+<blockquote>
+<div>The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking your function. Your function receives an event with all the retrieved records.</div></blockquote>
+<p>EventSourceArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is the source of events.</div></blockquote>
+<p>FunctionArn -&gt; (string)</p>
+<blockquote>
+<div>The Lambda function to invoke when AWS Lambda detects an event on the stream.</div></blockquote>
+<p>LastModified -&gt; (timestamp)</p>
+<blockquote>
+<div>The UTC time string indicating the last time the event mapping was updated.</div></blockquote>
+<p>LastProcessingResult -&gt; (string)</p>
+<blockquote>
+<div>The result of the last AWS Lambda invocation of your Lambda function.</div></blockquote>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div>The state of the event source mapping. It can be <tt class="docutils literal"><span class="pre">Creating</span></tt> , <tt class="docutils literal"><span class="pre">enabled</span></tt> , <tt class="docutils literal"><span class="pre">Disabled</span></tt> , <tt class="docutils literal"><span class="pre">Enabling</span></tt> , <tt class="docutils literal"><span class="pre">Disabling</span></tt> , <tt class="docutils literal"><span class="pre">Updating</span></tt> , or <tt class="docutils literal"><span class="pre">Deleting</span></tt> .</div></blockquote>
+<p>StateTransitionReason -&gt; (string)</p>
+<blockquote>
+<div>The reason the event source mapping is in its current state. It is either user-requested or an AWS Lambda-initiated state transition.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="update-alias.html" title="previous chapter (use the left arrow)">&#8592; update-alias</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="update-function-code.html" title="next chapter (use the right arrow)">update-function-code &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="update-function-code.html" title="update-function-code">next</a> |</li>
+        <li class="right">
+          <a href="update-alias.html" title="update-alias">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">lambda</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/lambda/update-event-source-mapping.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:21 GMT -->
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ecs/deregister-container-instance.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:15 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>deregister-container-instance &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="ecs" href="index.html" />
+    <link rel="next" title="deregister-task-definition" href="deregister-task-definition.html" />
+    <link rel="prev" title="delete-service" href="delete-service.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="deregister-task-definition.html" title="deregister-task-definition" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="delete-service.html" title="delete-service" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">ecs</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="delete-service.html" title="previous chapter (use the left arrow)">&#8592; delete-service</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="deregister-task-definition.html" title="next chapter (use the right arrow)">deregister-task-definition &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">deregister-container-instance</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ecs/deregister-container-instance">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-ecs"><em>ecs</em></a> ]</p>
+<div class="section" id="deregister-container-instance">
+<span id="cli-aws-ecs-deregister-container-instance"></span><h1>deregister-container-instance<a name="//apple_ref/cpp/Command/aws ecs deregister-container-instance" class="dashAnchor" id="aws ecs deregister-container-instance"></a><a class="headerlink" href="#deregister-container-instance" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Deregisters an Amazon ECS container instance from the specified cluster. This instance is no longer available to run tasks.</p>
+<p>If you intend to use the container instance for some other purpose after deregistration, you should stop all of the tasks running on the container instance before deregistration to avoid any orphaned tasks from consuming resources.</p>
+<p>Deregistering a container instance removes the instance from a cluster, but it does not terminate the EC2 instance; if you are finished using the instance, be sure to terminate it in the Amazon EC2 console to stop billing.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you terminate a running container instance with a connected Amazon ECS container agent, the agent automatically deregisters the instance from your cluster (stopped container instances or instances with disconnected agents are not automatically deregistered when terminated).</p>
+</div>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  deregister-container-instance
+[--cluster &lt;value&gt;]
+--container-instance &lt;value&gt;
+[--force | --no-force]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cluster" class="dashAnchor" id="cluster"></a><span class="pre">--cluster</span></tt> (string)</p>
+<blockquote>
+<div>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instance to deregister. If you do not specify a cluster, the default cluster is assumed.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--container-instance" class="dashAnchor" id="container-instance"></a><span class="pre">--container-instance</span></tt> (string)</p>
+<blockquote>
+<div>The container instance ID or full Amazon Resource Name (ARN) of the container instance to deregister. The ARN contains the <tt class="docutils literal"><span class="pre">arn:aws:ecs</span></tt> namespace, followed by the region of the container instance, the AWS account ID of the container instance owner, the <tt class="docutils literal"><span class="pre">container-instance</span></tt> namespace, and then the container instance ID. For example, <a href="#id1"><span class="problematic" id="id2">``</span></a>arn:aws:ecs:<em>region</em> :<em>aws_account_id</em> :container-instance/<em>container_instance_ID</em> `` .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--force" class="dashAnchor" id="force"></a><span class="pre">--force</span></tt> | <tt class="docutils literal"><span class="pre">--no-force</span></tt> (boolean)</p>
+<blockquote>
+<div>Forces the deregistration of the container instance. If you have tasks running on the container instance when you deregister it with the <tt class="docutils literal"><span class="pre">force</span></tt> option, these tasks remain running and they continue to pass Elastic Load Balancing load balancer health checks until you terminate the instance or the tasks stop through some other means, but they are orphaned (no longer monitored or accounted for by Amazon ECS). If an orphaned task on your container instance is part of an Amazon ECS service, then the service scheduler starts another copy of that task, on a different container instance if possible.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To deregister a container instance from a cluster</strong></p>
+<p>This example deregisters a container instance from the specified cluster in your default region. If there are still tasks running on the container instance, you must either stop those tasks before deregistering, or use the force option.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ecs deregister-container-instance --cluster default --container-instance &lt;container_instance_UUID&gt; --force</pre>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>containerInstance -&gt; (structure)</p>
+<blockquote>
+<div><p>An EC2 instance that is running the Amazon ECS agent and has been registered with a cluster.</p>
+<p>containerInstanceArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the container instance. The ARN contains the <tt class="docutils literal"><span class="pre">arn:aws:ecs</span></tt> namespace, followed by the region of the container instance, the AWS account ID of the container instance owner, the <tt class="docutils literal"><span class="pre">container-instance</span></tt> namespace, and then the container instance ID. For example, <a href="#id3"><span class="problematic" id="id4">``</span></a>arn:aws:ecs:<em>region</em> :<em>aws_account_id</em> :container-instance/<em>container_instance_ID</em> `` .</div></blockquote>
+<p>ec2InstanceId -&gt; (string)</p>
+<blockquote>
+<div>The EC2 instance ID of the container instance.</div></blockquote>
+<p>versionInfo -&gt; (structure)</p>
+<blockquote>
+<div><p>The version information for the Amazon ECS container agent and Docker daemon running on the container instance.</p>
+<p>agentVersion -&gt; (string)</p>
+<blockquote>
+<div>The version number of the Amazon ECS container agent.</div></blockquote>
+<p>agentHash -&gt; (string)</p>
+<blockquote>
+<div>The Git commit hash for the Amazon ECS container agent build on the <a class="reference external" href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent</a> GitHub repository.</div></blockquote>
+<p>dockerVersion -&gt; (string)</p>
+<blockquote>
+<div>The Docker version running on the container instance.</div></blockquote>
+</div></blockquote>
+<p>remainingResources -&gt; (list)</p>
+<blockquote>
+<div><p>The remaining resources of the container instance that are available for new tasks.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the resources available for a container instance.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name of the resource, such as <tt class="docutils literal"><span class="pre">CPU</span></tt> , <tt class="docutils literal"><span class="pre">MEMORY</span></tt> , <tt class="docutils literal"><span class="pre">PORTS</span></tt> , or a user-defined resource.</div></blockquote>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div>The type of the resource, such as <tt class="docutils literal"><span class="pre">INTEGER</span></tt> , <tt class="docutils literal"><span class="pre">DOUBLE</span></tt> , <tt class="docutils literal"><span class="pre">LONG</span></tt> , or <tt class="docutils literal"><span class="pre">STRINGSET</span></tt> .</div></blockquote>
+<p>doubleValue -&gt; (double)</p>
+<blockquote>
+<div>When the <tt class="docutils literal"><span class="pre">doubleValue</span></tt> type is set, the value of the resource must be a double precision floating-point type.</div></blockquote>
+<p>longValue -&gt; (long)</p>
+<blockquote>
+<div>When the <tt class="docutils literal"><span class="pre">longValue</span></tt> type is set, the value of the resource must be an extended precision floating-point type.</div></blockquote>
+<p>integerValue -&gt; (integer)</p>
+<blockquote>
+<div>When the <tt class="docutils literal"><span class="pre">integerValue</span></tt> type is set, the value of the resource must be an integer.</div></blockquote>
+<p>stringSetValue -&gt; (list)</p>
+<blockquote>
+<div><p>When the <tt class="docutils literal"><span class="pre">stringSetValue</span></tt> type is set, the value of the resource must be a string type.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>registeredResources -&gt; (list)</p>
+<blockquote>
+<div><p>The registered resources on the container instance that are in use by current tasks.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the resources available for a container instance.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name of the resource, such as <tt class="docutils literal"><span class="pre">CPU</span></tt> , <tt class="docutils literal"><span class="pre">MEMORY</span></tt> , <tt class="docutils literal"><span class="pre">PORTS</span></tt> , or a user-defined resource.</div></blockquote>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div>The type of the resource, such as <tt class="docutils literal"><span class="pre">INTEGER</span></tt> , <tt class="docutils literal"><span class="pre">DOUBLE</span></tt> , <tt class="docutils literal"><span class="pre">LONG</span></tt> , or <tt class="docutils literal"><span class="pre">STRINGSET</span></tt> .</div></blockquote>
+<p>doubleValue -&gt; (double)</p>
+<blockquote>
+<div>When the <tt class="docutils literal"><span class="pre">doubleValue</span></tt> type is set, the value of the resource must be a double precision floating-point type.</div></blockquote>
+<p>longValue -&gt; (long)</p>
+<blockquote>
+<div>When the <tt class="docutils literal"><span class="pre">longValue</span></tt> type is set, the value of the resource must be an extended precision floating-point type.</div></blockquote>
+<p>integerValue -&gt; (integer)</p>
+<blockquote>
+<div>When the <tt class="docutils literal"><span class="pre">integerValue</span></tt> type is set, the value of the resource must be an integer.</div></blockquote>
+<p>stringSetValue -&gt; (list)</p>
+<blockquote>
+<div><p>When the <tt class="docutils literal"><span class="pre">stringSetValue</span></tt> type is set, the value of the resource must be a string type.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>status -&gt; (string)</p>
+<blockquote>
+<div>The status of the container instance. The valid values are <tt class="docutils literal"><span class="pre">ACTIVE</span></tt> or <tt class="docutils literal"><span class="pre">INACTIVE</span></tt> . <tt class="docutils literal"><span class="pre">ACTIVE</span></tt> indicates that the container instance can accept tasks.</div></blockquote>
+<p>agentConnected -&gt; (boolean)</p>
+<blockquote>
+<div>This parameter returns <tt class="docutils literal"><span class="pre">true</span></tt> if the agent is actually connected to Amazon ECS. Registered instances with an agent that may be unhealthy or stopped return <tt class="docutils literal"><span class="pre">false</span></tt> , and instances without a connected agent cannot accept placement requests.</div></blockquote>
+<p>runningTasksCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of tasks on the container instance that are in the <tt class="docutils literal"><span class="pre">RUNNING</span></tt> status.</div></blockquote>
+<p>pendingTasksCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of tasks on the container instance that are in the <tt class="docutils literal"><span class="pre">PENDING</span></tt> status.</div></blockquote>
+<p>agentUpdateStatus -&gt; (string)</p>
+<blockquote>
+<div>The status of the most recent agent update. If an update has never been requested, this value is <tt class="docutils literal"><span class="pre">NULL</span></tt> .</div></blockquote>
+<p>attributes -&gt; (list)</p>
+<blockquote>
+<div><p>The attributes set for the container instance by the Amazon ECS container agent at instance registration.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The attributes applicable to a container instance when it is registered.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name of the container instance attribute.</div></blockquote>
+<p>value -&gt; (string)</p>
+<blockquote>
+<div>The value of the container instance attribute (at this time, the value here is <tt class="docutils literal"><span class="pre">Null</span></tt> , but this could change in future revisions for expandability).</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="delete-service.html" title="previous chapter (use the left arrow)">&#8592; delete-service</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="deregister-task-definition.html" title="next chapter (use the right arrow)">deregister-task-definition &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="deregister-task-definition.html" title="deregister-task-definition">next</a> |</li>
+        <li class="right">
+          <a href="delete-service.html" title="delete-service">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">ecs</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ecs/deregister-container-instance.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:15 GMT -->
+</html>

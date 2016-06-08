@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/describe-instance-status.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>describe-instance-status &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>describe-instance-status &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="ec2" href="index.html" />
     <link rel="next" title="describe-instances" href="describe-instances.html" />
     <link rel="prev" title="describe-instance-attribute" href="describe-instance-attribute.html" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -61,7 +64,7 @@
           <a href="describe-instances.html" title="describe-instances" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="describe-instance-attribute.html" title="describe-instance-attribute" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">ec2</a> &#187;</li> 
       </ul>
@@ -82,37 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">describe-instance-status</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
-<li><a class="reference internal" href="#filters">Filters</a><ul>
-<li><a class="reference internal" href="#availability-zone">availability-zone</a></li>
-<li><a class="reference internal" href="#event-code">event.code</a></li>
-<li><a class="reference internal" href="#event-description">event.description</a></li>
-<li><a class="reference internal" href="#event-not-after">event.not-after</a></li>
-<li><a class="reference internal" href="#event-not-before">event.not-before</a></li>
-<li><a class="reference internal" href="#instance-state-code">instance-state-code</a></li>
-<li><a class="reference internal" href="#instance-state-name">instance-state-name</a></li>
-<li><a class="reference internal" href="#instance-status-reachability">instance-status.reachability</a></li>
-<li><a class="reference internal" href="#instance-status-status">instance-status.status</a></li>
-<li><a class="reference internal" href="#system-status-reachability">system-status.reachability</a></li>
-<li><a class="reference internal" href="#system-status-status">system-status.status</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -121,61 +112,80 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/ec2/describe-instance-status">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ec2/describe-instance-status">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>ec2</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-ec2"><em>ec2</em></a> ]</p>
 <div class="section" id="describe-instance-status">
-<h1>describe-instance-status<a class="headerlink" href="#describe-instance-status" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-ec2-describe-instance-status"></span><h1>describe-instance-status<a name="//apple_ref/cpp/Command/aws ec2 describe-instance-status" class="dashAnchor" id="aws ec2 describe-instance-status"></a><a class="headerlink" href="#describe-instance-status" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Describes the status of an Amazon Elastic Compute Cloud (Amazon EC2) instance. Instance status provides information about two types of scheduled events for an instance that may require your attention:</p>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Describes the status of one or more instances. By default, only running instances are described, unless specified otherwise.</p>
+<p>Instance status includes the following components:</p>
 <ul class="simple">
-<li>Scheduled Reboot: When Amazon EC2 determines that an instance must be rebooted, the instance's status will return one of two event codes: <tt class="docutils literal"><span class="pre">system-reboot</span></tt>  or <tt class="docutils literal"><span class="pre">instance-reboot</span></tt>  . System reboot commonly occurs if certain maintenance or upgrade operations require a reboot of the underlying host that supports an instance. Instance reboot commonly occurs if the instance must be rebooted, rather than the underlying host. Rebooting events include a scheduled start and end time.</li>
-<li>Scheduled Retirement: When Amazon EC2 determines that an instance must be shut down, the instance's status will return an event code called <tt class="docutils literal"><span class="pre">instance-retirement</span></tt>  . Retirement commonly occurs when the underlying host is degraded and must be replaced. Retirement events include a scheduled start and end time. You're also notified by email if one of your instances is set to retiring. The email message indicates when your instance will be permanently retired.</li>
+<li><strong>Status checks</strong> - Amazon EC2 performs status checks on running EC2 instances to identify hardware and software issues. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status Checks for Your Instances</a> and <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting Instances with Failed Status Checks</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</li>
+<li><strong>Scheduled events</strong> - Amazon EC2 can schedule events (such as reboot, stop, or terminate) for your instances related to hardware issues, software updates, or system maintenance. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled Events for Your Instances</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</li>
+<li><strong>Instance state</strong> - You can manage your instances from the moment you launch them through their termination. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance Lifecycle</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</li>
 </ul>
-<p>If your instance is permanently retired, it will not be restarted. You can avoid retirement by manually restarting your instance when its event code is <tt class="docutils literal"><span class="pre">instance-retirement</span></tt>  . This ensures that your instance is started on a healthy host.</p>
-<blockquote>
-<div><tt class="docutils literal"><span class="pre">describe-instance-status</span></tt>  returns information only for instances in the running state.</div></blockquote>
-<p>You can filter the results to return information only about instances that match criteria you specify. For example, you could get information about instances in a specific Availability Zone. You can specify multiple values for a filter (e.g., more than one Availability Zone). An instance must match at least one of the specified values for it to be included in the results.</p>
-<p>You can specify multiple filters. An instance must match all the filters for it to be included in the results. If there's no match, no special message is returned; the response is simply empty.</p>
-<p>You can use wildcards with the filter values: <tt class="docutils literal"><span class="pre">*</span></tt>  matches zero or more characters, and <tt class="docutils literal"><span class="pre">?</span></tt>  matches exactly one character. You can escape special characters using a backslash before the character. For example, a value of <tt class="docutils literal"><span class="pre">\*amazon\?\\</span></tt>  searches for the literal string <tt class="docutils literal"><span class="pre">*amazon?\</span></tt>  .</p>
-<p>The following filters are available:</p>
-<ul class="simple">
-<li><tt class="docutils literal"><span class="pre">availability-zone</span></tt>  - Filter on an instance's availability zone.</li>
-<li><tt class="docutils literal"><span class="pre">instance-state-name</span></tt>  - Filter on the intended state of the instance, e.g., running.</li>
-<li><tt class="docutils literal"><span class="pre">instance-state-code</span></tt>  - Filter on the intended state code of the instance, e.g., 16.</li>
-</ul>
+<p><tt class="docutils literal"><span class="pre">describe-instance-status</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">InstanceStatuses</span></tt></p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  describe-instance-status
 [--dry-run | --no-dry-run]
 [--instance-ids &lt;value&gt;]
 [--filters &lt;value&gt;]
 [--include-all-instances | --no-include-all-instances]
+[--cli-input-json &lt;value&gt;]
 [--starting-token &lt;value&gt;]
-[--max-items &lt;value&gt;]</pre>
+[--page-size &lt;value&gt;]
+[--max-items &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--no-dry-run" class="dashAnchor" id="no-dry-run"></a><span class="pre">--no-dry-run</span></tt> (boolean)</p>
-<p>Checks whether you have the required permissions for the action, without actually making the request. Using this option will result in one of two possible errorresponses. If you have the required permissions, the error response will be <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt>  . Otherwise it will be <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt>  .</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--instance-ids" class="dashAnchor" id="instance-ids"></a><span class="pre">--instance-ids</span></tt> (list)
-The list of instance IDs. If not specified, all instances are described.</p>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><span class="pre">--no-dry-run</span></tt> (boolean)</p>
+<blockquote>
+<div>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt> . Otherwise, it is <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--instance-ids" class="dashAnchor" id="instance-ids"></a><span class="pre">--instance-ids</span></tt> (list)</p>
+<blockquote>
+<div><p>One or more instance IDs.</p>
+<p>Default: Describes all your instances.</p>
+<p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
+</div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--filters" class="dashAnchor" id="filters"></a><span class="pre">--filters</span></tt> (list)
-The list of filters to limit returned results.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--filters" class="dashAnchor" id="filters"></a><span class="pre">--filters</span></tt> (list)</p>
+<blockquote>
+<div><p>One or more filters.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">availability-zone</span></tt> - The Availability Zone of the instance.</li>
+<li><tt class="docutils literal"><span class="pre">event.code</span></tt> - The code for the scheduled event (<tt class="docutils literal"><span class="pre">instance-reboot</span></tt> | <tt class="docutils literal"><span class="pre">system-reboot</span></tt> | <tt class="docutils literal"><span class="pre">system-maintenance</span></tt> | <tt class="docutils literal"><span class="pre">instance-retirement</span></tt> | <tt class="docutils literal"><span class="pre">instance-stop</span></tt> ).</li>
+<li><tt class="docutils literal"><span class="pre">event.description</span></tt> - A description of the event.</li>
+<li><tt class="docutils literal"><span class="pre">event.not-after</span></tt> - The latest end time for the scheduled event (for example, <tt class="docutils literal"><span class="pre">2014-09-15T17:15:20.000Z</span></tt> ).</li>
+<li><tt class="docutils literal"><span class="pre">event.not-before</span></tt> - The earliest start time for the scheduled event (for example, <tt class="docutils literal"><span class="pre">2014-09-15T17:15:20.000Z</span></tt> ).</li>
+<li><tt class="docutils literal"><span class="pre">instance-state-code</span></tt> - The code for the instance state, as a 16-bit unsigned integer. The high byte is an opaque internal value and should be ignored. The low byte is set based on the state represented. The valid values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).</li>
+<li><tt class="docutils literal"><span class="pre">instance-state-name</span></tt> - The state of the instance (<tt class="docutils literal"><span class="pre">pending</span></tt> | <tt class="docutils literal"><span class="pre">running</span></tt> | <tt class="docutils literal"><span class="pre">shutting-down</span></tt> | <tt class="docutils literal"><span class="pre">terminated</span></tt> | <tt class="docutils literal"><span class="pre">stopping</span></tt> | <tt class="docutils literal"><span class="pre">stopped</span></tt> ).</li>
+<li><tt class="docutils literal"><span class="pre">instance-status.reachability</span></tt> - Filters on instance status where the name is <tt class="docutils literal"><span class="pre">reachability</span></tt> (<tt class="docutils literal"><span class="pre">passed</span></tt> | <tt class="docutils literal"><span class="pre">failed</span></tt> | <tt class="docutils literal"><span class="pre">initializing</span></tt> | <tt class="docutils literal"><span class="pre">insufficient-data</span></tt> ).</li>
+<li><tt class="docutils literal"><span class="pre">instance-status.status</span></tt> - The status of the instance (<tt class="docutils literal"><span class="pre">ok</span></tt> | <tt class="docutils literal"><span class="pre">impaired</span></tt> | <tt class="docutils literal"><span class="pre">initializing</span></tt> | <tt class="docutils literal"><span class="pre">insufficient-data</span></tt> | <tt class="docutils literal"><span class="pre">not-applicable</span></tt> ).</li>
+<li><tt class="docutils literal"><span class="pre">system-status.reachability</span></tt> - Filters on system status where the name is <tt class="docutils literal"><span class="pre">reachability</span></tt> (<tt class="docutils literal"><span class="pre">passed</span></tt> | <tt class="docutils literal"><span class="pre">failed</span></tt> | <tt class="docutils literal"><span class="pre">initializing</span></tt> | <tt class="docutils literal"><span class="pre">insufficient-data</span></tt> ).</li>
+<li><tt class="docutils literal"><span class="pre">system-status.status</span></tt> - The system status of the instance (<tt class="docutils literal"><span class="pre">ok</span></tt> | <tt class="docutils literal"><span class="pre">impaired</span></tt> | <tt class="docutils literal"><span class="pre">initializing</span></tt> | <tt class="docutils literal"><span class="pre">insufficient-data</span></tt> | <tt class="docutils literal"><span class="pre">not-applicable</span></tt> ).</li>
+</ul>
+</div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><pre>  Key value pairs, where values are separated by commas.
---filters Name=string1,Values=string1,string2</pre>
+<div class="highlight-python"><pre>Name=string,Values=string,string ...</pre>
 </div>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><pre>[
@@ -186,67 +196,174 @@ The list of filters to limit returned results.</p>
   ...
 ]</pre>
 </div>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--include-all-instances" class="dashAnchor" id="include-all-instances"></a><span class="pre">--include-all-instances</span></tt> | <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--no-include-all-instances" class="dashAnchor" id="no-include-all-instances"></a><span class="pre">--no-include-all-instances</span></tt> (boolean)</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--include-all-instances" class="dashAnchor" id="include-all-instances"></a><span class="pre">--include-all-instances</span></tt> | <tt class="docutils literal"><span class="pre">--no-include-all-instances</span></tt> (boolean)</p>
+<blockquote>
+<div><p>When <tt class="docutils literal"><span class="pre">true</span></tt> , includes the health status for all instances. When <tt class="docutils literal"><span class="pre">false</span></tt> , includes the health status for running instances only.</p>
+<p>Default: <tt class="docutils literal"><span class="pre">false</span></tt></p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--starting-token" class="dashAnchor" id="starting-token"></a><span class="pre">--starting-token</span></tt> (string)</p>
 <blockquote>
-<div>A token to specify where to start paginating. This is the <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--next-token" class="dashAnchor" id="next-token"></a><span class="pre">--next-token</span></tt>  from a previously truncated response.</div></blockquote>
+<div>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--page-size" class="dashAnchor" id="page-size"></a><span class="pre">--page-size</span></tt> (integer)</p>
+<blockquote>
+<div>The size of each page.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-items" class="dashAnchor" id="max-items"></a><span class="pre">--max-items</span></tt> (integer)</p>
 <blockquote>
-<div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">NextMarker</span></tt>  will be provided in the output that you can use to resume pagination.</div></blockquote>
+<div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">NextToken</span></tt> will be provided in the output that you can use to resume pagination. This <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element should <strong>not</strong> be used directly outside of the AWS CLI.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
 </div>
-<div class="section" id="filters">
-<h2>Filters<a class="headerlink" href="#filters" title="Permalink to this headline">&#182;</a></h2>
-<div class="section" id="availability-zone">
-<h3>availability-zone<a class="headerlink" href="#availability-zone" title="Permalink to this headline">&#182;</a></h3>
-<p>The Availability Zone of the instance.</p>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To describe the status of an instance</strong></p>
+<p>This example describes the current status of the specified instance.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 describe-instance-status --instance-id i-1234567890abcdef0</pre>
 </div>
-<div class="section" id="event-code">
-<h3>event.code<a class="headerlink" href="#event-code" title="Permalink to this headline">&#182;</a></h3>
-<p>The code identifying the type of event.</p>
-<p>Valid Values: instance-reboot|system-reboot|system-maintenance|instance-retirement|instance-stop</p>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"InstanceStatuses"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"InstanceId"</span><span class="p">:</span> <span class="s2">"i-1234567890abcdef0"</span><span class="p">,</span>
+            <span class="s2">"InstanceState"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"Code"</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+                <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"running"</span>
+            <span class="p">},</span>
+            <span class="s2">"AvailabilityZone"</span><span class="p">:</span> <span class="s2">"us-east-1d"</span><span class="p">,</span>
+            <span class="s2">"SystemStatus"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"Status"</span><span class="p">:</span> <span class="s2">"ok"</span><span class="p">,</span>
+                <span class="s2">"Details"</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">"Status"</span><span class="p">:</span> <span class="s2">"passed"</span><span class="p">,</span>
+                        <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"reachability"</span>
+                    <span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">},</span>
+            <span class="s2">"InstanceStatus"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"Status"</span><span class="p">:</span> <span class="s2">"ok"</span><span class="p">,</span>
+                <span class="s2">"Details"</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">"Status"</span><span class="p">:</span> <span class="s2">"passed"</span><span class="p">,</span>
+                        <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"reachability"</span>
+                    <span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
 </div>
-<div class="section" id="event-description">
-<h3>event.description<a class="headerlink" href="#event-description" title="Permalink to this headline">&#182;</a></h3>
-<p>A description of the event.</p>
 </div>
-<div class="section" id="event-not-after">
-<h3>event.not-after<a class="headerlink" href="#event-not-after" title="Permalink to this headline">&#182;</a></h3>
-<p>The latest end time for the scheduled event.</p>
-</div>
-<div class="section" id="event-not-before">
-<h3>event.not-before<a class="headerlink" href="#event-not-before" title="Permalink to this headline">&#182;</a></h3>
-<p>The earliest start time for the scheduled event.</p>
-</div>
-<div class="section" id="instance-state-code">
-<h3>instance-state-code<a class="headerlink" href="#instance-state-code" title="Permalink to this headline">&#182;</a></h3>
-<p>A code representing the state of the instance. The high byte is an opaque internal value and should be ignored. The low byte is set based on the state represented</p>
-<p>Valid Values: 0|16|32|48|64|80</p>
-</div>
-<div class="section" id="instance-state-name">
-<h3>instance-state-name<a class="headerlink" href="#instance-state-name" title="Permalink to this headline">&#182;</a></h3>
-<p>The state of the instance.</p>
-<p>Valid Values: pending|running|shutting-down|terminated|stopping|stopped</p>
-</div>
-<div class="section" id="instance-status-reachability">
-<h3>instance-status.reachability<a class="headerlink" href="#instance-status-reachability" title="Permalink to this headline">&#182;</a></h3>
-<p>--filters on instance status where the name is reachability .</p>
-<p>Valid Values: passed|failed|initializing|insufficient-data</p>
-</div>
-<div class="section" id="instance-status-status">
-<h3>instance-status.status<a class="headerlink" href="#instance-status-status" title="Permalink to this headline">&#182;</a></h3>
-<p>The status of the instance.</p>
-<p>Valid Values: ok|impaired|initializing|insufficient-data|not-applicable</p>
-</div>
-<div class="section" id="system-status-reachability">
-<h3>system-status.reachability<a class="headerlink" href="#system-status-reachability" title="Permalink to this headline">&#182;</a></h3>
-<p>--filters on system status where the name is reachability .</p>
-<p>Valid Values: passed|failed|initializing|insufficient-data</p>
-</div>
-<div class="section" id="system-status-status">
-<h3>system-status.status<a class="headerlink" href="#system-status-status" title="Permalink to this headline">&#182;</a></h3>
-<p>The system status of the instance.</p>
-<p>Valid Values: ok|impaired|initializing|insufficient-data|not-applicable</p>
-</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>InstanceStatuses -&gt; (list)</p>
+<blockquote>
+<div><p>One or more instance status descriptions.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the status of an instance.</p>
+<p>InstanceId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the instance.</div></blockquote>
+<p>AvailabilityZone -&gt; (string)</p>
+<blockquote>
+<div>The Availability Zone of the instance.</div></blockquote>
+<p>Events -&gt; (list)</p>
+<blockquote>
+<div><p>Any scheduled events associated with the instance.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a scheduled event for an instance.</p>
+<p>Code -&gt; (string)</p>
+<blockquote>
+<div>The event code.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div><p>A description of the event.</p>
+<p>After a scheduled event is completed, it can still be described for up to a week. If the event has been completed, this description starts with the following text: [Completed].</p>
+</div></blockquote>
+<p>NotBefore -&gt; (timestamp)</p>
+<blockquote>
+<div>The earliest scheduled start time for the event.</div></blockquote>
+<p>NotAfter -&gt; (timestamp)</p>
+<blockquote>
+<div>The latest scheduled end time for the event.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>InstanceState -&gt; (structure)</p>
+<blockquote>
+<div><p>The intended state of the instance.  describe-instance-status requires that an instance be in the <tt class="docutils literal"><span class="pre">running</span></tt> state.</p>
+<p>Code -&gt; (integer)</p>
+<blockquote>
+<div><p>The low byte represents the state. The high byte is an opaque internal value and should be ignored.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">0</span></tt> : <tt class="docutils literal"><span class="pre">pending</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">16</span></tt> : <tt class="docutils literal"><span class="pre">running</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">32</span></tt> : <tt class="docutils literal"><span class="pre">shutting-down</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">48</span></tt> : <tt class="docutils literal"><span class="pre">terminated</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">64</span></tt> : <tt class="docutils literal"><span class="pre">stopping</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">80</span></tt> : <tt class="docutils literal"><span class="pre">stopped</span></tt></li>
+</ul>
+</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The current state of the instance.</div></blockquote>
+</div></blockquote>
+<p>SystemStatus -&gt; (structure)</p>
+<blockquote>
+<div><p>Reports impaired functionality that stems from issues related to the systems that support an instance, such as hardware failures and network connectivity problems.</p>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status.</div></blockquote>
+<p>Details -&gt; (list)</p>
+<blockquote>
+<div><p>The system instance health or application instance health.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the instance status.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The type of instance status.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status.</div></blockquote>
+<p>ImpairedSince -&gt; (timestamp)</p>
+<blockquote>
+<div>The time when a status check failed. For an instance that was launched and impaired, this is the time when the instance was launched.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>InstanceStatus -&gt; (structure)</p>
+<blockquote>
+<div><p>Reports impaired functionality that stems from issues internal to the instance, such as impaired reachability.</p>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status.</div></blockquote>
+<p>Details -&gt; (list)</p>
+<blockquote>
+<div><p>The system instance health or application instance health.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the instance status.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The type of instance status.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status.</div></blockquote>
+<p>ImpairedSince -&gt; (timestamp)</p>
+<blockquote>
+<div>The time when a status check failed. For an instance that was launched and impaired, this is the time when the instance was launched.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>The token to use to retrieve the next page of results. This value is <tt class="docutils literal"><span class="pre">null</span></tt> when there are no more results to return.</div></blockquote>
 </div>
 </div>
 
@@ -268,6 +385,15 @@ The list of filters to limit returned results.</p>
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -277,35 +403,21 @@ The list of filters to limit returned results.</p>
           <a href="describe-instances.html" title="describe-instances">next</a> |</li>
         <li class="right">
           <a href="describe-instance-attribute.html" title="describe-instance-attribute">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">ec2</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'describe-instance-attribute.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'describe-instances.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/describe-instance-status.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
 </html>

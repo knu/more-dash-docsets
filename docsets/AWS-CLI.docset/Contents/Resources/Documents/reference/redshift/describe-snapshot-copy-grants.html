@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/redshift/describe-snapshot-copy-grants.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:27 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-snapshot-copy-grants &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="redshift" href="index.html" />
+    <link rel="next" title="describe-table-restore-status" href="describe-table-restore-status.html" />
+    <link rel="prev" title="describe-resize" href="describe-resize.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="describe-table-restore-status.html" title="describe-table-restore-status" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="describe-resize.html" title="describe-resize" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">redshift</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="describe-resize.html" title="previous chapter (use the left arrow)">&#8592; describe-resize</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="describe-table-restore-status.html" title="next chapter (use the right arrow)">describe-table-restore-status &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-snapshot-copy-grants</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/redshift/describe-snapshot-copy-grants">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-redshift"><em>redshift</em></a> ]</p>
+<div class="section" id="describe-snapshot-copy-grants">
+<span id="cli-aws-redshift-describe-snapshot-copy-grants"></span><h1>describe-snapshot-copy-grants<a name="//apple_ref/cpp/Command/aws redshift describe-snapshot-copy-grants" class="dashAnchor" id="aws redshift describe-snapshot-copy-grants"></a><a class="headerlink" href="#describe-snapshot-copy-grants" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Returns a list of snapshot copy grants owned by the AWS account in the destination region.</p>
+<p>For more information about managing snapshot copy grants, go to <a class="reference external" href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <em>Amazon Redshift Cluster Management Guide</em> .</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  describe-snapshot-copy-grants
+[--snapshot-copy-grant-name &lt;value&gt;]
+[--max-records &lt;value&gt;]
+[--marker &lt;value&gt;]
+[--tag-keys &lt;value&gt;]
+[--tag-values &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--snapshot-copy-grant-name" class="dashAnchor" id="snapshot-copy-grant-name"></a><span class="pre">--snapshot-copy-grant-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the snapshot copy grant.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-records" class="dashAnchor" id="max-records"></a><span class="pre">--max-records</span></tt> (integer)</p>
+<blockquote>
+<div><p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <tt class="docutils literal"><span class="pre">MaxRecords</span></tt> value, a value is returned in a <tt class="docutils literal"><span class="pre">marker</span></tt> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
+<p>Default: <tt class="docutils literal"><span class="pre">100</span></tt></p>
+<p>Constraints: minimum 20, maximum 100.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--marker" class="dashAnchor" id="marker"></a><span class="pre">--marker</span></tt> (string)</p>
+<blockquote>
+<div><p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <tt class="docutils literal"><span class="pre">DescribeSnapshotCopyGrant</span></tt> request exceed the value specified in <tt class="docutils literal"><span class="pre">MaxRecords</span></tt> , AWS returns a value in the <tt class="docutils literal"><span class="pre">Marker</span></tt> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <tt class="docutils literal"><span class="pre">Marker</span></tt> parameter and retrying the request.</p>
+<p>Constraints: You can specify either the <strong>SnapshotCopyGrantName</strong> parameter or the <strong>Marker</strong> parameter, but not both.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--tag-keys" class="dashAnchor" id="tag-keys"></a><span class="pre">--tag-keys</span></tt> (list)</p>
+<blockquote>
+<div>A tag key or keys for which you want to return all matching resources that are associated with the specified key or keys. For example, suppose that you have resources tagged with keys called <tt class="docutils literal"><span class="pre">owner</span></tt> and <tt class="docutils literal"><span class="pre">environment</span></tt> . If you specify both of these tag keys in the request, Amazon Redshift returns a response with all resources that have either or both of these tag keys associated with them.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>"string" "string" ...</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--tag-values" class="dashAnchor" id="tag-values"></a><span class="pre">--tag-values</span></tt> (list)</p>
+<blockquote>
+<div>A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called <tt class="docutils literal"><span class="pre">admin</span></tt> and <tt class="docutils literal"><span class="pre">test</span></tt> . If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>"string" "string" ...</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Marker -&gt; (string)</p>
+<blockquote>
+<div><p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <tt class="docutils literal"><span class="pre">DescribeSnapshotCopyGrant</span></tt> request exceed the value specified in <tt class="docutils literal"><span class="pre">MaxRecords</span></tt> , AWS returns a value in the <tt class="docutils literal"><span class="pre">Marker</span></tt> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <tt class="docutils literal"><span class="pre">Marker</span></tt> parameter and retrying the request.</p>
+<p>Constraints: You can specify either the <strong>SnapshotCopyGrantName</strong> parameter or the <strong>Marker</strong> parameter, but not both.</p>
+</div></blockquote>
+<p>SnapshotCopyGrants -&gt; (list)</p>
+<blockquote>
+<div><p>The list of <tt class="docutils literal"><span class="pre">SnapshotCopyGrant</span></tt> objects.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified customer master key (CMK) from AWS KMS in the destination region.</p>
+<p>For more information about managing snapshot copy grants, go to <a class="reference external" href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <em>Amazon Redshift Cluster Management Guide</em> .</p>
+<p>SnapshotCopyGrantName -&gt; (string)</p>
+<blockquote>
+<div>The name of the snapshot copy grant.</div></blockquote>
+<p>KmsKeyId -&gt; (string)</p>
+<blockquote>
+<div>The unique identifier of the customer master key (CMK) in AWS KMS to which Amazon Redshift is granted permission.</div></blockquote>
+<p>Tags -&gt; (list)</p>
+<blockquote>
+<div><p>A list of tag instances.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A tag consisting of a name/value pair for a resource.</p>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div>The key, or name, for the resource tag.</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div>The value for the resource tag.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="describe-resize.html" title="previous chapter (use the left arrow)">&#8592; describe-resize</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="describe-table-restore-status.html" title="next chapter (use the right arrow)">describe-table-restore-status &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="describe-table-restore-status.html" title="describe-table-restore-status">next</a> |</li>
+        <li class="right">
+          <a href="describe-resize.html" title="describe-resize">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">redshift</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/redshift/describe-snapshot-copy-grants.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:27 GMT -->
+</html>

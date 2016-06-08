@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:21 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>add-permission &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="lambda" href="index.html" />
+    <link rel="next" title="create-alias" href="create-alias.html" />
+    <link rel="prev" title="lambda" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="create-alias.html" title="create-alias" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="index.html" title="lambda" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">lambda</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="index.html" title="previous chapter (use the left arrow)">&#8592; lambda</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-alias.html" title="next chapter (use the right arrow)">create-alias &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">add-permission</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/lambda/add-permission">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-lambda"><em>lambda</em></a> ]</p>
+<div class="section" id="add-permission">
+<span id="cli-aws-lambda-add-permission"></span><h1>add-permission<a name="//apple_ref/cpp/Command/aws lambda add-permission" class="dashAnchor" id="aws lambda add-permission"></a><a class="headerlink" href="#add-permission" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Adds a permission to the resource policy associated with the specified AWS Lambda function. You use resource policies to grant permissions to event sources that use <em>push</em> model. In a <em>push</em> model, event sources (such as Amazon S3 and custom applications) invoke your Lambda function. Each permission you add to the resource policy allows an event source, permission to invoke the Lambda function.</p>
+<p>For information about the push model, see <a class="reference external" href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS Lambda: How it Works</a> .</p>
+<p>If you are using versioning, the permissions you add are specific to the Lambda function version or alias you specify in the <tt class="docutils literal"><span class="pre">add-permission</span></tt> request via the <tt class="docutils literal"><span class="pre">qualifier</span></tt> parameter. For more information about versioning, see <a class="reference external" href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda Function Versioning and Aliases</a> .</p>
+<p>This operation requires permission for the <tt class="docutils literal"><span class="pre">lambda:AddPermission</span></tt> action.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  add-permission
+--function-name &lt;value&gt;
+--statement-id &lt;value&gt;
+--action &lt;value&gt;
+--principal &lt;value&gt;
+[--source-arn &lt;value&gt;]
+[--source-account &lt;value&gt;]
+[--event-source-token &lt;value&gt;]
+[--qualifier &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--function-name" class="dashAnchor" id="function-name"></a><span class="pre">--function-name</span></tt> (string)</p>
+<blockquote>
+<div><p>Name of the Lambda function whose resource policy you are updating by adding a new permission.</p>
+<p>You can specify a function name (for example, <tt class="docutils literal"><span class="pre">Thumbnail</span></tt> ) or you can specify Amazon Resource Name (ARN) of the function (for example, <tt class="docutils literal"><span class="pre">arn:aws:lambda:us-west-2:account-id:function:ThumbNail</span></tt> ). AWS Lambda also allows you to specify partial ARN (for example, <tt class="docutils literal"><span class="pre">account-id:Thumbnail</span></tt> ). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--statement-id" class="dashAnchor" id="statement-id"></a><span class="pre">--statement-id</span></tt> (string)</p>
+<blockquote>
+<div>A unique statement identifier.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--action" class="dashAnchor" id="action"></a><span class="pre">--action</span></tt> (string)</p>
+<blockquote>
+<div>The AWS Lambda action you want to allow in this statement. Each Lambda action is a string starting with <tt class="docutils literal"><span class="pre">lambda:</span></tt> followed by the API name (see  Operations ). For example, <tt class="docutils literal"><span class="pre">lambda:CreateFunction</span></tt> . You can use wildcard (<tt class="docutils literal"><span class="pre">lambda:*</span></tt> ) to grant permission for all AWS Lambda actions.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--principal" class="dashAnchor" id="principal"></a><span class="pre">--principal</span></tt> (string)</p>
+<blockquote>
+<div>The principal who is getting this permission. It can be Amazon S3 service principal (<tt class="docutils literal"><span class="pre">s3.amazonaws.com</span></tt> ) if you want Amazon S3 to invoke the function, an AWS account ID if you are granting cross-account permission, or any valid AWS service principal such as <tt class="docutils literal"><span class="pre">sns.amazonaws.com</span></tt> . For example, you might want to allow a custom application in another AWS account to push events to AWS Lambda by invoking your function.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--source-arn" class="dashAnchor" id="source-arn"></a><span class="pre">--source-arn</span></tt> (string)</p>
+<blockquote>
+<div><p>This is optional; however, when granting Amazon S3 permission to invoke your function, you should specify this field with the bucket Amazon Resource Name (ARN) as its value. This ensures that only events generated from the specified bucket can invoke the function.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If you add a permission for the Amazon S3 principal without providing the source ARN, any AWS account that creates a mapping to your function ARN can send events to invoke your Lambda function from Amazon S3.</p>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--source-account" class="dashAnchor" id="source-account"></a><span class="pre">--source-account</span></tt> (string)</p>
+<blockquote>
+<div>The AWS account ID (without a hyphen) of the source owner. For example, if the <tt class="docutils literal"><span class="pre">SourceArn</span></tt> identifies a bucket, then this is the bucket owner's account ID. You can use this additional condition to ensure the bucket you specify is owned by a specific account (it is possible the bucket owner deleted the bucket and some other AWS account created the bucket). You can also use this condition to specify all sources (that is, you don't specify the <tt class="docutils literal"><span class="pre">SourceArn</span></tt> ) owned by a specific account.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--event-source-token" class="dashAnchor" id="event-source-token"></a><span class="pre">--event-source-token</span></tt> (string)</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--qualifier" class="dashAnchor" id="qualifier"></a><span class="pre">--qualifier</span></tt> (string)</p>
+<blockquote>
+<div><p>You can use this optional query parameter to describe a qualified ARN using a function version or an alias name. The permission will then apply to the specific qualified ARN. For example, if you specify function version 2 as the qualifier, then permission applies only when request is made using qualified function ARN:</p>
+<p><tt class="docutils literal"><span class="pre">arn:aws:lambda:aws-region:acct-id:function:function-name:2</span></tt></p>
+<p>If you specify an alias name, for example <tt class="docutils literal"><span class="pre">PROD</span></tt> , then the permission is valid only for requests made using the alias ARN:</p>
+<p><tt class="docutils literal"><span class="pre">arn:aws:lambda:aws-region:acct-id:function:function-name:PROD</span></tt></p>
+<p>If the qualifier is not specified, the permission is valid only when requests is made using unqualified function ARN.</p>
+<p><tt class="docutils literal"><span class="pre">arn:aws:lambda:aws-region:acct-id:function:function-name</span></tt></p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Statement -&gt; (string)</p>
+<blockquote>
+<div>The permission statement you specified in the request. The response returns the same as a string using a backslash ("") as an escape character in the JSON.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="index.html" title="previous chapter (use the left arrow)">&#8592; lambda</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-alias.html" title="next chapter (use the right arrow)">create-alias &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="create-alias.html" title="create-alias">next</a> |</li>
+        <li class="right">
+          <a href="index.html" title="lambda">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">lambda</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:21 GMT -->
+</html>

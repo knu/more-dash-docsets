@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/redshift/create-event-subscription.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:27 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-event-subscription &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="redshift" href="index.html" />
+    <link rel="next" title="create-hsm-client-certificate" href="create-hsm-client-certificate.html" />
+    <link rel="prev" title="create-cluster-subnet-group" href="create-cluster-subnet-group.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="create-hsm-client-certificate.html" title="create-hsm-client-certificate" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="create-cluster-subnet-group.html" title="create-cluster-subnet-group" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">redshift</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="create-cluster-subnet-group.html" title="previous chapter (use the left arrow)">&#8592; create-cluster-subnet-group</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-hsm-client-certificate.html" title="next chapter (use the right arrow)">create-hsm-client-certificate &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-event-subscription</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/redshift/create-event-subscription">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-redshift"><em>redshift</em></a> ]</p>
+<div class="section" id="create-event-subscription">
+<span id="cli-aws-redshift-create-event-subscription"></span><h1>create-event-subscription<a name="//apple_ref/cpp/Command/aws redshift create-event-subscription" class="dashAnchor" id="aws redshift create-event-subscription"></a><a class="headerlink" href="#create-event-subscription" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Creates an Amazon Redshift event notification subscription. This action requires an ARN (Amazon Resource Name) of an Amazon SNS topic created by either the Amazon Redshift console, the Amazon SNS console, or the Amazon SNS API. To obtain an ARN with Amazon SNS, you must create a topic in Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console.</p>
+<p>You can specify the source type, and lists of Amazon Redshift source IDs, event categories, and event severities. Notifications will be sent for all events you want that match those criteria. For example, you can specify source type = cluster, source ID = my-cluster-1 and mycluster2, event categories = Availability, Backup, and severity = ERROR. The subscription will only send notifications for those ERROR events in the Availability and Backup categories for the specified clusters.</p>
+<p>If you specify both the source type and source IDs, such as source type = cluster and source identifier = my-cluster-1, notifications will be sent for all the cluster events for my-cluster-1. If you specify a source type but do not specify a source identifier, you will receive notice of the events for the objects of that type in your AWS account. If you do not specify either the SourceType nor the SourceIdentifier, you will be notified of events generated from all Amazon Redshift sources belonging to your AWS account. You must specify a source type if you specify a source ID.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  create-event-subscription
+--subscription-name &lt;value&gt;
+--sns-topic-arn &lt;value&gt;
+[--source-type &lt;value&gt;]
+[--source-ids &lt;value&gt;]
+[--event-categories &lt;value&gt;]
+[--severity &lt;value&gt;]
+[--enabled | --no-enabled]
+[--tags &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--subscription-name" class="dashAnchor" id="subscription-name"></a><span class="pre">--subscription-name</span></tt> (string)</p>
+<blockquote>
+<div><p>The name of the event subscription to be created.</p>
+<p>Constraints:</p>
+<ul class="simple">
+<li>Cannot be null, empty, or blank.</li>
+<li>Must contain from 1 to 255 alphanumeric characters or hyphens.</li>
+<li>First character must be a letter.</li>
+<li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--sns-topic-arn" class="dashAnchor" id="sns-topic-arn"></a><span class="pre">--sns-topic-arn</span></tt> (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the Amazon SNS topic used to transmit the event notifications. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--source-type" class="dashAnchor" id="source-type"></a><span class="pre">--source-type</span></tt> (string)</p>
+<blockquote>
+<div><p>The type of source that will be generating the events. For example, if you want to be notified of events generated by a cluster, you would set this parameter to cluster. If this value is not specified, events are returned for all Amazon Redshift objects in your AWS account. You must specify a source type in order to specify source IDs.</p>
+<p>Valid values: cluster, cluster-parameter-group, cluster-security-group, and cluster-snapshot.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--source-ids" class="dashAnchor" id="source-ids"></a><span class="pre">--source-ids</span></tt> (list)</p>
+<blockquote>
+<div><p>A list of one or more identifiers of Amazon Redshift source objects. All of the objects must be of the same type as was specified in the source type parameter. The event subscription will return only events generated by the specified objects. If not specified, then events are returned for all objects within the source type specified.</p>
+<p>Example: my-cluster-1, my-cluster-2</p>
+<p>Example: my-snapshot-20131010</p>
+</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>"string" "string" ...</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--event-categories" class="dashAnchor" id="event-categories"></a><span class="pre">--event-categories</span></tt> (list)</p>
+<blockquote>
+<div><p>Specifies the Amazon Redshift event categories to be published by the event notification subscription.</p>
+<p>Values: Configuration, Management, Monitoring, Security</p>
+</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>"string" "string" ...</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--severity" class="dashAnchor" id="severity"></a><span class="pre">--severity</span></tt> (string)</p>
+<blockquote>
+<div><p>Specifies the Amazon Redshift event severity to be published by the event notification subscription.</p>
+<p>Values: ERROR, INFO</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--enabled" class="dashAnchor" id="enabled"></a><span class="pre">--enabled</span></tt> | <tt class="docutils literal"><span class="pre">--no-enabled</span></tt> (boolean)</p>
+<blockquote>
+<div>A Boolean value; set to <tt class="docutils literal"><span class="pre">true</span></tt> to activate the subscription, set to <tt class="docutils literal"><span class="pre">false</span></tt> to create the subscription but not active it.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--tags" class="dashAnchor" id="tags"></a><span class="pre">--tags</span></tt> (list)</p>
+<blockquote>
+<div>A list of tag instances.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Key=string,Value=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    "Key": "string",
+    "Value": "string"
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>EventSubscription -&gt; (structure)</p>
+<blockquote>
+<div><p>Describes event subscriptions.</p>
+<p>CustomerAwsId -&gt; (string)</p>
+<blockquote>
+<div>The AWS customer account associated with the Amazon Redshift event notification subscription.</div></blockquote>
+<p>CustSubscriptionId -&gt; (string)</p>
+<blockquote>
+<div>The name of the Amazon Redshift event notification subscription.</div></blockquote>
+<p>SnsTopicArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the Amazon SNS topic used by the event notification subscription.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div><p>The status of the Amazon Redshift event notification subscription.</p>
+<p>Constraints:</p>
+<ul class="simple">
+<li>Can be one of the following: active | no-permission | topic-not-exist</li>
+<li>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</li>
+</ul>
+</div></blockquote>
+<p>SubscriptionCreationTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time the Amazon Redshift event notification subscription was created.</div></blockquote>
+<p>SourceType -&gt; (string)</p>
+<blockquote>
+<div>The source type of the events returned the Amazon Redshift event notification, such as cluster, or cluster-snapshot.</div></blockquote>
+<p>SourceIdsList -&gt; (list)</p>
+<blockquote>
+<div><p>A list of the sources that publish events to the Amazon Redshift event notification subscription.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>EventCategoriesList -&gt; (list)</p>
+<blockquote>
+<div><p>The list of Amazon Redshift event categories specified in the event notification subscription.</p>
+<p>Values: Configuration, Management, Monitoring, Security</p>
+<p>(string)</p>
+</div></blockquote>
+<p>Severity -&gt; (string)</p>
+<blockquote>
+<div><p>The event severity specified in the Amazon Redshift event notification subscription.</p>
+<p>Values: ERROR, INFO</p>
+</div></blockquote>
+<p>Enabled -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean value indicating whether the subscription is enabled. <tt class="docutils literal"><span class="pre">true</span></tt> indicates the subscription is enabled.</div></blockquote>
+<p>Tags -&gt; (list)</p>
+<blockquote>
+<div><p>The list of tags for the event subscription.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A tag consisting of a name/value pair for a resource.</p>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div>The key, or name, for the resource tag.</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div>The value for the resource tag.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="create-cluster-subnet-group.html" title="previous chapter (use the left arrow)">&#8592; create-cluster-subnet-group</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-hsm-client-certificate.html" title="next chapter (use the right arrow)">create-hsm-client-certificate &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="create-hsm-client-certificate.html" title="create-hsm-client-certificate">next</a> |</li>
+        <li class="right">
+          <a href="create-cluster-subnet-group.html" title="create-cluster-subnet-group">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">redshift</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/redshift/create-event-subscription.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:27 GMT -->
+</html>

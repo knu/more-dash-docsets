@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/autoscaling/describe-metric-collection-types.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:57 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>describe-metric-collection-types &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>describe-metric-collection-types &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +25,10 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="autoscaling" href="index.html" />
     <link rel="next" title="describe-notification-configurations" href="describe-notification-configurations.html" />
-    <link rel="prev" title="describe-launch-configurations" href="describe-launch-configurations.html" />
+    <link rel="prev" title="describe-load-balancers" href="describe-load-balancers.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
   
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -60,8 +63,8 @@
         <li class="right">
           <a href="describe-notification-configurations.html" title="describe-notification-configurations" accesskey="N">next</a> |</li>
         <li class="right">
-          <a href="describe-launch-configurations.html" title="describe-launch-configurations" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="describe-load-balancers.html" title="describe-load-balancers" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">autoscaling</a> &#187;</li> 
       </ul>
@@ -71,7 +74,7 @@
     <div class="top-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="describe-launch-configurations.html" title="previous chapter (use the left arrow)">&#8592; describe-launch-configurations</a>
+          <a href="describe-load-balancers.html" title="previous chapter (use the left arrow)">&#8592; describe-load-balancers</a>
           <span class="divider">/</span>
           
         </li>
@@ -82,23 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">describe-metric-collection-types</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,29 +112,116 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/autoscaling/describe-metric-collection-types">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/autoscaling/describe-metric-collection-types">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>autoscaling</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-autoscaling"><em>autoscaling</em></a> ]</p>
 <div class="section" id="describe-metric-collection-types">
-<h1>describe-metric-collection-types<a class="headerlink" href="#describe-metric-collection-types" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-autoscaling-describe-metric-collection-types"></span><h1>describe-metric-collection-types<a name="//apple_ref/cpp/Command/aws autoscaling describe-metric-collection-types" class="dashAnchor" id="aws autoscaling describe-metric-collection-types"></a><a class="headerlink" href="#describe-metric-collection-types" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Returns a list of metrics and a corresponding list of granularities for each metric.</p>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Describes the available CloudWatch metrics for Auto Scaling.</p>
+<p>Note that the <tt class="docutils literal"><span class="pre">GroupStandbyInstances</span></tt> metric is not returned by default. You must explicitly request this metric when calling  enable-metrics-collection .</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">describe</span><span class="o">-</span><span class="n">metric</span><span class="o">-</span><span class="n">collection</span><span class="o">-</span><span class="n">types</span>
-</pre></div>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  describe-metric-collection-types
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
-<p><em>None</em></p>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To describe the Auto Scaling metric collection types</strong></p>
+<p>This example describes the available metric collection types:</p>
+<div class="highlight-python"><pre>aws autoscaling describe-metric-collection-types</pre>
+</div>
+<p>The following is example output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"Metrics"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"Metric"</span><span class="p">:</span> <span class="s2">"GroupMinSize"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Metric"</span><span class="p">:</span> <span class="s2">"GroupMaxSize"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Metric"</span><span class="p">:</span> <span class="s2">"GroupDesiredCapacity"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Metric"</span><span class="p">:</span> <span class="s2">"GroupInServiceInstances"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Metric"</span><span class="p">:</span> <span class="s2">"GroupPendingInstances"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Metric"</span><span class="p">:</span> <span class="s2">"GroupTerminatingInstances"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Metric"</span><span class="p">:</span> <span class="s2">"GroupTotalInstances"</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">"Granularities"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"Granularity"</span><span class="p">:</span> <span class="s2">"1Minute"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html#as-group-metrics">Enable Auto Scaling Group Metrics</a> in the <em>Auto Scaling Developer Guide</em>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Metrics -&gt; (list)</p>
+<blockquote>
+<div><p>One or more metrics.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a metric.</p>
+<p>Metric -&gt; (string)</p>
+<blockquote>
+<div><p>One of the following metrics:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GroupMinSize</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">GroupMaxSize</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">GroupDesiredCapacity</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">GroupInServiceInstances</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">GroupPendingInstances</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">GroupStandbyInstances</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">GroupTerminatingInstances</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">GroupTotalInstances</span></tt></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Granularities -&gt; (list)</p>
+<blockquote>
+<div><p>The granularities for the metrics.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a granularity of a metric.</p>
+<p>Granularity -&gt; (string)</p>
+<blockquote>
+<div>The granularity. The only valid value is <tt class="docutils literal"><span class="pre">1Minute</span></tt> .</div></blockquote>
+</div></blockquote>
+</div></blockquote>
 </div>
 </div>
 
@@ -141,7 +233,7 @@
     <div class="footer-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="describe-launch-configurations.html" title="previous chapter (use the left arrow)">&#8592; describe-launch-configurations</a>
+          <a href="describe-load-balancers.html" title="previous chapter (use the left arrow)">&#8592; describe-load-balancers</a>
           <span class="divider">/</span>
           
         </li>
@@ -151,6 +243,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -159,36 +260,22 @@
         <li class="right">
           <a href="describe-notification-configurations.html" title="describe-notification-configurations">next</a> |</li>
         <li class="right">
-          <a href="describe-launch-configurations.html" title="describe-launch-configurations">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="describe-load-balancers.html" title="describe-load-balancers">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">autoscaling</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'describe-launch-configurations.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'describe-notification-configurations.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/autoscaling/describe-metric-collection-types.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:57 GMT -->
 </html>

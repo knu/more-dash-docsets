@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/iam/get-policy.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:19 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-policy &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="iam" href="index.html" />
+    <link rel="next" title="get-policy-version" href="get-policy-version.html" />
+    <link rel="prev" title="get-open-id-connect-provider" href="get-open-id-connect-provider.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="get-policy-version.html" title="get-policy-version" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="get-open-id-connect-provider.html" title="get-open-id-connect-provider" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">iam</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-open-id-connect-provider.html" title="previous chapter (use the left arrow)">&#8592; get-open-id-connect-provider</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="get-policy-version.html" title="next chapter (use the right arrow)">get-policy-version &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-policy</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/iam/get-policy">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-iam"><em>iam</em></a> ]</p>
+<div class="section" id="get-policy">
+<span id="cli-aws-iam-get-policy"></span><h1>get-policy<a name="//apple_ref/cpp/Command/aws iam get-policy" class="dashAnchor" id="aws iam get-policy"></a><a class="headerlink" href="#get-policy" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Retrieves information about the specified managed policy, including the policy's default version and the total number of IAM users, groups, and roles to which the policy is attached. To retrieve the list of the specific users, groups, and roles that the policy is attached to, use the  list-entities-for-policy API. This API returns metadata about the policy. To retrieve the actual policy document for a specific version of the policy, use  get-policy-version .</p>
+<p>This API retrieves information about managed policies. To retrieve information about an inline policy that is embedded with an IAM user, group, or role, use the  get-user-policy ,  get-group-policy , or  get-role-policy API.</p>
+<p>For more information about policies, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <em>IAM User Guide</em> .</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  get-policy
+--policy-arn &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--policy-arn" class="dashAnchor" id="policy-arn"></a><span class="pre">--policy-arn</span></tt> (string)</p>
+<blockquote>
+<div><p>The Amazon Resource Name (ARN) of the managed policy that you want information about.</p>
+<p>For more information about ARNs, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <em>AWS General Reference</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To retrieve information about the specified managed policy</strong></p>
+<p>This example returns details about the managed policy whose ARN is <tt class="docutils literal"><span class="pre">arn:aws:iam::123456789012:policy/MySamplePolicy</span></tt>:</p>
+<div class="highlight-python"><pre>aws iam get-policy --policy-arn arn:aws:iam::123456789012:policy/MySamplePolicy</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"Policy"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"PolicyName"</span><span class="p">:</span> <span class="s2">"MySamplePolicy"</span><span class="p">,</span>
+        <span class="s2">"CreateDate"</span><span class="p">:</span> <span class="s2">"2015-06-17T19:23;32Z"</span><span class="p">,</span>
+        <span class="s2">"AttachmentCount"</span><span class="p">:</span> <span class="s2">"0"</span><span class="p">,</span>
+        <span class="s2">"IsAttachable"</span><span class="p">:</span> <span class="s2">"true"</span><span class="p">,</span>
+                <span class="s2">"PolicyId"</span><span class="p">:</span> <span class="s2">"Z27SI6FQMGNQ2EXAMPLE1"</span><span class="p">,</span>
+        <span class="s2">"DefaultVersionId"</span><span class="p">:</span> <span class="s2">"v1"</span><span class="p">,</span>
+                <span class="s2">"Path"</span><span class="p">:</span> <span class="s2">"/"</span><span class="p">,</span>
+                <span class="s2">"Arn"</span><span class="p">:</span> <span class="s2">"arn:aws:iam::123456789012:policy/MySamplePolicy"</span><span class="p">,</span>
+                <span class="s2">"UpdateDate"</span><span class="p">:</span> <span class="s2">"2015-06-17T19:23:32Z"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html">Overview of IAM Policies</a> in the <em>Using IAM</em> guide.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Policy -&gt; (structure)</p>
+<blockquote>
+<div><p>A structure containing details about the policy.</p>
+<p>PolicyName -&gt; (string)</p>
+<blockquote>
+<div>The friendly name (not ARN) identifying the policy.</div></blockquote>
+<p>PolicyId -&gt; (string)</p>
+<blockquote>
+<div><p>The stable and unique string identifying the policy.</p>
+<p>For more information about IDs, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <em>Using IAM</em> guide.</p>
+</div></blockquote>
+<p>Arn -&gt; (string)</p>
+<blockquote>
+<div><p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+<p>For more information about ARNs, go to <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <em>AWS General Reference</em> .</p>
+</div></blockquote>
+<p>Path -&gt; (string)</p>
+<blockquote>
+<div><p>The path to the policy.</p>
+<p>For more information about paths, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <em>Using IAM</em> guide.</p>
+</div></blockquote>
+<p>DefaultVersionId -&gt; (string)</p>
+<blockquote>
+<div>The identifier for the version of the policy that is set as the default version.</div></blockquote>
+<p>AttachmentCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of entities (users, groups, and roles) that the policy is attached to.</div></blockquote>
+<p>IsAttachable -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether the policy can be attached to an IAM user, group, or role.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div><p>A friendly description of the policy.</p>
+<p>This element is included in the response to the  get-policy operation. It is not included in the response to the  list-policies operation.</p>
+</div></blockquote>
+<p>CreateDate -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time, in <a class="reference external" href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a> , when the policy was created.</div></blockquote>
+<p>UpdateDate -&gt; (timestamp)</p>
+<blockquote>
+<div><p>The date and time, in <a class="reference external" href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a> , when the policy was last updated.</p>
+<p>When a policy has only one version, this field contains the date and time when the policy was created. When a policy has more than one version, this field contains the date and time when the most recent policy version was created.</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-open-id-connect-provider.html" title="previous chapter (use the left arrow)">&#8592; get-open-id-connect-provider</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="get-policy-version.html" title="next chapter (use the right arrow)">get-policy-version &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="get-policy-version.html" title="get-policy-version">next</a> |</li>
+        <li class="right">
+          <a href="get-open-id-connect-provider.html" title="get-open-id-connect-provider">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">iam</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/iam/get-policy.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:19 GMT -->
+</html>

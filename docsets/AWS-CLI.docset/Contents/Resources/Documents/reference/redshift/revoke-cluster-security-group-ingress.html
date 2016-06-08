@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/redshift/revoke-cluster-security-group-ingress.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:27 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>revoke-cluster-security-group-ingress &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>revoke-cluster-security-group-ingress &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +25,10 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="redshift" href="index.html" />
     <link rel="next" title="revoke-snapshot-access" href="revoke-snapshot-access.html" />
-    <link rel="prev" title="restore-from-cluster-snapshot" href="restore-from-cluster-snapshot.html" />
+    <link rel="prev" title="restore-table-from-cluster-snapshot" href="restore-table-from-cluster-snapshot.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
   
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -60,8 +63,8 @@
         <li class="right">
           <a href="revoke-snapshot-access.html" title="revoke-snapshot-access" accesskey="N">next</a> |</li>
         <li class="right">
-          <a href="restore-from-cluster-snapshot.html" title="restore-from-cluster-snapshot" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="restore-table-from-cluster-snapshot.html" title="restore-table-from-cluster-snapshot" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">redshift</a> &#187;</li> 
       </ul>
@@ -71,7 +74,7 @@
     <div class="top-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="restore-from-cluster-snapshot.html" title="previous chapter (use the left arrow)">&#8592; restore-from-cluster-snapshot</a>
+          <a href="restore-table-from-cluster-snapshot.html" title="previous chapter (use the left arrow)">&#8592; restore-table-from-cluster-snapshot</a>
           <span class="divider">/</span>
           
         </li>
@@ -82,11 +85,11 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">revoke-cluster-security-group-ingress</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
@@ -97,13 +100,14 @@
 <li><a class="reference internal" href="#revoking-access-to-a-cidr-range">Revoking Access to a CIDR range</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -112,48 +116,59 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/redshift/revoke-cluster-security-group-ingress">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/redshift/revoke-cluster-security-group-ingress">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>redshift</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-redshift"><em>redshift</em></a> ]</p>
 <div class="section" id="revoke-cluster-security-group-ingress">
-<h1>revoke-cluster-security-group-ingress<a class="headerlink" href="#revoke-cluster-security-group-ingress" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-redshift-revoke-cluster-security-group-ingress"></span><h1>revoke-cluster-security-group-ingress<a name="//apple_ref/cpp/Command/aws redshift revoke-cluster-security-group-ingress" class="dashAnchor" id="aws redshift revoke-cluster-security-group-ingress"></a><a class="headerlink" href="#revoke-cluster-security-group-ingress" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Revokes an ingress rule in an Amazon Redshift security group for a previously authorized IP range or Amazon EC2 security group. To add an ingress rule, see  authorize-cluster-security-group-ingress . For information about managing security groups, go to <a class="reference external" href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster Security Groups</a> in the <em>Amazon Redshift Management Guide</em> .</p>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Revokes an ingress rule in an Amazon Redshift security group for a previously authorized IP range or Amazon EC2 security group. To add an ingress rule, see  authorize-cluster-security-group-ingress . For information about managing security groups, go to <a class="reference external" href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster Security Groups</a> in the <em>Amazon Redshift Cluster Management Guide</em> .</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  revoke-cluster-security-group-ingress
 --cluster-security-group-name &lt;value&gt;
 [--cidrip &lt;value&gt;]
 [--ec2-security-group-name &lt;value&gt;]
-[--ec2-security-group-owner-id &lt;value&gt;]</pre>
+[--ec2-security-group-owner-id &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cluster-security-group-name" class="dashAnchor" id="cluster-security-group-name"></a><span class="pre">--cluster-security-group-name</span></tt> (string)</p>
 <blockquote>
 <div>The name of the security Group from which to revoke the ingress rule.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cidrip" class="dashAnchor" id="cidrip"></a><span class="pre">--cidrip</span></tt> (string)</p>
 <blockquote>
-<div>The IP range for which to revoke access. This range must be a valid Classless Inter-Domain Routing (CIDR) block of IP addresses. If <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cidrip" class="dashAnchor" id="cidrip"></a><span class="pre">--cidrip</span></tt>  is specified, <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ec2-security-group-name" class="dashAnchor" id="ec2-security-group-name"></a><span class="pre">--ec2-security-group-name</span></tt>  and <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ec2-security-group-owner-id" class="dashAnchor" id="ec2-security-group-owner-id"></a><span class="pre">--ec2-security-group-owner-id</span></tt>  cannot be provided.</div></blockquote>
+<div>The IP range for which to revoke access. This range must be a valid Classless Inter-Domain Routing (CIDR) block of IP addresses. If <tt class="docutils literal"><span class="pre">CIDRIP</span></tt> is specified, <tt class="docutils literal"><span class="pre">EC2SecurityGroupName</span></tt> and <tt class="docutils literal"><span class="pre">EC2SecurityGroupOwnerId</span></tt> cannot be provided.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ec2-security-group-name" class="dashAnchor" id="ec2-security-group-name"></a><span class="pre">--ec2-security-group-name</span></tt> (string)</p>
 <blockquote>
-<div>The name of the EC2 Security Group whose access is to be revoked. If <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ec2-security-group-name" class="dashAnchor" id="ec2-security-group-name"></a><span class="pre">--ec2-security-group-name</span></tt>  is specified, <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ec2-security-group-owner-id" class="dashAnchor" id="ec2-security-group-owner-id"></a><span class="pre">--ec2-security-group-owner-id</span></tt>  must also be provided and <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cidrip" class="dashAnchor" id="cidrip"></a><span class="pre">--cidrip</span></tt>  cannot be provided.</div></blockquote>
+<div>The name of the EC2 Security Group whose access is to be revoked. If <tt class="docutils literal"><span class="pre">EC2SecurityGroupName</span></tt> is specified, <tt class="docutils literal"><span class="pre">EC2SecurityGroupOwnerId</span></tt> must also be provided and <tt class="docutils literal"><span class="pre">CIDRIP</span></tt> cannot be provided.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ec2-security-group-owner-id" class="dashAnchor" id="ec2-security-group-owner-id"></a><span class="pre">--ec2-security-group-owner-id</span></tt> (string)</p>
 <blockquote>
-<div><p>The AWS account number of the owner of the security group specified in the <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ec2-security-group-name" class="dashAnchor" id="ec2-security-group-name"></a><span class="pre">--ec2-security-group-name</span></tt>  parameter. The AWS access key ID is not an acceptable value. If <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ec2-security-group-owner-id" class="dashAnchor" id="ec2-security-group-owner-id"></a><span class="pre">--ec2-security-group-owner-id</span></tt>  is specified, <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ec2-security-group-name" class="dashAnchor" id="ec2-security-group-name"></a><span class="pre">--ec2-security-group-name</span></tt>  must also be provided. and <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cidrip" class="dashAnchor" id="cidrip"></a><span class="pre">--cidrip</span></tt>  cannot be provided.</p>
+<div><p>The AWS account number of the owner of the security group specified in the <tt class="docutils literal"><span class="pre">EC2SecurityGroupName</span></tt> parameter. The AWS access key ID is not an acceptable value. If <tt class="docutils literal"><span class="pre">EC2SecurityGroupOwnerId</span></tt> is specified, <tt class="docutils literal"><span class="pre">EC2SecurityGroupName</span></tt> must also be provided. and <tt class="docutils literal"><span class="pre">CIDRIP</span></tt> cannot be provided.</p>
 <p>Example: <tt class="docutils literal"><span class="pre">111122223333</span></tt></p>
 </div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
 </div>
 <div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
 <div class="section" id="revoke-access-from-an-ec2-security-group">
 <h3>Revoke Access from an EC2 Security Group<a class="headerlink" href="#revoke-access-from-an-ec2-security-group" title="Permalink to this headline">&#182;</a></h3>
 <p>This example revokes access to a named Amazon EC2 security group.</p>
@@ -169,6 +184,92 @@
 </div>
 </div>
 </div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>ClusterSecurityGroup -&gt; (structure)</p>
+<blockquote>
+<div><p>Describes a security group.</p>
+<p>ClusterSecurityGroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the cluster security group to which the operation was applied.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>A description of the security group.</div></blockquote>
+<p>EC2SecurityGroups -&gt; (list)</p>
+<blockquote>
+<div><p>A list of EC2 security groups that are permitted to access clusters associated with this cluster security group.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes an Amazon EC2 security group.</p>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status of the EC2 security group.</div></blockquote>
+<p>EC2SecurityGroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the EC2 Security Group.</div></blockquote>
+<p>EC2SecurityGroupOwnerId -&gt; (string)</p>
+<blockquote>
+<div>The AWS ID of the owner of the EC2 security group specified in the <tt class="docutils literal"><span class="pre">EC2SecurityGroupName</span></tt> field.</div></blockquote>
+<p>Tags -&gt; (list)</p>
+<blockquote>
+<div><p>The list of tags for the EC2 security group.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A tag consisting of a name/value pair for a resource.</p>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div>The key, or name, for the resource tag.</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div>The value for the resource tag.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>IPRanges -&gt; (list)</p>
+<blockquote>
+<div><p>A list of IP ranges (CIDR blocks) that are permitted to access clusters associated with this cluster security group.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes an IP range used in a security group.</p>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status of the IP range, for example, "authorized".</div></blockquote>
+<p>CIDRIP -&gt; (string)</p>
+<blockquote>
+<div>The IP range in Classless Inter-Domain Routing (CIDR) notation.</div></blockquote>
+<p>Tags -&gt; (list)</p>
+<blockquote>
+<div><p>The list of tags for the IP range.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A tag consisting of a name/value pair for a resource.</p>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div>The key, or name, for the resource tag.</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div>The value for the resource tag.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Tags -&gt; (list)</p>
+<blockquote>
+<div><p>The list of tags for the cluster security group.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A tag consisting of a name/value pair for a resource.</p>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div>The key, or name, for the resource tag.</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div>The value for the resource tag.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
 </div>
 
 
@@ -179,7 +280,7 @@
     <div class="footer-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="restore-from-cluster-snapshot.html" title="previous chapter (use the left arrow)">&#8592; restore-from-cluster-snapshot</a>
+          <a href="restore-table-from-cluster-snapshot.html" title="previous chapter (use the left arrow)">&#8592; restore-table-from-cluster-snapshot</a>
           <span class="divider">/</span>
           
         </li>
@@ -189,6 +290,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -197,36 +307,22 @@
         <li class="right">
           <a href="revoke-snapshot-access.html" title="revoke-snapshot-access">next</a> |</li>
         <li class="right">
-          <a href="restore-from-cluster-snapshot.html" title="restore-from-cluster-snapshot">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="restore-table-from-cluster-snapshot.html" title="restore-table-from-cluster-snapshot">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">redshift</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'restore-from-cluster-snapshot.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'revoke-snapshot-access.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/redshift/revoke-cluster-security-group-ingress.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:27 GMT -->
 </html>

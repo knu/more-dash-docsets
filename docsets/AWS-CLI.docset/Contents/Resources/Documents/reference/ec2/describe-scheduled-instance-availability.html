@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/describe-scheduled-instance-availability.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-scheduled-instance-availability &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="ec2" href="index.html" />
+    <link rel="next" title="describe-scheduled-instances" href="describe-scheduled-instances.html" />
+    <link rel="prev" title="describe-route-tables" href="describe-route-tables.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="describe-scheduled-instances.html" title="describe-scheduled-instances" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="describe-route-tables.html" title="describe-route-tables" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">ec2</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="describe-route-tables.html" title="previous chapter (use the left arrow)">&#8592; describe-route-tables</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="describe-scheduled-instances.html" title="next chapter (use the right arrow)">describe-scheduled-instances &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-scheduled-instance-availability</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ec2/describe-scheduled-instance-availability">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-ec2"><em>ec2</em></a> ]</p>
+<div class="section" id="describe-scheduled-instance-availability">
+<span id="cli-aws-ec2-describe-scheduled-instance-availability"></span><h1>describe-scheduled-instance-availability<a name="//apple_ref/cpp/Command/aws ec2 describe-scheduled-instance-availability" class="dashAnchor" id="aws ec2 describe-scheduled-instance-availability"></a><a class="headerlink" href="#describe-scheduled-instance-availability" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Finds available schedules that meet the specified criteria.</p>
+<p>You can search for an available schedule no more than 3 months in advance. You must meet the minimum required duration of 1,200 hours per year. For example, the minimum daily schedule is 4 hours, the minimum weekly schedule is 24 hours, and the minimum monthly schedule is 100 hours.</p>
+<p>After you find a schedule that meets your needs, call  purchase-scheduled-instances to purchase Scheduled Instances with that schedule.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  describe-scheduled-instance-availability
+[--dry-run | --no-dry-run]
+--recurrence &lt;value&gt;
+--first-slot-start-time-range &lt;value&gt;
+[--min-slot-duration-in-hours &lt;value&gt;]
+[--max-slot-duration-in-hours &lt;value&gt;]
+[--next-token &lt;value&gt;]
+[--max-results &lt;value&gt;]
+[--filters &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><span class="pre">--no-dry-run</span></tt> (boolean)</p>
+<blockquote>
+<div>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt> . Otherwise, it is <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--recurrence" class="dashAnchor" id="recurrence"></a><span class="pre">--recurrence</span></tt> (structure)</p>
+<blockquote>
+<div>The schedule recurrence.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Frequency</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">Interval</span><span class="o">=</span><span class="n">integer</span><span class="p">,</span><span class="n">OccurrenceDays</span><span class="o">=</span><span class="n">integer</span><span class="p">,</span><span class="n">integer</span><span class="p">,</span><span class="n">OccurrenceRelativeToEnd</span><span class="o">=</span><span class="n">boolean</span><span class="p">,</span><span class="n">OccurrenceUnit</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"Frequency"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"Interval"</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+  <span class="s2">"OccurrenceDays"</span><span class="p">:</span> <span class="p">[</span><span class="n">integer</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+  <span class="s2">"OccurrenceRelativeToEnd"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+  <span class="s2">"OccurrenceUnit"</span><span class="p">:</span> <span class="s2">"string"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--first-slot-start-time-range" class="dashAnchor" id="first-slot-start-time-range"></a><span class="pre">--first-slot-start-time-range</span></tt> (structure)</p>
+<blockquote>
+<div>The time period for the first schedule to start.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">EarliestTime</span><span class="o">=</span><span class="n">timestamp</span><span class="p">,</span><span class="n">LatestTime</span><span class="o">=</span><span class="n">timestamp</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"EarliestTime"</span><span class="p">:</span> <span class="n">timestamp</span><span class="p">,</span>
+  <span class="s2">"LatestTime"</span><span class="p">:</span> <span class="n">timestamp</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--min-slot-duration-in-hours" class="dashAnchor" id="min-slot-duration-in-hours"></a><span class="pre">--min-slot-duration-in-hours</span></tt> (integer)</p>
+<blockquote>
+<div>The minimum available duration, in hours. The minimum required duration is 1,200 hours per year. For example, the minimum daily schedule is 4 hours, the minimum weekly schedule is 24 hours, and the minimum monthly schedule is 100 hours.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-slot-duration-in-hours" class="dashAnchor" id="max-slot-duration-in-hours"></a><span class="pre">--max-slot-duration-in-hours</span></tt> (integer)</p>
+<blockquote>
+<div>The maximum available duration, in hours. This value must be greater than <tt class="docutils literal"><span class="pre">MinSlotDurationInHours</span></tt> and less than 1,720.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--next-token" class="dashAnchor" id="next-token"></a><span class="pre">--next-token</span></tt> (string)</p>
+<blockquote>
+<div>The token for the next set of results.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-results" class="dashAnchor" id="max-results"></a><span class="pre">--max-results</span></tt> (integer)</p>
+<blockquote>
+<div>The maximum number of results to return in a single call. This value can be between 5 and 300. The default value is 300. To retrieve the remaining results, make another call with the returned <tt class="docutils literal"><span class="pre">NextToken</span></tt> value.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--filters" class="dashAnchor" id="filters"></a><span class="pre">--filters</span></tt> (list)</p>
+<blockquote>
+<div><p>One or more filters.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">availability-zone</span></tt> - The Availability Zone (for example, <tt class="docutils literal"><span class="pre">us-west-2a</span></tt> ).</li>
+<li><tt class="docutils literal"><span class="pre">instance-type</span></tt> - The instance type (for example, <tt class="docutils literal"><span class="pre">c4.large</span></tt> ).</li>
+<li><tt class="docutils literal"><span class="pre">network-platform</span></tt> - The network platform (<tt class="docutils literal"><span class="pre">EC2-Classic</span></tt> or <tt class="docutils literal"><span class="pre">EC2-VPC</span></tt> ).</li>
+<li><tt class="docutils literal"><span class="pre">platform</span></tt> - The platform (<tt class="docutils literal"><span class="pre">Linux/UNIX</span></tt> or <tt class="docutils literal"><span class="pre">Windows</span></tt> ).</li>
+</ul>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Name=string,Values=string,string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    "Name": "string",
+    "Values": ["string", ...]
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To describe an available schedule</strong></p>
+<p>This example describes a schedule that occurs every week on Sunday, starting on the specified date.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 describe-scheduled-instance-availability --recurrence Frequency=Weekly,Interval=1,OccurrenceDays=[1] --first-slot-start-time-range EarliestTime=2016-01-31T00:00:00Z,LatestTime=2016-01-31T04:00:00Z</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"ScheduledInstanceAvailabilitySet"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">"AvailabilityZone"</span><span class="p">:</span> <span class="s2">"us-west-2b"</span><span class="p">,</span>
+        <span class="s2">"TotalScheduledInstanceHours"</span><span class="p">:</span> <span class="mi">1219</span><span class="p">,</span>
+        <span class="s2">"PurchaseToken"</span><span class="p">:</span> <span class="s2">"eyJ2IjoiMSIsInMiOjEsImMiOi..."</span><span class="p">,</span>
+        <span class="s2">"MinTermDurationInDays"</span><span class="p">:</span> <span class="mi">366</span><span class="p">,</span>
+        <span class="s2">"AvailableInstanceCount"</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">"Recurrence"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"OccurrenceDaySet"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="mi">1</span>
+            <span class="p">],</span>
+            <span class="s2">"Interval"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">"Frequency"</span><span class="p">:</span> <span class="s2">"Weekly"</span><span class="p">,</span>
+            <span class="s2">"OccurrenceRelativeToEnd"</span><span class="p">:</span> <span class="n">false</span>
+        <span class="p">},</span>
+        <span class="s2">"Platform"</span><span class="p">:</span> <span class="s2">"Linux/UNIX"</span><span class="p">,</span>
+        <span class="s2">"FirstSlotStartTime"</span><span class="p">:</span> <span class="s2">"2016-01-31T00:00:00Z"</span><span class="p">,</span>
+        <span class="s2">"MaxTermDurationInDays"</span><span class="p">:</span> <span class="mi">366</span><span class="p">,</span>
+        <span class="s2">"SlotDurationInHours"</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span>
+        <span class="s2">"NetworkPlatform"</span><span class="p">:</span> <span class="s2">"EC2-VPC"</span><span class="p">,</span>
+        <span class="s2">"InstanceType"</span><span class="p">:</span> <span class="s2">"c4.large"</span><span class="p">,</span>
+        <span class="s2">"HourlyPrice"</span><span class="p">:</span> <span class="s2">"0.095"</span>
+    <span class="p">},</span>
+    <span class="o">...</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>To narrow the results, you can add filters that specify the operating system, network, and instance type.</p>
+<p>Command:</p>
+<blockquote>
+<div>--filters Name=platform,Values=Linux/UNIX Name=network-platform,Values=EC2-VPC Name=instance-type,Values=c4.large</div></blockquote>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>The token required to retrieve the next set of results. This value is <tt class="docutils literal"><span class="pre">null</span></tt> when there are no more results to return.</div></blockquote>
+<p>ScheduledInstanceAvailabilitySet -&gt; (list)</p>
+<blockquote>
+<div><p>Information about the available Scheduled Instances.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a schedule that is available for your Scheduled Instances.</p>
+<p>InstanceType -&gt; (string)</p>
+<blockquote>
+<div>The instance type. You can specify one of the C3, C4, M4, or R3 instance types.</div></blockquote>
+<p>Platform -&gt; (string)</p>
+<blockquote>
+<div>The platform (<tt class="docutils literal"><span class="pre">Linux/UNIX</span></tt> or <tt class="docutils literal"><span class="pre">Windows</span></tt> ).</div></blockquote>
+<p>NetworkPlatform -&gt; (string)</p>
+<blockquote>
+<div>The network platform (<tt class="docutils literal"><span class="pre">EC2-Classic</span></tt> or <tt class="docutils literal"><span class="pre">EC2-VPC</span></tt> ).</div></blockquote>
+<p>AvailabilityZone -&gt; (string)</p>
+<blockquote>
+<div>The Availability Zone.</div></blockquote>
+<p>PurchaseToken -&gt; (string)</p>
+<blockquote>
+<div>The purchase token. This token expires in two hours.</div></blockquote>
+<p>SlotDurationInHours -&gt; (integer)</p>
+<blockquote>
+<div>The number of hours in the schedule.</div></blockquote>
+<p>Recurrence -&gt; (structure)</p>
+<blockquote>
+<div><p>The schedule recurrence.</p>
+<p>Frequency -&gt; (string)</p>
+<blockquote>
+<div>The frequency (<tt class="docutils literal"><span class="pre">Daily</span></tt> , <tt class="docutils literal"><span class="pre">Weekly</span></tt> , or <tt class="docutils literal"><span class="pre">Monthly</span></tt> ).</div></blockquote>
+<p>Interval -&gt; (integer)</p>
+<blockquote>
+<div>The interval quantity. The interval unit depends on the value of <tt class="docutils literal"><span class="pre">frequency</span></tt> . For example, every 2 weeks or every 2 months.</div></blockquote>
+<p>OccurrenceDaySet -&gt; (list)</p>
+<blockquote>
+<div><p>The days. For a monthly schedule, this is one or more days of the month (1-31). For a weekly schedule, this is one or more days of the week (1-7, where 1 is Sunday).</p>
+<p>(integer)</p>
+</div></blockquote>
+<p>OccurrenceRelativeToEnd -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether the occurrence is relative to the end of the specified week or month.</div></blockquote>
+<p>OccurrenceUnit -&gt; (string)</p>
+<blockquote>
+<div>The unit for <tt class="docutils literal"><span class="pre">occurrenceDaySet</span></tt> (<tt class="docutils literal"><span class="pre">DayOfWeek</span></tt> or <tt class="docutils literal"><span class="pre">DayOfMonth</span></tt> ).</div></blockquote>
+</div></blockquote>
+<p>FirstSlotStartTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The time period for the first schedule to start.</div></blockquote>
+<p>HourlyPrice -&gt; (string)</p>
+<blockquote>
+<div>The hourly price for a single instance.</div></blockquote>
+<p>TotalScheduledInstanceHours -&gt; (integer)</p>
+<blockquote>
+<div>The total number of hours for a single instance for the entire term.</div></blockquote>
+<p>AvailableInstanceCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of available instances.</div></blockquote>
+<p>MinTermDurationInDays -&gt; (integer)</p>
+<blockquote>
+<div>The minimum term. The only possible value is 365 days.</div></blockquote>
+<p>MaxTermDurationInDays -&gt; (integer)</p>
+<blockquote>
+<div>The maximum term. The only possible value is 365 days.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="describe-route-tables.html" title="previous chapter (use the left arrow)">&#8592; describe-route-tables</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="describe-scheduled-instances.html" title="next chapter (use the right arrow)">describe-scheduled-instances &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="describe-scheduled-instances.html" title="describe-scheduled-instances">next</a> |</li>
+        <li class="right">
+          <a href="describe-route-tables.html" title="describe-route-tables">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">ec2</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/describe-scheduled-instance-availability.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
+</html>

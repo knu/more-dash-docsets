@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/emr/list-steps.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:19 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>list-steps &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="emr" href="index.html" />
+    <link rel="next" title="modify-cluster-attributes" href="modify-cluster-attributes.html" />
+    <link rel="prev" title="list-instances" href="list-instances.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="modify-cluster-attributes.html" title="modify-cluster-attributes" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="list-instances.html" title="list-instances" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">emr</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="list-instances.html" title="previous chapter (use the left arrow)">&#8592; list-instances</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="modify-cluster-attributes.html" title="next chapter (use the right arrow)">modify-cluster-attributes &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">list-steps</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/emr/list-steps">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-emr"><em>emr</em></a> ]</p>
+<div class="section" id="list-steps">
+<span id="cli-aws-emr-list-steps"></span><h1>list-steps<a name="//apple_ref/cpp/Command/aws emr list-steps" class="dashAnchor" id="aws emr list-steps"></a><a class="headerlink" href="#list-steps" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Provides a list of steps for the cluster.</p>
+<p><tt class="docutils literal"><span class="pre">list-steps</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">Steps</span></tt></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  list-steps
+--cluster-id &lt;value&gt;
+[--step-states &lt;value&gt;]
+[--step-ids &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--starting-token &lt;value&gt;]
+[--max-items &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cluster-id" class="dashAnchor" id="cluster-id"></a><span class="pre">--cluster-id</span></tt> (string)</p>
+<blockquote>
+<div>The identifier of the cluster for which to list the steps.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--step-states" class="dashAnchor" id="step-states"></a><span class="pre">--step-states</span></tt> (list)</p>
+<blockquote>
+<div>The filter to limit the step list based on certain states.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>"string" "string" ...
+
+Where valid values are:
+  PENDING
+  RUNNING
+  COMPLETED
+  CANCELLED
+  FAILED
+  INTERRUPTED</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--step-ids" class="dashAnchor" id="step-ids"></a><span class="pre">--step-ids</span></tt> (list)</p>
+<blockquote>
+<div>The filter to limit the step list based on the identifier of the steps.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>"string" "string" ...</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--starting-token" class="dashAnchor" id="starting-token"></a><span class="pre">--starting-token</span></tt> (string)</p>
+<blockquote>
+<div>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-items" class="dashAnchor" id="max-items"></a><span class="pre">--max-items</span></tt> (integer)</p>
+<blockquote>
+<div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">NextToken</span></tt> will be provided in the output that you can use to resume pagination. This <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element should <strong>not</strong> be used directly outside of the AWS CLI.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p>The following command lists all of the steps in a cluster with the cluster ID <tt class="docutils literal"><span class="pre">j-3SD91U2E1L2QX</span></tt>:</p>
+<div class="highlight-python"><pre>aws emr list-steps --cluster-id j-3SD91U2E1L2QX</pre>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Steps -&gt; (list)</p>
+<blockquote>
+<div><p>The filtered list of steps for the cluster.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The summary of the cluster step.</p>
+<p>Id -&gt; (string)</p>
+<blockquote>
+<div>The identifier of the cluster step.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the cluster step.</div></blockquote>
+<p>Config -&gt; (structure)</p>
+<blockquote>
+<div><p>The Hadoop job configuration of the cluster step.</p>
+<p>Jar -&gt; (string)</p>
+<blockquote>
+<div>The path to the JAR file that runs during the step.</div></blockquote>
+<p>Properties -&gt; (map)</p>
+<blockquote>
+<div><p>The list of Java properties that are set when the step runs. You can use these properties to pass key value pairs to your main function.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+<p>MainClass -&gt; (string)</p>
+<blockquote>
+<div>The name of the main class in the specified Java file. If not specified, the JAR file should specify a main class in its manifest file.</div></blockquote>
+<p>Args -&gt; (list)</p>
+<blockquote>
+<div><p>The list of command line arguments to pass to the JAR file's main function for execution.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+<p>ActionOnFailure -&gt; (string)</p>
+<blockquote>
+<div>This specifies what action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE.</div></blockquote>
+<p>Status -&gt; (structure)</p>
+<blockquote>
+<div><p>The current execution status details of the cluster step.</p>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div>The execution state of the cluster step.</div></blockquote>
+<p>StateChangeReason -&gt; (structure)</p>
+<blockquote>
+<div><p>The reason for the step execution status change.</p>
+<p>Code -&gt; (string)</p>
+<blockquote>
+<div>The programmable code for the state change reason. Note: Currently, the service provides no code for the state change.</div></blockquote>
+<p>Message -&gt; (string)</p>
+<blockquote>
+<div>The descriptive message for the state change reason.</div></blockquote>
+</div></blockquote>
+<p>Timeline -&gt; (structure)</p>
+<blockquote>
+<div><p>The timeline of the cluster step status over time.</p>
+<p>CreationDateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time when the cluster step was created.</div></blockquote>
+<p>StartDateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time when the cluster step execution started.</div></blockquote>
+<p>EndDateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time when the cluster step execution completed or failed.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Marker -&gt; (string)</p>
+<blockquote>
+<div>The pagination token that indicates the next set of results to retrieve.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="list-instances.html" title="previous chapter (use the left arrow)">&#8592; list-instances</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="modify-cluster-attributes.html" title="next chapter (use the right arrow)">modify-cluster-attributes &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="modify-cluster-attributes.html" title="modify-cluster-attributes">next</a> |</li>
+        <li class="right">
+          <a href="list-instances.html" title="list-instances">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">emr</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/emr/list-steps.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:19 GMT -->
+</html>

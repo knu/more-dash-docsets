@@ -1,0 +1,608 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/describe-spot-fleet-requests.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-spot-fleet-requests &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="ec2" href="index.html" />
+    <link rel="next" title="describe-spot-instance-requests" href="describe-spot-instance-requests.html" />
+    <link rel="prev" title="describe-spot-fleet-request-history" href="describe-spot-fleet-request-history.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="describe-spot-instance-requests.html" title="describe-spot-instance-requests" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="describe-spot-fleet-request-history.html" title="describe-spot-fleet-request-history" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">ec2</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="describe-spot-fleet-request-history.html" title="previous chapter (use the left arrow)">&#8592; describe-spot-fleet-request-history</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="describe-spot-instance-requests.html" title="next chapter (use the right arrow)">describe-spot-instance-requests &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-spot-fleet-requests</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ec2/describe-spot-fleet-requests">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-ec2"><em>ec2</em></a> ]</p>
+<div class="section" id="describe-spot-fleet-requests">
+<span id="cli-aws-ec2-describe-spot-fleet-requests"></span><h1>describe-spot-fleet-requests<a name="//apple_ref/cpp/Command/aws ec2 describe-spot-fleet-requests" class="dashAnchor" id="aws ec2 describe-spot-fleet-requests"></a><a class="headerlink" href="#describe-spot-fleet-requests" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Describes your Spot fleet requests.</p>
+<p><tt class="docutils literal"><span class="pre">describe-spot-fleet-requests</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">SpotFleetRequestConfigs</span></tt></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  describe-spot-fleet-requests
+[--dry-run | --no-dry-run]
+[--spot-fleet-request-ids &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--starting-token &lt;value&gt;]
+[--page-size &lt;value&gt;]
+[--max-items &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><span class="pre">--no-dry-run</span></tt> (boolean)</p>
+<blockquote>
+<div>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt> . Otherwise, it is <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--spot-fleet-request-ids" class="dashAnchor" id="spot-fleet-request-ids"></a><span class="pre">--spot-fleet-request-ids</span></tt> (list)</p>
+<blockquote>
+<div>The IDs of the Spot fleet requests.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>"string" "string" ...</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--starting-token" class="dashAnchor" id="starting-token"></a><span class="pre">--starting-token</span></tt> (string)</p>
+<blockquote>
+<div>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--page-size" class="dashAnchor" id="page-size"></a><span class="pre">--page-size</span></tt> (integer)</p>
+<blockquote>
+<div>The size of each page.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-items" class="dashAnchor" id="max-items"></a><span class="pre">--max-items</span></tt> (integer)</p>
+<blockquote>
+<div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">NextToken</span></tt> will be provided in the output that you can use to resume pagination. This <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element should <strong>not</strong> be used directly outside of the AWS CLI.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To describe your Spot fleet requests</strong></p>
+<p>This example describes all of your Spot fleet requests.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 describe-spot-fleet-requests</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"SpotFleetRequestConfigs"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">"SpotFleetRequestId"</span><span class="p">:</span> <span class="s2">"sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE"</span><span class="p">,</span>
+          <span class="s2">"SpotFleetRequestConfig"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">"TargetCapacity"</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+              <span class="s2">"LaunchSpecifications"</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="p">{</span>
+                      <span class="s2">"EbsOptimized"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+                      <span class="s2">"NetworkInterfaces"</span><span class="p">:</span> <span class="p">[</span>
+                          <span class="p">{</span>
+                              <span class="s2">"SubnetId"</span><span class="p">:</span> <span class="s2">"subnet-a61dafcf"</span><span class="p">,</span>
+                              <span class="s2">"DeviceIndex"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                              <span class="s2">"DeleteOnTermination"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+                              <span class="s2">"AssociatePublicIpAddress"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+                              <span class="s2">"SecondaryPrivateIpAddressCount"</span><span class="p">:</span> <span class="mi">0</span>
+                          <span class="p">}</span>
+                      <span class="p">],</span>
+                      <span class="s2">"InstanceType"</span><span class="p">:</span> <span class="s2">"cc2.8xlarge"</span><span class="p">,</span>
+                      <span class="s2">"ImageId"</span><span class="p">:</span> <span class="s2">"ami-1a2b3c4d"</span>
+                  <span class="p">},</span>
+                  <span class="p">{</span>
+                      <span class="s2">"EbsOptimized"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+                      <span class="s2">"NetworkInterfaces"</span><span class="p">:</span> <span class="p">[</span>
+                          <span class="p">{</span>
+                              <span class="s2">"SubnetId"</span><span class="p">:</span> <span class="s2">"subnet-a61dafcf"</span><span class="p">,</span>
+                              <span class="s2">"DeviceIndex"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                              <span class="s2">"DeleteOnTermination"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+                              <span class="s2">"AssociatePublicIpAddress"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+                              <span class="s2">"SecondaryPrivateIpAddressCount"</span><span class="p">:</span> <span class="mi">0</span>
+                          <span class="p">}</span>
+                      <span class="p">],</span>
+                      <span class="s2">"InstanceType"</span><span class="p">:</span> <span class="s2">"r3.8xlarge"</span><span class="p">,</span>
+                      <span class="s2">"ImageId"</span><span class="p">:</span> <span class="s2">"ami-1a2b3c4d"</span>
+                  <span class="p">}</span>
+              <span class="p">],</span>
+              <span class="s2">"SpotPrice"</span><span class="p">:</span> <span class="s2">"0.05"</span><span class="p">,</span>
+              <span class="s2">"IamFleetRole"</span><span class="p">:</span> <span class="s2">"arn:aws:iam::123456789012:role/my-spot-fleet-role"</span>
+          <span class="p">},</span>
+          <span class="s2">"SpotFleetRequestState"</span><span class="p">:</span> <span class="s2">"active"</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="s2">"SpotFleetRequestId"</span><span class="p">:</span> <span class="s2">"sfr-306341ed-9739-402e-881b-ce47bEXAMPLE"</span><span class="p">,</span>
+          <span class="s2">"SpotFleetRequestConfig"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">"TargetCapacity"</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+              <span class="s2">"LaunchSpecifications"</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="p">{</span>
+                      <span class="s2">"EbsOptimized"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+                      <span class="s2">"NetworkInterfaces"</span><span class="p">:</span> <span class="p">[</span>
+                          <span class="p">{</span>
+                              <span class="s2">"SubnetId"</span><span class="p">:</span> <span class="s2">"subnet-6e7f829e"</span><span class="p">,</span>
+                              <span class="s2">"DeviceIndex"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                              <span class="s2">"DeleteOnTermination"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+                              <span class="s2">"AssociatePublicIpAddress"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+                              <span class="s2">"SecondaryPrivateIpAddressCount"</span><span class="p">:</span> <span class="mi">0</span>
+                          <span class="p">}</span>
+                      <span class="p">],</span>
+                      <span class="s2">"InstanceType"</span><span class="p">:</span> <span class="s2">"m3.medium"</span><span class="p">,</span>
+                      <span class="s2">"ImageId"</span><span class="p">:</span> <span class="s2">"ami-1a2b3c4d"</span>
+                  <span class="p">}</span>
+              <span class="p">],</span>
+              <span class="s2">"SpotPrice"</span><span class="p">:</span> <span class="s2">"0.05"</span><span class="p">,</span>
+              <span class="s2">"IamFleetRole"</span><span class="p">:</span> <span class="s2">"arn:aws:iam::123456789012:role/my-spot-fleet-role"</span>
+          <span class="p">},</span>
+          <span class="s2">"SpotFleetRequestState"</span><span class="p">:</span> <span class="s2">"active"</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>To describe a Spot fleet request</strong></p>
+<p>This example describes the specified Spot fleet request.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 describe-spot-fleet-requests --spot-fleet-request-ids sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"SpotFleetRequestConfigs"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">"SpotFleetRequestId"</span><span class="p">:</span> <span class="s2">"sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE"</span><span class="p">,</span>
+          <span class="s2">"SpotFleetRequestConfig"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">"TargetCapacity"</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+              <span class="s2">"LaunchSpecifications"</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="p">{</span>
+                      <span class="s2">"EbsOptimized"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+                      <span class="s2">"NetworkInterfaces"</span><span class="p">:</span> <span class="p">[</span>
+                          <span class="p">{</span>
+                              <span class="s2">"SubnetId"</span><span class="p">:</span> <span class="s2">"subnet-a61dafcf"</span><span class="p">,</span>
+                              <span class="s2">"DeviceIndex"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                              <span class="s2">"DeleteOnTermination"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+                              <span class="s2">"AssociatePublicIpAddress"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+                              <span class="s2">"SecondaryPrivateIpAddressCount"</span><span class="p">:</span> <span class="mi">0</span>
+                          <span class="p">}</span>
+                      <span class="p">],</span>
+                      <span class="s2">"InstanceType"</span><span class="p">:</span> <span class="s2">"cc2.8xlarge"</span><span class="p">,</span>
+                      <span class="s2">"ImageId"</span><span class="p">:</span> <span class="s2">"ami-1a2b3c4d"</span>
+                  <span class="p">},</span>
+                  <span class="p">{</span>
+                      <span class="s2">"EbsOptimized"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+                      <span class="s2">"NetworkInterfaces"</span><span class="p">:</span> <span class="p">[</span>
+                          <span class="p">{</span>
+                              <span class="s2">"SubnetId"</span><span class="p">:</span> <span class="s2">"subnet-a61dafcf"</span><span class="p">,</span>
+                              <span class="s2">"DeviceIndex"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                              <span class="s2">"DeleteOnTermination"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+                              <span class="s2">"AssociatePublicIpAddress"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+                              <span class="s2">"SecondaryPrivateIpAddressCount"</span><span class="p">:</span> <span class="mi">0</span>
+                          <span class="p">}</span>
+                      <span class="p">],</span>
+                      <span class="s2">"InstanceType"</span><span class="p">:</span> <span class="s2">"r3.8xlarge"</span><span class="p">,</span>
+                      <span class="s2">"ImageId"</span><span class="p">:</span> <span class="s2">"ami-1a2b3c4d"</span>
+                  <span class="p">}</span>
+              <span class="p">],</span>
+              <span class="s2">"SpotPrice"</span><span class="p">:</span> <span class="s2">"0.05"</span><span class="p">,</span>
+              <span class="s2">"IamFleetRole"</span><span class="p">:</span> <span class="s2">"arn:aws:iam::123456789012:role/my-spot-fleet-role"</span>
+          <span class="p">},</span>
+          <span class="s2">"SpotFleetRequestState"</span><span class="p">:</span> <span class="s2">"active"</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>SpotFleetRequestConfigs -&gt; (list)</p>
+<blockquote>
+<div><p>Information about the configuration of your Spot fleet.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a Spot fleet request.</p>
+<p>SpotFleetRequestId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the Spot fleet request.</div></blockquote>
+<p>SpotFleetRequestState -&gt; (string)</p>
+<blockquote>
+<div>The state of the Spot fleet request.</div></blockquote>
+<p>SpotFleetRequestConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about the configuration of the Spot fleet request.</p>
+<p>ClientToken -&gt; (string)</p>
+<blockquote>
+<div>A unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate listings. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a> .</div></blockquote>
+<p>SpotPrice -&gt; (string)</p>
+<blockquote>
+<div>The bid price per unit hour.</div></blockquote>
+<p>TargetCapacity -&gt; (integer)</p>
+<blockquote>
+<div>The number of units to request. You can choose to set the target capacity in terms of instances or a performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O.</div></blockquote>
+<p>ValidFrom -&gt; (timestamp)</p>
+<blockquote>
+<div>The start date and time of the request, in UTC format (for example, <em>YYYY</em> -<em>MM</em> -<em>DD</em> T*HH* :<em>MM</em> :<em>SS</em> Z). The default is to start fulfilling the request immediately.</div></blockquote>
+<p>ValidUntil -&gt; (timestamp)</p>
+<blockquote>
+<div>The end date and time of the request, in UTC format (for example, <em>YYYY</em> -<em>MM</em> -<em>DD</em> T*HH* :<em>MM</em> :<em>SS</em> Z). At this point, no new Spot instance requests are placed or enabled to fulfill the request.</div></blockquote>
+<p>TerminateInstancesWithExpiration -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether running Spot instances should be terminated when the Spot fleet request expires.</div></blockquote>
+<p>IamFleetRole -&gt; (string)</p>
+<blockquote>
+<div>Grants the Spot fleet permission to terminate Spot instances on your behalf when you cancel its Spot fleet request using  cancel-spot-fleet-requests or when the Spot fleet request expires, if you set <tt class="docutils literal"><span class="pre">terminateInstancesWithExpiration</span></tt> .</div></blockquote>
+<p>LaunchSpecifications -&gt; (list)</p>
+<blockquote>
+<div><p>Information about the launch specifications for the Spot fleet request.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the launch specification for one or more Spot instances.</p>
+<p>ImageId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the AMI.</div></blockquote>
+<p>KeyName -&gt; (string)</p>
+<blockquote>
+<div>The name of the key pair.</div></blockquote>
+<p>SecurityGroups -&gt; (list)</p>
+<blockquote>
+<div><p>One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a security group.</p>
+<p>GroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the security group.</div></blockquote>
+<p>GroupId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the security group.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>UserData -&gt; (string)</p>
+<blockquote>
+<div>The Base64-encoded MIME user data to make available to the instances.</div></blockquote>
+<p>AddressingType -&gt; (string)</p>
+<blockquote>
+<div>Deprecated.</div></blockquote>
+<p>InstanceType -&gt; (string)</p>
+<blockquote>
+<div>The instance type.</div></blockquote>
+<p>Placement -&gt; (structure)</p>
+<blockquote>
+<div><p>The placement information.</p>
+<p>AvailabilityZone -&gt; (string)</p>
+<blockquote>
+<div><p>The Availability Zone.</p>
+<p>[Spot fleet only] To specify multiple Availability Zones, separate them using commas; for example, "us-west-2a, us-west-2b".</p>
+</div></blockquote>
+<p>GroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the placement group (for cluster instances).</div></blockquote>
+</div></blockquote>
+<p>KernelId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the kernel.</div></blockquote>
+<p>RamdiskId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the RAM disk.</div></blockquote>
+<p>BlockDeviceMappings -&gt; (list)</p>
+<blockquote>
+<div><p>One or more block device mapping entries.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a block device mapping.</p>
+<p>VirtualName -&gt; (string)</p>
+<blockquote>
+<div><p>The virtual device name (<tt class="docutils literal"><span class="pre">ephemeral</span></tt> N). Instance store volumes are numbered starting from 0. An instance type with 2 available instance store volumes can specify mappings for <tt class="docutils literal"><span class="pre">ephemeral0</span></tt> and <tt class="docutils literal"><span class="pre">ephemeral1</span></tt> .The number of available instance store volumes depends on the instance type. After you connect to the instance, you must mount the volume.</p>
+<p>Constraints: For M3 instances, you must specify instance store volumes in the block device mapping for the instance. When you launch an M3 instance, we ignore any instance store volumes specified in the block device mapping for the AMI.</p>
+</div></blockquote>
+<p>DeviceName -&gt; (string)</p>
+<blockquote>
+<div>The device name exposed to the instance (for example, <tt class="docutils literal"><span class="pre">/dev/sdh</span></tt> or <tt class="docutils literal"><span class="pre">xvdh</span></tt> ).</div></blockquote>
+<p>Ebs -&gt; (structure)</p>
+<blockquote>
+<div><p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
+<p>SnapshotId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the snapshot.</div></blockquote>
+<p>VolumeSize -&gt; (integer)</p>
+<blockquote>
+<div><p>The size of the volume, in GiB.</p>
+<p>Constraints: 1-16384 for General Purpose SSD (<tt class="docutils literal"><span class="pre">gp2</span></tt> ), 4-16384 for Provisioned IOPS SSD (<tt class="docutils literal"><span class="pre">io1</span></tt> ), 500-16384 for Throughput Optimized HDD (<tt class="docutils literal"><span class="pre">st1</span></tt> ), 500-16384 for Cold HDD (<tt class="docutils literal"><span class="pre">sc1</span></tt> ), and 1-1024 for Magnetic (<tt class="docutils literal"><span class="pre">standard</span></tt> ) volumes. If you specify a snapshot, the volume size must be equal to or larger than the snapshot size.</p>
+<p>Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the snapshot size.</p>
+</div></blockquote>
+<p>DeleteOnTermination -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether the EBS volume is deleted on instance termination.</div></blockquote>
+<p>VolumeType -&gt; (string)</p>
+<blockquote>
+<div><p>The volume type: <tt class="docutils literal"><span class="pre">gp2</span></tt> , <tt class="docutils literal"><span class="pre">io1</span></tt> , <tt class="docutils literal"><span class="pre">st1</span></tt> , <tt class="docutils literal"><span class="pre">sc1</span></tt> , or <tt class="docutils literal"><span class="pre">standard</span></tt> .</p>
+<p>Default: <tt class="docutils literal"><span class="pre">standard</span></tt></p>
+</div></blockquote>
+<p>Iops -&gt; (integer)</p>
+<blockquote>
+<div><p>The number of I/O operations per second (IOPS) that the volume supports. For io1, this represents the number of IOPS that are provisioned for the volume. For <tt class="docutils literal"><span class="pre">gp2</span></tt> , this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For more information on General Purpose SSD baseline performance, I/O credits, and bursting, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
+<p>Constraint: Range is 100-20000 IOPS for io1 volumes and 100-10000 IOPS for <tt class="docutils literal"><span class="pre">gp2</span></tt> volumes.</p>
+<p>Condition: This parameter is required for requests to create <tt class="docutils literal"><span class="pre">``io1``</span></tt> volumes; it is not used in requests to create <tt class="docutils literal"><span class="pre">gp2</span></tt> , <tt class="docutils literal"><span class="pre">st1</span></tt> , <tt class="docutils literal"><span class="pre">sc1</span></tt> , or <tt class="docutils literal"><span class="pre">standard</span></tt> volumes.</p>
+</div></blockquote>
+<p>Encrypted -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes may only be attached to instances that support Amazon EBS encryption.</div></blockquote>
+</div></blockquote>
+<p>NoDevice -&gt; (string)</p>
+<blockquote>
+<div>Suppresses the specified device included in the block device mapping of the AMI.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Monitoring -&gt; (structure)</p>
+<blockquote>
+<div><p>Enable or disable monitoring for the instances.</p>
+<p>Enabled -&gt; (boolean)</p>
+<blockquote>
+<div><p>Enables monitoring for the instance.</p>
+<p>Default: <tt class="docutils literal"><span class="pre">false</span></tt></p>
+</div></blockquote>
+</div></blockquote>
+<p>SubnetId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the subnet in which to launch the instances. To specify multiple subnets, separate them using commas; for example, "subnet-a61dafcf, subnet-65ea5f08".</div></blockquote>
+<p>NetworkInterfaces -&gt; (list)</p>
+<blockquote>
+<div><p>One or more network interfaces.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a network interface.</p>
+<p>NetworkInterfaceId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the network interface.</div></blockquote>
+<p>DeviceIndex -&gt; (integer)</p>
+<blockquote>
+<div>The index of the device on the instance for the network interface attachment. If you are specifying a network interface in a  run-instances request, you must provide the device index.</div></blockquote>
+<p>SubnetId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the subnet associated with the network string. Applies only if creating a network interface when launching an instance.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>The description of the network interface. Applies only if creating a network interface when launching an instance.</div></blockquote>
+<p>PrivateIpAddress -&gt; (string)</p>
+<blockquote>
+<div>The private IP address of the network interface. Applies only if creating a network interface when launching an instance.</div></blockquote>
+<p>Groups -&gt; (list)</p>
+<blockquote>
+<div><p>The IDs of the security groups for the network interface. Applies only if creating a network interface when launching an instance.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>DeleteOnTermination -&gt; (boolean)</p>
+<blockquote>
+<div>If set to <tt class="docutils literal"><span class="pre">true</span></tt> , the interface is deleted when the instance is terminated. You can specify <tt class="docutils literal"><span class="pre">true</span></tt> only if creating a new network interface when launching an instance.</div></blockquote>
+<p>PrivateIpAddresses -&gt; (list)</p>
+<blockquote>
+<div><p>One or more private IP addresses to assign to the network interface. Only one private IP address can be designated as primary.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a secondary private IP address for a network interface.</p>
+<p>PrivateIpAddress -&gt; (string)</p>
+<blockquote>
+<div>The private IP addresses.</div></blockquote>
+<p>Primary -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether the private IP address is the primary private IP address. Only one IP address can be designated as primary.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>SecondaryPrivateIpAddressCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of secondary private IP addresses. You can't specify this option and specify more than one private IP address using the private IP addresses option.</div></blockquote>
+<p>AssociatePublicIpAddress -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether to assign a public IP address to an instance you launch in a VPC. The public IP address can only be assigned to a network interface for eth0, and can only be assigned to a new network interface, not an existing one. You cannot specify more than one network interface in the request. If launching into a default subnet, the default value is <tt class="docutils literal"><span class="pre">true</span></tt> .</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>IamInstanceProfile -&gt; (structure)</p>
+<blockquote>
+<div><p>The IAM instance profile.</p>
+<p>Arn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the instance profile.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the instance profile.</div></blockquote>
+</div></blockquote>
+<p>EbsOptimized -&gt; (boolean)</p>
+<blockquote>
+<div><p>Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
+<p>Default: <tt class="docutils literal"><span class="pre">false</span></tt></p>
+</div></blockquote>
+<p>WeightedCapacity -&gt; (double)</p>
+<blockquote>
+<div><p>The number of units provided by the specified instance type. These are the same units that you chose to set the target capacity in terms (instances or a performance characteristic such as vCPUs, memory, or I/O).</p>
+<p>If the target capacity divided by this value is not a whole number, we round the number of instances to the next whole number. If this value is not specified, the default is 1.</p>
+</div></blockquote>
+<p>SpotPrice -&gt; (string)</p>
+<blockquote>
+<div>The bid price per unit hour for the specified instance type. If this value is not specified, the default is the Spot bid price specified for the fleet. To determine the bid price per unit hour, divide the Spot bid price by the value of <tt class="docutils literal"><span class="pre">WeightedCapacity</span></tt> .</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ExcessCapacityTerminationPolicy -&gt; (string)</p>
+<blockquote>
+<div>Indicates whether running Spot instances should be terminated if the target capacity of the Spot fleet request is decreased below the current size of the Spot fleet.</div></blockquote>
+<p>AllocationStrategy -&gt; (string)</p>
+<blockquote>
+<div>Indicates how to allocate the target capacity across the Spot pools specified by the Spot fleet request. The default is <tt class="docutils literal"><span class="pre">lowestPrice</span></tt> .</div></blockquote>
+<p>FulfilledCapacity -&gt; (double)</p>
+<blockquote>
+<div>The number of units fulfilled by this request compared to the set target capacity.</div></blockquote>
+<p>Type -&gt; (string)</p>
+<blockquote>
+<div>The type of request. Indicates whether the fleet will only <tt class="docutils literal"><span class="pre">request</span></tt> the target capacity or also attempt to <tt class="docutils literal"><span class="pre">maintain</span></tt> it. When you <tt class="docutils literal"><span class="pre">request</span></tt> a certain target capacity, the fleet will only place the required bids. It will not attempt to replenish Spot instances if capacity is diminished, nor will it submit bids in alternative Spot pools if capacity is not available. When you want to <tt class="docutils literal"><span class="pre">maintain</span></tt> a certain target capacity, fleet will place the required bids to meet this target capacity. It will also automatically replenish any interrupted instances. Default: <tt class="docutils literal"><span class="pre">maintain</span></tt> .</div></blockquote>
+</div></blockquote>
+<p>CreateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The creation date and time of the request.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>The token required to retrieve the next set of results. This value is <tt class="docutils literal"><span class="pre">null</span></tt> when there are no more results to return.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="describe-spot-fleet-request-history.html" title="previous chapter (use the left arrow)">&#8592; describe-spot-fleet-request-history</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="describe-spot-instance-requests.html" title="next chapter (use the right arrow)">describe-spot-instance-requests &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="describe-spot-instance-requests.html" title="describe-spot-instance-requests">next</a> |</li>
+        <li class="right">
+          <a href="describe-spot-fleet-request-history.html" title="describe-spot-fleet-request-history">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">ec2</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/describe-spot-fleet-requests.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
+</html>

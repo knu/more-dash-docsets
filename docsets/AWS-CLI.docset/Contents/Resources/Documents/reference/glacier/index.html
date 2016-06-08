@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/glacier/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:28:47 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>glacier &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="abort-multipart-upload" href="abort-multipart-upload.html" />
+    <link rel="prev" title="upload-build" href="../gamelift/upload-build.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="abort-multipart-upload.html" title="abort-multipart-upload" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="../gamelift/upload-build.html" title="upload-build" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../gamelift/upload-build.html" title="previous chapter (use the left arrow)">&#8592; upload-build</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="abort-multipart-upload.html" title="next chapter (use the right arrow)">abort-multipart-upload &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">glacier</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/glacier/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="glacier">
+<span id="cli-aws-glacier"></span><h1>glacier<a name="//apple_ref/cpp/Command/aws glacier" class="dashAnchor" id="aws glacier"></a><a class="headerlink" href="#glacier" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Amazon Glacier is a storage solution for "cold data."</p>
+<p>Amazon Glacier is an extremely low-cost storage service that provides secure, durable, and easy-to-use storage for data backup and archival. With Amazon Glacier, customers can store their data cost effectively for months, years, or decades. Amazon Glacier also enables customers to offload the administrative burdens of operating and scaling storage to AWS, so they don't have to worry about capacity planning, hardware provisioning, data replication, hardware failure and recovery, or time-consuming hardware migrations.</p>
+<p>Amazon Glacier is a great storage choice when low storage cost is paramount, your data is rarely retrieved, and retrieval latency of several hours is acceptable. If your application requires fast or frequent access to your data, consider using Amazon S3. For more information, go to <a class="reference external" href="http://aws.amazon.com/s3/">Amazon Simple Storage Service (Amazon S3)</a> .</p>
+<p>You can store any kind of data in any format. There is no maximum limit on the total amount of data you can store in Amazon Glacier.</p>
+<p>If you are a first-time user of Amazon Glacier, we recommend that you begin by reading the following sections in the <em>Amazon Glacier Developer Guide</em> :</p>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.aws.amazon.com/amazonglacier/latest/dev/introduction.html">What is Amazon Glacier</a> - This section of the Developer Guide describes the underlying data model, the operations it supports, and the AWS SDKs that you can use to interact with the service.</li>
+<li><a class="reference external" href="http://docs.aws.amazon.com/amazonglacier/latest/dev/amazon-glacier-getting-started.html">Getting Started with Amazon Glacier</a> - The Getting Started section walks you through the process of creating a vault, uploading archives, creating jobs to download archives, retrieving the job output, and deleting archives.</li>
+</ul>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a name="//apple_ref/cpp/Section/Available Commands" class="dashAnchor" id="Available Commands"></a><a class="headerlink" href="#available-commands" title="Permalink to this headline">&#182;</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/abort-multipart-upload" class="dashAnchor" id="abort-multipart-upload"></a><a class="reference internal" href="abort-multipart-upload.html">abort-multipart-upload</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/abort-vault-lock" class="dashAnchor" id="abort-vault-lock"></a><a class="reference internal" href="abort-vault-lock.html">abort-vault-lock</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/add-tags-to-vault" class="dashAnchor" id="add-tags-to-vault"></a><a class="reference internal" href="add-tags-to-vault.html">add-tags-to-vault</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/complete-multipart-upload" class="dashAnchor" id="complete-multipart-upload"></a><a class="reference internal" href="complete-multipart-upload.html">complete-multipart-upload</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/complete-vault-lock" class="dashAnchor" id="complete-vault-lock"></a><a class="reference internal" href="complete-vault-lock.html">complete-vault-lock</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-vault" class="dashAnchor" id="create-vault"></a><a class="reference internal" href="create-vault.html">create-vault</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-archive" class="dashAnchor" id="delete-archive"></a><a class="reference internal" href="delete-archive.html">delete-archive</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-vault" class="dashAnchor" id="delete-vault"></a><a class="reference internal" href="delete-vault.html">delete-vault</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-vault-access-policy" class="dashAnchor" id="delete-vault-access-policy"></a><a class="reference internal" href="delete-vault-access-policy.html">delete-vault-access-policy</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-vault-notifications" class="dashAnchor" id="delete-vault-notifications"></a><a class="reference internal" href="delete-vault-notifications.html">delete-vault-notifications</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-job" class="dashAnchor" id="describe-job"></a><a class="reference internal" href="describe-job.html">describe-job</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-vault" class="dashAnchor" id="describe-vault"></a><a class="reference internal" href="describe-vault.html">describe-vault</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-data-retrieval-policy" class="dashAnchor" id="get-data-retrieval-policy"></a><a class="reference internal" href="get-data-retrieval-policy.html">get-data-retrieval-policy</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-job-output" class="dashAnchor" id="get-job-output"></a><a class="reference internal" href="get-job-output.html">get-job-output</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-vault-access-policy" class="dashAnchor" id="get-vault-access-policy"></a><a class="reference internal" href="get-vault-access-policy.html">get-vault-access-policy</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-vault-lock" class="dashAnchor" id="get-vault-lock"></a><a class="reference internal" href="get-vault-lock.html">get-vault-lock</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-vault-notifications" class="dashAnchor" id="get-vault-notifications"></a><a class="reference internal" href="get-vault-notifications.html">get-vault-notifications</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/initiate-job" class="dashAnchor" id="initiate-job"></a><a class="reference internal" href="initiate-job.html">initiate-job</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/initiate-multipart-upload" class="dashAnchor" id="initiate-multipart-upload"></a><a class="reference internal" href="initiate-multipart-upload.html">initiate-multipart-upload</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/initiate-vault-lock" class="dashAnchor" id="initiate-vault-lock"></a><a class="reference internal" href="initiate-vault-lock.html">initiate-vault-lock</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-jobs" class="dashAnchor" id="list-jobs"></a><a class="reference internal" href="list-jobs.html">list-jobs</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-multipart-uploads" class="dashAnchor" id="list-multipart-uploads"></a><a class="reference internal" href="list-multipart-uploads.html">list-multipart-uploads</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-parts" class="dashAnchor" id="list-parts"></a><a class="reference internal" href="list-parts.html">list-parts</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-tags-for-vault" class="dashAnchor" id="list-tags-for-vault"></a><a class="reference internal" href="list-tags-for-vault.html">list-tags-for-vault</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-vaults" class="dashAnchor" id="list-vaults"></a><a class="reference internal" href="list-vaults.html">list-vaults</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/remove-tags-from-vault" class="dashAnchor" id="remove-tags-from-vault"></a><a class="reference internal" href="remove-tags-from-vault.html">remove-tags-from-vault</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/set-data-retrieval-policy" class="dashAnchor" id="set-data-retrieval-policy"></a><a class="reference internal" href="set-data-retrieval-policy.html">set-data-retrieval-policy</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/set-vault-access-policy" class="dashAnchor" id="set-vault-access-policy"></a><a class="reference internal" href="set-vault-access-policy.html">set-vault-access-policy</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/set-vault-notifications" class="dashAnchor" id="set-vault-notifications"></a><a class="reference internal" href="set-vault-notifications.html">set-vault-notifications</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/upload-archive" class="dashAnchor" id="upload-archive"></a><a class="reference internal" href="upload-archive.html">upload-archive</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/upload-multipart-part" class="dashAnchor" id="upload-multipart-part"></a><a class="reference internal" href="upload-multipart-part.html">upload-multipart-part</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../gamelift/upload-build.html" title="previous chapter (use the left arrow)">&#8592; upload-build</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="abort-multipart-upload.html" title="next chapter (use the right arrow)">abort-multipart-upload &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="abort-multipart-upload.html" title="abort-multipart-upload">next</a> |</li>
+        <li class="right">
+          <a href="../gamelift/upload-build.html" title="upload-build">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/glacier/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:29:00 GMT -->
+</html>

@@ -1,0 +1,529 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudsearch/define-index-field.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:00 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>define-index-field &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="cloudsearch" href="index.html" />
+    <link rel="next" title="define-suggester" href="define-suggester.html" />
+    <link rel="prev" title="define-expression" href="define-expression.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="define-suggester.html" title="define-suggester" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="define-expression.html" title="define-expression" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">cloudsearch</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="define-expression.html" title="previous chapter (use the left arrow)">&#8592; define-expression</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="define-suggester.html" title="next chapter (use the right arrow)">define-suggester &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">define-index-field</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/cloudsearch/define-index-field">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-cloudsearch"><em>cloudsearch</em></a> ]</p>
+<div class="section" id="define-index-field">
+<span id="cli-aws-cloudsearch-define-index-field"></span><h1>define-index-field<a name="//apple_ref/cpp/Command/aws cloudsearch define-index-field" class="dashAnchor" id="aws cloudsearch define-index-field"></a><a class="headerlink" href="#define-index-field" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Configures an `` IndexField`` for the search domain. Used to create new fields and modify existing ones. You must specify the name of the domain you are configuring and an index field configuration. The index field configuration specifies a unique name, the index field type, and the options you want to configure for the field. The options you can specify depend on the `` IndexFieldType`` . If the field exists, the new configuration replaces the old one. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html">Configuring Index Fields</a> in the <em>Amazon CloudSearch Developer Guide</em> .</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  define-index-field
+--domain-name &lt;value&gt;
+--name &lt;value&gt;
+--type &lt;value&gt;
+[--default-value &lt;value&gt;]
+[--facet-enabled &lt;value&gt;]
+[--search-enabled &lt;value&gt;]
+[--return-enabled &lt;value&gt;]
+[--sort-enabled &lt;value&gt;]
+[--highlight-enabled &lt;value&gt;]
+[--analysis-scheme &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--domain-name" class="dashAnchor" id="domain-name"></a><span class="pre">--domain-name</span></tt> (string)</p>
+<blockquote>
+<div>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--name" class="dashAnchor" id="name"></a><span class="pre">--name</span></tt> (string)</p>
+<blockquote>
+<div><p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options.</p>
+<p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported.</p>
+<p>The name <tt class="docutils literal"><span class="pre">score</span></tt> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <tt class="docutils literal"><span class="pre">_id</span></tt> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--type" class="dashAnchor" id="type"></a><span class="pre">--type</span></tt> (string)</p>
+<blockquote>
+<div>The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a class="reference external" href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html">Configuring Index Fields</a> in the <em>Amazon CloudSearch Developer Guide</em> .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--default-value" class="dashAnchor" id="default-value"></a><span class="pre">--default-value</span></tt> (string)
+A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--facet-enabled" class="dashAnchor" id="facet-enabled"></a><span class="pre">--facet-enabled</span></tt> (boolean)</p>
+<blockquote>
+<div>Whether facet information can be returned for the field.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--search-enabled" class="dashAnchor" id="search-enabled"></a><span class="pre">--search-enabled</span></tt> (boolean)</p>
+<blockquote>
+<div>Whether the contents of the field are searchable.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--return-enabled" class="dashAnchor" id="return-enabled"></a><span class="pre">--return-enabled</span></tt> (boolean)</p>
+<blockquote>
+<div>Whether the contents of the field can be returned in the search results.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--sort-enabled" class="dashAnchor" id="sort-enabled"></a><span class="pre">--sort-enabled</span></tt> (boolean)</p>
+<blockquote>
+<div>Whether the field can be used to sort the search results.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--highlight-enabled" class="dashAnchor" id="highlight-enabled"></a><span class="pre">--highlight-enabled</span></tt> (boolean)</p>
+<blockquote>
+<div>Whether highlights can be returned for the field.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--analysis-scheme" class="dashAnchor" id="analysis-scheme"></a><span class="pre">--analysis-scheme</span></tt> (string)</p>
+<blockquote>
+<div>The name of an analysis scheme for a <tt class="docutils literal"><span class="pre">text</span></tt> field.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>IndexField -&gt; (structure)</p>
+<blockquote>
+<div><p>The value of an <tt class="docutils literal"><span class="pre">IndexField</span></tt> and its current status.</p>
+<p>Options -&gt; (structure)</p>
+<blockquote>
+<div><p>Configuration information for a field in the index, including its name, type, and options. The supported options depend on the `` IndexFieldType`` .</p>
+<p>IndexFieldName -&gt; (string)</p>
+<blockquote>
+<div><p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options.</p>
+<p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported.</p>
+<p>The name <tt class="docutils literal"><span class="pre">score</span></tt> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <tt class="docutils literal"><span class="pre">_id</span></tt> .</p>
+</div></blockquote>
+<p>IndexFieldType -&gt; (string)</p>
+<blockquote>
+<div>The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a class="reference external" href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html">Configuring Index Fields</a> in the <em>Amazon CloudSearch Developer Guide</em> .</div></blockquote>
+<p>IntOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>Options for a 64-bit signed integer field. Present if <tt class="docutils literal"><span class="pre">IndexFieldType</span></tt> specifies the field is of type <tt class="docutils literal"><span class="pre">int</span></tt> . All options are enabled by default.</p>
+<p>DefaultValue -&gt; (long)</p>
+<blockquote>
+<div>A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.</div></blockquote>
+<p>SourceField -&gt; (string)</p>
+<blockquote>
+<div>The name of the source field to map to the field.</div></blockquote>
+<p>FacetEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether facet information can be returned for the field.</div></blockquote>
+<p>SearchEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the contents of the field are searchable.</div></blockquote>
+<p>ReturnEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the contents of the field can be returned in the search results.</div></blockquote>
+<p>SortEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the field can be used to sort the search results.</div></blockquote>
+</div></blockquote>
+<p>DoubleOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>Options for a double-precision 64-bit floating point field. Present if <tt class="docutils literal"><span class="pre">IndexFieldType</span></tt> specifies the field is of type <tt class="docutils literal"><span class="pre">double</span></tt> . All options are enabled by default.</p>
+<p>DefaultValue -&gt; (double)</p>
+<blockquote>
+<div>A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.</div></blockquote>
+<p>SourceField -&gt; (string)</p>
+<blockquote>
+<div>The name of the source field to map to the field.</div></blockquote>
+<p>FacetEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether facet information can be returned for the field.</div></blockquote>
+<p>SearchEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the contents of the field are searchable.</div></blockquote>
+<p>ReturnEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the contents of the field can be returned in the search results.</div></blockquote>
+<p>SortEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the field can be used to sort the search results.</div></blockquote>
+</div></blockquote>
+<p>LiteralOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>Options for literal field. Present if <tt class="docutils literal"><span class="pre">IndexFieldType</span></tt> specifies the field is of type <tt class="docutils literal"><span class="pre">literal</span></tt> . All options are enabled by default.</p>
+<p>DefaultValue -&gt; (string)</p>
+<blockquote>
+<div>A value to use for the field if the field isn't specified for a document.</div></blockquote>
+<p>SourceField -&gt; (string)</p>
+<blockquote>
+<div><p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options.</p>
+<p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported.</p>
+<p>The name <tt class="docutils literal"><span class="pre">score</span></tt> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <tt class="docutils literal"><span class="pre">_id</span></tt> .</p>
+</div></blockquote>
+<p>FacetEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether facet information can be returned for the field.</div></blockquote>
+<p>SearchEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the contents of the field are searchable.</div></blockquote>
+<p>ReturnEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the contents of the field can be returned in the search results.</div></blockquote>
+<p>SortEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the field can be used to sort the search results.</div></blockquote>
+</div></blockquote>
+<p>TextOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>Options for text field. Present if <tt class="docutils literal"><span class="pre">IndexFieldType</span></tt> specifies the field is of type <tt class="docutils literal"><span class="pre">text</span></tt> . A <tt class="docutils literal"><span class="pre">text</span></tt> field is always searchable. All options are enabled by default.</p>
+<p>DefaultValue -&gt; (string)</p>
+<blockquote>
+<div>A value to use for the field if the field isn't specified for a document.</div></blockquote>
+<p>SourceField -&gt; (string)</p>
+<blockquote>
+<div><p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options.</p>
+<p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported.</p>
+<p>The name <tt class="docutils literal"><span class="pre">score</span></tt> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <tt class="docutils literal"><span class="pre">_id</span></tt> .</p>
+</div></blockquote>
+<p>ReturnEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the contents of the field can be returned in the search results.</div></blockquote>
+<p>SortEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the field can be used to sort the search results.</div></blockquote>
+<p>HighlightEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether highlights can be returned for the field.</div></blockquote>
+<p>AnalysisScheme -&gt; (string)</p>
+<blockquote>
+<div>The name of an analysis scheme for a <tt class="docutils literal"><span class="pre">text</span></tt> field.</div></blockquote>
+</div></blockquote>
+<p>DateOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z. Present if <tt class="docutils literal"><span class="pre">IndexFieldType</span></tt> specifies the field is of type <tt class="docutils literal"><span class="pre">date</span></tt> . All options are enabled by default.</p>
+<p>DefaultValue -&gt; (string)</p>
+<blockquote>
+<div>A value to use for the field if the field isn't specified for a document.</div></blockquote>
+<p>SourceField -&gt; (string)</p>
+<blockquote>
+<div><p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options.</p>
+<p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported.</p>
+<p>The name <tt class="docutils literal"><span class="pre">score</span></tt> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <tt class="docutils literal"><span class="pre">_id</span></tt> .</p>
+</div></blockquote>
+<p>FacetEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether facet information can be returned for the field.</div></blockquote>
+<p>SearchEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the contents of the field are searchable.</div></blockquote>
+<p>ReturnEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the contents of the field can be returned in the search results.</div></blockquote>
+<p>SortEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the field can be used to sort the search results.</div></blockquote>
+</div></blockquote>
+<p>LatLonOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>Options for a latlon field. A latlon field contains a location stored as a latitude and longitude value pair. Present if <tt class="docutils literal"><span class="pre">IndexFieldType</span></tt> specifies the field is of type <tt class="docutils literal"><span class="pre">latlon</span></tt> . All options are enabled by default.</p>
+<p>DefaultValue -&gt; (string)</p>
+<blockquote>
+<div>A value to use for the field if the field isn't specified for a document.</div></blockquote>
+<p>SourceField -&gt; (string)</p>
+<blockquote>
+<div><p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options.</p>
+<p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported.</p>
+<p>The name <tt class="docutils literal"><span class="pre">score</span></tt> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <tt class="docutils literal"><span class="pre">_id</span></tt> .</p>
+</div></blockquote>
+<p>FacetEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether facet information can be returned for the field.</div></blockquote>
+<p>SearchEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the contents of the field are searchable.</div></blockquote>
+<p>ReturnEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the contents of the field can be returned in the search results.</div></blockquote>
+<p>SortEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the field can be used to sort the search results.</div></blockquote>
+</div></blockquote>
+<p>IntArrayOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>Options for a field that contains an array of 64-bit signed integers. Present if <tt class="docutils literal"><span class="pre">IndexFieldType</span></tt> specifies the field is of type <tt class="docutils literal"><span class="pre">int-array</span></tt> . All options are enabled by default.</p>
+<p>DefaultValue -&gt; (long)</p>
+<blockquote>
+<div>A value to use for the field if the field isn't specified for a document.</div></blockquote>
+<p>SourceFields -&gt; (string)</p>
+<blockquote>
+<div>A list of source fields to map to the field.</div></blockquote>
+<p>FacetEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether facet information can be returned for the field.</div></blockquote>
+<p>SearchEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the contents of the field are searchable.</div></blockquote>
+<p>ReturnEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the contents of the field can be returned in the search results.</div></blockquote>
+</div></blockquote>
+<p>DoubleArrayOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>Options for a field that contains an array of double-precision 64-bit floating point values. Present if <tt class="docutils literal"><span class="pre">IndexFieldType</span></tt> specifies the field is of type <tt class="docutils literal"><span class="pre">double-array</span></tt> . All options are enabled by default.</p>
+<p>DefaultValue -&gt; (double)</p>
+<blockquote>
+<div>A value to use for the field if the field isn't specified for a document.</div></blockquote>
+<p>SourceFields -&gt; (string)</p>
+<blockquote>
+<div>A list of source fields to map to the field.</div></blockquote>
+<p>FacetEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether facet information can be returned for the field.</div></blockquote>
+<p>SearchEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the contents of the field are searchable.</div></blockquote>
+<p>ReturnEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the contents of the field can be returned in the search results.</div></blockquote>
+</div></blockquote>
+<p>LiteralArrayOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>Options for a field that contains an array of literal strings. Present if <tt class="docutils literal"><span class="pre">IndexFieldType</span></tt> specifies the field is of type <tt class="docutils literal"><span class="pre">literal-array</span></tt> . All options are enabled by default.</p>
+<p>DefaultValue -&gt; (string)</p>
+<blockquote>
+<div>A value to use for the field if the field isn't specified for a document.</div></blockquote>
+<p>SourceFields -&gt; (string)</p>
+<blockquote>
+<div>A list of source fields to map to the field.</div></blockquote>
+<p>FacetEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether facet information can be returned for the field.</div></blockquote>
+<p>SearchEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the contents of the field are searchable.</div></blockquote>
+<p>ReturnEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the contents of the field can be returned in the search results.</div></blockquote>
+</div></blockquote>
+<p>TextArrayOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>Options for a field that contains an array of text strings. Present if <tt class="docutils literal"><span class="pre">IndexFieldType</span></tt> specifies the field is of type <tt class="docutils literal"><span class="pre">text-array</span></tt> . A <tt class="docutils literal"><span class="pre">text-array</span></tt> field is always searchable. All options are enabled by default.</p>
+<p>DefaultValue -&gt; (string)</p>
+<blockquote>
+<div>A value to use for the field if the field isn't specified for a document.</div></blockquote>
+<p>SourceFields -&gt; (string)</p>
+<blockquote>
+<div>A list of source fields to map to the field.</div></blockquote>
+<p>ReturnEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the contents of the field can be returned in the search results.</div></blockquote>
+<p>HighlightEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether highlights can be returned for the field.</div></blockquote>
+<p>AnalysisScheme -&gt; (string)</p>
+<blockquote>
+<div>The name of an analysis scheme for a <tt class="docutils literal"><span class="pre">text-array</span></tt> field.</div></blockquote>
+</div></blockquote>
+<p>DateArrayOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>Options for a field that contains an array of dates. Present if <tt class="docutils literal"><span class="pre">IndexFieldType</span></tt> specifies the field is of type <tt class="docutils literal"><span class="pre">date-array</span></tt> . All options are enabled by default.</p>
+<p>DefaultValue -&gt; (string)</p>
+<blockquote>
+<div>A value to use for the field if the field isn't specified for a document.</div></blockquote>
+<p>SourceFields -&gt; (string)</p>
+<blockquote>
+<div>A list of source fields to map to the field.</div></blockquote>
+<p>FacetEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether facet information can be returned for the field.</div></blockquote>
+<p>SearchEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the contents of the field are searchable.</div></blockquote>
+<p>ReturnEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the contents of the field can be returned in the search results.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Status -&gt; (structure)</p>
+<blockquote>
+<div><p>The status of domain configuration option.</p>
+<p>CreationDate -&gt; (timestamp)</p>
+<blockquote>
+<div>A timestamp for when this option was created.</div></blockquote>
+<p>UpdateDate -&gt; (timestamp)</p>
+<blockquote>
+<div>A timestamp for when this option was last updated.</div></blockquote>
+<p>UpdateVersion -&gt; (integer)</p>
+<blockquote>
+<div>A unique integer that indicates when this option was last updated.</div></blockquote>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div><p>The state of processing a change to an option. Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">RequiresIndexDocuments</span></tt> : the option's latest value will not be deployed until  index-documents has been called and indexing is complete.</li>
+<li><tt class="docutils literal"><span class="pre">Processing</span></tt> : the option's latest value is in the process of being activated.</li>
+<li><tt class="docutils literal"><span class="pre">Active</span></tt> : the option's latest value is completely deployed.</li>
+<li><tt class="docutils literal"><span class="pre">FailedToValidate</span></tt> : the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
+</ul>
+</div></blockquote>
+<p>PendingDeletion -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates that the option will be deleted once processing is complete.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="define-expression.html" title="previous chapter (use the left arrow)">&#8592; define-expression</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="define-suggester.html" title="next chapter (use the right arrow)">define-suggester &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="define-suggester.html" title="define-suggester">next</a> |</li>
+        <li class="right">
+          <a href="define-expression.html" title="define-expression">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">cloudsearch</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudsearch/define-index-field.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:00 GMT -->
+</html>

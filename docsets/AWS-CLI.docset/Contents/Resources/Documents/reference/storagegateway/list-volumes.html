@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/storagegateway/list-volumes.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>list-volumes &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>list-volumes &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,9 +25,9 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="storagegateway" href="index.html" />
-    <link rel="next" title="shutdown-gateway" href="shutdown-gateway.html" />
+    <link rel="next" title="remove-tags-from-resource" href="remove-tags-from-resource.html" />
     <link rel="prev" title="list-volume-recovery-points" href="list-volume-recovery-points.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -58,10 +61,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
         <li class="right">
-          <a href="shutdown-gateway.html" title="shutdown-gateway" accesskey="N">next</a> |</li>
+          <a href="remove-tags-from-resource.html" title="remove-tags-from-resource" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="list-volume-recovery-points.html" title="list-volume-recovery-points" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">storagegateway</a> &#187;</li> 
       </ul>
@@ -75,31 +78,32 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="shutdown-gateway.html" title="next chapter (use the right arrow)">shutdown-gateway &#8594;</a></li>
+          <li><a href="remove-tags-from-resource.html" title="next chapter (use the right arrow)">remove-tags-from-resource &#8594;</a></li>
       </ul>
     </div>
   
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">list-volumes</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
 <li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -108,50 +112,107 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/storagegateway/list-volumes">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/storagegateway/list-volumes">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>storagegateway</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-storagegateway"><em>storagegateway</em></a> ]</p>
 <div class="section" id="list-volumes">
-<h1>list-volumes<a class="headerlink" href="#list-volumes" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-storagegateway-list-volumes"></span><h1>list-volumes<a name="//apple_ref/cpp/Command/aws storagegateway list-volumes" class="dashAnchor" id="aws storagegateway list-volumes"></a><a class="headerlink" href="#list-volumes" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>This operation lists the iSCSI stored volumes of a gateway. Results are sorted by volume ARN. The response includes only the volume ARNs. If you want additional volume information, use the  describe-storedi-scsi-volumes API.</p>
-<p>The operation supports pagination. By default, the operation returns a maximum of up to 100 volumes. You can optionally specify the <tt class="docutils literal"><span class="pre">--limit</span></tt>  field in the body to limit the number of volumes in the response. If the number of volumes returned in the response is truncated, the response includes a --marker field. You can use this --marker value in your subsequent request to retrieve the next set of volumes.</p>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Lists the iSCSI stored volumes of a gateway. Results are sorted by volume ARN. The response includes only the volume ARNs. If you want additional volume information, use the  describe-stored-iscsi-volumes API.</p>
+<p>The operation supports pagination. By default, the operation returns a maximum of up to 100 volumes. You can optionally specify the <tt class="docutils literal"><span class="pre">Limit</span></tt> field in the body to limit the number of volumes in the response. If the number of volumes returned in the response is truncated, the response includes a marker field. You can use this marker value in your subsequent request to retrieve the next set of volumes.</p>
+<p><tt class="docutils literal"><span class="pre">list-volumes</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">VolumeInfos</span></tt></p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  list-volumes
---gateway-arn &lt;value&gt;
-[--marker &lt;value&gt;]
-[--limit &lt;value&gt;]</pre>
+[--gateway-arn &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--starting-token &lt;value&gt;]
+[--page-size &lt;value&gt;]
+[--max-items &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--gateway-arn" class="dashAnchor" id="gateway-arn"></a><span class="pre">--gateway-arn</span></tt> (string)</p>
 <blockquote>
 <div>The Amazon Resource Name (ARN) of the gateway. Use the  list-gateways operation to return a list of gateways for your account and region.</div></blockquote>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--marker" class="dashAnchor" id="marker"></a><span class="pre">--marker</span></tt> (string)</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--starting-token" class="dashAnchor" id="starting-token"></a><span class="pre">--starting-token</span></tt> (string)</p>
 <blockquote>
-<div>A string that indicates the position at which to begin the returned list of volumes. Obtain the marker from the response of a previous List iSCSI Volumes request.</div></blockquote>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--limit" class="dashAnchor" id="limit"></a><span class="pre">--limit</span></tt> (integer)</p>
+<div>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--page-size" class="dashAnchor" id="page-size"></a><span class="pre">--page-size</span></tt> (integer)</p>
 <blockquote>
-<div>Specifies that the list of volumes returned be limited to the specified number of items.</div></blockquote>
+<div>The size of each page.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-items" class="dashAnchor" id="max-items"></a><span class="pre">--max-items</span></tt> (integer)</p>
+<blockquote>
+<div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">NextToken</span></tt> will be provided in the output that you can use to resume pagination. This <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element should <strong>not</strong> be used directly outside of the AWS CLI.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
 </div>
 <div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
 <p><strong>To list the volumes configured for a gateway</strong></p>
 <p>The following <tt class="docutils literal"><span class="pre">list-volumes</span></tt> command returns a list of volumes configured for the specified gateway.
 To specify which gateway to describe, use the Amazon Resource Name (ARN) of the gateway in the command.</p>
-<p>This examples specifies the gateway named "ExampleGateway":</p>
-<div class="highlight-python"><pre>aws storagegateway list-volumes --gateway-arn "arn:aws:storagegateway:us-east-1:100447751468:gateway/ExampleGateway"</pre>
+<p>This examples specifies a gateway with the id <tt class="docutils literal"><span class="pre">sgw-12A3456B</span></tt> in account <tt class="docutils literal"><span class="pre">123456789012</span></tt>:</p>
+<div class="highlight-python"><pre>aws storagegateway list-volumes --gateway-arn "arn:aws:storagegateway:us-west-2:123456789012:gateway/sgw-12A3456B"</pre>
 </div>
 <p>This command outputs a JSON block that a list of volumes that includes the type and ARN for each volume.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>GatewayARN -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the gateway. Use the  list-gateways operation to return a list of gateways for your account and region.</div></blockquote>
+<p>Marker -&gt; (string)</p>
+<p>VolumeInfos -&gt; (list)</p>
+<blockquote>
+<div><p>(structure)</p>
+<blockquote>
+<div><p>Describes a storage volume object.</p>
+<p>VolumeARN -&gt; (string)</p>
+<blockquote>
+<div><p>The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</span></tt></div></blockquote>
+<p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
+</div></blockquote>
+<p>VolumeId -&gt; (string)</p>
+<blockquote>
+<div><p>The unique identifier assigned to the volume. This ID becomes part of the volume Amazon Resource Name (ARN), which you use as input for other operations.</p>
+<p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
+</div></blockquote>
+<p>GatewayARN -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the gateway. Use the  list-gateways operation to return a list of gateways for your account and region.</div></blockquote>
+<p>GatewayId -&gt; (string)</p>
+<blockquote>
+<div><p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p>
+<p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
+</div></blockquote>
+<p>VolumeType -&gt; (string)</p>
+<p>VolumeSizeInBytes -&gt; (long)</p>
+<blockquote>
+<div><p>The size, in bytes, of the volume.</p>
+<p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
 </div>
 </div>
 
@@ -167,50 +228,45 @@ To specify which gateway to describe, use the Amazon Resource Name (ARN) of the 
           <span class="divider">/</span>
           
         </li>
-          <li><a href="shutdown-gateway.html" title="next chapter (use the right arrow)">shutdown-gateway &#8594;</a></li>
+          <li><a href="remove-tags-from-resource.html" title="next chapter (use the right arrow)">remove-tags-from-resource &#8594;</a></li>
       </ul>
     </div>
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index">index</a></li>
         <li class="right">
-          <a href="shutdown-gateway.html" title="shutdown-gateway">next</a> |</li>
+          <a href="remove-tags-from-resource.html" title="remove-tags-from-resource">next</a> |</li>
         <li class="right">
           <a href="list-volume-recovery-points.html" title="list-volume-recovery-points">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">storagegateway</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'list-volume-recovery-points.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'shutdown-gateway.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/storagegateway/list-volumes.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
 </html>

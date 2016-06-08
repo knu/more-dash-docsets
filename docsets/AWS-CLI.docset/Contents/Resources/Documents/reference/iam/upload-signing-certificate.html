@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/iam/upload-signing-certificate.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:20 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>upload-signing-certificate &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>upload-signing-certificate &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,9 +25,9 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="iam" href="index.html" />
-    <link rel="next" title="importexport" href="../importexport/index.html" />
+    <link rel="next" title="upload-ssh-public-key" href="upload-ssh-public-key.html" />
     <link rel="prev" title="upload-server-certificate" href="upload-server-certificate.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -58,10 +61,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
         <li class="right">
-          <a href="../importexport/index.html" title="importexport" accesskey="N">next</a> |</li>
+          <a href="upload-ssh-public-key.html" title="upload-ssh-public-key" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="upload-server-certificate.html" title="upload-server-certificate" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">iam</a> &#187;</li> 
       </ul>
@@ -75,31 +78,32 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="../importexport/index.html" title="next chapter (use the right arrow)">importexport &#8594;</a></li>
+          <li><a href="upload-ssh-public-key.html" title="next chapter (use the right arrow)">upload-ssh-public-key &#8594;</a></li>
       </ul>
     </div>
   
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">upload-signing-certificate</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
 <li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -108,64 +112,98 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/iam/upload-signing-certificate">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/iam/upload-signing-certificate">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>iam</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-iam"><em>iam</em></a> ]</p>
 <div class="section" id="upload-signing-certificate">
-<h1>upload-signing-certificate<a class="headerlink" href="#upload-signing-certificate" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-iam-upload-signing-certificate"></span><h1>upload-signing-certificate<a name="//apple_ref/cpp/Command/aws iam upload-signing-certificate" class="dashAnchor" id="aws iam upload-signing-certificate"></a><a class="headerlink" href="#upload-signing-certificate" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Uploads an X.509 signing certificate and associates it with the specified user. Some AWS services use X.509 signing certificates to validate requests that are signed with a corresponding private key. When you upload the certificate, its default status is <tt class="docutils literal"><span class="pre">Active</span></tt>  .</p>
-<p>If the <tt class="docutils literal"><span class="pre">--user-name</span></tt>  field is not specified, the user name is determined implicitly based on the AWS Access Key ID used to sign the request. Because this action works for access keys under the AWS account, this API can be used to manage root credentials even if the AWS account has no associated users.</p>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Uploads an X.509 signing certificate and associates it with the specified IAM user. Some AWS services use X.509 signing certificates to validate requests that are signed with a corresponding private key. When you upload the certificate, its default status is <tt class="docutils literal"><span class="pre">Active</span></tt> .</p>
+<p>If the <tt class="docutils literal"><span class="pre">UserName</span></tt> field is not specified, the IAM user name is determined implicitly based on the AWS access key ID used to sign the request. Because this action works for access keys under the AWS account, you can use this action to manage root credentials even if the AWS account has no associated users.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Because the body of a X.509 certificate can be large, you should use POST rather than GET when calling <tt class="docutils literal"><span class="pre">upload-signing-certificate</span></tt>  . For information about setting up signatures and authorization through the API, go to <a class="reference external" href="http://docs.amazonwebservices.com/general/latest/gr/signing_aws_api_requests.html">Signing AWS API Requests</a> in the <em>AWS General Reference</em> . For general information about using the Query API with IAM, go to <a class="reference external" href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making Query Requests</a> in <em>Using IAM</em> .</p>
+<p class="last">Because the body of a X.509 certificate can be large, you should use POST rather than GET when calling <tt class="docutils literal"><span class="pre">upload-signing-certificate</span></tt> . For information about setting up signatures and authorization through the API, go to <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing AWS API Requests</a> in the <em>AWS General Reference</em> . For general information about using the Query API with IAM, go to <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making Query Requests</a> in the <em>IAM User Guide</em> .</p>
 </div>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  upload-signing-certificate
 [--user-name &lt;value&gt;]
---certificate-body &lt;value&gt;</pre>
+--certificate-body &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--user-name" class="dashAnchor" id="user-name"></a><span class="pre">--user-name</span></tt> (string)</p>
 <blockquote>
-<div>Name of the user the signing certificate is for.</div></blockquote>
+<div><p>The name of the user the signing certificate is for.</p>
+<p>The <a class="reference external" href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</p>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--certificate-body" class="dashAnchor" id="certificate-body"></a><span class="pre">--certificate-body</span></tt> (string)</p>
 <blockquote>
-<div>The contents of the signing certificate.</div></blockquote>
+<div><p>The contents of the signing certificate.</p>
+<p>The <a class="reference external" href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of any printable ASCII character ranging from the space character (u0020) through end of the ASCII character range (u00FF). It also includes the special characters tab (u0009), line feed (u000A), and carriage return (u000D).</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
 </div>
 <div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
 <p><strong>To upload a signing certificate for an IAM user</strong></p>
-<p>The following <tt class="docutils literal"><span class="pre">upload-signing-certificate</span></tt> commmand uploads a signing certificate for the IAM user named <tt class="docutils literal"><span class="pre">Bob</span></tt>:</p>
+<p>The following <tt class="docutils literal"><span class="pre">upload-signing-certificate</span></tt> command uploads a signing certificate for the IAM user named <tt class="docutils literal"><span class="pre">Bob</span></tt>:</p>
 <div class="highlight-python"><pre>aws iam upload-signing-certificate --user-name Bob --certificate-body file://certificate.pem</pre>
 </div>
 <p>Output:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-    <span class="s">"ResponseMetadata"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s">"RequestId"</span><span class="p">:</span> <span class="s">"b9cd3e32-4a54-11e2-8110-65075b2814da"</span>
-    <span class="p">},</span>
-    <span class="s">"Certificate"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s">"UserName"</span><span class="p">:</span> <span class="s">"Bob"</span><span class="p">,</span>
-        <span class="s">"Status"</span><span class="p">:</span> <span class="s">"Active"</span><span class="p">,</span>
-        <span class="s">"CertificateBody"</span><span class="p">:</span> <span class="s">"-----BEGIN CERTIFICATE-----&lt;certificate-body&gt;-----END CERTIFICATE-----"</span><span class="p">,</span>
-        <span class="s">"CertificateId"</span><span class="p">:</span> <span class="s">"TA7SMP42TDN5Z26OBPJE7EXAMPLE"</span><span class="p">,</span>
-        <span class="s">"UploadDate"</span><span class="p">:</span> <span class="s">"2013-06-06T21:40:08.121Z"</span>
+    <span class="s2">"Certificate"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"UserName"</span><span class="p">:</span> <span class="s2">"Bob"</span><span class="p">,</span>
+        <span class="s2">"Status"</span><span class="p">:</span> <span class="s2">"Active"</span><span class="p">,</span>
+        <span class="s2">"CertificateBody"</span><span class="p">:</span> <span class="s2">"-----BEGIN CERTIFICATE-----&lt;certificate-body&gt;-----END CERTIFICATE-----"</span><span class="p">,</span>
+        <span class="s2">"CertificateId"</span><span class="p">:</span> <span class="s2">"TA7SMP42TDN5Z26OBPJE7EXAMPLE"</span><span class="p">,</span>
+        <span class="s2">"UploadDate"</span><span class="p">:</span> <span class="s2">"2013-06-06T21:40:08.121Z"</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>The certificate is in a file named <em>certificate.pem</em> in PEM format.</p>
 <p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_UploadCertificate.html">Creating and Uploading a User Signing Certificate</a> in the <em>Using IAM</em> guide.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Certificate -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about the certificate.</p>
+<p>UserName -&gt; (string)</p>
+<blockquote>
+<div>The name of the user the signing certificate is associated with.</div></blockquote>
+<p>CertificateId -&gt; (string)</p>
+<blockquote>
+<div>The ID for the signing certificate.</div></blockquote>
+<p>CertificateBody -&gt; (string)</p>
+<blockquote>
+<div>The contents of the signing certificate.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status of the signing certificate. <tt class="docutils literal"><span class="pre">Active</span></tt> means the key is valid for API calls, while <tt class="docutils literal"><span class="pre">Inactive</span></tt> means it is not.</div></blockquote>
+<p>UploadDate -&gt; (timestamp)</p>
+<blockquote>
+<div>The date when the signing certificate was uploaded.</div></blockquote>
+</div></blockquote>
 </div>
 </div>
 
@@ -181,50 +219,45 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="../importexport/index.html" title="next chapter (use the right arrow)">importexport &#8594;</a></li>
+          <li><a href="upload-ssh-public-key.html" title="next chapter (use the right arrow)">upload-ssh-public-key &#8594;</a></li>
       </ul>
     </div>
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index">index</a></li>
         <li class="right">
-          <a href="../importexport/index.html" title="importexport">next</a> |</li>
+          <a href="upload-ssh-public-key.html" title="upload-ssh-public-key">next</a> |</li>
         <li class="right">
           <a href="upload-server-certificate.html" title="upload-server-certificate">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">iam</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'upload-server-certificate.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = '../importexport/index.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/iam/upload-signing-certificate.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:20 GMT -->
 </html>

@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/dynamodb/update-item.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:01 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>update-item &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>update-item &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="dynamodb" href="index.html" />
     <link rel="next" title="update-table" href="update-table.html" />
     <link rel="prev" title="scan" href="scan.html" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -61,7 +64,7 @@
           <a href="update-table.html" title="update-table" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="scan.html" title="scan" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">dynamodb</a> &#187;</li> 
       </ul>
@@ -82,23 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">update-item</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,41 +112,55 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/dynamodb/update-item">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/dynamodb/update-item">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>dynamodb</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-dynamodb"><em>dynamodb</em></a> ]</p>
 <div class="section" id="update-item">
-<h1>update-item<a class="headerlink" href="#update-item" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-dynamodb-update-item"></span><h1>update-item<a name="//apple_ref/cpp/Command/aws dynamodb update-item" class="dashAnchor" id="aws dynamodb update-item"></a><a class="headerlink" href="#update-item" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Edits an existing item's attributes, or inserts a new item if it does not already exist. You can put, delete, or add attribute values. You can also perform a conditional update (insert a new attribute name-value pair if it doesn't exist, or replace an existing name-value pair if it has certain expected attribute values).</p>
-<p>In addition to updating an item, you can also return the item's attribute values in the same operation, using the <em>--return-values</em> parameter.</p>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Edits an existing item's attributes, or adds a new item to the table if it does not already exist. You can put, delete, or add attribute values. You can also perform a conditional update on an existing item (insert a new attribute name-value pair if it doesn't exist, or replace an existing name-value pair if it has certain expected attribute values).</p>
+<p>You can also return the item's attribute values in the same <em>update-item</em> operation using the <em>ReturnValues</em> parameter.</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  update-item
 --table-name &lt;value&gt;
 --key &lt;value&gt;
 [--attribute-updates &lt;value&gt;]
 [--expected &lt;value&gt;]
+[--conditional-operator &lt;value&gt;]
 [--return-values &lt;value&gt;]
 [--return-consumed-capacity &lt;value&gt;]
-[--return-item-collection-metrics &lt;value&gt;]</pre>
+[--return-item-collection-metrics &lt;value&gt;]
+[--update-expression &lt;value&gt;]
+[--condition-expression &lt;value&gt;]
+[--expression-attribute-names &lt;value&gt;]
+[--expression-attribute-values &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--table-name" class="dashAnchor" id="table-name"></a><span class="pre">--table-name</span></tt> (string)</p>
 <blockquote>
 <div>The name of the table containing the item to update.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--key" class="dashAnchor" id="key"></a><span class="pre">--key</span></tt> (map)</p>
 <blockquote>
-<div>The primary key that defines the item. Each element consists of an attribute name and a value for that attribute.</div></blockquote>
+<div><p>The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute.</p>
+<p>For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</p>
+</div></blockquote>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><pre>{"string": {
       "S": "string",
@@ -149,31 +168,91 @@
       "B": blob,
       "SS": ["string", ...],
       "NS": ["string", ...],
-      "BS": [blob, ...]
+      "BS": [blob, ...],
+      "M": {"string": {
+            "S": "string",
+            "N": "string",
+            "B": blob,
+            "SS": ["string", ...],
+            "NS": ["string", ...],
+            "BS": [blob, ...],
+            "M": {"string": { ... recursive ... }
+              ...},
+            "L": [
+              { ... recursive ... }
+              ...
+            ],
+            "NULL": true|false,
+            "BOOL": true|false
+          }
+        ...},
+      "L": [
+        {
+          "S": "string",
+          "N": "string",
+          "B": blob,
+          "SS": ["string", ...],
+          "NS": ["string", ...],
+          "BS": [blob, ...],
+          "M": {"string": { ... recursive ... }
+            ...},
+          "L": [
+            { ... recursive ... }
+            ...
+          ],
+          "NULL": true|false,
+          "BOOL": true|false
+        }
+        ...
+      ],
+      "NULL": true|false,
+      "BOOL": true|false
     }
   ...}</pre>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--attribute-updates" class="dashAnchor" id="attribute-updates"></a><span class="pre">--attribute-updates</span></tt> (map)</p>
 <blockquote>
-<div><p>The names of attributes to be modified, the action to perform on each, and the new value for each. If you are updating an attribute that is an index key attribute for any indexes on that table, the attribute type must match the index key type defined in the <em>AttributesDefinition</em> of the table description. You can use <em>update-item</em> to update any non-key attributes.</p>
-<p>Attribute values cannot be null. String and binary type attributes must have lengths greater than zero. Set type attributes must not be empty. Requests with empty values will be rejected with a <em>ValidationException</em> .</p>
-<p>Each <em>--attribute-updates</em> element consists of an attribute name to modify, along with the following:</p>
+<div><div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>This is a legacy parameter, for backward compatibility. New applications should use <em>update-expression</em> instead. Do not combine legacy parameters and expression parameters in a single API call; otherwise, DynamoDB will return a <em>ValidationException</em> exception.</p>
+<p class="last">This parameter can be used for modifying top-level attributes; however, it does not support individual list or map elements.</p>
+</div>
+<p>The names of attributes to be modified, the action to perform on each, and the new value for each. If you are updating an attribute that is an index key attribute for any indexes on that table, the attribute type must match the index key type defined in the <em>AttributesDefinition</em> of the table description. You can use <em>update-item</em> to update any non-key attributes.</p>
+<p>Attribute values cannot be null. String and Binary type attributes must have lengths greater than zero. Set type attributes must not be empty. Requests with empty values will be rejected with a <em>ValidationException</em> exception.</p>
+<p>Each <em>attribute-updates</em> element consists of an attribute name to modify, along with the following:</p>
+<ul>
+<li><p class="first"><em>Value</em> - The new value, if applicable, for this attribute.</p>
+</li>
+<li><p class="first"><em>Action</em> - A value that specifies how to perform the update. This action is only valid for an existing attribute whose data type is Number or is a set; do not use <tt class="docutils literal"><span class="pre">ADD</span></tt> for other data types.  If an item with the specified primary key is found in the table, the following values perform the following actions:</p>
+<ul>
+<li><p class="first"><tt class="docutils literal"><span class="pre">PUT</span></tt> - Adds the specified attribute to the item. If the attribute already exists, it is replaced by the new value.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">DELETE</span></tt> - Removes the attribute and its value, if no value is specified for <tt class="docutils literal"><span class="pre">DELETE</span></tt> . The data type of the specified value must match the existing value's data type. If a set of values is specified, then those values are subtracted from the old set. For example, if the attribute value was the set <tt class="docutils literal"><span class="pre">[a,b,c]</span></tt> and the <tt class="docutils literal"><span class="pre">DELETE</span></tt> action specifies <tt class="docutils literal"><span class="pre">[a,c]</span></tt> , then the final attribute value is <tt class="docutils literal"><span class="pre">[b]</span></tt> . Specifying an empty set is an error.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">ADD</span></tt> - Adds the specified value to the item, if the attribute does not already exist. If the attribute does exist, then the behavior of <tt class="docutils literal"><span class="pre">ADD</span></tt> depends on the data type of the attribute:</p>
 <ul class="simple">
-<li><em>Value</em> - The new value, if applicable, for this attribute.</li>
-<li><em>Action</em> - Specifies how to perform the update. Valid values for <em>Action</em> are <tt class="docutils literal"><span class="pre">PUT</span></tt>  , <tt class="docutils literal"><span class="pre">DELETE</span></tt>  , and <tt class="docutils literal"><span class="pre">ADD</span></tt>  . The behavior depends on whether the specified primary key already exists in the table.  <strong>If an item with the specified *--key* is found in the table:</strong>    *  <tt class="docutils literal"><span class="pre">PUT</span></tt>  - Adds the specified attribute to the item. If the attribute already exists, it is replaced by the new value.</li>
-<li><tt class="docutils literal"><span class="pre">DELETE</span></tt>  - If no value is specified, the attribute and its value are removed from the item. The data type of the specified value must match the existing value's data type. If a <em>set</em> of values is specified, then those values are subtracted from the old set. For example, if the attribute value was the set <tt class="docutils literal"><span class="pre">[a,b,c]</span></tt>  and the <em>DELETE</em> action specified <tt class="docutils literal"><span class="pre">[a,c]</span></tt>  , then the final attribute value would be <tt class="docutils literal"><span class="pre">[b]</span></tt>  . Specifying an empty set is an error.</li>
-<li><tt class="docutils literal"><span class="pre">ADD</span></tt>  - If the attribute does not already exist, then the attribute and its values are added to the item. If the attribute does exist, then the behavior of <tt class="docutils literal"><span class="pre">ADD</span></tt>  depends on the data type of the attribute:  *  If the existing attribute is a number, and if <em>Value</em> is also a number, then the <em>Value</em> is mathematically added to the existing attribute. If <em>Value</em> is a negative number, then it is subtracted from the existing attribute. .. note:: If you use <tt class="docutils literal"><span class="pre">ADD</span></tt>  to increment or decrement a number value for an item that doesn't exist before the update, Amazon DynamoDB uses 0 as the initial value. In addition, if you use <tt class="docutils literal"><span class="pre">ADD</span></tt>  to update an existing item, and intend to increment or decrement an attribute value which does not yet exist, Amazon DynamoDB uses <tt class="docutils literal"><span class="pre">0</span></tt>  as the initial value. For example, suppose that the item you want to update does not yet have an attribute named <em>itemcount</em> , but you decide to <tt class="docutils literal"><span class="pre">ADD</span></tt>  the number <tt class="docutils literal"><span class="pre">3</span></tt>  to this attribute anyway, even though it currently does not exist. Amazon DynamoDB will create the <em>itemcount</em> attribute, set its initial value to <tt class="docutils literal"><span class="pre">0</span></tt>  , and finally add <tt class="docutils literal"><span class="pre">3</span></tt>  to it. The result will be a new <em>itemcount</em> attribute in the item, with a value of <tt class="docutils literal"><span class="pre">3</span></tt>  .</li>
-<li>If the existing data type is a set, and if the <em>Value</em> is also a set, then the <em>Value</em> is added to the existing set. (This is a <em>set</em> operation, not mathematical addition.) For example, if the attribute value was the set <tt class="docutils literal"><span class="pre">[1,2]</span></tt>  , and the <tt class="docutils literal"><span class="pre">ADD</span></tt>  action specified <tt class="docutils literal"><span class="pre">[3]</span></tt>  , then the final attribute value would be <tt class="docutils literal"><span class="pre">[1,2,3]</span></tt>  . An error occurs if an Add action is specified for a set attribute and the attribute type specified does not match the existing set type.  Both sets must have the same primitive data type. For example, if the existing data type is a set of strings, the <em>Value</em> must also be a set of strings. The same holds true for number sets and binary sets.</li>
+<li>If the existing attribute is a number, and if <em>Value</em> is also a number, then <em>Value</em> is mathematically added to the existing attribute. If <em>Value</em> is a negative number, then it is subtracted from the existing attribute.</li>
 </ul>
-<p>This action is only valid for an existing attribute whose data type is number or is a set. Do not use <tt class="docutils literal"><span class="pre">ADD</span></tt>  for any other data types.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you use <tt class="docutils literal"><span class="pre">ADD</span></tt> to increment or decrement a number value for an item that doesn't exist before the update, DynamoDB uses 0 as the initial value. Similarly, if you use <tt class="docutils literal"><span class="pre">ADD</span></tt> for an existing item to increment or decrement an attribute value that doesn't exist before the update, DynamoDB uses <tt class="docutils literal"><span class="pre">0</span></tt> as the initial value. For example, suppose that the item you want to update doesn't have an attribute named <em>itemcount</em> , but you decide to <tt class="docutils literal"><span class="pre">ADD</span></tt> the number <tt class="docutils literal"><span class="pre">3</span></tt> to this attribute anyway. DynamoDB will create the <em>itemcount</em> attribute, set its initial value to <tt class="docutils literal"><span class="pre">0</span></tt> , and finally add <tt class="docutils literal"><span class="pre">3</span></tt> to it. The result will be a new <em>itemcount</em> attribute, with a value of <tt class="docutils literal"><span class="pre">3</span></tt> .</p>
+</div>
+<ul class="simple">
+<li>If the existing data type is a set, and if <em>Value</em> is also a set, then <em>Value</em> is appended to the existing set. For example, if the attribute value is the set <tt class="docutils literal"><span class="pre">[1,2]</span></tt> , and the <tt class="docutils literal"><span class="pre">ADD</span></tt> action specified <tt class="docutils literal"><span class="pre">[3]</span></tt> , then the final attribute value is <tt class="docutils literal"><span class="pre">[1,2,3]</span></tt> . An error occurs if an <tt class="docutils literal"><span class="pre">ADD</span></tt> action is specified for a set attribute and the attribute type specified does not match the existing set type.  Both sets must have the same primitive data type. For example, if the existing data type is a set of strings, <em>Value</em> must also be a set of strings.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>If no item with the specified key is found in the table, the following values perform the following actions:</p>
 <blockquote>
-<div><strong>If no item with the specified *--key* is found:</strong></div></blockquote>
-<ul class="simple">
-<li><tt class="docutils literal"><span class="pre">PUT</span></tt>  - Amazon DynamoDB creates a new item with the specified primary key, and then adds the attribute.</li>
-<li><tt class="docutils literal"><span class="pre">DELETE</span></tt>  - Nothing happens; there is no attribute to delete.</li>
-<li><tt class="docutils literal"><span class="pre">ADD</span></tt>  - Amazon DynamoDB creates an item with the supplied primary key and number (or set of numbers) for the attribute value. The only data types allowed are number and number set; no other data types can be specified.</li>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">PUT</span></tt> - Causes DynamoDB to create a new item with the specified primary key, and then adds the attribute.</li>
+<li><tt class="docutils literal"><span class="pre">DELETE</span></tt> - Nothing happens, because attributes cannot be deleted from a nonexistent item. The operation succeeds, but DynamoDB does not create a new item.</li>
+<li><tt class="docutils literal"><span class="pre">ADD</span></tt> - Causes DynamoDB to create an item with the supplied primary key and number (or set of numbers) for the attribute value. The only data types allowed are Number and Number Set.</li>
 </ul>
-<p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p>
+</div></blockquote>
+<p>If you provide any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p>
 </div></blockquote>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><pre>{"string": {
@@ -183,7 +262,45 @@
         "B": blob,
         "SS": ["string", ...],
         "NS": ["string", ...],
-        "BS": [blob, ...]
+        "BS": [blob, ...],
+        "M": {"string": {
+              "S": "string",
+              "N": "string",
+              "B": blob,
+              "SS": ["string", ...],
+              "NS": ["string", ...],
+              "BS": [blob, ...],
+              "M": {"string": { ... recursive ... }
+                ...},
+              "L": [
+                { ... recursive ... }
+                ...
+              ],
+              "NULL": true|false,
+              "BOOL": true|false
+            }
+          ...},
+        "L": [
+          {
+            "S": "string",
+            "N": "string",
+            "B": blob,
+            "SS": ["string", ...],
+            "NS": ["string", ...],
+            "BS": [blob, ...],
+            "M": {"string": { ... recursive ... }
+              ...},
+            "L": [
+              { ... recursive ... }
+              ...
+            ],
+            "NULL": true|false,
+            "BOOL": true|false
+          }
+          ...
+        ],
+        "NULL": true|false,
+        "BOOL": true|false
       },
       "Action": "ADD"|"PUT"|"DELETE"
     }
@@ -191,21 +308,65 @@
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--expected" class="dashAnchor" id="expected"></a><span class="pre">--expected</span></tt> (map)</p>
 <blockquote>
-<div><p>A map of attribute/condition pairs. This is the conditional block for the <em>update-item</em> operation. All the conditions must be met for the operation to succeed.</p>
-<p><em>--expected</em> allows you to provide an attribute name, and whether or not Amazon DynamoDB should check to see if the attribute value already exists; or if the attribute value exists and has a particular value before changing it.</p>
-<p>Each item in <em>--expected</em> represents an attribute name for Amazon DynamoDB to check, along with the following:</p>
+<div><div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This is a legacy parameter, for backward compatibility. New applications should use <em>condition-expression</em> instead. Do not combine legacy parameters and expression parameters in a single API call; otherwise, DynamoDB will return a <em>ValidationException</em> exception.</p>
+</div>
+<p>A map of attribute/condition pairs. <em>Expected</em> provides a conditional block for the <em>update-item</em> operation.</p>
+<p>Each element of <em>Expected</em> consists of an attribute name, a comparison operator, and one or more values. DynamoDB compares the attribute with the value(s) you supplied, using the comparison operator. For each <em>Expected</em> element, the result of the evaluation is either true or false.</p>
+<p>If you specify more than one element in the <em>Expected</em> map, then by default all of the conditions must evaluate to true. In other words, the conditions are ANDed together. (You can use the <em>conditional-operator</em> parameter to OR the conditions instead. If you do this, then at least one of the conditions must evaluate to true, rather than all of them.)</p>
+<p>If the <em>Expected</em> map evaluates to true, then the conditional operation succeeds; otherwise, it fails.</p>
+<blockquote>
+<div><em>Expected</em> contains the following:</div></blockquote>
+<ul>
+<li><p class="first"><em>AttributeValueList</em> - One or more values to evaluate against the supplied attribute. The number of values in the list depends on the <em>ComparisonOperator</em> being used. For type Number, value comparisons are numeric. String value comparisons for greater than, equals, or less than are based on ASCII character code values. For example, <tt class="docutils literal"><span class="pre">a</span></tt> is greater than <tt class="docutils literal"><span class="pre">A</span></tt> , and <tt class="docutils literal"><span class="pre">a</span></tt> is greater than <tt class="docutils literal"><span class="pre">B</span></tt> . For a list of code values, see <a class="reference external" href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a> . For type Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values.</p>
+</li>
+<li><p class="first"><em>ComparisonOperator</em> - A comparator for evaluating attributes in the <em>AttributeValueList</em> . When performing the comparison, DynamoDB uses strongly consistent reads. The following comparison operators are available:  <tt class="docutils literal"><span class="pre">EQ</span> <span class="pre">|</span> <span class="pre">NE</span> <span class="pre">|</span> <span class="pre">LE</span> <span class="pre">|</span> <span class="pre">LT</span> <span class="pre">|</span> <span class="pre">GE</span> <span class="pre">|</span> <span class="pre">GT</span> <span class="pre">|</span> <span class="pre">NOT_NULL</span> <span class="pre">|</span> <span class="pre">NULL</span> <span class="pre">|</span> <span class="pre">CONTAINS</span> <span class="pre">|</span> <span class="pre">NOT_CONTAINS</span> <span class="pre">|</span> <span class="pre">BEGINS_WITH</span> <span class="pre">|</span> <span class="pre">IN</span> <span class="pre">|</span> <span class="pre">BETWEEN</span></tt>   The following are descriptions of each comparison operator.</p>
 <ul class="simple">
-<li><em>Value</em> - The attribute value for Amazon DynamoDB to check.</li>
-<li><em>Exists</em> - Causes Amazon DynamoDB to evaluate the value before attempting a conditional operation:  *  If <em>Exists</em> is <tt class="docutils literal"><span class="pre">true</span></tt>  , Amazon DynamoDB will check to see if that attribute value already exists in the table. If it is found, then the operation succeeds. If it is not found, the operation fails with a <em>ConditionalCheckFailedException</em> .</li>
-<li>If <em>Exists</em> is <tt class="docutils literal"><span class="pre">false</span></tt>  , Amazon DynamoDB assumes that the attribute value does <em>not</em> exist in the table. If in fact the value does not exist, then the assumption is valid and the operation succeeds. If the value is found, despite the assumption that it does not exist, the operation fails with a <em>ConditionalCheckFailedException</em> .</li>
+<li><tt class="docutils literal"><span class="pre">EQ</span></tt> : Equal. <tt class="docutils literal"><span class="pre">EQ</span></tt> is supported for all datatypes, including lists and maps.  <em>AttributeValueList</em> can contain only one <em>AttributeValue</em> element of type String, Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <em>AttributeValue</em> element of a different type than the one provided in the request, the value does not match. For example, <tt class="docutils literal"><span class="pre">{"S":"6"}</span></tt> does not equal <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt> . Also, <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt> does not equal <tt class="docutils literal"><span class="pre">{"NS":["6",</span> <span class="pre">"2",</span> <span class="pre">"1"]}</span></tt> .</li>
+<li><tt class="docutils literal"><span class="pre">NE</span></tt> : Not equal. <tt class="docutils literal"><span class="pre">NE</span></tt> is supported for all datatypes, including lists and maps.  <em>AttributeValueList</em> can contain only one <em>AttributeValue</em> of type String, Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <em>AttributeValue</em> of a different type than the one provided in the request, the value does not match. For example, <tt class="docutils literal"><span class="pre">{"S":"6"}</span></tt> does not equal <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt> . Also, <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt> does not equal <tt class="docutils literal"><span class="pre">{"NS":["6",</span> <span class="pre">"2",</span> <span class="pre">"1"]}</span></tt> .</li>
+<li><tt class="docutils literal"><span class="pre">LE</span></tt> : Less than or equal.   <em>AttributeValueList</em> can contain only one <em>AttributeValue</em> element of type String, Number, or Binary (not a set type). If an item contains an <em>AttributeValue</em> element of a different type than the one provided in the request, the value does not match. For example, <tt class="docutils literal"><span class="pre">{"S":"6"}</span></tt> does not equal <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt> . Also, <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt> does not compare to <tt class="docutils literal"><span class="pre">{"NS":["6",</span> <span class="pre">"2",</span> <span class="pre">"1"]}</span></tt> .</li>
+<li><tt class="docutils literal"><span class="pre">LT</span></tt> : Less than.   <em>AttributeValueList</em> can contain only one <em>AttributeValue</em> of type String, Number, or Binary (not a set type). If an item contains an <em>AttributeValue</em> element of a different type than the one provided in the request, the value does not match. For example, <tt class="docutils literal"><span class="pre">{"S":"6"}</span></tt> does not equal <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt> . Also, <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt> does not compare to <tt class="docutils literal"><span class="pre">{"NS":["6",</span> <span class="pre">"2",</span> <span class="pre">"1"]}</span></tt> .</li>
+<li><tt class="docutils literal"><span class="pre">GE</span></tt> : Greater than or equal.   <em>AttributeValueList</em> can contain only one <em>AttributeValue</em> element of type String, Number, or Binary (not a set type). If an item contains an <em>AttributeValue</em> element of a different type than the one provided in the request, the value does not match. For example, <tt class="docutils literal"><span class="pre">{"S":"6"}</span></tt> does not equal <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt> . Also, <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt> does not compare to <tt class="docutils literal"><span class="pre">{"NS":["6",</span> <span class="pre">"2",</span> <span class="pre">"1"]}</span></tt> .</li>
+<li><tt class="docutils literal"><span class="pre">GT</span></tt> : Greater than.   <em>AttributeValueList</em> can contain only one <em>AttributeValue</em> element of type String, Number, or Binary (not a set type). If an item contains an <em>AttributeValue</em> element of a different type than the one provided in the request, the value does not match. For example, <tt class="docutils literal"><span class="pre">{"S":"6"}</span></tt> does not equal <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt> . Also, <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt> does not compare to <tt class="docutils literal"><span class="pre">{"NS":["6",</span> <span class="pre">"2",</span> <span class="pre">"1"]}</span></tt> .</li>
+<li><tt class="docutils literal"><span class="pre">NOT_NULL</span></tt> : The attribute exists. <tt class="docutils literal"><span class="pre">NOT_NULL</span></tt> is supported for all datatypes, including lists and maps.</li>
 </ul>
-<p>The default setting for <em>Exists</em> is <tt class="docutils literal"><span class="pre">true</span></tt>  . If you supply a <em>Value</em> all by itself, Amazon DynamoDB assumes the attribute exists: You don't have to set <em>Exists</em> to <tt class="docutils literal"><span class="pre">true</span></tt>  , because it is implied.</p>
-<p>Amazon DynamoDB returns a <em>ValidationException</em> if:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This operator tests for the existence of an attribute, not its data type. If the data type of attribute "<tt class="docutils literal"><span class="pre">a</span></tt> " is null, and you evaluate it using <tt class="docutils literal"><span class="pre">NOT_NULL</span></tt> , the result is a Boolean <em>true</em> . This result is because the attribute "<tt class="docutils literal"><span class="pre">a</span></tt> " exists; its data type is not relevant to the <tt class="docutils literal"><span class="pre">NOT_NULL</span></tt> comparison operator.</p>
+</div>
 <ul class="simple">
-<li><em>Exists</em> is <tt class="docutils literal"><span class="pre">true</span></tt>  but there is no <em>Value</em> to check. (You expect a value to exist, but don't specify what that value is.)</li>
-<li><em>Exists</em> is <tt class="docutils literal"><span class="pre">false</span></tt>  but you also specify a <em>Value</em> . (You cannot expect an attribute to have a value, while also expecting it not to exist.)</li>
+<li><tt class="docutils literal"><span class="pre">NULL</span></tt> : The attribute does not exist. <tt class="docutils literal"><span class="pre">NULL</span></tt> is supported for all datatypes, including lists and maps.</li>
 </ul>
-<p>If you specify more than one condition for <em>Exists</em> , then all of the conditions must evaluate to true. (In other words, the conditions are ANDed together.) Otherwise, the conditional operation will fail.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This operator tests for the nonexistence of an attribute, not its data type. If the data type of attribute "<tt class="docutils literal"><span class="pre">a</span></tt> " is null, and you evaluate it using <tt class="docutils literal"><span class="pre">NULL</span></tt> , the result is a Boolean <em>false</em> . This is because the attribute "<tt class="docutils literal"><span class="pre">a</span></tt> " exists; its data type is not relevant to the <tt class="docutils literal"><span class="pre">NULL</span></tt> comparison operator.</p>
+</div>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">CONTAINS</span></tt> : Checks for a subsequence, or value in a set.  <em>AttributeValueList</em> can contain only one <em>AttributeValue</em> element of type String, Number, or Binary (not a set type). If the target attribute of the comparison is of type String, then the operator checks for a substring match. If the target attribute of the comparison is of type Binary, then the operator looks for a subsequence of the target that matches the input. If the target attribute of the comparison is a set ("<tt class="docutils literal"><span class="pre">SS</span></tt> ", "<tt class="docutils literal"><span class="pre">NS</span></tt> ", or "<tt class="docutils literal"><span class="pre">BS</span></tt> "), then the operator evaluates to true if it finds an exact match with any member of the set. CONTAINS is supported for lists: When evaluating "<tt class="docutils literal"><span class="pre">a</span> <span class="pre">CONTAINS</span> <span class="pre">b</span></tt> ", "<tt class="docutils literal"><span class="pre">a</span></tt> " can be a list; however, "<tt class="docutils literal"><span class="pre">b</span></tt> " cannot be a set, a map, or a list.</li>
+<li><tt class="docutils literal"><span class="pre">NOT_CONTAINS</span></tt> : Checks for absence of a subsequence, or absence of a value in a set.  <em>AttributeValueList</em> can contain only one <em>AttributeValue</em> element of type String, Number, or Binary (not a set type). If the target attribute of the comparison is a String, then the operator checks for the absence of a substring match. If the target attribute of the comparison is Binary, then the operator checks for the absence of a subsequence of the target that matches the input. If the target attribute of the comparison is a set ("<tt class="docutils literal"><span class="pre">SS</span></tt> ", "<tt class="docutils literal"><span class="pre">NS</span></tt> ", or "<tt class="docutils literal"><span class="pre">BS</span></tt> "), then the operator evaluates to true if it <em>does not</em> find an exact match with any member of the set. NOT_CONTAINS is supported for lists: When evaluating "<tt class="docutils literal"><span class="pre">a</span> <span class="pre">NOT</span> <span class="pre">CONTAINS</span> <span class="pre">b</span></tt> ", "<tt class="docutils literal"><span class="pre">a</span></tt> " can be a list; however, "<tt class="docutils literal"><span class="pre">b</span></tt> " cannot be a set, a map, or a list.</li>
+<li><tt class="docutils literal"><span class="pre">BEGINS_WITH</span></tt> : Checks for a prefix.   <em>AttributeValueList</em> can contain only one <em>AttributeValue</em> of type String or Binary (not a Number or a set type). The target attribute of the comparison must be of type String or Binary (not a Number or a set type).</li>
+<li><tt class="docutils literal"><span class="pre">IN</span></tt> : Checks for matching elements within two sets.  <em>AttributeValueList</em> can contain one or more <em>AttributeValue</em> elements of type String, Number, or Binary (not a set type). These attributes are compared against an existing set type attribute of an item. If any elements of the input set are present in the item attribute, the expression evaluates to true.</li>
+<li><tt class="docutils literal"><span class="pre">BETWEEN</span></tt> : Greater than or equal to the first value, and less than or equal to the second value.   <em>AttributeValueList</em> must contain two <em>AttributeValue</em> elements of the same type, either String, Number, or Binary (not a set type). A target attribute matches if the target value is greater than, or equal to, the first element and less than, or equal to, the second element. If an item contains an <em>AttributeValue</em> element of a different type than the one provided in the request, the value does not match. For example, <tt class="docutils literal"><span class="pre">{"S":"6"}</span></tt> does not compare to <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt> . Also, <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt> does not compare to <tt class="docutils literal"><span class="pre">{"NS":["6",</span> <span class="pre">"2",</span> <span class="pre">"1"]}</span></tt></li>
+</ul>
+</li>
+</ul>
+<p>For usage examples of <em>AttributeValueList</em> and <em>ComparisonOperator</em> , see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
+<p>For backward compatibility with previous DynamoDB releases, the following parameters can be used instead of <em>AttributeValueList</em> and <em>ComparisonOperator</em> :</p>
+<ul class="simple">
+<li><em>Value</em> - A value for DynamoDB to compare with an attribute.</li>
+<li><em>Exists</em> - A Boolean value that causes DynamoDB to evaluate the value before attempting the conditional operation:<ul>
+<li>If <em>Exists</em> is <tt class="docutils literal"><span class="pre">true</span></tt> , DynamoDB will check to see if that attribute value already exists in the table. If it is found, then the condition evaluates to true; otherwise the condition evaluate to false.</li>
+<li>If <em>Exists</em> is <tt class="docutils literal"><span class="pre">false</span></tt> , DynamoDB assumes that the attribute value does <em>not</em> exist in the table. If in fact the value does not exist, then the assumption is valid and the condition evaluates to true. If the value is found, despite the assumption that it does not exist, the condition evaluates to false.</li>
+</ul>
+</li>
+</ul>
+<p>Note that the default value for <em>Exists</em> is <tt class="docutils literal"><span class="pre">true</span></tt> .</p>
+<p>The <em>Value</em> and <em>Exists</em> parameters are incompatible with <em>AttributeValueList</em> and <em>ComparisonOperator</em> . Note that if you use both sets of parameters at once, DynamoDB will return a <em>ValidationException</em> exception.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This parameter does not support attributes of type List or Map.</p>
+</div>
 </div></blockquote>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><pre>{"string": {
@@ -215,29 +376,710 @@
         "B": blob,
         "SS": ["string", ...],
         "NS": ["string", ...],
-        "BS": [blob, ...]
+        "BS": [blob, ...],
+        "M": {"string": {
+              "S": "string",
+              "N": "string",
+              "B": blob,
+              "SS": ["string", ...],
+              "NS": ["string", ...],
+              "BS": [blob, ...],
+              "M": {"string": { ... recursive ... }
+                ...},
+              "L": [
+                { ... recursive ... }
+                ...
+              ],
+              "NULL": true|false,
+              "BOOL": true|false
+            }
+          ...},
+        "L": [
+          {
+            "S": "string",
+            "N": "string",
+            "B": blob,
+            "SS": ["string", ...],
+            "NS": ["string", ...],
+            "BS": [blob, ...],
+            "M": {"string": { ... recursive ... }
+              ...},
+            "L": [
+              { ... recursive ... }
+              ...
+            ],
+            "NULL": true|false,
+            "BOOL": true|false
+          }
+          ...
+        ],
+        "NULL": true|false,
+        "BOOL": true|false
       },
-      "Exists": true|false
+      "Exists": true|false,
+      "ComparisonOperator": "EQ"|"NE"|"IN"|"LE"|"LT"|"GE"|"GT"|"BETWEEN"|"NOT_NULL"|"NULL"|"CONTAINS"|"NOT_CONTAINS"|"BEGINS_WITH",
+      "AttributeValueList": [
+        {
+          "S": "string",
+          "N": "string",
+          "B": blob,
+          "SS": ["string", ...],
+          "NS": ["string", ...],
+          "BS": [blob, ...],
+          "M": {"string": {
+                "S": "string",
+                "N": "string",
+                "B": blob,
+                "SS": ["string", ...],
+                "NS": ["string", ...],
+                "BS": [blob, ...],
+                "M": {"string": { ... recursive ... }
+                  ...},
+                "L": [
+                  { ... recursive ... }
+                  ...
+                ],
+                "NULL": true|false,
+                "BOOL": true|false
+              }
+            ...},
+          "L": [
+            {
+              "S": "string",
+              "N": "string",
+              "B": blob,
+              "SS": ["string", ...],
+              "NS": ["string", ...],
+              "BS": [blob, ...],
+              "M": {"string": { ... recursive ... }
+                ...},
+              "L": [
+                { ... recursive ... }
+                ...
+              ],
+              "NULL": true|false,
+              "BOOL": true|false
+            }
+            ...
+          ],
+          "NULL": true|false,
+          "BOOL": true|false
+        }
+        ...
+      ]
     }
   ...}</pre>
 </div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--conditional-operator" class="dashAnchor" id="conditional-operator"></a><span class="pre">--conditional-operator</span></tt> (string)</p>
+<blockquote>
+<div><div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This is a legacy parameter, for backward compatibility. New applications should use <em>condition-expression</em> instead. Do not combine legacy parameters and expression parameters in a single API call; otherwise, DynamoDB will return a <em>ValidationException</em> exception.</p>
+</div>
+<p>A logical operator to apply to the conditions in the <em>Expected</em> map:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">AND</span></tt> - If all of the conditions evaluate to true, then the entire map evaluates to true.</li>
+<li><tt class="docutils literal"><span class="pre">OR</span></tt> - If at least one of the conditions evaluate to true, then the entire map evaluates to true.</li>
+</ul>
+<p>If you omit <em>conditional-operator</em> , then <tt class="docutils literal"><span class="pre">AND</span></tt> is the default.</p>
+<p>The operation will succeed only if the entire map evaluates to true.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This parameter does not support attributes of type List or Map.</p>
+</div>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">AND</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">OR</span></tt></li>
+</ul>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--return-values" class="dashAnchor" id="return-values"></a><span class="pre">--return-values</span></tt> (string)</p>
 <blockquote>
-<div><p>Use <em>--return-values</em> if you want to get the item attributes as they appeared either before or after they were updated. For <em>update-item</em> , the valid values are:</p>
+<div><p>Use <em>ReturnValues</em> if you want to get the item attributes as they appeared either before or after they were updated. For <em>update-item</em> , the valid values are:</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">NONE</span></tt>  - If <em>--return-values</em> is not specified, or if its value is <tt class="docutils literal"><span class="pre">NONE</span></tt>  , then nothing is returned. (This is the default for <em>--return-values</em> .)</li>
-<li><tt class="docutils literal"><span class="pre">ALL_OLD</span></tt>  - If <em>update-item</em> overwrote an attribute name-value pair, then the content of the old item is returned.</li>
-<li><tt class="docutils literal"><span class="pre">UPDATED_OLD</span></tt>  - The old versions of only the updated attributes are returned.</li>
-<li><tt class="docutils literal"><span class="pre">ALL_NEW</span></tt>  - All of the attributes of the new version of the item are returned.</li>
-<li><tt class="docutils literal"><span class="pre">UPDATED_NEW</span></tt>  - The new versions of only the updated attributes are returned.</li>
+<li><tt class="docutils literal"><span class="pre">NONE</span></tt> - If <em>ReturnValues</em> is not specified, or if its value is <tt class="docutils literal"><span class="pre">NONE</span></tt> , then nothing is returned. (This setting is the default for <em>ReturnValues</em> .)</li>
+<li><tt class="docutils literal"><span class="pre">ALL_OLD</span></tt> - If <em>update-item</em> overwrote an attribute name-value pair, then the content of the old item is returned.</li>
+<li><tt class="docutils literal"><span class="pre">UPDATED_OLD</span></tt> - The old versions of only the updated attributes are returned.</li>
+<li><tt class="docutils literal"><span class="pre">ALL_NEW</span></tt> - All of the attributes of the new version of the item are returned.</li>
+<li><tt class="docutils literal"><span class="pre">UPDATED_NEW</span></tt> - The new versions of only the updated attributes are returned.</li>
+</ul>
+<p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No Read Capacity Units are consumed.</p>
+<p>Values returned are strongly consistent</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">NONE</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ALL_OLD</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">UPDATED_OLD</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ALL_NEW</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">UPDATED_NEW</span></tt></li>
 </ul>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--return-consumed-capacity" class="dashAnchor" id="return-consumed-capacity"></a><span class="pre">--return-consumed-capacity</span></tt> (string)</p>
 <blockquote>
-<div>If set to <tt class="docutils literal"><span class="pre">TOTAL</span></tt>  , <em>ConsumedCapacity</em> is included in the response; if set to <tt class="docutils literal"><span class="pre">NONE</span></tt>  (the default), <em>ConsumedCapacity</em> is not included.</div></blockquote>
+<div><p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
+<ul class="simple">
+<li><em>INDEXES</em> - The response includes the aggregate <em>ConsumedCapacity</em> for the operation, together with <em>ConsumedCapacity</em> for each table and secondary index that was accessed. Note that some operations, such as <em>get-item</em> and <em>batch-get-item</em> , do not access any indexes at all. In these cases, specifying <em>INDEXES</em> will only return <em>ConsumedCapacity</em> information for table(s).</li>
+<li><em>TOTAL</em> - The response includes only the aggregate <em>ConsumedCapacity</em> for the operation.</li>
+<li><em>NONE</em> - No <em>ConsumedCapacity</em> details are included in the response.</li>
+</ul>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">INDEXES</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">TOTAL</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">NONE</span></tt></li>
+</ul>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--return-item-collection-metrics" class="dashAnchor" id="return-item-collection-metrics"></a><span class="pre">--return-item-collection-metrics</span></tt> (string)</p>
 <blockquote>
-<div>If set to <tt class="docutils literal"><span class="pre">SIZE</span></tt>  , statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <tt class="docutils literal"><span class="pre">NONE</span></tt>  (the default), no statistics are returned..</div></blockquote>
+<div><p>Determines whether item collection metrics are returned. If set to <tt class="docutils literal"><span class="pre">SIZE</span></tt> , the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <tt class="docutils literal"><span class="pre">NONE</span></tt> (the default), no statistics are returned.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">SIZE</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">NONE</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--update-expression" class="dashAnchor" id="update-expression"></a><span class="pre">--update-expression</span></tt> (string)</p>
+<blockquote>
+<div><p>An expression that defines one or more attributes to be updated, the action to be performed on them, and new value(s) for them.</p>
+<p>The following action values are available for <em>update-expression</em> .</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">SET</span></tt> - Adds one or more attributes and values to an item. If any of these attribute already exist, they are replaced by the new values. You can also use <tt class="docutils literal"><span class="pre">SET</span></tt> to add or subtract from an attribute that is of type Number. For example: <tt class="docutils literal"><span class="pre">SET</span> <span class="pre">myNum</span> <span class="pre">=</span> <span class="pre">myNum</span> <span class="pre">+</span> <span class="pre">:val</span></tt>    <tt class="docutils literal"><span class="pre">SET</span></tt> supports the following functions:<ul>
+<li><tt class="docutils literal"><span class="pre">if_not_exists</span> <span class="pre">(path,</span> <span class="pre">operand)</span></tt> - if the item does not contain an attribute at the specified path, then <tt class="docutils literal"><span class="pre">if_not_exists</span></tt> evaluates to operand; otherwise, it evaluates to path. You can use this function to avoid overwriting an attribute that may already be present in the item.</li>
+<li><tt class="docutils literal"><span class="pre">list_append</span> <span class="pre">(operand,</span> <span class="pre">operand)</span></tt> - evaluates to a list with a new element added to it. You can append the new element to the start or the end of the list by reversing the order of the operands.</li>
+</ul>
+</li>
+</ul>
+<p>These function names are case-sensitive.</p>
+<ul>
+<li><p class="first"><tt class="docutils literal"><span class="pre">REMOVE</span></tt> - Removes one or more attributes from an item.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">ADD</span></tt> - Adds the specified value to the item, if the attribute does not already exist. If the attribute does exist, then the behavior of <tt class="docutils literal"><span class="pre">ADD</span></tt> depends on the data type of the attribute:</p>
+<ul class="simple">
+<li>If the existing attribute is a number, and if <em>Value</em> is also a number, then <em>Value</em> is mathematically added to the existing attribute. If <em>Value</em> is a negative number, then it is subtracted from the existing attribute.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you use <tt class="docutils literal"><span class="pre">ADD</span></tt> to increment or decrement a number value for an item that doesn't exist before the update, DynamoDB uses <tt class="docutils literal"><span class="pre">0</span></tt> as the initial value. Similarly, if you use <tt class="docutils literal"><span class="pre">ADD</span></tt> for an existing item to increment or decrement an attribute value that doesn't exist before the update, DynamoDB uses <tt class="docutils literal"><span class="pre">0</span></tt> as the initial value. For example, suppose that the item you want to update doesn't have an attribute named <em>itemcount</em> , but you decide to <tt class="docutils literal"><span class="pre">ADD</span></tt> the number <tt class="docutils literal"><span class="pre">3</span></tt> to this attribute anyway. DynamoDB will create the <em>itemcount</em> attribute, set its initial value to <tt class="docutils literal"><span class="pre">0</span></tt> , and finally add <tt class="docutils literal"><span class="pre">3</span></tt> to it. The result will be a new <em>itemcount</em> attribute in the item, with a value of <tt class="docutils literal"><span class="pre">3</span></tt> .</p>
+</div>
+<ul class="simple">
+<li>If the existing data type is a set and if <em>Value</em> is also a set, then <em>Value</em> is added to the existing set. For example, if the attribute value is the set <tt class="docutils literal"><span class="pre">[1,2]</span></tt> , and the <tt class="docutils literal"><span class="pre">ADD</span></tt> action specified <tt class="docutils literal"><span class="pre">[3]</span></tt> , then the final attribute value is <tt class="docutils literal"><span class="pre">[1,2,3]</span></tt> . An error occurs if an <tt class="docutils literal"><span class="pre">ADD</span></tt> action is specified for a set attribute and the attribute type specified does not match the existing set type.  Both sets must have the same primitive data type. For example, if the existing data type is a set of strings, the <em>Value</em> must also be a set of strings.</li>
+</ul>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The <tt class="docutils literal"><span class="pre">ADD</span></tt> action only supports Number and set data types. In addition, <tt class="docutils literal"><span class="pre">ADD</span></tt> can only be used on top-level attributes, not nested attributes.</p>
+</div>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">DELETE</span></tt> - Deletes an element from a set. If a set of values is specified, then those values are subtracted from the old set. For example, if the attribute value was the set <tt class="docutils literal"><span class="pre">[a,b,c]</span></tt> and the <tt class="docutils literal"><span class="pre">DELETE</span></tt> action specifies <tt class="docutils literal"><span class="pre">[a,c]</span></tt> , then the final attribute value is <tt class="docutils literal"><span class="pre">[b]</span></tt> . Specifying an empty set is an error.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The <tt class="docutils literal"><span class="pre">DELETE</span></tt> action only supports set data types. In addition, <tt class="docutils literal"><span class="pre">DELETE</span></tt> can only be used on top-level attributes, not nested attributes.</p>
+</div>
+<p>You can have many actions in a single expression, such as the following: <tt class="docutils literal"><span class="pre">SET</span> <span class="pre">a=:value1,</span> <span class="pre">b=:value2</span> <span class="pre">DELETE</span> <span class="pre">:value3,</span> <span class="pre">:value4,</span> <span class="pre">:value5</span></tt></p>
+<p>For more information on update expressions, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying Items and Attributes</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><em>update-expression</em> replaces the legacy <em>attribute-updates</em> parameter.</p>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--condition-expression" class="dashAnchor" id="condition-expression"></a><span class="pre">--condition-expression</span></tt> (string)</p>
+<blockquote>
+<div><p>A condition that must be satisfied in order for a conditional update to succeed.</p>
+<p>An expression can contain any of the following:</p>
+<ul class="simple">
+<li>Functions: <tt class="docutils literal"><span class="pre">attribute_exists</span> <span class="pre">|</span> <span class="pre">attribute_not_exists</span> <span class="pre">|</span> <span class="pre">attribute_type</span> <span class="pre">|</span> <span class="pre">contains</span> <span class="pre">|</span> <span class="pre">begins_with</span> <span class="pre">|</span> <span class="pre">size</span></tt>   These function names are case-sensitive.</li>
+<li>Comparison operators: <tt class="docutils literal"><span class="pre">=</span> <span class="pre">|</span> <span class="pre">#x3C;#x3E;</span> <span class="pre">|</span> <span class="pre">#x3C;</span> <span class="pre">|</span> <span class="pre">#x3E;</span> <span class="pre">|</span> <span class="pre">#x3C;=</span> <span class="pre">|</span> <span class="pre">#x3E;=</span> <span class="pre">|</span> <span class="pre">BETWEEN</span> <span class="pre">|</span> <span class="pre">IN</span></tt></li>
+<li>Logical operators: <tt class="docutils literal"><span class="pre">AND</span> <span class="pre">|</span> <span class="pre">OR</span> <span class="pre">|</span> <span class="pre">NOT</span></tt></li>
+</ul>
+<p>For more information on condition expressions, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><em>condition-expression</em> replaces the legacy <em>conditional-operator</em> and <em>Expected</em> parameters.</p>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--expression-attribute-names" class="dashAnchor" id="expression-attribute-names"></a><span class="pre">--expression-attribute-names</span></tt> (map)</p>
+<blockquote>
+<div><p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <em>ExpressionAttributeNames</em> :</p>
+<ul class="simple">
+<li>To access an attribute whose name conflicts with a DynamoDB reserved word.</li>
+<li>To create a placeholder for repeating occurrences of an attribute name in an expression.</li>
+<li>To prevent special characters in an attribute name from being misinterpreted in an expression.</li>
+</ul>
+<p>Use the <strong>#</strong> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Percentile</span></tt></li>
+</ul>
+<p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <em>Amazon DynamoDB Developer Guide</em> ). To work around this, you could specify the following for <em>ExpressionAttributeNames</em> :</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">{"#P":"Percentile"}</span></tt></li>
+</ul>
+<p>You could then use this substitution in an expression, as in this example:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">#P</span> <span class="pre">=</span> <span class="pre">:val</span></tt></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Tokens that begin with the <strong>:</strong> character are <em>expression attribute values</em> , which are placeholders for the actual value at runtime.</p>
+</div>
+<p>For more information on expression attribute names, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">KeyName1</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">KeyName2</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{"string": "string"
+  ...}</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--expression-attribute-values" class="dashAnchor" id="expression-attribute-values"></a><span class="pre">--expression-attribute-values</span></tt> (map)</p>
+<blockquote>
+<div><p>One or more values that can be substituted in an expression.</p>
+<p>Use the <strong>:</strong> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <em>ProductStatus</em> attribute was one of the following:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">Available</span> <span class="pre">|</span> <span class="pre">Backordered</span> <span class="pre">|</span> <span class="pre">Discontinued</span></tt></div></blockquote>
+<p>You would first need to specify <em>ExpressionAttributeValues</em> as follows:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">{</span> <span class="pre">":avail":{"S":"Available"},</span> <span class="pre">":back":{"S":"Backordered"},</span> <span class="pre">":disc":{"S":"Discontinued"}</span> <span class="pre">}</span></tt></div></blockquote>
+<p>You could then use these values in an expression, such as this:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">ProductStatus</span> <span class="pre">IN</span> <span class="pre">(:avail,</span> <span class="pre">:back,</span> <span class="pre">:disc)</span></tt></div></blockquote>
+<p>For more information on expression attribute values, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
+</div></blockquote>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{"string": {
+      "S": "string",
+      "N": "string",
+      "B": blob,
+      "SS": ["string", ...],
+      "NS": ["string", ...],
+      "BS": [blob, ...],
+      "M": {"string": {
+            "S": "string",
+            "N": "string",
+            "B": blob,
+            "SS": ["string", ...],
+            "NS": ["string", ...],
+            "BS": [blob, ...],
+            "M": {"string": { ... recursive ... }
+              ...},
+            "L": [
+              { ... recursive ... }
+              ...
+            ],
+            "NULL": true|false,
+            "BOOL": true|false
+          }
+        ...},
+      "L": [
+        {
+          "S": "string",
+          "N": "string",
+          "B": blob,
+          "SS": ["string", ...],
+          "NS": ["string", ...],
+          "BS": [blob, ...],
+          "M": {"string": { ... recursive ... }
+            ...},
+          "L": [
+            { ... recursive ... }
+            ...
+          ],
+          "NULL": true|false,
+          "BOOL": true|false
+        }
+        ...
+      ],
+      "NULL": true|false,
+      "BOOL": true|false
+    }
+  ...}</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To update an item in a table</strong></p>
+<p>This example updates an item in the <em>MusicCollection</em> table. It adds a new attribute (<em>Year</em>) and modifies the <em>AlbumTitle</em> attribute.  All of the attributes in the item, as they appear after the update, are returned in the response.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws dynamodb update-item --table-name MusicCollection --key file://key.json --update-expression "SET #Y = :y, #AT = :t" --expression-attribute-names file://expression-attribute-names.json --expression-attribute-values file://expression-attribute-values.json  --return-values ALL_NEW</pre>
+</div>
+<p>The arguments for <tt class="docutils literal"><span class="pre">--key</span></tt> are stored in a JSON file, <tt class="docutils literal"><span class="pre">key.json</span></tt>.  Here are the contents of that file:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"Artist"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"S"</span><span class="p">:</span> <span class="s2">"Acme Band"</span><span class="p">},</span>
+    <span class="s2">"SongTitle"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"S"</span><span class="p">:</span> <span class="s2">"Happy Day"</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The arguments for <tt class="docutils literal"><span class="pre">--expression-attribute-names</span></tt> are stored in a JSON file, <tt class="docutils literal"><span class="pre">expression-attribute-names.json</span></tt>.  Here are the contents of that file:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"#Y"</span><span class="p">:</span><span class="s2">"Year"</span><span class="p">,</span> <span class="s2">"#AT"</span><span class="p">:</span><span class="s2">"AlbumTitle"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The arguments for <tt class="docutils literal"><span class="pre">--expression-attribute-values</span></tt> are stored in a JSON file, <tt class="docutils literal"><span class="pre">expression-attribute-values.json</span></tt>.  Here are the contents of that file:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">":y"</span><span class="p">:{</span><span class="s2">"N"</span><span class="p">:</span> <span class="s2">"2015"</span><span class="p">},</span>
+    <span class="s2">":t"</span><span class="p">:{</span><span class="s2">"S"</span><span class="p">:</span> <span class="s2">"Louder Than Ever"</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"Item"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"AlbumTitle"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"S"</span><span class="p">:</span> <span class="s2">"Songs About Life"</span>
+        <span class="p">},</span>
+        <span class="s2">"SongTitle"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"S"</span><span class="p">:</span> <span class="s2">"Happy Day"</span>
+        <span class="p">},</span>
+        <span class="s2">"Artist"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"S"</span><span class="p">:</span> <span class="s2">"Acme Band"</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Attributes -&gt; (map)</p>
+<blockquote>
+<div><p>A map of attribute values as they appeared before the <em>update-item</em> operation. This map only appears if <em>ReturnValues</em> was specified as something other than <tt class="docutils literal"><span class="pre">NONE</span></tt> in the request. Each element represents one attribute.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
+<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<p>S -&gt; (string)</p>
+<blockquote>
+<div>A String data type.</div></blockquote>
+<p>N -&gt; (string)</p>
+<blockquote>
+<div>A Number data type.</div></blockquote>
+<p>B -&gt; (blob)</p>
+<blockquote>
+<div>A Binary data type.</div></blockquote>
+<p>SS -&gt; (list)</p>
+<blockquote>
+<div><p>A String Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>NS -&gt; (list)</p>
+<blockquote>
+<div><p>A Number Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>BS -&gt; (list)</p>
+<blockquote>
+<div><p>A Binary Set data type.</p>
+<p>(blob)</p>
+</div></blockquote>
+<p>M -&gt; (map)</p>
+<blockquote>
+<div><p>A Map of attribute values.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
+<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<p>S -&gt; (string)</p>
+<blockquote>
+<div>A String data type.</div></blockquote>
+<p>N -&gt; (string)</p>
+<blockquote>
+<div>A Number data type.</div></blockquote>
+<p>B -&gt; (blob)</p>
+<blockquote>
+<div>A Binary data type.</div></blockquote>
+<p>SS -&gt; (list)</p>
+<blockquote>
+<div><p>A String Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>NS -&gt; (list)</p>
+<blockquote>
+<div><p>A Number Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>BS -&gt; (list)</p>
+<blockquote>
+<div><p>A Binary Set data type.</p>
+<p>(blob)</p>
+</div></blockquote>
+<p>M -&gt; (map)</p>
+<blockquote>
+<div><p>A Map of attribute values.</p>
+<p>key -&gt; (string)</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>L -&gt; (list)</p>
+<blockquote>
+<div><p>A List of attribute values.</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>NULL -&gt; (boolean)</p>
+<blockquote>
+<div>A Null data type.</div></blockquote>
+<p>BOOL -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean data type.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>L -&gt; (list)</p>
+<blockquote>
+<div><p>A List of attribute values.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
+<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<p>S -&gt; (string)</p>
+<blockquote>
+<div>A String data type.</div></blockquote>
+<p>N -&gt; (string)</p>
+<blockquote>
+<div>A Number data type.</div></blockquote>
+<p>B -&gt; (blob)</p>
+<blockquote>
+<div>A Binary data type.</div></blockquote>
+<p>SS -&gt; (list)</p>
+<blockquote>
+<div><p>A String Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>NS -&gt; (list)</p>
+<blockquote>
+<div><p>A Number Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>BS -&gt; (list)</p>
+<blockquote>
+<div><p>A Binary Set data type.</p>
+<p>(blob)</p>
+</div></blockquote>
+<p>M -&gt; (map)</p>
+<blockquote>
+<div><p>A Map of attribute values.</p>
+<p>key -&gt; (string)</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>L -&gt; (list)</p>
+<blockquote>
+<div><p>A List of attribute values.</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>NULL -&gt; (boolean)</p>
+<blockquote>
+<div>A Null data type.</div></blockquote>
+<p>BOOL -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean data type.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NULL -&gt; (boolean)</p>
+<blockquote>
+<div>A Null data type.</div></blockquote>
+<p>BOOL -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean data type.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ConsumedCapacity -&gt; (structure)</p>
+<blockquote>
+<div><p>The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <em>ConsumedCapacity</em> is only returned if the request asked for it. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
+<p>TableName -&gt; (string)</p>
+<blockquote>
+<div>The name of the table that was affected by the operation.</div></blockquote>
+<p>CapacityUnits -&gt; (double)</p>
+<blockquote>
+<div>The total number of capacity units consumed by the operation.</div></blockquote>
+<p>Table -&gt; (structure)</p>
+<blockquote>
+<div><p>The amount of throughput consumed on the table affected by the operation.</p>
+<p>CapacityUnits -&gt; (double)</p>
+<blockquote>
+<div>The total number of capacity units consumed on a table or an index.</div></blockquote>
+</div></blockquote>
+<p>LocalSecondaryIndexes -&gt; (map)</p>
+<blockquote>
+<div><p>The amount of throughput consumed on each local index affected by the operation.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents the amount of provisioned throughput capacity consumed on a table or an index.</p>
+<p>CapacityUnits -&gt; (double)</p>
+<blockquote>
+<div>The total number of capacity units consumed on a table or an index.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>GlobalSecondaryIndexes -&gt; (map)</p>
+<blockquote>
+<div><p>The amount of throughput consumed on each global index affected by the operation.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents the amount of provisioned throughput capacity consumed on a table or an index.</p>
+<p>CapacityUnits -&gt; (double)</p>
+<blockquote>
+<div>The total number of capacity units consumed on a table or an index.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ItemCollectionMetrics -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about item collections, if any, that were affected by the operation. <em>ItemCollectionMetrics</em> is only returned if the request asked for it. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
+<p>ItemCollectionKey -&gt; (map)</p>
+<blockquote>
+<div><p>The partition key value of the item collection. This value is the same as the partition key value of the item.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
+<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<p>S -&gt; (string)</p>
+<blockquote>
+<div>A String data type.</div></blockquote>
+<p>N -&gt; (string)</p>
+<blockquote>
+<div>A Number data type.</div></blockquote>
+<p>B -&gt; (blob)</p>
+<blockquote>
+<div>A Binary data type.</div></blockquote>
+<p>SS -&gt; (list)</p>
+<blockquote>
+<div><p>A String Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>NS -&gt; (list)</p>
+<blockquote>
+<div><p>A Number Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>BS -&gt; (list)</p>
+<blockquote>
+<div><p>A Binary Set data type.</p>
+<p>(blob)</p>
+</div></blockquote>
+<p>M -&gt; (map)</p>
+<blockquote>
+<div><p>A Map of attribute values.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
+<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<p>S -&gt; (string)</p>
+<blockquote>
+<div>A String data type.</div></blockquote>
+<p>N -&gt; (string)</p>
+<blockquote>
+<div>A Number data type.</div></blockquote>
+<p>B -&gt; (blob)</p>
+<blockquote>
+<div>A Binary data type.</div></blockquote>
+<p>SS -&gt; (list)</p>
+<blockquote>
+<div><p>A String Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>NS -&gt; (list)</p>
+<blockquote>
+<div><p>A Number Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>BS -&gt; (list)</p>
+<blockquote>
+<div><p>A Binary Set data type.</p>
+<p>(blob)</p>
+</div></blockquote>
+<p>M -&gt; (map)</p>
+<blockquote>
+<div><p>A Map of attribute values.</p>
+<p>key -&gt; (string)</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>L -&gt; (list)</p>
+<blockquote>
+<div><p>A List of attribute values.</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>NULL -&gt; (boolean)</p>
+<blockquote>
+<div>A Null data type.</div></blockquote>
+<p>BOOL -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean data type.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>L -&gt; (list)</p>
+<blockquote>
+<div><p>A List of attribute values.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
+<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<p>S -&gt; (string)</p>
+<blockquote>
+<div>A String data type.</div></blockquote>
+<p>N -&gt; (string)</p>
+<blockquote>
+<div>A Number data type.</div></blockquote>
+<p>B -&gt; (blob)</p>
+<blockquote>
+<div>A Binary data type.</div></blockquote>
+<p>SS -&gt; (list)</p>
+<blockquote>
+<div><p>A String Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>NS -&gt; (list)</p>
+<blockquote>
+<div><p>A Number Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>BS -&gt; (list)</p>
+<blockquote>
+<div><p>A Binary Set data type.</p>
+<p>(blob)</p>
+</div></blockquote>
+<p>M -&gt; (map)</p>
+<blockquote>
+<div><p>A Map of attribute values.</p>
+<p>key -&gt; (string)</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>L -&gt; (list)</p>
+<blockquote>
+<div><p>A List of attribute values.</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>NULL -&gt; (boolean)</p>
+<blockquote>
+<div>A Null data type.</div></blockquote>
+<p>BOOL -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean data type.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NULL -&gt; (boolean)</p>
+<blockquote>
+<div>A Null data type.</div></blockquote>
+<p>BOOL -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean data type.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>SizeEstimateRangeGB -&gt; (list)</p>
+<blockquote>
+<div><p>An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
+<p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+<p>(double)</p>
+</div></blockquote>
+</div></blockquote>
 </div>
 </div>
 
@@ -259,6 +1101,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -268,35 +1119,21 @@
           <a href="update-table.html" title="update-table">next</a> |</li>
         <li class="right">
           <a href="scan.html" title="scan">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">dynamodb</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'scan.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'update-table.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/dynamodb/update-item.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:01 GMT -->
 </html>

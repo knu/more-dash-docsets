@@ -1,0 +1,409 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/iot/get-topic-rule.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:20 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-topic-rule &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="iot" href="index.html" />
+    <link rel="next" title="list-ca-certificates" href="list-ca-certificates.html" />
+    <link rel="prev" title="get-registration-code" href="get-registration-code.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="list-ca-certificates.html" title="list-ca-certificates" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="get-registration-code.html" title="get-registration-code" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">iot</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-registration-code.html" title="previous chapter (use the left arrow)">&#8592; get-registration-code</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="list-ca-certificates.html" title="next chapter (use the right arrow)">list-ca-certificates &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-topic-rule</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/iot/get-topic-rule">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-iot"><em>iot</em></a> ]</p>
+<div class="section" id="get-topic-rule">
+<span id="cli-aws-iot-get-topic-rule"></span><h1>get-topic-rule<a name="//apple_ref/cpp/Command/aws iot get-topic-rule" class="dashAnchor" id="aws iot get-topic-rule"></a><a class="headerlink" href="#get-topic-rule" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Gets information about the specified rule.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  get-topic-rule
+--rule-name &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--rule-name" class="dashAnchor" id="rule-name"></a><span class="pre">--rule-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the rule.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>ruleArn -&gt; (string)</p>
+<blockquote>
+<div>The rule ARN.</div></blockquote>
+<p>rule -&gt; (structure)</p>
+<blockquote>
+<div><p>The rule.</p>
+<p>ruleName -&gt; (string)</p>
+<blockquote>
+<div>The name of the rule.</div></blockquote>
+<p>sql -&gt; (string)</p>
+<blockquote>
+<div>The SQL statement used to query the topic. When using a SQL query with multiple lines, be sure to escape the newline characters.</div></blockquote>
+<p>description -&gt; (string)</p>
+<blockquote>
+<div>The description of the rule.</div></blockquote>
+<p>createdAt -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time the rule was created.</div></blockquote>
+<p>actions -&gt; (list)</p>
+<blockquote>
+<div><p>The actions associated with the rule.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the actions associated with a rule.</p>
+<p>dynamoDB -&gt; (structure)</p>
+<blockquote>
+<div><p>Write to a DynamoDB table.</p>
+<p>tableName -&gt; (string)</p>
+<blockquote>
+<div>The name of the DynamoDB table.</div></blockquote>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the IAM role that grants access to the DynamoDB table.</div></blockquote>
+<p>hashKeyField -&gt; (string)</p>
+<blockquote>
+<div>The hash key name.</div></blockquote>
+<p>hashKeyValue -&gt; (string)</p>
+<blockquote>
+<div>The hash key value.</div></blockquote>
+<p>hashKeyType -&gt; (string)</p>
+<blockquote>
+<div>The hash key type. Valid values are "STRING" or "NUMBER"</div></blockquote>
+<p>rangeKeyField -&gt; (string)</p>
+<blockquote>
+<div>The range key name.</div></blockquote>
+<p>rangeKeyValue -&gt; (string)</p>
+<blockquote>
+<div>The range key value.</div></blockquote>
+<p>rangeKeyType -&gt; (string)</p>
+<blockquote>
+<div>The range key type. Valid values are "STRING" or "NUMBER"</div></blockquote>
+<p>payloadField -&gt; (string)</p>
+<blockquote>
+<div>The action payload. This name can be customized.</div></blockquote>
+</div></blockquote>
+<p>lambda -&gt; (structure)</p>
+<blockquote>
+<div><p>Invoke a Lambda function.</p>
+<p>functionArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the Lambda function.</div></blockquote>
+</div></blockquote>
+<p>sns -&gt; (structure)</p>
+<blockquote>
+<div><p>Publish to an Amazon SNS topic.</p>
+<p>targetArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the SNS topic.</div></blockquote>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the IAM role that grants access.</div></blockquote>
+<p>messageFormat -&gt; (string)</p>
+<blockquote>
+<div>The message format of the message to publish. Optional. Accepted values are "JSON" and "RAW". The default value of the attribute is "RAW". SNS uses this setting to determine if the payload should be parsed and relevant platform-specific bits of the payload should be extracted. To read more about SNS message formats, see <a class="reference external" href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html">http://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.</div></blockquote>
+</div></blockquote>
+<p>sqs -&gt; (structure)</p>
+<blockquote>
+<div><p>Publish to an Amazon SQS queue.</p>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the IAM role that grants access.</div></blockquote>
+<p>queueUrl -&gt; (string)</p>
+<blockquote>
+<div>The URL of the Amazon SQS queue.</div></blockquote>
+<p>useBase64 -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether to use Base64 encoding.</div></blockquote>
+</div></blockquote>
+<p>kinesis -&gt; (structure)</p>
+<blockquote>
+<div><p>Write data to an Amazon Kinesis stream.</p>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</div></blockquote>
+<p>streamName -&gt; (string)</p>
+<blockquote>
+<div>The name of the Amazon Kinesis stream.</div></blockquote>
+<p>partitionKey -&gt; (string)</p>
+<blockquote>
+<div>The partition key.</div></blockquote>
+</div></blockquote>
+<p>republish -&gt; (structure)</p>
+<blockquote>
+<div><p>Publish to another MQTT topic.</p>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the IAM role that grants access.</div></blockquote>
+<p>topic -&gt; (string)</p>
+<blockquote>
+<div>The name of the MQTT topic.</div></blockquote>
+</div></blockquote>
+<p>s3 -&gt; (structure)</p>
+<blockquote>
+<div><p>Write to an Amazon S3 bucket.</p>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the IAM role that grants access.</div></blockquote>
+<p>bucketName -&gt; (string)</p>
+<blockquote>
+<div>The Amazon S3 bucket.</div></blockquote>
+<p>key -&gt; (string)</p>
+<blockquote>
+<div>The object key.</div></blockquote>
+</div></blockquote>
+<p>firehose -&gt; (structure)</p>
+<blockquote>
+<div><p>Write to an Amazon Kinesis Firehose stream.</p>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The IAM role that grants access to the Amazon Kinesis Firehost stream.</div></blockquote>
+<p>deliveryStreamName -&gt; (string)</p>
+<blockquote>
+<div>The delivery stream name.</div></blockquote>
+</div></blockquote>
+<p>cloudwatchMetric -&gt; (structure)</p>
+<blockquote>
+<div><p>Capture a CloudWatch metric.</p>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The IAM role that allows access to the CloudWatch metric.</div></blockquote>
+<p>metricNamespace -&gt; (string)</p>
+<blockquote>
+<div>The CloudWatch metric namespace name.</div></blockquote>
+<p>metricName -&gt; (string)</p>
+<blockquote>
+<div>The CloudWatch metric name.</div></blockquote>
+<p>metricValue -&gt; (string)</p>
+<blockquote>
+<div>The CloudWatch metric value.</div></blockquote>
+<p>metricUnit -&gt; (string)</p>
+<blockquote>
+<div>The <a class="reference external" href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric unit</a> supported by CloudWatch.</div></blockquote>
+<p>metricTimestamp -&gt; (string)</p>
+<blockquote>
+<div>An optional <a class="reference external" href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix timestamp</a> .</div></blockquote>
+</div></blockquote>
+<p>cloudwatchAlarm -&gt; (structure)</p>
+<blockquote>
+<div><p>Change the state of a CloudWatch alarm.</p>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The IAM role that allows access to the CloudWatch alarm.</div></blockquote>
+<p>alarmName -&gt; (string)</p>
+<blockquote>
+<div>The CloudWatch alarm name.</div></blockquote>
+<p>stateReason -&gt; (string)</p>
+<blockquote>
+<div>The reason for the alarm change.</div></blockquote>
+<p>stateValue -&gt; (string)</p>
+<blockquote>
+<div>The value of the alarm state. Acceptable values are: OK, ALARM, INSUFFICIENT_DATA.</div></blockquote>
+</div></blockquote>
+<p>elasticsearch -&gt; (structure)</p>
+<blockquote>
+<div><p>Write data to an Amazon Elasticsearch Service; domain.</p>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The IAM role ARN that has access to Elasticsearch.</div></blockquote>
+<p>endpoint -&gt; (string)</p>
+<blockquote>
+<div>The endpoint of your Elasticsearch domain.</div></blockquote>
+<p>index -&gt; (string)</p>
+<blockquote>
+<div>The Elasticsearch index where you want to store your data.</div></blockquote>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div>The type of document you are storing.</div></blockquote>
+<p>id -&gt; (string)</p>
+<blockquote>
+<div>The unique identifier for the document you are storing.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ruleDisabled -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether the rule is disabled.</div></blockquote>
+<p>awsIotSqlVersion -&gt; (string)</p>
+<blockquote>
+<div>The version of the SQL rules engine to use when evaluating the rule.</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-registration-code.html" title="previous chapter (use the left arrow)">&#8592; get-registration-code</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="list-ca-certificates.html" title="next chapter (use the right arrow)">list-ca-certificates &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="list-ca-certificates.html" title="list-ca-certificates">next</a> |</li>
+        <li class="right">
+          <a href="get-registration-code.html" title="get-registration-code">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">iot</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/iot/get-topic-rule.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:20 GMT -->
+</html>

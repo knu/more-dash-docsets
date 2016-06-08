@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cognito-idp/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:23:19 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>cognito-idp &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="add-custom-attributes" href="add-custom-attributes.html" />
+    <link rel="prev" title="update-identity-pool" href="../cognito-identity/update-identity-pool.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="add-custom-attributes.html" title="add-custom-attributes" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="../cognito-identity/update-identity-pool.html" title="update-identity-pool" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../cognito-identity/update-identity-pool.html" title="previous chapter (use the left arrow)">&#8592; update-identity-pool</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="add-custom-attributes.html" title="next chapter (use the right arrow)">add-custom-attributes &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">cognito-idp</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/cognito-idp/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="cognito-idp">
+<span id="cli-aws-cognito-idp"></span><h1>cognito-idp<a name="//apple_ref/cpp/Command/aws cognito-idp" class="dashAnchor" id="aws cognito-idp"></a><a class="headerlink" href="#cognito-idp" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>You can create a user pool in Amazon Cognito Identity to manage directories and users. You can authenticate a user to obtain tokens related to user identity and access policies.</p>
+<p>This API reference provides information about user pools in Amazon Cognito Identity, which is a new capability that is available as a beta.</p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a name="//apple_ref/cpp/Section/Available Commands" class="dashAnchor" id="Available Commands"></a><a class="headerlink" href="#available-commands" title="Permalink to this headline">&#182;</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/add-custom-attributes" class="dashAnchor" id="add-custom-attributes"></a><a class="reference internal" href="add-custom-attributes.html">add-custom-attributes</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/admin-confirm-sign-up" class="dashAnchor" id="admin-confirm-sign-up"></a><a class="reference internal" href="admin-confirm-sign-up.html">admin-confirm-sign-up</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/admin-delete-user" class="dashAnchor" id="admin-delete-user"></a><a class="reference internal" href="admin-delete-user.html">admin-delete-user</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/admin-delete-user-attributes" class="dashAnchor" id="admin-delete-user-attributes"></a><a class="reference internal" href="admin-delete-user-attributes.html">admin-delete-user-attributes</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/admin-disable-user" class="dashAnchor" id="admin-disable-user"></a><a class="reference internal" href="admin-disable-user.html">admin-disable-user</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/admin-enable-user" class="dashAnchor" id="admin-enable-user"></a><a class="reference internal" href="admin-enable-user.html">admin-enable-user</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/admin-get-user" class="dashAnchor" id="admin-get-user"></a><a class="reference internal" href="admin-get-user.html">admin-get-user</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/admin-reset-user-password" class="dashAnchor" id="admin-reset-user-password"></a><a class="reference internal" href="admin-reset-user-password.html">admin-reset-user-password</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/admin-set-user-settings" class="dashAnchor" id="admin-set-user-settings"></a><a class="reference internal" href="admin-set-user-settings.html">admin-set-user-settings</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/admin-update-user-attributes" class="dashAnchor" id="admin-update-user-attributes"></a><a class="reference internal" href="admin-update-user-attributes.html">admin-update-user-attributes</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/change-password" class="dashAnchor" id="change-password"></a><a class="reference internal" href="change-password.html">change-password</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/confirm-forgot-password" class="dashAnchor" id="confirm-forgot-password"></a><a class="reference internal" href="confirm-forgot-password.html">confirm-forgot-password</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/confirm-sign-up" class="dashAnchor" id="confirm-sign-up"></a><a class="reference internal" href="confirm-sign-up.html">confirm-sign-up</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-user-pool" class="dashAnchor" id="create-user-pool"></a><a class="reference internal" href="create-user-pool.html">create-user-pool</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-user-pool-client" class="dashAnchor" id="create-user-pool-client"></a><a class="reference internal" href="create-user-pool-client.html">create-user-pool-client</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-user" class="dashAnchor" id="delete-user"></a><a class="reference internal" href="delete-user.html">delete-user</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-user-attributes" class="dashAnchor" id="delete-user-attributes"></a><a class="reference internal" href="delete-user-attributes.html">delete-user-attributes</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-user-pool" class="dashAnchor" id="delete-user-pool"></a><a class="reference internal" href="delete-user-pool.html">delete-user-pool</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-user-pool-client" class="dashAnchor" id="delete-user-pool-client"></a><a class="reference internal" href="delete-user-pool-client.html">delete-user-pool-client</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-user-pool" class="dashAnchor" id="describe-user-pool"></a><a class="reference internal" href="describe-user-pool.html">describe-user-pool</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-user-pool-client" class="dashAnchor" id="describe-user-pool-client"></a><a class="reference internal" href="describe-user-pool-client.html">describe-user-pool-client</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/forgot-password" class="dashAnchor" id="forgot-password"></a><a class="reference internal" href="forgot-password.html">forgot-password</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-user" class="dashAnchor" id="get-user"></a><a class="reference internal" href="get-user.html">get-user</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-user-attribute-verification-code" class="dashAnchor" id="get-user-attribute-verification-code"></a><a class="reference internal" href="get-user-attribute-verification-code.html">get-user-attribute-verification-code</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-user-pool-clients" class="dashAnchor" id="list-user-pool-clients"></a><a class="reference internal" href="list-user-pool-clients.html">list-user-pool-clients</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-user-pools" class="dashAnchor" id="list-user-pools"></a><a class="reference internal" href="list-user-pools.html">list-user-pools</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-users" class="dashAnchor" id="list-users"></a><a class="reference internal" href="list-users.html">list-users</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/resend-confirmation-code" class="dashAnchor" id="resend-confirmation-code"></a><a class="reference internal" href="resend-confirmation-code.html">resend-confirmation-code</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/set-user-settings" class="dashAnchor" id="set-user-settings"></a><a class="reference internal" href="set-user-settings.html">set-user-settings</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/sign-up" class="dashAnchor" id="sign-up"></a><a class="reference internal" href="sign-up.html">sign-up</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-user-attributes" class="dashAnchor" id="update-user-attributes"></a><a class="reference internal" href="update-user-attributes.html">update-user-attributes</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-user-pool" class="dashAnchor" id="update-user-pool"></a><a class="reference internal" href="update-user-pool.html">update-user-pool</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-user-pool-client" class="dashAnchor" id="update-user-pool-client"></a><a class="reference internal" href="update-user-pool-client.html">update-user-pool-client</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/verify-user-attribute" class="dashAnchor" id="verify-user-attribute"></a><a class="reference internal" href="verify-user-attribute.html">verify-user-attribute</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../cognito-identity/update-identity-pool.html" title="previous chapter (use the left arrow)">&#8592; update-identity-pool</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="add-custom-attributes.html" title="next chapter (use the right arrow)">add-custom-attributes &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="add-custom-attributes.html" title="add-custom-attributes">next</a> |</li>
+        <li class="right">
+          <a href="../cognito-identity/update-identity-pool.html" title="update-identity-pool">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cognito-idp/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:23:33 GMT -->
+</html>

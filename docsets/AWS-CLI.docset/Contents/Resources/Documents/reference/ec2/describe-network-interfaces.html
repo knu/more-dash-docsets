@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/describe-network-interfaces.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>describe-network-interfaces &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>describe-network-interfaces &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="ec2" href="index.html" />
     <link rel="next" title="describe-placement-groups" href="describe-placement-groups.html" />
     <link rel="prev" title="describe-network-interface-attribute" href="describe-network-interface-attribute.html" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -61,7 +64,7 @@
           <a href="describe-placement-groups.html" title="describe-placement-groups" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="describe-network-interface-attribute.html" title="describe-network-interface-attribute" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">ec2</a> &#187;</li> 
       </ul>
@@ -82,59 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">describe-network-interfaces</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
-<li><a class="reference internal" href="#filters">Filters</a><ul>
-<li><a class="reference internal" href="#addresses-association-owner-id">addresses.association.owner-id</a></li>
-<li><a class="reference internal" href="#addresses-association-public-ip">addresses.association.public-ip</a></li>
-<li><a class="reference internal" href="#addresses-primary">addresses.primary</a></li>
-<li><a class="reference internal" href="#addresses-private-ip-address">addresses.private-ip-address</a></li>
-<li><a class="reference internal" href="#association-allocation-id">association.allocation-id</a></li>
-<li><a class="reference internal" href="#association-association-id">association.association-id</a></li>
-<li><a class="reference internal" href="#association-ip-owner-id">association.ip-owner-id</a></li>
-<li><a class="reference internal" href="#association-public-ip">association.public-ip</a></li>
-<li><a class="reference internal" href="#attachment-attach-time">attachment.attach.time</a></li>
-<li><a class="reference internal" href="#attachment-attachment-id">attachment.attachment-id</a></li>
-<li><a class="reference internal" href="#attachment-delete-on-termination">attachment.delete-on-termination</a></li>
-<li><a class="reference internal" href="#attachment-device-index">attachment.device-index</a></li>
-<li><a class="reference internal" href="#attachment-instance-id">attachment.instance-id</a></li>
-<li><a class="reference internal" href="#attachment-instance-owner-id">attachment.instance-owner-id</a></li>
-<li><a class="reference internal" href="#attachment-status">attachment.status</a></li>
-<li><a class="reference internal" href="#availability-zone">availability-zone</a></li>
-<li><a class="reference internal" href="#id1">description</a></li>
-<li><a class="reference internal" href="#group-id">group-id</a></li>
-<li><a class="reference internal" href="#group-name">group-name</a></li>
-<li><a class="reference internal" href="#mac-address">mac-address</a></li>
-<li><a class="reference internal" href="#network-interface-id">network-interface-id</a></li>
-<li><a class="reference internal" href="#owner-id">owner-id</a></li>
-<li><a class="reference internal" href="#private-dns-name">private-dns-name</a></li>
-<li><a class="reference internal" href="#private-ip-address">private-ip-address</a></li>
-<li><a class="reference internal" href="#requester-id">requester-id</a></li>
-<li><a class="reference internal" href="#requester-managed">requester-managed</a></li>
-<li><a class="reference internal" href="#source-dest-check">source-dest-check</a></li>
-<li><a class="reference internal" href="#status">status</a></li>
-<li><a class="reference internal" href="#subnet-id">subnet-id</a></li>
-<li><a class="reference internal" href="#tag-key">tag-key</a></li>
-<li><a class="reference internal" href="#tag-value">tag-value</a></li>
-<li><a class="reference internal" href="#tag">tag:</a></li>
-<li><a class="reference internal" href="#vpc-id">vpc-id</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -143,39 +112,91 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/ec2/describe-network-interfaces">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ec2/describe-network-interfaces">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>ec2</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-ec2"><em>ec2</em></a> ]</p>
 <div class="section" id="describe-network-interfaces">
-<h1>describe-network-interfaces<a class="headerlink" href="#describe-network-interfaces" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-ec2-describe-network-interfaces"></span><h1>describe-network-interfaces<a name="//apple_ref/cpp/Command/aws ec2 describe-network-interfaces" class="dashAnchor" id="aws ec2 describe-network-interfaces"></a><a class="headerlink" href="#describe-network-interfaces" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Describes one or more of your network interfaces.</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  describe-network-interfaces
 [--dry-run | --no-dry-run]
 [--network-interface-ids &lt;value&gt;]
-[--filters &lt;value&gt;]</pre>
+[--filters &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--no-dry-run" class="dashAnchor" id="no-dry-run"></a><span class="pre">--no-dry-run</span></tt> (boolean)</p>
-<p>Checks whether you have the required permissions for the action, without actually making the request. Using this option will result in one of two possible errorresponses. If you have the required permissions, the error response will be <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt>  . Otherwise it will be <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt>  .</p>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><span class="pre">--no-dry-run</span></tt> (boolean)</p>
+<blockquote>
+<div>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt> . Otherwise, it is <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt> .</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--network-interface-ids" class="dashAnchor" id="network-interface-ids"></a><span class="pre">--network-interface-ids</span></tt> (list)</p>
+<blockquote>
+<div><p>One or more network interface IDs.</p>
+<p>Default: Describes all your network interfaces.</p>
+</div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--filters" class="dashAnchor" id="filters"></a><span class="pre">--filters</span></tt> (list)</p>
+<blockquote>
+<div><p>One or more filters.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">addresses.private-ip-address</span></tt> - The private IP addresses associated with the network interface.</li>
+<li><tt class="docutils literal"><span class="pre">addresses.primary</span></tt> - Whether the private IP address is the primary IP address associated with the network interface.</li>
+<li><tt class="docutils literal"><span class="pre">addresses.association.public-ip</span></tt> - The association ID returned when the network interface was associated with the Elastic IP address.</li>
+<li><tt class="docutils literal"><span class="pre">addresses.association.owner-id</span></tt> - The owner ID of the addresses associated with the network interface.</li>
+<li><tt class="docutils literal"><span class="pre">association.association-id</span></tt> - The association ID returned when the network interface was associated with an IP address.</li>
+<li><tt class="docutils literal"><span class="pre">association.allocation-id</span></tt> - The allocation ID returned when you allocated the Elastic IP address for your network interface.</li>
+<li><tt class="docutils literal"><span class="pre">association.ip-owner-id</span></tt> - The owner of the Elastic IP address associated with the network interface.</li>
+<li><tt class="docutils literal"><span class="pre">association.public-ip</span></tt> - The address of the Elastic IP address bound to the network interface.</li>
+<li><tt class="docutils literal"><span class="pre">association.public-dns-name</span></tt> - The public DNS name for the network interface.</li>
+<li><tt class="docutils literal"><span class="pre">attachment.attachment-id</span></tt> - The ID of the interface attachment.</li>
+<li><tt class="docutils literal"><span class="pre">attachment.attach.time</span></tt> - The time that the network interface was attached to an instance.</li>
+<li><tt class="docutils literal"><span class="pre">attachment.delete-on-termination</span></tt> - Indicates whether the attachment is deleted when an instance is terminated.</li>
+<li><tt class="docutils literal"><span class="pre">attachment.device-index</span></tt> - The device index to which the network interface is attached.</li>
+<li><tt class="docutils literal"><span class="pre">attachment.instance-id</span></tt> - The ID of the instance to which the network interface is attached.</li>
+<li><tt class="docutils literal"><span class="pre">attachment.instance-owner-id</span></tt> - The owner ID of the instance to which the network interface is attached.</li>
+<li><tt class="docutils literal"><span class="pre">attachment.nat-gateway-id</span></tt> - The ID of the NAT gateway to which the network interface is attached.</li>
+<li><tt class="docutils literal"><span class="pre">attachment.status</span></tt> - The status of the attachment (<tt class="docutils literal"><span class="pre">attaching</span></tt> | <tt class="docutils literal"><span class="pre">attached</span></tt> | <tt class="docutils literal"><span class="pre">detaching</span></tt> | <tt class="docutils literal"><span class="pre">detached</span></tt> ).</li>
+<li><tt class="docutils literal"><span class="pre">availability-zone</span></tt> - The Availability Zone of the network interface.</li>
+<li><tt class="docutils literal"><span class="pre">description</span></tt> - The description of the network interface.</li>
+<li><tt class="docutils literal"><span class="pre">group-id</span></tt> - The ID of a security group associated with the network interface.</li>
+<li><tt class="docutils literal"><span class="pre">group-name</span></tt> - The name of a security group associated with the network interface.</li>
+<li><tt class="docutils literal"><span class="pre">mac-address</span></tt> - The MAC address of the network interface.</li>
+<li><tt class="docutils literal"><span class="pre">network-interface-id</span></tt> - The ID of the network interface.</li>
+<li><tt class="docutils literal"><span class="pre">owner-id</span></tt> - The AWS account ID of the network interface owner.</li>
+<li><tt class="docutils literal"><span class="pre">private-ip-address</span></tt> - The private IP address or addresses of the network interface.</li>
+<li><tt class="docutils literal"><span class="pre">private-dns-name</span></tt> - The private DNS name of the network interface.</li>
+<li><tt class="docutils literal"><span class="pre">requester-id</span></tt> - The ID of the entity that launched the instance on your behalf (for example, AWS Management Console, Auto Scaling, and so on).</li>
+<li><tt class="docutils literal"><span class="pre">requester-managed</span></tt> - Indicates whether the network interface is being managed by an AWS service (for example, AWS Management Console, Auto Scaling, and so on).</li>
+<li><tt class="docutils literal"><span class="pre">source-desk-check</span></tt> - Indicates whether the network interface performs source/destination checking. A value of <tt class="docutils literal"><span class="pre">true</span></tt> means checking is enabled, and <tt class="docutils literal"><span class="pre">false</span></tt> means checking is disabled. The value must be <tt class="docutils literal"><span class="pre">false</span></tt> for the network interface to perform network address translation (NAT) in your VPC.</li>
+<li><tt class="docutils literal"><span class="pre">status</span></tt> - The status of the network interface. If the network interface is not attached to an instance, the status is <tt class="docutils literal"><span class="pre">available</span></tt> ; if a network interface is attached to an instance the status is <tt class="docutils literal"><span class="pre">in-use</span></tt> .</li>
+<li><tt class="docutils literal"><span class="pre">subnet-id</span></tt> - The ID of the subnet for the network interface.</li>
+<li><tt class="docutils literal"><span class="pre">tag</span></tt> :<em>key</em> =*value* - The key/value combination of a tag assigned to the resource.</li>
+<li><tt class="docutils literal"><span class="pre">tag-key</span></tt> - The key of a tag assigned to the resource. This filter is independent of the <tt class="docutils literal"><span class="pre">tag-value</span></tt> filter. For example, if you use both the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X, see the <tt class="docutils literal"><span class="pre">tag</span></tt> :<em>key</em> =*value* filter.</li>
+<li><tt class="docutils literal"><span class="pre">tag-value</span></tt> - The value of a tag assigned to the resource. This filter is independent of the <tt class="docutils literal"><span class="pre">tag-key</span></tt> filter.</li>
+<li><tt class="docutils literal"><span class="pre">vpc-id</span></tt> - The ID of the VPC for the network interface.</li>
+</ul>
+</div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><pre>  Key value pairs, where values are separated by commas.
---filters Name=string1,Values=string1,string2</pre>
+<div class="highlight-python"><pre>Name=string,Values=string,string ...</pre>
 </div>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><pre>[
@@ -186,143 +207,282 @@
   ...
 ]</pre>
 </div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
 </div>
-<div class="section" id="filters">
-<h2>Filters<a class="headerlink" href="#filters" title="Permalink to this headline">&#182;</a></h2>
-<div class="section" id="addresses-association-owner-id">
-<h3>addresses.association.owner-id<a class="headerlink" href="#addresses-association-owner-id" title="Permalink to this headline">&#182;</a></h3>
-<p>The owner ID of the addresses associated with the network interface.</p>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To describe your network interfaces</strong></p>
+<p>This example describes all your network interfaces.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 describe-network-interfaces</pre>
 </div>
-<div class="section" id="addresses-association-public-ip">
-<h3>addresses.association.public-ip<a class="headerlink" href="#addresses-association-public-ip" title="Permalink to this headline">&#182;</a></h3>
-<p>The association ID returned when the network interface was associated with the Elastic IP address.</p>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"NetworkInterfaces"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">"Status"</span><span class="p">:</span> <span class="s2">"in-use"</span><span class="p">,</span>
+          <span class="s2">"MacAddress"</span><span class="p">:</span> <span class="s2">"02:2f:8f:b0:cf:75"</span><span class="p">,</span>
+          <span class="s2">"SourceDestCheck"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+          <span class="s2">"VpcId"</span><span class="p">:</span> <span class="s2">"vpc-a01106c2"</span><span class="p">,</span>
+          <span class="s2">"Description"</span><span class="p">:</span> <span class="s2">"my network interface"</span><span class="p">,</span>
+          <span class="s2">"Association"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">"PublicIp"</span><span class="p">:</span> <span class="s2">"203.0.113.12"</span><span class="p">,</span>
+              <span class="s2">"AssociationId"</span><span class="p">:</span> <span class="s2">"eipassoc-0fbb766a"</span><span class="p">,</span>
+              <span class="s2">"PublicDnsName"</span><span class="p">:</span> <span class="s2">"ec2-203-0-113-12.compute-1.amazonaws.com"</span><span class="p">,</span>
+              <span class="s2">"IpOwnerId"</span><span class="p">:</span> <span class="s2">"123456789012"</span>
+          <span class="p">},</span>
+          <span class="s2">"NetworkInterfaceId"</span><span class="p">:</span> <span class="s2">"eni-e5aa89a3"</span><span class="p">,</span>
+          <span class="s2">"PrivateIpAddresses"</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                  <span class="s2">"PrivateDnsName"</span><span class="p">:</span> <span class="s2">"ip-10-0-1-17.ec2.internal"</span><span class="p">,</span>
+                  <span class="s2">"Association"</span><span class="p">:</span> <span class="p">{</span>
+                      <span class="s2">"PublicIp"</span><span class="p">:</span> <span class="s2">"203.0.113.12"</span><span class="p">,</span>
+                      <span class="s2">"AssociationId"</span><span class="p">:</span> <span class="s2">"eipassoc-0fbb766a"</span><span class="p">,</span>
+                      <span class="s2">"PublicDnsName"</span><span class="p">:</span> <span class="s2">"ec2-203-0-113-12.compute-1.amazonaws.com"</span><span class="p">,</span>
+                      <span class="s2">"IpOwnerId"</span><span class="p">:</span> <span class="s2">"123456789012"</span>
+                  <span class="p">},</span>
+                  <span class="s2">"Primary"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+                  <span class="s2">"PrivateIpAddress"</span><span class="p">:</span> <span class="s2">"10.0.1.17"</span>
+              <span class="p">}</span>
+          <span class="p">],</span>
+          <span class="s2">"RequesterManaged"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+          <span class="s2">"PrivateDnsName"</span><span class="p">:</span> <span class="s2">"ip-10-0-1-17.ec2.internal"</span><span class="p">,</span>
+          <span class="s2">"AvailabilityZone"</span><span class="p">:</span> <span class="s2">"us-east-1d"</span><span class="p">,</span>
+          <span class="s2">"Attachment"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">"Status"</span><span class="p">:</span> <span class="s2">"attached"</span><span class="p">,</span>
+              <span class="s2">"DeviceIndex"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="s2">"AttachTime"</span><span class="p">:</span> <span class="s2">"2013-11-30T23:36:42.000Z"</span><span class="p">,</span>
+              <span class="s2">"InstanceId"</span><span class="p">:</span> <span class="s2">"i-1234567890abcdef0"</span><span class="p">,</span>
+              <span class="s2">"DeleteOnTermination"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+              <span class="s2">"AttachmentId"</span><span class="p">:</span> <span class="s2">"eni-attach-66c4350a"</span><span class="p">,</span>
+              <span class="s2">"InstanceOwnerId"</span><span class="p">:</span> <span class="s2">"123456789012"</span>
+          <span class="p">},</span>
+          <span class="s2">"Groups"</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                  <span class="s2">"GroupName"</span><span class="p">:</span> <span class="s2">"default"</span><span class="p">,</span>
+                  <span class="s2">"GroupId"</span><span class="p">:</span> <span class="s2">"sg-8637d3e3"</span>
+              <span class="p">}</span>
+          <span class="p">],</span>
+          <span class="s2">"SubnetId"</span><span class="p">:</span> <span class="s2">"subnet-b61f49f0"</span><span class="p">,</span>
+          <span class="s2">"OwnerId"</span><span class="p">:</span> <span class="s2">"123456789012"</span><span class="p">,</span>
+          <span class="s2">"TagSet"</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="s2">"PrivateIpAddress"</span><span class="p">:</span> <span class="s2">"10.0.1.17"</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="s2">"Status"</span><span class="p">:</span> <span class="s2">"in-use"</span><span class="p">,</span>
+          <span class="s2">"MacAddress"</span><span class="p">:</span> <span class="s2">"02:58:f5:ef:4b:06"</span><span class="p">,</span>
+          <span class="s2">"SourceDestCheck"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+          <span class="s2">"VpcId"</span><span class="p">:</span> <span class="s2">"vpc-a01106c2"</span><span class="p">,</span>
+          <span class="s2">"Description"</span><span class="p">:</span> <span class="s2">"Primary network interface"</span><span class="p">,</span>
+          <span class="s2">"Association"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">"PublicIp"</span><span class="p">:</span> <span class="s2">"198.51.100.0"</span><span class="p">,</span>
+              <span class="s2">"IpOwnerId"</span><span class="p">:</span> <span class="s2">"amazon"</span>
+          <span class="p">},</span>
+          <span class="s2">"NetworkInterfaceId"</span><span class="p">:</span> <span class="s2">"eni-f9ba99bf"</span><span class="p">,</span>
+          <span class="s2">"PrivateIpAddresses"</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                  <span class="s2">"Association"</span><span class="p">:</span> <span class="p">{</span>
+                      <span class="s2">"PublicIp"</span><span class="p">:</span> <span class="s2">"198.51.100.0"</span><span class="p">,</span>
+                      <span class="s2">"IpOwnerId"</span><span class="p">:</span> <span class="s2">"amazon"</span>
+                  <span class="p">},</span>
+                  <span class="s2">"Primary"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+                  <span class="s2">"PrivateIpAddress"</span><span class="p">:</span> <span class="s2">"10.0.1.149"</span>
+              <span class="p">}</span>
+          <span class="p">],</span>
+          <span class="s2">"RequesterManaged"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+          <span class="s2">"AvailabilityZone"</span><span class="p">:</span> <span class="s2">"us-east-1d"</span><span class="p">,</span>
+          <span class="s2">"Attachment"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">"Status"</span><span class="p">:</span> <span class="s2">"attached"</span><span class="p">,</span>
+              <span class="s2">"DeviceIndex"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+              <span class="s2">"AttachTime"</span><span class="p">:</span> <span class="s2">"2013-11-30T23:35:33.000Z"</span><span class="p">,</span>
+              <span class="s2">"InstanceId"</span><span class="p">:</span> <span class="s2">"i-0598c7d356eba48d7"</span><span class="p">,</span>
+              <span class="s2">"DeleteOnTermination"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+              <span class="s2">"AttachmentId"</span><span class="p">:</span> <span class="s2">"eni-attach-1b9db777"</span><span class="p">,</span>
+              <span class="s2">"InstanceOwnerId"</span><span class="p">:</span> <span class="s2">"123456789012"</span>
+          <span class="p">},</span>
+          <span class="s2">"Groups"</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                  <span class="s2">"GroupName"</span><span class="p">:</span> <span class="s2">"default"</span><span class="p">,</span>
+                  <span class="s2">"GroupId"</span><span class="p">:</span> <span class="s2">"sg-8637d3e3"</span>
+              <span class="p">}</span>
+          <span class="p">],</span>
+          <span class="s2">"SubnetId"</span><span class="p">:</span> <span class="s2">"subnet-b61f49f0"</span><span class="p">,</span>
+          <span class="s2">"OwnerId"</span><span class="p">:</span> <span class="s2">"123456789012"</span><span class="p">,</span>
+          <span class="s2">"TagSet"</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="s2">"PrivateIpAddress"</span><span class="p">:</span> <span class="s2">"10.0.1.149"</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
 </div>
-<div class="section" id="addresses-primary">
-<h3>addresses.primary<a class="headerlink" href="#addresses-primary" title="Permalink to this headline">&#182;</a></h3>
-<p>Whether the private IP address is the primary IP address associated with the network interface.</p>
 </div>
-<div class="section" id="addresses-private-ip-address">
-<h3>addresses.private-ip-address<a class="headerlink" href="#addresses-private-ip-address" title="Permalink to this headline">&#182;</a></h3>
-<p>The private IP addresses associated with the network interface.</p>
-</div>
-<div class="section" id="association-allocation-id">
-<h3>association.allocation-id<a class="headerlink" href="#association-allocation-id" title="Permalink to this headline">&#182;</a></h3>
-<p>The allocation ID that AWS returned when you allocated the Elastic IP address for your network interface.</p>
-</div>
-<div class="section" id="association-association-id">
-<h3>association.association-id<a class="headerlink" href="#association-association-id" title="Permalink to this headline">&#182;</a></h3>
-<p>The association ID returned when the network interface was associated with an IP address.</p>
-</div>
-<div class="section" id="association-ip-owner-id">
-<h3>association.ip-owner-id<a class="headerlink" href="#association-ip-owner-id" title="Permalink to this headline">&#182;</a></h3>
-<p>The owner of the Elastic IP address associated with the network interface.</p>
-</div>
-<div class="section" id="association-public-ip">
-<h3>association.public-ip<a class="headerlink" href="#association-public-ip" title="Permalink to this headline">&#182;</a></h3>
-<p>The address of the Elastic IP address bound to the network interface.</p>
-</div>
-<div class="section" id="attachment-attach-time">
-<h3>attachment.attach.time<a class="headerlink" href="#attachment-attach-time" title="Permalink to this headline">&#182;</a></h3>
-<p>The time that the network interface was attached to an instance.</p>
-</div>
-<div class="section" id="attachment-attachment-id">
-<h3>attachment.attachment-id<a class="headerlink" href="#attachment-attachment-id" title="Permalink to this headline">&#182;</a></h3>
-<p>The ID of the interface attachment.</p>
-</div>
-<div class="section" id="attachment-delete-on-termination">
-<h3>attachment.delete-on-termination<a class="headerlink" href="#attachment-delete-on-termination" title="Permalink to this headline">&#182;</a></h3>
-<p>Indicates whether the attachment is deleted when an instance is terminated.</p>
-</div>
-<div class="section" id="attachment-device-index">
-<h3>attachment.device-index<a class="headerlink" href="#attachment-device-index" title="Permalink to this headline">&#182;</a></h3>
-<p>The device index to which the network interface is attached.</p>
-</div>
-<div class="section" id="attachment-instance-id">
-<h3>attachment.instance-id<a class="headerlink" href="#attachment-instance-id" title="Permalink to this headline">&#182;</a></h3>
-<p>The ID of the instance to which the network interface is attached.</p>
-</div>
-<div class="section" id="attachment-instance-owner-id">
-<h3>attachment.instance-owner-id<a class="headerlink" href="#attachment-instance-owner-id" title="Permalink to this headline">&#182;</a></h3>
-<p>The owner ID of the instance to which the network interface is attached.</p>
-</div>
-<div class="section" id="attachment-status">
-<h3>attachment.status<a class="headerlink" href="#attachment-status" title="Permalink to this headline">&#182;</a></h3>
-<p>The status of the attachment.</p>
-<p>Valid Values: attaching|attached|detaching|detached</p>
-</div>
-<div class="section" id="availability-zone">
-<h3>availability-zone<a class="headerlink" href="#availability-zone" title="Permalink to this headline">&#182;</a></h3>
-<p>The Availability Zone of the network interface.</p>
-</div>
-<div class="section" id="id1">
-<h3>description<a class="headerlink" href="#id1" title="Permalink to this headline">&#182;</a></h3>
-<p>The description of the network interface.</p>
-</div>
-<div class="section" id="group-id">
-<h3>group-id<a class="headerlink" href="#group-id" title="Permalink to this headline">&#182;</a></h3>
-<p>The ID of a security group associated with the network interface.</p>
-</div>
-<div class="section" id="group-name">
-<h3>group-name<a class="headerlink" href="#group-name" title="Permalink to this headline">&#182;</a></h3>
-<p>The name of a security group associated with the network interface.</p>
-</div>
-<div class="section" id="mac-address">
-<h3>mac-address<a class="headerlink" href="#mac-address" title="Permalink to this headline">&#182;</a></h3>
-<p>The MAC address of the network interface.</p>
-</div>
-<div class="section" id="network-interface-id">
-<h3>network-interface-id<a class="headerlink" href="#network-interface-id" title="Permalink to this headline">&#182;</a></h3>
-<p>The ID of the network interface.</p>
-</div>
-<div class="section" id="owner-id">
-<h3>owner-id<a class="headerlink" href="#owner-id" title="Permalink to this headline">&#182;</a></h3>
-<p>The AWS account ID of the network interface owner.</p>
-</div>
-<div class="section" id="private-dns-name">
-<h3>private-dns-name<a class="headerlink" href="#private-dns-name" title="Permalink to this headline">&#182;</a></h3>
-<p>The private DNS name of the network interface.</p>
-</div>
-<div class="section" id="private-ip-address">
-<h3>private-ip-address<a class="headerlink" href="#private-ip-address" title="Permalink to this headline">&#182;</a></h3>
-<p>The private IP address or addresses of the network interface.</p>
-</div>
-<div class="section" id="requester-id">
-<h3>requester-id<a class="headerlink" href="#requester-id" title="Permalink to this headline">&#182;</a></h3>
-<p>The ID of the entity that launched the instance on your behalf (for example, AWS Management Console, Auto Scaling, and so on).</p>
-</div>
-<div class="section" id="requester-managed">
-<h3>requester-managed<a class="headerlink" href="#requester-managed" title="Permalink to this headline">&#182;</a></h3>
-<p>Indicates whether the network interface is being managed by an AWS service (for example, AWS Management Console, Auto Scaling, and so on).</p>
-</div>
-<div class="section" id="source-dest-check">
-<h3>source-dest-check<a class="headerlink" href="#source-dest-check" title="Permalink to this headline">&#182;</a></h3>
-<p>Indicates whether the network interface performs source/destination checking. A value of true means checking is enabled, and false means checking is disabled. The value must be false for the network interface to perform Network Address Translation (NAT) in your VPC.</p>
-</div>
-<div class="section" id="status">
-<h3>status<a class="headerlink" href="#status" title="Permalink to this headline">&#182;</a></h3>
-<p>The status of the network interface. If the network interface is not attached to an instance, the status shows available ; if a network interface is attached to an instance the status shows in-use .</p>
-<p>Valid Values: available|in-use</p>
-</div>
-<div class="section" id="subnet-id">
-<h3>subnet-id<a class="headerlink" href="#subnet-id" title="Permalink to this headline">&#182;</a></h3>
-<p>The ID of the subnet for the network interface.</p>
-</div>
-<div class="section" id="tag-key">
-<h3>tag-key<a class="headerlink" href="#tag-key" title="Permalink to this headline">&#182;</a></h3>
-<p>The key of a tag assigned to the resource. This filter is independent of the tag-value filter. For example, if you use both the filter " tag-key=Purpose " and the filter " tag-value=X ", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X, see the key filter later in this table.</p>
-</div>
-<div class="section" id="tag-value">
-<h3>tag-value<a class="headerlink" href="#tag-value" title="Permalink to this headline">&#182;</a></h3>
-<p>The value of a tag assigned to the resource. This filter is independent of the tag-key filter.</p>
-</div>
-<div class="section" id="tag">
-<h3>tag:<a class="headerlink" href="#tag" title="Permalink to this headline">&#182;</a></h3>
-<p>--filters the response based on a specific tag/value combination.</p>
-</div>
-<div class="section" id="vpc-id">
-<h3>vpc-id<a class="headerlink" href="#vpc-id" title="Permalink to this headline">&#182;</a></h3>
-<p>The ID of the VPC for the network interface.</p>
-</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>NetworkInterfaces -&gt; (list)</p>
+<blockquote>
+<div><p>Information about one or more network interfaces.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a network interface.</p>
+<p>NetworkInterfaceId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the network interface.</div></blockquote>
+<p>SubnetId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the subnet.</div></blockquote>
+<p>VpcId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the VPC.</div></blockquote>
+<p>AvailabilityZone -&gt; (string)</p>
+<blockquote>
+<div>The Availability Zone.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>A description.</div></blockquote>
+<p>OwnerId -&gt; (string)</p>
+<blockquote>
+<div>The AWS account ID of the owner of the network interface.</div></blockquote>
+<p>RequesterId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the entity that launched the instance on your behalf (for example, AWS Management Console or Auto Scaling).</div></blockquote>
+<p>RequesterManaged -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether the network interface is being managed by AWS.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status of the network interface.</div></blockquote>
+<p>MacAddress -&gt; (string)</p>
+<blockquote>
+<div>The MAC address.</div></blockquote>
+<p>PrivateIpAddress -&gt; (string)</p>
+<blockquote>
+<div>The IP address of the network interface within the subnet.</div></blockquote>
+<p>PrivateDnsName -&gt; (string)</p>
+<blockquote>
+<div>The private DNS name.</div></blockquote>
+<p>SourceDestCheck -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether traffic to or from the instance is validated.</div></blockquote>
+<p>Groups -&gt; (list)</p>
+<blockquote>
+<div><p>Any security groups for the network interface.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a security group.</p>
+<p>GroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the security group.</div></blockquote>
+<p>GroupId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the security group.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Attachment -&gt; (structure)</p>
+<blockquote>
+<div><p>The network interface attachment.</p>
+<p>AttachmentId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the network interface attachment.</div></blockquote>
+<p>InstanceId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the instance.</div></blockquote>
+<p>InstanceOwnerId -&gt; (string)</p>
+<blockquote>
+<div>The AWS account ID of the owner of the instance.</div></blockquote>
+<p>DeviceIndex -&gt; (integer)</p>
+<blockquote>
+<div>The device index of the network interface attachment on the instance.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The attachment state.</div></blockquote>
+<p>AttachTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The timestamp indicating when the attachment initiated.</div></blockquote>
+<p>DeleteOnTermination -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether the network interface is deleted when the instance is terminated.</div></blockquote>
+</div></blockquote>
+<p>Association -&gt; (structure)</p>
+<blockquote>
+<div><p>The association information for an Elastic IP associated with the network interface.</p>
+<p>PublicIp -&gt; (string)</p>
+<blockquote>
+<div>The address of the Elastic IP address bound to the network interface.</div></blockquote>
+<p>PublicDnsName -&gt; (string)</p>
+<blockquote>
+<div>The public DNS name.</div></blockquote>
+<p>IpOwnerId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the Elastic IP address owner.</div></blockquote>
+<p>AllocationId -&gt; (string)</p>
+<blockquote>
+<div>The allocation ID.</div></blockquote>
+<p>AssociationId -&gt; (string)</p>
+<blockquote>
+<div>The association ID.</div></blockquote>
+</div></blockquote>
+<p>TagSet -&gt; (list)</p>
+<blockquote>
+<div><p>Any tags assigned to the network interface.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a tag.</p>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div><p>The key of the tag.</p>
+<p>Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <tt class="docutils literal"><span class="pre">aws:</span></tt></p>
+</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div><p>The value of the tag.</p>
+<p>Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>PrivateIpAddresses -&gt; (list)</p>
+<blockquote>
+<div><p>The private IP addresses associated with the network interface.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the private IP address of a network interface.</p>
+<p>PrivateIpAddress -&gt; (string)</p>
+<blockquote>
+<div>The private IP address.</div></blockquote>
+<p>PrivateDnsName -&gt; (string)</p>
+<blockquote>
+<div>The private DNS name.</div></blockquote>
+<p>Primary -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether this IP address is the primary private IP address of the network interface.</div></blockquote>
+<p>Association -&gt; (structure)</p>
+<blockquote>
+<div><p>The association information for an Elastic IP address associated with the network interface.</p>
+<p>PublicIp -&gt; (string)</p>
+<blockquote>
+<div>The address of the Elastic IP address bound to the network interface.</div></blockquote>
+<p>PublicDnsName -&gt; (string)</p>
+<blockquote>
+<div>The public DNS name.</div></blockquote>
+<p>IpOwnerId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the Elastic IP address owner.</div></blockquote>
+<p>AllocationId -&gt; (string)</p>
+<blockquote>
+<div>The allocation ID.</div></blockquote>
+<p>AssociationId -&gt; (string)</p>
+<blockquote>
+<div>The association ID.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>InterfaceType -&gt; (string)</p>
+<blockquote>
+<div>The type of interface.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
 </div>
 </div>
 
@@ -344,6 +504,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -353,35 +522,21 @@
           <a href="describe-placement-groups.html" title="describe-placement-groups">next</a> |</li>
         <li class="right">
           <a href="describe-network-interface-attribute.html" title="describe-network-interface-attribute">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">ec2</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'describe-network-interface-attribute.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'describe-placement-groups.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/describe-network-interfaces.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
 </html>

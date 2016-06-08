@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/rds/create-db-instance.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:24 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>create-db-instance &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>create-db-instance &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +25,10 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="rds" href="index.html" />
     <link rel="next" title="create-db-instance-read-replica" href="create-db-instance-read-replica.html" />
-    <link rel="prev" title="copy-db-snapshot" href="copy-db-snapshot.html" />
+    <link rel="prev" title="create-db-cluster-snapshot" href="create-db-cluster-snapshot.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
   
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -60,8 +63,8 @@
         <li class="right">
           <a href="create-db-instance-read-replica.html" title="create-db-instance-read-replica" accesskey="N">next</a> |</li>
         <li class="right">
-          <a href="copy-db-snapshot.html" title="copy-db-snapshot" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="create-db-cluster-snapshot.html" title="create-db-cluster-snapshot" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">rds</a> &#187;</li> 
       </ul>
@@ -71,7 +74,7 @@
     <div class="top-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="copy-db-snapshot.html" title="previous chapter (use the left arrow)">&#8592; copy-db-snapshot</a>
+          <a href="create-db-cluster-snapshot.html" title="previous chapter (use the left arrow)">&#8592; create-db-cluster-snapshot</a>
           <span class="divider">/</span>
           
         </li>
@@ -82,23 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">create-db-instance</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,30 +112,35 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/rds/create-db-instance">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/rds/create-db-instance">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>rds</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-rds"><em>rds</em></a> ]</p>
 <div class="section" id="create-db-instance">
-<h1>create-db-instance<a class="headerlink" href="#create-db-instance" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-rds-create-db-instance"></span><h1>create-db-instance<a name="//apple_ref/cpp/Command/aws rds create-db-instance" class="dashAnchor" id="aws rds create-db-instance"></a><a class="headerlink" href="#create-db-instance" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
 <p>Creates a new DB instance.</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  create-db-instance
 [--db-name &lt;value&gt;]
 --db-instance-identifier &lt;value&gt;
---allocated-storage &lt;value&gt;
+[--allocated-storage &lt;value&gt;]
 --db-instance-class &lt;value&gt;
 --engine &lt;value&gt;
---master-username &lt;value&gt;
---master-user-password &lt;value&gt;
+[--master-username &lt;value&gt;]
+[--master-user-password &lt;value&gt;]
 [--db-security-groups &lt;value&gt;]
 [--vpc-security-group-ids &lt;value&gt;]
 [--availability-zone &lt;value&gt;]
@@ -147,35 +157,78 @@
 [--iops &lt;value&gt;]
 [--option-group-name &lt;value&gt;]
 [--character-set-name &lt;value&gt;]
-[--publicly-accessible | --no-publicly-accessible]</pre>
+[--publicly-accessible | --no-publicly-accessible]
+[--tags &lt;value&gt;]
+[--db-cluster-identifier &lt;value&gt;]
+[--storage-type &lt;value&gt;]
+[--tde-credential-arn &lt;value&gt;]
+[--tde-credential-password &lt;value&gt;]
+[--storage-encrypted | --no-storage-encrypted]
+[--kms-key-id &lt;value&gt;]
+[--domain &lt;value&gt;]
+[--copy-tags-to-snapshot | --no-copy-tags-to-snapshot]
+[--monitoring-interval &lt;value&gt;]
+[--monitoring-role-arn &lt;value&gt;]
+[--domain-iam-role-name &lt;value&gt;]
+[--promotion-tier &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--db-name" class="dashAnchor" id="db-name"></a><span class="pre">--db-name</span></tt> (string)</p>
 <blockquote>
 <div><p>The meaning of this parameter differs according to the database engine you use.</p>
-<p><strong>MySQL</strong></p>
-<p>The name of the database to create when the DB Instance is created. If this parameter is not specified, no database is created in the DB Instance.</p>
+<p>Type: db-name</p>
+<blockquote>
+<div><strong>MySQL</strong></div></blockquote>
+<p>The name of the database to create when the DB instance is created. If this parameter is not specified, no database is created in the DB instance.</p>
 <p>Constraints:</p>
 <ul class="simple">
 <li>Must contain 1 to 64 alphanumeric characters</li>
 <li>Cannot be a word reserved by the specified database engine</li>
 </ul>
-<p>Type: String</p>
-<p><strong>Oracle</strong></p>
-<p>The Oracle System ID (SID) of the created DB Instance.</p>
+<blockquote>
+<div><strong>MariaDB</strong></div></blockquote>
+<p>The name of the database to create when the DB instance is created. If this parameter is not specified, no database is created in the DB instance.</p>
+<p>Constraints:</p>
+<ul class="simple">
+<li>Must contain 1 to 64 alphanumeric characters</li>
+<li>Cannot be a word reserved by the specified database engine</li>
+</ul>
+<blockquote>
+<div><strong>PostgreSQL</strong></div></blockquote>
+<p>The name of the database to create when the DB instance is created. If this parameter is not specified, the default "postgres" database is created in the DB instance.</p>
+<p>Constraints:</p>
+<ul class="simple">
+<li>Must contain 1 to 63 alphanumeric characters</li>
+<li>Must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits (0-9).</li>
+<li>Cannot be a word reserved by the specified database engine</li>
+</ul>
+<blockquote>
+<div><strong>Oracle</strong></div></blockquote>
+<p>The Oracle System ID (SID) of the created DB instance.</p>
 <p>Default: <tt class="docutils literal"><span class="pre">ORCL</span></tt></p>
 <p>Constraints:</p>
 <ul class="simple">
 <li>Cannot be longer than 8 characters</li>
 </ul>
-<p><strong>SQL Server</strong></p>
+<blockquote>
+<div><strong>SQL Server</strong></div></blockquote>
 <p>Not applicable. Must be null.</p>
+<blockquote>
+<div><strong>Amazon Aurora</strong></div></blockquote>
+<p>The name of the database to create when the primary instance of the DB cluster is created. If this parameter is not specified, no database is created in the DB instance.</p>
+<p>Constraints:</p>
+<ul class="simple">
+<li>Must contain 1 to 64 alphanumeric characters</li>
+<li>Cannot be a word reserved by the specified database engine</li>
+</ul>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--db-instance-identifier" class="dashAnchor" id="db-instance-identifier"></a><span class="pre">--db-instance-identifier</span></tt> (string)</p>
 <blockquote>
-<div><p>The DB Instance identifier. This parameter is stored as a lowercase string.</p>
+<div><p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
 <p>Constraints:</p>
 <ul class="simple">
 <li>Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL Server).</li>
@@ -187,100 +240,140 @@
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--allocated-storage" class="dashAnchor" id="allocated-storage"></a><span class="pre">--allocated-storage</span></tt> (integer)</p>
 <blockquote>
 <div><p>The amount of storage (in gigabytes) to be initially allocated for the database instance.</p>
-<p><strong>MySQL</strong></p>
-<p>Constraints: Must be an integer from 5 to 1024.</p>
 <p>Type: Integer</p>
-<p><strong>Oracle</strong></p>
-<p>Constraints: Must be an integer from 10 to 1024.</p>
-<p><strong>SQL Server</strong></p>
-<p>Constraints: Must be an integer from 200 to 1024 (Standard Edition and Enterprise Edition) or from 30 to 1024 (Express Edition and Web Edition)</p>
+<blockquote>
+<div><strong>MySQL</strong></div></blockquote>
+<p>Constraints: Must be an integer from 5 to 6144.</p>
+<blockquote>
+<div><strong>MariaDB</strong></div></blockquote>
+<p>Constraints: Must be an integer from 5 to 6144.</p>
+<blockquote>
+<div><strong>PostgreSQL</strong></div></blockquote>
+<p>Constraints: Must be an integer from 5 to 6144.</p>
+<blockquote>
+<div><strong>Oracle</strong></div></blockquote>
+<p>Constraints: Must be an integer from 10 to 6144.</p>
+<blockquote>
+<div><strong>SQL Server</strong></div></blockquote>
+<p>Constraints: Must be an integer from 200 to 4096 (Standard Edition and Enterprise Edition) or from 20 to 4096 (Express Edition and Web Edition)</p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--db-instance-class" class="dashAnchor" id="db-instance-class"></a><span class="pre">--db-instance-class</span></tt> (string)</p>
 <blockquote>
-<div><p>The compute and memory capacity of the DB Instance.</p>
-<p>Valid Values: <tt class="docutils literal"><span class="pre">db.t1.micro</span> <span class="pre">|</span> <span class="pre">db.m1.small</span> <span class="pre">|</span> <span class="pre">db.m1.medium</span> <span class="pre">|</span> <span class="pre">db.m1.large</span> <span class="pre">|</span> <span class="pre">db.m1.xlarge</span> <span class="pre">|</span> <span class="pre">db.m2.xlarge</span> <span class="pre">|db.m2.2xlarge</span> <span class="pre">|</span> <span class="pre">db.m2.4xlarge</span></tt></p>
+<div><p>The compute and memory capacity of the DB instance.</p>
+<p>Valid Values: <tt class="docutils literal"><span class="pre">db.t1.micro</span> <span class="pre">|</span> <span class="pre">db.m1.small</span> <span class="pre">|</span> <span class="pre">db.m1.medium</span> <span class="pre">|</span> <span class="pre">db.m1.large</span> <span class="pre">|</span> <span class="pre">db.m1.xlarge</span> <span class="pre">|</span> <span class="pre">db.m2.xlarge</span> <span class="pre">|db.m2.2xlarge</span> <span class="pre">|</span> <span class="pre">db.m2.4xlarge</span> <span class="pre">|</span> <span class="pre">db.m3.medium</span> <span class="pre">|</span> <span class="pre">db.m3.large</span> <span class="pre">|</span> <span class="pre">db.m3.xlarge</span> <span class="pre">|</span> <span class="pre">db.m3.2xlarge</span> <span class="pre">|</span> <span class="pre">db.m4.large</span> <span class="pre">|</span> <span class="pre">db.m4.xlarge</span> <span class="pre">|</span> <span class="pre">db.m4.2xlarge</span> <span class="pre">|</span> <span class="pre">db.m4.4xlarge</span> <span class="pre">|</span> <span class="pre">db.m4.10xlarge</span> <span class="pre">|</span> <span class="pre">db.r3.large</span> <span class="pre">|</span> <span class="pre">db.r3.xlarge</span> <span class="pre">|</span> <span class="pre">db.r3.2xlarge</span> <span class="pre">|</span> <span class="pre">db.r3.4xlarge</span> <span class="pre">|</span> <span class="pre">db.r3.8xlarge</span> <span class="pre">|</span> <span class="pre">db.t2.micro</span> <span class="pre">|</span> <span class="pre">db.t2.small</span> <span class="pre">|</span> <span class="pre">db.t2.medium</span> <span class="pre">|</span> <span class="pre">db.t2.large</span></tt></p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--engine" class="dashAnchor" id="engine"></a><span class="pre">--engine</span></tt> (string)</p>
 <blockquote>
 <div><p>The name of the database engine to be used for this instance.</p>
-<p>Valid Values: <tt class="docutils literal"><span class="pre">MySQL</span></tt>  | <tt class="docutils literal"><span class="pre">oracle-se1</span></tt>  | <tt class="docutils literal"><span class="pre">oracle-se</span></tt>  | <tt class="docutils literal"><span class="pre">oracle-ee</span></tt>  | <tt class="docutils literal"><span class="pre">sqlserver-ee</span></tt>  | <tt class="docutils literal"><span class="pre">sqlserver-se</span></tt>  | <tt class="docutils literal"><span class="pre">sqlserver-ex</span></tt>  | <tt class="docutils literal"><span class="pre">sqlserver-web</span></tt></p>
+<p>Valid Values: <tt class="docutils literal"><span class="pre">MySQL</span></tt> | <tt class="docutils literal"><span class="pre">mariadb</span></tt> | <tt class="docutils literal"><span class="pre">oracle-se1</span></tt> | <tt class="docutils literal"><span class="pre">oracle-se</span></tt> | <tt class="docutils literal"><span class="pre">oracle-ee</span></tt> | <tt class="docutils literal"><span class="pre">sqlserver-ee</span></tt> | <tt class="docutils literal"><span class="pre">sqlserver-se</span></tt> | <tt class="docutils literal"><span class="pre">sqlserver-ex</span></tt> | <tt class="docutils literal"><span class="pre">sqlserver-web</span></tt> | <tt class="docutils literal"><span class="pre">postgres</span></tt> | <tt class="docutils literal"><span class="pre">aurora</span></tt></p>
+<p>Not every database engine is available for every AWS region.</p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--master-username" class="dashAnchor" id="master-username"></a><span class="pre">--master-username</span></tt> (string)</p>
 <blockquote>
-<div><p>The name of master user for the client DB Instance.</p>
-<p><strong>MySQL</strong></p>
+<div><p>The name of master user for the client DB instance.</p>
+<blockquote>
+<div><strong>MySQL</strong></div></blockquote>
 <p>Constraints:</p>
 <ul class="simple">
 <li>Must be 1 to 16 alphanumeric characters.</li>
 <li>First character must be a letter.</li>
 <li>Cannot be a reserved word for the chosen database engine.</li>
 </ul>
-<p>Type: String</p>
-<p><strong>Oracle</strong></p>
+<blockquote>
+<div><strong>MariaDB</strong></div></blockquote>
+<p>Constraints:</p>
+<ul class="simple">
+<li>Must be 1 to 16 alphanumeric characters.</li>
+<li>Cannot be a reserved word for the chosen database engine.</li>
+</ul>
+<p>Type: db-name</p>
+<blockquote>
+<div><strong>Oracle</strong></div></blockquote>
 <p>Constraints:</p>
 <ul class="simple">
 <li>Must be 1 to 30 alphanumeric characters.</li>
 <li>First character must be a letter.</li>
 <li>Cannot be a reserved word for the chosen database engine.</li>
 </ul>
-<p><strong>SQL Server</strong></p>
+<blockquote>
+<div><strong>SQL Server</strong></div></blockquote>
 <p>Constraints:</p>
 <ul class="simple">
 <li>Must be 1 to 128 alphanumeric characters.</li>
 <li>First character must be a letter.</li>
 <li>Cannot be a reserved word for the chosen database engine.</li>
 </ul>
+<blockquote>
+<div><strong>PostgreSQL</strong></div></blockquote>
+<p>Constraints:</p>
+<ul class="simple">
+<li>Must be 1 to 63 alphanumeric characters.</li>
+<li>First character must be a letter.</li>
+<li>Cannot be a reserved word for the chosen database engine.</li>
+</ul>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--master-user-password" class="dashAnchor" id="master-user-password"></a><span class="pre">--master-user-password</span></tt> (string)</p>
 <blockquote>
-<div><p>The password for the master database user. Can be any printable ASCII character except "/", "", or "@".</p>
-<p>Type: String</p>
-<p><strong>MySQL</strong></p>
-<p>Constraints: Must contain from 8 to 41 alphanumeric characters.</p>
-<p><strong>Oracle</strong></p>
-<p>Constraints: Must contain from 8 to 30 alphanumeric characters.</p>
-<p><strong>SQL Server</strong></p>
-<p>Constraints: Must contain from 8 to 128 alphanumeric characters.</p>
+<div><p>The password for the master database user. Can be any printable ASCII character except "/", """, or "@".</p>
+<p>Type: db-name</p>
+<blockquote>
+<div><strong>MySQL</strong></div></blockquote>
+<p>Constraints: Must contain from 8 to 41 characters.</p>
+<blockquote>
+<div><strong>MariaDB</strong></div></blockquote>
+<p>Constraints: Must contain from 8 to 41 characters.</p>
+<blockquote>
+<div><strong>Oracle</strong></div></blockquote>
+<p>Constraints: Must contain from 8 to 30 characters.</p>
+<blockquote>
+<div><strong>SQL Server</strong></div></blockquote>
+<p>Constraints: Must contain from 8 to 128 characters.</p>
+<blockquote>
+<div><strong>PostgreSQL</strong></div></blockquote>
+<p>Constraints: Must contain from 8 to 128 characters.</p>
+<blockquote>
+<div><strong>Amazon Aurora</strong></div></blockquote>
+<p>Constraints: Must contain from 8 to 41 characters.</p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--db-security-groups" class="dashAnchor" id="db-security-groups"></a><span class="pre">--db-security-groups</span></tt> (list)</p>
 <blockquote>
-<div><p>A list of DB Security Groups to associate with this DB Instance.</p>
-<p>Default: The default DB Security Group for the database engine.</p>
+<div><p>A list of DB security groups to associate with this DB instance.</p>
+<p>Default: The default DB security group for the database engine.</p>
 </div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--vpc-security-group-ids" class="dashAnchor" id="vpc-security-group-ids"></a><span class="pre">--vpc-security-group-ids</span></tt> (list)</p>
 <blockquote>
-<div><p>A list of EC2 VPC Security Groups to associate with this DB Instance.</p>
-<p>Default: The default EC2 VPC Security Group for the DB Subnet group's VPC.</p>
+<div><p>A list of EC2 VPC security groups to associate with this DB instance.</p>
+<p>Default: The default EC2 VPC security group for the DB subnet group's VPC.</p>
 </div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--availability-zone" class="dashAnchor" id="availability-zone"></a><span class="pre">--availability-zone</span></tt> (string)</p>
 <blockquote>
-<div><p>The EC2 Availability Zone that the database instance will be created in.</p>
+<div><p>The EC2 Availability Zone that the database instance will be created in. For information on regions and Availability Zones, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a> .</p>
 <p>Default: A random, system-chosen Availability Zone in the endpoint's region.</p>
 <p>Example: <tt class="docutils literal"><span class="pre">us-east-1d</span></tt></p>
-<p>Constraint: The --availability-zone parameter cannot be specified if the --multi-az parameter is set to <tt class="docutils literal"><span class="pre">true</span></tt>  . The specified Availability Zone must be in the same region as the current endpoint.</p>
+<p>Constraint: The AvailabilityZone parameter cannot be specified if the MultiAZ parameter is set to <tt class="docutils literal"><span class="pre">true</span></tt> . The specified Availability Zone must be in the same region as the current endpoint.</p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--db-subnet-group-name" class="dashAnchor" id="db-subnet-group-name"></a><span class="pre">--db-subnet-group-name</span></tt> (string)</p>
 <blockquote>
-<div><p>A DB Subnet Group to associate with this DB Instance.</p>
-<p>If there is no DB Subnet Group, then it is a non-VPC DB instance.</p>
+<div><p>A DB subnet group to associate with this DB instance.</p>
+<p>If there is no DB subnet group, then it is a non-VPC DB instance.</p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--preferred-maintenance-window" class="dashAnchor" id="preferred-maintenance-window"></a><span class="pre">--preferred-maintenance-window</span></tt> (string)</p>
 <blockquote>
-<div><p>The weekly time range (in UTC) during which system maintenance can occur.</p>
+<div><p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBMaintenance.html">DB Instance Maintenance</a> .</p>
 <p>Format: <tt class="docutils literal"><span class="pre">ddd:hh24:mi-ddd:hh24:mi</span></tt></p>
-<p>Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day of the week. To see the time blocks available, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">Adjusting the Preferred Maintenance Window</a> in the Amazon RDS User Guide.</p>
+<p>Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day of the week. To see the time blocks available, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">Adjusting the Preferred Maintenance Window</a> in the <em>Amazon RDS User Guide.</em></p>
 <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
 <p>Constraints: Minimum 30-minute window.</p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--db-parameter-group-name" class="dashAnchor" id="db-parameter-group-name"></a><span class="pre">--db-parameter-group-name</span></tt> (string)</p>
 <blockquote>
-<div><p>The name of the DB Parameter Group to associate with this DB instance. If this argument is omitted, the default DBParameterGroup for the specified engine will be used.</p>
+<div><p>The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default DBParameterGroup for the specified engine will be used.</p>
 <p>Constraints:</p>
 <ul class="simple">
 <li>Must be 1 to 255 alphanumeric characters</li>
@@ -294,85 +387,662 @@
 <p>Default: 1</p>
 <p>Constraints:</p>
 <ul class="simple">
-<li>Must be a value from 0 to 8</li>
-<li>Cannot be set to 0 if the DB Instance is a master instance with read replicas</li>
+<li>Must be a value from 0 to 35</li>
+<li>Cannot be set to 0 if the DB instance is a source to Read Replicas</li>
 </ul>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--preferred-backup-window" class="dashAnchor" id="preferred-backup-window"></a><span class="pre">--preferred-backup-window</span></tt> (string)</p>
 <blockquote>
-<div><p>The daily time range during which automated backups are created if automated backups are enabled, using the <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--backup-retention-period" class="dashAnchor" id="backup-retention-period"></a><span class="pre">--backup-retention-period</span></tt>  parameter.</p>
-<p>Default: A 30-minute window selected at random from an 8-hour block of time per region. The following list shows the time blocks for each region from which the default backup windows are assigned.</p>
+<div><p>The daily time range during which automated backups are created if automated backups are enabled, using the <tt class="docutils literal"><span class="pre">BackupRetentionPeriod</span></tt> parameter. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.BackingUpAndRestoringAmazonRDSInstances.html">DB Instance Backups</a> .</p>
+<p>Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time blocks available, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">Adjusting the Preferred Maintenance Window</a> in the <em>Amazon RDS User Guide.</em></p>
+<p>Constraints:</p>
 <ul class="simple">
-<li><strong>US-East (Northern Virginia) Region:</strong> 03:00-11:00 UTC</li>
-<li><strong>US-West (Northern California) Region:</strong> 06:00-14:00 UTC</li>
-<li><strong>EU (Ireland) Region:</strong> 22:00-06:00 UTC</li>
-<li><strong>Asia Pacific (Singapore) Region:</strong> 14:00-22:00 UTC</li>
-<li><strong>Asia Pacific (Tokyo) Region:</strong> 17:00-03:00 UTC</li>
+<li>Must be in the format <tt class="docutils literal"><span class="pre">hh24:mi-hh24:mi</span></tt> .</li>
+<li>Times should be in Universal Coordinated Time (UTC).</li>
+<li>Must not conflict with the preferred maintenance window.</li>
+<li>Must be at least 30 minutes.</li>
 </ul>
-<p>Constraints: Must be in the format <tt class="docutils literal"><span class="pre">hh24:mi-hh24:mi</span></tt>  . Times should be Universal Time Coordinated (UTC). Must not conflict with the preferred maintenance window. Must be at least 30 minutes.</p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--port" class="dashAnchor" id="port"></a><span class="pre">--port</span></tt> (integer)</p>
 <blockquote>
 <div><p>The port number on which the database accepts connections.</p>
-<p><strong>MySQL</strong></p>
+<blockquote>
+<div><strong>MySQL</strong></div></blockquote>
 <p>Default: <tt class="docutils literal"><span class="pre">3306</span></tt></p>
 <p>Valid Values: <tt class="docutils literal"><span class="pre">1150-65535</span></tt></p>
 <p>Type: Integer</p>
-<p><strong>Oracle</strong></p>
+<blockquote>
+<div><strong>MariaDB</strong></div></blockquote>
+<p>Default: <tt class="docutils literal"><span class="pre">3306</span></tt></p>
+<p>Valid Values: <tt class="docutils literal"><span class="pre">1150-65535</span></tt></p>
+<p>Type: Integer</p>
+<blockquote>
+<div><strong>PostgreSQL</strong></div></blockquote>
+<p>Default: <tt class="docutils literal"><span class="pre">5432</span></tt></p>
+<p>Valid Values: <tt class="docutils literal"><span class="pre">1150-65535</span></tt></p>
+<p>Type: Integer</p>
+<blockquote>
+<div><strong>Oracle</strong></div></blockquote>
 <p>Default: <tt class="docutils literal"><span class="pre">1521</span></tt></p>
 <p>Valid Values: <tt class="docutils literal"><span class="pre">1150-65535</span></tt></p>
-<p><strong>SQL Server</strong></p>
-<p>Default: <tt class="docutils literal"><span class="pre">1433</span></tt></p>
-<p>Valid Values: <tt class="docutils literal"><span class="pre">1150-65535</span></tt>  except for <tt class="docutils literal"><span class="pre">1434</span></tt>  and <tt class="docutils literal"><span class="pre">3389</span></tt>  .</p>
-</div></blockquote>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--multi-az" class="dashAnchor" id="multi-az"></a><span class="pre">--multi-az</span></tt> | <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--no-multi-az" class="dashAnchor" id="no-multi-az"></a><span class="pre">--no-multi-az</span></tt> (boolean)</p>
 <blockquote>
-<div>Specifies if the DB Instance is a Multi-AZ deployment. You cannot set the --availability-zone parameter if the --multi-az parameter is set to true.</div></blockquote>
+<div><strong>SQL Server</strong></div></blockquote>
+<p>Default: <tt class="docutils literal"><span class="pre">1433</span></tt></p>
+<p>Valid Values: <tt class="docutils literal"><span class="pre">1150-65535</span></tt> except for <tt class="docutils literal"><span class="pre">1434</span></tt> , <tt class="docutils literal"><span class="pre">3389</span></tt> , <tt class="docutils literal"><span class="pre">47001</span></tt> , <tt class="docutils literal"><span class="pre">49152</span></tt> , and <tt class="docutils literal"><span class="pre">49152</span></tt> through <tt class="docutils literal"><span class="pre">49156</span></tt> .</p>
+<blockquote>
+<div><strong>Amazon Aurora</strong></div></blockquote>
+<p>Default: <tt class="docutils literal"><span class="pre">3306</span></tt></p>
+<p>Valid Values: <tt class="docutils literal"><span class="pre">1150-65535</span></tt></p>
+<p>Type: Integer</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--multi-az" class="dashAnchor" id="multi-az"></a><span class="pre">--multi-az</span></tt> | <tt class="docutils literal"><span class="pre">--no-multi-az</span></tt> (boolean)</p>
+<blockquote>
+<div>Specifies if the DB instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if the MultiAZ parameter is set to true. Do not set this value if you want a Multi-AZ deployment for a SQL Server DB instance. Multi-AZ for SQL Server is set using the Mirroring option in an option group.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--engine-version" class="dashAnchor" id="engine-version"></a><span class="pre">--engine-version</span></tt> (string)</p>
 <blockquote>
 <div><p>The version number of the database engine to use.</p>
-<p><strong>MySQL</strong></p>
-<p>Example: <tt class="docutils literal"><span class="pre">5.1.42</span></tt></p>
-<p>Type: String</p>
-<p><strong>Oracle</strong></p>
-<p>Example: <tt class="docutils literal"><span class="pre">11.2.0.2.v2</span></tt></p>
-<p>Type: String</p>
-<p><strong>SQL Server</strong></p>
-<p>Example: <tt class="docutils literal"><span class="pre">10.50.2789.0.v1</span></tt></p>
-</div></blockquote>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--auto-minor-version-upgrade" class="dashAnchor" id="auto-minor-version-upgrade"></a><span class="pre">--auto-minor-version-upgrade</span></tt> | <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--no-auto-minor-version-upgrade" class="dashAnchor" id="no-auto-minor-version-upgrade"></a><span class="pre">--no-auto-minor-version-upgrade</span></tt> (boolean)</p>
+<p>The following are the database engines and major and minor versions that are available with Amazon RDS. Not every database engine is available for every AWS region.</p>
 <blockquote>
-<div><p>Indicates that minor engine upgrades will be applied automatically to the DB Instance during the maintenance window.</p>
+<div><strong>Amazon Aurora</strong></div></blockquote>
+<ul class="simple">
+<li><strong>Version 5.6 (only available in AWS regions ap-northeast-1, ap-northeast-2, ap-southeast-2, eu-west-1, us-east-1, us-west-2):</strong>  <tt class="docutils literal"><span class="pre">5.6.10a</span></tt></li>
+</ul>
+<blockquote>
+<div><strong>MariaDB</strong></div></blockquote>
+<ul class="simple">
+<li><strong>Version 10.0 (available in all AWS regions):</strong>  <tt class="docutils literal"><span class="pre">10.0.17</span> <span class="pre">|</span> <span class="pre">10.0.24</span></tt></li>
+</ul>
+<blockquote>
+<div><strong>Microsoft SQL Server Enterprise Edition (sqlserver-ee)</strong></div></blockquote>
+<ul class="simple">
+<li><strong>Version 11.00 (available in all AWS regions):</strong>  <tt class="docutils literal"><span class="pre">11.00.2100.60.v1</span> <span class="pre">|</span> <span class="pre">11.00.5058.0.v1</span> <span class="pre">|</span> <span class="pre">11.00.6020.0.v1</span></tt></li>
+<li><strong>Version 10.50 (available in all AWS regions):</strong>  <tt class="docutils literal"><span class="pre">10.50.2789.0.v1</span> <span class="pre">|</span> <span class="pre">10.50.6000.34.v1</span> <span class="pre">|</span> <span class="pre">10.50.6529.0.v1</span></tt></li>
+</ul>
+<blockquote>
+<div><strong>Microsoft SQL Server Express Edition (sqlserver-ex)</strong></div></blockquote>
+<ul class="simple">
+<li><strong>Version 12.00 (available in all AWS regions):</strong>  <tt class="docutils literal"><span class="pre">12.00.4422.0.v1</span></tt></li>
+<li><strong>Version 11.00 (available in all AWS regions):</strong>  <tt class="docutils literal"><span class="pre">11.00.2100.60.v1</span> <span class="pre">|</span> <span class="pre">11.00.5058.0.v1</span> <span class="pre">|</span> <span class="pre">11.00.6020.0.v1</span></tt></li>
+<li><strong>Version 10.50 (available in all AWS regions):</strong>  <tt class="docutils literal"><span class="pre">10.50.2789.0.v1</span> <span class="pre">|</span> <span class="pre">10.50.6000.34.v1</span> <span class="pre">|</span> <span class="pre">10.50.6529.0.v1</span></tt></li>
+</ul>
+<blockquote>
+<div><strong>Microsoft SQL Server Standard Edition (sqlserver-se)</strong></div></blockquote>
+<ul class="simple">
+<li><strong>Version 12.00 (available in all AWS regions):</strong>  <tt class="docutils literal"><span class="pre">12.00.4422.0.v1</span></tt></li>
+<li><strong>Version 11.00 (available in all AWS regions):</strong>  <tt class="docutils literal"><span class="pre">11.00.2100.60.v1</span> <span class="pre">|</span> <span class="pre">11.00.5058.0.v1</span> <span class="pre">|</span> <span class="pre">11.00.6020.0.v1</span></tt></li>
+<li><strong>Version 10.50 (available in all AWS regions):</strong>  <tt class="docutils literal"><span class="pre">10.50.2789.0.v1</span> <span class="pre">|</span> <span class="pre">10.50.6000.34.v1</span> <span class="pre">|</span> <span class="pre">10.50.6529.0.v1</span></tt></li>
+</ul>
+<blockquote>
+<div><strong>Microsoft SQL Server Web Edition (sqlserver-web)</strong></div></blockquote>
+<ul class="simple">
+<li><strong>Version 12.00 (available in all AWS regions):</strong>  <tt class="docutils literal"><span class="pre">12.00.4422.0.v1</span></tt></li>
+<li><strong>Version 11.00 (available in all AWS regions):</strong>  <tt class="docutils literal"><span class="pre">11.00.2100.60.v1</span> <span class="pre">|</span> <span class="pre">11.00.5058.0.v1</span> <span class="pre">|</span> <span class="pre">11.00.6020.0.v1</span></tt></li>
+<li><strong>Version 10.50 (available in all AWS regions):</strong>  <tt class="docutils literal"><span class="pre">10.50.2789.0.v1</span> <span class="pre">|</span> <span class="pre">10.50.6000.34.v1</span> <span class="pre">|</span> <span class="pre">10.50.6529.0.v1</span></tt></li>
+</ul>
+<blockquote>
+<div><strong>MySQL</strong></div></blockquote>
+<ul class="simple">
+<li><strong>Version 5.7 (available in all AWS regions):</strong>  <tt class="docutils literal"><span class="pre">5.7.10</span> <span class="pre">|</span> <span class="pre">5.7.11</span></tt></li>
+<li><strong>Version 5.6 (available in all AWS regions except ap-northeast-2):</strong>  <tt class="docutils literal"><span class="pre">5.6.19a</span> <span class="pre">|</span> <span class="pre">5.6.19b</span> <span class="pre">|</span> <span class="pre">5.6.21</span> <span class="pre">|</span> <span class="pre">5.6.21b</span> <span class="pre">|</span> <span class="pre">5.6.22</span></tt></li>
+<li><strong>Version 5.6 (available in all AWS regions):</strong>  <tt class="docutils literal"><span class="pre">5.6.23</span> <span class="pre">|</span> <span class="pre">5.6.27</span> <span class="pre">|</span> <span class="pre">5.6.29</span></tt></li>
+<li><strong>Version 5.5 (available in all AWS regions except eu-central-1, ap-northeast-2):</strong>  <tt class="docutils literal"><span class="pre">5.5.40</span> <span class="pre">|</span> <span class="pre">5.5.40a</span></tt></li>
+<li><strong>Version 5.5 (available in all AWS regions except ap-northeast-2):</strong>  <tt class="docutils literal"><span class="pre">5.5.40b</span> <span class="pre">|</span> <span class="pre">5.5.41</span></tt></li>
+<li><strong>Version 5.5 (available in all AWS regions):</strong>  <tt class="docutils literal"><span class="pre">5.5.42</span> <span class="pre">|</span> <span class="pre">5.5.46</span></tt></li>
+<li><strong>Version 5.1 (available in all AWS regions except eu-central-1, ap-northeast-2):</strong>  <tt class="docutils literal"><span class="pre">5.1.73a</span> <span class="pre">|</span> <span class="pre">5.1.73b</span></tt></li>
+</ul>
+<blockquote>
+<div><strong>Oracle Database Enterprise Edition (oracle-ee)</strong></div></blockquote>
+<ul class="simple">
+<li><strong>Version 12.1 (available in all AWS regions except ap-northeast-2):</strong>  <tt class="docutils literal"><span class="pre">12.1.0.1.v1</span> <span class="pre">|</span> <span class="pre">12.1.0.1.v2</span></tt></li>
+<li><strong>Version 12.1 (available in all AWS regions except ap-northeast-2, us-gov-west-1):</strong>  <tt class="docutils literal"><span class="pre">12.1.0.1.v3</span> <span class="pre">|</span> <span class="pre">12.1.0.1.v4</span></tt></li>
+<li><strong>Version 12.1 (available in all AWS regions):</strong>  <tt class="docutils literal"><span class="pre">12.1.0.2.v1</span></tt></li>
+<li><strong>Version 12.1 (available in all AWS regions except us-gov-west-1):</strong>  <tt class="docutils literal"><span class="pre">12.1.0.2.v2</span> <span class="pre">|</span> <span class="pre">12.1.0.2.v3</span></tt></li>
+<li><strong>Version 11.2 (available in all AWS regions except eu-central-1, ap-northeast-2):</strong>  <tt class="docutils literal"><span class="pre">11.2.0.2.v3</span> <span class="pre">|</span> <span class="pre">11.2.0.2.v4</span> <span class="pre">|</span> <span class="pre">11.2.0.2.v5</span> <span class="pre">|</span> <span class="pre">11.2.0.2.v6</span> <span class="pre">|</span> <span class="pre">11.2.0.2.v7</span></tt></li>
+<li><strong>Version 11.2 (available in all AWS regions except ap-northeast-2):</strong>  <tt class="docutils literal"><span class="pre">11.2.0.3.v1</span> <span class="pre">|</span> <span class="pre">11.2.0.3.v2</span> <span class="pre">|</span> <span class="pre">11.2.0.3.v3</span></tt></li>
+<li><strong>Version 11.2 (available in all AWS regions except ap-northeast-2, us-gov-west-1):</strong>  <tt class="docutils literal"><span class="pre">11.2.0.3.v4</span></tt></li>
+<li><strong>Version 11.2 (available in all AWS regions):</strong>  <tt class="docutils literal"><span class="pre">11.2.0.4.v1</span> <span class="pre">|</span> <span class="pre">11.2.0.4.v3</span> <span class="pre">|</span> <span class="pre">11.2.0.4.v4</span></tt></li>
+<li><strong>Version 11.2 (available in all AWS regions except us-gov-west-1):</strong>  <tt class="docutils literal"><span class="pre">11.2.0.4.v5</span> <span class="pre">|</span> <span class="pre">11.2.0.4.v6</span> <span class="pre">|</span> <span class="pre">11.2.0.4.v7</span></tt></li>
+</ul>
+<blockquote>
+<div><strong>Oracle Database Standard Edition (oracle-se)</strong></div></blockquote>
+<ul class="simple">
+<li><strong>Version 12.1 (available in all AWS regions except ap-northeast-2):</strong>  <tt class="docutils literal"><span class="pre">12.1.0.1.v1</span> <span class="pre">|</span> <span class="pre">12.1.0.1.v2</span></tt></li>
+<li><strong>Version 12.1 (available in all AWS regions except ap-northeast-2, us-gov-west-1):</strong>  <tt class="docutils literal"><span class="pre">12.1.0.1.v3</span> <span class="pre">|</span> <span class="pre">12.1.0.1.v4</span></tt></li>
+<li><strong>Version 11.2 (available in all AWS regions except eu-central-1, ap-northeast-2):</strong>  <tt class="docutils literal"><span class="pre">11.2.0.2.v3</span> <span class="pre">|</span> <span class="pre">11.2.0.2.v4</span> <span class="pre">|</span> <span class="pre">11.2.0.2.v5</span> <span class="pre">|</span> <span class="pre">11.2.0.2.v6</span> <span class="pre">|</span> <span class="pre">11.2.0.2.v7</span></tt></li>
+<li><strong>Version 11.2 (available in all AWS regions except ap-northeast-2):</strong>  <tt class="docutils literal"><span class="pre">11.2.0.3.v1</span> <span class="pre">|</span> <span class="pre">11.2.0.3.v2</span> <span class="pre">|</span> <span class="pre">11.2.0.3.v3</span></tt></li>
+<li><strong>Version 11.2 (available in all AWS regions except ap-northeast-2, us-gov-west-1):</strong>  <tt class="docutils literal"><span class="pre">11.2.0.3.v4</span></tt></li>
+<li><strong>Version 11.2 (available in all AWS regions):</strong>  <tt class="docutils literal"><span class="pre">11.2.0.4.v1</span> <span class="pre">|</span> <span class="pre">11.2.0.4.v3</span> <span class="pre">|</span> <span class="pre">11.2.0.4.v4</span></tt></li>
+<li><strong>Version 11.2 (available in all AWS regions except us-gov-west-1):</strong>  <tt class="docutils literal"><span class="pre">11.2.0.4.v5</span> <span class="pre">|</span> <span class="pre">11.2.0.4.v6</span> <span class="pre">|</span> <span class="pre">11.2.0.4.v7</span></tt></li>
+</ul>
+<blockquote>
+<div><strong>Oracle Database Standard Edition One (oracle-se1)</strong></div></blockquote>
+<ul class="simple">
+<li><strong>Version 12.1 (available in all AWS regions except ap-northeast-2):</strong>  <tt class="docutils literal"><span class="pre">12.1.0.1.v1</span> <span class="pre">|</span> <span class="pre">12.1.0.1.v2</span></tt></li>
+<li><strong>Version 12.1 (available in all AWS regions except ap-northeast-2, us-gov-west-1):</strong>  <tt class="docutils literal"><span class="pre">12.1.0.1.v3</span> <span class="pre">|</span> <span class="pre">12.1.0.1.v4</span></tt></li>
+<li><strong>Version 11.2 (available in all AWS regions except eu-central-1, ap-northeast-2):</strong>  <tt class="docutils literal"><span class="pre">11.2.0.2.v3</span> <span class="pre">|</span> <span class="pre">11.2.0.2.v4</span> <span class="pre">|</span> <span class="pre">11.2.0.2.v5</span> <span class="pre">|</span> <span class="pre">11.2.0.2.v6</span> <span class="pre">|</span> <span class="pre">11.2.0.2.v7</span></tt></li>
+<li><strong>Version 11.2 (available in all AWS regions except ap-northeast-2):</strong>  <tt class="docutils literal"><span class="pre">11.2.0.3.v1</span> <span class="pre">|</span> <span class="pre">11.2.0.3.v2</span> <span class="pre">|</span> <span class="pre">11.2.0.3.v3</span></tt></li>
+<li><strong>Version 11.2 (available in all AWS regions except ap-northeast-2, us-gov-west-1):</strong>  <tt class="docutils literal"><span class="pre">11.2.0.3.v4</span></tt></li>
+<li><strong>Version 11.2 (available in all AWS regions):</strong>  <tt class="docutils literal"><span class="pre">11.2.0.4.v1</span> <span class="pre">|</span> <span class="pre">11.2.0.4.v3</span> <span class="pre">|</span> <span class="pre">11.2.0.4.v4</span></tt></li>
+<li><strong>Version 11.2 (available in all AWS regions except us-gov-west-1):</strong>  <tt class="docutils literal"><span class="pre">11.2.0.4.v5</span> <span class="pre">|</span> <span class="pre">11.2.0.4.v6</span> <span class="pre">|</span> <span class="pre">11.2.0.4.v7</span></tt></li>
+</ul>
+<blockquote>
+<div><strong>Oracle Database Standard Edition Two (oracle-se2)</strong></div></blockquote>
+<ul class="simple">
+<li><strong>Version 12.1 (available in all AWS regions except us-gov-west-1):</strong>  <tt class="docutils literal"><span class="pre">12.1.0.2.v2</span> <span class="pre">|</span> <span class="pre">12.1.0.2.v3</span></tt></li>
+</ul>
+<blockquote>
+<div><strong>PostgreSQL</strong></div></blockquote>
+<ul class="simple">
+<li><strong>Version 9.5 (available in all AWS regions except us-gov-west-1):</strong>  <tt class="docutils literal"><span class="pre">9.5.2</span></tt></li>
+<li><strong>Version 9.4 (available in all AWS regions):</strong>  <tt class="docutils literal"><span class="pre">9.4.1</span> <span class="pre">|</span> <span class="pre">9.4.4</span> <span class="pre">|</span> <span class="pre">9.4.5</span></tt></li>
+<li><strong>Version 9.4 (available in all AWS regions except us-gov-west-1):</strong>  <tt class="docutils literal"><span class="pre">9.4.7</span></tt></li>
+<li><strong>Version 9.3 (available in all AWS regions except eu-central-1, ap-northeast-2):</strong>  <tt class="docutils literal"><span class="pre">9.3.1</span> <span class="pre">|</span> <span class="pre">9.3.2</span></tt></li>
+<li><strong>Version 9.3 (available in all AWS regions except ap-northeast-2):</strong>  <tt class="docutils literal"><span class="pre">9.3.10</span> <span class="pre">|</span> <span class="pre">9.3.3</span> <span class="pre">|</span> <span class="pre">9.3.5</span> <span class="pre">|</span> <span class="pre">9.3.6</span> <span class="pre">|</span> <span class="pre">9.3.9</span></tt></li>
+<li><strong>Version 9.3 (available in all AWS regions except ap-northeast-2, us-gov-west-1):</strong>  <tt class="docutils literal"><span class="pre">9.3.12</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--auto-minor-version-upgrade" class="dashAnchor" id="auto-minor-version-upgrade"></a><span class="pre">--auto-minor-version-upgrade</span></tt> | <tt class="docutils literal"><span class="pre">--no-auto-minor-version-upgrade</span></tt> (boolean)</p>
+<blockquote>
+<div><p>Indicates that minor engine upgrades will be applied automatically to the DB instance during the maintenance window.</p>
 <p>Default: <tt class="docutils literal"><span class="pre">true</span></tt></p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--license-model" class="dashAnchor" id="license-model"></a><span class="pre">--license-model</span></tt> (string)</p>
 <blockquote>
-<div><p>License model information for this DB Instance.</p>
-<p>Valid values: <tt class="docutils literal"><span class="pre">license-included</span></tt>  | <tt class="docutils literal"><span class="pre">bring-your-own-license</span></tt>  | <tt class="docutils literal"><span class="pre">general-public-license</span></tt></p>
+<div><p>License model information for this DB instance.</p>
+<p>Valid values: <tt class="docutils literal"><span class="pre">license-included</span></tt> | <tt class="docutils literal"><span class="pre">bring-your-own-license</span></tt> | <tt class="docutils literal"><span class="pre">general-public-license</span></tt></p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--iops" class="dashAnchor" id="iops"></a><span class="pre">--iops</span></tt> (integer)</p>
 <blockquote>
-<div><p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB Instance.</p>
-<p>Constraints: Must be an integer greater than 1000.</p>
+<div><p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance.</p>
+<p>Constraints: Must be a multiple between 3 and 10 of the storage amount for the DB instance. Must also be an integer multiple of 1000. For example, if the size of your DB instance is 500 GB, then your <tt class="docutils literal"><span class="pre">Iops</span></tt> value can be 2000, 3000, 4000, or 5000.</p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--option-group-name" class="dashAnchor" id="option-group-name"></a><span class="pre">--option-group-name</span></tt> (string)</p>
 <blockquote>
-<div><p>Indicates that the DB Instance should be associated with the specified option group.</p>
-<blockquote>
-<div>Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option group, and that option group cannot be removed from a DB instance once it is associated with a DB instance</div></blockquote>
+<div><p>Indicates that the DB instance should be associated with the specified option group.</p>
+<p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option group, and that option group cannot be removed from a DB instance once it is associated with a DB instance</p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--character-set-name" class="dashAnchor" id="character-set-name"></a><span class="pre">--character-set-name</span></tt> (string)</p>
 <blockquote>
-<div>For supported engines, indicates that the DB Instance should be associated with the specified CharacterSet.</div></blockquote>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--publicly-accessible" class="dashAnchor" id="publicly-accessible"></a><span class="pre">--publicly-accessible</span></tt> | <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--no-publicly-accessible" class="dashAnchor" id="no-publicly-accessible"></a><span class="pre">--no-publicly-accessible</span></tt> (boolean)</p>
+<div>For supported engines, indicates that the DB instance should be associated with the specified CharacterSet.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--publicly-accessible" class="dashAnchor" id="publicly-accessible"></a><span class="pre">--publicly-accessible</span></tt> | <tt class="docutils literal"><span class="pre">--no-publicly-accessible</span></tt> (boolean)</p>
 <blockquote>
-<div><p>Specifies the accessibility options for the DB Instance. A value of true specifies an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an internal instance with a DNS name that resolves to a private IP address.</p>
+<div><p>Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an internal instance with a DNS name that resolves to a private IP address.</p>
 <p>Default: The default behavior varies depending on whether a VPC has been requested or not. The following list shows the default behavior in each case.</p>
 <ul class="simple">
 <li><strong>Default VPC:</strong> true</li>
 <li><strong>VPC:</strong> false</li>
 </ul>
-<p>If no DB subnet group has been specified as part of the request and the --publicly-accessible value has not been set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as part of the request and the --publicly-accessible value has not been set, the DB instance will be private.</p>
+<p>If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been set, the DB instance will be private.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--tags" class="dashAnchor" id="tags"></a><span class="pre">--tags</span></tt> (list)</p>
+<blockquote>
+<div>A list of tags.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Key=string,Value=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    "Key": "string",
+    "Value": "string"
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--db-cluster-identifier" class="dashAnchor" id="db-cluster-identifier"></a><span class="pre">--db-cluster-identifier</span></tt> (string)</p>
+<blockquote>
+<div><p>The identifier of the DB cluster that the instance will belong to.</p>
+<p>For information on creating a DB cluster, see  create-db-cluster .</p>
+<p>Type: db-name</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--storage-type" class="dashAnchor" id="storage-type"></a><span class="pre">--storage-type</span></tt> (string)</p>
+<blockquote>
+<div><p>Specifies the storage type to be associated with the DB instance.</p>
+<p>Valid values: <tt class="docutils literal"><span class="pre">standard</span> <span class="pre">|</span> <span class="pre">gp2</span> <span class="pre">|</span> <span class="pre">io1</span></tt></p>
+<p>If you specify <tt class="docutils literal"><span class="pre">io1</span></tt> , you must also include a value for the <tt class="docutils literal"><span class="pre">Iops</span></tt> parameter.</p>
+<p>Default: <tt class="docutils literal"><span class="pre">io1</span></tt> if the <tt class="docutils literal"><span class="pre">Iops</span></tt> parameter is specified; otherwise <tt class="docutils literal"><span class="pre">standard</span></tt></p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--tde-credential-arn" class="dashAnchor" id="tde-credential-arn"></a><span class="pre">--tde-credential-arn</span></tt> (string)</p>
+<blockquote>
+<div>The ARN from the Key Store with which to associate the instance for TDE encryption.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--tde-credential-password" class="dashAnchor" id="tde-credential-password"></a><span class="pre">--tde-credential-password</span></tt> (string)</p>
+<blockquote>
+<div>The password for the given ARN from the Key Store in order to access the device.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--storage-encrypted" class="dashAnchor" id="storage-encrypted"></a><span class="pre">--storage-encrypted</span></tt> | <tt class="docutils literal"><span class="pre">--no-storage-encrypted</span></tt> (boolean)</p>
+<blockquote>
+<div><p>Specifies whether the DB instance is encrypted.</p>
+<p>Default: false</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--kms-key-id" class="dashAnchor" id="kms-key-id"></a><span class="pre">--kms-key-id</span></tt> (string)</p>
+<blockquote>
+<div><p>The KMS key identifier for an encrypted DB instance.</p>
+<p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB instance, then you can use the KMS key alias instead of the ARN for the KM encryption key.</p>
+<p>If the <tt class="docutils literal"><span class="pre">StorageEncrypted</span></tt> parameter is true, and you do not specify a value for the <tt class="docutils literal"><span class="pre">KmsKeyId</span></tt> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS region.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--domain" class="dashAnchor" id="domain"></a><span class="pre">--domain</span></tt> (string)</p>
+<blockquote>
+<div>Specify the Active Directory Domain to create the instance in.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--copy-tags-to-snapshot" class="dashAnchor" id="copy-tags-to-snapshot"></a><span class="pre">--copy-tags-to-snapshot</span></tt> | <tt class="docutils literal"><span class="pre">--no-copy-tags-to-snapshot</span></tt> (boolean)</p>
+<blockquote>
+<div>True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default is false.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--monitoring-interval" class="dashAnchor" id="monitoring-interval"></a><span class="pre">--monitoring-interval</span></tt> (integer)</p>
+<blockquote>
+<div><p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
+<p>If <tt class="docutils literal"><span class="pre">MonitoringRoleArn</span></tt> is specified, then you must also set <tt class="docutils literal"><span class="pre">MonitoringInterval</span></tt> to a value other than 0.</p>
+<p>Valid Values: <tt class="docutils literal"><span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">5,</span> <span class="pre">10,</span> <span class="pre">15,</span> <span class="pre">30,</span> <span class="pre">60</span></tt></p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--monitoring-role-arn" class="dashAnchor" id="monitoring-role-arn"></a><span class="pre">--monitoring-role-arn</span></tt> (string)</p>
+<blockquote>
+<div><p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch Logs. For example, <tt class="docutils literal"><span class="pre">arn:aws:iam:123456789012:role/emaccess</span></tt> . For information on creating a monitoring role, go to <a class="reference external" href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To create an IAM role for Amazon RDS Enhanced Monitoring</a> .</p>
+<p>If <tt class="docutils literal"><span class="pre">MonitoringInterval</span></tt> is set to a value other than 0, then you must supply a <tt class="docutils literal"><span class="pre">MonitoringRoleArn</span></tt> value.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--domain-iam-role-name" class="dashAnchor" id="domain-iam-role-name"></a><span class="pre">--domain-iam-role-name</span></tt> (string)</p>
+<blockquote>
+<div>Specify the name of the IAM role to be used when making API calls to the Directory Service.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--promotion-tier" class="dashAnchor" id="promotion-tier"></a><span class="pre">--promotion-tier</span></tt> (integer)</p>
+<blockquote>
+<div><p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">Fault Tolerance for an Aurora DB Cluster</a> .</p>
+<p>Default: 1</p>
+<p>Valid Values: 0 - 15</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To create an Amazon RDS DB instance</strong></p>
+<p>The following <tt class="docutils literal"><span class="pre">create-db-instance</span></tt> command launches a new Amazon RDS DB instance:</p>
+<div class="highlight-python"><pre>aws rds create-db-instance --db-instance-identifier sg-cli-test \
+--allocated-storage 20 --db-instance-class db.m1.small --engine mysql \
+--master-username myawsuser --master-user-password myawsuser</pre>
+</div>
+<p>In the preceding example, the DB instance is created with 20 Gb of standard storage and has a DB engine class of
+db.m1.small. The master username and master password are provided.</p>
+<p>This command outputs a JSON block that indicates that the DB instance was created:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"DBInstance"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"Engine"</span><span class="p">:</span> <span class="s2">"mysql"</span><span class="p">,</span>
+        <span class="s2">"MultiAZ"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+        <span class="s2">"DBSecurityGroups"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">"Status"</span><span class="p">:</span> <span class="s2">"active"</span><span class="p">,</span>
+                <span class="s2">"DBSecurityGroupName"</span><span class="p">:</span> <span class="s2">"default"</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">"DBInstanceStatus"</span><span class="p">:</span> <span class="s2">"creating"</span><span class="p">,</span>
+        <span class="s2">"DBParameterGroups"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">"DBParameterGroupName"</span><span class="p">:</span> <span class="s2">"default.mysql5.6"</span><span class="p">,</span>
+                <span class="s2">"ParameterApplyStatus"</span><span class="p">:</span> <span class="s2">"in-sync"</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">"MasterUsername"</span><span class="p">:</span> <span class="s2">"myawsuser"</span><span class="p">,</span>
+        <span class="s2">"LicenseModel"</span><span class="p">:</span> <span class="s2">"general-public-license"</span><span class="p">,</span>
+        <span class="s2">"OptionGroupMemberships"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">"Status"</span><span class="p">:</span> <span class="s2">"in-sync"</span><span class="p">,</span>
+                <span class="s2">"OptionGroupName"</span><span class="p">:</span> <span class="s2">"default:mysql-5-6"</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">"AutoMinorVersionUpgrade"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">"PreferredBackupWindow"</span><span class="p">:</span> <span class="s2">"11:58-12:28"</span><span class="p">,</span>
+        <span class="s2">"VpcSecurityGroups"</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">"PubliclyAccessible"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">"PreferredMaintenanceWindow"</span><span class="p">:</span> <span class="s2">"sat:13:10-sat:13:40"</span><span class="p">,</span>
+        <span class="s2">"AllocatedStorage"</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">"EngineVersion"</span><span class="p">:</span> <span class="s2">"5.6.13"</span><span class="p">,</span>
+        <span class="s2">"DBInstanceClass"</span><span class="p">:</span> <span class="s2">"db.m1.small"</span><span class="p">,</span>
+        <span class="s2">"ReadReplicaDBInstanceIdentifiers"</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">"BackupRetentionPeriod"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"DBInstanceIdentifier"</span><span class="p">:</span> <span class="s2">"sg-cli-test"</span><span class="p">,</span>
+        <span class="s2">"PendingModifiedValues"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"MasterUserPassword"</span><span class="p">:</span> <span class="s2">"****"</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>DBInstance -&gt; (structure)</p>
+<blockquote>
+<div><p>Contains the result of a successful invocation of the following actions:</p>
+<ul class="simple">
+<li>create-db-instance</li>
+<li>delete-db-instance</li>
+<li>modify-db-instance</li>
+</ul>
+<p>This data type is used as a response element in the  describe-db-instances action.</p>
+<p>DBInstanceIdentifier -&gt; (string)</p>
+<blockquote>
+<div>Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</div></blockquote>
+<p>DBInstanceClass -&gt; (string)</p>
+<blockquote>
+<div>Contains the name of the compute and memory capacity class of the DB instance.</div></blockquote>
+<p>Engine -&gt; (string)</p>
+<blockquote>
+<div>Provides the name of the database engine to be used for this DB instance.</div></blockquote>
+<p>DBInstanceStatus -&gt; (string)</p>
+<blockquote>
+<div>Specifies the current state of this database.</div></blockquote>
+<p>MasterUsername -&gt; (string)</p>
+<blockquote>
+<div>Contains the master username for the DB instance.</div></blockquote>
+<p>DBName -&gt; (string)</p>
+<blockquote>
+<div><p>The meaning of this parameter differs according to the database engine you use. For example, this value returns MySQL, MariaDB, or PostgreSQL information when returning values from create-db-instance-read-replica since Read Replicas are only supported for these engines.</p>
+<blockquote>
+<div><strong>MySQL, MariaDB, SQL Server, PostgreSQL, Amazon Aurora</strong></div></blockquote>
+<p>Contains the name of the initial database of this instance that was provided at create time, if one was specified when the DB instance was created. This same name is returned for the life of the DB instance.</p>
+<p>Type: db-name</p>
+<blockquote>
+<div><strong>Oracle</strong></div></blockquote>
+<p>Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do not apply to an Oracle DB instance.</p>
+</div></blockquote>
+<p>Endpoint -&gt; (structure)</p>
+<blockquote>
+<div><p>Specifies the connection endpoint.</p>
+<p>Address -&gt; (string)</p>
+<blockquote>
+<div>Specifies the DNS address of the DB instance.</div></blockquote>
+<p>Port -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the port that the database engine is listening on.</div></blockquote>
+<p>HostedZoneId -&gt; (string)</p>
+<blockquote>
+<div>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</div></blockquote>
+</div></blockquote>
+<p>AllocatedStorage -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the allocated storage size specified in gigabytes.</div></blockquote>
+<p>InstanceCreateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>Provides the date and time the DB instance was created.</div></blockquote>
+<p>PreferredBackupWindow -&gt; (string)</p>
+<blockquote>
+<div>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <tt class="docutils literal"><span class="pre">BackupRetentionPeriod</span></tt> .</div></blockquote>
+<p>BackupRetentionPeriod -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the number of days for which automatic DB snapshots are retained.</div></blockquote>
+<p>DBSecurityGroups -&gt; (list)</p>
+<blockquote>
+<div><p>Provides List of DB security group elements containing only <tt class="docutils literal"><span class="pre">DBSecurityGroup.Name</span></tt> and <tt class="docutils literal"><span class="pre">DBSecurityGroup.Status</span></tt> subelements.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>This data type is used as a response element in the following actions:</p>
+<ul class="simple">
+<li>modify-db-instance</li>
+<li>reboot-db-instance</li>
+<li>restore-db-instance-from-db-snapshot</li>
+<li>restore-db-instance-to-point-in-time</li>
+</ul>
+<p>DBSecurityGroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the DB security group.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status of the DB security group.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>VpcSecurityGroups -&gt; (list)</p>
+<blockquote>
+<div><p>Provides List of VPC security group elements that the DB instance belongs to.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>This data type is used as a response element for queries on VPC security group membership.</p>
+<p>VpcSecurityGroupId -&gt; (string)</p>
+<blockquote>
+<div>The name of the VPC security group.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status of the VPC security group.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>DBParameterGroups -&gt; (list)</p>
+<blockquote>
+<div><p>Provides the list of DB parameter groups applied to this DB instance.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The status of the DB parameter group.</p>
+<p>This data type is used as a response element in the following actions:</p>
+<ul class="simple">
+<li>create-db-instance</li>
+<li>create-db-instance-read-replica</li>
+<li>delete-db-instance</li>
+<li>modify-db-instance</li>
+<li>reboot-db-instance</li>
+<li>restore-db-instance-from-db-snapshot</li>
+</ul>
+<p>DBParameterGroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the DP parameter group.</div></blockquote>
+<p>ParameterApplyStatus -&gt; (string)</p>
+<blockquote>
+<div>The status of parameter updates.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>AvailabilityZone -&gt; (string)</p>
+<blockquote>
+<div>Specifies the name of the Availability Zone the DB instance is located in.</div></blockquote>
+<p>DBSubnetGroup -&gt; (structure)</p>
+<blockquote>
+<div><p>Specifies information on the subnet group associated with the DB instance, including the name, description, and subnets in the subnet group.</p>
+<p>DBSubnetGroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the DB subnet group.</div></blockquote>
+<p>DBSubnetGroupDescription -&gt; (string)</p>
+<blockquote>
+<div>Provides the description of the DB subnet group.</div></blockquote>
+<p>VpcId -&gt; (string)</p>
+<blockquote>
+<div>Provides the VpcId of the DB subnet group.</div></blockquote>
+<p>SubnetGroupStatus -&gt; (string)</p>
+<blockquote>
+<div>Provides the status of the DB subnet group.</div></blockquote>
+<p>Subnets -&gt; (list)</p>
+<blockquote>
+<div><p>Contains a list of  Subnet elements.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>This data type is used as a response element in the  describe-db-subnet-groups action.</p>
+<p>SubnetIdentifier -&gt; (string)</p>
+<blockquote>
+<div>Specifies the identifier of the subnet.</div></blockquote>
+<p>SubnetAvailabilityZone -&gt; (structure)</p>
+<blockquote>
+<div><p>Contains Availability Zone information.</p>
+<p>This data type is used as an element in the following data type:</p>
+<ul class="simple">
+<li>OrderableDBInstanceOption</li>
+</ul>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the availability zone.</div></blockquote>
+</div></blockquote>
+<p>SubnetStatus -&gt; (string)</p>
+<blockquote>
+<div>Specifies the status of the subnet.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>PreferredMaintenanceWindow -&gt; (string)</p>
+<blockquote>
+<div>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</div></blockquote>
+<p>PendingModifiedValues -&gt; (structure)</p>
+<blockquote>
+<div><p>Specifies that changes to the DB instance are pending. This element is only included when changes are pending. Specific changes are identified by subelements.</p>
+<p>DBInstanceClass -&gt; (string)</p>
+<blockquote>
+<div>Contains the new <tt class="docutils literal"><span class="pre">DBInstanceClass</span></tt> for the DB instance that will be applied or is in progress.</div></blockquote>
+<p>AllocatedStorage -&gt; (integer)</p>
+<blockquote>
+<div>Contains the new <tt class="docutils literal"><span class="pre">AllocatedStorage</span></tt> size for the DB instance that will be applied or is in progress.</div></blockquote>
+<p>MasterUserPassword -&gt; (string)</p>
+<blockquote>
+<div>Contains the pending or in-progress change of the master credentials for the DB instance.</div></blockquote>
+<p>Port -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the pending port for the DB instance.</div></blockquote>
+<p>BackupRetentionPeriod -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the pending number of days for which automated backups are retained.</div></blockquote>
+<p>MultiAZ -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates that the Single-AZ DB instance is to change to a Multi-AZ deployment.</div></blockquote>
+<p>EngineVersion -&gt; (string)</p>
+<blockquote>
+<div>Indicates the database engine version.</div></blockquote>
+<p>Iops -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the new Provisioned IOPS value for the DB instance that will be applied or is being applied.</div></blockquote>
+<p>DBInstanceIdentifier -&gt; (string)</p>
+<blockquote>
+<div>Contains the new <tt class="docutils literal"><span class="pre">DBInstanceIdentifier</span></tt> for the DB instance that will be applied or is in progress.</div></blockquote>
+<p>StorageType -&gt; (string)</p>
+<blockquote>
+<div>Specifies the storage type to be associated with the DB instance.</div></blockquote>
+<p>CACertificateIdentifier -&gt; (string)</p>
+<blockquote>
+<div>Specifies the identifier of the CA certificate for the DB instance.</div></blockquote>
+</div></blockquote>
+<p>LatestRestorableTime -&gt; (timestamp)</p>
+<blockquote>
+<div>Specifies the latest time to which a database can be restored with point-in-time restore.</div></blockquote>
+<p>MultiAZ -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies if the DB instance is a Multi-AZ deployment.</div></blockquote>
+<p>EngineVersion -&gt; (string)</p>
+<blockquote>
+<div>Indicates the database engine version.</div></blockquote>
+<p>AutoMinorVersionUpgrade -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates that minor version patches are applied automatically.</div></blockquote>
+<p>ReadReplicaSourceDBInstanceIdentifier -&gt; (string)</p>
+<blockquote>
+<div>Contains the identifier of the source DB instance if this DB instance is a Read Replica.</div></blockquote>
+<p>ReadReplicaDBInstanceIdentifiers -&gt; (list)</p>
+<blockquote>
+<div><p>Contains one or more identifiers of the Read Replicas associated with this DB instance.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>LicenseModel -&gt; (string)</p>
+<blockquote>
+<div>License model information for this DB instance.</div></blockquote>
+<p>Iops -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the Provisioned IOPS (I/O operations per second) value.</div></blockquote>
+<p>OptionGroupMemberships -&gt; (list)</p>
+<blockquote>
+<div><p>Provides the list of option group memberships for this DB instance.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Provides information on the option groups the DB instance is a member of.</p>
+<p>OptionGroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the option group that the instance belongs to.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status of the DB instance's option group membership. Valid values are: <tt class="docutils literal"><span class="pre">in-sync</span></tt> , <tt class="docutils literal"><span class="pre">pending-apply</span></tt> , <tt class="docutils literal"><span class="pre">pending-removal</span></tt> , <tt class="docutils literal"><span class="pre">pending-maintenance-apply</span></tt> , <tt class="docutils literal"><span class="pre">pending-maintenance-removal</span></tt> , <tt class="docutils literal"><span class="pre">applying</span></tt> , <tt class="docutils literal"><span class="pre">removing</span></tt> , and <tt class="docutils literal"><span class="pre">failed</span></tt> .</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>CharacterSetName -&gt; (string)</p>
+<blockquote>
+<div>If present, specifies the name of the character set that this instance is associated with.</div></blockquote>
+<p>SecondaryAvailabilityZone -&gt; (string)</p>
+<blockquote>
+<div>If present, specifies the name of the secondary Availability Zone for a DB instance with multi-AZ support.</div></blockquote>
+<p>PubliclyAccessible -&gt; (boolean)</p>
+<blockquote>
+<div><p>Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an internal instance with a DNS name that resolves to a private IP address.</p>
+<p>Default: The default behavior varies depending on whether a VPC has been requested or not. The following list shows the default behavior in each case.</p>
+<ul class="simple">
+<li><strong>Default VPC:</strong> true</li>
+<li><strong>VPC:</strong> false</li>
+</ul>
+<p>If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been set, the DB instance will be private.</p>
+</div></blockquote>
+<p>StatusInfos -&gt; (list)</p>
+<blockquote>
+<div><p>The status of a Read Replica. If the instance is not a Read Replica, this will be blank.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Provides a list of status information for a DB instance.</p>
+<p>StatusType -&gt; (string)</p>
+<blockquote>
+<div>This value is currently "read replication."</div></blockquote>
+<p>Normal -&gt; (boolean)</p>
+<blockquote>
+<div>Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>Status of the DB instance. For a StatusType of read replica, the values can be replicating, error, stopped, or terminated.</div></blockquote>
+<p>Message -&gt; (string)</p>
+<blockquote>
+<div>Details of the error if there is an error for the instance. If the instance is not in an error state, this value is blank.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>StorageType -&gt; (string)</p>
+<blockquote>
+<div>Specifies the storage type associated with DB instance.</div></blockquote>
+<p>TdeCredentialArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN from the Key Store with which the instance is associated for TDE encryption.</div></blockquote>
+<p>DbInstancePort -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different port than the DB cluster port.</div></blockquote>
+<p>DBClusterIdentifier -&gt; (string)</p>
+<blockquote>
+<div>If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB instance is a member of.</div></blockquote>
+<p>StorageEncrypted -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether the DB instance is encrypted.</div></blockquote>
+<p>KmsKeyId -&gt; (string)</p>
+<blockquote>
+<div>If <tt class="docutils literal"><span class="pre">StorageEncrypted</span></tt> is true, the KMS key identifier for the encrypted DB instance.</div></blockquote>
+<p>DbiResourceId -&gt; (string)</p>
+<blockquote>
+<div>The region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log entries whenever the KMS key for the DB instance is accessed.</div></blockquote>
+<p>CACertificateIdentifier -&gt; (string)</p>
+<blockquote>
+<div>The identifier of the CA certificate for this DB instance.</div></blockquote>
+<p>DomainMemberships -&gt; (list)</p>
+<blockquote>
+<div><p>The Active Directory Domain membership records associated with the DB instance.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>An Active Directory Domain membership record associated with the DB instance.</p>
+<p>Domain -&gt; (string)</p>
+<blockquote>
+<div>The identifier of the Active Directory Domain.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status of the DB instance's Active Directory Domain membership, such as joined, pending-join, failed etc).</div></blockquote>
+<p>FQDN -&gt; (string)</p>
+<blockquote>
+<div>The fully qualified domain name of the Active Directory Domain.</div></blockquote>
+<p>IAMRoleName -&gt; (string)</p>
+<blockquote>
+<div>The name of the IAM role to be used when making API calls to the Directory Service.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>CopyTagsToSnapshot -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether tags are copied from the DB instance to snapshots of the DB instance.</div></blockquote>
+<p>MonitoringInterval -&gt; (integer)</p>
+<blockquote>
+<div>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance.</div></blockquote>
+<p>EnhancedMonitoringResourceArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the Amazon CloudWatch Logs log stream that receives the Enhanced Monitoring metrics data for the DB instance.</div></blockquote>
+<p>MonitoringRoleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to CloudWatch Logs.</div></blockquote>
+<p>PromotionTier -&gt; (integer)</p>
+<blockquote>
+<div>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">Fault Tolerance for an Aurora DB Cluster</a> .</div></blockquote>
 </div></blockquote>
 </div>
 </div>
@@ -385,7 +1055,7 @@
     <div class="footer-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="copy-db-snapshot.html" title="previous chapter (use the left arrow)">&#8592; copy-db-snapshot</a>
+          <a href="create-db-cluster-snapshot.html" title="previous chapter (use the left arrow)">&#8592; create-db-cluster-snapshot</a>
           <span class="divider">/</span>
           
         </li>
@@ -395,6 +1065,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -403,36 +1082,22 @@
         <li class="right">
           <a href="create-db-instance-read-replica.html" title="create-db-instance-read-replica">next</a> |</li>
         <li class="right">
-          <a href="copy-db-snapshot.html" title="copy-db-snapshot">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="create-db-cluster-snapshot.html" title="create-db-cluster-snapshot">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">rds</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'copy-db-snapshot.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'create-db-instance-read-replica.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/rds/create-db-instance.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:24 GMT -->
 </html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/waf/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:19 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>waf &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="create-byte-match-set" href="create-byte-match-set.html" />
+    <link rel="prev" title="terminate-workflow-execution" href="../swf/terminate-workflow-execution.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="create-byte-match-set.html" title="create-byte-match-set" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="../swf/terminate-workflow-execution.html" title="terminate-workflow-execution" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../swf/terminate-workflow-execution.html" title="previous chapter (use the left arrow)">&#8592; terminate-workflow-execution</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-byte-match-set.html" title="next chapter (use the right arrow)">create-byte-match-set &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">waf</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/waf/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="waf">
+<span id="cli-aws-waf"></span><h1>waf<a name="//apple_ref/cpp/Command/aws waf" class="dashAnchor" id="aws waf"></a><a class="headerlink" href="#waf" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>This is the <em>AWS WAF API Reference</em> . This guide is for developers who need detailed information about the AWS WAF API actions, data types, and errors. For detailed information about AWS WAF features and an overview of how to use the AWS WAF API, see the <a class="reference external" href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a> .</p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a name="//apple_ref/cpp/Section/Available Commands" class="dashAnchor" id="Available Commands"></a><a class="headerlink" href="#available-commands" title="Permalink to this headline">&#182;</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-byte-match-set" class="dashAnchor" id="create-byte-match-set"></a><a class="reference internal" href="create-byte-match-set.html">create-byte-match-set</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-ip-set" class="dashAnchor" id="create-ip-set"></a><a class="reference internal" href="create-ip-set.html">create-ip-set</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-rule" class="dashAnchor" id="create-rule"></a><a class="reference internal" href="create-rule.html">create-rule</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-size-constraint-set" class="dashAnchor" id="create-size-constraint-set"></a><a class="reference internal" href="create-size-constraint-set.html">create-size-constraint-set</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-sql-injection-match-set" class="dashAnchor" id="create-sql-injection-match-set"></a><a class="reference internal" href="create-sql-injection-match-set.html">create-sql-injection-match-set</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-web-acl" class="dashAnchor" id="create-web-acl"></a><a class="reference internal" href="create-web-acl.html">create-web-acl</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-xss-match-set" class="dashAnchor" id="create-xss-match-set"></a><a class="reference internal" href="create-xss-match-set.html">create-xss-match-set</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-byte-match-set" class="dashAnchor" id="delete-byte-match-set"></a><a class="reference internal" href="delete-byte-match-set.html">delete-byte-match-set</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-ip-set" class="dashAnchor" id="delete-ip-set"></a><a class="reference internal" href="delete-ip-set.html">delete-ip-set</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-rule" class="dashAnchor" id="delete-rule"></a><a class="reference internal" href="delete-rule.html">delete-rule</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-size-constraint-set" class="dashAnchor" id="delete-size-constraint-set"></a><a class="reference internal" href="delete-size-constraint-set.html">delete-size-constraint-set</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-sql-injection-match-set" class="dashAnchor" id="delete-sql-injection-match-set"></a><a class="reference internal" href="delete-sql-injection-match-set.html">delete-sql-injection-match-set</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-web-acl" class="dashAnchor" id="delete-web-acl"></a><a class="reference internal" href="delete-web-acl.html">delete-web-acl</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-xss-match-set" class="dashAnchor" id="delete-xss-match-set"></a><a class="reference internal" href="delete-xss-match-set.html">delete-xss-match-set</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-byte-match-set" class="dashAnchor" id="get-byte-match-set"></a><a class="reference internal" href="get-byte-match-set.html">get-byte-match-set</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-change-token" class="dashAnchor" id="get-change-token"></a><a class="reference internal" href="get-change-token.html">get-change-token</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-change-token-status" class="dashAnchor" id="get-change-token-status"></a><a class="reference internal" href="get-change-token-status.html">get-change-token-status</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-ip-set" class="dashAnchor" id="get-ip-set"></a><a class="reference internal" href="get-ip-set.html">get-ip-set</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-rule" class="dashAnchor" id="get-rule"></a><a class="reference internal" href="get-rule.html">get-rule</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-sampled-requests" class="dashAnchor" id="get-sampled-requests"></a><a class="reference internal" href="get-sampled-requests.html">get-sampled-requests</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-size-constraint-set" class="dashAnchor" id="get-size-constraint-set"></a><a class="reference internal" href="get-size-constraint-set.html">get-size-constraint-set</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-sql-injection-match-set" class="dashAnchor" id="get-sql-injection-match-set"></a><a class="reference internal" href="get-sql-injection-match-set.html">get-sql-injection-match-set</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-web-acl" class="dashAnchor" id="get-web-acl"></a><a class="reference internal" href="get-web-acl.html">get-web-acl</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-xss-match-set" class="dashAnchor" id="get-xss-match-set"></a><a class="reference internal" href="get-xss-match-set.html">get-xss-match-set</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-byte-match-sets" class="dashAnchor" id="list-byte-match-sets"></a><a class="reference internal" href="list-byte-match-sets.html">list-byte-match-sets</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-ip-sets" class="dashAnchor" id="list-ip-sets"></a><a class="reference internal" href="list-ip-sets.html">list-ip-sets</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-rules" class="dashAnchor" id="list-rules"></a><a class="reference internal" href="list-rules.html">list-rules</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-size-constraint-sets" class="dashAnchor" id="list-size-constraint-sets"></a><a class="reference internal" href="list-size-constraint-sets.html">list-size-constraint-sets</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-sql-injection-match-sets" class="dashAnchor" id="list-sql-injection-match-sets"></a><a class="reference internal" href="list-sql-injection-match-sets.html">list-sql-injection-match-sets</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-web-acls" class="dashAnchor" id="list-web-acls"></a><a class="reference internal" href="list-web-acls.html">list-web-acls</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-xss-match-sets" class="dashAnchor" id="list-xss-match-sets"></a><a class="reference internal" href="list-xss-match-sets.html">list-xss-match-sets</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-byte-match-set" class="dashAnchor" id="update-byte-match-set"></a><a class="reference internal" href="update-byte-match-set.html">update-byte-match-set</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-ip-set" class="dashAnchor" id="update-ip-set"></a><a class="reference internal" href="update-ip-set.html">update-ip-set</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-rule" class="dashAnchor" id="update-rule"></a><a class="reference internal" href="update-rule.html">update-rule</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-size-constraint-set" class="dashAnchor" id="update-size-constraint-set"></a><a class="reference internal" href="update-size-constraint-set.html">update-size-constraint-set</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-sql-injection-match-set" class="dashAnchor" id="update-sql-injection-match-set"></a><a class="reference internal" href="update-sql-injection-match-set.html">update-sql-injection-match-set</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-web-acl" class="dashAnchor" id="update-web-acl"></a><a class="reference internal" href="update-web-acl.html">update-web-acl</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-xss-match-set" class="dashAnchor" id="update-xss-match-set"></a><a class="reference internal" href="update-xss-match-set.html">update-xss-match-set</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../swf/terminate-workflow-execution.html" title="previous chapter (use the left arrow)">&#8592; terminate-workflow-execution</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-byte-match-set.html" title="next chapter (use the right arrow)">create-byte-match-set &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="create-byte-match-set.html" title="create-byte-match-set">next</a> |</li>
+        <li class="right">
+          <a href="../swf/terminate-workflow-execution.html" title="terminate-workflow-execution">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/waf/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:35 GMT -->
+</html>

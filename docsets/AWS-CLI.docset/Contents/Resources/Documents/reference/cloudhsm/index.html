@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudhsm/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:22:26 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>cloudhsm &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="add-tags-to-resource" href="add-tags-to-resource.html" />
+    <link rel="prev" title="streaming-distribution-deployed" href="../cloudfront/wait/streaming-distribution-deployed.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="add-tags-to-resource.html" title="add-tags-to-resource" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="../cloudfront/wait/streaming-distribution-deployed.html" title="streaming-distribution-deployed" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../cloudfront/wait/streaming-distribution-deployed.html" title="previous chapter (use the left arrow)">&#8592; streaming-distribution-deployed</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="add-tags-to-resource.html" title="next chapter (use the right arrow)">add-tags-to-resource &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">cloudhsm</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/cloudhsm/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="cloudhsm">
+<span id="cli-aws-cloudhsm"></span><h1>cloudhsm<a name="//apple_ref/cpp/Command/aws cloudhsm" class="dashAnchor" id="aws cloudhsm"></a><a class="headerlink" href="#cloudhsm" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a name="//apple_ref/cpp/Section/Available Commands" class="dashAnchor" id="Available Commands"></a><a class="headerlink" href="#available-commands" title="Permalink to this headline">&#182;</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/add-tags-to-resource" class="dashAnchor" id="add-tags-to-resource"></a><a class="reference internal" href="add-tags-to-resource.html">add-tags-to-resource</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-hapg" class="dashAnchor" id="create-hapg"></a><a class="reference internal" href="create-hapg.html">create-hapg</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-hsm" class="dashAnchor" id="create-hsm"></a><a class="reference internal" href="create-hsm.html">create-hsm</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-luna-client" class="dashAnchor" id="create-luna-client"></a><a class="reference internal" href="create-luna-client.html">create-luna-client</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-hapg" class="dashAnchor" id="delete-hapg"></a><a class="reference internal" href="delete-hapg.html">delete-hapg</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-hsm" class="dashAnchor" id="delete-hsm"></a><a class="reference internal" href="delete-hsm.html">delete-hsm</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-luna-client" class="dashAnchor" id="delete-luna-client"></a><a class="reference internal" href="delete-luna-client.html">delete-luna-client</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-hapg" class="dashAnchor" id="describe-hapg"></a><a class="reference internal" href="describe-hapg.html">describe-hapg</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-hsm" class="dashAnchor" id="describe-hsm"></a><a class="reference internal" href="describe-hsm.html">describe-hsm</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-luna-client" class="dashAnchor" id="describe-luna-client"></a><a class="reference internal" href="describe-luna-client.html">describe-luna-client</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-config" class="dashAnchor" id="get-config"></a><a class="reference internal" href="get-config.html">get-config</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-available-zones" class="dashAnchor" id="list-available-zones"></a><a class="reference internal" href="list-available-zones.html">list-available-zones</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-hapgs" class="dashAnchor" id="list-hapgs"></a><a class="reference internal" href="list-hapgs.html">list-hapgs</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-hsms" class="dashAnchor" id="list-hsms"></a><a class="reference internal" href="list-hsms.html">list-hsms</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-luna-clients" class="dashAnchor" id="list-luna-clients"></a><a class="reference internal" href="list-luna-clients.html">list-luna-clients</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-tags-for-resource" class="dashAnchor" id="list-tags-for-resource"></a><a class="reference internal" href="list-tags-for-resource.html">list-tags-for-resource</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/modify-hapg" class="dashAnchor" id="modify-hapg"></a><a class="reference internal" href="modify-hapg.html">modify-hapg</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/modify-hsm" class="dashAnchor" id="modify-hsm"></a><a class="reference internal" href="modify-hsm.html">modify-hsm</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/modify-luna-client" class="dashAnchor" id="modify-luna-client"></a><a class="reference internal" href="modify-luna-client.html">modify-luna-client</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/remove-tags-from-resource" class="dashAnchor" id="remove-tags-from-resource"></a><a class="reference internal" href="remove-tags-from-resource.html">remove-tags-from-resource</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../cloudfront/wait/streaming-distribution-deployed.html" title="previous chapter (use the left arrow)">&#8592; streaming-distribution-deployed</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="add-tags-to-resource.html" title="next chapter (use the right arrow)">add-tags-to-resource &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="add-tags-to-resource.html" title="add-tags-to-resource">next</a> |</li>
+        <li class="right">
+          <a href="../cloudfront/wait/streaming-distribution-deployed.html" title="streaming-distribution-deployed">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudhsm/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:22:35 GMT -->
+</html>

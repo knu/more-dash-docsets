@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/gamelift/create-fleet.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:19 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-fleet &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="gamelift" href="index.html" />
+    <link rel="next" title="create-game-session" href="create-game-session.html" />
+    <link rel="prev" title="create-build" href="create-build.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="create-game-session.html" title="create-game-session" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="create-build.html" title="create-build" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">gamelift</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="create-build.html" title="previous chapter (use the left arrow)">&#8592; create-build</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-game-session.html" title="next chapter (use the right arrow)">create-game-session &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-fleet</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/gamelift/create-fleet">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-gamelift"><em>gamelift</em></a> ]</p>
+<div class="section" id="create-fleet">
+<span id="cli-aws-gamelift-create-fleet"></span><h1>create-fleet<a name="//apple_ref/cpp/Command/aws gamelift create-fleet" class="dashAnchor" id="aws gamelift create-fleet"></a><a class="headerlink" href="#create-fleet" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Creates a new fleet to host game servers. A fleet consists of a set of Amazon Elastic Compute Cloud (Amazon EC2) instances of a certain type, which defines the CPU, memory, storage, and networking capacity of each host in the fleet. See <a class="reference external" href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for more information. Each instance in the fleet hosts a game server created from the specified game build. Once a fleet is in an ACTIVE state, it can begin hosting game sessions.</p>
+<p>To create a new fleet, provide a name and the EC2 instance type for the new fleet, and specify the build and server launch path. Builds must be in a READY state before they can be used to build fleets. When configuring the new fleet, you can optionally (1) provide a set of launch parameters to be passed to a game server when activated; (2) limit incoming traffic to a specified range of IP addresses and port numbers; (3) set game session protection for all instances in the fleet, and (4) configure Amazon GameLift to store game session logs by specifying the path to the logs stored in your game server files. If the call is successful, Amazon GameLift performs the following tasks:</p>
+<ul class="simple">
+<li>Creates a fleet record and sets the state to NEW.</li>
+<li>Sets the fleet's capacity to 1 "desired" and 1 "active" EC2 instance count.</li>
+<li>Creates an EC2 instance and begins the process of initializing the fleet and activating a game server on the instance.</li>
+<li>Begins writing events to the fleet event log, which can be accessed in the GameLift console.</li>
+</ul>
+<p>Once a fleet is created, use the following actions to change certain fleet properties (server launch parameters and log paths cannot be changed):</p>
+<ul class="simple">
+<li>update-fleet-attributes -- Update fleet metadata, including name and description.</li>
+<li>update-fleet-capacity -- Increase or decrease the number of instances you want the fleet to maintain.</li>
+<li>update-fleet-port-settings -- Change the IP addresses and ports that allow access to incoming traffic.</li>
+</ul>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  create-fleet
+--name &lt;value&gt;
+[--description &lt;value&gt;]
+--build-id &lt;value&gt;
+--server-launch-path &lt;value&gt;
+[--server-launch-parameters &lt;value&gt;]
+[--log-paths &lt;value&gt;]
+--ec2-instance-type &lt;value&gt;
+[--ec2-inbound-permissions &lt;value&gt;]
+[--new-game-session-protection-policy &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--name" class="dashAnchor" id="name"></a><span class="pre">--name</span></tt> (string)</p>
+<blockquote>
+<div>Descriptive label associated with this fleet. Fleet names do not need to be unique.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--description" class="dashAnchor" id="description"></a><span class="pre">--description</span></tt> (string)</p>
+<blockquote>
+<div>Human-readable description of the fleet.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--build-id" class="dashAnchor" id="build-id"></a><span class="pre">--build-id</span></tt> (string)</p>
+<blockquote>
+<div>Unique identifier for the build you want the new fleet to use.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--server-launch-path" class="dashAnchor" id="server-launch-path"></a><span class="pre">--server-launch-path</span></tt> (string)</p>
+<blockquote>
+<div>Path to the launch executable for the game server. A game server is built into a <tt class="docutils literal"><span class="pre">C:\game</span></tt> drive. This value must be expressed as <tt class="docutils literal"><span class="pre">C:\game\[launchpath]</span></tt> . Example: If, when built, your game server files are in a folder called "MyGame", your log path should be <tt class="docutils literal"><span class="pre">C:\game\MyGame\server.exe</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--server-launch-parameters" class="dashAnchor" id="server-launch-parameters"></a><span class="pre">--server-launch-parameters</span></tt> (string)</p>
+<blockquote>
+<div>Parameters required to launch your game server. These parameters should be expressed as a string of command-line parameters. Example: "+sv_port 33435 +start_lobby".</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--log-paths" class="dashAnchor" id="log-paths"></a><span class="pre">--log-paths</span></tt> (list)</p>
+<blockquote>
+<div>Path to game-session log files generated by your game server. Once a game session has been terminated, Amazon GameLift captures and stores the logs on Amazon S3. Use the GameLift console to access the stored logs.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>"string" "string" ...</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ec2-instance-type" class="dashAnchor" id="ec2-instance-type"></a><span class="pre">--ec2-instance-type</span></tt> (string)</p>
+<blockquote>
+<div><p>Type of EC2 instances used in the fleet. EC2 instance types define the CPU, memory, storage, and networking capacity of the fleetaposs hosts. Amazon GameLift supports the EC2 instance types listed below. See <a class="reference external" href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions of each.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">t2.micro</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">t2.small</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">t2.medium</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">t2.large</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">c3.large</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">c3.xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">c3.2xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">c3.4xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">c3.8xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">c4.large</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">c4.xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">c4.2xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">c4.4xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">c4.8xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">r3.large</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">r3.xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">r3.2xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">r3.4xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">r3.8xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">m3.medium</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">m3.large</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">m3.xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">m3.2xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">m4.large</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">m4.xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">m4.2xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">m4.4xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">m4.10xlarge</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ec2-inbound-permissions" class="dashAnchor" id="ec2-inbound-permissions"></a><span class="pre">--ec2-inbound-permissions</span></tt> (list)</p>
+<blockquote>
+<div>Access limits for incoming traffic. Setting these values limits game server access to incoming traffic using specified IP ranges and port numbers. Some ports in a range may be restricted. You can provide one or more sets of permissions for the fleet.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>FromPort=integer,ToPort=integer,IpRange=string,Protocol=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    "FromPort": integer,
+    "ToPort": integer,
+    "IpRange": "string",
+    "Protocol": "TCP"|"UDP"
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--new-game-session-protection-policy" class="dashAnchor" id="new-game-session-protection-policy"></a><span class="pre">--new-game-session-protection-policy</span></tt> (string)</p>
+<blockquote>
+<div><p>Game session protection policy to apply to all instances created in this fleet. If this parameter is not set, new instances in this fleet will default to no protection. Protection can be set for individual instances using  update-game-session .</p>
+<ul class="simple">
+<li>NoProtection: The game session can be terminated during a scale-down event.</li>
+<li>FullProtection: If the game session is in an ACTIVE status, it cannot be terminated during a scale-down event.</li>
+</ul>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">NoProtection</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">FullProtection</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>FleetAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>Properties for the newly created fleet.</p>
+<p>FleetId -&gt; (string)</p>
+<blockquote>
+<div>Unique identifier for a fleet.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>Human-readable description of the fleet.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>Descriptive label associated with this fleet. Fleet names do not need to be unique.</div></blockquote>
+<p>CreationTime -&gt; (timestamp)</p>
+<blockquote>
+<div>Time stamp indicating when this object was created. Format is an integer representing the number of seconds since the Unix epoch (Unix time).</div></blockquote>
+<p>TerminationTime -&gt; (timestamp)</p>
+<blockquote>
+<div>Time stamp indicating when this fleet was terminated. Format is an integer representing the number of seconds since the Unix epoch (Unix time).</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div><p>Current status of the fleet. Possible fleet states include:</p>
+<ul class="simple">
+<li>NEW: A new fleet has been defined and hosts allocated.</li>
+<li>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING: The new fleet is being set up with the game build, and new hosts are being started.</li>
+<li>ACTIVE: Hosts can now accept game sessions.</li>
+<li>ERROR: An error occurred when downloading, validating, building, or activating the fleet.</li>
+<li>DELETING: Hosts are responding to a delete fleet request.</li>
+<li>TERMINATED: The fleet no longer exists.</li>
+</ul>
+</div></blockquote>
+<p>BuildId -&gt; (string)</p>
+<blockquote>
+<div>Unique identifier for a build.</div></blockquote>
+<p>ServerLaunchPath -&gt; (string)</p>
+<blockquote>
+<div>Path to the launch executable for the game server. A game server is built into a <tt class="docutils literal"><span class="pre">C:\game</span></tt> drive. This value must be expressed as <tt class="docutils literal"><span class="pre">C:\game\[launchpath]</span></tt> . Example: If, when built, your game server files are in a folder called "MyGame", your log path should be <tt class="docutils literal"><span class="pre">C:\game\MyGame\server.exe</span></tt> .</div></blockquote>
+<p>ServerLaunchParameters -&gt; (string)</p>
+<blockquote>
+<div>Parameters required to launch your game server. These parameters should be expressed as a string of command-line parameters. Example: "+sv_port 33435 +start_lobby".</div></blockquote>
+<p>LogPaths -&gt; (list)</p>
+<blockquote>
+<div><p>Path to game-session log files generated by your game server. Once a game session has been terminated, Amazon GameLift captures and stores the logs on Amazon S3. Use the GameLift console to access the stored logs.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>NewGameSessionProtectionPolicy -&gt; (string)</p>
+<blockquote>
+<div><p>Type of game session protection to set for all new instances started in the fleet.</p>
+<ul class="simple">
+<li>NoProtection: The game session can be terminated during a scale-down event.</li>
+<li>FullProtection: If the game session is in an ACTIVE status, it cannot be terminated during a scale-down event.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="create-build.html" title="previous chapter (use the left arrow)">&#8592; create-build</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-game-session.html" title="next chapter (use the right arrow)">create-game-session &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="create-game-session.html" title="create-game-session">next</a> |</li>
+        <li class="right">
+          <a href="create-build.html" title="create-build">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">gamelift</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/gamelift/create-fleet.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:19 GMT -->
+</html>

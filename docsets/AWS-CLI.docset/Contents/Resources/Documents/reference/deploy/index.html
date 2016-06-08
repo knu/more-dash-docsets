@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/deploy/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:24:03 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>deploy &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="add-tags-to-on-premises-instances" href="add-tags-to-on-premises-instances.html" />
+    <link rel="prev" title="validate-pipeline-definition" href="../datapipeline/validate-pipeline-definition.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="add-tags-to-on-premises-instances.html" title="add-tags-to-on-premises-instances" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="../datapipeline/validate-pipeline-definition.html" title="validate-pipeline-definition" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../datapipeline/validate-pipeline-definition.html" title="previous chapter (use the left arrow)">&#8592; validate-pipeline-definition</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="add-tags-to-on-premises-instances.html" title="next chapter (use the right arrow)">add-tags-to-on-premises-instances &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">deploy</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/deploy/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="deploy">
+<span id="cli-aws-deploy"></span><h1>deploy<a name="//apple_ref/cpp/Command/aws deploy" class="dashAnchor" id="aws deploy"></a><a class="headerlink" href="#deploy" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<blockquote>
+<div><strong>Overview</strong></div></blockquote>
+<p>This reference guide provides descriptions of the AWS CodeDeploy APIs. For more information about AWS CodeDeploy, see the <a class="reference external" href="docs.aws.amazon.com/codedeploy/latest/userguide.html">AWS CodeDeploy User Guide</a> .</p>
+<blockquote>
+<div><strong>Using the APIs</strong></div></blockquote>
+<p>You can use the AWS CodeDeploy APIs to work with the following:</p>
+<ul class="simple">
+<li>Applications are unique identifiers used by AWS CodeDeploy to ensure the correct combinations of revisions, deployment configurations, and deployment groups are being referenced during deployments. You can use the AWS CodeDeploy APIs to create, delete, get, list, and update applications.</li>
+<li>Deployment configurations are sets of deployment rules and success and failure conditions used by AWS CodeDeploy during deployments. You can use the AWS CodeDeploy APIs to create, delete, get, and list deployment configurations.</li>
+<li>Deployment groups are groups of instances to which application revisions can be deployed. You can use the AWS CodeDeploy APIs to create, delete, get, list, and update deployment groups.</li>
+<li>Instances represent Amazon EC2 instances to which application revisions are deployed. Instances are identified by their Amazon EC2 tags or Auto Scaling group names. Instances belong to deployment groups. You can use the AWS CodeDeploy APIs to get and list instance.</li>
+<li>Deployments represent the process of deploying revisions to instances. You can use the AWS CodeDeploy APIs to create, get, list, and stop deployments.</li>
+<li>Application revisions are archive files stored in Amazon S3 buckets or GitHub repositories. These revisions contain source content (such as source code, web pages, executable files, and deployment scripts) along with an application specification (AppSpec) file. (The AppSpec file is unique to AWS CodeDeploy; it defines the deployment actions you want AWS CodeDeploy to execute.) Ffor application revisions stored in Amazon S3 buckets, an application revision is uniquely identified by its Amazon S3 object key and its ETag, version, or both. For application revisions stored in GitHub repositories, an application revision is uniquely identified by its repository name and commit ID. Application revisions are deployed through deployment groups. You can use the AWS CodeDeploy APIs to get, list, and register application revisions.</li>
+</ul>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a name="//apple_ref/cpp/Section/Available Commands" class="dashAnchor" id="Available Commands"></a><a class="headerlink" href="#available-commands" title="Permalink to this headline">&#182;</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/add-tags-to-on-premises-instances" class="dashAnchor" id="add-tags-to-on-premises-instances"></a><a class="reference internal" href="add-tags-to-on-premises-instances.html">add-tags-to-on-premises-instances</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/batch-get-application-revisions" class="dashAnchor" id="batch-get-application-revisions"></a><a class="reference internal" href="batch-get-application-revisions.html">batch-get-application-revisions</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/batch-get-applications" class="dashAnchor" id="batch-get-applications"></a><a class="reference internal" href="batch-get-applications.html">batch-get-applications</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/batch-get-deployment-groups" class="dashAnchor" id="batch-get-deployment-groups"></a><a class="reference internal" href="batch-get-deployment-groups.html">batch-get-deployment-groups</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/batch-get-deployment-instances" class="dashAnchor" id="batch-get-deployment-instances"></a><a class="reference internal" href="batch-get-deployment-instances.html">batch-get-deployment-instances</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/batch-get-deployments" class="dashAnchor" id="batch-get-deployments"></a><a class="reference internal" href="batch-get-deployments.html">batch-get-deployments</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/batch-get-on-premises-instances" class="dashAnchor" id="batch-get-on-premises-instances"></a><a class="reference internal" href="batch-get-on-premises-instances.html">batch-get-on-premises-instances</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-application" class="dashAnchor" id="create-application"></a><a class="reference internal" href="create-application.html">create-application</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-deployment" class="dashAnchor" id="create-deployment"></a><a class="reference internal" href="create-deployment.html">create-deployment</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-deployment-config" class="dashAnchor" id="create-deployment-config"></a><a class="reference internal" href="create-deployment-config.html">create-deployment-config</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-deployment-group" class="dashAnchor" id="create-deployment-group"></a><a class="reference internal" href="create-deployment-group.html">create-deployment-group</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-application" class="dashAnchor" id="delete-application"></a><a class="reference internal" href="delete-application.html">delete-application</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-deployment-config" class="dashAnchor" id="delete-deployment-config"></a><a class="reference internal" href="delete-deployment-config.html">delete-deployment-config</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-deployment-group" class="dashAnchor" id="delete-deployment-group"></a><a class="reference internal" href="delete-deployment-group.html">delete-deployment-group</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/deregister" class="dashAnchor" id="deregister"></a><a class="reference internal" href="deregister.html">deregister</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/deregister-on-premises-instance" class="dashAnchor" id="deregister-on-premises-instance"></a><a class="reference internal" href="deregister-on-premises-instance.html">deregister-on-premises-instance</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-application" class="dashAnchor" id="get-application"></a><a class="reference internal" href="get-application.html">get-application</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-application-revision" class="dashAnchor" id="get-application-revision"></a><a class="reference internal" href="get-application-revision.html">get-application-revision</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-deployment" class="dashAnchor" id="get-deployment"></a><a class="reference internal" href="get-deployment.html">get-deployment</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-deployment-config" class="dashAnchor" id="get-deployment-config"></a><a class="reference internal" href="get-deployment-config.html">get-deployment-config</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-deployment-group" class="dashAnchor" id="get-deployment-group"></a><a class="reference internal" href="get-deployment-group.html">get-deployment-group</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-deployment-instance" class="dashAnchor" id="get-deployment-instance"></a><a class="reference internal" href="get-deployment-instance.html">get-deployment-instance</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-on-premises-instance" class="dashAnchor" id="get-on-premises-instance"></a><a class="reference internal" href="get-on-premises-instance.html">get-on-premises-instance</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/install" class="dashAnchor" id="install"></a><a class="reference internal" href="install.html">install</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-application-revisions" class="dashAnchor" id="list-application-revisions"></a><a class="reference internal" href="list-application-revisions.html">list-application-revisions</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-applications" class="dashAnchor" id="list-applications"></a><a class="reference internal" href="list-applications.html">list-applications</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-deployment-configs" class="dashAnchor" id="list-deployment-configs"></a><a class="reference internal" href="list-deployment-configs.html">list-deployment-configs</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-deployment-groups" class="dashAnchor" id="list-deployment-groups"></a><a class="reference internal" href="list-deployment-groups.html">list-deployment-groups</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-deployment-instances" class="dashAnchor" id="list-deployment-instances"></a><a class="reference internal" href="list-deployment-instances.html">list-deployment-instances</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-deployments" class="dashAnchor" id="list-deployments"></a><a class="reference internal" href="list-deployments.html">list-deployments</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-on-premises-instances" class="dashAnchor" id="list-on-premises-instances"></a><a class="reference internal" href="list-on-premises-instances.html">list-on-premises-instances</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/push" class="dashAnchor" id="push"></a><a class="reference internal" href="push.html">push</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/register" class="dashAnchor" id="register"></a><a class="reference internal" href="register.html">register</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/register-application-revision" class="dashAnchor" id="register-application-revision"></a><a class="reference internal" href="register-application-revision.html">register-application-revision</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/register-on-premises-instance" class="dashAnchor" id="register-on-premises-instance"></a><a class="reference internal" href="register-on-premises-instance.html">register-on-premises-instance</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/remove-tags-from-on-premises-instances" class="dashAnchor" id="remove-tags-from-on-premises-instances"></a><a class="reference internal" href="remove-tags-from-on-premises-instances.html">remove-tags-from-on-premises-instances</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/stop-deployment" class="dashAnchor" id="stop-deployment"></a><a class="reference internal" href="stop-deployment.html">stop-deployment</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/uninstall" class="dashAnchor" id="uninstall"></a><a class="reference internal" href="uninstall.html">uninstall</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-application" class="dashAnchor" id="update-application"></a><a class="reference internal" href="update-application.html">update-application</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-deployment-group" class="dashAnchor" id="update-deployment-group"></a><a class="reference internal" href="update-deployment-group.html">update-deployment-group</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../datapipeline/validate-pipeline-definition.html" title="previous chapter (use the left arrow)">&#8592; validate-pipeline-definition</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="add-tags-to-on-premises-instances.html" title="next chapter (use the right arrow)">add-tags-to-on-premises-instances &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="add-tags-to-on-premises-instances.html" title="add-tags-to-on-premises-instances">next</a> |</li>
+        <li class="right">
+          <a href="../datapipeline/validate-pipeline-definition.html" title="validate-pipeline-definition">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/deploy/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:24:19 GMT -->
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudformation/describe-change-set.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:57 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-change-set &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="cloudformation" href="index.html" />
+    <link rel="next" title="describe-stack-events" href="describe-stack-events.html" />
+    <link rel="prev" title="describe-account-limits" href="describe-account-limits.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="describe-stack-events.html" title="describe-stack-events" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="describe-account-limits.html" title="describe-account-limits" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">cloudformation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="describe-account-limits.html" title="previous chapter (use the left arrow)">&#8592; describe-account-limits</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="describe-stack-events.html" title="next chapter (use the right arrow)">describe-stack-events &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-change-set</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/cloudformation/describe-change-set">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-cloudformation"><em>cloudformation</em></a> ]</p>
+<div class="section" id="describe-change-set">
+<span id="cli-aws-cloudformation-describe-change-set"></span><h1>describe-change-set<a name="//apple_ref/cpp/Command/aws cloudformation describe-change-set" class="dashAnchor" id="aws cloudformation describe-change-set"></a><a class="headerlink" href="#describe-change-set" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Returns the inputs for the change set and a list of changes that AWS CloudFormation will make if you execute the change set. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html">Updating Stacks Using Change Sets</a> in the AWS CloudFormation User Guide.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  describe-change-set
+--change-set-name &lt;value&gt;
+[--stack-name &lt;value&gt;]
+[--next-token &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--change-set-name" class="dashAnchor" id="change-set-name"></a><span class="pre">--change-set-name</span></tt> (string)</p>
+<blockquote>
+<div>The name or Amazon Resource Name (ARN) of the change set that you want to describe.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--stack-name" class="dashAnchor" id="stack-name"></a><span class="pre">--stack-name</span></tt> (string)</p>
+<blockquote>
+<div>If you specified the name of a change set, specify the stack name or ID (ARN) of the change set you want to describe.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--next-token" class="dashAnchor" id="next-token"></a><span class="pre">--next-token</span></tt> (string)</p>
+<blockquote>
+<div>A string (provided by the  describe-change-set response output) that identifies the next page of information that you want to retrieve.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>ChangeSetName -&gt; (string)</p>
+<blockquote>
+<div>The name of the change set.</div></blockquote>
+<p>ChangeSetId -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the change set.</div></blockquote>
+<p>StackId -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the stack that is associated with the change set.</div></blockquote>
+<p>StackName -&gt; (string)</p>
+<blockquote>
+<div>The name of the stack that is associated with the change set.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>Information about the change set.</div></blockquote>
+<p>Parameters -&gt; (list)</p>
+<blockquote>
+<div><p>A list of <tt class="docutils literal"><span class="pre">Parameter</span></tt> structures that describes the input parameters and their values used to create the change set. For more information, see the <a class="reference external" href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The Parameter data type.</p>
+<p>ParameterKey -&gt; (string)</p>
+<blockquote>
+<div>The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS CloudFormation uses the default value that is specified in your template.</div></blockquote>
+<p>ParameterValue -&gt; (string)</p>
+<blockquote>
+<div>The value associated with the parameter.</div></blockquote>
+<p>UsePreviousValue -&gt; (boolean)</p>
+<blockquote>
+<div>During a stack update, use the existing parameter value that the stack is using for a given parameter key. If you specify <tt class="docutils literal"><span class="pre">true</span></tt> , do not specify a parameter value.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>CreationTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The start time when the change set was created, in UTC.</div></blockquote>
+<p>ExecutionStatus -&gt; (string)</p>
+<blockquote>
+<div>If the change set execution status is <tt class="docutils literal"><span class="pre">AVAILABLE</span></tt> , you can execute the change set. If you can&#8217;t execute the change set, the status indicates why. For example, a change set might be in an <tt class="docutils literal"><span class="pre">UNAVAILABLE</span></tt> state because AWS CloudFormation is still creating it or in an <tt class="docutils literal"><span class="pre">OBSOLETE</span></tt> state because the stack was already updated.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The current status of the change set, such as <tt class="docutils literal"><span class="pre">CREATE_IN_PROGRESS</span></tt> , <tt class="docutils literal"><span class="pre">CREATE_COMPLETE</span></tt> , or <tt class="docutils literal"><span class="pre">FAILED</span></tt> .</div></blockquote>
+<p>StatusReason -&gt; (string)</p>
+<blockquote>
+<div>A description of the change set's status. For example, if your attempt to create a change set failed, AWS CloudFormation shows the error message.</div></blockquote>
+<p>NotificationARNs -&gt; (list)</p>
+<blockquote>
+<div><p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that will be associated with the stack if you execute the change set.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>Capabilities -&gt; (list)</p>
+<blockquote>
+<div><p>If you execute the change set, the list of capabilities that were explicitly acknowledged when the change set was created.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>Tags -&gt; (list)</p>
+<blockquote>
+<div><p>If you execute the change set, the tags that will be associated with the stack.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The Tag type enables you to specify a key-value pair that can be used to store information about an AWS CloudFormation stack.</p>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div><em>Required</em> . A string used to identify this tag. You can specify a maximum of 128 characters for a tag key. Tags owned by Amazon Web Services (AWS) have the reserved prefix: <tt class="docutils literal"><span class="pre">aws:</span></tt> .</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div><em>Required</em> . A string containing the value for this tag. You can specify a maximum of 256 characters for a tag value.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Changes -&gt; (list)</p>
+<blockquote>
+<div><p>A list of <tt class="docutils literal"><span class="pre">Change</span></tt> structures that describes the resources AWS CloudFormation changes if you execute the change set.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The <tt class="docutils literal"><span class="pre">Change</span></tt> structure describes the changes AWS CloudFormation will perform if you execute the change set.</p>
+<p>Type -&gt; (string)</p>
+<blockquote>
+<div>The type of entity that AWS CloudFormation changes. Currently, the only entity type is <tt class="docutils literal"><span class="pre">Resource</span></tt> .</div></blockquote>
+<p>ResourceChange -&gt; (structure)</p>
+<blockquote>
+<div><p>A <tt class="docutils literal"><span class="pre">ResourceChange</span></tt> structure that describes the resource and action that AWS CloudFormation will perform.</p>
+<p>Action -&gt; (string)</p>
+<blockquote>
+<div>The action that AWS CloudFormation takes on the resource, such as <tt class="docutils literal"><span class="pre">Add</span></tt> (adds a new resource), <tt class="docutils literal"><span class="pre">Modify</span></tt> (changes a resource), or <tt class="docutils literal"><span class="pre">Remove</span></tt> (deletes a resource).</div></blockquote>
+<p>LogicalResourceId -&gt; (string)</p>
+<blockquote>
+<div>The resource's logical ID, which is defined in the stack's template.</div></blockquote>
+<p>PhysicalResourceId -&gt; (string)</p>
+<blockquote>
+<div>The resource's physical ID (resource name). Resources that you are adding don't have physical IDs because they haven't been created.</div></blockquote>
+<p>ResourceType -&gt; (string)</p>
+<blockquote>
+<div>The type of AWS CloudFormation resource, such as <tt class="docutils literal"><span class="pre">AWS::S3::Bucket</span></tt> .</div></blockquote>
+<p>Replacement -&gt; (string)</p>
+<blockquote>
+<div><p>For the <tt class="docutils literal"><span class="pre">Modify</span></tt> action, indicates whether AWS CloudFormation will replace the resource by creating a new one and deleting the old one. This value depends on the value of the <tt class="docutils literal"><span class="pre">RequiresRecreation</span></tt> property in the <tt class="docutils literal"><span class="pre">ResourceTargetDefinition</span></tt> structure. For example, if the <tt class="docutils literal"><span class="pre">RequiresRecreation</span></tt> field is <tt class="docutils literal"><span class="pre">Always</span></tt> and the <tt class="docutils literal"><span class="pre">Evaluation</span></tt> field is <tt class="docutils literal"><span class="pre">Static</span></tt> , <tt class="docutils literal"><span class="pre">Replacement</span></tt> is <tt class="docutils literal"><span class="pre">True</span></tt> . If the <tt class="docutils literal"><span class="pre">RequiresRecreation</span></tt> field is <tt class="docutils literal"><span class="pre">Always</span></tt> and the <tt class="docutils literal"><span class="pre">Evaluation</span></tt> field is <tt class="docutils literal"><span class="pre">Dynamic</span></tt> , <tt class="docutils literal"><span class="pre">Replacement</span></tt> is <tt class="docutils literal"><span class="pre">Conditionally</span></tt> .</p>
+<p>If you have multiple changes with different <tt class="docutils literal"><span class="pre">RequiresRecreation</span></tt> values, the <tt class="docutils literal"><span class="pre">Replacement</span></tt> value depends on the change with the most impact. A <tt class="docutils literal"><span class="pre">RequiresRecreation</span></tt> value of <tt class="docutils literal"><span class="pre">Always</span></tt> has the most impact, followed by <tt class="docutils literal"><span class="pre">Conditionally</span></tt> , and then <tt class="docutils literal"><span class="pre">Never</span></tt> .</p>
+</div></blockquote>
+<p>Scope -&gt; (list)</p>
+<blockquote>
+<div><p>For the <tt class="docutils literal"><span class="pre">Modify</span></tt> action, indicates which resource attribute is triggering this update, such as a change in the resource attribute's <tt class="docutils literal"><span class="pre">Metadata</span></tt> , <tt class="docutils literal"><span class="pre">Properties</span></tt> , or <tt class="docutils literal"><span class="pre">Tags</span></tt> .</p>
+<p>(string)</p>
+</div></blockquote>
+<p>Details -&gt; (list)</p>
+<blockquote>
+<div><p>For the <tt class="docutils literal"><span class="pre">Modify</span></tt> action, a list of <tt class="docutils literal"><span class="pre">ResourceChangeDetail</span></tt> structures that describes the changes that AWS CloudFormation will make to the resource.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>For a resource with <tt class="docutils literal"><span class="pre">Modify</span></tt> as the action, the <tt class="docutils literal"><span class="pre">ResourceChange</span></tt> structure describes the changes AWS CloudFormation will make to that resource.</p>
+<p>Target -&gt; (structure)</p>
+<blockquote>
+<div><p>A <tt class="docutils literal"><span class="pre">ResourceTargetDefinition</span></tt> structure that describes the field that AWS CloudFormation will change and whether the resource will be recreated.</p>
+<p>Attribute -&gt; (string)</p>
+<blockquote>
+<div>Indicates which resource attribute is triggering this update, such as a change in the resource attribute's <tt class="docutils literal"><span class="pre">Metadata</span></tt> , <tt class="docutils literal"><span class="pre">Properties</span></tt> , or <tt class="docutils literal"><span class="pre">Tags</span></tt> .</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>If the <tt class="docutils literal"><span class="pre">Attribute</span></tt> value is <tt class="docutils literal"><span class="pre">Properties</span></tt> , the name of the property. For all other attributes, the value is null.</div></blockquote>
+<p>RequiresRecreation -&gt; (string)</p>
+<blockquote>
+<div>If the <tt class="docutils literal"><span class="pre">Attribute</span></tt> value is <tt class="docutils literal"><span class="pre">Properties</span></tt> , indicates whether a change to this property causes the resource to be recreated. The value can be <tt class="docutils literal"><span class="pre">Never</span></tt> , <tt class="docutils literal"><span class="pre">Always</span></tt> , or <tt class="docutils literal"><span class="pre">Conditionally</span></tt> . To determine the conditions for a <tt class="docutils literal"><span class="pre">Conditionally</span></tt> recreation, see the update behavior for that <a class="reference external" href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a> in the AWS CloudFormation User Guide.</div></blockquote>
+</div></blockquote>
+<p>Evaluation -&gt; (string)</p>
+<blockquote>
+<div><p>Indicates whether AWS CloudFormation can determine the target value, and whether the target value will change before you execute a change set.</p>
+<p>For <tt class="docutils literal"><span class="pre">Static</span></tt> evaluations, AWS CloudFormation can determine that the target value will change, and its value. For example, if you directly modify the <tt class="docutils literal"><span class="pre">InstanceType</span></tt> property of an EC2 instance, AWS CloudFormation knows that this property value will change, and its value, so this is a <tt class="docutils literal"><span class="pre">Static</span></tt> evaluation.</p>
+<p>For <tt class="docutils literal"><span class="pre">Dynamic</span></tt> evaluations, cannot determine the target value because it depends on the result of an intrinsic function, such as a <tt class="docutils literal"><span class="pre">Ref</span></tt> or <tt class="docutils literal"><span class="pre">Fn::GetAtt</span></tt> intrinsic function, when the stack is updated. For example, if your template includes a reference to a resource that is conditionally recreated, the value of the reference (the physical ID of the resource) might change, depending on if the resource is recreated. If the resource is recreated, it will have a new physical ID, so all references to that resource will also be updated.</p>
+</div></blockquote>
+<p>ChangeSource -&gt; (string)</p>
+<blockquote>
+<div><p>The group to which the <tt class="docutils literal"><span class="pre">CausingEntity</span></tt> value belongs. There are five entity groups:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ResourceReference</span></tt> entities are <tt class="docutils literal"><span class="pre">Ref</span></tt> intrinsic functions that refer to resources in the template, such as <tt class="docutils literal"><span class="pre">{</span> <span class="pre">"Ref"</span> <span class="pre">:</span> <span class="pre">"MyEC2InstanceResource"</span> <span class="pre">}</span></tt> .</li>
+<li><tt class="docutils literal"><span class="pre">ParameterReference</span></tt> entities are <tt class="docutils literal"><span class="pre">Ref</span></tt> intrinsic functions that get template parameter values, such as <tt class="docutils literal"><span class="pre">{</span> <span class="pre">"Ref"</span> <span class="pre">:</span> <span class="pre">"MyPasswordParameter"</span> <span class="pre">}</span></tt> .</li>
+<li><tt class="docutils literal"><span class="pre">ResourceAttribute</span></tt> entities are <tt class="docutils literal"><span class="pre">Fn::GetAtt</span></tt> intrinsic functions that get resource attribute values, such as <tt class="docutils literal"><span class="pre">{</span> <span class="pre">"Fn::GetAtt"</span> <span class="pre">:</span> <span class="pre">[</span> <span class="pre">"MyEC2InstanceResource",</span> <span class="pre">"PublicDnsName"</span> <span class="pre">]</span> <span class="pre">}</span></tt> .</li>
+<li><tt class="docutils literal"><span class="pre">DirectModification</span></tt> entities are changes that are made directly to the template.</li>
+<li><tt class="docutils literal"><span class="pre">Automatic</span></tt> entities are <tt class="docutils literal"><span class="pre">AWS::CloudFormation::Stack</span></tt> resource types, which are also known as nested stacks. If you made no changes to the <tt class="docutils literal"><span class="pre">AWS::CloudFormation::Stack</span></tt> resource, AWS CloudFormation sets the <tt class="docutils literal"><span class="pre">ChangeSource</span></tt> to <tt class="docutils literal"><span class="pre">Automatic</span></tt> because the nested stack's template might have changed. Changes to a nested stack's template aren't visible to AWS CloudFormation until you run an update on the parent stack.</li>
+</ul>
+</div></blockquote>
+<p>CausingEntity -&gt; (string)</p>
+<blockquote>
+<div><p>The identity of the entity that triggered this change. This entity is a member of the group that is specified by the <tt class="docutils literal"><span class="pre">ChangeSource</span></tt> field. For example, if you modified the value of the <tt class="docutils literal"><span class="pre">KeyPairName</span></tt> parameter, the <tt class="docutils literal"><span class="pre">CausingEntity</span></tt> is the name of the parameter (<tt class="docutils literal"><span class="pre">KeyPairName</span></tt> ).</p>
+<p>If the <tt class="docutils literal"><span class="pre">ChangeSource</span></tt> value is <tt class="docutils literal"><span class="pre">DirectModification</span></tt> , no value is given for <tt class="docutils literal"><span class="pre">CausingEntity</span></tt> .</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>If the output exceeds 1 MB, a string that identifies the next page of changes. If there is no additional page, this value is null.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="describe-account-limits.html" title="previous chapter (use the left arrow)">&#8592; describe-account-limits</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="describe-stack-events.html" title="next chapter (use the right arrow)">describe-stack-events &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="describe-stack-events.html" title="describe-stack-events">next</a> |</li>
+        <li class="right">
+          <a href="describe-account-limits.html" title="describe-account-limits">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">cloudformation</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudformation/describe-change-set.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:57 GMT -->
+</html>

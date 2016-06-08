@@ -1,0 +1,355 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/topic/s3-config.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>AWS CLI S3 Configuration &mdash; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../index-2.html" />
+    <link rel="up" title="AWS CLI Topic Guide" href="index.html" />
+    <link rel="next" title="AWS CLI Configuration Variables" href="config-vars.html" />
+    <link rel="prev" title="AWS CLI Topic Guide" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../index-2.html">Home</a></li>
+<li><a href="../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="config-vars.html" title="AWS CLI Configuration Variables"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="AWS CLI Topic Guide"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index-2.html">AWS CLI 1.10.36 Command Reference</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">AWS CLI Topic Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="index.html" title="previous chapter (use the left arrow)">&larr; AWS CLI Topic Guide</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="config-vars.html" title="next chapter (use the right arrow)">AWS CLI Configuration Variables &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../index-2.html">
+    <img class="logo" src="../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">AWS CLI S3 Configuration</a><ul>
+<li><a class="reference internal" href="#configuration-values">Configuration Values</a><ul>
+<li><a class="reference internal" href="#max-concurrent-requests">max_concurrent_requests</a></li>
+<li><a class="reference internal" href="#max-queue-size">max_queue_size</a></li>
+<li><a class="reference internal" href="#multipart-threshold">multipart_threshold</a></li>
+<li><a class="reference internal" href="#multipart-chunksize">multipart_chunksize</a></li>
+<li><a class="reference internal" href="#use-accelerate-endpoint">use_accelerate_endpoint</a></li>
+<li><a class="reference internal" href="#addressing-style">addressing_style</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=topic/s3-config">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../reference/index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-help-topics"><em>topics</em></a> ]</p>
+<div class="section" id="aws-cli-s3-configuration">
+<span id="cli-aws-help-s3-config"></span><h1>AWS CLI S3 Configuration<a class="headerlink" href="#aws-cli-s3-configuration" title="Permalink to this headline">¶</a></h1>
+<p>The <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">s3</span></tt> transfer commands, which include the <tt class="docutils literal"><span class="pre">cp</span></tt>, <tt class="docutils literal"><span class="pre">sync</span></tt>, <tt class="docutils literal"><span class="pre">mv</span></tt>,
+and <tt class="docutils literal"><span class="pre">rm</span></tt> commands, have additional configuration values you can use to
+control S3 transfers.  This topic guide discusses these parameters as well as
+best practices and guidelines for setting these values.</p>
+<p>Before discussing the specifics of these values, note that these values are
+entirely optional.  You should be able to use the <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">s3</span></tt> transfer commands
+without having to configure any of these values.  These configuration values
+are provided in the case where you need to modify one of these values, either
+for performance reasons or to account for the specific environment where these
+<tt class="docutils literal"><span class="pre">aws</span> <span class="pre">s3</span></tt> commands are being run.</p>
+<div class="section" id="configuration-values">
+<h2>Configuration Values<a class="headerlink" href="#configuration-values" title="Permalink to this headline">¶</a></h2>
+<p>These are the configuration values you can set specifically for the <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">s3</span></tt>
+command set:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">max_concurrent_requests</span></tt> - The maximum number of concurrent requests.</li>
+<li><tt class="docutils literal"><span class="pre">max_queue_size</span></tt> - The maximum number of tasks in the task queue.</li>
+<li><tt class="docutils literal"><span class="pre">multipart_threshold</span></tt> - The size threshold the CLI uses for multipart
+transfers of individual files.</li>
+<li><tt class="docutils literal"><span class="pre">multipart_chunksize</span></tt> - When using multipart transfers, this is the chunk
+size that the CLI uses for multipart transfers of individual files.</li>
+</ul>
+<p>These are the configuration values that can be set for both <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">s3</span></tt>
+and <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">s3api</span></tt>:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">use_accelerate_endpoint</span></tt> - Use the Amazon S3 Accelerate endpoint for
+all <tt class="docutils literal"><span class="pre">s3</span></tt> and <tt class="docutils literal"><span class="pre">s3api</span></tt> commands. You <strong>must</strong> first enable S3 Accelerate
+on your bucket before attempting to use the endpoint.</li>
+<li><tt class="docutils literal"><span class="pre">addressing_style</span></tt> - Specifies which addressing style to use. This controls
+if the bucket name is in the hostname or part of the URL. Value values are:
+<tt class="docutils literal"><span class="pre">path</span></tt>, <tt class="docutils literal"><span class="pre">virtual</span></tt>, and <tt class="docutils literal"><span class="pre">auto</span></tt>.  The default value is <tt class="docutils literal"><span class="pre">auto</span></tt>.</li>
+</ul>
+<p>These values must be set under the top level <tt class="docutils literal"><span class="pre">s3</span></tt> key in the AWS Config File,
+which has a default location of <tt class="docutils literal"><span class="pre">~/.aws/config</span></tt>.  Below is an example
+configuration:</p>
+<div class="highlight-python"><pre>[profile development]
+aws_access_key_id=foo
+aws_secret_access_key=bar
+s3 =
+  max_concurrent_requests = 20
+  max_queue_size = 10000
+  multipart_threshold = 64MB
+  multipart_chunksize = 16MB
+  use_accelerate_endpoint = true
+  addressing_style = path</pre>
+</div>
+<p>Note that all the S3 configuration values are indented and nested under the top
+level <tt class="docutils literal"><span class="pre">s3</span></tt> key.</p>
+<p>You can also set these values programatically using the <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">configure</span> <span class="pre">set</span></tt>
+command.  For example, to set the above values for the default profile, you
+could instead run these commands:</p>
+<div class="highlight-python"><pre>$ aws configure set default.s3.max_concurrent_requests 20
+$ aws configure set default.s3.max_queue_size 10000
+$ aws configure set default.s3.multipart_threshold 64MB
+$ aws configure set default.s3.multipart_chunksize 16MB
+$ aws configure set default.s3.use_accelerate_endpoint true
+$ aws configure set default.s3.addressing_style path</pre>
+</div>
+<div class="section" id="max-concurrent-requests">
+<h3>max_concurrent_requests<a class="headerlink" href="#max-concurrent-requests" title="Permalink to this headline">¶</a></h3>
+<p><strong>Default</strong> - <tt class="docutils literal"><span class="pre">10</span></tt></p>
+<p>The <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">s3</span></tt> transfer commands are multithreaded.  At any given time,
+multiple requests to Amazon S3 are in flight.  For example, if you are
+uploading a directory via <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">s3</span> <span class="pre">cp</span> <span class="pre">localdir</span> <span class="pre">s3://bucket/</span> <span class="pre">--recursive</span></tt>, the
+AWS CLI could be uploading the local files <tt class="docutils literal"><span class="pre">localdir/file1</span></tt>,
+<tt class="docutils literal"><span class="pre">localdir/file2</span></tt>, and <tt class="docutils literal"><span class="pre">localdir/file3</span></tt> in parallel.  The
+<tt class="docutils literal"><span class="pre">max_concurrent_requests</span></tt> specifies the maximum number of transfer commands
+that are allowed at any given time.</p>
+<p>You may need to change this value for a few reasons:</p>
+<ul class="simple">
+<li>Decreasing this value - On some environments, the default of 10 concurrent
+requests can overwhelm a system.  This may cause connection timeouts or
+slow the responsiveness of the system.  Lowering this value will make the
+S3 transfer commands less resource intensive.  The tradeoff is that
+S3 transfers may take longer to complete.</li>
+<li>Increasing this value - In some scenarios, you may want the S3 transfers
+to complete as quickly as possible, using as much network bandwidth
+as necessary.  In this scenario, the default number of concurrent requests
+may not be sufficient to utilize all the network bandwidth available.
+Increasing this value may improve the time it takes to complete an
+S3 transfer.</li>
+</ul>
+</div>
+<div class="section" id="max-queue-size">
+<h3>max_queue_size<a class="headerlink" href="#max-queue-size" title="Permalink to this headline">¶</a></h3>
+<p><strong>Default</strong> - <tt class="docutils literal"><span class="pre">1000</span></tt></p>
+<p>The AWS CLI internally uses a producer consumer model, where we queue up S3
+tasks that are then executed by consumers, which in this case utilize a bound
+thread pool, controlled by <tt class="docutils literal"><span class="pre">max_concurrent_requests</span></tt>.  A task generally maps
+to a single S3 operation.  For example, as task could be a <tt class="docutils literal"><span class="pre">PutObjectTask</span></tt>,
+or a <tt class="docutils literal"><span class="pre">GetObjectTask</span></tt>, or an <tt class="docutils literal"><span class="pre">UploadPartTask</span></tt>.  The enqueuing rate can be
+much faster than the rate at which consumers are executing tasks.  To avoid
+unbounded growth, the task queue size is capped to a specific size.  This
+configuration value changes the value of that maximum number.</p>
+<p>You generally will not need to change this value.  This value also corresponds
+to the number of tasks we are aware of that need to be executed.  This means
+that by default we can only see 1000 tasks ahead.  Until the S3 command knows
+the total number of tasks executed, the progress line will show a total of
+<tt class="docutils literal"><span class="pre">...</span></tt>.  Increasing this value means that we will be able to more quickly know
+the total number of tasks needed, assuming that the enqueuing rate is quicker
+than the rate of task consumption.  The tradeoff is that a larger max queue
+size will require more memory.</p>
+</div>
+<div class="section" id="multipart-threshold">
+<h3>multipart_threshold<a class="headerlink" href="#multipart-threshold" title="Permalink to this headline">¶</a></h3>
+<p><strong>Default</strong> - <tt class="docutils literal"><span class="pre">8MB</span></tt></p>
+<p>When uploading, downloading, or copying a file, the S3 commands
+will switch to multipart operations if the file reaches a given
+size threshold.  The <tt class="docutils literal"><span class="pre">multipart_threshold</span></tt> controls this value.
+You can specify this value in one of two ways:</p>
+<ul class="simple">
+<li>The file size in bytes.  For example, <tt class="docutils literal"><span class="pre">1048576</span></tt>.</li>
+<li>The file size with a size suffix.  You can use <tt class="docutils literal"><span class="pre">KB</span></tt>, <tt class="docutils literal"><span class="pre">MB</span></tt>, <tt class="docutils literal"><span class="pre">GB</span></tt>,
+<tt class="docutils literal"><span class="pre">TB</span></tt>.  For example: <tt class="docutils literal"><span class="pre">10MB</span></tt>, <tt class="docutils literal"><span class="pre">1GB</span></tt>.  Note that S3 imposes
+constraints on valid values that can be used for multipart
+operations.</li>
+</ul>
+</div>
+<div class="section" id="multipart-chunksize">
+<h3>multipart_chunksize<a class="headerlink" href="#multipart-chunksize" title="Permalink to this headline">¶</a></h3>
+<p><strong>Default</strong> - <tt class="docutils literal"><span class="pre">8MB</span></tt></p>
+<p><strong>Minimum For Uploads</strong> - <tt class="docutils literal"><span class="pre">5MB</span></tt></p>
+<p>Once the S3 commands have decided to use multipart operations, the
+file is divided into chunks.  This configuration option specifies what
+the chunk size (also referred to as the part size) should be.  This
+value can specified using the same semantics as <tt class="docutils literal"><span class="pre">multipart_threshold</span></tt>,
+that is either as the number of bytes as an integer, or using a size
+suffix.</p>
+</div>
+<div class="section" id="use-accelerate-endpoint">
+<h3>use_accelerate_endpoint<a class="headerlink" href="#use-accelerate-endpoint" title="Permalink to this headline">¶</a></h3>
+<p>If set to <tt class="docutils literal"><span class="pre">true</span></tt>, will direct all Amazon S3 requests to the S3 Accelerate
+endpoint: <tt class="docutils literal"><span class="pre">s3-accelerate.amazonaws.com</span></tt>. To use this endpoint, your bucket
+must be enabled to use S3 Accelerate. All request will be sent using the
+virtual style of bucket addressing: <tt class="docutils literal"><span class="pre">my-bucket.s3-accelerate.amazonaws.com</span></tt>.
+Any <tt class="docutils literal"><span class="pre">ListBuckets</span></tt>, <tt class="docutils literal"><span class="pre">CreateBucket</span></tt>, and <tt class="docutils literal"><span class="pre">DeleteBucket</span></tt> requests will not
+be sent to the Accelerate endpoint as the endpoint does not support those
+operations. This behavior can also be set if <tt class="docutils literal"><span class="pre">--endpoint-url</span></tt> parameter
+is set to <tt class="docutils literal"><span class="pre">https://s3-accelerate.amazonaws.com</span></tt> or
+<tt class="docutils literal"><span class="pre">http://s3-accelerate.amazonaws.com</span></tt> for any <tt class="docutils literal"><span class="pre">s3</span></tt> or <tt class="docutils literal"><span class="pre">s3api</span></tt> command.</p>
+</div>
+<div class="section" id="addressing-style">
+<h3>addressing_style<a class="headerlink" href="#addressing-style" title="Permalink to this headline">¶</a></h3>
+<p>There's two styles of constructing an S3 endpoint.  The first is with
+the bucket included as part of the hostname.  This corresponds to the
+addressing style of <tt class="docutils literal"><span class="pre">virtual</span></tt>.  The second is with the bucket included
+as part of the path of the URI, corresponding to the addressing style
+of <tt class="docutils literal"><span class="pre">path</span></tt>.  The default value in the CLI is to use <tt class="docutils literal"><span class="pre">auto</span></tt>, which
+will attempt to use <tt class="docutils literal"><span class="pre">virtual</span></tt> where possible, but will fall back to
+<tt class="docutils literal"><span class="pre">path</span></tt> style if necessary.  For example, if your bucket name is not
+DNS compatible, the bucket name cannot be part of the hostname and
+must be in the path.  With <tt class="docutils literal"><span class="pre">auto</span></tt>, the CLI will detect this condition
+and automatically switch to <tt class="docutils literal"><span class="pre">path</span></tt> style for you.  If you set the
+addressing style to <tt class="docutils literal"><span class="pre">path</span></tt>, you must ensure that the AWS region you
+configured in the AWS CLI matches the same region of your bucket.</p>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="index.html" title="previous chapter (use the left arrow)">&larr; AWS CLI Topic Guide</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="config-vars.html" title="next chapter (use the right arrow)">AWS CLI Configuration Variables &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="config-vars.html" title="AWS CLI Configuration Variables"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="AWS CLI Topic Guide"
+             >previous</a> |</li>
+        <li><a href="../index-2.html">AWS CLI 1.10.36 Command Reference</a> &raquo;</li>
+          <li><a href="index.html" >AWS CLI Topic Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/topic/s3-config.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+</html>

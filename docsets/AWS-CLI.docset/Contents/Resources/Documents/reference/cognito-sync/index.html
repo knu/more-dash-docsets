@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cognito-sync/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:23:33 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>cognito-sync &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="bulk-publish" href="bulk-publish.html" />
+    <link rel="prev" title="verify-user-attribute" href="../cognito-idp/verify-user-attribute.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="bulk-publish.html" title="bulk-publish" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="../cognito-idp/verify-user-attribute.html" title="verify-user-attribute" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../cognito-idp/verify-user-attribute.html" title="previous chapter (use the left arrow)">&#8592; verify-user-attribute</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="bulk-publish.html" title="next chapter (use the right arrow)">bulk-publish &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">cognito-sync</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/cognito-sync/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="cognito-sync">
+<span id="cli-aws-cognito-sync"></span><h1>cognito-sync<a name="//apple_ref/cpp/Command/aws cognito-sync" class="dashAnchor" id="aws cognito-sync"></a><a class="headerlink" href="#cognito-sync" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Amazon Cognito Sync provides an AWS service and client library that enable cross-device syncing of application-related user data. High-level client libraries are available for both iOS and Android. You can use these libraries to persist data locally so that it's available even if the device is offline. Developer credentials don't need to be stored on the mobile device to access the service. You can use Amazon Cognito to obtain a normalized user ID and credentials. User data is persisted in a dataset that can store up to 1 MB of key-value pairs, and you can have up to 20 datasets per user identity.</p>
+<p>With Amazon Cognito Sync, the data stored for each identity is accessible only to credentials assigned to that identity. In order to use the Cognito Sync service, you need to make API calls using credentials retrieved with <a class="reference external" href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/Welcome.html">Amazon Cognito Identity service</a> .</p>
+<p>If you want to use Cognito Sync in an Android or iOS application, you will probably want to make API calls via the AWS Mobile SDK. To learn more, see the <a class="reference external" href="http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-sync.html">Developer Guide for Android</a> and the <a class="reference external" href="http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-sync.html">Developer Guide for iOS</a> .</p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a name="//apple_ref/cpp/Section/Available Commands" class="dashAnchor" id="Available Commands"></a><a class="headerlink" href="#available-commands" title="Permalink to this headline">&#182;</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/bulk-publish" class="dashAnchor" id="bulk-publish"></a><a class="reference internal" href="bulk-publish.html">bulk-publish</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-dataset" class="dashAnchor" id="delete-dataset"></a><a class="reference internal" href="delete-dataset.html">delete-dataset</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-dataset" class="dashAnchor" id="describe-dataset"></a><a class="reference internal" href="describe-dataset.html">describe-dataset</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-identity-pool-usage" class="dashAnchor" id="describe-identity-pool-usage"></a><a class="reference internal" href="describe-identity-pool-usage.html">describe-identity-pool-usage</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-identity-usage" class="dashAnchor" id="describe-identity-usage"></a><a class="reference internal" href="describe-identity-usage.html">describe-identity-usage</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-bulk-publish-details" class="dashAnchor" id="get-bulk-publish-details"></a><a class="reference internal" href="get-bulk-publish-details.html">get-bulk-publish-details</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-cognito-events" class="dashAnchor" id="get-cognito-events"></a><a class="reference internal" href="get-cognito-events.html">get-cognito-events</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-identity-pool-configuration" class="dashAnchor" id="get-identity-pool-configuration"></a><a class="reference internal" href="get-identity-pool-configuration.html">get-identity-pool-configuration</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-datasets" class="dashAnchor" id="list-datasets"></a><a class="reference internal" href="list-datasets.html">list-datasets</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-identity-pool-usage" class="dashAnchor" id="list-identity-pool-usage"></a><a class="reference internal" href="list-identity-pool-usage.html">list-identity-pool-usage</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-records" class="dashAnchor" id="list-records"></a><a class="reference internal" href="list-records.html">list-records</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/register-device" class="dashAnchor" id="register-device"></a><a class="reference internal" href="register-device.html">register-device</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/set-cognito-events" class="dashAnchor" id="set-cognito-events"></a><a class="reference internal" href="set-cognito-events.html">set-cognito-events</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/set-identity-pool-configuration" class="dashAnchor" id="set-identity-pool-configuration"></a><a class="reference internal" href="set-identity-pool-configuration.html">set-identity-pool-configuration</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/subscribe-to-dataset" class="dashAnchor" id="subscribe-to-dataset"></a><a class="reference internal" href="subscribe-to-dataset.html">subscribe-to-dataset</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/unsubscribe-from-dataset" class="dashAnchor" id="unsubscribe-from-dataset"></a><a class="reference internal" href="unsubscribe-from-dataset.html">unsubscribe-from-dataset</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-records" class="dashAnchor" id="update-records"></a><a class="reference internal" href="update-records.html">update-records</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../cognito-idp/verify-user-attribute.html" title="previous chapter (use the left arrow)">&#8592; verify-user-attribute</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="bulk-publish.html" title="next chapter (use the right arrow)">bulk-publish &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="bulk-publish.html" title="bulk-publish">next</a> |</li>
+        <li class="right">
+          <a href="../cognito-idp/verify-user-attribute.html" title="verify-user-attribute">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cognito-sync/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:23:40 GMT -->
+</html>

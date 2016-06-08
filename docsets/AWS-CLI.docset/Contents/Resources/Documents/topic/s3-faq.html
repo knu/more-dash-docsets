@@ -1,0 +1,248 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/topic/s3-faq.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>AWS CLI S3 FAQ &mdash; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../index-2.html" />
+    <link rel="up" title="AWS CLI Topic Guide" href="index.html" />
+    <link rel="next" title="AWS CLI Return Codes" href="return-codes.html" />
+    <link rel="prev" title="AWS CLI Configuration Variables" href="config-vars.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../index-2.html">Home</a></li>
+<li><a href="../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="return-codes.html" title="AWS CLI Return Codes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="config-vars.html" title="AWS CLI Configuration Variables"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index-2.html">AWS CLI 1.10.36 Command Reference</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">AWS CLI Topic Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="config-vars.html" title="previous chapter (use the left arrow)">&larr; AWS CLI Configuration Variables</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="return-codes.html" title="next chapter (use the right arrow)">AWS CLI Return Codes &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../index-2.html">
+    <img class="logo" src="../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">AWS CLI S3 FAQ</a><ul>
+<li><a class="reference internal" href="#s3-faq">S3 FAQ</a><ul>
+<li><a class="reference internal" href="#q-does-the-aws-cli-validate-checksums">Q: Does the AWS CLI validate checksums?</a><ul>
+<li><a class="reference internal" href="#upload">Upload</a></li>
+<li><a class="reference internal" href="#download">Download</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=topic/s3-faq">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../reference/index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-help-topics"><em>topics</em></a> ]</p>
+<div class="section" id="aws-cli-s3-faq">
+<span id="cli-aws-help-s3-faq"></span><h1>AWS CLI S3 FAQ<a class="headerlink" href="#aws-cli-s3-faq" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="s3-faq">
+<h2>S3 FAQ<a class="headerlink" href="#s3-faq" title="Permalink to this headline">¶</a></h2>
+<p>Below are common questions regarding the use of Amazon S3 in the AWS CLI.</p>
+<div class="section" id="q-does-the-aws-cli-validate-checksums">
+<h3>Q: Does the AWS CLI validate checksums?<a class="headerlink" href="#q-does-the-aws-cli-validate-checksums" title="Permalink to this headline">¶</a></h3>
+<p>The AWS CLI will perform checksum validation for uploading and downloading
+files in specific scenarios.</p>
+<div class="section" id="upload">
+<h4>Upload<a class="headerlink" href="#upload" title="Permalink to this headline">¶</a></h4>
+<p>The AWS CLI will calculate and auto-populate the <tt class="docutils literal"><span class="pre">Content-MD5</span></tt> header for
+both standard and multipart uploads.  If the checksum that S3 calculates does
+not match the <tt class="docutils literal"><span class="pre">Content-MD5</span></tt> provided, S3 will not store the object and
+instead will return an error message back the AWS CLI.  The AWS CLI will retry
+this error up to 5 times before giving up.  On the case that any files fail to
+transfer successfully to S3, the AWS CLI will exit with a non zero RC.
+See <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">help</span> <span class="pre">returncodes</span></tt> for more information.</p>
+<p>If the upload request is signed with Signature Version 4, then a
+<tt class="docutils literal"><span class="pre">Content-MD5</span></tt> is not calculated.  Instead, the AWS CLI uses the
+<tt class="docutils literal"><span class="pre">x-amz-content-sha256</span></tt> header as a checksum instead of <tt class="docutils literal"><span class="pre">Content-MD5</span></tt>.
+The AWS CLI will use Signature Version 4 for S3 in several cases:</p>
+<ul class="simple">
+<li>You're using an AWS region that only supports Signature Version 4.  This
+includes <tt class="docutils literal"><span class="pre">eu-central-1</span></tt> and <tt class="docutils literal"><span class="pre">ap-northeast-2</span></tt>.</li>
+<li>You explicitly opt in and set <tt class="docutils literal"><span class="pre">signature_version</span> <span class="pre">=</span> <span class="pre">s3v4</span></tt> in your
+<tt class="docutils literal"><span class="pre">~/.aws/config</span></tt> file.</li>
+</ul>
+<p>Note that the AWS CLI will add a <tt class="docutils literal"><span class="pre">Content-MD5</span></tt> header for both
+the high level <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">s3</span></tt> commands that perform uploads
+(<tt class="docutils literal"><span class="pre">aws</span> <span class="pre">s3</span> <span class="pre">cp</span></tt>, <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">s3</span> <span class="pre">sync</span></tt>) as well as the low level <tt class="docutils literal"><span class="pre">s3api</span></tt>
+commands including <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">s3api</span> <span class="pre">put-object</span></tt> and <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">s3api</span> <span class="pre">upload-part</span></tt>.</p>
+</div>
+<div class="section" id="download">
+<h4>Download<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h4>
+<p>The AWS CLI will attempt to verify the checksum of downloads when possible,
+based on the <tt class="docutils literal"><span class="pre">ETag</span></tt> header returned from a <tt class="docutils literal"><span class="pre">GetObject</span></tt> request that's
+performed whenever the AWS CLI downloads objects from S3.  If the calculated
+MD5 checksum does not match the expected checksum, the file is deleted
+and the download is retried.  This process is retried up to 3 times.
+If a downloads fails, the AWS CLI will exit with a non zero RC.
+See <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">help</span> <span class="pre">returncodes</span></tt> for more information.</p>
+<p>There are several conditions where the CLI is <em>not</em> able to verify
+checksums on downloads:</p>
+<ul class="simple">
+<li>If the object was uploaded via multipart uploads</li>
+<li>If the object was uploaded using server side encryption with KMS</li>
+<li>If the object was uploaded using a customer provided encryption key</li>
+<li>If the object is downloaded using range <tt class="docutils literal"><span class="pre">GetObject</span></tt> requests</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="config-vars.html" title="previous chapter (use the left arrow)">&larr; AWS CLI Configuration Variables</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="return-codes.html" title="next chapter (use the right arrow)">AWS CLI Return Codes &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="return-codes.html" title="AWS CLI Return Codes"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="config-vars.html" title="AWS CLI Configuration Variables"
+             >previous</a> |</li>
+        <li><a href="../index-2.html">AWS CLI 1.10.36 Command Reference</a> &raquo;</li>
+          <li><a href="index.html" >AWS CLI Topic Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/topic/s3-faq.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+</html>

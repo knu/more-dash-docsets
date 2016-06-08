@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudformation/describe-stacks.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:57 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>describe-stacks &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>describe-stacks &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,9 +25,9 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="cloudformation" href="index.html" />
-    <link rel="next" title="get-template" href="get-template.html" />
+    <link rel="next" title="estimate-template-cost" href="estimate-template-cost.html" />
     <link rel="prev" title="describe-stack-resources" href="describe-stack-resources.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -58,10 +61,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
         <li class="right">
-          <a href="get-template.html" title="get-template" accesskey="N">next</a> |</li>
+          <a href="estimate-template-cost.html" title="estimate-template-cost" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="describe-stack-resources.html" title="describe-stack-resources" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">cloudformation</a> &#187;</li> 
       </ul>
@@ -75,31 +78,32 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="get-template.html" title="next chapter (use the right arrow)">get-template &#8594;</a></li>
+          <li><a href="estimate-template-cost.html" title="next chapter (use the right arrow)">estimate-template-cost &#8594;</a></li>
       </ul>
     </div>
   
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">describe-stacks</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
 <li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -108,44 +112,61 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/cloudformation/describe-stacks">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/cloudformation/describe-stacks">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>cloudformation</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-cloudformation"><em>cloudformation</em></a> ]</p>
 <div class="section" id="describe-stacks">
-<h1>describe-stacks<a class="headerlink" href="#describe-stacks" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-cloudformation-describe-stacks"></span><h1>describe-stacks<a name="//apple_ref/cpp/Command/aws cloudformation describe-stacks" class="dashAnchor" id="aws cloudformation describe-stacks"></a><a class="headerlink" href="#describe-stacks" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
 <p>Returns the description for the specified stack; if no stack name was specified, then it returns the description for all the stacks created.</p>
+<p><tt class="docutils literal"><span class="pre">describe-stacks</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">Stacks</span></tt></p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  describe-stacks
 [--stack-name &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
 [--starting-token &lt;value&gt;]
-[--max-items &lt;value&gt;]</pre>
+[--max-items &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--stack-name" class="dashAnchor" id="stack-name"></a><span class="pre">--stack-name</span></tt> (string)</p>
 <blockquote>
-<div><p>The name or the unique identifier associated with the stack.</p>
+<div><p>The name or the unique stack ID that is associated with the stack, which are not always interchangeable:</p>
+<ul class="simple">
+<li>Running stacks: You can specify either the stack's name or its unique stack ID.</li>
+<li>Deleted stacks: You must specify the unique stack ID.</li>
+</ul>
 <p>Default: There is no default value.</p>
 </div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--starting-token" class="dashAnchor" id="starting-token"></a><span class="pre">--starting-token</span></tt> (string)</p>
 <blockquote>
-<div>A token to specify where to start paginating. This is the <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--next-token" class="dashAnchor" id="next-token"></a><span class="pre">--next-token</span></tt>  from a previously truncated response.</div></blockquote>
+<div>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">next-token</span></tt> from a previously truncated response.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-items" class="dashAnchor" id="max-items"></a><span class="pre">--max-items</span></tt> (integer)</p>
 <blockquote>
-<div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">NextMarker</span></tt>  will be provided in the output that you can use to resume pagination.</div></blockquote>
+<div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">next-token</span></tt> will be provided in the output that you can use to resume pagination. This <tt class="docutils literal"><span class="pre">next-token</span></tt> response element should <strong>not</strong> be used directly outside of the AWS CLI.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
 </div>
 <div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
 <p><strong>To describe AWS CloudFormation stacks</strong></p>
 <p>The following <tt class="docutils literal"><span class="pre">describe-stacks</span></tt> command shows summary information for the <tt class="docutils literal"><span class="pre">myteststack</span></tt> stack:</p>
 <div class="highlight-python"><pre>aws cloudformation describe-stacks --stack-name myteststack</pre>
@@ -154,7 +175,7 @@
 <div class="highlight-python"><pre>{
     "Stacks":  [
         {
-            "StackId": "arn:aws:cloudformation:us-west-2:803981987763:stack/myteststack/a69442d0-0b8f-11e3-8b8a-500150b352e0",
+            "StackId": "arn:aws:cloudformation:us-east-1:123456789012:stack/myteststack/466df9e0-0dff-08e3-8e2f-5088487c4896",
             "Description": "AWS CloudFormation Sample Template S3_Bucket: Sample template showing how to create a publicly accessible S3 bucket. **WARNING** This template creates an S3 bucket. You will be billed for the AWS resources used if you create a stack from this template.",
             "Tags": [],
             "Outputs": [
@@ -175,6 +196,110 @@
 </div>
 <p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a> in the <em>AWS CloudFormation User Guide</em>.</p>
 </div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Stacks -&gt; (list)</p>
+<blockquote>
+<div><p>A list of stack structures.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The Stack data type.</p>
+<p>StackId -&gt; (string)</p>
+<blockquote>
+<div>Unique identifier of the stack.</div></blockquote>
+<p>StackName -&gt; (string)</p>
+<blockquote>
+<div>The name associated with the stack.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>A user-defined description associated with the stack.</div></blockquote>
+<p>Parameters -&gt; (list)</p>
+<blockquote>
+<div><p>A list of <tt class="docutils literal"><span class="pre">Parameter</span></tt> structures.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The Parameter data type.</p>
+<p>ParameterKey -&gt; (string)</p>
+<blockquote>
+<div>The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS CloudFormation uses the default value that is specified in your template.</div></blockquote>
+<p>ParameterValue -&gt; (string)</p>
+<blockquote>
+<div>The value associated with the parameter.</div></blockquote>
+<p>UsePreviousValue -&gt; (boolean)</p>
+<blockquote>
+<div>During a stack update, use the existing parameter value that the stack is using for a given parameter key. If you specify <tt class="docutils literal"><span class="pre">true</span></tt> , do not specify a parameter value.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>CreationTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The time at which the stack was created.</div></blockquote>
+<p>LastUpdatedTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The time the stack was last updated. This field will only be returned if the stack has been updated at least once.</div></blockquote>
+<p>StackStatus -&gt; (string)</p>
+<blockquote>
+<div>Current status of the stack.</div></blockquote>
+<p>StackStatusReason -&gt; (string)</p>
+<blockquote>
+<div>Success/failure message associated with the stack status.</div></blockquote>
+<p>DisableRollback -&gt; (boolean)</p>
+<blockquote>
+<div><p>Boolean to enable or disable rollback on stack creation failures:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">true</span></tt> : disable rollback</li>
+<li><tt class="docutils literal"><span class="pre">false</span></tt> : enable rollback</li>
+</ul>
+</div></blockquote>
+<p>NotificationARNs -&gt; (list)</p>
+<blockquote>
+<div><p>SNS topic ARNs to which stack related events are published.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>TimeoutInMinutes -&gt; (integer)</p>
+<blockquote>
+<div>The amount of time within which stack creation should complete.</div></blockquote>
+<p>Capabilities -&gt; (list)</p>
+<blockquote>
+<div><p>The capabilities allowed in the stack.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>Outputs -&gt; (list)</p>
+<blockquote>
+<div><p>A list of output structures.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The Output data type.</p>
+<p>OutputKey -&gt; (string)</p>
+<blockquote>
+<div>The key associated with the output.</div></blockquote>
+<p>OutputValue -&gt; (string)</p>
+<blockquote>
+<div>The value associated with the output.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>User defined description associated with the output.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Tags -&gt; (list)</p>
+<blockquote>
+<div><p>A list of <tt class="docutils literal"><span class="pre">Tag</span></tt> s that specify information about the stack.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The Tag type enables you to specify a key-value pair that can be used to store information about an AWS CloudFormation stack.</p>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div><em>Required</em> . A string used to identify this tag. You can specify a maximum of 128 characters for a tag key. Tags owned by Amazon Web Services (AWS) have the reserved prefix: <tt class="docutils literal"><span class="pre">aws:</span></tt> .</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div><em>Required</em> . A string containing the value for this tag. You can specify a maximum of 256 characters for a tag value.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>If the output exceeds 1 MB in size, a string that identifies the next page of stacks. If no additional page exists, this value is null.</div></blockquote>
+</div>
 </div>
 
 
@@ -189,50 +314,45 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="get-template.html" title="next chapter (use the right arrow)">get-template &#8594;</a></li>
+          <li><a href="estimate-template-cost.html" title="next chapter (use the right arrow)">estimate-template-cost &#8594;</a></li>
       </ul>
     </div>
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index">index</a></li>
         <li class="right">
-          <a href="get-template.html" title="get-template">next</a> |</li>
+          <a href="estimate-template-cost.html" title="estimate-template-cost">next</a> |</li>
         <li class="right">
           <a href="describe-stack-resources.html" title="describe-stack-resources">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">cloudformation</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'describe-stack-resources.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'get-template.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudformation/describe-stacks.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:57 GMT -->
 </html>

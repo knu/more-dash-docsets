@@ -1,0 +1,367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/configservice/get-resource-config-history.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:00 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-resource-config-history &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="configservice" href="index.html" />
+    <link rel="next" title="get-status" href="get-status.html" />
+    <link rel="prev" title="get-compliance-summary-by-resource-type" href="get-compliance-summary-by-resource-type.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="get-status.html" title="get-status" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="get-compliance-summary-by-resource-type.html" title="get-compliance-summary-by-resource-type" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">configservice</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-compliance-summary-by-resource-type.html" title="previous chapter (use the left arrow)">&#8592; get-compliance-summary-by-resource-type</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="get-status.html" title="next chapter (use the right arrow)">get-status &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-resource-config-history</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/configservice/get-resource-config-history">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-configservice"><em>configservice</em></a> ]</p>
+<div class="section" id="get-resource-config-history">
+<span id="cli-aws-configservice-get-resource-config-history"></span><h1>get-resource-config-history<a name="//apple_ref/cpp/Command/aws configservice get-resource-config-history" class="dashAnchor" id="aws configservice get-resource-config-history"></a><a class="headerlink" href="#get-resource-config-history" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Returns a list of configuration items for the specified resource. The list contains details about each state of the resource during the specified time interval.</p>
+<p>The response is paginated, and by default, AWS Config returns a limit of 10 configuration items per page. You can customize this number with the <tt class="docutils literal"><span class="pre">limit</span></tt> parameter. The response includes a <tt class="docutils literal"><span class="pre">nextToken</span></tt> string, and to get the next page of results, run the request again and enter this string for the <tt class="docutils literal"><span class="pre">nextToken</span></tt> parameter.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Each call to the API is limited to span a duration of seven days. It is likely that the number of records returned is smaller than the specified <tt class="docutils literal"><span class="pre">limit</span></tt> . In such cases, you can make another call, using the <tt class="docutils literal"><span class="pre">nextToken</span></tt> .</p>
+</div>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  get-resource-config-history
+--resource-type &lt;value&gt;
+--resource-id &lt;value&gt;
+[--later-time &lt;value&gt;]
+[--earlier-time &lt;value&gt;]
+[--chronological-order &lt;value&gt;]
+[--limit &lt;value&gt;]
+[--next-token &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--resource-type" class="dashAnchor" id="resource-type"></a><span class="pre">--resource-type</span></tt> (string)</p>
+<blockquote>
+<div><p>The resource type.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">AWS::EC2::CustomerGateway</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AWS::EC2::EIP</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AWS::EC2::Host</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AWS::EC2::Instance</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AWS::EC2::InternetGateway</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AWS::EC2::NetworkAcl</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AWS::EC2::NetworkInterface</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AWS::EC2::RouteTable</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AWS::EC2::SecurityGroup</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AWS::EC2::Subnet</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AWS::CloudTrail::Trail</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AWS::EC2::Volume</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AWS::EC2::VPC</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AWS::EC2::VPNConnection</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AWS::EC2::VPNGateway</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AWS::IAM::Group</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AWS::IAM::Policy</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AWS::IAM::Role</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AWS::IAM::User</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--resource-id" class="dashAnchor" id="resource-id"></a><span class="pre">--resource-id</span></tt> (string)</p>
+<blockquote>
+<div>The ID of the resource (for example., <tt class="docutils literal"><span class="pre">sg-xxxxxx</span></tt> ).</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--later-time" class="dashAnchor" id="later-time"></a><span class="pre">--later-time</span></tt> (timestamp)</p>
+<blockquote>
+<div>The time stamp that indicates a later time. If not specified, current time is taken.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--earlier-time" class="dashAnchor" id="earlier-time"></a><span class="pre">--earlier-time</span></tt> (timestamp)</p>
+<blockquote>
+<div>The time stamp that indicates an earlier time. If not specified, the action returns paginated results that contain configuration items that start from when the first configuration item was recorded.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--chronological-order" class="dashAnchor" id="chronological-order"></a><span class="pre">--chronological-order</span></tt> (string)</p>
+<blockquote>
+<div><p>The chronological order for configuration items listed. By default the results are listed in reverse chronological order.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Reverse</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Forward</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--limit" class="dashAnchor" id="limit"></a><span class="pre">--limit</span></tt> (integer)</p>
+<blockquote>
+<div>The maximum number of configuration items returned on each page. The default is 10. You cannot specify a limit greater than 100. If you specify 0, AWS Config uses the default.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--next-token" class="dashAnchor" id="next-token"></a><span class="pre">--next-token</span></tt> (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">nextToken</span></tt> string returned on a previous page that you use to get the next page of results in a paginated response.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To get the configuration history of an AWS resource</strong></p>
+<p>The following command returns a list of configuration items for an EC2 instance with an ID of <tt class="docutils literal"><span class="pre">i-1a2b3c4d</span></tt>:</p>
+<div class="highlight-python"><pre>aws configservice get-resource-config-history --resource-type AWS::EC2::Instance --resource-id i-1a2b3c4d</pre>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>configurationItems -&gt; (list)</p>
+<blockquote>
+<div><p>A list that contains the configuration history of one or more resources.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A list that contains detailed configurations of a specified resource.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Currently, the list does not contain information about non-AWS components (for example, applications on your Amazon EC2 instances).</p>
+</div>
+<p>version -&gt; (string)</p>
+<blockquote>
+<div>The version number of the resource configuration.</div></blockquote>
+<p>accountId -&gt; (string)</p>
+<blockquote>
+<div>The 12 digit AWS account ID associated with the resource.</div></blockquote>
+<p>configurationItemCaptureTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The time when the configuration recording was initiated.</div></blockquote>
+<p>configurationItemStatus -&gt; (string)</p>
+<blockquote>
+<div>The configuration item status.</div></blockquote>
+<p>configurationStateId -&gt; (string)</p>
+<blockquote>
+<div>An identifier that indicates the ordering of the configuration items of a resource.</div></blockquote>
+<p>configurationItemMD5Hash -&gt; (string)</p>
+<blockquote>
+<div><p>Unique MD5 hash that represents the configuration items state.</p>
+<p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>
+</div></blockquote>
+<p>arn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the resource.</div></blockquote>
+<p>resourceType -&gt; (string)</p>
+<blockquote>
+<div>The type of AWS resource.</div></blockquote>
+<p>resourceId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the resource (for example., <tt class="docutils literal"><span class="pre">sg-xxxxxx</span></tt> ).</div></blockquote>
+<p>resourceName -&gt; (string)</p>
+<blockquote>
+<div>The custom name of the resource, if available.</div></blockquote>
+<p>awsRegion -&gt; (string)</p>
+<blockquote>
+<div>The region where the resource resides.</div></blockquote>
+<p>availabilityZone -&gt; (string)</p>
+<blockquote>
+<div>The Availability Zone associated with the resource.</div></blockquote>
+<p>resourceCreationTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The time stamp when the resource was created.</div></blockquote>
+<p>tags -&gt; (map)</p>
+<blockquote>
+<div><p>A mapping of key value tags associated with the resource.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+<p>relatedEvents -&gt; (list)</p>
+<blockquote>
+<div><p>A list of CloudTrail event IDs.</p>
+<p>A populated field indicates that the current configuration was initiated by the events recorded in the CloudTrail log. For more information about CloudTrail, see <a class="reference external" href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What is AWS CloudTrail?</a> .</p>
+<p>An empty field indicates that the current configuration was not initiated by any event.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>relationships -&gt; (list)</p>
+<blockquote>
+<div><p>A list of related AWS resources.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The relationship of the related resource to the main resource.</p>
+<p>resourceType -&gt; (string)</p>
+<blockquote>
+<div>The resource type of the related resource.</div></blockquote>
+<p>resourceId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the related resource (for example, <tt class="docutils literal"><span class="pre">sg-xxxxxx</span></tt> ).</div></blockquote>
+<p>resourceName -&gt; (string)</p>
+<blockquote>
+<div>The custom name of the related resource, if available.</div></blockquote>
+<p>relationshipName -&gt; (string)</p>
+<blockquote>
+<div>The type of relationship with the related resource.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>configuration -&gt; (string)</p>
+<blockquote>
+<div>The description of the resource configuration.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>nextToken -&gt; (string)</p>
+<blockquote>
+<div>The string that you use in a subsequent request to get the next page of results in a paginated response.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-compliance-summary-by-resource-type.html" title="previous chapter (use the left arrow)">&#8592; get-compliance-summary-by-resource-type</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="get-status.html" title="next chapter (use the right arrow)">get-status &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="get-status.html" title="get-status">next</a> |</li>
+        <li class="right">
+          <a href="get-compliance-summary-by-resource-type.html" title="get-compliance-summary-by-resource-type">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">configservice</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/configservice/get-resource-config-history.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:00 GMT -->
+</html>

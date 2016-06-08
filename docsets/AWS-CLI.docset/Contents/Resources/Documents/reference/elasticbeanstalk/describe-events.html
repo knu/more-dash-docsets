@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-events.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:18 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>describe-events &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>describe-events &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,9 +25,9 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="elasticbeanstalk" href="index.html" />
-    <link rel="next" title="list-available-solution-stacks" href="list-available-solution-stacks.html" />
+    <link rel="next" title="describe-instances-health" href="describe-instances-health.html" />
     <link rel="prev" title="describe-environments" href="describe-environments.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -58,10 +61,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
         <li class="right">
-          <a href="list-available-solution-stacks.html" title="list-available-solution-stacks" accesskey="N">next</a> |</li>
+          <a href="describe-instances-health.html" title="describe-instances-health" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="describe-environments.html" title="describe-environments" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">elasticbeanstalk</a> &#187;</li> 
       </ul>
@@ -75,30 +78,32 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="list-available-solution-stacks.html" title="next chapter (use the right arrow)">list-available-solution-stacks &#8594;</a></li>
+          <li><a href="describe-instances-health.html" title="next chapter (use the right arrow)">describe-instances-health &#8594;</a></li>
       </ul>
     </div>
   
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">describe-events</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,26 +112,33 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/elasticbeanstalk/describe-events">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/elasticbeanstalk/describe-events">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>elasticbeanstalk</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-elasticbeanstalk"><em>elasticbeanstalk</em></a> ]</p>
 <div class="section" id="describe-events">
-<h1>describe-events<a class="headerlink" href="#describe-events" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-elasticbeanstalk-describe-events"></span><h1>describe-events<a name="//apple_ref/cpp/Command/aws elasticbeanstalk describe-events" class="dashAnchor" id="aws elasticbeanstalk describe-events"></a><a class="headerlink" href="#describe-events" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
 <p>Returns list of event descriptions matching criteria up to the last 6 weeks.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">This action returns the most recent 1,000 events from the specified <tt class="docutils literal"><span class="pre">--next-token</span></tt>  .</p>
+<p class="last">This action returns the most recent 1,000 events from the specified <tt class="docutils literal"><span class="pre">NextToken</span></tt> .</p>
 </div>
+<p><tt class="docutils literal"><span class="pre">describe-events</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">Events</span></tt></p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  describe-events
 [--application-name &lt;value&gt;]
 [--version-label &lt;value&gt;]
@@ -137,12 +149,15 @@
 [--severity &lt;value&gt;]
 [--start-time &lt;value&gt;]
 [--end-time &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
 [--starting-token &lt;value&gt;]
-[--max-items &lt;value&gt;]</pre>
+[--page-size &lt;value&gt;]
+[--max-items &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--application-name" class="dashAnchor" id="application-name"></a><span class="pre">--application-name</span></tt> (string)</p>
 <blockquote>
 <div>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those associated with this application.</div></blockquote>
@@ -163,19 +178,119 @@
 <div>If specified, AWS Elastic Beanstalk restricts the described events to include only those associated with this request ID.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--severity" class="dashAnchor" id="severity"></a><span class="pre">--severity</span></tt> (string)</p>
 <blockquote>
-<div>If specified, limits the events returned from this call to include only those with the specified severity or higher.</div></blockquote>
+<div><p>If specified, limits the events returned from this call to include only those with the specified severity or higher.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">TRACE</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">DEBUG</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">INFO</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">WARN</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ERROR</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">FATAL</span></tt></li>
+</ul>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--start-time" class="dashAnchor" id="start-time"></a><span class="pre">--start-time</span></tt> (timestamp)</p>
 <blockquote>
 <div>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur on or after this time.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--end-time" class="dashAnchor" id="end-time"></a><span class="pre">--end-time</span></tt> (timestamp)</p>
 <blockquote>
-<div>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur up to, but not including, the <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--end-time" class="dashAnchor" id="end-time"></a><span class="pre">--end-time</span></tt>  .</div></blockquote>
+<div>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur up to, but not including, the <tt class="docutils literal"><span class="pre">EndTime</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--starting-token" class="dashAnchor" id="starting-token"></a><span class="pre">--starting-token</span></tt> (string)</p>
 <blockquote>
-<div>A token to specify where to start paginating. This is the <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--next-token" class="dashAnchor" id="next-token"></a><span class="pre">--next-token</span></tt>  from a previously truncated response.</div></blockquote>
+<div>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--page-size" class="dashAnchor" id="page-size"></a><span class="pre">--page-size</span></tt> (integer)</p>
+<blockquote>
+<div>The size of each page.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-items" class="dashAnchor" id="max-items"></a><span class="pre">--max-items</span></tt> (integer)</p>
 <blockquote>
-<div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">NextMarker</span></tt>  will be provided in the output that you can use to resume pagination.</div></blockquote>
+<div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">NextToken</span></tt> will be provided in the output that you can use to resume pagination. This <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element should <strong>not</strong> be used directly outside of the AWS CLI.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To view events for an environment</strong></p>
+<p>The following command retrieves events for an environment named <tt class="docutils literal"><span class="pre">my-env</span></tt>:</p>
+<div class="highlight-python"><pre>aws elasticbeanstalk describe-events --environment-name my-env</pre>
+</div>
+<p>Output (abbreviated):</p>
+<div class="highlight-python"><pre>{
+    "Events": [
+        {
+            "ApplicationName": "my-app",
+            "EnvironmentName": "my-env",
+            "Message": "Environment health has transitioned from Info to Ok.",
+            "EventDate": "2015-08-20T07:06:53.535Z",
+            "Severity": "INFO"
+        },
+        {
+            "ApplicationName": "my-app",
+            "EnvironmentName": "my-env",
+            "Severity": "INFO",
+            "RequestId": "b7f3960b-4709-11e5-ba1e-07e16200da41",
+            "Message": "Environment update completed successfully.",
+            "EventDate": "2015-08-20T07:06:02.049Z"
+        },
+        ...
+        {
+            "ApplicationName": "my-app",
+            "EnvironmentName": "my-env",
+            "Severity": "INFO",
+            "RequestId": "ca8dfbf6-41ef-11e5-988b-651aa638f46b",
+            "Message": "Using elasticbeanstalk-us-west-2-012445113685 as Amazon S3 storage bucket for environment data.",
+            "EventDate": "2015-08-13T19:16:27.561Z"
+        },
+        {
+            "ApplicationName": "my-app",
+            "EnvironmentName": "my-env",
+            "Severity": "INFO",
+            "RequestId": "cdfba8f6-41ef-11e5-988b-65638f41aa6b",
+            "Message": "createEnvironment is starting.",
+            "EventDate": "2015-08-13T19:16:26.581Z"
+        }
+    ]
+}</pre>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Events -&gt; (list)</p>
+<blockquote>
+<div><p>A list of  EventDescription .</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes an event.</p>
+<p>EventDate -&gt; (timestamp)</p>
+<blockquote>
+<div>The date when the event occurred.</div></blockquote>
+<p>Message -&gt; (string)</p>
+<blockquote>
+<div>The event message.</div></blockquote>
+<p>ApplicationName -&gt; (string)</p>
+<blockquote>
+<div>The application associated with the event.</div></blockquote>
+<p>VersionLabel -&gt; (string)</p>
+<blockquote>
+<div>The release label for the application version associated with this event.</div></blockquote>
+<p>TemplateName -&gt; (string)</p>
+<blockquote>
+<div>The name of the configuration associated with this event.</div></blockquote>
+<p>EnvironmentName -&gt; (string)</p>
+<blockquote>
+<div>The name of the environment associated with this event.</div></blockquote>
+<p>RequestId -&gt; (string)</p>
+<blockquote>
+<div>The web service request ID for the activity of this event.</div></blockquote>
+<p>Severity -&gt; (string)</p>
+<blockquote>
+<div>The severity level of this event.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>If returned, this indicates that there are more results to obtain. Use this token in the next  describe-events call to get the next batch of events.</div></blockquote>
 </div>
 </div>
 
@@ -191,50 +306,45 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="list-available-solution-stacks.html" title="next chapter (use the right arrow)">list-available-solution-stacks &#8594;</a></li>
+          <li><a href="describe-instances-health.html" title="next chapter (use the right arrow)">describe-instances-health &#8594;</a></li>
       </ul>
     </div>
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index">index</a></li>
         <li class="right">
-          <a href="list-available-solution-stacks.html" title="list-available-solution-stacks">next</a> |</li>
+          <a href="describe-instances-health.html" title="describe-instances-health">next</a> |</li>
         <li class="right">
           <a href="describe-environments.html" title="describe-environments">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">elasticbeanstalk</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'describe-environments.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'list-available-solution-stacks.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-events.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:18 GMT -->
 </html>

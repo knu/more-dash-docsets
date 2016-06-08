@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/apigateway/get-sdk.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:57 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-sdk &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="apigateway" href="index.html" />
+    <link rel="next" title="get-stage" href="get-stage.html" />
+    <link rel="prev" title="get-rest-apis" href="get-rest-apis.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="get-stage.html" title="get-stage" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="get-rest-apis.html" title="get-rest-apis" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">apigateway</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-rest-apis.html" title="previous chapter (use the left arrow)">&#8592; get-rest-apis</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="get-stage.html" title="next chapter (use the right arrow)">get-stage &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-sdk</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/apigateway/get-sdk">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-apigateway"><em>apigateway</em></a> ]</p>
+<div class="section" id="get-sdk">
+<span id="cli-aws-apigateway-get-sdk"></span><h1>get-sdk<a name="//apple_ref/cpp/Command/aws apigateway get-sdk" class="dashAnchor" id="aws apigateway get-sdk"></a><a class="headerlink" href="#get-sdk" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Generates a client SDK for a  RestApi and  Stage .</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  get-sdk
+--rest-api-id &lt;value&gt;
+--stage-name &lt;value&gt;
+--sdk-type &lt;value&gt;
+[--parameters &lt;value&gt;]
+outfile &lt;value&gt;</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--rest-api-id" class="dashAnchor" id="rest-api-id"></a><span class="pre">--rest-api-id</span></tt> (string)</p>
+<blockquote>
+<div>The identifier of the  RestApi that the SDK will use.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--stage-name" class="dashAnchor" id="stage-name"></a><span class="pre">--stage-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the  Stage that the SDK will use.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--sdk-type" class="dashAnchor" id="sdk-type"></a><span class="pre">--sdk-type</span></tt> (string)</p>
+<blockquote>
+<div>The language for the generated SDK. Currently javascript, android, and objectivec (for iOS) are supported.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--parameters" class="dashAnchor" id="parameters"></a><span class="pre">--parameters</span></tt> (map)</p>
+<blockquote>
+<div>A key-value map of query string parameters that specify properties of the SDK, depending on the requested sdkType. For sdkType 'objectivec', a parameter named "classPrefix" is required. For sdkType 'android', parameters named "groupId", "artifactId", "artifactVersion", and "invokerPackage" are required.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">KeyName1</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">KeyName2</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{"string": "string"
+  ...}</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">outfile</span></tt> (string)
+Filename where the content will be saved</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To get the Android SDK for a REST API stage</strong></p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws apigateway get-sdk --rest-api-id 1234123412 --stage-name dev --sdk-type android --parameters "{\"groupId\":\"com.mycompany\", \"invokerPackage\":\"com.mycompany.clientsdk\", \"artifactId\":\"Mycompany-client\", \"artifactVersion\":\"1.0.0\"}" /path/to/android_sdk.zip</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"contentType"</span><span class="p">:</span> <span class="s2">"application/octet-stream"</span><span class="p">,</span>
+    <span class="s2">"contentDisposition"</span><span class="p">:</span> <span class="s2">"attachment; filename=</span><span class="se">\"</span><span class="s2">android_2016-02-22_23-52Z.zip</span><span class="se">\"</span><span class="s2">"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>To get the IOS SDK for a REST API stage</strong></p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws apigateway get-sdk --rest-api-id 1234123412 --stage-name dev --sdk-type objectivec --parameters "{\"classPrefix\":\"myprefix\"}" /path/to/iOS_sdk.zip</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"contentType"</span><span class="p">:</span> <span class="s2">"application/octet-stream"</span><span class="p">,</span>
+    <span class="s2">"contentDisposition"</span><span class="p">:</span> <span class="s2">"attachment; filename=</span><span class="se">\"</span><span class="s2">objectivec_2016-02-22_23-52Z.zip</span><span class="se">\"</span><span class="s2">"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>To get the Javascript SDK for a REST API stage</strong></p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws apigateway get-sdk --rest-api-id 1234123412 --stage-name dev --sdk-type javascript /path/to/javascript_sdk.zip</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"contentType"</span><span class="p">:</span> <span class="s2">"application/octet-stream"</span><span class="p">,</span>
+    <span class="s2">"contentDisposition"</span><span class="p">:</span> <span class="s2">"attachment; filename=</span><span class="se">\"</span><span class="s2">javascript_2016-02-22_23-52Z.zip</span><span class="se">\"</span><span class="s2">"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>contentType -&gt; (string)</p>
+<blockquote>
+<div>The content-type header value in the HTTP response.</div></blockquote>
+<p>contentDisposition -&gt; (string)</p>
+<blockquote>
+<div>The content-disposition header value in the HTTP reseponse.</div></blockquote>
+<p>body -&gt; (blob)</p>
+<blockquote>
+<div>The binary blob response to  get-sdk , which contains the generated SDK.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-rest-apis.html" title="previous chapter (use the left arrow)">&#8592; get-rest-apis</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="get-stage.html" title="next chapter (use the right arrow)">get-stage &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="get-stage.html" title="get-stage">next</a> |</li>
+        <li class="right">
+          <a href="get-rest-apis.html" title="get-rest-apis">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">apigateway</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/apigateway/get-sdk.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:57 GMT -->
+</html>

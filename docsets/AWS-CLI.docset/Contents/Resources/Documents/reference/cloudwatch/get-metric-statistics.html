@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudwatch/get-metric-statistics.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:00 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>get-metric-statistics &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>get-metric-statistics &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="cloudwatch" href="index.html" />
     <link rel="next" title="list-metrics" href="list-metrics.html" />
     <link rel="prev" title="enable-alarm-actions" href="enable-alarm-actions.html" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -61,7 +64,7 @@
           <a href="list-metrics.html" title="list-metrics" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="enable-alarm-actions.html" title="enable-alarm-actions" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">cloudwatch</a> &#187;</li> 
       </ul>
@@ -82,23 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">get-metric-statistics</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,37 +112,36 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/cloudwatch/get-metric-statistics">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/cloudwatch/get-metric-statistics">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>cloudwatch</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-cloudwatch"><em>cloudwatch</em></a> ]</p>
 <div class="section" id="get-metric-statistics">
-<h1>get-metric-statistics<a class="headerlink" href="#get-metric-statistics" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-cloudwatch-get-metric-statistics"></span><h1>get-metric-statistics<a name="//apple_ref/cpp/Command/aws cloudwatch get-metric-statistics" class="dashAnchor" id="aws cloudwatch get-metric-statistics"></a><a class="headerlink" href="#get-metric-statistics" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
 <p>Gets statistics for the specified metric.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The maximum number of data points returned from a single <tt class="docutils literal"><span class="pre">get-metric-statistics</span></tt>  request is 1,440. If a request is made that generates more than 1,440 data points, Amazon CloudWatch returns an error. In such a case, alter the request by narrowing the specified time range or increasing the specified period. Alternatively, make multiple requests across adjacent time ranges.</p>
-</div>
-<p>Amazon CloudWatch aggregates data points based on the length of the <tt class="docutils literal"><span class="pre">period</span></tt>  that you specify. For example, if you request statistics with a one-minute granularity, Amazon CloudWatch aggregates data points with time stamps that fall within the same one-minute period. In such a case, the data points queried can greatly outnumber the data points returned.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The maximum number of data points that can be queried is 50,850; whereas the maximum number of data points returned is 1,440.</p>
-</div>
-<p>The following examples show various statistics allowed by the data point query maximum of 50,850 when you call <tt class="docutils literal"><span class="pre">get-metric-statistics</span></tt>  on Amazon EC2 instances with detailed (one-minute) monitoring enabled:</p>
+<p>The maximum number of data points that can be queried is 50,850, whereas the maximum number of data points returned from a single <tt class="docutils literal"><span class="pre">get-metric-statistics</span></tt> request is 1,440. If you make a request that generates more than 1,440 data points, Amazon CloudWatch returns an error. In such a case, you can alter the request by narrowing the specified time range or increasing the specified period. Alternatively, you can make multiple requests across adjacent time ranges. <tt class="docutils literal"><span class="pre">get-metric-statistics</span></tt> does not return the data in chronological order.</p>
+<p>Amazon CloudWatch aggregates data points based on the length of the <tt class="docutils literal"><span class="pre">period</span></tt> that you specify. For example, if you request statistics with a one-minute granularity, Amazon CloudWatch aggregates data points with time stamps that fall within the same one-minute period. In such a case, the data points queried can greatly outnumber the data points returned.</p>
+<p>The following examples show various statistics allowed by the data point query maximum of 50,850 when you call <tt class="docutils literal"><span class="pre">get-metric-statistics</span></tt> on Amazon EC2 instances with detailed (one-minute) monitoring enabled:</p>
 <ul class="simple">
-<li>--statistics for up to 400 instances for a span of one hour</li>
-<li>--statistics for up to 35 instances over a span of 24 hours</li>
-<li>--statistics for up to 2 instances over a span of 2 weeks</li>
+<li>statistics for up to 400 instances for a span of one hour</li>
+<li>statistics for up to 35 instances over a span of 24 hours</li>
+<li>statistics for up to 2 instances over a span of 2 weeks</li>
 </ul>
+<p>For information about the namespace, metric names, and dimensions that other Amazon Web Services products use to send metrics to CloudWatch, go to <a class="reference external" href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Metrics, Namespaces, and dimensions Reference</a> in the <em>Amazon CloudWatch Developer Guide</em> .</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  get-metric-statistics
 --namespace &lt;value&gt;
 --metric-name &lt;value&gt;
@@ -146,23 +150,24 @@
 --end-time &lt;value&gt;
 --period &lt;value&gt;
 --statistics &lt;value&gt;
-[--unit &lt;value&gt;]</pre>
+[--unit &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--namespace" class="dashAnchor" id="namespace"></a><span class="pre">--namespace</span></tt> (string)</p>
 <blockquote>
-<div>The namespace of the metric.</div></blockquote>
+<div>The namespace of the metric, with or without spaces.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--metric-name" class="dashAnchor" id="metric-name"></a><span class="pre">--metric-name</span></tt> (string)</p>
 <blockquote>
-<div>The name of the metric.</div></blockquote>
+<div>The name of the metric, with or without spaces.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dimensions" class="dashAnchor" id="dimensions"></a><span class="pre">--dimensions</span></tt> (list)</p>
 <blockquote>
 <div>A list of dimensions describing qualities of the metric.</div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><pre>  Key value pairs, with multiple values separated by a space.
---dimensions Name=string,Value=string</pre>
+<div class="highlight-python"><pre>Name=string,Value=string ...</pre>
 </div>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><pre>[
@@ -175,27 +180,236 @@
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--start-time" class="dashAnchor" id="start-time"></a><span class="pre">--start-time</span></tt> (timestamp)</p>
 <blockquote>
-<div><p>The time stamp to use for determining the first datapoint to return. The value specified is inclusive; results include datapoints with the time stamp specified.</p>
+<div><p>The time stamp to use for determining the first datapoint to return. The value specified is inclusive; results include datapoints with the time stamp specified. The time stamp must be in ISO 8601 UTC format (e.g., 2014-09-03T23:00:00Z).</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The specified start time is rounded down to the nearest value. Datapoints are returned for start times up to two weeks in the past. Specified start times that are more than two weeks in the past will not return datapoints for metrics that are older than two weeks.</p>
+<p>The specified start time is rounded down to the nearest value. Datapoints are returned for start times up to two weeks in the past. Specified start times that are more than two weeks in the past will not return datapoints for metrics that are older than two weeks.</p>
+<p class="last">Data that is timestamped 24 hours or more in the past may take in excess of 48 hours to become available from submission time using <tt class="docutils literal"><span class="pre">get-metric-statistics</span></tt> .</p>
 </div>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--end-time" class="dashAnchor" id="end-time"></a><span class="pre">--end-time</span></tt> (timestamp)</p>
 <blockquote>
-<div>The time stamp to use for determining the last datapoint to return. The value specified is exclusive; results will include datapoints up to the time stamp specified.</div></blockquote>
+<div>The time stamp to use for determining the last datapoint to return. The value specified is exclusive; results will include datapoints up to the time stamp specified. The time stamp must be in ISO 8601 UTC format (e.g., 2014-09-03T23:00:00Z).</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--period" class="dashAnchor" id="period"></a><span class="pre">--period</span></tt> (integer)</p>
 <blockquote>
-<div>The granularity, in seconds, of the returned datapoints. <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--period" class="dashAnchor" id="period"></a><span class="pre">--period</span></tt>  must be at least 60 seconds and must be a multiple of 60. The default value is 60.</div></blockquote>
+<div>The granularity, in seconds, of the returned datapoints. <tt class="docutils literal"><span class="pre">period</span></tt> must be at least 60 seconds and must be a multiple of 60. The default value is 60.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--statistics" class="dashAnchor" id="statistics"></a><span class="pre">--statistics</span></tt> (list)</p>
 <blockquote>
-<div>The metric statistics to return.</div></blockquote>
+<div>The metric statistics to return. For information about specific statistics returned by GetMetricStatistics, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Statistic">statistics</a> in the <em>Amazon CloudWatch Developer Guide</em> .</div></blockquote>
 <p>Syntax:</p>
-<div class="highlight-python"><pre>"SampleCount"|"Average"|"Sum"|"Minimum"|"Maximum" "SampleCount"|"Average"|"Sum"|"Minimum"|"Maximum" ...</pre>
+<div class="highlight-python"><pre>"string" "string" ...
+
+Where valid values are:
+  SampleCount
+  Average
+  Sum
+  Minimum
+  Maximum</pre>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--unit" class="dashAnchor" id="unit"></a><span class="pre">--unit</span></tt> (string)</p>
 <blockquote>
-<div>The unit for the metric.</div></blockquote>
+<div><p>The unit for the metric.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Seconds</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Microseconds</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Milliseconds</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Bytes</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Kilobytes</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Megabytes</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Gigabytes</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Terabytes</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Bits</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Kilobits</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Megabits</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Gigabits</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Terabits</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Percent</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Count</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Bytes/Second</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Kilobytes/Second</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Megabytes/Second</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Gigabytes/Second</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Terabytes/Second</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Bits/Second</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Kilobits/Second</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Megabits/Second</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Gigabits/Second</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Terabits/Second</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Count/Second</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">None</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To get the CPU utilization per EC2 instance</strong></p>
+<p>The following example uses the <tt class="docutils literal"><span class="pre">get-metric-statistics</span></tt> command to get the CPU utilization for an EC2
+instance with the ID i-abcdef. For more examples using the <tt class="docutils literal"><span class="pre">get-metric-statistics</span></tt> command, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/US_GetStatistics.html">Get Statistics for a Metric</a> in the <em>Amazon CloudWatch Developer Guide</em>.</p>
+<div class="highlight-python"><pre>aws cloudwatch get-metric-statistics --metric-name CPUUtilization --start-time 2014-04-08T23:18:00 --end-time 2014-04-09T23:18:00 --period 3600 --namespace AWS/EC2 --statistics Maximum --dimensions Name=InstanceId,Value=i-abcdef</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"Datapoints"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"Timestamp"</span><span class="p">:</span> <span class="s2">"2014-04-09T11:18:00Z"</span><span class="p">,</span>
+            <span class="s2">"Maximum"</span><span class="p">:</span> <span class="mf">44.79</span><span class="p">,</span>
+            <span class="s2">"Unit"</span><span class="p">:</span> <span class="s2">"Percent"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Timestamp"</span><span class="p">:</span> <span class="s2">"2014-04-09T20:18:00Z"</span><span class="p">,</span>
+            <span class="s2">"Maximum"</span><span class="p">:</span> <span class="mf">47.92</span><span class="p">,</span>
+            <span class="s2">"Unit"</span><span class="p">:</span> <span class="s2">"Percent"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Timestamp"</span><span class="p">:</span> <span class="s2">"2014-04-09T19:18:00Z"</span><span class="p">,</span>
+            <span class="s2">"Maximum"</span><span class="p">:</span> <span class="mf">50.85</span><span class="p">,</span>
+            <span class="s2">"Unit"</span><span class="p">:</span> <span class="s2">"Percent"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Timestamp"</span><span class="p">:</span> <span class="s2">"2014-04-09T09:18:00Z"</span><span class="p">,</span>
+            <span class="s2">"Maximum"</span><span class="p">:</span> <span class="mf">47.92</span><span class="p">,</span>
+            <span class="s2">"Unit"</span><span class="p">:</span> <span class="s2">"Percent"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Timestamp"</span><span class="p">:</span> <span class="s2">"2014-04-09T03:18:00Z"</span><span class="p">,</span>
+            <span class="s2">"Maximum"</span><span class="p">:</span> <span class="mf">76.84</span><span class="p">,</span>
+            <span class="s2">"Unit"</span><span class="p">:</span> <span class="s2">"Percent"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Timestamp"</span><span class="p">:</span> <span class="s2">"2014-04-09T21:18:00Z"</span><span class="p">,</span>
+            <span class="s2">"Maximum"</span><span class="p">:</span> <span class="mf">48.96</span><span class="p">,</span>
+            <span class="s2">"Unit"</span><span class="p">:</span> <span class="s2">"Percent"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Timestamp"</span><span class="p">:</span> <span class="s2">"2014-04-09T14:18:00Z"</span><span class="p">,</span>
+            <span class="s2">"Maximum"</span><span class="p">:</span> <span class="mf">47.92</span><span class="p">,</span>
+            <span class="s2">"Unit"</span><span class="p">:</span> <span class="s2">"Percent"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Timestamp"</span><span class="p">:</span> <span class="s2">"2014-04-09T08:18:00Z"</span><span class="p">,</span>
+            <span class="s2">"Maximum"</span><span class="p">:</span> <span class="mf">47.92</span><span class="p">,</span>
+            <span class="s2">"Unit"</span><span class="p">:</span> <span class="s2">"Percent"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Timestamp"</span><span class="p">:</span> <span class="s2">"2014-04-09T16:18:00Z"</span><span class="p">,</span>
+            <span class="s2">"Maximum"</span><span class="p">:</span> <span class="mf">45.55</span><span class="p">,</span>
+            <span class="s2">"Unit"</span><span class="p">:</span> <span class="s2">"Percent"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Timestamp"</span><span class="p">:</span> <span class="s2">"2014-04-09T06:18:00Z"</span><span class="p">,</span>
+            <span class="s2">"Maximum"</span><span class="p">:</span> <span class="mf">47.92</span><span class="p">,</span>
+            <span class="s2">"Unit"</span><span class="p">:</span> <span class="s2">"Percent"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Timestamp"</span><span class="p">:</span> <span class="s2">"2014-04-09T13:18:00Z"</span><span class="p">,</span>
+            <span class="s2">"Maximum"</span><span class="p">:</span> <span class="mf">45.08</span><span class="p">,</span>
+            <span class="s2">"Unit"</span><span class="p">:</span> <span class="s2">"Percent"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Timestamp"</span><span class="p">:</span> <span class="s2">"2014-04-09T05:18:00Z"</span><span class="p">,</span>
+            <span class="s2">"Maximum"</span><span class="p">:</span> <span class="mf">47.92</span><span class="p">,</span>
+            <span class="s2">"Unit"</span><span class="p">:</span> <span class="s2">"Percent"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Timestamp"</span><span class="p">:</span> <span class="s2">"2014-04-09T18:18:00Z"</span><span class="p">,</span>
+            <span class="s2">"Maximum"</span><span class="p">:</span> <span class="mf">46.88</span><span class="p">,</span>
+            <span class="s2">"Unit"</span><span class="p">:</span> <span class="s2">"Percent"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Timestamp"</span><span class="p">:</span> <span class="s2">"2014-04-09T17:18:00Z"</span><span class="p">,</span>
+            <span class="s2">"Maximum"</span><span class="p">:</span> <span class="mf">52.08</span><span class="p">,</span>
+            <span class="s2">"Unit"</span><span class="p">:</span> <span class="s2">"Percent"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Timestamp"</span><span class="p">:</span> <span class="s2">"2014-04-09T07:18:00Z"</span><span class="p">,</span>
+            <span class="s2">"Maximum"</span><span class="p">:</span> <span class="mf">47.92</span><span class="p">,</span>
+            <span class="s2">"Unit"</span><span class="p">:</span> <span class="s2">"Percent"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Timestamp"</span><span class="p">:</span> <span class="s2">"2014-04-09T02:18:00Z"</span><span class="p">,</span>
+            <span class="s2">"Maximum"</span><span class="p">:</span> <span class="mf">51.23</span><span class="p">,</span>
+            <span class="s2">"Unit"</span><span class="p">:</span> <span class="s2">"Percent"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Timestamp"</span><span class="p">:</span> <span class="s2">"2014-04-09T12:18:00Z"</span><span class="p">,</span>
+            <span class="s2">"Maximum"</span><span class="p">:</span> <span class="mf">47.67</span><span class="p">,</span>
+            <span class="s2">"Unit"</span><span class="p">:</span> <span class="s2">"Percent"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Timestamp"</span><span class="p">:</span> <span class="s2">"2014-04-08T23:18:00Z"</span><span class="p">,</span>
+            <span class="s2">"Maximum"</span><span class="p">:</span> <span class="mf">46.88</span><span class="p">,</span>
+            <span class="s2">"Unit"</span><span class="p">:</span> <span class="s2">"Percent"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Timestamp"</span><span class="p">:</span> <span class="s2">"2014-04-09T10:18:00Z"</span><span class="p">,</span>
+            <span class="s2">"Maximum"</span><span class="p">:</span> <span class="mf">51.91</span><span class="p">,</span>
+            <span class="s2">"Unit"</span><span class="p">:</span> <span class="s2">"Percent"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Timestamp"</span><span class="p">:</span> <span class="s2">"2014-04-09T04:18:00Z"</span><span class="p">,</span>
+            <span class="s2">"Maximum"</span><span class="p">:</span> <span class="mf">47.13</span><span class="p">,</span>
+            <span class="s2">"Unit"</span><span class="p">:</span> <span class="s2">"Percent"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Timestamp"</span><span class="p">:</span> <span class="s2">"2014-04-09T15:18:00Z"</span><span class="p">,</span>
+            <span class="s2">"Maximum"</span><span class="p">:</span> <span class="mf">48.96</span><span class="p">,</span>
+            <span class="s2">"Unit"</span><span class="p">:</span> <span class="s2">"Percent"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Timestamp"</span><span class="p">:</span> <span class="s2">"2014-04-09T00:18:00Z"</span><span class="p">,</span>
+            <span class="s2">"Maximum"</span><span class="p">:</span> <span class="mf">48.16</span><span class="p">,</span>
+            <span class="s2">"Unit"</span><span class="p">:</span> <span class="s2">"Percent"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"Timestamp"</span><span class="p">:</span> <span class="s2">"2014-04-09T01:18:00Z"</span><span class="p">,</span>
+            <span class="s2">"Maximum"</span><span class="p">:</span> <span class="mf">49.18</span><span class="p">,</span>
+            <span class="s2">"Unit"</span><span class="p">:</span> <span class="s2">"Percent"</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">"Label"</span><span class="p">:</span> <span class="s2">"CPUUtilization"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Label -&gt; (string)</p>
+<blockquote>
+<div>A label describing the specified metric.</div></blockquote>
+<p>Datapoints -&gt; (list)</p>
+<blockquote>
+<div><p>The datapoints for the specified metric.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The <tt class="docutils literal"><span class="pre">Datapoint</span></tt> data type encapsulates the statistical data that Amazon CloudWatch computes from metric data.</p>
+<p>Timestamp -&gt; (timestamp)</p>
+<blockquote>
+<div>The time stamp used for the datapoint.</div></blockquote>
+<p>SampleCount -&gt; (double)</p>
+<blockquote>
+<div>The number of metric values that contributed to the aggregate value of this datapoint.</div></blockquote>
+<p>Average -&gt; (double)</p>
+<blockquote>
+<div>The average of metric values that correspond to the datapoint.</div></blockquote>
+<p>Sum -&gt; (double)</p>
+<blockquote>
+<div>The sum of metric values used for the datapoint.</div></blockquote>
+<p>Minimum -&gt; (double)</p>
+<blockquote>
+<div>The minimum metric value used for the datapoint.</div></blockquote>
+<p>Maximum -&gt; (double)</p>
+<blockquote>
+<div>The maximum of the metric value used for the datapoint.</div></blockquote>
+<p>Unit -&gt; (string)</p>
+<blockquote>
+<div>The standard unit used for the datapoint.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
 </div>
 </div>
 
@@ -217,6 +431,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -226,35 +449,21 @@
           <a href="list-metrics.html" title="list-metrics">next</a> |</li>
         <li class="right">
           <a href="enable-alarm-actions.html" title="enable-alarm-actions">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">cloudwatch</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'enable-alarm-actions.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'list-metrics.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudwatch/get-metric-statistics.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:00 GMT -->
 </html>

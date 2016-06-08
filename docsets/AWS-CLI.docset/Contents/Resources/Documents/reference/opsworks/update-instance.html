@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/opsworks/update-instance.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:22 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>update-instance &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>update-instance &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +25,10 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="opsworks" href="index.html" />
     <link rel="next" title="update-layer" href="update-layer.html" />
-    <link rel="prev" title="update-app" href="update-app.html" />
+    <link rel="prev" title="update-elastic-ip" href="update-elastic-ip.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
   
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -60,8 +63,8 @@
         <li class="right">
           <a href="update-layer.html" title="update-layer" accesskey="N">next</a> |</li>
         <li class="right">
-          <a href="update-app.html" title="update-app" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="update-elastic-ip.html" title="update-elastic-ip" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">opsworks</a> &#187;</li> 
       </ul>
@@ -71,7 +74,7 @@
     <div class="top-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="update-app.html" title="previous chapter (use the left arrow)">&#8592; update-app</a>
+          <a href="update-elastic-ip.html" title="previous chapter (use the left arrow)">&#8592; update-elastic-ip</a>
           <span class="divider">/</span>
           
         </li>
@@ -82,23 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">update-instance</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,22 +112,28 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/opsworks/update-instance">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/opsworks/update-instance">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>opsworks</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-opsworks"><em>opsworks</em></a> ]</p>
 <div class="section" id="update-instance">
-<h1>update-instance<a class="headerlink" href="#update-instance" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-opsworks-update-instance"></span><h1>update-instance<a name="//apple_ref/cpp/Command/aws opsworks update-instance" class="dashAnchor" id="aws opsworks update-instance"></a><a class="headerlink" href="#update-instance" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
 <p>Updates a specified instance.</p>
+<p><strong>Required Permissions</strong> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a class="reference external" href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a> .</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  update-instance
 --instance-id &lt;value&gt;
 [--layer-ids &lt;value&gt;]
@@ -130,12 +141,18 @@
 [--auto-scaling-type &lt;value&gt;]
 [--hostname &lt;value&gt;]
 [--os &lt;value&gt;]
+[--ami-id &lt;value&gt;]
 [--ssh-key-name &lt;value&gt;]
-[--architecture &lt;value&gt;]</pre>
+[--architecture &lt;value&gt;]
+[--install-updates-on-boot | --no-install-updates-on-boot]
+[--ebs-optimized | --no-ebs-optimized]
+[--agent-version &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--instance-id" class="dashAnchor" id="instance-id"></a><span class="pre">--instance-id</span></tt> (string)</p>
 <blockquote>
 <div>The instance ID.</div></blockquote>
@@ -147,14 +164,14 @@
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--instance-type" class="dashAnchor" id="instance-type"></a><span class="pre">--instance-type</span></tt> (string)</p>
 <blockquote>
-<div>The instance type. OpsWorks supports all instance types except Cluster Compute, Cluster GPU, and High Memory Cluster. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a> . The parameter values that you use to specify the various types are in the API Name column of the Available Instance Types table.</div></blockquote>
+<div>The instance type, such as <tt class="docutils literal"><span class="pre">t2.micro</span></tt> . For a list of supported instance types, open the stack in the console, choose <strong>Instances</strong> , and choose <strong>+ Instance</strong> . The <strong>Size</strong> list contains the currently supported types. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a> . The parameter values that you use to specify the various types are in the <strong>API Name</strong> column of the <strong>Available Instance Types</strong> table.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--auto-scaling-type" class="dashAnchor" id="auto-scaling-type"></a><span class="pre">--auto-scaling-type</span></tt> (string)</p>
 <blockquote>
-<div><p>The instance's auto scaling type, which has three possible values:</p>
+<div><p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
+<p>Possible values:</p>
 <ul class="simple">
-<li><strong>AlwaysRunning</strong> : A 24/7 instance, which is not affected by auto scaling.</li>
-<li><strong>TimeBasedAutoScaling</strong> : A time-based auto scaling instance, which is started and stopped based on a specified schedule.</li>
-<li><strong>LoadBasedAutoScaling</strong> : A load-based auto scaling instance, which is started and stopped based on load metrics.</li>
+<li><tt class="docutils literal"><span class="pre">load</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">timer</span></tt></li>
 </ul>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--hostname" class="dashAnchor" id="hostname"></a><span class="pre">--hostname</span></tt> (string)</p>
@@ -162,13 +179,78 @@
 <div>The instance host name.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--os" class="dashAnchor" id="os"></a><span class="pre">--os</span></tt> (string)</p>
 <blockquote>
-<div>The instance operating system.</div></blockquote>
+<div><p>The instance's operating system, which must be set to one of the following.</p>
+<ul class="simple">
+<li>A supported Linux operating system: An Amazon Linux version, such as <tt class="docutils literal"><span class="pre">Amazon</span> <span class="pre">Linux</span> <span class="pre">2015.03</span></tt> , <tt class="docutils literal"><span class="pre">Red</span> <span class="pre">Hat</span> <span class="pre">Enterprise</span> <span class="pre">Linux</span> <span class="pre">7</span></tt> , <tt class="docutils literal"><span class="pre">Ubuntu</span> <span class="pre">12.04</span> <span class="pre">LTS</span></tt> , or <tt class="docutils literal"><span class="pre">Ubuntu</span> <span class="pre">14.04</span> <span class="pre">LTS</span></tt> .</li>
+<li><tt class="docutils literal"><span class="pre">Microsoft</span> <span class="pre">Windows</span> <span class="pre">Server</span> <span class="pre">2012</span> <span class="pre">R2</span> <span class="pre">Base</span></tt> .</li>
+<li>A custom AMI: <tt class="docutils literal"><span class="pre">Custom</span></tt> .</li>
+</ul>
+<p>For more information on the supported operating systems, see <a class="reference external" href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Operating Systems</a> .</p>
+<p>The default option is the current Amazon Linux version. If you set this parameter to <tt class="docutils literal"><span class="pre">Custom</span></tt> , you must use the AmiId parameter to specify the custom AMI that you want to use. For more information on the supported operating systems, see <a class="reference external" href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a> . For more information on how to use custom AMIs with OpsWorks, see <a class="reference external" href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a> .</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can specify a different Linux operating system for the updated stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ami-id" class="dashAnchor" id="ami-id"></a><span class="pre">--ami-id</span></tt> (string)</p>
+<blockquote>
+<div><p>A custom AMI ID to be used to create the instance. The AMI must be based on one of the supported operating systems. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you specify a custom AMI, you must set <tt class="docutils literal"><span class="pre">Os</span></tt> to <tt class="docutils literal"><span class="pre">Custom</span></tt> .</p>
+</div>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ssh-key-name" class="dashAnchor" id="ssh-key-name"></a><span class="pre">--ssh-key-name</span></tt> (string)</p>
 <blockquote>
-<div>The instance SSH key name.</div></blockquote>
+<div>The instance's Amazon EC2 key name.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--architecture" class="dashAnchor" id="architecture"></a><span class="pre">--architecture</span></tt> (string)</p>
 <blockquote>
-<div>The instance architecture. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a> .</div></blockquote>
+<div><p>The instance architecture. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a> .</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">x86_64</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">i386</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--install-updates-on-boot" class="dashAnchor" id="install-updates-on-boot"></a><span class="pre">--install-updates-on-boot</span></tt> | <tt class="docutils literal"><span class="pre">--no-install-updates-on-boot</span></tt> (boolean)</p>
+<blockquote>
+<div><p>Whether to install operating system and package updates when the instance boots. The default value is <tt class="docutils literal"><span class="pre">true</span></tt> . To control when updates are installed, set this value to <tt class="docutils literal"><span class="pre">false</span></tt> . You must then update your instances manually by using  create-deployment to run the <tt class="docutils literal"><span class="pre">update_dependencies</span></tt> stack command or by manually running <tt class="docutils literal"><span class="pre">yum</span></tt> (Amazon Linux) or <tt class="docutils literal"><span class="pre">apt-get</span></tt> (Ubuntu) on the instances.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We strongly recommend using the default value of <tt class="docutils literal"><span class="pre">true</span></tt> , to ensure that your instances have the latest security updates.</p>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ebs-optimized" class="dashAnchor" id="ebs-optimized"></a><span class="pre">--ebs-optimized</span></tt> | <tt class="docutils literal"><span class="pre">--no-ebs-optimized</span></tt> (boolean)</p>
+<blockquote>
+<div>This property cannot be updated.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--agent-version" class="dashAnchor" id="agent-version"></a><span class="pre">--agent-version</span></tt> (string)</p>
+<blockquote>
+<div><p>The default AWS OpsWorks agent version. You have the following options:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">INHERIT</span></tt> - Use the stack's default agent version setting.</li>
+<li><em>version_number</em> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, you must edit the instance configuration and specify a new version. AWS OpsWorks then automatically installs that version on the instance.</li>
+</ul>
+<p>The default setting is <tt class="docutils literal"><span class="pre">INHERIT</span></tt> . To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call  describe-agent-versions .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To update an instance</strong></p>
+<p>The following example updates a specified instance's type.</p>
+<div class="highlight-python"><pre>aws opsworks --region us-east-1 update-instance --instance-id dfe18b02-5327-493d-91a4-c5c0c448927f --instance-type c3.xlarge</pre>
+</div>
+<p><strong>Note</strong>: AWS OpsWorks CLI commands should set the region to <tt class="docutils literal"><span class="pre">us-east-1</span></tt> regardless of the stack's location.</p>
+<p><em>Output</em>: None.</p>
+<p><strong>More Information</strong></p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-properties.html">Editing the Instance Configuration</a> in the <em>AWS OpsWorks User Guide</em>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>None</p>
 </div>
 </div>
 
@@ -180,7 +262,7 @@
     <div class="footer-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="update-app.html" title="previous chapter (use the left arrow)">&#8592; update-app</a>
+          <a href="update-elastic-ip.html" title="previous chapter (use the left arrow)">&#8592; update-elastic-ip</a>
           <span class="divider">/</span>
           
         </li>
@@ -190,6 +272,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -198,36 +289,22 @@
         <li class="right">
           <a href="update-layer.html" title="update-layer">next</a> |</li>
         <li class="right">
-          <a href="update-app.html" title="update-app">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="update-elastic-ip.html" title="update-elastic-ip">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">opsworks</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'update-app.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'update-layer.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/opsworks/update-instance.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:22 GMT -->
 </html>

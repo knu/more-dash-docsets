@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/devicefarm/create-upload.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:01 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-upload &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="devicefarm" href="index.html" />
+    <link rel="next" title="delete-device-pool" href="delete-device-pool.html" />
+    <link rel="prev" title="create-project" href="create-project.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="delete-device-pool.html" title="delete-device-pool" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="create-project.html" title="create-project" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">devicefarm</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="create-project.html" title="previous chapter (use the left arrow)">&#8592; create-project</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="delete-device-pool.html" title="next chapter (use the right arrow)">delete-device-pool &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-upload</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/devicefarm/create-upload">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-devicefarm"><em>devicefarm</em></a> ]</p>
+<div class="section" id="create-upload">
+<span id="cli-aws-devicefarm-create-upload"></span><h1>create-upload<a name="//apple_ref/cpp/Command/aws devicefarm create-upload" class="dashAnchor" id="aws devicefarm create-upload"></a><a class="headerlink" href="#create-upload" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Uploads an app or test scripts.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  create-upload
+--project-arn &lt;value&gt;
+--name &lt;value&gt;
+--type &lt;value&gt;
+[--content-type &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--project-arn" class="dashAnchor" id="project-arn"></a><span class="pre">--project-arn</span></tt> (string)</p>
+<blockquote>
+<div>The ARN of the project for the upload.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--name" class="dashAnchor" id="name"></a><span class="pre">--name</span></tt> (string)</p>
+<blockquote>
+<div>The upload's file name.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--type" class="dashAnchor" id="type"></a><span class="pre">--type</span></tt> (string)</p>
+<blockquote>
+<div><p>The upload's upload type.</p>
+<p>Must be one of the following values:</p>
+<ul class="simple">
+<li>ANDROID_APP: An Android upload.</li>
+<li>IOS_APP: An iOS upload.</li>
+<li>WEB_APP: A web appliction upload.</li>
+<li>EXTERNAL_DATA: An external data upload.</li>
+<li>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.</li>
+<li>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.</li>
+<li>APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.</li>
+<li>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.</li>
+<li>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.</li>
+<li>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.</li>
+<li>CALABASH_TEST_PACKAGE: A Calabash test package upload.</li>
+<li>INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.</li>
+<li>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.</li>
+<li>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.</li>
+<li>XCTEST_TEST_PACKAGE: An XCode test package upload.</li>
+<li>XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.</li>
+</ul>
+<p><strong>Note</strong> If you call <tt class="docutils literal"><span class="pre">create-upload</span></tt> with <tt class="docutils literal"><span class="pre">WEB_APP</span></tt> specified, AWS Device Farm throws an <tt class="docutils literal"><span class="pre">ArgumentException</span></tt> error.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ANDROID_APP</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">IOS_APP</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">WEB_APP</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">EXTERNAL_DATA</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">APPIUM_JAVA_JUNIT_TEST_PACKAGE</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">APPIUM_JAVA_TESTNG_TEST_PACKAGE</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">APPIUM_PYTHON_TEST_PACKAGE</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">APPIUM_WEB_PYTHON_TEST_PACKAGE</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">CALABASH_TEST_PACKAGE</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">INSTRUMENTATION_TEST_PACKAGE</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">UIAUTOMATION_TEST_PACKAGE</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">UIAUTOMATOR_TEST_PACKAGE</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">XCTEST_TEST_PACKAGE</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">XCTEST_UI_TEST_PACKAGE</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--content-type" class="dashAnchor" id="content-type"></a><span class="pre">--content-type</span></tt> (string)</p>
+<blockquote>
+<div>The upload's content type (for example, "application/octet-stream").</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>upload -&gt; (structure)</p>
+<blockquote>
+<div><p>The newly created upload.</p>
+<p>arn -&gt; (string)</p>
+<blockquote>
+<div>The upload's ARN.</div></blockquote>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The upload's file name.</div></blockquote>
+<p>created -&gt; (timestamp)</p>
+<blockquote>
+<div>When the upload was created.</div></blockquote>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div><p>The upload's type.</p>
+<p>Must be one of the following values:</p>
+<ul class="simple">
+<li>ANDROID_APP: An Android upload.</li>
+<li>IOS_APP: An iOS upload.</li>
+<li>WEB_APP: A web appliction upload.</li>
+<li>EXTERNAL_DATA: An external data upload.</li>
+<li>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.</li>
+<li>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.</li>
+<li>APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.</li>
+<li>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.</li>
+<li>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.</li>
+<li>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.</li>
+<li>CALABASH_TEST_PACKAGE: A Calabash test package upload.</li>
+<li>INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.</li>
+<li>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.</li>
+<li>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.</li>
+<li>XCTEST_TEST_PACKAGE: An XCode test package upload.</li>
+<li>XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.</li>
+</ul>
+</div></blockquote>
+<p>status -&gt; (string)</p>
+<blockquote>
+<div><p>The upload's status.</p>
+<p>Must be one of the following values:</p>
+<ul class="simple">
+<li>FAILED: A failed status.</li>
+<li>INITIALIZED: An initialized status.</li>
+<li>PROCESSING: A processing status.</li>
+<li>SUCCEEDED: A succeeded status.</li>
+</ul>
+</div></blockquote>
+<p>url -&gt; (string)</p>
+<blockquote>
+<div>The pre-signed Amazon S3 URL that was used to store a file through a corresponding PUT request.</div></blockquote>
+<p>metadata -&gt; (string)</p>
+<blockquote>
+<div>The upload's metadata. For example, for Android, this contains information that is parsed from the manifest and is displayed in the AWS Device Farm console after the associated app is uploaded.</div></blockquote>
+<p>contentType -&gt; (string)</p>
+<blockquote>
+<div>The upload's content type (for example, "application/octet-stream").</div></blockquote>
+<p>message -&gt; (string)</p>
+<blockquote>
+<div>A message about the upload's result.</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="create-project.html" title="previous chapter (use the left arrow)">&#8592; create-project</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="delete-device-pool.html" title="next chapter (use the right arrow)">delete-device-pool &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="delete-device-pool.html" title="delete-device-pool">next</a> |</li>
+        <li class="right">
+          <a href="create-project.html" title="create-project">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">devicefarm</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/devicefarm/create-upload.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:01 GMT -->
+</html>

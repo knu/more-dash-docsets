@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/describe-volume-status.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>describe-volume-status &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>describe-volume-status &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="ec2" href="index.html" />
     <link rel="next" title="describe-volumes" href="describe-volumes.html" />
     <link rel="prev" title="describe-volume-attribute" href="describe-volume-attribute.html" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -61,7 +64,7 @@
           <a href="describe-volumes.html" title="describe-volumes" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="describe-volume-attribute.html" title="describe-volume-attribute" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">ec2</a> &#187;</li> 
       </ul>
@@ -82,38 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">describe-volume-status</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
-<li><a class="reference internal" href="#filters">Filters</a><ul>
-<li><a class="reference internal" href="#action-code">action.code</a></li>
-<li><a class="reference internal" href="#action-description">action.description</a></li>
-<li><a class="reference internal" href="#action-event-id">action.event-id</a></li>
-<li><a class="reference internal" href="#availability-zone">availability-zone</a></li>
-<li><a class="reference internal" href="#event-description">event.description</a></li>
-<li><a class="reference internal" href="#event-event-id">event.event-id</a></li>
-<li><a class="reference internal" href="#event-event-type">event.event-type</a></li>
-<li><a class="reference internal" href="#event-not-after">event.not-after</a></li>
-<li><a class="reference internal" href="#event-not-before">event.not-before</a></li>
-<li><a class="reference internal" href="#volume-status-details-name">volume-status.details-name</a></li>
-<li><a class="reference internal" href="#volume-status-details-status">volume-status.details-status</a></li>
-<li><a class="reference internal" href="#volume-status-status">volume-status.status</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -122,42 +112,81 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/ec2/describe-volume-status">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ec2/describe-volume-status">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>ec2</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-ec2"><em>ec2</em></a> ]</p>
 <div class="section" id="describe-volume-status">
-<h1>describe-volume-status<a class="headerlink" href="#describe-volume-status" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-ec2-describe-volume-status"></span><h1>describe-volume-status<a name="//apple_ref/cpp/Command/aws ec2 describe-volume-status" class="dashAnchor" id="aws ec2 describe-volume-status"></a><a class="headerlink" href="#describe-volume-status" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Describes the status of a volume.</p>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Describes the status of the specified volumes. Volume status provides the result of the checks performed on your volumes to determine events that can impair the performance of your volumes. The performance of a volume can be affected if an issue occurs on the volume's underlying host. If the volume's underlying host experiences a power outage or system issue, after the system is restored, there could be data inconsistencies on the volume. Volume events notify you if this occurs. Volume actions notify you if any action needs to be taken in response to the event.</p>
+<p>The <tt class="docutils literal"><span class="pre">describe-volume-status</span></tt> operation provides the following information about the specified volumes:</p>
+<p><em>Status</em> : Reflects the current status of the volume. The possible values are <tt class="docutils literal"><span class="pre">ok</span></tt> , <tt class="docutils literal"><span class="pre">impaired</span></tt> , <tt class="docutils literal"><span class="pre">warning</span></tt> , or <tt class="docutils literal"><span class="pre">insufficient-data</span></tt> . If all checks pass, the overall status of the volume is <tt class="docutils literal"><span class="pre">ok</span></tt> . If the check fails, the overall status is <tt class="docutils literal"><span class="pre">impaired</span></tt> . If the status is <tt class="docutils literal"><span class="pre">insufficient-data</span></tt> , then the checks may still be taking place on your volume at the time. We recommend that you retry the request. For more information on volume status, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring the Status of Your Volumes</a> .</p>
+<p><em>Events</em> : Reflect the cause of a volume status and may require you to take action. For example, if your volume returns an <tt class="docutils literal"><span class="pre">impaired</span></tt> status, then the volume event might be <tt class="docutils literal"><span class="pre">potential-data-inconsistency</span></tt> . This means that your volume has been affected by an issue with the underlying host, has all I/O operations disabled, and may have inconsistent data.</p>
+<p><em>Actions</em> : Reflect the actions you may have to take in response to an event. For example, if the status of the volume is <tt class="docutils literal"><span class="pre">impaired</span></tt> and the volume event shows <tt class="docutils literal"><span class="pre">potential-data-inconsistency</span></tt> , then the action shows <tt class="docutils literal"><span class="pre">enable-volume-io</span></tt> . This means that you may want to enable the I/O operations for the volume by calling the  enable-volume-io action and then check the volume for data consistency.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Volume status is based on the volume status checks, and does not reflect the volume state. Therefore, volume status does not indicate volumes in the <tt class="docutils literal"><span class="pre">error</span></tt> state (for example, when a volume is incapable of accepting I/O.)</p>
+</div>
+<p><tt class="docutils literal"><span class="pre">describe-volume-status</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">VolumeStatuses</span></tt></p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  describe-volume-status
 [--dry-run | --no-dry-run]
 [--volume-ids &lt;value&gt;]
 [--filters &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
 [--starting-token &lt;value&gt;]
-[--max-items &lt;value&gt;]</pre>
+[--page-size &lt;value&gt;]
+[--max-items &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--no-dry-run" class="dashAnchor" id="no-dry-run"></a><span class="pre">--no-dry-run</span></tt> (boolean)</p>
-<p>Checks whether you have the required permissions for the action, without actually making the request. Using this option will result in one of two possible errorresponses. If you have the required permissions, the error response will be <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt>  . Otherwise it will be <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt>  .</p>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><span class="pre">--no-dry-run</span></tt> (boolean)</p>
+<blockquote>
+<div>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt> . Otherwise, it is <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt> .</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--volume-ids" class="dashAnchor" id="volume-ids"></a><span class="pre">--volume-ids</span></tt> (list)</p>
+<blockquote>
+<div><p>One or more volume IDs.</p>
+<p>Default: Describes all your volumes.</p>
+</div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--filters" class="dashAnchor" id="filters"></a><span class="pre">--filters</span></tt> (list)</p>
+<blockquote>
+<div><p>One or more filters.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">action.code</span></tt> - The action code for the event (for example, <tt class="docutils literal"><span class="pre">enable-volume-io</span></tt> ).</li>
+<li><tt class="docutils literal"><span class="pre">action.description</span></tt> - A description of the action.</li>
+<li><tt class="docutils literal"><span class="pre">action.event-id</span></tt> - The event ID associated with the action.</li>
+<li><tt class="docutils literal"><span class="pre">availability-zone</span></tt> - The Availability Zone of the instance.</li>
+<li><tt class="docutils literal"><span class="pre">event.description</span></tt> - A description of the event.</li>
+<li><tt class="docutils literal"><span class="pre">event.event-id</span></tt> - The event ID.</li>
+<li><tt class="docutils literal"><span class="pre">event.event-type</span></tt> - The event type (for <tt class="docutils literal"><span class="pre">io-enabled</span></tt> : <tt class="docutils literal"><span class="pre">passed</span></tt> | <tt class="docutils literal"><span class="pre">failed</span></tt> ; for <tt class="docutils literal"><span class="pre">io-performance</span></tt> : <tt class="docutils literal"><span class="pre">io-performance:degraded</span></tt> | <tt class="docutils literal"><span class="pre">io-performance:severely-degraded</span></tt> | <tt class="docutils literal"><span class="pre">io-performance:stalled</span></tt> ).</li>
+<li><tt class="docutils literal"><span class="pre">event.not-after</span></tt> - The latest end time for the event.</li>
+<li><tt class="docutils literal"><span class="pre">event.not-before</span></tt> - The earliest start time for the event.</li>
+<li><tt class="docutils literal"><span class="pre">volume-status.details-name</span></tt> - The cause for <tt class="docutils literal"><span class="pre">volume-status.status</span></tt> (<tt class="docutils literal"><span class="pre">io-enabled</span></tt> | <tt class="docutils literal"><span class="pre">io-performance</span></tt> ).</li>
+<li><tt class="docutils literal"><span class="pre">volume-status.details-status</span></tt> - The status of <tt class="docutils literal"><span class="pre">volume-status.details-name</span></tt> (for <tt class="docutils literal"><span class="pre">io-enabled</span></tt> : <tt class="docutils literal"><span class="pre">passed</span></tt> | <tt class="docutils literal"><span class="pre">failed</span></tt> ; for <tt class="docutils literal"><span class="pre">io-performance</span></tt> : <tt class="docutils literal"><span class="pre">normal</span></tt> | <tt class="docutils literal"><span class="pre">degraded</span></tt> | <tt class="docutils literal"><span class="pre">severely-degraded</span></tt> | <tt class="docutils literal"><span class="pre">stalled</span></tt> ).</li>
+<li><tt class="docutils literal"><span class="pre">volume-status.status</span></tt> - The status of the volume (<tt class="docutils literal"><span class="pre">ok</span></tt> | <tt class="docutils literal"><span class="pre">impaired</span></tt> | <tt class="docutils literal"><span class="pre">warning</span></tt> | <tt class="docutils literal"><span class="pre">insufficient-data</span></tt> ).</li>
+</ul>
+</div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><pre>  Key value pairs, where values are separated by commas.
---filters Name=string1,Values=string1,string2</pre>
+<div class="highlight-python"><pre>Name=string,Values=string,string ...</pre>
 </div>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><pre>[
@@ -168,65 +197,149 @@
   ...
 ]</pre>
 </div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--starting-token" class="dashAnchor" id="starting-token"></a><span class="pre">--starting-token</span></tt> (string)</p>
 <blockquote>
-<div>A token to specify where to start paginating. This is the <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--next-token" class="dashAnchor" id="next-token"></a><span class="pre">--next-token</span></tt>  from a previously truncated response.</div></blockquote>
+<div>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--page-size" class="dashAnchor" id="page-size"></a><span class="pre">--page-size</span></tt> (integer)</p>
+<blockquote>
+<div>The size of each page.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-items" class="dashAnchor" id="max-items"></a><span class="pre">--max-items</span></tt> (integer)</p>
 <blockquote>
-<div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">NextMarker</span></tt>  will be provided in the output that you can use to resume pagination.</div></blockquote>
+<div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">NextToken</span></tt> will be provided in the output that you can use to resume pagination. This <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element should <strong>not</strong> be used directly outside of the AWS CLI.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
 </div>
-<div class="section" id="filters">
-<h2>Filters<a class="headerlink" href="#filters" title="Permalink to this headline">&#182;</a></h2>
-<div class="section" id="action-code">
-<h3>action.code<a class="headerlink" href="#action-code" title="Permalink to this headline">&#182;</a></h3>
-<p>The action code for the event, for example, enable-volume-io</p>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To describe the status of a single volume</strong></p>
+<p>This example command describes the status for the volume <tt class="docutils literal"><span class="pre">vol-2725bc51</span></tt>.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 describe-volume-status --volume-ids vol-2725bc51</pre>
 </div>
-<div class="section" id="action-description">
-<h3>action.description<a class="headerlink" href="#action-description" title="Permalink to this headline">&#182;</a></h3>
-<p>A description of the action.</p>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"VolumeStatuses"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"VolumeStatus"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"Status"</span><span class="p">:</span> <span class="s2">"ok"</span><span class="p">,</span>
+                <span class="s2">"Details"</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">"Status"</span><span class="p">:</span> <span class="s2">"passed"</span><span class="p">,</span>
+                        <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"io-enabled"</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="s2">"Status"</span><span class="p">:</span> <span class="s2">"not-applicable"</span><span class="p">,</span>
+                        <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"io-performance"</span>
+                    <span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">},</span>
+            <span class="s2">"AvailabilityZone"</span><span class="p">:</span> <span class="s2">"us-east-1a"</span><span class="p">,</span>
+            <span class="s2">"VolumeId"</span><span class="p">:</span> <span class="s2">"vol-2725bc51"</span><span class="p">,</span>
+            <span class="s2">"Actions"</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">"Events"</span><span class="p">:</span> <span class="p">[]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
 </div>
-<div class="section" id="action-event-id">
-<h3>action.event-id<a class="headerlink" href="#action-event-id" title="Permalink to this headline">&#182;</a></h3>
-<p>The event ID associated with the action.</p>
+<p><strong>To describe the status of impaired volumes</strong></p>
+<p>This example command describes the status for all volumes that are impaired. In this example output, there are no impaired volumes.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 describe-volume-status --filters Name=volume-status.status,Values=impaired</pre>
 </div>
-<div class="section" id="availability-zone">
-<h3>availability-zone<a class="headerlink" href="#availability-zone" title="Permalink to this headline">&#182;</a></h3>
-<p>The Availability Zone of the instance.</p>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"VolumeStatuses"</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</pre></div>
 </div>
-<div class="section" id="event-description">
-<h3>event.description<a class="headerlink" href="#event-description" title="Permalink to this headline">&#182;</a></h3>
-<p>A description of the event.</p>
+<p>If you have a volume with a failed status check (status is impaired), see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html#work_volumes_impaired">Working with an Impaired Volume</a> in the <em>Amazon EC2 User Guide</em>.</p>
 </div>
-<div class="section" id="event-event-id">
-<h3>event.event-id<a class="headerlink" href="#event-event-id" title="Permalink to this headline">&#182;</a></h3>
-<p>The event ID.</p>
-</div>
-<div class="section" id="event-event-type">
-<h3>event.event-type<a class="headerlink" href="#event-event-type" title="Permalink to this headline">&#182;</a></h3>
-<p>The event type.</p>
-</div>
-<div class="section" id="event-not-after">
-<h3>event.not-after<a class="headerlink" href="#event-not-after" title="Permalink to this headline">&#182;</a></h3>
-<p>The latest end time for the event.</p>
-</div>
-<div class="section" id="event-not-before">
-<h3>event.not-before<a class="headerlink" href="#event-not-before" title="Permalink to this headline">&#182;</a></h3>
-<p>The earliest start time for the event.</p>
-</div>
-<div class="section" id="volume-status-details-name">
-<h3>volume-status.details-name<a class="headerlink" href="#volume-status-details-name" title="Permalink to this headline">&#182;</a></h3>
-<p>The cause for the volume-status.status .</p>
-<p>Valid Values: io-enabled|io-performance</p>
-</div>
-<div class="section" id="volume-status-details-status">
-<h3>volume-status.details-status<a class="headerlink" href="#volume-status-details-status" title="Permalink to this headline">&#182;</a></h3>
-<p>The status of the volume-status.details-name .</p>
-</div>
-<div class="section" id="volume-status-status">
-<h3>volume-status.status<a class="headerlink" href="#volume-status-status" title="Permalink to this headline">&#182;</a></h3>
-<p>The status of the volume.</p>
-<p>Valid Values: ok|impaired|warning|insufficient-data</p>
-</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>VolumeStatuses -&gt; (list)</p>
+<blockquote>
+<div><p>A list of volumes.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the volume status.</p>
+<p>VolumeId -&gt; (string)</p>
+<blockquote>
+<div>The volume ID.</div></blockquote>
+<p>AvailabilityZone -&gt; (string)</p>
+<blockquote>
+<div>The Availability Zone of the volume.</div></blockquote>
+<p>VolumeStatus -&gt; (structure)</p>
+<blockquote>
+<div><p>The volume status.</p>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status of the volume.</div></blockquote>
+<p>Details -&gt; (list)</p>
+<blockquote>
+<div><p>The details of the volume status.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a volume status.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the volume status.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The intended status of the volume status.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Events -&gt; (list)</p>
+<blockquote>
+<div><p>A list of events associated with the volume.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a volume status event.</p>
+<p>EventType -&gt; (string)</p>
+<blockquote>
+<div>The type of this event.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>A description of the event.</div></blockquote>
+<p>NotBefore -&gt; (timestamp)</p>
+<blockquote>
+<div>The earliest start time of the event.</div></blockquote>
+<p>NotAfter -&gt; (timestamp)</p>
+<blockquote>
+<div>The latest end time of the event.</div></blockquote>
+<p>EventId -&gt; (string)</p>
+<blockquote>
+<div>The ID of this event.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Actions -&gt; (list)</p>
+<blockquote>
+<div><p>The details of the operation.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a volume status operation code.</p>
+<p>Code -&gt; (string)</p>
+<blockquote>
+<div>The code identifying the operation, for example, <tt class="docutils literal"><span class="pre">enable-volume-io</span></tt> .</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>A description of the operation.</div></blockquote>
+<p>EventType -&gt; (string)</p>
+<blockquote>
+<div>The event type associated with this operation.</div></blockquote>
+<p>EventId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the event associated with this operation.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>The token to use to retrieve the next page of results. This value is <tt class="docutils literal"><span class="pre">null</span></tt> when there are no more results to return.</div></blockquote>
 </div>
 </div>
 
@@ -248,6 +361,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -257,35 +379,21 @@
           <a href="describe-volumes.html" title="describe-volumes">next</a> |</li>
         <li class="right">
           <a href="describe-volume-attribute.html" title="describe-volume-attribute">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">ec2</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'describe-volume-attribute.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'describe-volumes.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/describe-volume-status.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
 </html>

@@ -1,0 +1,515 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/topic/config-vars.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>AWS CLI Configuration Variables &mdash; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../index-2.html" />
+    <link rel="up" title="AWS CLI Topic Guide" href="index.html" />
+    <link rel="next" title="AWS CLI S3 FAQ" href="s3-faq.html" />
+    <link rel="prev" title="AWS CLI S3 Configuration" href="s3-config.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../index-2.html">Home</a></li>
+<li><a href="../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="s3-faq.html" title="AWS CLI S3 FAQ"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="s3-config.html" title="AWS CLI S3 Configuration"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index-2.html">AWS CLI 1.10.36 Command Reference</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">AWS CLI Topic Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="s3-config.html" title="previous chapter (use the left arrow)">&larr; AWS CLI S3 Configuration</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="s3-faq.html" title="next chapter (use the right arrow)">AWS CLI S3 FAQ &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../index-2.html">
+    <img class="logo" src="../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">AWS CLI Configuration Variables</a><ul>
+<li><a class="reference internal" href="#config-file-format">Config File Format</a><ul>
+<li><a class="reference internal" href="#nested-values">Nested Values</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#general-options">General Options</a><ul>
+<li><a class="reference internal" href="#precedence">Precedence</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#credentials">Credentials</a><ul>
+<li><a class="reference internal" href="#the-shared-credentials-file">The Shared Credentials File</a></li>
+<li><a class="reference internal" href="#id1">Precedence</a></li>
+<li><a class="reference internal" href="#using-aws-iam-roles">Using AWS IAM Roles</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#service-specific-configuration">Service Specific Configuration</a><ul>
+<li><a class="reference internal" href="#api-versions">API Versions</a></li>
+<li><a class="reference internal" href="#amazon-s3">Amazon S3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=topic/config-vars">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../reference/index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-help-topics"><em>topics</em></a> ]</p>
+<div class="section" id="aws-cli-configuration-variables">
+<span id="cli-aws-help-config-vars"></span><h1>AWS CLI Configuration Variables<a class="headerlink" href="#aws-cli-configuration-variables" title="Permalink to this headline">¶</a></h1>
+<p>Configuration values for the AWS CLI can come from several sources:</p>
+<ul class="simple">
+<li>As a command line option</li>
+<li>As an environment variable</li>
+<li>As a value in the AWS CLI config file</li>
+<li>As a value in the AWS Shared Credential file</li>
+</ul>
+<p>Some options are only available in the AWS CLI config.  This topic guide covers
+all the configuration variables available in the AWS CLI.</p>
+<p>Note that if you are just looking to get the minimum required configuration to
+run the AWS CLI, we recommend running <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">configure</span></tt>, which will prompt you
+for the necessary configuration values.</p>
+<div class="section" id="config-file-format">
+<h2>Config File Format<a class="headerlink" href="#config-file-format" title="Permalink to this headline">¶</a></h2>
+<p>The AWS CLI config file, which defaults to <tt class="docutils literal"><span class="pre">~/.aws/config</span></tt> has the following
+format:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">default</span><span class="p">]</span>
+<span class="n">aws_access_key_id</span><span class="o">=</span><span class="n">foo</span>
+<span class="n">aws_secret_access_key</span><span class="o">=</span><span class="n">bar</span>
+<span class="n">region</span><span class="o">=</span><span class="n">us</span><span class="o">-</span><span class="n">west</span><span class="o">-</span><span class="mi">2</span>
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">default</span></tt> section refers to the configuration values for the default
+profile.  You can create profiles, which represent logical groups of
+configuration.  Profiles that aren't the default profile are specified by
+creating a section titled &quot;profile profilename&quot;:</p>
+<div class="highlight-python"><pre>[profile testing]
+aws_access_key_id=foo
+aws_secret_access_key=bar
+region=us-west-2</pre>
+</div>
+<div class="section" id="nested-values">
+<h3>Nested Values<a class="headerlink" href="#nested-values" title="Permalink to this headline">¶</a></h3>
+<p>Some service specific configuration, discussed in more detail below, has a
+single top level key, with nested sub values.  These sub values are denoted by
+indentation:</p>
+<div class="highlight-python"><pre>[profile testing]
+aws_access_key_id = foo
+aws_secret_access_key = bar
+region = us-west-2
+s3 =
+  max_concurrent_requests=10
+  max_queue_size=1000</pre>
+</div>
+</div>
+</div>
+<div class="section" id="general-options">
+<h2>General Options<a class="headerlink" href="#general-options" title="Permalink to this headline">¶</a></h2>
+<p>The AWS CLI has a few general options:</p>
+<table class="table table-bordered">
+<colgroup>
+<col width="12%" />
+<col width="10%" />
+<col width="23%" />
+<col width="23%" />
+<col width="31%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Option</th>
+<th class="head">Config Entry</th>
+<th class="head">Environment Variable</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>profile</td>
+<td>--profile</td>
+<td>N/A</td>
+<td>AWS_DEFAULT_PROFILE</td>
+<td>Default profile name</td>
+</tr>
+<tr class="row-odd"><td>region</td>
+<td>--region</td>
+<td>region</td>
+<td>AWS_DEFAULT_REGION</td>
+<td>Default AWS Region</td>
+</tr>
+<tr class="row-even"><td>output</td>
+<td>--output</td>
+<td>output</td>
+<td>AWS_DEFAULT_OUTPUT</td>
+<td>Default output style</td>
+</tr>
+</tbody>
+</table>
+<p>The third column, Config Entry, is the value you would specify in the AWS CLI
+config file.  By default, this location is <tt class="docutils literal"><span class="pre">~/.aws/config</span></tt>.  If you need to
+change this value, you can set the <tt class="docutils literal"><span class="pre">AWS_CONFIG_FILE</span></tt> environment variable
+to change this location.</p>
+<p>The valid values of the <tt class="docutils literal"><span class="pre">output</span></tt> configuration variable are:</p>
+<ul class="simple">
+<li>json</li>
+<li>table</li>
+<li>text</li>
+</ul>
+<p>When you specify a profile, either using <tt class="docutils literal"><span class="pre">--profile</span> <span class="pre">profile-name</span></tt> or by
+setting a value for the <tt class="docutils literal"><span class="pre">AWS_DEFAULT_PROFILE</span></tt> environment variable, profile
+name you provide is used to find the corresponding section in the AWS CLI
+config file.  For example, specifying <tt class="docutils literal"><span class="pre">--profile</span> <span class="pre">development</span></tt> will instruct
+the AWS CLI to look for a section in the AWS CLI config file of
+<tt class="docutils literal"><span class="pre">[profile</span> <span class="pre">development]</span></tt>.</p>
+<div class="section" id="precedence">
+<h3>Precedence<a class="headerlink" href="#precedence" title="Permalink to this headline">¶</a></h3>
+<p>The above configuration values have the following precedence:</p>
+<ul class="simple">
+<li>Command line options</li>
+<li>Environment variables</li>
+<li>Configuration file</li>
+</ul>
+</div>
+</div>
+<div class="section" id="credentials">
+<h2>Credentials<a class="headerlink" href="#credentials" title="Permalink to this headline">¶</a></h2>
+<p>Credentials can be specified in several ways:</p>
+<ul class="simple">
+<li>Environment variables</li>
+<li>The AWS Shared Credential File</li>
+<li>The AWS CLI config file</li>
+</ul>
+<table class="table table-bordered">
+<colgroup>
+<col width="14%" />
+<col width="26%" />
+<col width="26%" />
+<col width="35%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Creds/Config Entry</th>
+<th class="head">Environment Variable</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>access_key</td>
+<td>aws_access_key_id</td>
+<td>AWS_ACCESS_KEY_ID</td>
+<td>AWS Access Key</td>
+</tr>
+<tr class="row-odd"><td>secret_key</td>
+<td>aws_secret_access_key</td>
+<td>AWS_SECRET_ACCESS_KEY</td>
+<td>AWS Secret Key</td>
+</tr>
+<tr class="row-even"><td>token</td>
+<td>aws_session_token</td>
+<td>AWS_SESSION_TOKEN</td>
+<td>AWS Token (temp credentials)</td>
+</tr>
+</tbody>
+</table>
+<p>The second column specifies the name that you can specify in either the AWS CLI
+config file or the AWS Shared credentials file (<tt class="docutils literal"><span class="pre">~/.aws/credentials</span></tt>).</p>
+<div class="section" id="the-shared-credentials-file">
+<h3>The Shared Credentials File<a class="headerlink" href="#the-shared-credentials-file" title="Permalink to this headline">¶</a></h3>
+<p>The shared credentials file has a default location of
+<tt class="docutils literal"><span class="pre">~/.aws/credentials</span></tt>.  You can change the location of the shared
+credentials file by setting the <tt class="docutils literal"><span class="pre">AWS_SHARED_CREDENTIALS_FILE</span></tt>
+environment variable.</p>
+<p>This file is an INI formatted file with section names
+corresponding to profiles.  With each section, the three configuration
+variables shown above can be specified: <tt class="docutils literal"><span class="pre">aws_access_key_id</span></tt>,
+<tt class="docutils literal"><span class="pre">aws_secret_access_key</span></tt>, <tt class="docutils literal"><span class="pre">aws_session_token</span></tt>.  <strong>These are the only
+supported values in the shared credential file.</strong>  Also note that the
+section names are different than the AWS CLI config file (<tt class="docutils literal"><span class="pre">~/.aws/config</span></tt>).
+In the AWS CLI config file, you create a new profile by creating a section of
+<tt class="docutils literal"><span class="pre">[profile</span> <span class="pre">profile-name]</span></tt>, for example:</p>
+<div class="highlight-python"><pre>[profile development]
+aws_access_key_id=foo
+aws_secret_access_key=bar</pre>
+</div>
+<p>In the shared credentials file, profiles are not prefixed with <tt class="docutils literal"><span class="pre">profile</span></tt>,
+for example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">development</span><span class="p">]</span>
+<span class="n">aws_access_key_id</span><span class="o">=</span><span class="n">foo</span>
+<span class="n">aws_secret_access_key</span><span class="o">=</span><span class="n">bar</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Precedence<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Credentials from environment variables have precedence over credentials from
+the shared credentials and AWS CLI config file.  Credentials specified in the
+shared credentials file have precedence over credentials in the AWS CLI config
+file. If <tt class="docutils literal"><span class="pre">AWS_DEFAULT_PROFILE</span></tt> environment variable is set and the
+<tt class="docutils literal"><span class="pre">AWS_ACCESS_KEY_ID</span></tt> and <tt class="docutils literal"><span class="pre">AWS_SECRET_ACCESS_KEY</span></tt> environment variables are
+set, then the credentials provided by  <tt class="docutils literal"><span class="pre">AWS_ACCESS_KEY_ID</span></tt> and
+<tt class="docutils literal"><span class="pre">AWS_SECRET_ACCESS_KEY</span></tt> will override the credentials located in the
+profile provided by <tt class="docutils literal"><span class="pre">AWS_DEFAULT_PROFILE</span></tt>.</p>
+</div>
+<div class="section" id="using-aws-iam-roles">
+<h3>Using AWS IAM Roles<a class="headerlink" href="#using-aws-iam-roles" title="Permalink to this headline">¶</a></h3>
+<p>If you are on an Amazon EC2 instance that was launched with an IAM role, the
+AWS CLI will automatically retrieve credentials for you.  You do not need
+to configure any credentials.</p>
+<p>Additionally, you can specify a role for the AWS CLI to assume, and the AWS
+CLI will automatically make the corresponding <tt class="docutils literal"><span class="pre">AssumeRole</span></tt> calls for you.
+Note that configuration variables for using IAM roles can only be in the AWS
+CLI config file.</p>
+<p>You can specify the following configuration values for configuring an IAM role
+in the AWS CLI config file:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">role_arn</span></tt> - The ARN of the role you want to assume.</li>
+<li><tt class="docutils literal"><span class="pre">source_profile</span></tt> - The AWS CLI profile that contains credentials we should
+use for the initial <tt class="docutils literal"><span class="pre">assume-role</span></tt> call.</li>
+<li><tt class="docutils literal"><span class="pre">external_id</span></tt> - A unique identifier that is used by third parties to assume
+a role in their customers' accounts.  This maps to the <tt class="docutils literal"><span class="pre">ExternalId</span></tt>
+parameter in the <tt class="docutils literal"><span class="pre">AssumeRole</span></tt> operation.  This is an optional parameter.</li>
+<li><tt class="docutils literal"><span class="pre">mfa_serial</span></tt> - The identification number of the MFA device to use when
+assuming a role.  This is an optional parameter.  Specify this value if the
+trust policy of the role being assumed includes a condition that requires MFA
+authentication. The value is either the serial number for a hardware device
+(such as GAHT12345678) or an Amazon Resource Name (ARN) for a virtual device
+(such as arn:aws:iam::123456789012:mfa/user).</li>
+<li><tt class="docutils literal"><span class="pre">role_session_name</span></tt> - The name applied to this assume-role session. This
+value affects the assumed role user ARN  (such as
+arn:aws:sts::123456789012:assumed-role/role_name/role_session_name). This
+maps to the <tt class="docutils literal"><span class="pre">RoleSessionName</span></tt> parameter in the <tt class="docutils literal"><span class="pre">AssumeRole</span></tt> operation.
+This is an optional parameter.  If you do not provide this value, a
+session name will be automatically generated.</li>
+</ul>
+<p>If you do not have MFA authentication required, then you only need to specify a
+<tt class="docutils literal"><span class="pre">role_arn</span></tt> and a <tt class="docutils literal"><span class="pre">source_profile</span></tt>.</p>
+<p>When you specify a profile that has IAM role configuration, the AWS CLI
+will make an <tt class="docutils literal"><span class="pre">AssumeRole</span></tt> call to retrieve temporary credentials.  These
+credentials are then stored (in <tt class="docutils literal"><span class="pre">~/.aws/cache</span></tt>).  Subsequent AWS CLI commands
+will use the cached temporary credentials until they expire, in which case the
+AWS CLI will automatically refresh credentials.</p>
+<p>If you specify an <tt class="docutils literal"><span class="pre">mfa_serial</span></tt>, then the first time an <tt class="docutils literal"><span class="pre">AssumeRole</span></tt> call is
+made, you will be prompted to enter the MFA code.  Subsequent commands will use
+the cached temporary credentials.  However, when the temporary credentials
+expire, you will be re-prompted for another MFA code.</p>
+<p>Example configuration:</p>
+<div class="highlight-python"><pre># In ~/.aws/credentials:
+[development]
+aws_access_key_id=foo
+aws_secret_access_key=bar
+
+# In ~/.aws/config
+[profile crossaccount]
+role_arn=arn:aws:iam:...
+source_profile=development</pre>
+</div>
+</div>
+</div>
+<div class="section" id="service-specific-configuration">
+<h2>Service Specific Configuration<a class="headerlink" href="#service-specific-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="api-versions">
+<h3>API Versions<a class="headerlink" href="#api-versions" title="Permalink to this headline">¶</a></h3>
+<p>The API version to use for a service can be set using the <tt class="docutils literal"><span class="pre">api_versions</span></tt>
+key. To specify an API version, set the API version to the name of the service
+as a sub value for <tt class="docutils literal"><span class="pre">api_versions</span></tt>.</p>
+<p>Example configuration:</p>
+<div class="highlight-python"><pre>[profile development]
+aws_access_key_id=foo
+aws_secret_access_key=bar
+api_versions =
+    ec2 = 2015-03-01
+    cloudfront = 2015-09-17</pre>
+</div>
+<p>By setting an API version for a service, it ensures that the interface for
+that service's commands is representative of the specified API version.</p>
+<p>In the example configuration, the <tt class="docutils literal"><span class="pre">ec2</span></tt> CLI commands will be representative
+of Amazon EC2's <tt class="docutils literal"><span class="pre">2015-03-01</span></tt> API version and the <tt class="docutils literal"><span class="pre">cloudfront</span></tt> CLI commands
+will be representative of Amazon CloudFront's <tt class="docutils literal"><span class="pre">2015-09-17</span></tt> API version.</p>
+</div>
+<div class="section" id="amazon-s3">
+<h3>Amazon S3<a class="headerlink" href="#amazon-s3" title="Permalink to this headline">¶</a></h3>
+<p>These values are only applicable for the <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">s3</span></tt> and <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">s3api</span></tt> commands.
+These configuration values are sub values that must be specified under the
+top level <tt class="docutils literal"><span class="pre">s3</span></tt> key.</p>
+<p>These are the configuration values that will only be used for <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">s3</span></tt>:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">max_concurrent_requests</span></tt> - The maximum number of concurrent requests.</li>
+<li><tt class="docutils literal"><span class="pre">max_queue_size</span></tt> - The maximum number of tasks in the task queue.</li>
+<li><tt class="docutils literal"><span class="pre">multipart_threshold</span></tt> - The size threshold where the CLI uses multipart
+transfers.</li>
+<li><tt class="docutils literal"><span class="pre">multipart_chunksize</span></tt> - When using multipart transfers, this is the chunk
+size that will be used.</li>
+</ul>
+<p>These are the configuration values that can be used for both <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">s3</span></tt>
+and <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">s3api</span></tt>:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">use_accelerate_endpoint</span></tt> - Use the Amazon S3 Accelerate endpoint for
+all <tt class="docutils literal"><span class="pre">s3</span></tt> and <tt class="docutils literal"><span class="pre">s3api</span></tt> commands. You <strong>must</strong> first enable S3 Accelerate
+on your bucket before attempting to use the endpoint.</li>
+<li><tt class="docutils literal"><span class="pre">addressing_style</span></tt> - Specifies which addressing style to use. This controls
+if the bucket name is in the hostname or part of the URL. Value values are:
+<tt class="docutils literal"><span class="pre">path</span></tt>, <tt class="docutils literal"><span class="pre">virtual</span></tt>, and <tt class="docutils literal"><span class="pre">auto</span></tt>.  The default value is <tt class="docutils literal"><span class="pre">auto</span></tt>.</li>
+</ul>
+<p>Here is an example config for all of these configuration options:</p>
+<div class="highlight-python"><pre>[profile development]
+aws_access_key_id=foo
+aws_secret_access_key=bar
+s3 =
+  max_concurrent_requests = 20
+  max_queue_size = 10000
+  multipart_threshold = 64MB
+  multipart_chunksize = 16MB
+  use_accelerate_endpoint = true
+  addressing_style = path</pre>
+</div>
+<p>For a more in depth discussion of these S3 configuration values, see <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">help</span>
+<span class="pre">s3-config</span></tt>.</p>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="s3-config.html" title="previous chapter (use the left arrow)">&larr; AWS CLI S3 Configuration</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="s3-faq.html" title="next chapter (use the right arrow)">AWS CLI S3 FAQ &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="s3-faq.html" title="AWS CLI S3 FAQ"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="s3-config.html" title="AWS CLI S3 Configuration"
+             >previous</a> |</li>
+        <li><a href="../index-2.html">AWS CLI 1.10.36 Command Reference</a> &raquo;</li>
+          <li><a href="index.html" >AWS CLI Topic Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/topic/config-vars.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+</html>

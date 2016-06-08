@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudfront/create-invalidation.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:59 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-invalidation &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="cloudfront" href="index.html" />
+    <link rel="next" title="create-streaming-distribution" href="create-streaming-distribution.html" />
+    <link rel="prev" title="create-distribution" href="create-distribution.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="create-streaming-distribution.html" title="create-streaming-distribution" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="create-distribution.html" title="create-distribution" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">cloudfront</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="create-distribution.html" title="previous chapter (use the left arrow)">&#8592; create-distribution</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-streaming-distribution.html" title="next chapter (use the right arrow)">create-streaming-distribution &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-invalidation</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/cloudfront/create-invalidation">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-cloudfront"><em>cloudfront</em></a> ]</p>
+<div class="section" id="create-invalidation">
+<span id="cli-aws-cloudfront-create-invalidation"></span><h1>create-invalidation<a name="//apple_ref/cpp/Command/aws cloudfront create-invalidation" class="dashAnchor" id="aws cloudfront create-invalidation"></a><a class="headerlink" href="#create-invalidation" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Create a new invalidation.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>AWS CLI support for this service is only available in a preview stage.</strong> You can enable this service by running: <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">configure</span> <span class="pre">set</span> <span class="pre">preview.cloudfront</span> <span class="pre">true</span></tt></p>
+</div>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  create-invalidation
+--distribution-id &lt;value&gt;
+[--invalidation-batch &lt;value&gt;]
+[--paths &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--distribution-id" class="dashAnchor" id="distribution-id"></a><span class="pre">--distribution-id</span></tt> (string)
+The distribution's id.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--invalidation-batch" class="dashAnchor" id="invalidation-batch"></a><span class="pre">--invalidation-batch</span></tt> (structure)
+The batch information for the invalidation.</p>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Paths={Quantity=integer,Items=[string,string]},CallerReference=string</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"Paths"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Quantity"</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+    <span class="s2">"Items"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"string"</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">"CallerReference"</span><span class="p">:</span> <span class="s2">"string"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--paths" class="dashAnchor" id="paths"></a><span class="pre">--paths</span></tt> (string)
+The space-separated paths to be invalidated. Note: --invalidation-batch and --paths are mututally exclusive.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON distribution-id provided. The JSON distribution-id follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p>The following command creates an invalidation for a CloudFront distribution with the ID <tt class="docutils literal"><span class="pre">S11A16G5KZMEQD</span></tt>:</p>
+<div class="highlight-python"><pre>aws cloudfront create-invalidation --distribution-id S11A16G5KZMEQD \
+  --paths /index.html /error.html</pre>
+</div>
+<p>The --paths will automatically generate a random <tt class="docutils literal"><span class="pre">CallerReference</span></tt> every time.</p>
+<p>Or you can use the following command to do the same thing, so that you can have a chance to specify your own <tt class="docutils literal"><span class="pre">CallerReference</span></tt> here:</p>
+<div class="highlight-python"><pre>aws cloudfront create-invalidation --invalidation-batch file://invbatch.json --distribution-id S11A16G5KZMEQD</pre>
+</div>
+<p>The distribution ID is available in the output of <tt class="docutils literal"><span class="pre">create-distribution</span></tt> and <tt class="docutils literal"><span class="pre">list-distributions</span></tt>.</p>
+<p>The file <tt class="docutils literal"><span class="pre">invbatch.json</span></tt> is a JSON document in the current folder that specifies two paths to invalidate:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"Paths"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Quantity"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">"Items"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"/index.html"</span><span class="p">,</span> <span class="s2">"/error.html"</span><span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">"CallerReference"</span><span class="p">:</span> <span class="s2">"my-invalidation-2015-09-01"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Output of both commands:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"Invalidation"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"Status"</span><span class="p">:</span> <span class="s2">"InProgress"</span><span class="p">,</span>
+        <span class="s2">"InvalidationBatch"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"Paths"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"Items"</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s2">"/index.html"</span><span class="p">,</span>
+                    <span class="s2">"/error.html"</span>
+                <span class="p">],</span>
+                <span class="s2">"Quantity"</span><span class="p">:</span> <span class="mi">2</span>
+            <span class="p">},</span>
+            <span class="s2">"CallerReference"</span><span class="p">:</span> <span class="s2">"my-invalidation-2015-09-01"</span>
+        <span class="p">},</span>
+        <span class="s2">"Id"</span><span class="p">:</span> <span class="s2">"YNY2LI2BVJ4NJU"</span><span class="p">,</span>
+        <span class="s2">"CreateTime"</span><span class="p">:</span> <span class="s2">"2015-08-31T21:15:52.042Z"</span>
+    <span class="p">},</span>
+    <span class="s2">"Location"</span><span class="p">:</span> <span class="s2">"https://cloudfront.amazonaws.com/2015-04-17/distribution/S11A16G5KZMEQD/invalidation/YNY2LI2BVJ4NJU"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Location -&gt; (string)</p>
+<blockquote>
+<div>The fully qualified URI of the distribution and invalidation batch request, including the Invalidation ID.</div></blockquote>
+<p>Invalidation -&gt; (structure)</p>
+<blockquote>
+<div><p>The invalidation's information.</p>
+<p>Id -&gt; (string)</p>
+<blockquote>
+<div>The identifier for the invalidation request. For example: IDFDVBD632BHDS5.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status of the invalidation request. When the invalidation batch is finished, the status is Completed.</div></blockquote>
+<p>CreateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time the invalidation request was first made.</div></blockquote>
+<p>InvalidationBatch -&gt; (structure)</p>
+<blockquote>
+<div><p>The current invalidation information for the batch request.</p>
+<p>Paths -&gt; (structure)</p>
+<blockquote>
+<div><p>The path of the object to invalidate. The path is relative to the distribution and must begin with a slash (/). You must enclose each invalidation object with the Path element tags. If the path includes non-ASCII characters or unsafe characters as defined in RFC 1783 (<a class="reference external" href="http://www.ietf.org/rfc/rfc1738.txt">http://www.ietf.org/rfc/rfc1738.txt</a>), URL encode those characters. Do not URL encode any other characters in the path, or CloudFront will not invalidate the old version of the updated object.</p>
+<p>Quantity -&gt; (integer)</p>
+<blockquote>
+<div>The number of objects that you want to invalidate.</div></blockquote>
+<p>Items -&gt; (list)</p>
+<blockquote>
+<div><p>A complex type that contains a list of the objects that you want to invalidate.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+<p>CallerReference -&gt; (string)</p>
+<blockquote>
+<div>A unique name that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the Path object), a new distribution is created. If the CallerReference is a value you already sent in a previous request to create an invalidation batch, and the content of each Path element is identical to the original request, the response includes the same information returned to the original request. If the CallerReference is a value you already sent in a previous request to create a distribution but the content of any Path is different from the original request, CloudFront returns an InvalidationBatchAlreadyExists error.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="create-distribution.html" title="previous chapter (use the left arrow)">&#8592; create-distribution</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-streaming-distribution.html" title="next chapter (use the right arrow)">create-streaming-distribution &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="create-streaming-distribution.html" title="create-streaming-distribution">next</a> |</li>
+        <li class="right">
+          <a href="create-distribution.html" title="create-distribution">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">cloudfront</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudfront/create-invalidation.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:59 GMT -->
+</html>

@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/swf/poll-for-decision-task.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>poll-for-decision-task &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>poll-for-decision-task &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="swf" href="index.html" />
     <link rel="next" title="record-activity-task-heartbeat" href="record-activity-task-heartbeat.html" />
     <link rel="prev" title="poll-for-activity-task" href="poll-for-activity-task.html" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -61,7 +64,7 @@
           <a href="record-activity-task-heartbeat.html" title="record-activity-task-heartbeat" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="poll-for-activity-task.html" title="poll-for-activity-task" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">swf</a> &#187;</li> 
       </ul>
@@ -82,23 +85,24 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">poll-for-decision-task</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,82 +111,1498 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/swf/poll-for-decision-task">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/swf/poll-for-decision-task">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>swf</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-swf"><em>swf</em></a> ]</p>
 <div class="section" id="poll-for-decision-task">
-<h1>poll-for-decision-task<a class="headerlink" href="#poll-for-decision-task" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-swf-poll-for-decision-task"></span><h1>poll-for-decision-task<a name="//apple_ref/cpp/Command/aws swf poll-for-decision-task" class="dashAnchor" id="aws swf poll-for-decision-task"></a><a class="headerlink" href="#poll-for-decision-task" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Used by deciders to get a  DecisionTask from the specified decision <tt class="docutils literal"><span class="pre">--task-list</span></tt>  . A decision task may be returned for any open workflow execution that is using the specified task list. The task includes a paginated view of the history of the workflow execution. The decider should use the workflow type and the history to determine how to properly handle the task.</p>
-<p>This action initiates a long poll, where the service holds the HTTP connection open and responds as soon a task becomes available. If no decision task is available in the specified task list before the timeout of 60 seconds expires, an empty result is returned. An empty result, in this context, means that a DecisionTask is returned, but that the value of taskToken is an empty string.</p>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Used by deciders to get a  DecisionTask from the specified decision <tt class="docutils literal"><span class="pre">taskList</span></tt> . A decision task may be returned for any open workflow execution that is using the specified task list. The task includes a paginated view of the history of the workflow execution. The decider should use the workflow type and the history to determine how to properly handle the task.</p>
+<p>This action initiates a long poll, where the service holds the HTTP connection open and responds as soon a task becomes available. If no decision task is available in the specified task list before the timeout of 60 seconds expires, an empty result is returned. An empty result, in this context, means that a DecisionTask is returned, but that the value of <tt class="docutils literal"><span class="pre">taskToken</span></tt> is an empty string.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">Deciders should set their client side socket timeout to at least 70 seconds (10 seconds higher than the timeout).</p>
+<p class="last">Deciders should set their client-side socket timeout to at least 70 seconds (10 seconds higher than the timeout).</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">Because the number of workflow history events for a single workflow execution might be very large, the result returned might be split up across a number of pages. To retrieve subsequent pages, make additional calls to <tt class="docutils literal"><span class="pre">poll-for-decision-task</span></tt>  using the <tt class="docutils literal"><span class="pre">--next-page-token</span></tt>  returned by the initial call. Note that you do <strong>not</strong> call <tt class="docutils literal"><span class="pre">get-workflow-execution-history</span></tt>  with this <tt class="docutils literal"><span class="pre">--next-page-token</span></tt>  . Instead, call <tt class="docutils literal"><span class="pre">poll-for-decision-task</span></tt>  again.</p>
+<p class="last">Because the number of workflow history events for a single workflow execution might be very large, the result returned might be split up across a number of pages. To retrieve subsequent pages, make additional calls to <tt class="docutils literal"><span class="pre">poll-for-decision-task</span></tt> using the <tt class="docutils literal"><span class="pre">nextPageToken</span></tt> returned by the initial call. Note that you do <strong>not</strong> call <tt class="docutils literal"><span class="pre">get-workflow-execution-history</span></tt> with this <tt class="docutils literal"><span class="pre">nextPageToken</span></tt> . Instead, call <tt class="docutils literal"><span class="pre">poll-for-decision-task</span></tt> again.</p>
 </div>
 <p><strong>Access Control</strong></p>
 <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
 <ul class="simple">
-<li>Use a <tt class="docutils literal"><span class="pre">Resource</span></tt>  element with the --domain name to limit the action to only specified domains.</li>
-<li>Use an <tt class="docutils literal"><span class="pre">Action</span></tt>  element to allow or deny permission to call this action.</li>
-<li>Constrain the <tt class="docutils literal"><span class="pre">taskList.name</span></tt>  parameter by using a <strong>Condition</strong> element with the <tt class="docutils literal"><span class="pre">swf:taskList.name</span></tt>  key to allow the action to access only certain task lists.</li>
+<li>Use a <tt class="docutils literal"><span class="pre">Resource</span></tt> element with the domain name to limit the action to only specified domains.</li>
+<li>Use an <tt class="docutils literal"><span class="pre">Action</span></tt> element to allow or deny permission to call this action.</li>
+<li>Constrain the <tt class="docutils literal"><span class="pre">taskList.name</span></tt> parameter by using a <strong>Condition</strong> element with the <tt class="docutils literal"><span class="pre">swf:taskList.name</span></tt> key to allow the action to access only certain task lists.</li>
 </ul>
-<p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails by throwing <tt class="docutils literal"><span class="pre">OperationNotPermitted</span></tt>  . For details and example IAM policies, see <a class="reference external" href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> .</p>
+<p>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <strong>cause</strong> parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a class="reference external" href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> .</p>
+<p><tt class="docutils literal"><span class="pre">poll-for-decision-task</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">events</span></tt></p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  poll-for-decision-task
 --domain &lt;value&gt;
 --task-list &lt;value&gt;
 [--identity &lt;value&gt;]
-[--next-page-token &lt;value&gt;]
-[--maximum-page-size &lt;value&gt;]
-[--reverse-order | --no-reverse-order]</pre>
+[--reverse-order | --no-reverse-order]
+[--cli-input-json &lt;value&gt;]
+[--starting-token &lt;value&gt;]
+[--page-size &lt;value&gt;]
+[--max-items &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--domain" class="dashAnchor" id="domain"></a><span class="pre">--domain</span></tt> (string)</p>
 <blockquote>
-<div>The name of the --domain containing the task lists to poll.</div></blockquote>
+<div>The name of the domain containing the task lists to poll.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--task-list" class="dashAnchor" id="task-list"></a><span class="pre">--task-list</span></tt> (structure)</p>
 <blockquote>
 <div><p>Specifies the task list to poll for decision tasks.</p>
-<p>The specified string must not start or end with whitespace. It must not contain a <tt class="docutils literal"><span class="pre">:</span></tt>  (colon), <tt class="docutils literal"><span class="pre">/</span></tt>  (slash), <tt class="docutils literal"><span class="pre">|</span></tt>  (vertical bar), or any control characters (u0000-u001f | u007f - u009f). Also, it must not contain the literal string arn.</p>
+<p>The specified string must not start or end with whitespace. It must not contain a <tt class="docutils literal"><span class="pre">:</span></tt> (colon), <tt class="docutils literal"><span class="pre">/</span></tt> (slash), <tt class="docutils literal"><span class="pre">|</span></tt> (vertical bar), or any control characters (u0000-u001f | u007f - u009f). Also, it must not contain the literal string quotarnquot.</p>
 </div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">name</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-  <span class="s">"name"</span><span class="p">:</span> <span class="s">"string"</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"string"</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--identity" class="dashAnchor" id="identity"></a><span class="pre">--identity</span></tt> (string)</p>
 <blockquote>
-<div>Identity of the decider making the request, which is recorded in the DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when problems arise. The form of this --identity is user defined.</div></blockquote>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--next-page-token" class="dashAnchor" id="next-page-token"></a><span class="pre">--next-page-token</span></tt> (string)</p>
+<div>identity of the decider making the request, which is recorded in the DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--reverse-order" class="dashAnchor" id="reverse-order"></a><span class="pre">--reverse-order</span></tt> | <tt class="docutils literal"><span class="pre">--no-reverse-order</span></tt> (boolean)</p>
 <blockquote>
-<div><p>If on a previous call to this method a <tt class="docutils literal"><span class="pre">NextPageToken</span></tt>  was returned, the results are being paginated. To get the next page of results, repeat the call with the returned token and all other arguments unchanged.</p>
+<div>When set to <tt class="docutils literal"><span class="pre">true</span></tt> , returns the events in reverse order. By default the results are returned in ascending order of the <tt class="docutils literal"><span class="pre">eventTimestamp</span></tt> of the events.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--starting-token" class="dashAnchor" id="starting-token"></a><span class="pre">--starting-token</span></tt> (string)</p>
+<blockquote>
+<div>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--page-size" class="dashAnchor" id="page-size"></a><span class="pre">--page-size</span></tt> (integer)</p>
+<blockquote>
+<div>The size of each page.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-items" class="dashAnchor" id="max-items"></a><span class="pre">--max-items</span></tt> (integer)</p>
+<blockquote>
+<div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">NextToken</span></tt> will be provided in the output that you can use to resume pagination. This <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element should <strong>not</strong> be used directly outside of the AWS CLI.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>taskToken -&gt; (string)</p>
+<blockquote>
+<div>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</div></blockquote>
+<p>startedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskStarted</span></tt> event recorded in the history.</div></blockquote>
+<p>workflowExecution -&gt; (structure)</p>
+<blockquote>
+<div><p>The workflow execution for which this decision task was created.</p>
+<p>workflowId -&gt; (string)</p>
+<blockquote>
+<div>The user defined identifier associated with the workflow execution.</div></blockquote>
+<p>runId -&gt; (string)</p>
+<blockquote>
+<div>A system-generated unique identifier for the workflow execution.</div></blockquote>
+</div></blockquote>
+<p>workflowType -&gt; (structure)</p>
+<blockquote>
+<div><p>The type of the workflow execution for which this decision task was created.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div><p><strong>Required.</strong> The name of the workflow type.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--next-page-token" class="dashAnchor" id="next-page-token"></a><span class="pre">--next-page-token</span></tt>  returned by this action cannot be used with  get-workflow-execution-history to get the next page. You must call  poll-for-decision-task again (with the <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--next-page-token" class="dashAnchor" id="next-page-token"></a><span class="pre">--next-page-token</span></tt>  ) to retrieve the next page of history records. Calling  poll-for-decision-task with a <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--next-page-token" class="dashAnchor" id="next-page-token"></a><span class="pre">--next-page-token</span></tt>  will not return a new decision task.</p>
+<p class="last">The combination of workflow type name and version must be unique with in a domain.</p>
 </div>
-<p>.</p>
 </div></blockquote>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--maximum-page-size" class="dashAnchor" id="maximum-page-size"></a><span class="pre">--maximum-page-size</span></tt> (integer)</p>
+<p>version -&gt; (string)</p>
 <blockquote>
-<div>The maximum number of history events returned in each page. The default is 100, but the caller can override this value to a page size <em>smaller</em> than the default. You cannot specify a page size greater than 100. Note that the number of events may be less than the maxiumum page size, in which case, the returned page will have fewer results than the --maximum-page-size specified.</div></blockquote>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--reverse-order" class="dashAnchor" id="reverse-order"></a><span class="pre">--reverse-order</span></tt> | <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--no-reverse-order" class="dashAnchor" id="no-reverse-order"></a><span class="pre">--no-reverse-order</span></tt> (boolean)</p>
+<div><p><strong>Required.</strong> The version of the workflow type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The combination of workflow type name and version must be unique with in a domain.</p>
+</div>
+</div></blockquote>
+</div></blockquote>
+<p>events -&gt; (list)</p>
 <blockquote>
-<div>When set to <tt class="docutils literal"><span class="pre">true</span></tt>  , returns the events in reverse order. By default the results are returned in ascending order of the <tt class="docutils literal"><span class="pre">eventTimestamp</span></tt>  of the events.</div></blockquote>
+<div><p>A paginated list of history events of the workflow execution. The decider uses this during the processing of the decision task.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Event within a workflow execution. A history event can be one of these types:</p>
+<ul class="simple">
+<li><strong>WorkflowExecutionStarted</strong> : The workflow execution was started.</li>
+<li><strong>WorkflowExecutionCompleted</strong> : The workflow execution was closed due to successful completion.</li>
+<li><strong>WorkflowExecutionFailed</strong> : The workflow execution closed due to a failure.</li>
+<li><strong>WorkflowExecutionTimedOut</strong> : The workflow execution was closed because a time out was exceeded.</li>
+<li><strong>WorkflowExecutionCanceled</strong> : The workflow execution was successfully canceled and closed.</li>
+<li><strong>WorkflowExecutionTerminated</strong> : The workflow execution was terminated.</li>
+<li><strong>WorkflowExecutionContinuedAsNew</strong> : The workflow execution was closed and a new execution of the same type was created with the same workflowId.</li>
+<li><strong>WorkflowExecutionCancelRequested</strong> : A request to cancel this workflow execution was made.</li>
+<li><strong>DecisionTaskScheduled</strong> : A decision task was scheduled for the workflow execution.</li>
+<li><strong>DecisionTaskStarted</strong> : The decision task was dispatched to a decider.</li>
+<li><strong>DecisionTaskCompleted</strong> : The decider successfully completed a decision task by calling  respond-decision-task-completed .</li>
+<li><strong>DecisionTaskTimedOut</strong> : The decision task timed out.</li>
+<li><strong>ActivityTaskScheduled</strong> : An activity task was scheduled for execution.</li>
+<li><strong>ScheduleActivityTaskFailed</strong> : Failed to process ScheduleActivityTask decision. This happens when the decision is not configured properly, for example the activity type specified is not registered.</li>
+<li><strong>ActivityTaskStarted</strong> : The scheduled activity task was dispatched to a worker.</li>
+<li><strong>ActivityTaskCompleted</strong> : An activity worker successfully completed an activity task by calling  respond-activity-task-completed .</li>
+<li><strong>ActivityTaskFailed</strong> : An activity worker failed an activity task by calling  respond-activity-task-failed .</li>
+<li><strong>ActivityTaskTimedOut</strong> : The activity task timed out.</li>
+<li><strong>ActivityTaskCanceled</strong> : The activity task was successfully canceled.</li>
+<li><strong>ActivityTaskCancelRequested</strong> : A <tt class="docutils literal"><span class="pre">RequestCancelActivityTask</span></tt> decision was received by the system.</li>
+<li><strong>RequestCancelActivityTaskFailed</strong> : Failed to process RequestCancelActivityTask decision. This happens when the decision is not configured properly.</li>
+<li><strong>WorkflowExecutionSignaled</strong> : An external signal was received for the workflow execution.</li>
+<li><strong>MarkerRecorded</strong> : A marker was recorded in the workflow history as the result of a <tt class="docutils literal"><span class="pre">RecordMarker</span></tt> decision.</li>
+<li><strong>TimerStarted</strong> : A timer was started for the workflow execution due to a <tt class="docutils literal"><span class="pre">StartTimer</span></tt> decision.</li>
+<li><strong>StartTimerFailed</strong> : Failed to process StartTimer decision. This happens when the decision is not configured properly, for example a timer already exists with the specified timer ID.</li>
+<li><strong>TimerFired</strong> : A timer, previously started for this workflow execution, fired.</li>
+<li><strong>TimerCanceled</strong> : A timer, previously started for this workflow execution, was successfully canceled.</li>
+<li><strong>CancelTimerFailed</strong> : Failed to process CancelTimer decision. This happens when the decision is not configured properly, for example no timer exists with the specified timer ID.</li>
+<li><strong>StartChildWorkflowExecutionInitiated</strong> : A request was made to start a child workflow execution.</li>
+<li><strong>StartChildWorkflowExecutionFailed</strong> : Failed to process StartChildWorkflowExecution decision. This happens when the decision is not configured properly, for example the workflow type specified is not registered.</li>
+<li><strong>ChildWorkflowExecutionStarted</strong> : A child workflow execution was successfully started.</li>
+<li><strong>ChildWorkflowExecutionCompleted</strong> : A child workflow execution, started by this workflow execution, completed successfully and was closed.</li>
+<li><strong>ChildWorkflowExecutionFailed</strong> : A child workflow execution, started by this workflow execution, failed to complete successfully and was closed.</li>
+<li><strong>ChildWorkflowExecutionTimedOut</strong> : A child workflow execution, started by this workflow execution, timed out and was closed.</li>
+<li><strong>ChildWorkflowExecutionCanceled</strong> : A child workflow execution, started by this workflow execution, was canceled and closed.</li>
+<li><strong>ChildWorkflowExecutionTerminated</strong> : A child workflow execution, started by this workflow execution, was terminated.</li>
+<li><strong>SignalExternalWorkflowExecutionInitiated</strong> : A request to signal an external workflow was made.</li>
+<li><strong>ExternalWorkflowExecutionSignaled</strong> : A signal, requested by this workflow execution, was successfully delivered to the target external workflow execution.</li>
+<li><strong>SignalExternalWorkflowExecutionFailed</strong> : The request to signal an external workflow execution failed.</li>
+<li><strong>RequestCancelExternalWorkflowExecutionInitiated</strong> : A request was made to request the cancellation of an external workflow execution.</li>
+<li><strong>ExternalWorkflowExecutionCancelRequested</strong> : Request to cancel an external workflow execution was successfully delivered to the target execution.</li>
+<li><strong>RequestCancelExternalWorkflowExecutionFailed</strong> : Request to cancel an external workflow execution failed.</li>
+<li><strong>LambdaFunctionScheduled</strong> : An AWS Lambda function was scheduled for execution.</li>
+<li><strong>LambdaFunctionStarted</strong> : The scheduled function was invoked in the AWS Lambda service.</li>
+<li><strong>LambdaFunctionCompleted</strong> : The AWS Lambda function successfully completed.</li>
+<li><strong>LambdaFunctionFailed</strong> : The AWS Lambda function execution failed.</li>
+<li><strong>LambdaFunctionTimedOut</strong> : The AWS Lambda function execution timed out.</li>
+<li><strong>ScheduleLambdaFunctionFailed</strong> : Failed to process ScheduleLambdaFunction decision. This happens when the workflow execution does not have the proper IAM role attached to invoke AWS Lambda functions.</li>
+<li><strong>StartLambdaFunctionFailed</strong> : Failed to invoke the scheduled function in the AWS Lambda service. This happens when the AWS Lambda service is not available in the current region, or received too many requests.</li>
+</ul>
+<p>eventTimestamp -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time when the event occurred.</div></blockquote>
+<p>eventType -&gt; (string)</p>
+<blockquote>
+<div>The type of the history event.</div></blockquote>
+<p>eventId -&gt; (long)</p>
+<blockquote>
+<div>The system generated ID of the event. This ID uniquely identifies the event with in the workflow execution history.</div></blockquote>
+<p>workflowExecutionStartedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">WorkflowExecutionStarted</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>input -&gt; (string)</p>
+<blockquote>
+<div>The input provided to the workflow execution (if any).</div></blockquote>
+<p>executionStartToCloseTimeout -&gt; (string)</p>
+<blockquote>
+<div><p>The maximum duration for this workflow execution.</p>
+<p>The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+</div></blockquote>
+<p>taskStartToCloseTimeout -&gt; (string)</p>
+<blockquote>
+<div><p>The maximum duration of decision tasks for this workflow type.</p>
+<p>The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+</div></blockquote>
+<p>childPolicy -&gt; (string)</p>
+<blockquote>
+<div><p>The policy to use for the child workflow executions if this workflow execution is terminated, by calling the  terminate-workflow-execution action explicitly or due to an expired timeout.</p>
+<p>The supported child policies are:</p>
+<ul class="simple">
+<li><strong>TERMINATE:</strong> the child executions will be terminated.</li>
+<li><strong>REQUEST_CANCEL:</strong> a request to cancel will be attempted for each child execution by recording a <tt class="docutils literal"><span class="pre">WorkflowExecutionCancelRequested</span></tt> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</li>
+<li><strong>ABANDON:</strong> no action will be taken. The child executions will continue to run.</li>
+</ul>
+</div></blockquote>
+<p>taskList -&gt; (structure)</p>
+<blockquote>
+<div><p>The name of the task list for scheduling the decision tasks for this workflow execution.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name of the task list.</div></blockquote>
+</div></blockquote>
+<p>workflowType -&gt; (structure)</p>
+<blockquote>
+<div><p>The workflow type of this execution.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div><p><strong>Required.</strong> The name of the workflow type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The combination of workflow type name and version must be unique with in a domain.</p>
+</div>
+</div></blockquote>
+<p>version -&gt; (string)</p>
+<blockquote>
+<div><p><strong>Required.</strong> The version of the workflow type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The combination of workflow type name and version must be unique with in a domain.</p>
+</div>
+</div></blockquote>
+</div></blockquote>
+<p>tagList -&gt; (list)</p>
+<blockquote>
+<div><p>The list of tags associated with this workflow execution. An execution can have up to 5 tags.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>taskPriority -&gt; (string)</p>
+<p>continuedExecutionRunId -&gt; (string)</p>
+<blockquote>
+<div>If this workflow execution was started due to a <tt class="docutils literal"><span class="pre">ContinueAsNewWorkflowExecution</span></tt> decision, then it contains the <tt class="docutils literal"><span class="pre">runId</span></tt> of the previous workflow execution that was closed and continued as this execution.</div></blockquote>
+<p>parentWorkflowExecution -&gt; (structure)</p>
+<blockquote>
+<div><p>The source workflow execution that started this workflow execution. The member is not set if the workflow execution was not started by a workflow.</p>
+<p>workflowId -&gt; (string)</p>
+<blockquote>
+<div>The user defined identifier associated with the workflow execution.</div></blockquote>
+<p>runId -&gt; (string)</p>
+<blockquote>
+<div>A system-generated unique identifier for the workflow execution.</div></blockquote>
+</div></blockquote>
+<p>parentInitiatedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">StartChildWorkflowExecutionInitiated</span></tt> event corresponding to the <tt class="docutils literal"><span class="pre">StartChildWorkflowExecution</span></tt> decision to start this workflow execution. The source event with this ID can be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>lambdaRole -&gt; (string)</p>
+<blockquote>
+<div>The IAM role attached to this workflow execution to use when invoking AWS Lambda functions.</div></blockquote>
+</div></blockquote>
+<p>workflowExecutionCompletedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">WorkflowExecutionCompleted</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>result -&gt; (string)</p>
+<blockquote>
+<div>The result produced by the workflow execution upon successful completion.</div></blockquote>
+<p>decisionTaskCompletedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> event corresponding to the decision task that resulted in the <tt class="docutils literal"><span class="pre">CompleteWorkflowExecution</span></tt> decision to complete this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>completeWorkflowExecutionFailedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">CompleteWorkflowExecutionFailed</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>cause -&gt; (string)</p>
+<blockquote>
+<div><p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If <strong>cause</strong> is set to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a class="reference external" href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> .</p>
+</div>
+</div></blockquote>
+<p>decisionTaskCompletedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> event corresponding to the decision task that resulted in the <tt class="docutils literal"><span class="pre">CompleteWorkflowExecution</span></tt> decision to complete this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>workflowExecutionFailedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">WorkflowExecutionFailed</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>reason -&gt; (string)</p>
+<blockquote>
+<div>The descriptive reason provided for the failure (if any).</div></blockquote>
+<p>details -&gt; (string)</p>
+<blockquote>
+<div>The details of the failure (if any).</div></blockquote>
+<p>decisionTaskCompletedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> event corresponding to the decision task that resulted in the <tt class="docutils literal"><span class="pre">FailWorkflowExecution</span></tt> decision to fail this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>failWorkflowExecutionFailedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">FailWorkflowExecutionFailed</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>cause -&gt; (string)</p>
+<blockquote>
+<div><p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If <strong>cause</strong> is set to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a class="reference external" href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> .</p>
+</div>
+</div></blockquote>
+<p>decisionTaskCompletedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> event corresponding to the decision task that resulted in the <tt class="docutils literal"><span class="pre">FailWorkflowExecution</span></tt> decision to fail this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>workflowExecutionTimedOutEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">WorkflowExecutionTimedOut</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>timeoutType -&gt; (string)</p>
+<blockquote>
+<div>The type of timeout that caused this event.</div></blockquote>
+<p>childPolicy -&gt; (string)</p>
+<blockquote>
+<div><p>The policy used for the child workflow executions of this workflow execution.</p>
+<p>The supported child policies are:</p>
+<ul class="simple">
+<li><strong>TERMINATE:</strong> the child executions will be terminated.</li>
+<li><strong>REQUEST_CANCEL:</strong> a request to cancel will be attempted for each child execution by recording a <tt class="docutils literal"><span class="pre">WorkflowExecutionCancelRequested</span></tt> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</li>
+<li><strong>ABANDON:</strong> no action will be taken. The child executions will continue to run.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p>workflowExecutionCanceledEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">WorkflowExecutionCanceled</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>details -&gt; (string)</p>
+<blockquote>
+<div>Details for the cancellation (if any).</div></blockquote>
+<p>decisionTaskCompletedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> event corresponding to the decision task that resulted in the <tt class="docutils literal"><span class="pre">CancelWorkflowExecution</span></tt> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>cancelWorkflowExecutionFailedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">CancelWorkflowExecutionFailed</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>cause -&gt; (string)</p>
+<blockquote>
+<div><p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If <strong>cause</strong> is set to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a class="reference external" href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> .</p>
+</div>
+</div></blockquote>
+<p>decisionTaskCompletedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> event corresponding to the decision task that resulted in the <tt class="docutils literal"><span class="pre">CancelWorkflowExecution</span></tt> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>workflowExecutionContinuedAsNewEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">WorkflowExecutionContinuedAsNew</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>input -&gt; (string)</p>
+<blockquote>
+<div>The input provided to the new workflow execution.</div></blockquote>
+<p>decisionTaskCompletedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> event corresponding to the decision task that resulted in the <tt class="docutils literal"><span class="pre">ContinueAsNewWorkflowExecution</span></tt> decision that started this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>newExecutionRunId -&gt; (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">runId</span></tt> of the new workflow execution.</div></blockquote>
+<p>executionStartToCloseTimeout -&gt; (string)</p>
+<blockquote>
+<div><p>The total duration allowed for the new workflow execution.</p>
+<p>The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+</div></blockquote>
+<p>taskList -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents a task list.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name of the task list.</div></blockquote>
+</div></blockquote>
+<p>taskPriority -&gt; (string)</p>
+<p>taskStartToCloseTimeout -&gt; (string)</p>
+<blockquote>
+<div><p>The maximum duration of decision tasks for the new workflow execution.</p>
+<p>The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+</div></blockquote>
+<p>childPolicy -&gt; (string)</p>
+<blockquote>
+<div><p>The policy to use for the child workflow executions of the new execution if it is terminated by calling the  terminate-workflow-execution action explicitly or due to an expired timeout.</p>
+<p>The supported child policies are:</p>
+<ul class="simple">
+<li><strong>TERMINATE:</strong> the child executions will be terminated.</li>
+<li><strong>REQUEST_CANCEL:</strong> a request to cancel will be attempted for each child execution by recording a <tt class="docutils literal"><span class="pre">WorkflowExecutionCancelRequested</span></tt> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</li>
+<li><strong>ABANDON:</strong> no action will be taken. The child executions will continue to run.</li>
+</ul>
+</div></blockquote>
+<p>tagList -&gt; (list)</p>
+<blockquote>
+<div><p>The list of tags associated with the new workflow execution.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>workflowType -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents a workflow type.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div><p><strong>Required.</strong> The name of the workflow type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The combination of workflow type name and version must be unique with in a domain.</p>
+</div>
+</div></blockquote>
+<p>version -&gt; (string)</p>
+<blockquote>
+<div><p><strong>Required.</strong> The version of the workflow type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The combination of workflow type name and version must be unique with in a domain.</p>
+</div>
+</div></blockquote>
+</div></blockquote>
+<p>lambdaRole -&gt; (string)</p>
+<blockquote>
+<div>The IAM role attached to this workflow execution to use when invoking AWS Lambda functions.</div></blockquote>
+</div></blockquote>
+<p>continueAsNewWorkflowExecutionFailedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">ContinueAsNewWorkflowExecutionFailed</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>cause -&gt; (string)</p>
+<blockquote>
+<div><p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If <strong>cause</strong> is set to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a class="reference external" href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> .</p>
+</div>
+</div></blockquote>
+<p>decisionTaskCompletedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> event corresponding to the decision task that resulted in the <tt class="docutils literal"><span class="pre">ContinueAsNewWorkflowExecution</span></tt> decision that started this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>workflowExecutionTerminatedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">WorkflowExecutionTerminated</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>reason -&gt; (string)</p>
+<blockquote>
+<div>The reason provided for the termination (if any).</div></blockquote>
+<p>details -&gt; (string)</p>
+<blockquote>
+<div>The details provided for the termination (if any).</div></blockquote>
+<p>childPolicy -&gt; (string)</p>
+<blockquote>
+<div><p>The policy used for the child workflow executions of this workflow execution.</p>
+<p>The supported child policies are:</p>
+<ul class="simple">
+<li><strong>TERMINATE:</strong> the child executions will be terminated.</li>
+<li><strong>REQUEST_CANCEL:</strong> a request to cancel will be attempted for each child execution by recording a <tt class="docutils literal"><span class="pre">WorkflowExecutionCancelRequested</span></tt> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</li>
+<li><strong>ABANDON:</strong> no action will be taken. The child executions will continue to run.</li>
+</ul>
+</div></blockquote>
+<p>cause -&gt; (string)</p>
+<blockquote>
+<div>If set, indicates that the workflow execution was automatically terminated, and specifies the cause. This happens if the parent workflow execution times out or is terminated and the child policy is set to terminate child executions.</div></blockquote>
+</div></blockquote>
+<p>workflowExecutionCancelRequestedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">WorkflowExecutionCancelRequested</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>externalWorkflowExecution -&gt; (structure)</p>
+<blockquote>
+<div><p>The external workflow execution for which the cancellation was requested.</p>
+<p>workflowId -&gt; (string)</p>
+<blockquote>
+<div>The user defined identifier associated with the workflow execution.</div></blockquote>
+<p>runId -&gt; (string)</p>
+<blockquote>
+<div>A system-generated unique identifier for the workflow execution.</div></blockquote>
+</div></blockquote>
+<p>externalInitiatedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">RequestCancelExternalWorkflowExecutionInitiated</span></tt> event corresponding to the <tt class="docutils literal"><span class="pre">RequestCancelExternalWorkflowExecution</span></tt> decision to cancel this workflow execution.The source event with this ID can be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>cause -&gt; (string)</p>
+<blockquote>
+<div>If set, indicates that the request to cancel the workflow execution was automatically generated, and specifies the cause. This happens if the parent workflow execution times out or is terminated, and the child policy is set to cancel child executions.</div></blockquote>
+</div></blockquote>
+<p>decisionTaskScheduledEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">DecisionTaskScheduled</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>taskList -&gt; (structure)</p>
+<blockquote>
+<div><p>The name of the task list in which the decision task was scheduled.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name of the task list.</div></blockquote>
+</div></blockquote>
+<p>taskPriority -&gt; (string)</p>
+<blockquote>
+<div><p><em>Optional.</em> A task priority that, if set, specifies the priority for this decision task. Valid values are integers that range from Java's <tt class="docutils literal"><span class="pre">Integer.MIN_VALUE</span></tt> (-2147483648) to <tt class="docutils literal"><span class="pre">Integer.MAX_VALUE</span></tt> (2147483647). Higher numbers indicate higher priority.</p>
+<p>For more information about setting task priority, see <a class="reference external" href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <em>Amazon Simple Workflow Developer Guide</em> .</p>
+</div></blockquote>
+<p>startToCloseTimeout -&gt; (string)</p>
+<blockquote>
+<div><p>The maximum duration for this decision task. The task is considered timed out if it does not completed within this duration.</p>
+<p>The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+</div></blockquote>
+</div></blockquote>
+<p>decisionTaskStartedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">DecisionTaskStarted</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>identity -&gt; (string)</p>
+<blockquote>
+<div>identity of the decider making the request. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</div></blockquote>
+<p>scheduledEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskScheduled</span></tt> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>decisionTaskCompletedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>executionContext -&gt; (string)</p>
+<blockquote>
+<div>User defined context for the workflow execution.</div></blockquote>
+<p>scheduledEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskScheduled</span></tt> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>startedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskStarted</span></tt> event recorded when this decision task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>decisionTaskTimedOutEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">DecisionTaskTimedOut</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>timeoutType -&gt; (string)</p>
+<blockquote>
+<div>The type of timeout that expired before the decision task could be completed.</div></blockquote>
+<p>scheduledEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskScheduled</span></tt> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>startedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskStarted</span></tt> event recorded when this decision task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>activityTaskScheduledEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">ActivityTaskScheduled</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>activityType -&gt; (structure)</p>
+<blockquote>
+<div><p>The type of the activity task.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div><p>The name of this activity.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The combination of activity type name and version must be unique within a domain.</p>
+</div>
+</div></blockquote>
+<p>version -&gt; (string)</p>
+<blockquote>
+<div><p>The version of this activity.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The combination of activity type name and version must be unique with in a domain.</p>
+</div>
+</div></blockquote>
+</div></blockquote>
+<p>activityId -&gt; (string)</p>
+<blockquote>
+<div>The unique ID of the activity task.</div></blockquote>
+<p>input -&gt; (string)</p>
+<blockquote>
+<div>The input provided to the activity task.</div></blockquote>
+<p>control -&gt; (string)</p>
+<blockquote>
+<div><em>Optional.</em> Data attached to the event that can be used by the decider in subsequent workflow tasks. This data is not sent to the activity.</div></blockquote>
+<p>scheduleToStartTimeout -&gt; (string)</p>
+<blockquote>
+<div>The maximum amount of time the activity task can wait to be assigned to a worker.</div></blockquote>
+<p>scheduleToCloseTimeout -&gt; (string)</p>
+<blockquote>
+<div>The maximum amount of time for this activity task.</div></blockquote>
+<p>startToCloseTimeout -&gt; (string)</p>
+<blockquote>
+<div>The maximum amount of time a worker may take to process the activity task.</div></blockquote>
+<p>taskList -&gt; (structure)</p>
+<blockquote>
+<div><p>The task list in which the activity task has been scheduled.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name of the task list.</div></blockquote>
+</div></blockquote>
+<p>taskPriority -&gt; (string)</p>
+<blockquote>
+<div><p><em>Optional.</em> The priority to assign to the scheduled activity task. If set, this will override any default priority value that was assigned when the activity type was registered.</p>
+<p>Valid values are integers that range from Java's <tt class="docutils literal"><span class="pre">Integer.MIN_VALUE</span></tt> (-2147483648) to <tt class="docutils literal"><span class="pre">Integer.MAX_VALUE</span></tt> (2147483647). Higher numbers indicate higher priority.</p>
+<p>For more information about setting task priority, see <a class="reference external" href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <em>Amazon Simple Workflow Developer Guide</em> .</p>
+</div></blockquote>
+<p>decisionTaskCompletedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> event corresponding to the decision that resulted in the scheduling of this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>heartbeatTimeout -&gt; (string)</p>
+<blockquote>
+<div>The maximum time before which the worker processing this task must report progress by calling  record-activity-task-heartbeat . If the timeout is exceeded, the activity task is automatically timed out. If the worker subsequently attempts to record a heartbeat or return a result, it will be ignored.</div></blockquote>
+</div></blockquote>
+<p>activityTaskStartedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">ActivityTaskStarted</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>identity -&gt; (string)</p>
+<blockquote>
+<div>identity of the worker that was assigned this task. This aids diagnostics when problems arise. The form of this identity is user defined.</div></blockquote>
+<p>scheduledEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">ActivityTaskScheduled</span></tt> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>activityTaskCompletedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">ActivityTaskCompleted</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>result -&gt; (string)</p>
+<blockquote>
+<div>The results of the activity task (if any).</div></blockquote>
+<p>scheduledEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">ActivityTaskScheduled</span></tt> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>startedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">ActivityTaskStarted</span></tt> event recorded when this activity task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>activityTaskFailedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">ActivityTaskFailed</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>reason -&gt; (string)</p>
+<blockquote>
+<div>The reason provided for the failure (if any).</div></blockquote>
+<p>details -&gt; (string)</p>
+<blockquote>
+<div>The details of the failure (if any).</div></blockquote>
+<p>scheduledEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">ActivityTaskScheduled</span></tt> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>startedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">ActivityTaskStarted</span></tt> event recorded when this activity task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>activityTaskTimedOutEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">ActivityTaskTimedOut</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>timeoutType -&gt; (string)</p>
+<blockquote>
+<div>The type of the timeout that caused this event.</div></blockquote>
+<p>scheduledEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">ActivityTaskScheduled</span></tt> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>startedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">ActivityTaskStarted</span></tt> event recorded when this activity task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>details -&gt; (string)</p>
+<blockquote>
+<div>Contains the content of the <tt class="docutils literal"><span class="pre">details</span></tt> parameter for the last call made by the activity to <tt class="docutils literal"><span class="pre">record-activity-task-heartbeat</span></tt> .</div></blockquote>
+</div></blockquote>
+<p>activityTaskCanceledEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">ActivityTaskCanceled</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>details -&gt; (string)</p>
+<blockquote>
+<div>Details of the cancellation (if any).</div></blockquote>
+<p>scheduledEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">ActivityTaskScheduled</span></tt> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>startedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">ActivityTaskStarted</span></tt> event recorded when this activity task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>latestCancelRequestedEventId -&gt; (long)</p>
+<blockquote>
+<div>If set, contains the ID of the last <tt class="docutils literal"><span class="pre">ActivityTaskCancelRequested</span></tt> event recorded for this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>activityTaskCancelRequestedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">ActivityTaskcancelRequested</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>decisionTaskCompletedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> event corresponding to the decision task that resulted in the <tt class="docutils literal"><span class="pre">RequestCancelActivityTask</span></tt> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>activityId -&gt; (string)</p>
+<blockquote>
+<div>The unique ID of the task.</div></blockquote>
+</div></blockquote>
+<p>workflowExecutionSignaledEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">WorkflowExecutionSignaled</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>signalName -&gt; (string)</p>
+<blockquote>
+<div>The name of the signal received. The decider can use the signal name and inputs to determine how to the process the signal.</div></blockquote>
+<p>input -&gt; (string)</p>
+<blockquote>
+<div>Inputs provided with the signal (if any). The decider can use the signal name and inputs to determine how to process the signal.</div></blockquote>
+<p>externalWorkflowExecution -&gt; (structure)</p>
+<blockquote>
+<div><p>The workflow execution that sent the signal. This is set only of the signal was sent by another workflow execution.</p>
+<p>workflowId -&gt; (string)</p>
+<blockquote>
+<div>The user defined identifier associated with the workflow execution.</div></blockquote>
+<p>runId -&gt; (string)</p>
+<blockquote>
+<div>A system-generated unique identifier for the workflow execution.</div></blockquote>
+</div></blockquote>
+<p>externalInitiatedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">SignalExternalWorkflowExecutionInitiated</span></tt> event corresponding to the <tt class="docutils literal"><span class="pre">SignalExternalWorkflow</span></tt> decision to signal this workflow execution.The source event with this ID can be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event. This field is set only if the signal was initiated by another workflow execution.</div></blockquote>
+</div></blockquote>
+<p>markerRecordedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">MarkerRecorded</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>markerName -&gt; (string)</p>
+<blockquote>
+<div>The name of the marker.</div></blockquote>
+<p>details -&gt; (string)</p>
+<blockquote>
+<div>Details of the marker (if any).</div></blockquote>
+<p>decisionTaskCompletedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> event corresponding to the decision task that resulted in the <tt class="docutils literal"><span class="pre">RecordMarker</span></tt> decision that requested this marker. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>recordMarkerFailedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">DecisionTaskFailed</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>markerName -&gt; (string)</p>
+<blockquote>
+<div>The marker's name.</div></blockquote>
+<p>cause -&gt; (string)</p>
+<blockquote>
+<div><p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If <strong>cause</strong> is set to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a class="reference external" href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> .</p>
+</div>
+</div></blockquote>
+<p>decisionTaskCompletedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> event corresponding to the decision task that resulted in the <tt class="docutils literal"><span class="pre">RecordMarkerFailed</span></tt> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>timerStartedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">TimerStarted</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>timerId -&gt; (string)</p>
+<blockquote>
+<div>The unique ID of the timer that was started.</div></blockquote>
+<p>control -&gt; (string)</p>
+<blockquote>
+<div><em>Optional.</em> Data attached to the event that can be used by the decider in subsequent workflow tasks.</div></blockquote>
+<p>startToFireTimeout -&gt; (string)</p>
+<blockquote>
+<div><p>The duration of time after which the timer will fire.</p>
+<p>The duration is specified in seconds; an integer greater than or equal to 0.</p>
+</div></blockquote>
+<p>decisionTaskCompletedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> event corresponding to the decision task that resulted in the <tt class="docutils literal"><span class="pre">StartTimer</span></tt> decision for this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>timerFiredEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">TimerFired</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>timerId -&gt; (string)</p>
+<blockquote>
+<div>The unique ID of the timer that fired.</div></blockquote>
+<p>startedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">TimerStarted</span></tt> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>timerCanceledEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">TimerCanceled</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>timerId -&gt; (string)</p>
+<blockquote>
+<div>The unique ID of the timer that was canceled.</div></blockquote>
+<p>startedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">TimerStarted</span></tt> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>decisionTaskCompletedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> event corresponding to the decision task that resulted in the <tt class="docutils literal"><span class="pre">CancelTimer</span></tt> decision to cancel this timer. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>startChildWorkflowExecutionInitiatedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">StartChildWorkflowExecutionInitiated</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>workflowId -&gt; (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">workflowId</span></tt> of the child workflow execution.</div></blockquote>
+<p>workflowType -&gt; (structure)</p>
+<blockquote>
+<div><p>The type of the child workflow execution.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div><p><strong>Required.</strong> The name of the workflow type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The combination of workflow type name and version must be unique with in a domain.</p>
+</div>
+</div></blockquote>
+<p>version -&gt; (string)</p>
+<blockquote>
+<div><p><strong>Required.</strong> The version of the workflow type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The combination of workflow type name and version must be unique with in a domain.</p>
+</div>
+</div></blockquote>
+</div></blockquote>
+<p>control -&gt; (string)</p>
+<blockquote>
+<div><em>Optional.</em> Data attached to the event that can be used by the decider in subsequent decision tasks. This data is not sent to the activity.</div></blockquote>
+<p>input -&gt; (string)</p>
+<blockquote>
+<div>The inputs provided to the child workflow execution (if any).</div></blockquote>
+<p>executionStartToCloseTimeout -&gt; (string)</p>
+<blockquote>
+<div><p>The maximum duration for the child workflow execution. If the workflow execution is not closed within this duration, it will be timed out and force terminated.</p>
+<p>The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+</div></blockquote>
+<p>taskList -&gt; (structure)</p>
+<blockquote>
+<div><p>The name of the task list used for the decision tasks of the child workflow execution.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name of the task list.</div></blockquote>
+</div></blockquote>
+<p>taskPriority -&gt; (string)</p>
+<blockquote>
+<div><p><em>Optional.</em> The priority assigned for the decision tasks for this workflow execution. Valid values are integers that range from Java's <tt class="docutils literal"><span class="pre">Integer.MIN_VALUE</span></tt> (-2147483648) to <tt class="docutils literal"><span class="pre">Integer.MAX_VALUE</span></tt> (2147483647). Higher numbers indicate higher priority.</p>
+<p>For more information about setting task priority, see <a class="reference external" href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <em>Amazon Simple Workflow Developer Guide</em> .</p>
+</div></blockquote>
+<p>decisionTaskCompletedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> event corresponding to the decision task that resulted in the <tt class="docutils literal"><span class="pre">StartChildWorkflowExecution</span></tt> decision to request this child workflow execution. This information can be useful for diagnosing problems by tracing back the cause of events.</div></blockquote>
+<p>childPolicy -&gt; (string)</p>
+<blockquote>
+<div><p>The policy to use for the child workflow executions if this execution gets terminated by explicitly calling the  terminate-workflow-execution action or due to an expired timeout.</p>
+<p>The supported child policies are:</p>
+<ul class="simple">
+<li><strong>TERMINATE:</strong> the child executions will be terminated.</li>
+<li><strong>REQUEST_CANCEL:</strong> a request to cancel will be attempted for each child execution by recording a <tt class="docutils literal"><span class="pre">WorkflowExecutionCancelRequested</span></tt> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</li>
+<li><strong>ABANDON:</strong> no action will be taken. The child executions will continue to run.</li>
+</ul>
+</div></blockquote>
+<p>taskStartToCloseTimeout -&gt; (string)</p>
+<blockquote>
+<div><p>The maximum duration allowed for the decision tasks for this workflow execution.</p>
+<p>The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
+</div></blockquote>
+<p>tagList -&gt; (list)</p>
+<blockquote>
+<div><p>The list of tags to associated with the child workflow execution.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>lambdaRole -&gt; (string)</p>
+<blockquote>
+<div>The IAM role attached to this workflow execution to use when invoking AWS Lambda functions.</div></blockquote>
+</div></blockquote>
+<p>childWorkflowExecutionStartedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">ChildWorkflowExecutionStarted</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>workflowExecution -&gt; (structure)</p>
+<blockquote>
+<div><p>The child workflow execution that was started.</p>
+<p>workflowId -&gt; (string)</p>
+<blockquote>
+<div>The user defined identifier associated with the workflow execution.</div></blockquote>
+<p>runId -&gt; (string)</p>
+<blockquote>
+<div>A system-generated unique identifier for the workflow execution.</div></blockquote>
+</div></blockquote>
+<p>workflowType -&gt; (structure)</p>
+<blockquote>
+<div><p>The type of the child workflow execution.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div><p><strong>Required.</strong> The name of the workflow type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The combination of workflow type name and version must be unique with in a domain.</p>
+</div>
+</div></blockquote>
+<p>version -&gt; (string)</p>
+<blockquote>
+<div><p><strong>Required.</strong> The version of the workflow type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The combination of workflow type name and version must be unique with in a domain.</p>
+</div>
+</div></blockquote>
+</div></blockquote>
+<p>initiatedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">StartChildWorkflowExecutionInitiated</span></tt> event corresponding to the <tt class="docutils literal"><span class="pre">StartChildWorkflowExecution</span></tt> decision to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>childWorkflowExecutionCompletedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">ChildWorkflowExecutionCompleted</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>workflowExecution -&gt; (structure)</p>
+<blockquote>
+<div><p>The child workflow execution that was completed.</p>
+<p>workflowId -&gt; (string)</p>
+<blockquote>
+<div>The user defined identifier associated with the workflow execution.</div></blockquote>
+<p>runId -&gt; (string)</p>
+<blockquote>
+<div>A system-generated unique identifier for the workflow execution.</div></blockquote>
+</div></blockquote>
+<p>workflowType -&gt; (structure)</p>
+<blockquote>
+<div><p>The type of the child workflow execution.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div><p><strong>Required.</strong> The name of the workflow type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The combination of workflow type name and version must be unique with in a domain.</p>
+</div>
+</div></blockquote>
+<p>version -&gt; (string)</p>
+<blockquote>
+<div><p><strong>Required.</strong> The version of the workflow type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The combination of workflow type name and version must be unique with in a domain.</p>
+</div>
+</div></blockquote>
+</div></blockquote>
+<p>result -&gt; (string)</p>
+<blockquote>
+<div>The result of the child workflow execution (if any).</div></blockquote>
+<p>initiatedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">StartChildWorkflowExecutionInitiated</span></tt> event corresponding to the <tt class="docutils literal"><span class="pre">StartChildWorkflowExecution</span></tt> decision to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>startedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">ChildWorkflowExecutionStarted</span></tt> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>childWorkflowExecutionFailedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">ChildWorkflowExecutionFailed</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>workflowExecution -&gt; (structure)</p>
+<blockquote>
+<div><p>The child workflow execution that failed.</p>
+<p>workflowId -&gt; (string)</p>
+<blockquote>
+<div>The user defined identifier associated with the workflow execution.</div></blockquote>
+<p>runId -&gt; (string)</p>
+<blockquote>
+<div>A system-generated unique identifier for the workflow execution.</div></blockquote>
+</div></blockquote>
+<p>workflowType -&gt; (structure)</p>
+<blockquote>
+<div><p>The type of the child workflow execution.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div><p><strong>Required.</strong> The name of the workflow type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The combination of workflow type name and version must be unique with in a domain.</p>
+</div>
+</div></blockquote>
+<p>version -&gt; (string)</p>
+<blockquote>
+<div><p><strong>Required.</strong> The version of the workflow type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The combination of workflow type name and version must be unique with in a domain.</p>
+</div>
+</div></blockquote>
+</div></blockquote>
+<p>reason -&gt; (string)</p>
+<blockquote>
+<div>The reason for the failure (if provided).</div></blockquote>
+<p>details -&gt; (string)</p>
+<blockquote>
+<div>The details of the failure (if provided).</div></blockquote>
+<p>initiatedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">StartChildWorkflowExecutionInitiated</span></tt> event corresponding to the <tt class="docutils literal"><span class="pre">StartChildWorkflowExecution</span></tt> decision to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>startedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">ChildWorkflowExecutionStarted</span></tt> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>childWorkflowExecutionTimedOutEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">ChildWorkflowExecutionTimedOut</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>workflowExecution -&gt; (structure)</p>
+<blockquote>
+<div><p>The child workflow execution that timed out.</p>
+<p>workflowId -&gt; (string)</p>
+<blockquote>
+<div>The user defined identifier associated with the workflow execution.</div></blockquote>
+<p>runId -&gt; (string)</p>
+<blockquote>
+<div>A system-generated unique identifier for the workflow execution.</div></blockquote>
+</div></blockquote>
+<p>workflowType -&gt; (structure)</p>
+<blockquote>
+<div><p>The type of the child workflow execution.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div><p><strong>Required.</strong> The name of the workflow type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The combination of workflow type name and version must be unique with in a domain.</p>
+</div>
+</div></blockquote>
+<p>version -&gt; (string)</p>
+<blockquote>
+<div><p><strong>Required.</strong> The version of the workflow type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The combination of workflow type name and version must be unique with in a domain.</p>
+</div>
+</div></blockquote>
+</div></blockquote>
+<p>timeoutType -&gt; (string)</p>
+<blockquote>
+<div>The type of the timeout that caused the child workflow execution to time out.</div></blockquote>
+<p>initiatedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">StartChildWorkflowExecutionInitiated</span></tt> event corresponding to the <tt class="docutils literal"><span class="pre">StartChildWorkflowExecution</span></tt> decision to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>startedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">ChildWorkflowExecutionStarted</span></tt> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>childWorkflowExecutionCanceledEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">ChildWorkflowExecutionCanceled</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>workflowExecution -&gt; (structure)</p>
+<blockquote>
+<div><p>The child workflow execution that was canceled.</p>
+<p>workflowId -&gt; (string)</p>
+<blockquote>
+<div>The user defined identifier associated with the workflow execution.</div></blockquote>
+<p>runId -&gt; (string)</p>
+<blockquote>
+<div>A system-generated unique identifier for the workflow execution.</div></blockquote>
+</div></blockquote>
+<p>workflowType -&gt; (structure)</p>
+<blockquote>
+<div><p>The type of the child workflow execution.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div><p><strong>Required.</strong> The name of the workflow type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The combination of workflow type name and version must be unique with in a domain.</p>
+</div>
+</div></blockquote>
+<p>version -&gt; (string)</p>
+<blockquote>
+<div><p><strong>Required.</strong> The version of the workflow type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The combination of workflow type name and version must be unique with in a domain.</p>
+</div>
+</div></blockquote>
+</div></blockquote>
+<p>details -&gt; (string)</p>
+<blockquote>
+<div>Details of the cancellation (if provided).</div></blockquote>
+<p>initiatedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">StartChildWorkflowExecutionInitiated</span></tt> event corresponding to the <tt class="docutils literal"><span class="pre">StartChildWorkflowExecution</span></tt> decision to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>startedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">ChildWorkflowExecutionStarted</span></tt> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>childWorkflowExecutionTerminatedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">ChildWorkflowExecutionTerminated</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>workflowExecution -&gt; (structure)</p>
+<blockquote>
+<div><p>The child workflow execution that was terminated.</p>
+<p>workflowId -&gt; (string)</p>
+<blockquote>
+<div>The user defined identifier associated with the workflow execution.</div></blockquote>
+<p>runId -&gt; (string)</p>
+<blockquote>
+<div>A system-generated unique identifier for the workflow execution.</div></blockquote>
+</div></blockquote>
+<p>workflowType -&gt; (structure)</p>
+<blockquote>
+<div><p>The type of the child workflow execution.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div><p><strong>Required.</strong> The name of the workflow type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The combination of workflow type name and version must be unique with in a domain.</p>
+</div>
+</div></blockquote>
+<p>version -&gt; (string)</p>
+<blockquote>
+<div><p><strong>Required.</strong> The version of the workflow type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The combination of workflow type name and version must be unique with in a domain.</p>
+</div>
+</div></blockquote>
+</div></blockquote>
+<p>initiatedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">StartChildWorkflowExecutionInitiated</span></tt> event corresponding to the <tt class="docutils literal"><span class="pre">StartChildWorkflowExecution</span></tt> decision to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>startedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">ChildWorkflowExecutionStarted</span></tt> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>signalExternalWorkflowExecutionInitiatedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">SignalExternalWorkflowExecutionInitiated</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>workflowId -&gt; (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">workflowId</span></tt> of the external workflow execution.</div></blockquote>
+<p>runId -&gt; (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">runId</span></tt> of the external workflow execution to send the signal to.</div></blockquote>
+<p>signalName -&gt; (string)</p>
+<blockquote>
+<div>The name of the signal.</div></blockquote>
+<p>input -&gt; (string)</p>
+<blockquote>
+<div>Input provided to the signal (if any).</div></blockquote>
+<p>decisionTaskCompletedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> event corresponding to the decision task that resulted in the <tt class="docutils literal"><span class="pre">SignalExternalWorkflowExecution</span></tt> decision for this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>control -&gt; (string)</p>
+<blockquote>
+<div><em>Optional.</em> data attached to the event that can be used by the decider in subsequent decision tasks.</div></blockquote>
+</div></blockquote>
+<p>externalWorkflowExecutionSignaledEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">ExternalWorkflowExecutionSignaled</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>workflowExecution -&gt; (structure)</p>
+<blockquote>
+<div><p>The external workflow execution that the signal was delivered to.</p>
+<p>workflowId -&gt; (string)</p>
+<blockquote>
+<div>The user defined identifier associated with the workflow execution.</div></blockquote>
+<p>runId -&gt; (string)</p>
+<blockquote>
+<div>A system-generated unique identifier for the workflow execution.</div></blockquote>
+</div></blockquote>
+<p>initiatedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">SignalExternalWorkflowExecutionInitiated</span></tt> event corresponding to the <tt class="docutils literal"><span class="pre">SignalExternalWorkflowExecution</span></tt> decision to request this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>signalExternalWorkflowExecutionFailedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">SignalExternalWorkflowExecutionFailed</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>workflowId -&gt; (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">workflowId</span></tt> of the external workflow execution that the signal was being delivered to.</div></blockquote>
+<p>runId -&gt; (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">runId</span></tt> of the external workflow execution that the signal was being delivered to.</div></blockquote>
+<p>cause -&gt; (string)</p>
+<blockquote>
+<div><p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If <strong>cause</strong> is set to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a class="reference external" href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> .</p>
+</div>
+</div></blockquote>
+<p>initiatedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">SignalExternalWorkflowExecutionInitiated</span></tt> event corresponding to the <tt class="docutils literal"><span class="pre">SignalExternalWorkflowExecution</span></tt> decision to request this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>decisionTaskCompletedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> event corresponding to the decision task that resulted in the <tt class="docutils literal"><span class="pre">SignalExternalWorkflowExecution</span></tt> decision for this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>control -&gt; (string)</p>
+</div></blockquote>
+<p>externalWorkflowExecutionCancelRequestedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">ExternalWorkflowExecutionCancelRequested</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>workflowExecution -&gt; (structure)</p>
+<blockquote>
+<div><p>The external workflow execution to which the cancellation request was delivered.</p>
+<p>workflowId -&gt; (string)</p>
+<blockquote>
+<div>The user defined identifier associated with the workflow execution.</div></blockquote>
+<p>runId -&gt; (string)</p>
+<blockquote>
+<div>A system-generated unique identifier for the workflow execution.</div></blockquote>
+</div></blockquote>
+<p>initiatedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">RequestCancelExternalWorkflowExecutionInitiated</span></tt> event corresponding to the <tt class="docutils literal"><span class="pre">RequestCancelExternalWorkflowExecution</span></tt> decision to cancel this external workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>requestCancelExternalWorkflowExecutionInitiatedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">RequestCancelExternalWorkflowExecutionInitiated</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>workflowId -&gt; (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">workflowId</span></tt> of the external workflow execution to be canceled.</div></blockquote>
+<p>runId -&gt; (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">runId</span></tt> of the external workflow execution to be canceled.</div></blockquote>
+<p>decisionTaskCompletedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> event corresponding to the decision task that resulted in the <tt class="docutils literal"><span class="pre">RequestCancelExternalWorkflowExecution</span></tt> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>control -&gt; (string)</p>
+<blockquote>
+<div><em>Optional.</em> Data attached to the event that can be used by the decider in subsequent workflow tasks.</div></blockquote>
+</div></blockquote>
+<p>requestCancelExternalWorkflowExecutionFailedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">RequestCancelExternalWorkflowExecutionFailed</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>workflowId -&gt; (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">workflowId</span></tt> of the external workflow to which the cancel request was to be delivered.</div></blockquote>
+<p>runId -&gt; (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">runId</span></tt> of the external workflow execution.</div></blockquote>
+<p>cause -&gt; (string)</p>
+<blockquote>
+<div><p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If <strong>cause</strong> is set to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a class="reference external" href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> .</p>
+</div>
+</div></blockquote>
+<p>initiatedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">RequestCancelExternalWorkflowExecutionInitiated</span></tt> event corresponding to the <tt class="docutils literal"><span class="pre">RequestCancelExternalWorkflowExecution</span></tt> decision to cancel this external workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>decisionTaskCompletedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> event corresponding to the decision task that resulted in the <tt class="docutils literal"><span class="pre">RequestCancelExternalWorkflowExecution</span></tt> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>control -&gt; (string)</p>
+</div></blockquote>
+<p>scheduleActivityTaskFailedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">ScheduleActivityTaskFailed</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>activityType -&gt; (structure)</p>
+<blockquote>
+<div><p>The activity type provided in the <tt class="docutils literal"><span class="pre">ScheduleActivityTask</span></tt> decision that failed.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div><p>The name of this activity.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The combination of activity type name and version must be unique within a domain.</p>
+</div>
+</div></blockquote>
+<p>version -&gt; (string)</p>
+<blockquote>
+<div><p>The version of this activity.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The combination of activity type name and version must be unique with in a domain.</p>
+</div>
+</div></blockquote>
+</div></blockquote>
+<p>activityId -&gt; (string)</p>
+<blockquote>
+<div>The activityId provided in the <tt class="docutils literal"><span class="pre">ScheduleActivityTask</span></tt> decision that failed.</div></blockquote>
+<p>cause -&gt; (string)</p>
+<blockquote>
+<div><p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If <strong>cause</strong> is set to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a class="reference external" href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> .</p>
+</div>
+</div></blockquote>
+<p>decisionTaskCompletedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> event corresponding to the decision that resulted in the scheduling of this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>requestCancelActivityTaskFailedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">RequestCancelActivityTaskFailed</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>activityId -&gt; (string)</p>
+<blockquote>
+<div>The activityId provided in the <tt class="docutils literal"><span class="pre">RequestCancelActivityTask</span></tt> decision that failed.</div></blockquote>
+<p>cause -&gt; (string)</p>
+<blockquote>
+<div><p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If <strong>cause</strong> is set to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a class="reference external" href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> .</p>
+</div>
+</div></blockquote>
+<p>decisionTaskCompletedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> event corresponding to the decision task that resulted in the <tt class="docutils literal"><span class="pre">RequestCancelActivityTask</span></tt> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>startTimerFailedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">StartTimerFailed</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>timerId -&gt; (string)</p>
+<blockquote>
+<div>The timerId provided in the <tt class="docutils literal"><span class="pre">StartTimer</span></tt> decision that failed.</div></blockquote>
+<p>cause -&gt; (string)</p>
+<blockquote>
+<div><p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If <strong>cause</strong> is set to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a class="reference external" href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> .</p>
+</div>
+</div></blockquote>
+<p>decisionTaskCompletedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> event corresponding to the decision task that resulted in the <tt class="docutils literal"><span class="pre">StartTimer</span></tt> decision for this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>cancelTimerFailedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">CancelTimerFailed</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>timerId -&gt; (string)</p>
+<blockquote>
+<div>The timerId provided in the <tt class="docutils literal"><span class="pre">CancelTimer</span></tt> decision that failed.</div></blockquote>
+<p>cause -&gt; (string)</p>
+<blockquote>
+<div><p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If <strong>cause</strong> is set to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a class="reference external" href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> .</p>
+</div>
+</div></blockquote>
+<p>decisionTaskCompletedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> event corresponding to the decision task that resulted in the <tt class="docutils literal"><span class="pre">CancelTimer</span></tt> decision to cancel this timer. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>startChildWorkflowExecutionFailedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>If the event is of type <tt class="docutils literal"><span class="pre">StartChildWorkflowExecutionFailed</span></tt> then this member is set and provides detailed information about the event. It is not set for other event types.</p>
+<p>workflowType -&gt; (structure)</p>
+<blockquote>
+<div><p>The workflow type provided in the <tt class="docutils literal"><span class="pre">StartChildWorkflowExecution</span></tt> decision that failed.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div><p><strong>Required.</strong> The name of the workflow type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The combination of workflow type name and version must be unique with in a domain.</p>
+</div>
+</div></blockquote>
+<p>version -&gt; (string)</p>
+<blockquote>
+<div><p><strong>Required.</strong> The version of the workflow type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The combination of workflow type name and version must be unique with in a domain.</p>
+</div>
+</div></blockquote>
+</div></blockquote>
+<p>cause -&gt; (string)</p>
+<blockquote>
+<div><p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If <strong>cause</strong> is set to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a class="reference external" href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> .</p>
+</div>
+</div></blockquote>
+<p>workflowId -&gt; (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">workflowId</span></tt> of the child workflow execution.</div></blockquote>
+<p>initiatedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">StartChildWorkflowExecutionInitiated</span></tt> event corresponding to the <tt class="docutils literal"><span class="pre">StartChildWorkflowExecution</span></tt> decision to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>decisionTaskCompletedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> event corresponding to the decision task that resulted in the <tt class="docutils literal"><span class="pre">StartChildWorkflowExecution</span></tt> decision to request this child workflow execution. This information can be useful for diagnosing problems by tracing back the cause of events.</div></blockquote>
+<p>control -&gt; (string)</p>
+</div></blockquote>
+<p>lambdaFunctionScheduledEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>Provides details for the <tt class="docutils literal"><span class="pre">LambdaFunctionScheduled</span></tt> event.</p>
+<p>id -&gt; (string)</p>
+<blockquote>
+<div>The unique Amazon SWF ID for the AWS Lambda task.</div></blockquote>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name of the scheduled AWS Lambda function.</div></blockquote>
+<p>input -&gt; (string)</p>
+<blockquote>
+<div>Input provided to the AWS Lambda function.</div></blockquote>
+<p>startToCloseTimeout -&gt; (string)</p>
+<blockquote>
+<div>The maximum time, in seconds, that the AWS Lambda function can take to execute from start to close before it is marked as failed.</div></blockquote>
+<p>decisionTaskCompletedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> event for the decision that resulted in the scheduling of this AWS Lambda function. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>lambdaFunctionStartedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>Provides details for the <tt class="docutils literal"><span class="pre">LambdaFunctionStarted</span></tt> event.</p>
+<p>scheduledEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">LambdaFunctionScheduled</span></tt> event that was recorded when this AWS Lambda function was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>lambdaFunctionCompletedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>Provides details for the <tt class="docutils literal"><span class="pre">LambdaFunctionCompleted</span></tt> event.</p>
+<p>scheduledEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">LambdaFunctionScheduled</span></tt> event that was recorded when this AWS Lambda function was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>startedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">LambdaFunctionStarted</span></tt> event recorded in the history.</div></blockquote>
+<p>result -&gt; (string)</p>
+<blockquote>
+<div>The result of the function execution (if any).</div></blockquote>
+</div></blockquote>
+<p>lambdaFunctionFailedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>Provides details for the <tt class="docutils literal"><span class="pre">LambdaFunctionFailed</span></tt> event.</p>
+<p>scheduledEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">LambdaFunctionScheduled</span></tt> event that was recorded when this AWS Lambda function was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>startedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">LambdaFunctionStarted</span></tt> event recorded in the history.</div></blockquote>
+<p>reason -&gt; (string)</p>
+<blockquote>
+<div>The reason provided for the failure (if any).</div></blockquote>
+<p>details -&gt; (string)</p>
+<blockquote>
+<div>The details of the failure (if any).</div></blockquote>
+</div></blockquote>
+<p>lambdaFunctionTimedOutEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>Provides details for the <tt class="docutils literal"><span class="pre">LambdaFunctionTimedOut</span></tt> event.</p>
+<p>scheduledEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">LambdaFunctionScheduled</span></tt> event that was recorded when this AWS Lambda function was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>startedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">LambdaFunctionStarted</span></tt> event recorded in the history.</div></blockquote>
+<p>timeoutType -&gt; (string)</p>
+<blockquote>
+<div>The type of the timeout that caused this event.</div></blockquote>
+</div></blockquote>
+<p>scheduleLambdaFunctionFailedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>Provides details for the <tt class="docutils literal"><span class="pre">ScheduleLambdaFunctionFailed</span></tt> event.</p>
+<p>id -&gt; (string)</p>
+<blockquote>
+<div>The unique Amazon SWF ID of the AWS Lambda task.</div></blockquote>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name of the scheduled AWS Lambda function.</div></blockquote>
+<p>cause -&gt; (string)</p>
+<blockquote>
+<div><p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If <strong>cause</strong> is set to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a class="reference external" href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> .</p>
+</div>
+</div></blockquote>
+<p>decisionTaskCompletedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">DecisionTaskCompleted</span></tt> event corresponding to the decision that resulted in the scheduling of this AWS Lambda function. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+</div></blockquote>
+<p>startLambdaFunctionFailedEventAttributes -&gt; (structure)</p>
+<blockquote>
+<div><p>Provides details for the <tt class="docutils literal"><span class="pre">StartLambdaFunctionFailed</span></tt> event.</p>
+<p>scheduledEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the <tt class="docutils literal"><span class="pre">LambdaFunctionScheduled</span></tt> event that was recorded when this AWS Lambda function was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</div></blockquote>
+<p>cause -&gt; (string)</p>
+<blockquote>
+<div><p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If <strong>cause</strong> is set to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a class="reference external" href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> .</p>
+</div>
+</div></blockquote>
+<p>message -&gt; (string)</p>
+<blockquote>
+<div>The error message (if any).</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>nextPageToken -&gt; (string)</p>
+<blockquote>
+<div><p>If a <tt class="docutils literal"><span class="pre">NextPageToken</span></tt> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <tt class="docutils literal"><span class="pre">nextPageToken</span></tt> . Keep all other arguments unchanged.</p>
+<p>The configured <tt class="docutils literal"><span class="pre">maximumPageSize</span></tt> determines how many results can be returned in a single call.</p>
+</div></blockquote>
+<p>previousStartedEventId -&gt; (long)</p>
+<blockquote>
+<div>The ID of the DecisionTaskStarted event of the previous decision task of this workflow execution that was processed by the decider. This can be used to determine the events in the history new since the last decision task received by the decider.</div></blockquote>
 </div>
 </div>
 
@@ -204,6 +1624,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -213,35 +1642,21 @@
           <a href="record-activity-task-heartbeat.html" title="record-activity-task-heartbeat">next</a> |</li>
         <li class="right">
           <a href="poll-for-activity-task.html" title="poll-for-activity-task">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">swf</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'poll-for-activity-task.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'record-activity-task-heartbeat.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/swf/poll-for-decision-task.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
 </html>

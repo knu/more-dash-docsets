@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/application-autoscaling/describe-scaling-policies.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:57 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-scaling-policies &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="application-autoscaling" href="index.html" />
+    <link rel="next" title="put-scaling-policy" href="put-scaling-policy.html" />
+    <link rel="prev" title="describe-scaling-activities" href="describe-scaling-activities.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="put-scaling-policy.html" title="put-scaling-policy" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="describe-scaling-activities.html" title="describe-scaling-activities" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">application-autoscaling</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="describe-scaling-activities.html" title="previous chapter (use the left arrow)">&#8592; describe-scaling-activities</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="put-scaling-policy.html" title="next chapter (use the right arrow)">put-scaling-policy &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-scaling-policies</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/application-autoscaling/describe-scaling-policies">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-application-autoscaling"><em>application-autoscaling</em></a> ]</p>
+<div class="section" id="describe-scaling-policies">
+<span id="cli-aws-application-autoscaling-describe-scaling-policies"></span><h1>describe-scaling-policies<a name="//apple_ref/cpp/Command/aws application-autoscaling describe-scaling-policies" class="dashAnchor" id="aws application-autoscaling describe-scaling-policies"></a><a class="headerlink" href="#describe-scaling-policies" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Provides descriptive information for scaling policies with a specified service namespace.</p>
+<p>You can filter the results in a service namespace with the <tt class="docutils literal"><span class="pre">ResourceId</span></tt> , <tt class="docutils literal"><span class="pre">scalable-dimension</span></tt> , and <tt class="docutils literal"><span class="pre">PolicyNames</span></tt> parameters.</p>
+<p>To create a new scaling policy or update an existing one, see  put-scaling-policy . If you are no longer using a scaling policy, you can delete it with  delete-scaling-policy .</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  describe-scaling-policies
+[--policy-names &lt;value&gt;]
+--service-namespace &lt;value&gt;
+[--resource-id &lt;value&gt;]
+[--scalable-dimension &lt;value&gt;]
+[--max-results &lt;value&gt;]
+[--next-token &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--policy-names" class="dashAnchor" id="policy-names"></a><span class="pre">--policy-names</span></tt> (list)</p>
+<blockquote>
+<div>The names of the scaling policies to describe.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>"string" "string" ...</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--service-namespace" class="dashAnchor" id="service-namespace"></a><span class="pre">--service-namespace</span></tt> (string)</p>
+<blockquote>
+<div><p>The AWS service namespace of the scalable target that the scaling policy is associated with. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ecs</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--resource-id" class="dashAnchor" id="resource-id"></a><span class="pre">--resource-id</span></tt> (string)</p>
+<blockquote>
+<div>The unique resource identifier string of the scalable target that the scaling policy is associated with. For Amazon ECS services, this value is the resource type, followed by the cluster name and service name, such as <tt class="docutils literal"><span class="pre">service/default/sample-webapp</span></tt> . If you specify a scalable dimension, you must also specify a resource ID.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--scalable-dimension" class="dashAnchor" id="scalable-dimension"></a><span class="pre">--scalable-dimension</span></tt> (string)</p>
+<blockquote>
+<div><p>The scalable dimension of the scalable target that the scaling policy is associated with. The scalable dimension contains the service namespace, resource type, and scaling property, such as <tt class="docutils literal"><span class="pre">ecs:service:DesiredCount</span></tt> for the desired task count of an Amazon ECS service. If you specify a scalable dimension, you must also specify a resource ID.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ecs:service:DesiredCount</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-results" class="dashAnchor" id="max-results"></a><span class="pre">--max-results</span></tt> (integer)</p>
+<blockquote>
+<div>The maximum number of scaling policy results returned by <tt class="docutils literal"><span class="pre">describe-scaling-policies</span></tt> in paginated output. When this parameter is used, <tt class="docutils literal"><span class="pre">describe-scaling-policies</span></tt> returns up to <tt class="docutils literal"><span class="pre">max-results</span></tt> results in a single page along with a <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element. The remaining results of the initial request can be seen by sending another <tt class="docutils literal"><span class="pre">describe-scaling-policies</span></tt> request with the returned <tt class="docutils literal"><span class="pre">NextToken</span></tt> value. This value can be between 1 and 50. If this parameter is not used, then <tt class="docutils literal"><span class="pre">describe-scaling-policies</span></tt> returns up to 50 results and a <tt class="docutils literal"><span class="pre">NextToken</span></tt> value, if applicable.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--next-token" class="dashAnchor" id="next-token"></a><span class="pre">--next-token</span></tt> (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">NextToken</span></tt> value returned from a previous paginated <tt class="docutils literal"><span class="pre">describe-scaling-policies</span></tt> request. Pagination continues from the end of the previous results that returned the <tt class="docutils literal"><span class="pre">NextToken</span></tt> value. This value is <tt class="docutils literal"><span class="pre">null</span></tt> when there are no more results to return.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>ScalingPolicies -&gt; (list)</p>
+<blockquote>
+<div><p>A list of scaling policy objects.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>An object representing a scaling policy.</p>
+<p>PolicyARN -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the scaling policy.</div></blockquote>
+<p>PolicyName -&gt; (string)</p>
+<blockquote>
+<div>The name of the scaling policy.</div></blockquote>
+<p>ServiceNamespace -&gt; (string)</p>
+<blockquote>
+<div>The namespace for the AWS service that the scaling policy is associated with. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS Service Namespaces</a> in the Amazon Web Services General Reference.</div></blockquote>
+<p>ResourceId -&gt; (string)</p>
+<blockquote>
+<div>The unique identifier string for the resource associated with the scaling policy. For Amazon ECS services, this value is the resource type, followed by the cluster name and service name, such as <tt class="docutils literal"><span class="pre">service/default/sample-webapp</span></tt> .</div></blockquote>
+<p>ScalableDimension -&gt; (string)</p>
+<blockquote>
+<div>The scalable dimension associated with the scaling policy. The scalable dimension contains the service namespace, resource type, and scaling property, such as <tt class="docutils literal"><span class="pre">ecs:service:DesiredCount</span></tt> for the desired task count of an Amazon ECS service.</div></blockquote>
+<p>PolicyType -&gt; (string)</p>
+<blockquote>
+<div>The scaling policy type.</div></blockquote>
+<p>StepScalingPolicyConfiguration -&gt; (structure)</p>
+<blockquote>
+<div><p>The configuration for the step scaling policy.</p>
+<p>AdjustmentType -&gt; (string)</p>
+<blockquote>
+<div>The adjustment type, which specifies how the <tt class="docutils literal"><span class="pre">ScalingAdjustment</span></tt> parameter in a  StepAdjustment is interpreted.</div></blockquote>
+<p>StepAdjustments -&gt; (list)</p>
+<blockquote>
+<div><p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>An object representing a step adjustment for a  StepScalingPolicyConfiguration . Describes an adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach threshold that you've defined for the alarm.</p>
+<p>For the following examples, suppose that you have an alarm with a breach threshold of 50:</p>
+<ul class="simple">
+<li>If you want the adjustment to be triggered when the metric is greater than or equal to 50 and less than 60, specify a lower bound of 0 and an upper bound of 10.</li>
+<li>If you want the adjustment to be triggered when the metric is greater than 40 and less than or equal to 50, specify a lower bound of -10 and an upper bound of 0.</li>
+</ul>
+<p>There are a few rules for the step adjustments for your step policy:</p>
+<ul class="simple">
+<li>The ranges of your step adjustments can't overlap or have a gap.</li>
+<li>At most one step adjustment can have a null lower bound. If one step adjustment has a negative lower bound, then there must be a step adjustment with a null lower bound.</li>
+<li>At most one step adjustment can have a null upper bound. If one step adjustment has a positive upper bound, then there must be a step adjustment with a null upper bound.</li>
+<li>The upper and lower bound can't be null in the same step adjustment.</li>
+</ul>
+<p>MetricIntervalLowerBound -&gt; (double)</p>
+<blockquote>
+<div>The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the lower bound is inclusive (the metric must be greater than or equal to the threshold plus the lower bound). Otherwise, it is exclusive (the metric must be greater than the threshold plus the lower bound). A null value indicates negative infinity.</div></blockquote>
+<p>MetricIntervalUpperBound -&gt; (double)</p>
+<blockquote>
+<div><p>The upper bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the upper bound is exclusive (the metric must be less than the threshold plus the upper bound). Otherwise, it is inclusive (the metric must be less than or equal to the threshold plus the upper bound). A null value indicates positive infinity.</p>
+<p>The upper bound must be greater than the lower bound.</p>
+</div></blockquote>
+<p>ScalingAdjustment -&gt; (integer)</p>
+<blockquote>
+<div>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current scalable dimension while a negative number removes from the current scalable dimension.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>MinAdjustmentMagnitude -&gt; (integer)</p>
+<blockquote>
+<div>The minimum number to adjust your scalable dimension as a result of a scaling activity. If the adjustment type is <tt class="docutils literal"><span class="pre">PercentChangeInCapacity</span></tt> , the scaling policy changes the scalable dimension of the scalable target by this amount.</div></blockquote>
+<p>Cooldown -&gt; (integer)</p>
+<blockquote>
+<div><p>The amount of time, in seconds, after a scaling activity completes where previous trigger-related scaling activities can influence future scaling events.</p>
+<p>For scale out policies, while <tt class="docutils literal"><span class="pre">Cooldown</span></tt> is in effect, the capacity that has been added by the previous scale out event that initiated the <tt class="docutils literal"><span class="pre">Cooldown</span></tt> is calculated as part of the desired capacity for the next scale out. The intention is to continuously (but not excessively) scale out. For example, an alarm triggers a step scaling policy to scale out an Amazon ECS service by 2 tasks, the scaling activity completes successfully, and a <tt class="docutils literal"><span class="pre">Cooldown</span></tt> period of 5 minutes starts. During the <tt class="docutils literal"><span class="pre">Cooldown</span></tt> period, if the alarm triggers the same policy again but at a more aggressive step adjustment to scale out the service by 3 tasks, the 2 tasks that were added in the previous scale out event are considered part of that capacity and only 1 additional task is added to the desired count.</p>
+<p>For scale in policies, the <tt class="docutils literal"><span class="pre">Cooldown</span></tt> period is used to block subsequent scale in requests until it has expired. The intention is to scale in conservatively to protect your application's availability. However, if another alarm triggers a scale out policy during the <tt class="docutils literal"><span class="pre">Cooldown</span></tt> period after a scale-in, Application Auto Scaling scales out your scalable target immediately.</p>
+</div></blockquote>
+<p>MetricAggregationType -&gt; (string)</p>
+<blockquote>
+<div>The aggregation type for the CloudWatch metrics. Valid values are <tt class="docutils literal"><span class="pre">Minimum</span></tt> , <tt class="docutils literal"><span class="pre">Maximum</span></tt> , and <tt class="docutils literal"><span class="pre">Average</span></tt> .</div></blockquote>
+</div></blockquote>
+<p>Alarms -&gt; (list)</p>
+<blockquote>
+<div><p>The CloudWatch alarms that are associated with the scaling policy.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>An object representing a CloudWatch alarm associated with a scaling policy.</p>
+<p>AlarmName -&gt; (string)</p>
+<blockquote>
+<div>The name of the alarm.</div></blockquote>
+<p>AlarmARN -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the alarm.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>CreationTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The Unix timestamp for when the scaling policy was created.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">NextToken</span></tt> value to include in a future <tt class="docutils literal"><span class="pre">describe-scaling-policies</span></tt> request. When the results of a <tt class="docutils literal"><span class="pre">describe-scaling-policies</span></tt> request exceed <tt class="docutils literal"><span class="pre">max-results</span></tt> , this value can be used to retrieve the next page of results. This value is <tt class="docutils literal"><span class="pre">null</span></tt> when there are no more results to return.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="describe-scaling-activities.html" title="previous chapter (use the left arrow)">&#8592; describe-scaling-activities</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="put-scaling-policy.html" title="next chapter (use the right arrow)">put-scaling-policy &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="put-scaling-policy.html" title="put-scaling-policy">next</a> |</li>
+        <li class="right">
+          <a href="describe-scaling-activities.html" title="describe-scaling-activities">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">application-autoscaling</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/application-autoscaling/describe-scaling-policies.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:57 GMT -->
+</html>

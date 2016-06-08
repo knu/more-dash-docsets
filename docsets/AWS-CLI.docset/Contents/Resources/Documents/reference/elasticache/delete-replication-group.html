@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elasticache/delete-replication-group.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:16 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>delete-replication-group &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="elasticache" href="index.html" />
+    <link rel="next" title="delete-snapshot" href="delete-snapshot.html" />
+    <link rel="prev" title="delete-cache-subnet-group" href="delete-cache-subnet-group.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="delete-snapshot.html" title="delete-snapshot" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="delete-cache-subnet-group.html" title="delete-cache-subnet-group" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">elasticache</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="delete-cache-subnet-group.html" title="previous chapter (use the left arrow)">&#8592; delete-cache-subnet-group</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="delete-snapshot.html" title="next chapter (use the right arrow)">delete-snapshot &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">delete-replication-group</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/elasticache/delete-replication-group">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-elasticache"><em>elasticache</em></a> ]</p>
+<div class="section" id="delete-replication-group">
+<span id="cli-aws-elasticache-delete-replication-group"></span><h1>delete-replication-group<a name="//apple_ref/cpp/Command/aws elasticache delete-replication-group" class="dashAnchor" id="aws elasticache delete-replication-group"></a><a class="headerlink" href="#delete-replication-group" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>The <em>delete-replication-group</em> action deletes an existing replication group. By default, this action deletes the entire replication group, including the primary cluster and all of the read replicas. You can optionally delete only the read replicas, while retaining the primary cluster.</p>
+<p>When you receive a successful response from this action, Amazon ElastiCache immediately begins deleting the selected resources; you cannot cancel or revert this action.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  delete-replication-group
+--replication-group-id &lt;value&gt;
+[--retain-primary-cluster | --no-retain-primary-cluster]
+[--final-snapshot-identifier &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--replication-group-id" class="dashAnchor" id="replication-group-id"></a><span class="pre">--replication-group-id</span></tt> (string)</p>
+<blockquote>
+<div>The identifier for the cluster to be deleted. This parameter is not case sensitive.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--retain-primary-cluster" class="dashAnchor" id="retain-primary-cluster"></a><span class="pre">--retain-primary-cluster</span></tt> | <tt class="docutils literal"><span class="pre">--no-retain-primary-cluster</span></tt> (boolean)</p>
+<blockquote>
+<div>If set to <em>true</em> , all of the read replicas will be deleted, but the primary node will be retained.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--final-snapshot-identifier" class="dashAnchor" id="final-snapshot-identifier"></a><span class="pre">--final-snapshot-identifier</span></tt> (string)</p>
+<blockquote>
+<div>The name of a final node group snapshot. ElastiCache creates the snapshot from the primary node in the cluster, rather than one of the replicas; this is to ensure that it captures the freshest data. After the final snapshot is taken, the cluster is immediately deleted.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>ReplicationGroup -&gt; (structure)</p>
+<blockquote>
+<div><p>Contains all of the attributes of a specific replication group.</p>
+<p>ReplicationGroupId -&gt; (string)</p>
+<blockquote>
+<div>The identifier for the replication group.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>The description of the replication group.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The current state of this replication group - <em>creating</em> , <em>available</em> , etc.</div></blockquote>
+<p>PendingModifiedValues -&gt; (structure)</p>
+<blockquote>
+<div><p>A group of settings to be applied to the replication group, either immediately or during the next maintenance window.</p>
+<p>PrimaryClusterId -&gt; (string)</p>
+<blockquote>
+<div>The primary cluster ID which will be applied immediately (if <tt class="docutils literal"><span class="pre">--apply-immediately</span></tt> was specified), or during the next maintenance window.</div></blockquote>
+<p>AutomaticFailoverStatus -&gt; (string)</p>
+<blockquote>
+<div><p>Indicates the status of Multi-AZ for this replication group.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>ElastiCache Multi-AZ replication groups are not supported on:</p>
+<ul class="last simple">
+<li>Redis versions earlier than 2.8.6.</li>
+<li>T1 and T2 cache node types.</li>
+</ul>
+</div>
+</div></blockquote>
+</div></blockquote>
+<p>MemberClusters -&gt; (list)</p>
+<blockquote>
+<div><p>The names of all the cache clusters that are part of this replication group.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>NodeGroups -&gt; (list)</p>
+<blockquote>
+<div><p>A single element list with information about the nodes in the replication group.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents a collection of cache nodes in a replication group.</p>
+<p>NodeGroupId -&gt; (string)</p>
+<blockquote>
+<div>The identifier for the node group. A replication group contains only one node group; therefore, the node group ID is 0001.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The current state of this replication group - <em>creating</em> , <em>available</em> , etc.</div></blockquote>
+<p>PrimaryEndpoint -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents the information required for client programs to connect to a cache node.</p>
+<p>Address -&gt; (string)</p>
+<blockquote>
+<div>The DNS hostname of the cache node.</div></blockquote>
+<p>Port -&gt; (integer)</p>
+<blockquote>
+<div>The port number that the cache engine is listening on.</div></blockquote>
+</div></blockquote>
+<p>NodeGroupMembers -&gt; (list)</p>
+<blockquote>
+<div><p>A list containing information about individual nodes within the node group.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents a single node within a node group.</p>
+<p>CacheClusterId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the cache cluster to which the node belongs.</div></blockquote>
+<p>CacheNodeId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the node within its cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).</div></blockquote>
+<p>ReadEndpoint -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents the information required for client programs to connect to a cache node.</p>
+<p>Address -&gt; (string)</p>
+<blockquote>
+<div>The DNS hostname of the cache node.</div></blockquote>
+<p>Port -&gt; (integer)</p>
+<blockquote>
+<div>The port number that the cache engine is listening on.</div></blockquote>
+</div></blockquote>
+<p>PreferredAvailabilityZone -&gt; (string)</p>
+<blockquote>
+<div>The name of the Availability Zone in which the node is located.</div></blockquote>
+<p>CurrentRole -&gt; (string)</p>
+<blockquote>
+<div>The role that is currently assigned to the node - <em>primary</em> or <em>replica</em> .</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>SnapshottingClusterId -&gt; (string)</p>
+<blockquote>
+<div>The cache cluster ID that is used as the daily snapshot source for the replication group.</div></blockquote>
+<p>AutomaticFailover -&gt; (string)</p>
+<blockquote>
+<div><p>Indicates the status of Multi-AZ for this replication group.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>ElastiCache Multi-AZ replication groups are not supported on:</p>
+<ul class="last simple">
+<li>Redis versions earlier than 2.8.6.</li>
+<li>T1 and T2 cache node types.</li>
+</ul>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="delete-cache-subnet-group.html" title="previous chapter (use the left arrow)">&#8592; delete-cache-subnet-group</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="delete-snapshot.html" title="next chapter (use the right arrow)">delete-snapshot &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="delete-snapshot.html" title="delete-snapshot">next</a> |</li>
+        <li class="right">
+          <a href="delete-cache-subnet-group.html" title="delete-cache-subnet-group">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">elasticache</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elasticache/delete-replication-group.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:16 GMT -->
+</html>

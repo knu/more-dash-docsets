@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/describe-security-groups.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>describe-security-groups &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>describe-security-groups &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +25,10 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="ec2" href="index.html" />
     <link rel="next" title="describe-snapshot-attribute" href="describe-snapshot-attribute.html" />
-    <link rel="prev" title="describe-route-tables" href="describe-route-tables.html" />
+    <link rel="prev" title="describe-security-group-references" href="describe-security-group-references.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
   
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -60,8 +63,8 @@
         <li class="right">
           <a href="describe-snapshot-attribute.html" title="describe-snapshot-attribute" accesskey="N">next</a> |</li>
         <li class="right">
-          <a href="describe-route-tables.html" title="describe-route-tables" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="describe-security-group-references.html" title="describe-security-group-references" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">ec2</a> &#187;</li> 
       </ul>
@@ -71,7 +74,7 @@
     <div class="top-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="describe-route-tables.html" title="previous chapter (use the left arrow)">&#8592; describe-route-tables</a>
+          <a href="describe-security-group-references.html" title="previous chapter (use the left arrow)">&#8592; describe-security-group-references</a>
           <span class="divider">/</span>
           
         </li>
@@ -82,40 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">describe-security-groups</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
-<li><a class="reference internal" href="#filters">Filters</a><ul>
-<li><a class="reference internal" href="#id1">description</a></li>
-<li><a class="reference internal" href="#group-id">group-id</a></li>
-<li><a class="reference internal" href="#group-name">group-name</a></li>
-<li><a class="reference internal" href="#ip-permission-cidr">ip-permission.cidr</a></li>
-<li><a class="reference internal" href="#ip-permission-from-port">ip-permission.from-port</a></li>
-<li><a class="reference internal" href="#ip-permission-group-name">ip-permission.group-name</a></li>
-<li><a class="reference internal" href="#ip-permission-protocol">ip-permission.protocol</a></li>
-<li><a class="reference internal" href="#ip-permission-to-port">ip-permission.to-port</a></li>
-<li><a class="reference internal" href="#ip-permission-user-id">ip-permission.user-id</a></li>
-<li><a class="reference internal" href="#owner-id">owner-id</a></li>
-<li><a class="reference internal" href="#tag-key">tag-key</a></li>
-<li><a class="reference internal" href="#tag-value">tag-value</a></li>
-<li><a class="reference internal" href="#vpc-id">vpc-id</a></li>
-</ul>
-</li>
 <li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -124,50 +112,81 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/ec2/describe-security-groups">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ec2/describe-security-groups">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>ec2</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-ec2"><em>ec2</em></a> ]</p>
 <div class="section" id="describe-security-groups">
-<h1>describe-security-groups<a class="headerlink" href="#describe-security-groups" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-ec2-describe-security-groups"></span><h1>describe-security-groups<a name="//apple_ref/cpp/Command/aws ec2 describe-security-groups" class="dashAnchor" id="aws ec2 describe-security-groups"></a><a class="headerlink" href="#describe-security-groups" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>The describe-security-groups operation returns information about security groups that you own.</p>
-<p>If you specify security group names, information about those security group is returned. Otherwise, information for all security group is returned. If you specify a group that does not exist, a fault is returned.</p>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Describes one or more of your security groups.</p>
+<p>A security group is for use with instances either in the EC2-Classic platform or in a specific VPC. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security Groups</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> and <a class="reference external" href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <em>Amazon Virtual Private Cloud User Guide</em> .</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  describe-security-groups
 [--dry-run | --no-dry-run]
 [--group-names &lt;value&gt;]
 [--group-ids &lt;value&gt;]
-[--filters &lt;value&gt;]</pre>
+[--filters &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--no-dry-run" class="dashAnchor" id="no-dry-run"></a><span class="pre">--no-dry-run</span></tt> (boolean)</p>
-<p>Checks whether you have the required permissions for the action, without actually making the request. Using this option will result in one of two possible errorresponses. If you have the required permissions, the error response will be <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt>  . Otherwise it will be <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt>  .</p>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><span class="pre">--no-dry-run</span></tt> (boolean)</p>
+<blockquote>
+<div>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt> . Otherwise, it is <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt> .</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--group-names" class="dashAnchor" id="group-names"></a><span class="pre">--group-names</span></tt> (list)</p>
 <blockquote>
-<div>An optional list of group names that specify the Amazon EC2 security groups to describe.</div></blockquote>
+<div><p>[EC2-Classic and default VPC only] One or more security group names. You can specify either the security group name or the security group ID. For security groups in a nondefault VPC, use the <tt class="docutils literal"><span class="pre">group-name</span></tt> filter to describe security groups by name.</p>
+<p>Default: Describes all your security groups.</p>
+</div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--group-ids" class="dashAnchor" id="group-ids"></a><span class="pre">--group-ids</span></tt> (list)</p>
+<blockquote>
+<div><p>One or more security group IDs. Required for security groups in a nondefault VPC.</p>
+<p>Default: Describes all your security groups.</p>
+</div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--filters" class="dashAnchor" id="filters"></a><span class="pre">--filters</span></tt> (list)</p>
 <blockquote>
-<div>A list of filters used to match properties for SecurityGroups. For a complete reference to the available filter keys for this operation, see the <a class="reference external" href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a> .</div></blockquote>
+<div><p>One or more filters. If using multiple filters for rules, the results include security groups for which any combination of rules - not necessarily a single rule - match all filters.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">description</span></tt> - The description of the security group.</li>
+<li><tt class="docutils literal"><span class="pre">egress.ip-permission.prefix-list-id</span></tt> - The ID (prefix) of the AWS service to which the security group allows access.</li>
+<li><tt class="docutils literal"><span class="pre">group-id</span></tt> - The ID of the security group.</li>
+<li><tt class="docutils literal"><span class="pre">group-name</span></tt> - The name of the security group.</li>
+<li><tt class="docutils literal"><span class="pre">ip-permission.cidr</span></tt> - A CIDR range that has been granted permission.</li>
+<li><tt class="docutils literal"><span class="pre">ip-permission.from-port</span></tt> - The start of port range for the TCP and UDP protocols, or an ICMP type number.</li>
+<li><tt class="docutils literal"><span class="pre">ip-permission.group-id</span></tt> - The ID of a security group that has been granted permission.</li>
+<li><tt class="docutils literal"><span class="pre">ip-permission.group-name</span></tt> - The name of a security group that has been granted permission.</li>
+<li><tt class="docutils literal"><span class="pre">ip-permission.protocol</span></tt> - The IP protocol for the permission (<tt class="docutils literal"><span class="pre">tcp</span></tt> | <tt class="docutils literal"><span class="pre">udp</span></tt> | <tt class="docutils literal"><span class="pre">icmp</span></tt> or a protocol number).</li>
+<li><tt class="docutils literal"><span class="pre">ip-permission.to-port</span></tt> - The end of port range for the TCP and UDP protocols, or an ICMP code.</li>
+<li><tt class="docutils literal"><span class="pre">ip-permission.user-id</span></tt> - The ID of an AWS account that has been granted permission.</li>
+<li><tt class="docutils literal"><span class="pre">owner-id</span></tt> - The AWS account ID of the owner of the security group.</li>
+<li><tt class="docutils literal"><span class="pre">tag-key</span></tt> - The key of a tag assigned to the security group.</li>
+<li><tt class="docutils literal"><span class="pre">tag-value</span></tt> - The value of a tag assigned to the security group.</li>
+<li><tt class="docutils literal"><span class="pre">vpc-id</span></tt> - The ID of the VPC specified when the security group was created.</li>
+</ul>
+</div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><pre>  Key value pairs, where values are separated by commas.
---filters Name=string1,Values=string1,string2</pre>
+<div class="highlight-python"><pre>Name=string,Values=string,string ...</pre>
 </div>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><pre>[
@@ -178,98 +197,328 @@
   ...
 ]</pre>
 </div>
-</div>
-<div class="section" id="filters">
-<h2>Filters<a class="headerlink" href="#filters" title="Permalink to this headline">&#182;</a></h2>
-<div class="section" id="id1">
-<h3>description<a class="headerlink" href="#id1" title="Permalink to this headline">&#182;</a></h3>
-<p>The description of the security group.</p>
-</div>
-<div class="section" id="group-id">
-<h3>group-id<a class="headerlink" href="#group-id" title="Permalink to this headline">&#182;</a></h3>
-<p>The ID of the security group.</p>
-</div>
-<div class="section" id="group-name">
-<h3>group-name<a class="headerlink" href="#group-name" title="Permalink to this headline">&#182;</a></h3>
-<p>The name of the security group.</p>
-</div>
-<div class="section" id="ip-permission-cidr">
-<h3>ip-permission.cidr<a class="headerlink" href="#ip-permission-cidr" title="Permalink to this headline">&#182;</a></h3>
-<p>The CIDR range that has been granted the permission.</p>
-</div>
-<div class="section" id="ip-permission-from-port">
-<h3>ip-permission.from-port<a class="headerlink" href="#ip-permission-from-port" title="Permalink to this headline">&#182;</a></h3>
-<p>The start of port range for the TCP and UDP protocols, or an ICMP type number.</p>
-</div>
-<div class="section" id="ip-permission-group-name">
-<h3>ip-permission.group-name<a class="headerlink" href="#ip-permission-group-name" title="Permalink to this headline">&#182;</a></h3>
-<p>The name of security group that has been granted the permission.</p>
-</div>
-<div class="section" id="ip-permission-protocol">
-<h3>ip-permission.protocol<a class="headerlink" href="#ip-permission-protocol" title="Permalink to this headline">&#182;</a></h3>
-<p>The IP protocol for the permission.</p>
-<p>Valid Values: tcp|udp|icmp</p>
-</div>
-<div class="section" id="ip-permission-to-port">
-<h3>ip-permission.to-port<a class="headerlink" href="#ip-permission-to-port" title="Permalink to this headline">&#182;</a></h3>
-<p>The end of port range for the TCP and UDP protocols, or an ICMP code.</p>
-</div>
-<div class="section" id="ip-permission-user-id">
-<h3>ip-permission.user-id<a class="headerlink" href="#ip-permission-user-id" title="Permalink to this headline">&#182;</a></h3>
-<p>The ID of an AWS account that has been granted the permission.</p>
-</div>
-<div class="section" id="owner-id">
-<h3>owner-id<a class="headerlink" href="#owner-id" title="Permalink to this headline">&#182;</a></h3>
-<p>The AWS account ID of the owner of the security group.</p>
-</div>
-<div class="section" id="tag-key">
-<h3>tag-key<a class="headerlink" href="#tag-key" title="Permalink to this headline">&#182;</a></h3>
-<p>The key of a tag assigned to the security group.</p>
-</div>
-<div class="section" id="tag-value">
-<h3>tag-value<a class="headerlink" href="#tag-value" title="Permalink to this headline">&#182;</a></h3>
-<p>The value of a tag assigned to the security group.</p>
-</div>
-<div class="section" id="vpc-id">
-<h3>vpc-id<a class="headerlink" href="#vpc-id" title="Permalink to this headline">&#182;</a></h3>
-<p>Only return the security groups that belong to the specified EC2-VPC ID.</p>
-</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
 </div>
 <div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
-<p><strong>To display information about a security group</strong></p>
-<p>This example displays information about the security group named MySecurityGroup.</p>
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To describe a security group for EC2-Classic</strong></p>
+<p>This example displays information about the security group named <tt class="docutils literal"><span class="pre">MySecurityGroup</span></tt>.</p>
 <p>Command:</p>
 <div class="highlight-python"><pre>aws ec2 describe-security-groups --group-names MySecurityGroup</pre>
 </div>
 <p>Output:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-    <span class="s">"SecurityGroups"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">"SecurityGroups"</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
-            <span class="s">"IpPermissionsEgress"</span><span class="p">:</span> <span class="p">[],</span>
-            <span class="s">"Description"</span><span class="p">:</span> <span class="s">"My security group"</span><span class="p">,</span>
-            <span class="s">"IpPermissions"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">"IpPermissionsEgress"</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">"Description"</span><span class="p">:</span> <span class="s2">"My security group"</span><span class="p">,</span>
+            <span class="s2">"IpPermissions"</span><span class="p">:</span> <span class="p">[</span>
                 <span class="p">{</span>
-                    <span class="s">"ToPort"</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-                    <span class="s">"IpProtocol"</span><span class="p">:</span> <span class="s">"tcp"</span><span class="p">,</span>
-                    <span class="s">"IpRanges"</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s2">"PrefixListIds"</span><span class="p">:</span> <span class="p">[],</span>
+                    <span class="s2">"FromPort"</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+                    <span class="s2">"IpRanges"</span><span class="p">:</span> <span class="p">[</span>
                         <span class="p">{</span>
-                            <span class="s">"CidrIp"</span><span class="p">:</span> <span class="s">"203.0.113.0/24"</span>
+                            <span class="s2">"CidrIp"</span><span class="p">:</span> <span class="s2">"203.0.113.0/24"</span>
                         <span class="p">}</span>
                     <span class="p">],</span>
-                    <span class="s">"UserIdGroupPairs"</span><span class="p">:</span> <span class="p">[],</span>
-                    <span class="s">"FromPort"</span><span class="p">:</span> <span class="mi">22</span>
+                    <span class="s2">"ToPort"</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+                    <span class="s2">"IpProtocol"</span><span class="p">:</span> <span class="s2">"tcp"</span><span class="p">,</span>
+                    <span class="s2">"UserIdGroupPairs"</span><span class="p">:</span> <span class="p">[]</span>
                 <span class="p">}</span>
             <span class="p">],</span>
-            <span class="s">"GroupName"</span><span class="p">:</span> <span class="s">"MySecurityGroup"</span><span class="p">,</span>
-            <span class="s">"OwnerId"</span><span class="p">:</span> <span class="s">"123456789012"</span><span class="p">,</span>
-            <span class="s">"GroupId"</span><span class="p">:</span> <span class="s">"sg-903004f8"</span><span class="p">,</span>
+            <span class="s2">"GroupName"</span><span class="p">:</span> <span class="s2">"MySecurityGroup"</span><span class="p">,</span>
+            <span class="s2">"OwnerId"</span><span class="p">:</span> <span class="s2">"123456789012"</span><span class="p">,</span>
+            <span class="s2">"GroupId"</span><span class="p">:</span> <span class="s2">"sg-903004f8"</span><span class="p">,</span>
         <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/cli/latest/userguide/cli-ec2-sg.html">Using Security Groups</a> in the <em>AWS Command Line Interface User Guide</em>.</p>
+<p><strong>To describe a security group for EC2-VPC</strong></p>
+<p>This example displays information about the security group with the ID sg-903004f8. Note that you can't reference a security group for EC2-VPC by name.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 describe-security-groups --group-ids sg-903004f8</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"SecurityGroups"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"IpPermissionsEgress"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">"IpProtocol"</span><span class="p">:</span> <span class="s2">"-1"</span><span class="p">,</span>
+                    <span class="s2">"IpRanges"</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="s2">"CidrIp"</span><span class="p">:</span> <span class="s2">"0.0.0.0/0"</span>
+                        <span class="p">}</span>
+                    <span class="p">],</span>
+                    <span class="s2">"UserIdGroupPairs"</span><span class="p">:</span> <span class="p">[],</span>
+                    <span class="s2">"PrefixListIds"</span><span class="p">:</span> <span class="p">[]</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s2">"Description"</span><span class="p">:</span> <span class="s2">"My security group"</span><span class="p">,</span>
+            <span class="s2">"Tags"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">"Value"</span><span class="p">:</span> <span class="s2">"SG1"</span><span class="p">,</span>
+                    <span class="s2">"Key"</span><span class="p">:</span> <span class="s2">"Name"</span>
+                 <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s2">"IpPermissions"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">"IpProtocol"</span><span class="p">:</span> <span class="s2">"-1"</span><span class="p">,</span>
+                    <span class="s2">"IpRanges"</span><span class="p">:</span> <span class="p">[],</span>
+                    <span class="s2">"UserIdGroupPairs"</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="p">{</span>
+                             <span class="s2">"UserId"</span><span class="p">:</span> <span class="s2">"123456789012"</span><span class="p">,</span>
+                             <span class="s2">"GroupId"</span><span class="p">:</span> <span class="s2">"sg-903004f8"</span>
+                        <span class="p">}</span>
+                    <span class="p">],</span>
+                    <span class="s2">"PrefixListIds"</span><span class="p">:</span> <span class="p">[]</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">"PrefixListIds"</span><span class="p">:</span> <span class="p">[],</span>
+                    <span class="s2">"FromPort"</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+                    <span class="s2">"IpRanges"</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="s2">"CidrIp"</span><span class="p">:</span> <span class="s2">"203.0.113.0/24"</span>
+                        <span class="p">}</span>
+                    <span class="p">],</span>
+                    <span class="s2">"ToPort"</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+                    <span class="s2">"IpProtocol"</span><span class="p">:</span> <span class="s2">"tcp"</span><span class="p">,</span>
+                    <span class="s2">"UserIdGroupPairs"</span><span class="p">:</span> <span class="p">[]</span>
+                  <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s2">"GroupName"</span><span class="p">:</span> <span class="s2">"MySecurityGroup"</span><span class="p">,</span>
+            <span class="s2">"VpcId"</span><span class="p">:</span> <span class="s2">"vpc-1a2b3c4d"</span><span class="p">,</span>
+            <span class="s2">"OwnerId"</span><span class="p">:</span> <span class="s2">"123456789012"</span><span class="p">,</span>
+            <span class="s2">"GroupId"</span><span class="p">:</span> <span class="s2">"sg-903004f8"</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>To describe security groups that have specific rules</strong></p>
+<p>(EC2-VPC only) This example uses filters to describe security groups that have a rule that allows SSH traffic (port 22) and a rule that allows traffic from all addresses (<tt class="docutils literal"><span class="pre">0.0.0.0/0</span></tt>). The output is filtered to display only the names of the security groups. Security groups must match all filters to be returned in the results; however, a single rule does not have to match all filters. For example, the output returns a security group with a rule that allows SSH traffic from a specific IP address and another rule that allows HTTP traffic from all addresses.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 describe-security-groups --filters Name=ip-permission.from-port,Values=22 Name=ip-permission.to-port,Values=22 Name=ip-permission.cidr,Values='0.0.0.0/0' --query 'SecurityGroups[*].{Name:GroupName}'</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span>
+  <span class="p">{</span>
+     <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"default"</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+     <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"Test SG"</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+     <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"SSH-Access-Group"</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>To describe tagged security groups</strong></p>
+<p>This example describes all security groups that include <tt class="docutils literal"><span class="pre">test</span></tt> in the security group name, and that have the tag <tt class="docutils literal"><span class="pre">Test=To-delete</span></tt>. The output is filtered to display only the names and IDs of the security groups.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 describe-security-groups --filters Name=group-name,Values='*test*' Name=tag-key,Values=Test Name=tag-value,Values=To-delete --query 'SecurityGroups[*].{Name:GroupName,ID:GroupId}'</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span>
+  <span class="p">{</span>
+     <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"testfornewinstance"</span><span class="p">,</span>
+     <span class="s2">"ID"</span><span class="p">:</span> <span class="s2">"sg-33bb22aa"</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+     <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"newgrouptest"</span><span class="p">,</span>
+     <span class="s2">"ID"</span><span class="p">:</span> <span class="s2">"sg-1a2b3c4d"</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>For more information, see <a class="reference external" href="../../userguide/cli-ec2-sg.html">Using Security Groups</a> in the <em>AWS Command Line Interface User Guide</em>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>SecurityGroups -&gt; (list)</p>
+<blockquote>
+<div><p>Information about one or more security groups.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a security group</p>
+<p>OwnerId -&gt; (string)</p>
+<blockquote>
+<div>The AWS account ID of the owner of the security group.</div></blockquote>
+<p>GroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the security group.</div></blockquote>
+<p>GroupId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the security group.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>A description of the security group.</div></blockquote>
+<p>IpPermissions -&gt; (list)</p>
+<blockquote>
+<div><p>One or more inbound rules associated with the security group.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a security group rule.</p>
+<p>IpProtocol -&gt; (string)</p>
+<blockquote>
+<div><p>The IP protocol name (for <tt class="docutils literal"><span class="pre">tcp</span></tt> , <tt class="docutils literal"><span class="pre">udp</span></tt> , and <tt class="docutils literal"><span class="pre">icmp</span></tt> ) or number (see <a class="reference external" href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a> ).</p>
+<p>[EC2-VPC only] When you authorize or revoke security group rules, you can use <tt class="docutils literal"><span class="pre">-1</span></tt> to specify all.</p>
+</div></blockquote>
+<p>FromPort -&gt; (integer)</p>
+<blockquote>
+<div>The start of port range for the TCP and UDP protocols, or an ICMP type number. A value of <tt class="docutils literal"><span class="pre">-1</span></tt> indicates all ICMP types.</div></blockquote>
+<p>ToPort -&gt; (integer)</p>
+<blockquote>
+<div>The end of port range for the TCP and UDP protocols, or an ICMP code. A value of <tt class="docutils literal"><span class="pre">-1</span></tt> indicates all ICMP codes for the specified ICMP type.</div></blockquote>
+<p>UserIdGroupPairs -&gt; (list)</p>
+<blockquote>
+<div><p>One or more security group and AWS account ID pairs.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a security group and AWS account ID pair.</p>
+<p>UserId -&gt; (string)</p>
+<blockquote>
+<div><p>The ID of an AWS account. For a referenced security group in another VPC, the account ID of the referenced security group is returned.</p>
+<p>[EC2-Classic] Required when adding or removing rules that reference a security group in another AWS account.</p>
+</div></blockquote>
+<p>GroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the security group. In a request, use this parameter for a security group in EC2-Classic or a default VPC only. For a security group in a nondefault VPC, use the security group ID.</div></blockquote>
+<p>GroupId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the security group.</div></blockquote>
+<p>VpcId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the VPC for the referenced security group, if applicable.</div></blockquote>
+<p>VpcPeeringConnectionId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the VPC peering connection, if applicable.</div></blockquote>
+<p>PeeringStatus -&gt; (string)</p>
+<blockquote>
+<div>The status of a VPC peering connection, if applicable.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>IpRanges -&gt; (list)</p>
+<blockquote>
+<div><p>One or more IP ranges.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes an IP range.</p>
+<p>CidrIp -&gt; (string)</p>
+<blockquote>
+<div>The CIDR range. You can either specify a CIDR range or a source security group, not both.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>PrefixListIds -&gt; (list)</p>
+<blockquote>
+<div><p>(Valid for  authorize-security-group-egress ,  revoke-security-group-egress and  describe-security-groups only) One or more prefix list IDs for an AWS service. In an  authorize-security-group-egress request, this is the AWS service that you want to access through a VPC endpoint from instances associated with the security group.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The ID of the prefix.</p>
+<p>PrefixListId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the prefix.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>IpPermissionsEgress -&gt; (list)</p>
+<blockquote>
+<div><p>[EC2-VPC] One or more outbound rules associated with the security group.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a security group rule.</p>
+<p>IpProtocol -&gt; (string)</p>
+<blockquote>
+<div><p>The IP protocol name (for <tt class="docutils literal"><span class="pre">tcp</span></tt> , <tt class="docutils literal"><span class="pre">udp</span></tt> , and <tt class="docutils literal"><span class="pre">icmp</span></tt> ) or number (see <a class="reference external" href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a> ).</p>
+<p>[EC2-VPC only] When you authorize or revoke security group rules, you can use <tt class="docutils literal"><span class="pre">-1</span></tt> to specify all.</p>
+</div></blockquote>
+<p>FromPort -&gt; (integer)</p>
+<blockquote>
+<div>The start of port range for the TCP and UDP protocols, or an ICMP type number. A value of <tt class="docutils literal"><span class="pre">-1</span></tt> indicates all ICMP types.</div></blockquote>
+<p>ToPort -&gt; (integer)</p>
+<blockquote>
+<div>The end of port range for the TCP and UDP protocols, or an ICMP code. A value of <tt class="docutils literal"><span class="pre">-1</span></tt> indicates all ICMP codes for the specified ICMP type.</div></blockquote>
+<p>UserIdGroupPairs -&gt; (list)</p>
+<blockquote>
+<div><p>One or more security group and AWS account ID pairs.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a security group and AWS account ID pair.</p>
+<p>UserId -&gt; (string)</p>
+<blockquote>
+<div><p>The ID of an AWS account. For a referenced security group in another VPC, the account ID of the referenced security group is returned.</p>
+<p>[EC2-Classic] Required when adding or removing rules that reference a security group in another AWS account.</p>
+</div></blockquote>
+<p>GroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the security group. In a request, use this parameter for a security group in EC2-Classic or a default VPC only. For a security group in a nondefault VPC, use the security group ID.</div></blockquote>
+<p>GroupId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the security group.</div></blockquote>
+<p>VpcId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the VPC for the referenced security group, if applicable.</div></blockquote>
+<p>VpcPeeringConnectionId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the VPC peering connection, if applicable.</div></blockquote>
+<p>PeeringStatus -&gt; (string)</p>
+<blockquote>
+<div>The status of a VPC peering connection, if applicable.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>IpRanges -&gt; (list)</p>
+<blockquote>
+<div><p>One or more IP ranges.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes an IP range.</p>
+<p>CidrIp -&gt; (string)</p>
+<blockquote>
+<div>The CIDR range. You can either specify a CIDR range or a source security group, not both.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>PrefixListIds -&gt; (list)</p>
+<blockquote>
+<div><p>(Valid for  authorize-security-group-egress ,  revoke-security-group-egress and  describe-security-groups only) One or more prefix list IDs for an AWS service. In an  authorize-security-group-egress request, this is the AWS service that you want to access through a VPC endpoint from instances associated with the security group.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The ID of the prefix.</p>
+<p>PrefixListId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the prefix.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>VpcId -&gt; (string)</p>
+<blockquote>
+<div>[EC2-VPC] The ID of the VPC for the security group.</div></blockquote>
+<p>Tags -&gt; (list)</p>
+<blockquote>
+<div><p>Any tags assigned to the security group.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a tag.</p>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div><p>The key of the tag.</p>
+<p>Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <tt class="docutils literal"><span class="pre">aws:</span></tt></p>
+</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div><p>The value of the tag.</p>
+<p>Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
 </div>
 </div>
 
@@ -281,7 +530,7 @@
     <div class="footer-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="describe-route-tables.html" title="previous chapter (use the left arrow)">&#8592; describe-route-tables</a>
+          <a href="describe-security-group-references.html" title="previous chapter (use the left arrow)">&#8592; describe-security-group-references</a>
           <span class="divider">/</span>
           
         </li>
@@ -291,6 +540,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -299,36 +557,22 @@
         <li class="right">
           <a href="describe-snapshot-attribute.html" title="describe-snapshot-attribute">next</a> |</li>
         <li class="right">
-          <a href="describe-route-tables.html" title="describe-route-tables">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="describe-security-group-references.html" title="describe-security-group-references">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">ec2</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'describe-route-tables.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'describe-snapshot-attribute.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/describe-security-groups.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
 </html>

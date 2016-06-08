@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/autoscaling/exit-standby.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:57 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>exit-standby &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="autoscaling" href="index.html" />
+    <link rel="next" title="put-lifecycle-hook" href="put-lifecycle-hook.html" />
+    <link rel="prev" title="execute-policy" href="execute-policy.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="put-lifecycle-hook.html" title="put-lifecycle-hook" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="execute-policy.html" title="execute-policy" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">autoscaling</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="execute-policy.html" title="previous chapter (use the left arrow)">&#8592; execute-policy</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="put-lifecycle-hook.html" title="next chapter (use the right arrow)">put-lifecycle-hook &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">exit-standby</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/autoscaling/exit-standby">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-autoscaling"><em>autoscaling</em></a> ]</p>
+<div class="section" id="exit-standby">
+<span id="cli-aws-autoscaling-exit-standby"></span><h1>exit-standby<a name="//apple_ref/cpp/Command/aws autoscaling exit-standby" class="dashAnchor" id="aws autoscaling exit-standby"></a><a class="headerlink" href="#exit-standby" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Moves the specified instances out of <tt class="docutils literal"><span class="pre">Standby</span></tt> mode.</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto Scaling Lifecycle</a> in the <em>Auto Scaling Developer Guide</em> .</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  exit-standby
+[--instance-ids &lt;value&gt;]
+--auto-scaling-group-name &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--instance-ids" class="dashAnchor" id="instance-ids"></a><span class="pre">--instance-ids</span></tt> (list)</p>
+<blockquote>
+<div>One or more instance IDs. You must specify at least one instance ID.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>"string" "string" ...</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--auto-scaling-group-name" class="dashAnchor" id="auto-scaling-group-name"></a><span class="pre">--auto-scaling-group-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the Auto Scaling group.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To move instances out of standby mode</strong></p>
+<p>This example moves the specified instance out of standby mode:</p>
+<div class="highlight-python"><pre>aws autoscaling exit-standby --instance-ids i-93633f9b --auto-scaling-group-name my-auto-scaling-group</pre>
+</div>
+<p>The following is example output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"Activities"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"Description"</span><span class="p">:</span> <span class="s2">"Moving EC2 instance out of Standby: i-93633f9b"</span><span class="p">,</span>
+            <span class="s2">"AutoScalingGroupName"</span><span class="p">:</span> <span class="s2">"my-auto-scaling-group"</span><span class="p">,</span>
+            <span class="s2">"ActivityId"</span><span class="p">:</span> <span class="s2">"142928e1-a2dc-453a-9b24-b85ad6735928"</span><span class="p">,</span>
+            <span class="s2">"Details"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Availability Zone"</span><span class="p">:</span> <span class="s2">"us-west-2a"</span><span class="p">},</span>
+            <span class="s2">"StartTime"</span><span class="p">:</span> <span class="s2">"2015-04-12T15:14:29.886Z"</span><span class="p">,</span>
+            <span class="s2">"Progress"</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+            <span class="s2">"Cause"</span><span class="p">:</span> <span class="s2">"At 2015-04-12T15:14:29Z instance i-93633f9b was moved out of standby in response to a user request, increasing the capacity from 1 to 2."</span><span class="p">,</span>
+            <span class="s2">"StatusCode"</span><span class="p">:</span> <span class="s2">"PreInService"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Activities -&gt; (list)</p>
+<blockquote>
+<div><p>The activities related to moving instances out of <tt class="docutils literal"><span class="pre">Standby</span></tt> mode.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes scaling activity, which is a long-running process that represents a change to your Auto Scaling group, such as changing its size or replacing an instance.</p>
+<p>ActivityId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the activity.</div></blockquote>
+<p>AutoScalingGroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the Auto Scaling group.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>A friendly, more verbose description of the activity.</div></blockquote>
+<p>Cause -&gt; (string)</p>
+<blockquote>
+<div>The reason the activity began.</div></blockquote>
+<p>StartTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The start time of the activity.</div></blockquote>
+<p>EndTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The end time of the activity.</div></blockquote>
+<p>StatusCode -&gt; (string)</p>
+<blockquote>
+<div>The current status of the activity.</div></blockquote>
+<p>StatusMessage -&gt; (string)</p>
+<blockquote>
+<div>A friendly, more verbose description of the activity status.</div></blockquote>
+<p>Progress -&gt; (integer)</p>
+<blockquote>
+<div>A value between 0 and 100 that indicates the progress of the activity.</div></blockquote>
+<p>Details -&gt; (string)</p>
+<blockquote>
+<div>The details about the activity.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="execute-policy.html" title="previous chapter (use the left arrow)">&#8592; execute-policy</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="put-lifecycle-hook.html" title="next chapter (use the right arrow)">put-lifecycle-hook &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="put-lifecycle-hook.html" title="put-lifecycle-hook">next</a> |</li>
+        <li class="right">
+          <a href="execute-policy.html" title="execute-policy">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">autoscaling</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/autoscaling/exit-standby.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:57 GMT -->
+</html>

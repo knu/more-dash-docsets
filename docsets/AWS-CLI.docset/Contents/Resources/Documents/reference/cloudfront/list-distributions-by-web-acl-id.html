@@ -1,0 +1,645 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudfront/list-distributions-by-web-acl-id.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:59 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>list-distributions-by-web-acl-id &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="cloudfront" href="index.html" />
+    <link rel="next" title="list-invalidations" href="list-invalidations.html" />
+    <link rel="prev" title="list-distributions" href="list-distributions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="list-invalidations.html" title="list-invalidations" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="list-distributions.html" title="list-distributions" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">cloudfront</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="list-distributions.html" title="previous chapter (use the left arrow)">&#8592; list-distributions</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="list-invalidations.html" title="next chapter (use the right arrow)">list-invalidations &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">list-distributions-by-web-acl-id</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/cloudfront/list-distributions-by-web-acl-id">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-cloudfront"><em>cloudfront</em></a> ]</p>
+<div class="section" id="list-distributions-by-web-acl-id">
+<span id="cli-aws-cloudfront-list-distributions-by-web-acl-id"></span><h1>list-distributions-by-web-acl-id<a name="//apple_ref/cpp/Command/aws cloudfront list-distributions-by-web-acl-id" class="dashAnchor" id="aws cloudfront list-distributions-by-web-acl-id"></a><a class="headerlink" href="#list-distributions-by-web-acl-id" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>List the distributions that are associated with a specified AWS WAF web ACL.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>AWS CLI support for this service is only available in a preview stage.</strong> You can enable this service by running: <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">configure</span> <span class="pre">set</span> <span class="pre">preview.cloudfront</span> <span class="pre">true</span></tt></p>
+</div>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  list-distributions-by-web-acl-id
+[--marker &lt;value&gt;]
+[--max-items &lt;value&gt;]
+--web-acl-id &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--marker" class="dashAnchor" id="marker"></a><span class="pre">--marker</span></tt> (string)
+Use Marker and MaxItems to control pagination of results. If you have more than MaxItems distributions that satisfy the request, the response includes a NextMarker element. To get the next page of results, submit another request. For the value of Marker, specify the value of NextMarker from the last response. (For the first request, omit Marker.)</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-items" class="dashAnchor" id="max-items"></a><span class="pre">--max-items</span></tt> (string)
+The maximum number of distributions that you want CloudFront to return in the response body. The maximum and default values are both 100.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--web-acl-id" class="dashAnchor" id="web-acl-id"></a><span class="pre">--web-acl-id</span></tt> (string)
+The Id of the AWS WAF web ACL for which you want to list the associated distributions. If you specify "null" for the Id, the request returns a list of the distributions that aren't associated with a web ACL.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON marker provided. The JSON marker follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>DistributionList -&gt; (structure)</p>
+<blockquote>
+<div><p>The DistributionList type.</p>
+<p>Marker -&gt; (string)</p>
+<blockquote>
+<div>The value you provided for the Marker request parameter.</div></blockquote>
+<p>NextMarker -&gt; (string)</p>
+<blockquote>
+<div>If IsTruncated is true, this element is present and contains the value you can use for the Marker request parameter to continue listing your distributions where they left off.</div></blockquote>
+<p>MaxItems -&gt; (integer)</p>
+<blockquote>
+<div>The value you provided for the MaxItems request parameter.</div></blockquote>
+<p>IsTruncated -&gt; (boolean)</p>
+<blockquote>
+<div>A flag that indicates whether more distributions remain to be listed. If your results were truncated, you can make a follow-up pagination request using the Marker request parameter to retrieve more distributions in the list.</div></blockquote>
+<p>Quantity -&gt; (integer)</p>
+<blockquote>
+<div>The number of distributions that were created by the current AWS account.</div></blockquote>
+<p>Items -&gt; (list)</p>
+<blockquote>
+<div><p>A complex type that contains one DistributionSummary element for each distribution that was created by the current AWS account.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A summary of the information for an Amazon CloudFront distribution.</p>
+<p>Id -&gt; (string)</p>
+<blockquote>
+<div>The identifier for the distribution. For example: EDFDVBD632BHDS5.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>This response element indicates the current status of the distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.</div></blockquote>
+<p>LastModifiedTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time the distribution was last modified.</div></blockquote>
+<p>DomainName -&gt; (string)</p>
+<blockquote>
+<div>The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.</div></blockquote>
+<p>Aliases -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.</p>
+<p>Quantity -&gt; (integer)</p>
+<blockquote>
+<div>The number of CNAMEs, if any, for this distribution.</div></blockquote>
+<p>Items -&gt; (list)</p>
+<blockquote>
+<div><p>Optional: A complex type that contains CNAME elements, if any, for this distribution. If Quantity is 0, you can omit Items.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+<p>Origins -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that contains information about origins for this distribution.</p>
+<p>Quantity -&gt; (integer)</p>
+<blockquote>
+<div>The number of origins for this distribution.</div></blockquote>
+<p>Items -&gt; (list)</p>
+<blockquote>
+<div><p>A complex type that contains origins for this distribution.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A complex type that describes the Amazon S3 bucket or the HTTP server (for example, a web server) from which CloudFront gets your files.You must create at least one origin.</p>
+<p>Id -&gt; (string)</p>
+<blockquote>
+<div>A unique identifier for the origin. The value of Id must be unique within the distribution. You use the value of Id when you create a cache behavior. The Id identifies the origin that CloudFront routes a request to when the request matches the path pattern for that cache behavior.</div></blockquote>
+<p>DomainName -&gt; (string)</p>
+<blockquote>
+<div>Amazon S3 origins: The DNS name of the Amazon S3 bucket from which you want CloudFront to get objects for this origin, for example, myawsbucket.s3.amazonaws.com. Custom origins: The DNS domain name for the HTTP server from which you want CloudFront to get objects for this origin, for example, www.example.com.</div></blockquote>
+<p>OriginPath -&gt; (string)</p>
+<blockquote>
+<div>An optional element that causes CloudFront to request your content from a directory in your Amazon S3 bucket or your custom origin. When you include the OriginPath element, specify the directory name, beginning with a /. CloudFront appends the directory name to the value of DomainName.</div></blockquote>
+<p>CustomHeaders -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that contains information about the custom headers associated with this Origin.</p>
+<p>Quantity -&gt; (integer)</p>
+<blockquote>
+<div>The number of custom headers for this origin.</div></blockquote>
+<p>Items -&gt; (list)</p>
+<blockquote>
+<div><p>A complex type that contains the custom headers for this Origin.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A complex type that contains information related to a Header</p>
+<p>HeaderName -&gt; (string)</p>
+<blockquote>
+<div>The header's name.</div></blockquote>
+<p>HeaderValue -&gt; (string)</p>
+<blockquote>
+<div>The header's value.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>S3OriginConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin, use the CustomOriginConfig element instead.</p>
+<p>OriginAccessIdentity -&gt; (string)</p>
+<blockquote>
+<div>The CloudFront origin access identity to associate with the origin. Use an origin access identity to configure the origin so that end users can only access objects in an Amazon S3 bucket through CloudFront. If you want end users to be able to access objects using either the CloudFront URL or the Amazon S3 URL, specify an empty OriginAccessIdentity element. To delete the origin access identity from an existing distribution, update the distribution configuration and include an empty OriginAccessIdentity element. To replace the origin access identity, update the distribution configuration and specify the new origin access identity. Use the format origin-access-identity/cloudfront/Id where Id is the value that CloudFront returned in the Id element when you created the origin access identity.</div></blockquote>
+</div></blockquote>
+<p>CustomOriginConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that contains information about a custom origin. If the origin is an Amazon S3 bucket, use the S3OriginConfig element instead.</p>
+<p>HTTPPort -&gt; (integer)</p>
+<blockquote>
+<div>The HTTP port the custom origin listens on.</div></blockquote>
+<p>HTTPSPort -&gt; (integer)</p>
+<blockquote>
+<div>The HTTPS port the custom origin listens on.</div></blockquote>
+<p>OriginProtocolPolicy -&gt; (string)</p>
+<blockquote>
+<div>The origin protocol policy to apply to your origin.</div></blockquote>
+<p>OriginSslProtocols -&gt; (structure)</p>
+<blockquote>
+<div><p>The SSL/TLS protocols that you want CloudFront to use when communicating with your origin over HTTPS.</p>
+<p>Quantity -&gt; (integer)</p>
+<blockquote>
+<div>The number of SSL/TLS protocols that you want to allow CloudFront to use when establishing an HTTPS connection with this origin.</div></blockquote>
+<p>Items -&gt; (list)</p>
+<blockquote>
+<div><p>A complex type that contains one SslProtocol element for each SSL/TLS protocol that you want to allow CloudFront to use when establishing an HTTPS connection with this origin.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>DefaultCacheBehavior -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that describes the default cache behavior if you do not specify a CacheBehavior element or if files don't match any of the values of PathPattern in CacheBehavior elements.You must create exactly one default cache behavior.</p>
+<p>TargetOriginId -&gt; (string)</p>
+<blockquote>
+<div>The value of ID for the origin that you want CloudFront to route requests to when a request matches the path pattern either for a cache behavior or for the default cache behavior.</div></blockquote>
+<p>ForwardedValues -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that specifies how CloudFront handles query strings, cookies and headers.</p>
+<p>QueryString -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether you want CloudFront to forward query strings to the origin that is associated with this cache behavior. If so, specify true; if not, specify false.</div></blockquote>
+<p>Cookies -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that specifies how CloudFront handles cookies.</p>
+<p>Forward -&gt; (string)</p>
+<blockquote>
+<div>Use this element to specify whether you want CloudFront to forward cookies to the origin that is associated with this cache behavior. You can specify all, none or whitelist. If you choose All, CloudFront forwards all cookies regardless of how many your application uses.</div></blockquote>
+<p>WhitelistedNames -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that specifies the whitelisted cookies, if any, that you want CloudFront to forward to your origin that is associated with this cache behavior.</p>
+<p>Quantity -&gt; (integer)</p>
+<blockquote>
+<div>The number of whitelisted cookies for this cache behavior.</div></blockquote>
+<p>Items -&gt; (list)</p>
+<blockquote>
+<div><p>Optional: A complex type that contains whitelisted cookies for this cache behavior. If Quantity is 0, you can omit Items.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Headers -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that specifies the Headers, if any, that you want CloudFront to vary upon for this cache behavior.</p>
+<p>Quantity -&gt; (integer)</p>
+<blockquote>
+<div>The number of different headers that you want CloudFront to forward to the origin and to vary on for this cache behavior. The maximum number of headers that you can specify by name is 10. If you want CloudFront to forward all headers to the origin and vary on all of them, specify 1 for Quantity and * for Name. If you don't want CloudFront to forward any additional headers to the origin or to vary on any headers, specify 0 for Quantity and omit Items.</div></blockquote>
+<p>Items -&gt; (list)</p>
+<blockquote>
+<div><p>Optional: A complex type that contains a Name element for each header that you want CloudFront to forward to the origin and to vary on for this cache behavior. If Quantity is 0, omit Items.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>TrustedSigners -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content. If you want to require signed URLs in requests for objects in the target origin that match the PathPattern for this cache behavior, specify true for Enabled, and specify the applicable values for Quantity and Items. For more information, go to Using a Signed URL to Serve Private Content in the Amazon CloudFront Developer Guide. If you don't want to require signed URLs in requests for objects that match PathPattern, specify false for Enabled and 0 for Quantity. Omit Items. To add, change, or remove one or more trusted signers, change Enabled to true (if it's currently false), change Quantity as applicable, and specify all of the trusted signers that you want to include in the updated distribution.</p>
+<p>Enabled -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether you want to require end users to use signed URLs to access the files specified by PathPattern and TargetOriginId.</div></blockquote>
+<p>Quantity -&gt; (integer)</p>
+<blockquote>
+<div>The number of trusted signers for this cache behavior.</div></blockquote>
+<p>Items -&gt; (list)</p>
+<blockquote>
+<div><p>Optional: A complex type that contains trusted signers for this cache behavior. If Quantity is 0, you can omit Items.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+<p>ViewerProtocolPolicy -&gt; (string)</p>
+<blockquote>
+<div>Use this element to specify the protocol that users can use to access the files in the origin specified by TargetOriginId when a request matches the path pattern in PathPattern. If you want CloudFront to allow end users to use any available protocol, specify allow-all. If you want CloudFront to require HTTPS, specify https. If you want CloudFront to respond to an HTTP request with an HTTP status code of 301 (Moved Permanently) and the HTTPS URL, specify redirect-to-https. The viewer then resubmits the request using the HTTPS URL.</div></blockquote>
+<p>MinTTL -&gt; (long)</p>
+<blockquote>
+<div>The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront queries your origin to see whether the object has been updated.You can specify a value from 0 to 3,153,600,000 seconds (100 years).</div></blockquote>
+<p>AllowedMethods -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin. There are three choices: - CloudFront forwards only GET and HEAD requests. - CloudFront forwards only GET, HEAD and OPTIONS requests. - CloudFront forwards GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests. If you pick the third choice, you may need to restrict access to your Amazon S3 bucket or to your custom origin so users can't perform operations that you don't want them to. For example, you may not want users to have permission to delete objects from your origin.</p>
+<p>Quantity -&gt; (integer)</p>
+<blockquote>
+<div>The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for GET and HEAD requests), 3 (for GET, HEAD and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests).</div></blockquote>
+<p>Items -&gt; (list)</p>
+<blockquote>
+<div><p>A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>CachedMethods -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that controls whether CloudFront caches the response to requests using the specified HTTP methods. There are two choices: - CloudFront caches responses to GET and HEAD requests. - CloudFront caches responses to GET, HEAD, and OPTIONS requests. If you pick the second choice for your S3 Origin, you may need to forward Access-Control-Request-Method, Access-Control-Request-Headers and Origin headers for the responses to be cached correctly.</p>
+<p>Quantity -&gt; (integer)</p>
+<blockquote>
+<div>The number of HTTP methods for which you want CloudFront to cache responses. Valid values are 2 (for caching responses to GET and HEAD requests) and 3 (for caching responses to GET, HEAD, and OPTIONS requests).</div></blockquote>
+<p>Items -&gt; (list)</p>
+<blockquote>
+<div><p>A complex type that contains the HTTP methods that you want CloudFront to cache responses to.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>SmoothStreaming -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether you want to distribute media files in Microsoft Smooth Streaming format using the origin that is associated with this cache behavior. If so, specify true; if not, specify false.</div></blockquote>
+<p>DefaultTTL -&gt; (long)</p>
+<blockquote>
+<div>If you don't configure your origin to add a Cache-Control max-age directive or an Expires header, DefaultTTL is the default amount of time (in seconds) that an object is in a CloudFront cache before CloudFront forwards another request to your origin to determine whether the object has been updated. The value that you specify applies only when your origin does not add HTTP headers such as Cache-Control max-age, Cache-Control s-maxage, and Expires to objects. You can specify a value from 0 to 3,153,600,000 seconds (100 years).</div></blockquote>
+<p>MaxTTL -&gt; (long)</p>
+<blockquote>
+<div>The maximum amount of time (in seconds) that an object is in a CloudFront cache before CloudFront forwards another request to your origin to determine whether the object has been updated. The value that you specify applies only when your origin adds HTTP headers such as Cache-Control max-age, Cache-Control s-maxage, and Expires to objects. You can specify a value from 0 to 3,153,600,000 seconds (100 years).</div></blockquote>
+<p>Compress -&gt; (boolean)</p>
+<blockquote>
+<div>Whether you want CloudFront to automatically compress content for web requests that include Accept-Encoding: gzip in the request header. If so, specify true; if not, specify false. CloudFront compresses files larger than 1000 bytes and less than 1 megabyte for both Amazon S3 and custom origins. When a CloudFront edge location is unusually busy, some files might not be compressed. The value of the Content-Type header must be on the list of file types that CloudFront will compress. For the current list, see <a class="reference external" href="http://docs.aws.amazon.com/console/cloudfront/compressed-content">Serving Compressed Content</a> in the Amazon CloudFront Developer Guide. If you configure CloudFront to compress content, CloudFront removes the ETag response header from the objects that it compresses. The ETag header indicates that the version in a CloudFront edge cache is identical to the version on the origin server, but after compression the two versions are no longer identical. As a result, for compressed objects, CloudFront can't use the ETag header to determine whether an expired object in the CloudFront edge cache is still the latest version.</div></blockquote>
+</div></blockquote>
+<p>CacheBehaviors -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that contains zero or more CacheBehavior elements.</p>
+<p>Quantity -&gt; (integer)</p>
+<blockquote>
+<div>The number of cache behaviors for this distribution.</div></blockquote>
+<p>Items -&gt; (list)</p>
+<blockquote>
+<div><p>Optional: A complex type that contains cache behaviors for this distribution. If Quantity is 0, you can omit Items.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A complex type that describes how CloudFront processes requests. You can create up to 10 cache behaviors.You must create at least as many cache behaviors (including the default cache behavior) as you have origins if you want CloudFront to distribute objects from all of the origins. Each cache behavior specifies the one origin from which you want CloudFront to get objects. If you have two origins and only the default cache behavior, the default cache behavior will cause CloudFront to get objects from one of the origins, but the other origin will never be used. If you don't want to specify any cache behaviors, include only an empty CacheBehaviors element. Don't include an empty CacheBehavior element, or CloudFront returns a MalformedXML error. To delete all cache behaviors in an existing distribution, update the distribution configuration and include only an empty CacheBehaviors element. To add, change, or remove one or more cache behaviors, update the distribution configuration and specify all of the cache behaviors that you want to include in the updated distribution.</p>
+<p>PathPattern -&gt; (string)</p>
+<blockquote>
+<div>The pattern (for example, images/<a href="#id1"><span class="problematic" id="id2">*</span></a>.jpg) that specifies which requests you want this cache behavior to apply to. When CloudFront receives an end-user request, the requested path is compared with path patterns in the order in which cache behaviors are listed in the distribution. The path pattern for the default cache behavior is * and cannot be changed. If the request for an object does not match the path pattern for any cache behaviors, CloudFront applies the behavior in the default cache behavior.</div></blockquote>
+<p>TargetOriginId -&gt; (string)</p>
+<blockquote>
+<div>The value of ID for the origin that you want CloudFront to route requests to when a request matches the path pattern either for a cache behavior or for the default cache behavior.</div></blockquote>
+<p>ForwardedValues -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that specifies how CloudFront handles query strings, cookies and headers.</p>
+<p>QueryString -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether you want CloudFront to forward query strings to the origin that is associated with this cache behavior. If so, specify true; if not, specify false.</div></blockquote>
+<p>Cookies -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that specifies how CloudFront handles cookies.</p>
+<p>Forward -&gt; (string)</p>
+<blockquote>
+<div>Use this element to specify whether you want CloudFront to forward cookies to the origin that is associated with this cache behavior. You can specify all, none or whitelist. If you choose All, CloudFront forwards all cookies regardless of how many your application uses.</div></blockquote>
+<p>WhitelistedNames -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that specifies the whitelisted cookies, if any, that you want CloudFront to forward to your origin that is associated with this cache behavior.</p>
+<p>Quantity -&gt; (integer)</p>
+<blockquote>
+<div>The number of whitelisted cookies for this cache behavior.</div></blockquote>
+<p>Items -&gt; (list)</p>
+<blockquote>
+<div><p>Optional: A complex type that contains whitelisted cookies for this cache behavior. If Quantity is 0, you can omit Items.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Headers -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that specifies the Headers, if any, that you want CloudFront to vary upon for this cache behavior.</p>
+<p>Quantity -&gt; (integer)</p>
+<blockquote>
+<div>The number of different headers that you want CloudFront to forward to the origin and to vary on for this cache behavior. The maximum number of headers that you can specify by name is 10. If you want CloudFront to forward all headers to the origin and vary on all of them, specify 1 for Quantity and * for Name. If you don't want CloudFront to forward any additional headers to the origin or to vary on any headers, specify 0 for Quantity and omit Items.</div></blockquote>
+<p>Items -&gt; (list)</p>
+<blockquote>
+<div><p>Optional: A complex type that contains a Name element for each header that you want CloudFront to forward to the origin and to vary on for this cache behavior. If Quantity is 0, omit Items.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>TrustedSigners -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content. If you want to require signed URLs in requests for objects in the target origin that match the PathPattern for this cache behavior, specify true for Enabled, and specify the applicable values for Quantity and Items. For more information, go to Using a Signed URL to Serve Private Content in the Amazon CloudFront Developer Guide. If you don't want to require signed URLs in requests for objects that match PathPattern, specify false for Enabled and 0 for Quantity. Omit Items. To add, change, or remove one or more trusted signers, change Enabled to true (if it's currently false), change Quantity as applicable, and specify all of the trusted signers that you want to include in the updated distribution.</p>
+<p>Enabled -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether you want to require end users to use signed URLs to access the files specified by PathPattern and TargetOriginId.</div></blockquote>
+<p>Quantity -&gt; (integer)</p>
+<blockquote>
+<div>The number of trusted signers for this cache behavior.</div></blockquote>
+<p>Items -&gt; (list)</p>
+<blockquote>
+<div><p>Optional: A complex type that contains trusted signers for this cache behavior. If Quantity is 0, you can omit Items.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+<p>ViewerProtocolPolicy -&gt; (string)</p>
+<blockquote>
+<div>Use this element to specify the protocol that users can use to access the files in the origin specified by TargetOriginId when a request matches the path pattern in PathPattern. If you want CloudFront to allow end users to use any available protocol, specify allow-all. If you want CloudFront to require HTTPS, specify https. If you want CloudFront to respond to an HTTP request with an HTTP status code of 301 (Moved Permanently) and the HTTPS URL, specify redirect-to-https. The viewer then resubmits the request using the HTTPS URL.</div></blockquote>
+<p>MinTTL -&gt; (long)</p>
+<blockquote>
+<div>The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront queries your origin to see whether the object has been updated.You can specify a value from 0 to 3,153,600,000 seconds (100 years).</div></blockquote>
+<p>AllowedMethods -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin. There are three choices: - CloudFront forwards only GET and HEAD requests. - CloudFront forwards only GET, HEAD and OPTIONS requests. - CloudFront forwards GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests. If you pick the third choice, you may need to restrict access to your Amazon S3 bucket or to your custom origin so users can't perform operations that you don't want them to. For example, you may not want users to have permission to delete objects from your origin.</p>
+<p>Quantity -&gt; (integer)</p>
+<blockquote>
+<div>The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for GET and HEAD requests), 3 (for GET, HEAD and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests).</div></blockquote>
+<p>Items -&gt; (list)</p>
+<blockquote>
+<div><p>A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>CachedMethods -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that controls whether CloudFront caches the response to requests using the specified HTTP methods. There are two choices: - CloudFront caches responses to GET and HEAD requests. - CloudFront caches responses to GET, HEAD, and OPTIONS requests. If you pick the second choice for your S3 Origin, you may need to forward Access-Control-Request-Method, Access-Control-Request-Headers and Origin headers for the responses to be cached correctly.</p>
+<p>Quantity -&gt; (integer)</p>
+<blockquote>
+<div>The number of HTTP methods for which you want CloudFront to cache responses. Valid values are 2 (for caching responses to GET and HEAD requests) and 3 (for caching responses to GET, HEAD, and OPTIONS requests).</div></blockquote>
+<p>Items -&gt; (list)</p>
+<blockquote>
+<div><p>A complex type that contains the HTTP methods that you want CloudFront to cache responses to.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>SmoothStreaming -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether you want to distribute media files in Microsoft Smooth Streaming format using the origin that is associated with this cache behavior. If so, specify true; if not, specify false.</div></blockquote>
+<p>DefaultTTL -&gt; (long)</p>
+<blockquote>
+<div>If you don't configure your origin to add a Cache-Control max-age directive or an Expires header, DefaultTTL is the default amount of time (in seconds) that an object is in a CloudFront cache before CloudFront forwards another request to your origin to determine whether the object has been updated. The value that you specify applies only when your origin does not add HTTP headers such as Cache-Control max-age, Cache-Control s-maxage, and Expires to objects. You can specify a value from 0 to 3,153,600,000 seconds (100 years).</div></blockquote>
+<p>MaxTTL -&gt; (long)</p>
+<blockquote>
+<div>The maximum amount of time (in seconds) that an object is in a CloudFront cache before CloudFront forwards another request to your origin to determine whether the object has been updated. The value that you specify applies only when your origin adds HTTP headers such as Cache-Control max-age, Cache-Control s-maxage, and Expires to objects. You can specify a value from 0 to 3,153,600,000 seconds (100 years).</div></blockquote>
+<p>Compress -&gt; (boolean)</p>
+<blockquote>
+<div>Whether you want CloudFront to automatically compress content for web requests that include Accept-Encoding: gzip in the request header. If so, specify true; if not, specify false. CloudFront compresses files larger than 1000 bytes and less than 1 megabyte for both Amazon S3 and custom origins. When a CloudFront edge location is unusually busy, some files might not be compressed. The value of the Content-Type header must be on the list of file types that CloudFront will compress. For the current list, see <a class="reference external" href="http://docs.aws.amazon.com/console/cloudfront/compressed-content">Serving Compressed Content</a> in the Amazon CloudFront Developer Guide. If you configure CloudFront to compress content, CloudFront removes the ETag response header from the objects that it compresses. The ETag header indicates that the version in a CloudFront edge cache is identical to the version on the origin server, but after compression the two versions are no longer identical. As a result, for compressed objects, CloudFront can't use the ETag header to determine whether an expired object in the CloudFront edge cache is still the latest version.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>CustomErrorResponses -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that contains zero or more CustomErrorResponses elements.</p>
+<p>Quantity -&gt; (integer)</p>
+<blockquote>
+<div>The number of custom error responses for this distribution.</div></blockquote>
+<p>Items -&gt; (list)</p>
+<blockquote>
+<div><p>Optional: A complex type that contains custom error responses for this distribution. If Quantity is 0, you can omit Items.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A complex type that describes how you'd prefer CloudFront to respond to requests that result in either a 4xx or 5xx response. You can control whether a custom error page should be displayed, what the desired response code should be for this error page and how long should the error response be cached by CloudFront. If you don't want to specify any custom error responses, include only an empty CustomErrorResponses element. To delete all custom error responses in an existing distribution, update the distribution configuration and include only an empty CustomErrorResponses element. To add, change, or remove one or more custom error responses, update the distribution configuration and specify all of the custom error responses that you want to include in the updated distribution.</p>
+<p>ErrorCode -&gt; (integer)</p>
+<blockquote>
+<div>The 4xx or 5xx HTTP status code that you want to customize. For a list of HTTP status codes that you can customize, see CloudFront documentation.</div></blockquote>
+<p>ResponsePagePath -&gt; (string)</p>
+<blockquote>
+<div>The path of the custom error page (for example, /custom_404.html). The path is relative to the distribution and must begin with a slash (/). If the path includes any non-ASCII characters or unsafe characters as defined in RFC 1783 (<a class="reference external" href="http://www.ietf.org/rfc/rfc1738.txt">http://www.ietf.org/rfc/rfc1738.txt</a>), URL encode those characters. Do not URL encode any other characters in the path, or CloudFront will not return the custom error page to the viewer.</div></blockquote>
+<p>ResponseCode -&gt; (string)</p>
+<blockquote>
+<div>The HTTP status code that you want CloudFront to return with the custom error page to the viewer. For a list of HTTP status codes that you can replace, see CloudFront Documentation.</div></blockquote>
+<p>ErrorCachingMinTTL -&gt; (long)</p>
+<blockquote>
+<div>The minimum amount of time you want HTTP error codes to stay in CloudFront caches before CloudFront queries your origin to see whether the object has been updated. You can specify a value from 0 to 31,536,000.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Comment -&gt; (string)</p>
+<blockquote>
+<div>The comment originally specified when this distribution was created.</div></blockquote>
+<p>PriceClass -&gt; (string)</p>
+<p>Enabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the distribution is enabled to accept end user requests for content.</div></blockquote>
+<p>ViewerCertificate -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that contains information about viewer certificates for this distribution.</p>
+<p>CloudFrontDefaultCertificate -&gt; (boolean)</p>
+<blockquote>
+<div>If you want viewers to use HTTPS to request your objects and you're using the CloudFront domain name of your distribution in your object URLs (for example, <a class="reference external" href="https://d111111abcdef8.cloudfront.net/logo.jpg">https://d111111abcdef8.cloudfront.net/logo.jpg</a>), set to true. Omit this value if you are setting an ACMCertificateArn or IAMCertificateId.</div></blockquote>
+<p>IAMCertificateId -&gt; (string)</p>
+<blockquote>
+<div>If you want viewers to use HTTPS to request your objects and you're using an alternate domain name in your object URLs (for example, <a class="reference external" href="https://example.com/logo.jpg">https://example.com/logo.jpg</a>), specify the IAM certificate identifier of the custom viewer certificate for this distribution. Specify either this value, ACMCertificateArn, or CloudFrontDefaultCertificate.</div></blockquote>
+<p>ACMCertificateArn -&gt; (string)</p>
+<blockquote>
+<div>If you want viewers to use HTTPS to request your objects and you're using an alternate domain name in your object URLs (for example, <a class="reference external" href="https://example.com/logo.jpg">https://example.com/logo.jpg</a>), specify the ACM certificate ARN of the custom viewer certificate for this distribution. Specify either this value, IAMCertificateId, or CloudFrontDefaultCertificate.</div></blockquote>
+<p>SSLSupportMethod -&gt; (string)</p>
+<blockquote>
+<div>If you specify a value for IAMCertificateId, you must also specify how you want CloudFront to serve HTTPS requests. Valid values are vip and sni-only. If you specify vip, CloudFront uses dedicated IP addresses for your content and can respond to HTTPS requests from any viewer. However, you must request permission to use this feature, and you incur additional monthly charges. If you specify sni-only, CloudFront can only respond to HTTPS requests from viewers that support Server Name Indication (SNI). All modern browsers support SNI, but some browsers still in use don't support SNI. Do not specify a value for SSLSupportMethod if you specified true for CloudFrontDefaultCertificate.</div></blockquote>
+<p>MinimumProtocolVersion -&gt; (string)</p>
+<blockquote>
+<div>Specify the minimum version of the SSL protocol that you want CloudFront to use, SSLv3 or TLSv1, for HTTPS connections. CloudFront will serve your objects only to browsers or devices that support at least the SSL version that you specify. The TLSv1 protocol is more secure, so we recommend that you specify SSLv3 only if your users are using browsers or devices that don't support TLSv1. If you're using a custom certificate (if you specify a value for IAMCertificateId) and if you're using dedicated IP (if you specify vip for SSLSupportMethod), you can choose SSLv3 or TLSv1 as the MinimumProtocolVersion. If you're using a custom certificate (if you specify a value for IAMCertificateId) and if you're using SNI (if you specify sni-only for SSLSupportMethod), you must specify TLSv1 for MinimumProtocolVersion.</div></blockquote>
+<p>Certificate -&gt; (string)</p>
+<blockquote>
+<div>Note: this field is deprecated. Please use one of [ACMCertificateArn, IAMCertificateId, CloudFrontDefaultCertificate].</div></blockquote>
+<p>CertificateSource -&gt; (string)</p>
+<blockquote>
+<div>Note: this field is deprecated. Please use one of [ACMCertificateArn, IAMCertificateId, CloudFrontDefaultCertificate].</div></blockquote>
+</div></blockquote>
+<p>Restrictions -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that identifies ways in which you want to restrict distribution of your content.</p>
+<p>GeoRestriction -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that controls the countries in which your content is distributed. For more information about geo restriction, go to Customizing Error Responses in the Amazon CloudFront Developer Guide. CloudFront determines the location of your users using MaxMind GeoIP databases. For information about the accuracy of these databases, see How accurate are your GeoIP databases? on the MaxMind website.</p>
+<p>RestrictionType -&gt; (string)</p>
+<blockquote>
+<div>The method that you want to use to restrict distribution of your content by country: - none: No geo restriction is enabled, meaning access to content is not restricted by client geo location. - blacklist: The Location elements specify the countries in which you do not want CloudFront to distribute your content. - whitelist: The Location elements specify the countries in which you want CloudFront to distribute your content.</div></blockquote>
+<p>Quantity -&gt; (integer)</p>
+<blockquote>
+<div>When geo restriction is enabled, this is the number of countries in your whitelist or blacklist. Otherwise, when it is not enabled, Quantity is 0, and you can omit Items.</div></blockquote>
+<p>Items -&gt; (list)</p>
+<blockquote>
+<div><p>A complex type that contains a Location element for each country in which you want CloudFront either to distribute your content (whitelist) or not distribute your content (blacklist). The Location element is a two-letter, uppercase country code for a country that you want to include in your blacklist or whitelist. Include one Location element for each country. CloudFront and MaxMind both use ISO 3166 country codes. For the current list of countries and the corresponding codes, see ISO 3166-1-alpha-2 code on the International Organization for Standardization website. You can also refer to the country list in the CloudFront console, which includes both country names and codes.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>WebACLId -&gt; (string)</p>
+<blockquote>
+<div>The Web ACL Id (if any) associated with the distribution.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="list-distributions.html" title="previous chapter (use the left arrow)">&#8592; list-distributions</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="list-invalidations.html" title="next chapter (use the right arrow)">list-invalidations &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="list-invalidations.html" title="list-invalidations">next</a> |</li>
+        <li class="right">
+          <a href="list-distributions.html" title="list-distributions">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">cloudfront</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudfront/list-distributions-by-web-acl-id.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:59 GMT -->
+</html>

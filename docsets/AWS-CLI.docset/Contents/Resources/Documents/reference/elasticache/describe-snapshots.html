@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elasticache/describe-snapshots.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:16 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-snapshots &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="elasticache" href="index.html" />
+    <link rel="next" title="list-allowed-node-type-modifications" href="list-allowed-node-type-modifications.html" />
+    <link rel="prev" title="describe-reserved-cache-nodes-offerings" href="describe-reserved-cache-nodes-offerings.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="list-allowed-node-type-modifications.html" title="list-allowed-node-type-modifications" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="describe-reserved-cache-nodes-offerings.html" title="describe-reserved-cache-nodes-offerings" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">elasticache</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="describe-reserved-cache-nodes-offerings.html" title="previous chapter (use the left arrow)">&#8592; describe-reserved-cache-nodes-offerings</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="list-allowed-node-type-modifications.html" title="next chapter (use the right arrow)">list-allowed-node-type-modifications &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-snapshots</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/elasticache/describe-snapshots">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-elasticache"><em>elasticache</em></a> ]</p>
+<div class="section" id="describe-snapshots">
+<span id="cli-aws-elasticache-describe-snapshots"></span><h1>describe-snapshots<a name="//apple_ref/cpp/Command/aws elasticache describe-snapshots" class="dashAnchor" id="aws elasticache describe-snapshots"></a><a class="headerlink" href="#describe-snapshots" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>The <em>describe-snapshots</em> action returns information about cache cluster snapshots. By default, <em>describe-snapshots</em> lists all of your snapshots; it can optionally describe a single snapshot, or just the snapshots associated with a particular cache cluster.</p>
+<p><tt class="docutils literal"><span class="pre">describe-snapshots</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">Snapshots</span></tt></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  describe-snapshots
+[--cache-cluster-id &lt;value&gt;]
+[--snapshot-name &lt;value&gt;]
+[--snapshot-source &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--starting-token &lt;value&gt;]
+[--page-size &lt;value&gt;]
+[--max-items &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cache-cluster-id" class="dashAnchor" id="cache-cluster-id"></a><span class="pre">--cache-cluster-id</span></tt> (string)</p>
+<blockquote>
+<div>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cache cluster will be described.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--snapshot-name" class="dashAnchor" id="snapshot-name"></a><span class="pre">--snapshot-name</span></tt> (string)</p>
+<blockquote>
+<div>A user-supplied name of the snapshot. If this parameter is specified, only this snapshot will be described.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--snapshot-source" class="dashAnchor" id="snapshot-source"></a><span class="pre">--snapshot-source</span></tt> (string)</p>
+<blockquote>
+<div>If set to <tt class="docutils literal"><span class="pre">system</span></tt> , the output shows snapshots that were automatically created by ElastiCache. If set to <tt class="docutils literal"><span class="pre">user</span></tt> the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--starting-token" class="dashAnchor" id="starting-token"></a><span class="pre">--starting-token</span></tt> (string)</p>
+<blockquote>
+<div>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--page-size" class="dashAnchor" id="page-size"></a><span class="pre">--page-size</span></tt> (integer)</p>
+<blockquote>
+<div>The size of each page.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-items" class="dashAnchor" id="max-items"></a><span class="pre">--max-items</span></tt> (integer)</p>
+<blockquote>
+<div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">NextToken</span></tt> will be provided in the output that you can use to resume pagination. This <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element should <strong>not</strong> be used directly outside of the AWS CLI.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Marker -&gt; (string)</p>
+<blockquote>
+<div>An optional marker returned from a prior request. Use this marker for pagination of results from this action. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <em>MaxRecords</em> .</div></blockquote>
+<p>Snapshots -&gt; (list)</p>
+<blockquote>
+<div><p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents a copy of an entire cache cluster as of the time when the snapshot was taken.</p>
+<p>SnapshotName -&gt; (string)</p>
+<blockquote>
+<div>The name of a snapshot. For an automatic snapshot, the name is system-generated; for a manual snapshot, this is the user-provided name.</div></blockquote>
+<p>CacheClusterId -&gt; (string)</p>
+<blockquote>
+<div>The user-supplied identifier of the source cache cluster.</div></blockquote>
+<p>SnapshotStatus -&gt; (string)</p>
+<blockquote>
+<div>The status of the snapshot. Valid values: <tt class="docutils literal"><span class="pre">creating</span></tt> | <tt class="docutils literal"><span class="pre">available</span></tt> | <tt class="docutils literal"><span class="pre">restoring</span></tt> | <tt class="docutils literal"><span class="pre">copying</span></tt> | <tt class="docutils literal"><span class="pre">deleting</span></tt> .</div></blockquote>
+<p>SnapshotSource -&gt; (string)</p>
+<blockquote>
+<div>Indicates whether the snapshot is from an automatic backup (<tt class="docutils literal"><span class="pre">automated</span></tt> ) or was created manually (<tt class="docutils literal"><span class="pre">manual</span></tt> ).</div></blockquote>
+<p>CacheNodeType -&gt; (string)</p>
+<blockquote>
+<div><p>The name of the compute and memory capacity node type for the source cache cluster.</p>
+<p>Valid node types are as follows:</p>
+<ul class="simple">
+<li>General purpose:<ul>
+<li>Current generation: <tt class="docutils literal"><span class="pre">cache.t2.micro</span></tt> , <tt class="docutils literal"><span class="pre">cache.t2.small</span></tt> , <tt class="docutils literal"><span class="pre">cache.t2.medium</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.medium</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.large</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.2xlarge</span></tt></li>
+<li>Previous generation: <tt class="docutils literal"><span class="pre">cache.t1.micro</span></tt> , <tt class="docutils literal"><span class="pre">cache.m1.small</span></tt> , <tt class="docutils literal"><span class="pre">cache.m1.medium</span></tt> , <tt class="docutils literal"><span class="pre">cache.m1.large</span></tt> , <tt class="docutils literal"><span class="pre">cache.m1.xlarge</span></tt></li>
+</ul>
+</li>
+<li>Compute optimized: <tt class="docutils literal"><span class="pre">cache.c1.xlarge</span></tt></li>
+<li>Memory optimized:<ul>
+<li>Current generation: <tt class="docutils literal"><span class="pre">cache.r3.large</span></tt> , <tt class="docutils literal"><span class="pre">cache.r3.xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.r3.2xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.r3.4xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.r3.8xlarge</span></tt></li>
+<li>Previous generation: <tt class="docutils literal"><span class="pre">cache.m2.xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.m2.2xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.m2.4xlarge</span></tt></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<div><strong>Notes:</strong></div></blockquote>
+<ul class="simple">
+<li>All t2 instances are created in an Amazon Virtual Private Cloud (VPC).</li>
+<li>Redis backup/restore is not supported for t2 instances.</li>
+<li>Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.</li>
+</ul>
+<p>For a complete listing of cache node types and specifications, see <a class="reference external" href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a class="reference external" href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache Node Type-Specific Parameters for Memcached</a> or <a class="reference external" href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache Node Type-Specific Parameters for Redis</a> .</p>
+</div></blockquote>
+<p>Engine -&gt; (string)</p>
+<blockquote>
+<div>The name of the cache engine (<em>memcached</em> or <em>redis</em> ) used by the source cache cluster.</div></blockquote>
+<p>EngineVersion -&gt; (string)</p>
+<blockquote>
+<div>The version of the cache engine version that is used by the source cache cluster.</div></blockquote>
+<p>NumCacheNodes -&gt; (integer)</p>
+<blockquote>
+<div><p>The number of cache nodes in the source cache cluster.</p>
+<p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 20.</p>
+</div></blockquote>
+<p>PreferredAvailabilityZone -&gt; (string)</p>
+<blockquote>
+<div>The name of the Availability Zone in which the source cache cluster is located.</div></blockquote>
+<p>CacheClusterCreateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time when the source cache cluster was created.</div></blockquote>
+<p>PreferredMaintenanceWindow -&gt; (string)</p>
+<blockquote>
+<div><p>Specifies the weekly time range during which maintenance on the cache cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <tt class="docutils literal"><span class="pre">ddd</span></tt> are:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">sun</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">mon</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">tue</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">wed</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">thu</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">fri</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">sat</span></tt></li>
+</ul>
+<p>Example: <tt class="docutils literal"><span class="pre">sun:05:00-sun:09:00</span></tt></p>
+</div></blockquote>
+<p>TopicArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) for the topic used by the source cache cluster for publishing notifications.</div></blockquote>
+<p>Port -&gt; (integer)</p>
+<blockquote>
+<div>The port number used by each cache nodes in the source cache cluster.</div></blockquote>
+<p>CacheParameterGroupName -&gt; (string)</p>
+<blockquote>
+<div>The cache parameter group that is associated with the source cache cluster.</div></blockquote>
+<p>CacheSubnetGroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the cache subnet group associated with the source cache cluster.</div></blockquote>
+<p>VpcId -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group for the source cache cluster.</div></blockquote>
+<p>AutoMinorVersionUpgrade -&gt; (boolean)</p>
+<blockquote>
+<div>This parameter is currently disabled.</div></blockquote>
+<p>SnapshotRetentionLimit -&gt; (integer)</p>
+<blockquote>
+<div><p>For an automatic snapshot, the number of days for which ElastiCache will retain the snapshot before deleting it.</p>
+<p>For manual snapshots, this field reflects the <em>SnapshotRetentionLimit</em> for the source cache cluster when the snapshot was created. This field is otherwise ignored: Manual snapshots do not expire, and can only be deleted using the <em>delete-snapshot</em> action.</p>
+<blockquote>
+<div><strong>Important</strong> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</div></blockquote>
+</div></blockquote>
+<p>SnapshotWindow -&gt; (string)</p>
+<blockquote>
+<div>The daily time range during which ElastiCache takes daily snapshots of the source cache cluster.</div></blockquote>
+<p>NodeSnapshots -&gt; (list)</p>
+<blockquote>
+<div><p>A list of the cache nodes in the source cache cluster.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents an individual cache node in a snapshot of a cache cluster.</p>
+<p>CacheNodeId -&gt; (string)</p>
+<blockquote>
+<div>The cache node identifier for the node in the source cache cluster.</div></blockquote>
+<p>CacheSize -&gt; (string)</p>
+<blockquote>
+<div>The size of the cache on the source cache node.</div></blockquote>
+<p>CacheNodeCreateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time when the cache node was created in the source cache cluster.</div></blockquote>
+<p>SnapshotCreateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time when the source node's metadata and cache data set was obtained for the snapshot.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="describe-reserved-cache-nodes-offerings.html" title="previous chapter (use the left arrow)">&#8592; describe-reserved-cache-nodes-offerings</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="list-allowed-node-type-modifications.html" title="next chapter (use the right arrow)">list-allowed-node-type-modifications &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="list-allowed-node-type-modifications.html" title="list-allowed-node-type-modifications">next</a> |</li>
+        <li class="right">
+          <a href="describe-reserved-cache-nodes-offerings.html" title="describe-reserved-cache-nodes-offerings">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">elasticache</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elasticache/describe-snapshots.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:16 GMT -->
+</html>

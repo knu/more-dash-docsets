@@ -199,7 +199,7 @@ var Documentation = {
       var src = $(this).attr('src');
       var idnum = $(this).attr('id').substr(7);
       $('tr.cg-' + idnum).toggle();
-      if (src.substr(-9) == 'minus.png')
+      if (src.substr(-9) == 'minus.html')
         $(this).attr('src', src.substr(0, src.length-9) + 'plus.png');
       else
         $(this).attr('src', src.substr(0, src.length-8) + 'minus.png');
@@ -234,8 +234,8 @@ var Documentation = {
       if (this == '..')
         parts.pop();
     });
-    var url = parts.join('/');
-    return path.substring(url.lastIndexOf('/') + 1, path.length - 1);
+    var url = parts.join('http://docs.aws.amazon.com/');
+    return path.substring(url.lastIndexOf('http://docs.aws.amazon.com/') + 1, path.length - 1);
   }
 };
 

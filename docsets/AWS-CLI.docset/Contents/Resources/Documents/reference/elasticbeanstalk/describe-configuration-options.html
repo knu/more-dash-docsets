@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-configuration-options.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:18 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>describe-configuration-options &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>describe-configuration-options &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="elasticbeanstalk" href="index.html" />
     <link rel="next" title="describe-configuration-settings" href="describe-configuration-settings.html" />
     <link rel="prev" title="describe-applications" href="describe-applications.html" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -61,7 +64,7 @@
           <a href="describe-configuration-settings.html" title="describe-configuration-settings" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="describe-applications.html" title="describe-applications" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">elasticbeanstalk</a> &#187;</li> 
       </ul>
@@ -82,23 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">describe-configuration-options</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,32 +112,39 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/elasticbeanstalk/describe-configuration-options">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/elasticbeanstalk/describe-configuration-options">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>elasticbeanstalk</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-elasticbeanstalk"><em>elasticbeanstalk</em></a> ]</p>
 <div class="section" id="describe-configuration-options">
-<h1>describe-configuration-options<a class="headerlink" href="#describe-configuration-options" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-elasticbeanstalk-describe-configuration-options"></span><h1>describe-configuration-options<a name="//apple_ref/cpp/Command/aws elasticbeanstalk describe-configuration-options" class="dashAnchor" id="aws elasticbeanstalk describe-configuration-options"></a><a class="headerlink" href="#describe-configuration-options" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
 <p>Describes the configuration options that are used in a particular configuration template or environment, or that a specified solution stack defines. The description includes the values the options, their default values, and an indication of the required action on a running environment if an option value is changed.</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  describe-configuration-options
 [--application-name &lt;value&gt;]
 [--template-name &lt;value&gt;]
 [--environment-name &lt;value&gt;]
 [--solution-stack-name &lt;value&gt;]
-[--options &lt;value&gt;]</pre>
+[--options &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--application-name" class="dashAnchor" id="application-name"></a><span class="pre">--application-name</span></tt> (string)</p>
 <blockquote>
 <div>The name of the application associated with the configuration template or environment. Only needed if you want to describe the configuration options associated with either the configuration template or environment.</div></blockquote>
@@ -149,18 +161,148 @@
 <blockquote>
 <div>If specified, restricts the descriptions to only the specified options.</div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><pre>  Key value pairs, with multiple values separated by a space.
---options Namespace=string,OptionName=string</pre>
+<div class="highlight-python"><pre>ResourceName=string,Namespace=string,OptionName=string ...</pre>
 </div>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><pre>[
   {
+    "ResourceName": "string",
     "Namespace": "string",
     "OptionName": "string"
   }
   ...
 ]</pre>
 </div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To view configuration options for an environment</strong></p>
+<p>The following command retrieves descriptions of all available configuration options for an environment named <tt class="docutils literal"><span class="pre">my-env</span></tt>:</p>
+<div class="highlight-python"><pre>aws elasticbeanstalk describe-configuration-options --environment-name my-env --application-name my-app</pre>
+</div>
+<p>Output (abbreviated):</p>
+<div class="highlight-python"><pre>{
+    "Options": [
+        {
+            "Name": "JVMOptions",
+            "UserDefined": false,
+            "DefaultValue": "Xms=256m,Xmx=256m,XX:MaxPermSize=64m,JVM Options=",
+            "ChangeSeverity": "RestartApplicationServer",
+            "Namespace": "aws:cloudformation:template:parameter",
+            "ValueType": "KeyValueList"
+        },
+        {
+            "Name": "Interval",
+            "UserDefined": false,
+            "DefaultValue": "30",
+            "ChangeSeverity": "NoInterruption",
+            "Namespace": "aws:elb:healthcheck",
+            "MaxValue": 300,
+            "MinValue": 5,
+            "ValueType": "Scalar"
+        },
+        ...
+        {
+            "Name": "LowerThreshold",
+            "UserDefined": false,
+            "DefaultValue": "2000000",
+            "ChangeSeverity": "NoInterruption",
+            "Namespace": "aws:autoscaling:trigger",
+            "MinValue": 0,
+            "ValueType": "Scalar"
+        },
+        {
+            "Name": "ListenerEnabled",
+            "UserDefined": false,
+            "DefaultValue": "true",
+            "ChangeSeverity": "Unknown",
+            "Namespace": "aws:elb:listener",
+            "ValueType": "Boolean"
+        }
+    ]
+}</pre>
+</div>
+<p>Available configuration options vary per platform and configuration version. For more information about namespaces and supported options, see <a class="reference external" href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the <em>AWS Elastic Beanstalk Developer Guide</em>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>SolutionStackName -&gt; (string)</p>
+<blockquote>
+<div>The name of the solution stack these configuration options belong to.</div></blockquote>
+<p>Options -&gt; (list)</p>
+<blockquote>
+<div><p>A list of  ConfigurationOptionDescription .</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the possible values for a configuration option.</p>
+<p>Namespace -&gt; (string)</p>
+<blockquote>
+<div>A unique namespace identifying the option's associated AWS resource.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the configuration option.</div></blockquote>
+<p>DefaultValue -&gt; (string)</p>
+<blockquote>
+<div>The default value for this configuration option.</div></blockquote>
+<p>ChangeSeverity -&gt; (string)</p>
+<blockquote>
+<div><p>An indication of which action is required if the value for this configuration option changes:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">NoInterruption</span></tt> : There is no interruption to the environment or application availability.</li>
+<li><tt class="docutils literal"><span class="pre">RestartEnvironment</span></tt> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</li>
+<li><tt class="docutils literal"><span class="pre">RestartApplicationServer</span></tt> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</li>
+</ul>
+</div></blockquote>
+<p>UserDefined -&gt; (boolean)</p>
+<blockquote>
+<div><p>An indication of whether the user defined this configuration option:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">true</span></tt> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <tt class="docutils literal"><span class="pre">Option</span> <span class="pre">to</span> <span class="pre">Remove</span></tt> when updating configuration settings.</li>
+<li><tt class="docutils literal"><span class="pre">false</span></tt> : This configuration was not defined by the user.</li>
+</ul>
+<p>Constraint: You can remove only <tt class="docutils literal"><span class="pre">UserDefined</span></tt> options from a configuration.</p>
+<p>Valid Values: <tt class="docutils literal"><span class="pre">true</span></tt> | <tt class="docutils literal"><span class="pre">false</span></tt></p>
+</div></blockquote>
+<p>ValueType -&gt; (string)</p>
+<blockquote>
+<div><p>An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Scalar</span></tt> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <tt class="docutils literal"><span class="pre">MIN/MAX/Regex</span></tt> constraints.</li>
+<li><tt class="docutils literal"><span class="pre">List</span></tt> : Values for this option are multiple selections from the possible values.</li>
+<li><tt class="docutils literal"><span class="pre">Boolean</span></tt> : Values for this option are either <tt class="docutils literal"><span class="pre">true</span></tt> or <tt class="docutils literal"><span class="pre">false</span></tt> .</li>
+<li><tt class="docutils literal"><span class="pre">Json</span></tt> : Values for this option are a JSON representation of a <tt class="docutils literal"><span class="pre">ConfigDocument</span></tt> .</li>
+</ul>
+</div></blockquote>
+<p>ValueOptions -&gt; (list)</p>
+<blockquote>
+<div><p>If specified, values for the configuration option are selected from this list.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>MinValue -&gt; (integer)</p>
+<blockquote>
+<div>If specified, the configuration option must be a numeric value greater than this value.</div></blockquote>
+<p>MaxValue -&gt; (integer)</p>
+<blockquote>
+<div>If specified, the configuration option must be a numeric value less than this value.</div></blockquote>
+<p>MaxLength -&gt; (integer)</p>
+<blockquote>
+<div>If specified, the configuration option must be a string value no longer than this value.</div></blockquote>
+<p>Regex -&gt; (structure)</p>
+<blockquote>
+<div><p>If specified, the configuration option must be a string value that satisfies this regular expression.</p>
+<p>Pattern -&gt; (string)</p>
+<blockquote>
+<div>The regular expression pattern that a string configuration option value with this restriction must match.</div></blockquote>
+<p>Label -&gt; (string)</p>
+<blockquote>
+<div>A unique name representing this regular expression.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
 </div>
 </div>
 
@@ -182,6 +324,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -191,35 +342,21 @@
           <a href="describe-configuration-settings.html" title="describe-configuration-settings">next</a> |</li>
         <li class="right">
           <a href="describe-applications.html" title="describe-applications">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">elasticbeanstalk</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'describe-applications.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'describe-configuration-settings.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-configuration-options.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:18 GMT -->
 </html>

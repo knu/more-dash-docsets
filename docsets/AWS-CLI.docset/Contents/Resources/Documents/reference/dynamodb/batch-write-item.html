@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/dynamodb/batch-write-item.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:01 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>batch-write-item &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>batch-write-item &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="dynamodb" href="index.html" />
     <link rel="next" title="create-table" href="create-table.html" />
     <link rel="prev" title="batch-get-item" href="batch-get-item.html" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -61,7 +64,7 @@
           <a href="create-table.html" title="create-table" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="batch-get-item.html" title="batch-get-item" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">dynamodb</a> &#187;</li> 
       </ul>
@@ -82,23 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">batch-write-item</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,54 +112,72 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/dynamodb/batch-write-item">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/dynamodb/batch-write-item">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>dynamodb</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-dynamodb"><em>dynamodb</em></a> ]</p>
 <div class="section" id="batch-write-item">
-<h1>batch-write-item<a class="headerlink" href="#batch-write-item" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-dynamodb-batch-write-item"></span><h1>batch-write-item<a name="//apple_ref/cpp/Command/aws dynamodb batch-write-item" class="dashAnchor" id="aws dynamodb batch-write-item"></a><a class="headerlink" href="#batch-write-item" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>The <em>batch-write-item</em> operation puts or deletes multiple items in one or more tables. A single call to <em>batch-write-item</em> can write up to 1 MB of data, which can comprise as many as 25 put or delete requests. Individual items to be written can be as large as 64 KB.</p>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>The <em>batch-write-item</em> operation puts or deletes multiple items in one or more tables. A single call to <em>batch-write-item</em> can write up to 16 MB of data, which can comprise as many as 25 put or delete requests. Individual items to be written can be as large as 400 KB.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last"><em>batch-write-item</em> cannot update items. To update items, use the <em>update-item</em> API.</p>
 </div>
 <p>The individual <em>put-item</em> and <em>delete-item</em> operations specified in <em>batch-write-item</em> are atomic; however <em>batch-write-item</em> as a whole is not. If any requested operations fail because the table's provisioned throughput is exceeded or an internal processing failure occurs, the failed operations are returned in the <em>UnprocessedItems</em> response parameter. You can investigate and optionally resend the requests. Typically, you would call <em>batch-write-item</em> in a loop. Each iteration would check for unprocessed items and submit a new <em>batch-write-item</em> request with those unprocessed items until all items have been processed.</p>
-<p>To write one item, you can use the <em>put-item</em> operation; to delete one item, you can use the <em>delete-item</em> operation.</p>
-<p>With <em>batch-write-item</em> , you can efficiently write or delete large amounts of data, such as from Amazon Elastic MapReduce (EMR), or copy data from another database into Amazon DynamoDB. In order to improve performance with these large-scale operations, <em>batch-write-item</em> does not behave in the same way as individual <em>put-item</em> and <em>delete-item</em> calls would For example, you cannot specify conditions on individual put and delete requests, and <em>batch-write-item</em> does not return deleted items in the response.</p>
-<p>If you use a programming language that supports concurrency, such as Java, you can use threads to write items in parallel. Your application must include the necessary logic to manage the threads.</p>
-<p>With languages that don't support threading, such as PHP, <em>batch-write-item</em> will write or delete the specified items one at a time. In both situations, <em>batch-write-item</em> provides an alternative where the API performs the specified put and delete operations in parallel, giving you the power of the thread pool approach without having to introduce complexity into your application.</p>
+<p>Note that if <em>none</em> of the items can be processed due to insufficient provisioned throughput on all of the tables in the request, then <em>batch-write-item</em> will return a <em>ProvisionedThroughputExceededException</em> .</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>If DynamoDB returns any unprocessed items, you should retry the batch operation on those items. However, <em>we strongly recommend that you use an exponential backoff algorithm</em> . If you retry the batch operation immediately, the underlying read or write requests can still fail due to throttling on the individual tables. If you delay the batch operation using exponential backoff, the individual requests in the batch are much more likely to succeed.</p>
+<p class="last">For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#BatchOperations">Batch Operations and Error Handling</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
+</div>
+<p>With <em>batch-write-item</em> , you can efficiently write or delete large amounts of data, such as from Amazon Elastic MapReduce (EMR), or copy data from another database into DynamoDB. In order to improve performance with these large-scale operations, <em>batch-write-item</em> does not behave in the same way as individual <em>put-item</em> and <em>delete-item</em> calls would. For example, you cannot specify conditions on individual put and delete requests, and <em>batch-write-item</em> does not return deleted items in the response.</p>
+<p>If you use a programming language that supports concurrency, you can use threads to write items in parallel. Your application must include the necessary logic to manage the threads. With languages that don't support threading, you must update or delete the specified items one at a time. In both situations, <em>batch-write-item</em> provides an alternative where the API performs the specified put and delete operations in parallel, giving you the power of the thread pool approach without having to introduce complexity into your application.</p>
 <p>Parallel processing reduces latency, but each specified put and delete request consumes the same number of write capacity units whether it is processed in parallel or not. Delete operations on nonexistent items consume one write capacity unit.</p>
-<p>If one or more of the following is true, Amazon DynamoDB rejects the entire batch write operation:</p>
+<p>If one or more of the following is true, DynamoDB rejects the entire batch write operation:</p>
 <ul class="simple">
 <li>One or more tables specified in the <em>batch-write-item</em> request does not exist.</li>
 <li>Primary key attributes specified on an item in the request do not match those in the corresponding table's primary key schema.</li>
 <li>You try to perform multiple operations on the same item in the same <em>batch-write-item</em> request. For example, you cannot put and delete the same item in the same <em>batch-write-item</em> request.</li>
-<li>The total request size exceeds 1 MB.</li>
-<li>Any individual item in a batch exceeds 64 KB.</li>
+<li>There are more than 25 requests in the batch.</li>
+<li>Any individual item in a batch exceeds 400 KB.</li>
+<li>The total request size exceeds 16 MB.</li>
 </ul>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  batch-write-item
 --request-items &lt;value&gt;
 [--return-consumed-capacity &lt;value&gt;]
-[--return-item-collection-metrics &lt;value&gt;]</pre>
+[--return-item-collection-metrics &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--request-items" class="dashAnchor" id="request-items"></a><span class="pre">--request-items</span></tt> (map)</p>
 <blockquote>
 <div><p>A map of one or more table names and, for each table, a list of operations to be performed (<em>DeleteRequest</em> or <em>PutRequest</em> ). Each element in the map consists of the following:</p>
 <ul class="simple">
-<li><em>DeleteRequest</em> - Perform a <em>delete-item</em> operation on the specified item. The item to be deleted is identified by a <em>Key</em> subelement:  *  <em>Key</em> - A map of primary key attribute values that uniquely identify the item. Each entry in this map consists of an attribute name and an attribute value.</li>
-<li><em>PutRequest</em> - Perform a <em>put-item</em> operation on the specified item. The item to be put is identified by an <em>Item</em> subelement:  *  <em>Item</em> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a <em>ValidationException</em> . If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</li>
+<li><em>DeleteRequest</em> - Perform a <em>delete-item</em> operation on the specified item. The item to be deleted is identified by a <em>Key</em> subelement:<ul>
+<li><em>Key</em> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this map consists of an attribute name and an attribute value. For each primary key, you must provide <em>all</em> of the key attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for <em>both</em> the partition key and the sort key.</li>
+</ul>
+</li>
+<li><em>PutRequest</em> - Perform a <em>put-item</em> operation on the specified item. The item to be put is identified by an <em>Item</em> subelement:<ul>
+<li><em>Item</em> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a <em>ValidationException</em> exception. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</li>
+</ul>
+</li>
 </ul>
 </div></blockquote>
 <p>JSON Syntax:</p>
@@ -167,7 +190,45 @@
                 "B": blob,
                 "SS": ["string", ...],
                 "NS": ["string", ...],
-                "BS": [blob, ...]
+                "BS": [blob, ...],
+                "M": {"string": {
+                      "S": "string",
+                      "N": "string",
+                      "B": blob,
+                      "SS": ["string", ...],
+                      "NS": ["string", ...],
+                      "BS": [blob, ...],
+                      "M": {"string": { ... recursive ... }
+                        ...},
+                      "L": [
+                        { ... recursive ... }
+                        ...
+                      ],
+                      "NULL": true|false,
+                      "BOOL": true|false
+                    }
+                  ...},
+                "L": [
+                  {
+                    "S": "string",
+                    "N": "string",
+                    "B": blob,
+                    "SS": ["string", ...],
+                    "NS": ["string", ...],
+                    "BS": [blob, ...],
+                    "M": {"string": { ... recursive ... }
+                      ...},
+                    "L": [
+                      { ... recursive ... }
+                      ...
+                    ],
+                    "NULL": true|false,
+                    "BOOL": true|false
+                  }
+                  ...
+                ],
+                "NULL": true|false,
+                "BOOL": true|false
               }
             ...}
         },
@@ -178,7 +239,45 @@
                 "B": blob,
                 "SS": ["string", ...],
                 "NS": ["string", ...],
-                "BS": [blob, ...]
+                "BS": [blob, ...],
+                "M": {"string": {
+                      "S": "string",
+                      "N": "string",
+                      "B": blob,
+                      "SS": ["string", ...],
+                      "NS": ["string", ...],
+                      "BS": [blob, ...],
+                      "M": {"string": { ... recursive ... }
+                        ...},
+                      "L": [
+                        { ... recursive ... }
+                        ...
+                      ],
+                      "NULL": true|false,
+                      "BOOL": true|false
+                    }
+                  ...},
+                "L": [
+                  {
+                    "S": "string",
+                    "N": "string",
+                    "B": blob,
+                    "SS": ["string", ...],
+                    "NS": ["string", ...],
+                    "BS": [blob, ...],
+                    "M": {"string": { ... recursive ... }
+                      ...},
+                    "L": [
+                      { ... recursive ... }
+                      ...
+                    ],
+                    "NULL": true|false,
+                    "BOOL": true|false
+                  }
+                  ...
+                ],
+                "NULL": true|false,
+                "BOOL": true|false
               }
             ...}
         }
@@ -189,10 +288,611 @@
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--return-consumed-capacity" class="dashAnchor" id="return-consumed-capacity"></a><span class="pre">--return-consumed-capacity</span></tt> (string)</p>
 <blockquote>
-<div>If set to <tt class="docutils literal"><span class="pre">TOTAL</span></tt>  , <em>ConsumedCapacity</em> is included in the response; if set to <tt class="docutils literal"><span class="pre">NONE</span></tt>  (the default), <em>ConsumedCapacity</em> is not included.</div></blockquote>
+<div><p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
+<ul class="simple">
+<li><em>INDEXES</em> - The response includes the aggregate <em>ConsumedCapacity</em> for the operation, together with <em>ConsumedCapacity</em> for each table and secondary index that was accessed. Note that some operations, such as <em>get-item</em> and <em>batch-get-item</em> , do not access any indexes at all. In these cases, specifying <em>INDEXES</em> will only return <em>ConsumedCapacity</em> information for table(s).</li>
+<li><em>TOTAL</em> - The response includes only the aggregate <em>ConsumedCapacity</em> for the operation.</li>
+<li><em>NONE</em> - No <em>ConsumedCapacity</em> details are included in the response.</li>
+</ul>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">INDEXES</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">TOTAL</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">NONE</span></tt></li>
+</ul>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--return-item-collection-metrics" class="dashAnchor" id="return-item-collection-metrics"></a><span class="pre">--return-item-collection-metrics</span></tt> (string)</p>
 <blockquote>
-<div>If set to <tt class="docutils literal"><span class="pre">SIZE</span></tt>  , statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <tt class="docutils literal"><span class="pre">NONE</span></tt>  (the default), no statistics are returned..</div></blockquote>
+<div><p>Determines whether item collection metrics are returned. If set to <tt class="docutils literal"><span class="pre">SIZE</span></tt> , the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <tt class="docutils literal"><span class="pre">NONE</span></tt> (the default), no statistics are returned.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">SIZE</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">NONE</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To add multiple items to a table</strong></p>
+<p>This example adds three new items to the <em>MusicCollection</em> table using a batch of three PutItem requests.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws dynamodb batch-write-item --request-items file://request-items.json</pre>
+</div>
+<p>The arguments for <tt class="docutils literal"><span class="pre">--request-items</span></tt> are stored in a JSON file, <tt class="docutils literal"><span class="pre">request-items.json</span></tt>.  Here are the contents of that file:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"MusicCollection"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"PutRequest"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"Item"</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">"Artist"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"S"</span><span class="p">:</span> <span class="s2">"No One You Know"</span><span class="p">},</span>
+                    <span class="s2">"SongTitle"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"S"</span><span class="p">:</span> <span class="s2">"Call Me Today"</span><span class="p">},</span>
+                    <span class="s2">"AlbumTitle"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"S"</span><span class="p">:</span> <span class="s2">"Somewhat Famous"</span><span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"PutRequest"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"Item"</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">"Artist"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"S"</span><span class="p">:</span> <span class="s2">"Acme Band"</span><span class="p">},</span>
+                    <span class="s2">"SongTitle"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"S"</span><span class="p">:</span> <span class="s2">"Happy Day"</span><span class="p">},</span>
+                    <span class="s2">"AlbumTitle"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"S"</span><span class="p">:</span> <span class="s2">"Songs About Life"</span><span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"PutRequest"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"Item"</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">"Artist"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"S"</span><span class="p">:</span> <span class="s2">"No One You Know"</span><span class="p">},</span>
+                    <span class="s2">"SongTitle"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"S"</span><span class="p">:</span> <span class="s2">"Scared of My Shadow"</span><span class="p">},</span>
+                    <span class="s2">"AlbumTitle"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"S"</span><span class="p">:</span> <span class="s2">"Blue Sky Blues"</span><span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"UnprocessedItems"</span><span class="p">:</span> <span class="p">{}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>UnprocessedItems -&gt; (map)</p>
+<blockquote>
+<div><p>A map of tables and requests against those tables that were not processed. The <em>UnprocessedItems</em> value is in the same form as <em>RequestItems</em> , so you can provide this value directly to a subsequent <em>batch-get-item</em> operation. For more information, see <em>RequestItems</em> in the Request Parameters section.</p>
+<p>Each <em>UnprocessedItems</em> entry consists of a table name and, for that table, a list of operations to perform (<em>DeleteRequest</em> or <em>PutRequest</em> ).</p>
+<ul class="simple">
+<li><em>DeleteRequest</em> - Perform a <em>delete-item</em> operation on the specified item. The item to be deleted is identified by a <em>Key</em> subelement:<ul>
+<li><em>Key</em> - A map of primary key attribute values that uniquely identify the item. Each entry in this map consists of an attribute name and an attribute value.</li>
+</ul>
+</li>
+<li><em>PutRequest</em> - Perform a <em>put-item</em> operation on the specified item. The item to be put is identified by an <em>Item</em> subelement:<ul>
+<li><em>Item</em> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a <em>ValidationException</em> exception. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</li>
+</ul>
+</li>
+</ul>
+<p>If there are no unprocessed items remaining, the response contains an empty <em>UnprocessedItems</em> map.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (list)</p>
+<blockquote>
+<div><p>(structure)</p>
+<blockquote>
+<div><p>Represents an operation to perform - either <em>delete-item</em> or <em>put-item</em> . You can only request one of these operations, not both, in a single <em>WriteRequest</em> . If you do need to perform both of these operations, you will need to provide two separate <em>WriteRequest</em> objects.</p>
+<p>PutRequest -&gt; (structure)</p>
+<blockquote>
+<div><p>A request to perform a <em>put-item</em> operation.</p>
+<p>Item -&gt; (map)</p>
+<blockquote>
+<div><p>A map of attribute name to attribute values, representing the primary key of an item to be processed by <em>put-item</em> . All of the table's primary key attributes must be specified, and their data types must match those of the table's key schema. If any attributes are present in the item which are part of an index key schema for the table, their types must match the index key schema.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
+<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<p>S -&gt; (string)</p>
+<blockquote>
+<div>A String data type.</div></blockquote>
+<p>N -&gt; (string)</p>
+<blockquote>
+<div>A Number data type.</div></blockquote>
+<p>B -&gt; (blob)</p>
+<blockquote>
+<div>A Binary data type.</div></blockquote>
+<p>SS -&gt; (list)</p>
+<blockquote>
+<div><p>A String Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>NS -&gt; (list)</p>
+<blockquote>
+<div><p>A Number Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>BS -&gt; (list)</p>
+<blockquote>
+<div><p>A Binary Set data type.</p>
+<p>(blob)</p>
+</div></blockquote>
+<p>M -&gt; (map)</p>
+<blockquote>
+<div><p>A Map of attribute values.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
+<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<p>S -&gt; (string)</p>
+<blockquote>
+<div>A String data type.</div></blockquote>
+<p>N -&gt; (string)</p>
+<blockquote>
+<div>A Number data type.</div></blockquote>
+<p>B -&gt; (blob)</p>
+<blockquote>
+<div>A Binary data type.</div></blockquote>
+<p>SS -&gt; (list)</p>
+<blockquote>
+<div><p>A String Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>NS -&gt; (list)</p>
+<blockquote>
+<div><p>A Number Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>BS -&gt; (list)</p>
+<blockquote>
+<div><p>A Binary Set data type.</p>
+<p>(blob)</p>
+</div></blockquote>
+<p>M -&gt; (map)</p>
+<blockquote>
+<div><p>A Map of attribute values.</p>
+<p>key -&gt; (string)</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>L -&gt; (list)</p>
+<blockquote>
+<div><p>A List of attribute values.</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>NULL -&gt; (boolean)</p>
+<blockquote>
+<div>A Null data type.</div></blockquote>
+<p>BOOL -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean data type.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>L -&gt; (list)</p>
+<blockquote>
+<div><p>A List of attribute values.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
+<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<p>S -&gt; (string)</p>
+<blockquote>
+<div>A String data type.</div></blockquote>
+<p>N -&gt; (string)</p>
+<blockquote>
+<div>A Number data type.</div></blockquote>
+<p>B -&gt; (blob)</p>
+<blockquote>
+<div>A Binary data type.</div></blockquote>
+<p>SS -&gt; (list)</p>
+<blockquote>
+<div><p>A String Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>NS -&gt; (list)</p>
+<blockquote>
+<div><p>A Number Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>BS -&gt; (list)</p>
+<blockquote>
+<div><p>A Binary Set data type.</p>
+<p>(blob)</p>
+</div></blockquote>
+<p>M -&gt; (map)</p>
+<blockquote>
+<div><p>A Map of attribute values.</p>
+<p>key -&gt; (string)</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>L -&gt; (list)</p>
+<blockquote>
+<div><p>A List of attribute values.</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>NULL -&gt; (boolean)</p>
+<blockquote>
+<div>A Null data type.</div></blockquote>
+<p>BOOL -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean data type.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NULL -&gt; (boolean)</p>
+<blockquote>
+<div>A Null data type.</div></blockquote>
+<p>BOOL -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean data type.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>DeleteRequest -&gt; (structure)</p>
+<blockquote>
+<div><p>A request to perform a <em>delete-item</em> operation.</p>
+<p>Key -&gt; (map)</p>
+<blockquote>
+<div><p>A map of attribute name to attribute values, representing the primary key of the item to delete. All of the table's primary key attributes must be specified, and their data types must match those of the table's key schema.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
+<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<p>S -&gt; (string)</p>
+<blockquote>
+<div>A String data type.</div></blockquote>
+<p>N -&gt; (string)</p>
+<blockquote>
+<div>A Number data type.</div></blockquote>
+<p>B -&gt; (blob)</p>
+<blockquote>
+<div>A Binary data type.</div></blockquote>
+<p>SS -&gt; (list)</p>
+<blockquote>
+<div><p>A String Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>NS -&gt; (list)</p>
+<blockquote>
+<div><p>A Number Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>BS -&gt; (list)</p>
+<blockquote>
+<div><p>A Binary Set data type.</p>
+<p>(blob)</p>
+</div></blockquote>
+<p>M -&gt; (map)</p>
+<blockquote>
+<div><p>A Map of attribute values.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
+<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<p>S -&gt; (string)</p>
+<blockquote>
+<div>A String data type.</div></blockquote>
+<p>N -&gt; (string)</p>
+<blockquote>
+<div>A Number data type.</div></blockquote>
+<p>B -&gt; (blob)</p>
+<blockquote>
+<div>A Binary data type.</div></blockquote>
+<p>SS -&gt; (list)</p>
+<blockquote>
+<div><p>A String Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>NS -&gt; (list)</p>
+<blockquote>
+<div><p>A Number Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>BS -&gt; (list)</p>
+<blockquote>
+<div><p>A Binary Set data type.</p>
+<p>(blob)</p>
+</div></blockquote>
+<p>M -&gt; (map)</p>
+<blockquote>
+<div><p>A Map of attribute values.</p>
+<p>key -&gt; (string)</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>L -&gt; (list)</p>
+<blockquote>
+<div><p>A List of attribute values.</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>NULL -&gt; (boolean)</p>
+<blockquote>
+<div>A Null data type.</div></blockquote>
+<p>BOOL -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean data type.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>L -&gt; (list)</p>
+<blockquote>
+<div><p>A List of attribute values.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
+<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<p>S -&gt; (string)</p>
+<blockquote>
+<div>A String data type.</div></blockquote>
+<p>N -&gt; (string)</p>
+<blockquote>
+<div>A Number data type.</div></blockquote>
+<p>B -&gt; (blob)</p>
+<blockquote>
+<div>A Binary data type.</div></blockquote>
+<p>SS -&gt; (list)</p>
+<blockquote>
+<div><p>A String Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>NS -&gt; (list)</p>
+<blockquote>
+<div><p>A Number Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>BS -&gt; (list)</p>
+<blockquote>
+<div><p>A Binary Set data type.</p>
+<p>(blob)</p>
+</div></blockquote>
+<p>M -&gt; (map)</p>
+<blockquote>
+<div><p>A Map of attribute values.</p>
+<p>key -&gt; (string)</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>L -&gt; (list)</p>
+<blockquote>
+<div><p>A List of attribute values.</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>NULL -&gt; (boolean)</p>
+<blockquote>
+<div>A Null data type.</div></blockquote>
+<p>BOOL -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean data type.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NULL -&gt; (boolean)</p>
+<blockquote>
+<div>A Null data type.</div></blockquote>
+<p>BOOL -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean data type.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ItemCollectionMetrics -&gt; (map)</p>
+<blockquote>
+<div><p>A list of tables that were processed by <em>batch-write-item</em> and, for each table, information about any item collections that were affected by individual <em>delete-item</em> or <em>put-item</em> operations.</p>
+<p>Each entry consists of the following subelements:</p>
+<ul class="simple">
+<li><em>ItemCollectionKey</em> - The partition key value of the item collection. This is the same as the partition key value of the item.</li>
+<li><em>SizeEstimateRange</em> - An estimate of item collection size, expressed in GB. This is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on the table. Use this estimate to measure whether a local secondary index is approaching its size limit. The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</li>
+</ul>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (list)</p>
+<blockquote>
+<div><p>(structure)</p>
+<blockquote>
+<div><p>Information about item collections, if any, that were affected by the operation. <em>ItemCollectionMetrics</em> is only returned if the request asked for it. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
+<p>ItemCollectionKey -&gt; (map)</p>
+<blockquote>
+<div><p>The partition key value of the item collection. This value is the same as the partition key value of the item.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
+<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<p>S -&gt; (string)</p>
+<blockquote>
+<div>A String data type.</div></blockquote>
+<p>N -&gt; (string)</p>
+<blockquote>
+<div>A Number data type.</div></blockquote>
+<p>B -&gt; (blob)</p>
+<blockquote>
+<div>A Binary data type.</div></blockquote>
+<p>SS -&gt; (list)</p>
+<blockquote>
+<div><p>A String Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>NS -&gt; (list)</p>
+<blockquote>
+<div><p>A Number Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>BS -&gt; (list)</p>
+<blockquote>
+<div><p>A Binary Set data type.</p>
+<p>(blob)</p>
+</div></blockquote>
+<p>M -&gt; (map)</p>
+<blockquote>
+<div><p>A Map of attribute values.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
+<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<p>S -&gt; (string)</p>
+<blockquote>
+<div>A String data type.</div></blockquote>
+<p>N -&gt; (string)</p>
+<blockquote>
+<div>A Number data type.</div></blockquote>
+<p>B -&gt; (blob)</p>
+<blockquote>
+<div>A Binary data type.</div></blockquote>
+<p>SS -&gt; (list)</p>
+<blockquote>
+<div><p>A String Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>NS -&gt; (list)</p>
+<blockquote>
+<div><p>A Number Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>BS -&gt; (list)</p>
+<blockquote>
+<div><p>A Binary Set data type.</p>
+<p>(blob)</p>
+</div></blockquote>
+<p>M -&gt; (map)</p>
+<blockquote>
+<div><p>A Map of attribute values.</p>
+<p>key -&gt; (string)</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>L -&gt; (list)</p>
+<blockquote>
+<div><p>A List of attribute values.</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>NULL -&gt; (boolean)</p>
+<blockquote>
+<div>A Null data type.</div></blockquote>
+<p>BOOL -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean data type.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>L -&gt; (list)</p>
+<blockquote>
+<div><p>A List of attribute values.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
+<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<p>S -&gt; (string)</p>
+<blockquote>
+<div>A String data type.</div></blockquote>
+<p>N -&gt; (string)</p>
+<blockquote>
+<div>A Number data type.</div></blockquote>
+<p>B -&gt; (blob)</p>
+<blockquote>
+<div>A Binary data type.</div></blockquote>
+<p>SS -&gt; (list)</p>
+<blockquote>
+<div><p>A String Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>NS -&gt; (list)</p>
+<blockquote>
+<div><p>A Number Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>BS -&gt; (list)</p>
+<blockquote>
+<div><p>A Binary Set data type.</p>
+<p>(blob)</p>
+</div></blockquote>
+<p>M -&gt; (map)</p>
+<blockquote>
+<div><p>A Map of attribute values.</p>
+<p>key -&gt; (string)</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>L -&gt; (list)</p>
+<blockquote>
+<div><p>A List of attribute values.</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>NULL -&gt; (boolean)</p>
+<blockquote>
+<div>A Null data type.</div></blockquote>
+<p>BOOL -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean data type.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NULL -&gt; (boolean)</p>
+<blockquote>
+<div>A Null data type.</div></blockquote>
+<p>BOOL -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean data type.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>SizeEstimateRangeGB -&gt; (list)</p>
+<blockquote>
+<div><p>An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
+<p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
+<p>(double)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ConsumedCapacity -&gt; (list)</p>
+<blockquote>
+<div><p>The capacity units consumed by the operation.</p>
+<p>Each element consists of:</p>
+<ul class="simple">
+<li><em>TableName</em> - The table that consumed the provisioned throughput.</li>
+<li><em>CapacityUnits</em> - The total number of capacity units consumed.</li>
+</ul>
+<p>(structure)</p>
+<blockquote>
+<div><p>The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <em>ConsumedCapacity</em> is only returned if the request asked for it. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
+<p>TableName -&gt; (string)</p>
+<blockquote>
+<div>The name of the table that was affected by the operation.</div></blockquote>
+<p>CapacityUnits -&gt; (double)</p>
+<blockquote>
+<div>The total number of capacity units consumed by the operation.</div></blockquote>
+<p>Table -&gt; (structure)</p>
+<blockquote>
+<div><p>The amount of throughput consumed on the table affected by the operation.</p>
+<p>CapacityUnits -&gt; (double)</p>
+<blockquote>
+<div>The total number of capacity units consumed on a table or an index.</div></blockquote>
+</div></blockquote>
+<p>LocalSecondaryIndexes -&gt; (map)</p>
+<blockquote>
+<div><p>The amount of throughput consumed on each local index affected by the operation.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents the amount of provisioned throughput capacity consumed on a table or an index.</p>
+<p>CapacityUnits -&gt; (double)</p>
+<blockquote>
+<div>The total number of capacity units consumed on a table or an index.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>GlobalSecondaryIndexes -&gt; (map)</p>
+<blockquote>
+<div><p>The amount of throughput consumed on each global index affected by the operation.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents the amount of provisioned throughput capacity consumed on a table or an index.</p>
+<p>CapacityUnits -&gt; (double)</p>
+<blockquote>
+<div>The total number of capacity units consumed on a table or an index.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
 </div>
 </div>
 
@@ -214,6 +914,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -223,35 +932,21 @@
           <a href="create-table.html" title="create-table">next</a> |</li>
         <li class="right">
           <a href="batch-get-item.html" title="batch-get-item">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">dynamodb</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'batch-get-item.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'create-table.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/dynamodb/batch-write-item.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:01 GMT -->
 </html>

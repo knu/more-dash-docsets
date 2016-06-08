@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elb/create-load-balancer.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:19 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>create-load-balancer &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>create-load-balancer &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="elb" href="index.html" />
     <link rel="next" title="create-load-balancer-listeners" href="create-load-balancer-listeners.html" />
     <link rel="prev" title="create-lb-cookie-stickiness-policy" href="create-lb-cookie-stickiness-policy.html" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -61,7 +64,7 @@
           <a href="create-load-balancer-listeners.html" title="create-load-balancer-listeners" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="create-lb-cookie-stickiness-policy.html" title="create-lb-cookie-stickiness-policy" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">elb</a> &#187;</li> 
       </ul>
@@ -82,23 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">create-load-balancer</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,61 +112,55 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/elb/create-load-balancer">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/elb/create-load-balancer">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>elb</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-elb"><em>elb</em></a> ]</p>
 <div class="section" id="create-load-balancer">
-<h1>create-load-balancer<a class="headerlink" href="#create-load-balancer" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-elb-create-load-balancer"></span><h1>create-load-balancer<a name="//apple_ref/cpp/Command/aws elb create-load-balancer" class="dashAnchor" id="aws elb create-load-balancer"></a><a class="headerlink" href="#create-load-balancer" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Creates a new LoadBalancer.</p>
-<p>After the call has completed successfully, a new LoadBalancer is created; however, it will not be usable until at least one instance has been registered. When the LoadBalancer creation is completed, the client can check whether or not it is usable by using the  describe-instance-health action. The LoadBalancer is usable as soon as any registered instance is <em>InService</em> .</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Currently, the client's quota of LoadBalancers is limited to ten per Region.</p>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>LoadBalancer DNS names vary depending on the Region they're created in. For LoadBalancers created in the United States, the DNS name ends with:</p>
-<ul class="simple">
-<li><em>us-east-1.elb.amazonaws.com</em> (for the Northern Virginia Region)</li>
-<li><em>us-west-1.elb.amazonaws.com</em> (for the Northern California Region)</li>
-</ul>
-<p>For LoadBalancers created in the EU (Ireland) Region, the DNS name ends with:</p>
-<ul class="last simple">
-<li><em>eu-west-1.elb.amazonaws.com</em></li>
-</ul>
-</div>
-<p>For information on using  create-load-balancer to create a new LoadBalancer in Amazon EC2, go to <a class="reference external" href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/creating_lb_QueryAPI.html">Using Query API</a> section in the <em>Creating a Load Balancer With SSL Cipher Settings and Back-end Authentication</em> topic of the <em>Elastic Load Balancing Developer Guide</em> .</p>
-<p>For information on using  create-load-balancer to create a new LoadBalancer in Amazon VPC, see <em>Using the Query API</em> in the <a class="reference external" href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/USVPC_creating_basic_lb.html">Creating a Basic Load Balancer in Amazon VPC</a> section in the <em>Elastic Load Balancing Developer Guide</em> .</p>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Creates a load balancer.</p>
+<p>If the call completes successfully, a new load balancer is created with a unique Domain Name Service (DNS) name. The load balancer receives incoming traffic and routes it to the registered instances. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/how-elb-works.html">How Elastic Load Balancing Works</a> in the <em>Elastic Load Balancing Developer Guide</em> .</p>
+<p>You can create up to 20 load balancers per region per account. You can request an increase for the number of load balancers for your account. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-limits.html">Elastic Load Balancing Limits</a> in the <em>Elastic Load Balancing Developer Guide</em> .</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  create-load-balancer
 --load-balancer-name &lt;value&gt;
 --listeners &lt;value&gt;
 [--availability-zones &lt;value&gt;]
 [--subnets &lt;value&gt;]
 [--security-groups &lt;value&gt;]
-[--scheme &lt;value&gt;]</pre>
+[--scheme &lt;value&gt;]
+[--tags &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--load-balancer-name" class="dashAnchor" id="load-balancer-name"></a><span class="pre">--load-balancer-name</span></tt> (string)</p>
 <blockquote>
-<div>The name associated with the LoadBalancer. The name must be unique within your set of LoadBalancers.</div></blockquote>
+<div><p>The name of the load balancer.</p>
+<p>This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--listeners" class="dashAnchor" id="listeners"></a><span class="pre">--listeners</span></tt> (list)</p>
 <blockquote>
-<div>A list of the following tuples: LoadBalancerPort, InstancePort, and Protocol.</div></blockquote>
+<div><p>The listeners.</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">listeners for Your Load Balancer</a> in the <em>Elastic Load Balancing Developer Guide</em> .</p>
+</div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><pre>  Key value pairs, with multiple values separated by a space.
---listeners Protocol=string,LoadBalancerPort=integer,InstanceProtocol=string,InstancePort=integer,SSLCertificateId=string</pre>
+<div class="highlight-python"><pre>Protocol=string,LoadBalancerPort=integer,InstanceProtocol=string,InstancePort=integer,SSLCertificateId=string ...</pre>
 </div>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><pre>[
@@ -177,32 +176,114 @@
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--availability-zones" class="dashAnchor" id="availability-zones"></a><span class="pre">--availability-zones</span></tt> (list)</p>
 <blockquote>
-<div><p>A list of Availability Zones.</p>
-<p>At least one Availability Zone must be specified. Specified Availability Zones must be in the same EC2 Region as the LoadBalancer. Traffic will be equally distributed across all zones.</p>
-<p>This list can be modified after the creation of the LoadBalancer by calling  enable-availability-zones-for-load-balancer .</p>
+<div><p>One or more Availability Zones from the same region as the load balancer. Traffic is equally distributed across all specified Availability Zones.</p>
+<p>You must specify at least one Availability Zone.</p>
+<p>You can add more Availability Zones after you create the load balancer using  enable-availability-zones-for-load-balancer .</p>
 </div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--subnets" class="dashAnchor" id="subnets"></a><span class="pre">--subnets</span></tt> (list)</p>
 <blockquote>
-<div>A list of subnet IDs in your VPC to attach to your LoadBalancer.</div></blockquote>
+<div>The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone specified in <tt class="docutils literal"><span class="pre">availability-zones</span></tt> .</div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--security-groups" class="dashAnchor" id="security-groups"></a><span class="pre">--security-groups</span></tt> (list)</p>
 <blockquote>
-<div>The security groups assigned to your LoadBalancer within your VPC.</div></blockquote>
+<div>The IDs of the security groups to assign to the load balancer.</div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--scheme" class="dashAnchor" id="scheme"></a><span class="pre">--scheme</span></tt> (string)</p>
 <blockquote>
-<div><p>The type of a LoadBalancer.</p>
-<p>By default, Elastic Load Balancing creates an Internet-facing LoadBalancer with a publicly resolvable DNS name, which resolves to public IP addresses.</p>
-<p>Specify the value <tt class="docutils literal"><span class="pre">internal</span></tt>  for this option to create an internal LoadBalancer with a DNS name that resolves to private IP addresses.</p>
-<p>This option is only available for LoadBalancers attached to an Amazon VPC.</p>
+<div><p>The type of a load balancer. Valid only for load balancers in a VPC.</p>
+<p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a publicly resolvable DNS name, which resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a class="reference external" href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html">Internet-facing and Internal Load Balancers</a> in the <em>Elastic Load Balancing Developer Guide</em> .</p>
+<p>Specify <tt class="docutils literal"><span class="pre">internal</span></tt> to create an internal load balancer with a DNS name that resolves to private IP addresses.</p>
 </div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--tags" class="dashAnchor" id="tags"></a><span class="pre">--tags</span></tt> (list)</p>
+<blockquote>
+<div><p>A list of tags to assign to the load balancer.</p>
+<p>For more information about tagging your load balancer, see <a class="reference external" href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb">Tagging</a> in the <em>Elastic Load Balancing Developer Guide</em> .</p>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Key=string,Value=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    "Key": "string",
+    "Value": "string"
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To create an HTTP load balancer</strong></p>
+<p>This example creates an HTTP load balancer in a VPC.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws elb create-load-balancer --load-balancer-name my-load-balancer --listeners "Protocol=HTTP,LoadBalancerPort=80,InstanceProtocol=HTTP,InstancePort=80" --subnets subnet-15aaab61 --security-groups sg-a61988c3</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"DNSName"</span><span class="p">:</span> <span class="s2">"my-load-balancer-1234567890.us-west-2.elb.amazonaws.com"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This example creates an HTTP load balancer in EC2-Classic.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws elb create-load-balancer --load-balancer-name my-load-balancer --listeners "Protocol=HTTP,LoadBalancerPort=80,InstanceProtocol=HTTP,InstancePort=80" --availability-zones us-west-2a us-west-2b</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"DNSName"</span><span class="p">:</span> <span class="s2">"my-load-balancer-123456789.us-west-2.elb.amazonaws.com"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>To create an HTTPS load balancer</strong></p>
+<p>This example creates an HTTPS load balancer in a VPC.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws elb create-load-balancer --load-balancer-name my-load-balancer --listeners "Protocol=HTTP,LoadBalancerPort=80,InstanceProtocol=HTTP,InstancePort=80" "Protocol=HTTPS,LoadBalancerPort=443,InstanceProtocol=HTTPS,InstancePort=443,SSLCertificateId=arn:aws:iam::123456789012:server-certificate/my-server-cert" --subnets subnet-15aaab61 --security-groups sg-a61988c3</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"DNSName"</span><span class="p">:</span> <span class="s2">"my-load-balancer-1234567890.us-west-2.elb.amazonaws.com"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This example creates an HTTPS load balancer in EC2-Classic.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws elb create-load-balancer --load-balancer-name my-load-balancer --listeners "Protocol=HTTP,LoadBalancerPort=80,InstanceProtocol=HTTP,InstancePort=80" "Protocol=HTTPS,LoadBalancerPort=443,InstanceProtocol=HTTPS,InstancePort=443,SSLCertificateId=arn:aws:iam::123456789012:server-certificate/my-server-cert" --availability-zones us-west-2a us-west-2b</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"DNSName"</span><span class="p">:</span> <span class="s2">"my-load-balancer-123456789.us-west-2.elb.amazonaws.com"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>To create an internal load balancer</strong></p>
+<p>This example creates an internal HTTP load balancer in a VPC.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws elb create-load-balancer --load-balancer-name my-load-balancer --listeners "Protocol=HTTP,LoadBalancerPort=80,InstanceProtocol=HTTP,InstancePort=80" --scheme internal --subnets subnet-a85db0df --security-groups sg-a61988c3</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"DNSName"</span><span class="p">:</span> <span class="s2">"internal-my-load-balancer-123456789.us-west-2.elb.amazonaws.com"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>DNSName -&gt; (string)</p>
+<blockquote>
+<div>The DNS name of the load balancer.</div></blockquote>
 </div>
 </div>
 
@@ -224,6 +305,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -233,35 +323,21 @@
           <a href="create-load-balancer-listeners.html" title="create-load-balancer-listeners">next</a> |</li>
         <li class="right">
           <a href="create-lb-cookie-stickiness-policy.html" title="create-lb-cookie-stickiness-policy">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">elb</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'create-lb-cookie-stickiness-policy.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'create-load-balancer-listeners.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elb/create-load-balancer.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:19 GMT -->
 </html>

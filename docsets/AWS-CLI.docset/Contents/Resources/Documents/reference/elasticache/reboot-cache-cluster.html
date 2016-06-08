@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elasticache/reboot-cache-cluster.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:16 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>reboot-cache-cluster &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>reboot-cache-cluster &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,9 +25,9 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="elasticache" href="index.html" />
-    <link rel="next" title="reset-cache-parameter-group" href="reset-cache-parameter-group.html" />
+    <link rel="next" title="remove-tags-from-resource" href="remove-tags-from-resource.html" />
     <link rel="prev" title="purchase-reserved-cache-nodes-offering" href="purchase-reserved-cache-nodes-offering.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -58,10 +61,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
         <li class="right">
-          <a href="reset-cache-parameter-group.html" title="reset-cache-parameter-group" accesskey="N">next</a> |</li>
+          <a href="remove-tags-from-resource.html" title="remove-tags-from-resource" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="purchase-reserved-cache-nodes-offering.html" title="purchase-reserved-cache-nodes-offering" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">elasticache</a> &#187;</li> 
       </ul>
@@ -75,30 +78,31 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="reset-cache-parameter-group.html" title="next chapter (use the right arrow)">reset-cache-parameter-group &#8594;</a></li>
+          <li><a href="remove-tags-from-resource.html" title="next chapter (use the right arrow)">remove-tags-from-resource &#8594;</a></li>
       </ul>
     </div>
   
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">reboot-cache-cluster</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,38 +111,287 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/elasticache/reboot-cache-cluster">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/elasticache/reboot-cache-cluster">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>elasticache</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-elasticache"><em>elasticache</em></a> ]</p>
 <div class="section" id="reboot-cache-cluster">
-<h1>reboot-cache-cluster<a class="headerlink" href="#reboot-cache-cluster" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-elasticache-reboot-cache-cluster"></span><h1>reboot-cache-cluster<a name="//apple_ref/cpp/Command/aws elasticache reboot-cache-cluster" class="dashAnchor" id="aws elasticache reboot-cache-cluster"></a><a class="headerlink" href="#reboot-cache-cluster" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Reboots some (or all) of the cache cluster nodes within a previously provisioned ElastiCache cluster. This API results in the application of modified CacheParameterGroup parameters to the cache cluster. This action is taken as soon as possible, and results in a momentary outage to the cache cluster during which the cache cluster status is set to rebooting. During that momentary outage, the contents of the cache (for each cache cluster node being rebooted) are lost. A CacheCluster event is created when the reboot is completed.</p>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>The <em>reboot-cache-cluster</em> action reboots some, or all, of the cache nodes within a provisioned cache cluster. This API will apply any modified cache parameter groups to the cache cluster. The reboot action takes place as soon as possible, and results in a momentary outage to the cache cluster. During the reboot, the cache cluster status is set to REBOOTING.</p>
+<p>The reboot causes the contents of the cache (for each cache node being rebooted) to be lost.</p>
+<p>When the reboot is complete, a cache cluster event is created.</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  reboot-cache-cluster
 --cache-cluster-id &lt;value&gt;
---cache-node-ids-to-reboot &lt;value&gt;</pre>
+--cache-node-ids-to-reboot &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cache-cluster-id" class="dashAnchor" id="cache-cluster-id"></a><span class="pre">--cache-cluster-id</span></tt> (string)</p>
 <blockquote>
-<div>The Cache Cluster identifier. This parameter is stored as a lowercase string.</div></blockquote>
+<div>The cache cluster identifier. This parameter is stored as a lowercase string.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cache-node-ids-to-reboot" class="dashAnchor" id="cache-node-ids-to-reboot"></a><span class="pre">--cache-node-ids-to-reboot</span></tt> (list)</p>
 <blockquote>
-<div>A list of Cache Cluster Node Ids to reboot. To reboot an entire cache cluster, specify all cache cluster node Ids.</div></blockquote>
+<div>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cache cluster, specify all of the cache node IDs.</div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>CacheCluster -&gt; (structure)</p>
+<blockquote>
+<div><p>Contains all of the attributes of a specific cache cluster.</p>
+<p>CacheClusterId -&gt; (string)</p>
+<blockquote>
+<div>The user-supplied identifier of the cache cluster. This identifier is a unique key that identifies a cache cluster.</div></blockquote>
+<p>ConfigurationEndpoint -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents the information required for client programs to connect to a cache node.</p>
+<p>Address -&gt; (string)</p>
+<blockquote>
+<div>The DNS hostname of the cache node.</div></blockquote>
+<p>Port -&gt; (integer)</p>
+<blockquote>
+<div>The port number that the cache engine is listening on.</div></blockquote>
+</div></blockquote>
+<p>ClientDownloadLandingPage -&gt; (string)</p>
+<blockquote>
+<div>The URL of the web page where you can download the latest ElastiCache client library.</div></blockquote>
+<p>CacheNodeType -&gt; (string)</p>
+<blockquote>
+<div><p>The name of the compute and memory capacity node type for the cache cluster.</p>
+<p>Valid node types are as follows:</p>
+<ul class="simple">
+<li>General purpose:<ul>
+<li>Current generation: <tt class="docutils literal"><span class="pre">cache.t2.micro</span></tt> , <tt class="docutils literal"><span class="pre">cache.t2.small</span></tt> , <tt class="docutils literal"><span class="pre">cache.t2.medium</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.medium</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.large</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.2xlarge</span></tt></li>
+<li>Previous generation: <tt class="docutils literal"><span class="pre">cache.t1.micro</span></tt> , <tt class="docutils literal"><span class="pre">cache.m1.small</span></tt> , <tt class="docutils literal"><span class="pre">cache.m1.medium</span></tt> , <tt class="docutils literal"><span class="pre">cache.m1.large</span></tt> , <tt class="docutils literal"><span class="pre">cache.m1.xlarge</span></tt></li>
+</ul>
+</li>
+<li>Compute optimized: <tt class="docutils literal"><span class="pre">cache.c1.xlarge</span></tt></li>
+<li>Memory optimized:<ul>
+<li>Current generation: <tt class="docutils literal"><span class="pre">cache.r3.large</span></tt> , <tt class="docutils literal"><span class="pre">cache.r3.xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.r3.2xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.r3.4xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.r3.8xlarge</span></tt></li>
+<li>Previous generation: <tt class="docutils literal"><span class="pre">cache.m2.xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.m2.2xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.m2.4xlarge</span></tt></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<div><strong>Notes:</strong></div></blockquote>
+<ul class="simple">
+<li>All t2 instances are created in an Amazon Virtual Private Cloud (VPC).</li>
+<li>Redis backup/restore is not supported for t2 instances.</li>
+<li>Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.</li>
+</ul>
+<p>For a complete listing of cache node types and specifications, see <a class="reference external" href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a class="reference external" href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache Node Type-Specific Parameters for Memcached</a> or <a class="reference external" href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache Node Type-Specific Parameters for Redis</a> .</p>
+</div></blockquote>
+<p>Engine -&gt; (string)</p>
+<blockquote>
+<div>The name of the cache engine (<em>memcached</em> or <em>redis</em> ) to be used for this cache cluster.</div></blockquote>
+<p>EngineVersion -&gt; (string)</p>
+<blockquote>
+<div>The version of the cache engine that is used in this cache cluster.</div></blockquote>
+<p>CacheClusterStatus -&gt; (string)</p>
+<blockquote>
+<div>The current state of this cache cluster, one of the following values: <em>available</em> , <em>creating</em> , <em>deleted</em> , <em>deleting</em> , <em>incompatible-network</em> , <em>modifying</em> , <em>rebooting cache cluster nodes</em> , <em>restore-failed</em> , or <em>snapshotting</em> .</div></blockquote>
+<p>NumCacheNodes -&gt; (integer)</p>
+<blockquote>
+<div><p>The number of cache nodes in the cache cluster.</p>
+<p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 20.</p>
+</div></blockquote>
+<p>PreferredAvailabilityZone -&gt; (string)</p>
+<blockquote>
+<div>The name of the Availability Zone in which the cache cluster is located or "Multiple" if the cache nodes are located in different Availability Zones.</div></blockquote>
+<p>CacheClusterCreateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time when the cache cluster was created.</div></blockquote>
+<p>PreferredMaintenanceWindow -&gt; (string)</p>
+<blockquote>
+<div><p>Specifies the weekly time range during which maintenance on the cache cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <tt class="docutils literal"><span class="pre">ddd</span></tt> are:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">sun</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">mon</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">tue</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">wed</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">thu</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">fri</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">sat</span></tt></li>
+</ul>
+<p>Example: <tt class="docutils literal"><span class="pre">sun:05:00-sun:09:00</span></tt></p>
+</div></blockquote>
+<p>PendingModifiedValues -&gt; (structure)</p>
+<blockquote>
+<div><p>A group of settings that will be applied to the cache cluster in the future, or that are currently being applied.</p>
+<p>NumCacheNodes -&gt; (integer)</p>
+<blockquote>
+<div><p>The new number of cache nodes for the cache cluster.</p>
+<p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 20.</p>
+</div></blockquote>
+<p>CacheNodeIdsToRemove -&gt; (list)</p>
+<blockquote>
+<div><p>A list of cache node IDs that are being removed (or will be removed) from the cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
+<p>(string)</p>
+</div></blockquote>
+<p>EngineVersion -&gt; (string)</p>
+<blockquote>
+<div>The new cache engine version that the cache cluster will run.</div></blockquote>
+<p>CacheNodeType -&gt; (string)</p>
+<blockquote>
+<div>The cache node type that this cache cluster or replication group will be scaled to.</div></blockquote>
+</div></blockquote>
+<p>NotificationConfiguration -&gt; (structure)</p>
+<blockquote>
+<div><p>Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to subscribers using Amazon Simple Notification Service (SNS).</p>
+<p>TopicArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) that identifies the topic.</div></blockquote>
+<p>TopicStatus -&gt; (string)</p>
+<blockquote>
+<div>The current state of the topic.</div></blockquote>
+</div></blockquote>
+<p>CacheSecurityGroups -&gt; (list)</p>
+<blockquote>
+<div><p>A list of cache security group elements, composed of name and status sub-elements.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents a cache cluster's status within a particular cache security group.</p>
+<p>CacheSecurityGroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the cache security group.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The membership status in the cache security group. The status changes when a cache security group is modified, or when the cache security groups assigned to a cache cluster are modified.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>CacheParameterGroup -&gt; (structure)</p>
+<blockquote>
+<div><p>The status of the cache parameter group.</p>
+<p>CacheParameterGroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the cache parameter group.</div></blockquote>
+<p>ParameterApplyStatus -&gt; (string)</p>
+<blockquote>
+<div>The status of parameter updates.</div></blockquote>
+<p>CacheNodeIdsToReboot -&gt; (list)</p>
+<blockquote>
+<div><p>A list of the cache node IDs which need to be rebooted for parameter changes to be applied. A node ID is a numeric identifier (0001, 0002, etc.).</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+<p>CacheSubnetGroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the cache subnet group associated with the cache cluster.</div></blockquote>
+<p>CacheNodes -&gt; (list)</p>
+<blockquote>
+<div><p>A list of cache nodes that are members of the cache cluster.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents an individual cache node within a cache cluster. Each cache node runs its own instance of the cluster's protocol-compliant caching software - either Memcached or Redis.</p>
+<p>Valid node types are as follows:</p>
+<ul class="simple">
+<li>General purpose:<ul>
+<li>Current generation: <tt class="docutils literal"><span class="pre">cache.t2.micro</span></tt> , <tt class="docutils literal"><span class="pre">cache.t2.small</span></tt> , <tt class="docutils literal"><span class="pre">cache.t2.medium</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.medium</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.large</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.2xlarge</span></tt></li>
+<li>Previous generation: <tt class="docutils literal"><span class="pre">cache.t1.micro</span></tt> , <tt class="docutils literal"><span class="pre">cache.m1.small</span></tt> , <tt class="docutils literal"><span class="pre">cache.m1.medium</span></tt> , <tt class="docutils literal"><span class="pre">cache.m1.large</span></tt> , <tt class="docutils literal"><span class="pre">cache.m1.xlarge</span></tt></li>
+</ul>
+</li>
+<li>Compute optimized: <tt class="docutils literal"><span class="pre">cache.c1.xlarge</span></tt></li>
+<li>Memory optimized:<ul>
+<li>Current generation: <tt class="docutils literal"><span class="pre">cache.r3.large</span></tt> , <tt class="docutils literal"><span class="pre">cache.r3.xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.r3.2xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.r3.4xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.r3.8xlarge</span></tt></li>
+<li>Previous generation: <tt class="docutils literal"><span class="pre">cache.m2.xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.m2.2xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.m2.4xlarge</span></tt></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<div><strong>Notes:</strong></div></blockquote>
+<ul class="simple">
+<li>All t2 instances are created in an Amazon Virtual Private Cloud (VPC).</li>
+<li>Redis backup/restore is not supported for t2 instances.</li>
+<li>Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.</li>
+</ul>
+<p>For a complete listing of cache node types and specifications, see <a class="reference external" href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either <a class="reference external" href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache Node Type-Specific Parameters for Memcached</a> or <a class="reference external" href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache Node Type-Specific Parameters for Redis</a> .</p>
+<p>CacheNodeId -&gt; (string)</p>
+<blockquote>
+<div>The cache node identifier. A node ID is a numeric identifier (0001, 0002, etc.). The combination of cluster ID and node ID uniquely identifies every cache node used in a customer's AWS account.</div></blockquote>
+<p>CacheNodeStatus -&gt; (string)</p>
+<blockquote>
+<div>The current state of this cache node.</div></blockquote>
+<p>CacheNodeCreateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time when the cache node was created.</div></blockquote>
+<p>Endpoint -&gt; (structure)</p>
+<blockquote>
+<div><p>The hostname for connecting to this cache node.</p>
+<p>Address -&gt; (string)</p>
+<blockquote>
+<div>The DNS hostname of the cache node.</div></blockquote>
+<p>Port -&gt; (integer)</p>
+<blockquote>
+<div>The port number that the cache engine is listening on.</div></blockquote>
+</div></blockquote>
+<p>ParameterGroupStatus -&gt; (string)</p>
+<blockquote>
+<div>The status of the parameter group applied to this cache node.</div></blockquote>
+<p>SourceCacheNodeId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the primary node to which this read replica node is synchronized. If this field is empty, then this node is not associated with a primary cache cluster.</div></blockquote>
+<p>CustomerAvailabilityZone -&gt; (string)</p>
+<blockquote>
+<div>The Availability Zone where this node was created and now resides.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>AutoMinorVersionUpgrade -&gt; (boolean)</p>
+<blockquote>
+<div>This parameter is currently disabled.</div></blockquote>
+<p>SecurityGroups -&gt; (list)</p>
+<blockquote>
+<div><p>A list of VPC Security Groups associated with the cache cluster.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents a single cache security group and its status.</p>
+<p>SecurityGroupId -&gt; (string)</p>
+<blockquote>
+<div>The identifier of the cache security group.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status of the cache security group membership. The status changes whenever a cache security group is modified, or when the cache security groups assigned to a cache cluster are modified.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ReplicationGroupId -&gt; (string)</p>
+<blockquote>
+<div>The replication group to which this cache cluster belongs. If this field is empty, the cache cluster is not associated with any replication group.</div></blockquote>
+<p>SnapshotRetentionLimit -&gt; (integer)</p>
+<blockquote>
+<div><p>The number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting them. For example, if you set <em>SnapshotRetentionLimit</em> to 5, then a snapshot that was taken today will be retained for 5 days before being deleted.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
+</div>
+</div></blockquote>
+<p>SnapshotWindow -&gt; (string)</p>
+<blockquote>
+<div><p>The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your cache cluster.</p>
+<p>Example: <tt class="docutils literal"><span class="pre">05:00-09:00</span></tt></p>
+</div></blockquote>
+</div></blockquote>
 </div>
 </div>
 
@@ -154,50 +407,45 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="reset-cache-parameter-group.html" title="next chapter (use the right arrow)">reset-cache-parameter-group &#8594;</a></li>
+          <li><a href="remove-tags-from-resource.html" title="next chapter (use the right arrow)">remove-tags-from-resource &#8594;</a></li>
       </ul>
     </div>
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index">index</a></li>
         <li class="right">
-          <a href="reset-cache-parameter-group.html" title="reset-cache-parameter-group">next</a> |</li>
+          <a href="remove-tags-from-resource.html" title="remove-tags-from-resource">next</a> |</li>
         <li class="right">
           <a href="purchase-reserved-cache-nodes-offering.html" title="purchase-reserved-cache-nodes-offering">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">elasticache</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'purchase-reserved-cache-nodes-offering.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'reset-cache-parameter-group.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elasticache/reboot-cache-cluster.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:16 GMT -->
 </html>

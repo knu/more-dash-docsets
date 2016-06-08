@@ -1,52 +1,69 @@
 <html>
-   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-   
-      <title>AWS Command Line Interface</title>
-      <link href="aws-docs2.css" rel="stylesheet" type="text/css"><style type="text/css">
-                    body {                    
-                    margin: 0px;
-                    padding: 0px;
-                    }
-					
-				</style><script src="/urchin.js" type="text/javascript"></script><script type="text/javascript">
-					urchinTracker();
-				</script><script type="text/javascript">
-					function ol() {
-						var myPage = top.document.location.search.substr(1);
-						if (myPage.length > 0) {
-							var docfile = myPage.match(/topic_id=([^=\;\/#\?:\s]+)/);
-							if (docfile.length == 2) {
-								var fblink = document.getElementById("fblink");
-								fblink.href = fblink.href + "&file_name=" + docfile[1];
-							}
-						}
-					}
-            	</script></head>
-   <body onload="ol()">
-      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #006699;">
-         <tr>
-            <td>
-               <table width="100%" border="0" cellspacing="3" cellpadding="3">
-                  <tr>
-                     <td><font color="#FFFFFF" size="+1" face="Verdana, Arial, Helvetica, sans-serif"><strong>AWS Command Line Interface</strong></font><br><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>User Guide</strong></font><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> (Version 1.0.0)</strong></font></td>
-                  </tr>
-               </table>
-            </td>
-            <td valign="top">
-               <div align="right"><img src="images/title-swoosh-logo.gif" width="314" height="47"></div>
-            </td>
-         </tr>
-      </table>
-      <div style="margin:10px;">
-         <p style="font-weight:bold;font-size:14px;">Did this page help you? - Yes</p>
-         <p>Thanks for letting us know we're doing a good job!</p>
-         <p>If you've got a moment, please <a id="fblink" class="clsFeedback" href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=User%20Guide&amp;api_version=1.0.0">tell us what we did right</a> so we can do more of it.
-         </p>
+   <meta name="keywords" content="">
+   <meta name="deployment_region" content="IAD">
+   <meta name="product" content="AWS Command Line Interface">
+   <meta name="guide" content="User Guide">
+   <meta name="guide-locale" content="en_us">
+   <link rel="icon" type="image/ico" href="//media.amazonwebservices.com/favicon.ico">
+   <link rel="shortcut icon" type="image/ico" href="//media.amazonwebservices.com/favicon.ico">
+   <link rel="canonical" href="http://docs.aws.amazon.com/cli/latest/userguide/aws-unified-cli.html">
+   <link rel="stylesheet" type="text/css" href="/css/jquery-ui.min.css">
+   <link rel="stylesheet" type="text/css" href="/font/css/font-awesome.min.css">
+   <link rel="stylesheet" type="text/css" href="/css/google-font.css">
+   <link rel="stylesheet" type="text/css" href="/css/highlight-default.css">
+   <link rel="stylesheet" type="text/css" href="/css/jquery-ui.theme.css">
+   <link rel="stylesheet" type="text/css" href="/css/colorbox.css">
+   <link rel="stylesheet" type="text/css" href="/css/awsdocs.css"><script type="text/javascript" src="/js/highlight.pack.js"></script><script type="text/javascript" src="/js/jquery.min.js"></script><script type="text/javascript" src="/js/jquery-ui.min.js"></script><script type="text/javascript" src="/js/handlebars.js"></script><script type="text/javascript" src="/js/jquery.colorbox.js"></script><script type="text/javascript" src="/js/awsdocs.min.js"></script><body onload="AWSDocs.feedbackOnload()">
+      <div id="aws-nav" class="aws-nav-header">
+         <div class="aws-nav-header-left">
+            <div id="aws-nav-flyout-trigger" class="aws-nav-flyout-trigger"><i class="fa fa-bars fa-2x"></i>Menu
+            </div>
+            <div class="aws-nav-logo"><a href="https://aws.amazon.com"><span>Amazon Web Services</span></a></div>
+         </div>
+         <div id="aws-nav-header-right" class="aws-nav-header-right">
+            <div class="aws-nav-cta-button-outer"><a id="aws-nav-cta-button" class="aws-nav-button" href="https://console.aws.amazon.com/console/home">Sign In to the Console</a></div>
+            <div class="aws-nav-popover-trigger" data-dropdown="aws-nav-dropdown-lang"><select id="languageSelection" onchange="SelectLanguage()">
+                  <option value="/de_de/cli/latest/userguide/aws-unified-cli.html">Deutsch</option>
+                  <option value="/en_us/cli/latest/userguide/aws-unified-cli.html" selected>English</option>
+                  <option value="/es_es/cli/latest/userguide/aws-unified-cli.html">Espa&ntilde;ol</option>
+                  <option value="/fr_fr/cli/latest/userguide/aws-unified-cli.html">Fran&ccedil;ais</option>
+                  <option value="/ja_jp/cli/latest/userguide/aws-unified-cli.html">&#26085;&#26412;&#35486;</option>
+                  <option value="/pt_br/cli/latest/userguide/aws-unified-cli.html">Portugu&ecirc;s</option>
+                  <option value="/ko_kr/cli/latest/userguide/aws-unified-cli.html">&#54620;&#44397;&#50612;</option>
+                  <option value="/zh_cn/cli/latest/userguide/aws-unified-cli.html">&#20013;&#25991; (&#31616;&#20307;)</option></select></div>
+            <div id="aws-nav-quicklinks-separator" class="aws-nav-quicklinks-separator">
+               <div class="aws-nav-left"></div>
+               <div class="aws-nav-right"></div>
+            </div>
+         </div>
+         <div id="topnav-flyout-menu-container">
+            <ul id="topnav-flyout-menu"><script id="flyout-item-template" type="text/x-handlebars-template">           
+                    {{#flyoutList}}
+                    
+                    <li>{{listItem}}
+                        {{#if subList}}
+                        <ul>
+                            {{#subList}}
+                            <li class="awsdocs-flyout-link-wrapper"><a href="{{target}}">{{text}}</a></li>
+                            {{/subList}}
+                        </ul>
+                        {{/if}}
+                    </li>
+                    
+                    {{/flyoutList}}
+                </script></ul>
+            <div id="topnav-flyout-menu-spacer"></div>
+         </div>
       </div>
+      <div id="fbheading">
+         <h2 class="title">Did this page help you? - Yes</h2>
+         <p>Thanks for letting us know we're doing a good job!</p>
+         <p>If you've got a moment, please tell us what we did right so we can do more of it.</p>
+      </div>
+      <div><a class="awstoc btn btn-default" target="_blank" id="fblink" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS Command Line Interface&amp;hidden_guide_name=User Guide&amp;hidden_api_version=">Feedback</a></div>
       <!-- SiteCatalyst code version: H.25.2.
             Copyright 1996-2012 Adobe, Inc. All Rights Reserved
-            More info available at http://www.omniture.com --><script language="JavaScript" type="text/javascript" src="https://d36cz9buwru1tt.cloudfront.net/js/sitecatalyst/s_code.min.js"></script><script language="JavaScript" type="text/javascript">
+            More info available at http://www.omniture.com --><script language="JavaScript" type="text/javascript" src="https://a0.awsstatic.com/s_code/js/1.0/awshome_s_code.js"></script><script language="JavaScript" type="text/javascript">
          <!--
 
             // Documentation Service Name

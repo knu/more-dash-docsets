@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/create-configuration-template.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:18 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>create-configuration-template &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>create-configuration-template &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="elasticbeanstalk" href="index.html" />
     <link rel="next" title="create-environment" href="create-environment.html" />
     <link rel="prev" title="create-application-version" href="create-application-version.html" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -61,7 +64,7 @@
           <a href="create-environment.html" title="create-environment" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="create-application-version.html" title="create-application-version" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">elasticbeanstalk</a> &#187;</li> 
       </ul>
@@ -82,23 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">create-configuration-template</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,18 +112,23 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/elasticbeanstalk/create-configuration-template">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/elasticbeanstalk/create-configuration-template">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>elasticbeanstalk</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-elasticbeanstalk"><em>elasticbeanstalk</em></a> ]</p>
 <div class="section" id="create-configuration-template">
-<h1>create-configuration-template<a class="headerlink" href="#create-configuration-template" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-elasticbeanstalk-create-configuration-template"></span><h1>create-configuration-template<a name="//apple_ref/cpp/Command/aws elasticbeanstalk create-configuration-template" class="dashAnchor" id="aws elasticbeanstalk create-configuration-template"></a><a class="headerlink" href="#create-configuration-template" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
 <p>Creates a configuration template. Templates are associated with a specific application and are used to deploy different versions of the application with the same configuration settings.</p>
 <p>Related Topics</p>
 <ul class="simple">
@@ -128,7 +138,7 @@
 </ul>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  create-configuration-template
 --application-name &lt;value&gt;
 --template-name &lt;value&gt;
@@ -136,41 +146,44 @@
 [--source-configuration &lt;value&gt;]
 [--environment-id &lt;value&gt;]
 [--description &lt;value&gt;]
-[--option-settings &lt;value&gt;]</pre>
+[--option-settings &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--application-name" class="dashAnchor" id="application-name"></a><span class="pre">--application-name</span></tt> (string)</p>
 <blockquote>
-<div>The name of the application to associate with this configuration template. If no application is found with this name, AWS Elastic Beanstalk returns an <tt class="docutils literal"><span class="pre">InvalidParameterValue</span></tt>  error.</div></blockquote>
+<div>The name of the application to associate with this configuration template. If no application is found with this name, AWS Elastic Beanstalk returns an <tt class="docutils literal"><span class="pre">InvalidParameterValue</span></tt> error.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--template-name" class="dashAnchor" id="template-name"></a><span class="pre">--template-name</span></tt> (string)</p>
 <blockquote>
 <div><p>The name of the configuration template.</p>
 <p>Constraint: This name must be unique per application.</p>
-<p>Default: If a configuration template already exists with this name, AWS Elastic Beanstalk returns an <tt class="docutils literal"><span class="pre">InvalidParameterValue</span></tt>  error.</p>
+<p>Default: If a configuration template already exists with this name, AWS Elastic Beanstalk returns an <tt class="docutils literal"><span class="pre">InvalidParameterValue</span></tt> error.</p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--solution-stack-name" class="dashAnchor" id="solution-stack-name"></a><span class="pre">--solution-stack-name</span></tt> (string)</p>
 <blockquote>
 <div><p>The name of the solution stack used by this configuration. The solution stack specifies the operating system, architecture, and application server for a configuration template. It determines the set of configuration options as well as the possible and default values.</p>
 <p>Use  list-available-solution-stacks to obtain a list of available solution stacks.</p>
-<p>A solution stack name or a source configuration parameter must be specified, otherwise AWS Elastic Beanstalk returns an <tt class="docutils literal"><span class="pre">InvalidParameterValue</span></tt>  error.</p>
+<p>A solution stack name or a source configuration parameter must be specified, otherwise AWS Elastic Beanstalk returns an <tt class="docutils literal"><span class="pre">InvalidParameterValue</span></tt> error.</p>
 <p>If a solution stack name is not specified and the source configuration parameter is specified, AWS Elastic Beanstalk uses the same solution stack as the source configuration template.</p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--source-configuration" class="dashAnchor" id="source-configuration"></a><span class="pre">--source-configuration</span></tt> (structure)</p>
 <blockquote>
 <div><p>If specified, AWS Elastic Beanstalk uses the configuration values from the specified configuration template to create a new configuration.</p>
-<p>Values specified in the <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--option-settings" class="dashAnchor" id="option-settings"></a><span class="pre">--option-settings</span></tt>  parameter of this call overrides any values obtained from the <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--source-configuration" class="dashAnchor" id="source-configuration"></a><span class="pre">--source-configuration</span></tt>  .</p>
-<p>If no configuration template is found, returns an <tt class="docutils literal"><span class="pre">InvalidParameterValue</span></tt>  error.</p>
-<p>Constraint: If both the solution stack name parameter and the source configuration parameters are specified, the solution stack of the source configuration template must match the specified solution stack name or else AWS Elastic Beanstalk returns an <tt class="docutils literal"><span class="pre">InvalidParameterCombination</span></tt>  error.</p>
+<p>Values specified in the <tt class="docutils literal"><span class="pre">OptionSettings</span></tt> parameter of this call overrides any values obtained from the <tt class="docutils literal"><span class="pre">source-configuration</span></tt> .</p>
+<p>If no configuration template is found, returns an <tt class="docutils literal"><span class="pre">InvalidParameterValue</span></tt> error.</p>
+<p>Constraint: If both the solution stack name parameter and the source configuration parameters are specified, the solution stack of the source configuration template must match the specified solution stack name or else AWS Elastic Beanstalk returns an <tt class="docutils literal"><span class="pre">InvalidParameterCombination</span></tt> error.</p>
 </div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><pre>--source-configuration ApplicationName=value,TemplateName=value</pre>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">ApplicationName</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">TemplateName</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
 </div>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-  <span class="s">"ApplicationName"</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
-  <span class="s">"TemplateName"</span><span class="p">:</span> <span class="s">"string"</span>
+  <span class="s2">"ApplicationName"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"TemplateName"</span><span class="p">:</span> <span class="s2">"string"</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -184,12 +197,12 @@
 <blockquote>
 <div>If specified, AWS Elastic Beanstalk sets the specified configuration option to the requested value. The new value overrides the value obtained from the solution stack or the source configuration template.</div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><pre>  Key value pairs, with multiple values separated by a space.
---option-settings Namespace=string,OptionName=string,Value=string</pre>
+<div class="highlight-python"><pre>ResourceName=string,Namespace=string,OptionName=string,Value=string ...</pre>
 </div>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><pre>[
   {
+    "ResourceName": "string",
     "Namespace": "string",
     "OptionName": "string",
     "Value": "string"
@@ -197,6 +210,81 @@
   ...
 ]</pre>
 </div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To create a configuration template</strong></p>
+<p>The following command creates a configuration template named <tt class="docutils literal"><span class="pre">my-app-v1</span></tt> from the settings applied to an environment with the id <tt class="docutils literal"><span class="pre">e-rpqsewtp2j</span></tt>:</p>
+<div class="highlight-python"><pre>aws elasticbeanstalk create-configuration-template --application-name my-app --template-name my-app-v1 --environment-id e-rpqsewtp2j</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"ApplicationName"</span><span class="p">:</span> <span class="s2">"my-app"</span><span class="p">,</span>
+    <span class="s2">"TemplateName"</span><span class="p">:</span> <span class="s2">"my-app-v1"</span><span class="p">,</span>
+    <span class="s2">"DateCreated"</span><span class="p">:</span> <span class="s2">"2015-08-12T18:40:39Z"</span><span class="p">,</span>
+    <span class="s2">"DateUpdated"</span><span class="p">:</span> <span class="s2">"2015-08-12T18:40:39Z"</span><span class="p">,</span>
+    <span class="s2">"SolutionStackName"</span><span class="p">:</span> <span class="s2">"64bit Amazon Linux 2015.03 v2.0.0 running Tomcat 8 Java 8"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>SolutionStackName -&gt; (string)</p>
+<blockquote>
+<div>The name of the solution stack this configuration set uses.</div></blockquote>
+<p>ApplicationName -&gt; (string)</p>
+<blockquote>
+<div>The name of the application associated with this configuration set.</div></blockquote>
+<p>TemplateName -&gt; (string)</p>
+<blockquote>
+<div>If not <tt class="docutils literal"><span class="pre">null</span></tt> , the name of the configuration template for this configuration set.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>Describes this configuration set.</div></blockquote>
+<p>EnvironmentName -&gt; (string)</p>
+<blockquote>
+<div>If not <tt class="docutils literal"><span class="pre">null</span></tt> , the name of the environment for this configuration set.</div></blockquote>
+<p>DeploymentStatus -&gt; (string)</p>
+<blockquote>
+<div><p>If this configuration set is associated with an environment, the <tt class="docutils literal"><span class="pre">DeploymentStatus</span></tt> parameter indicates the deployment status of this configuration set:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">null</span></tt> : This configuration is not associated with a running environment.</li>
+<li><tt class="docutils literal"><span class="pre">pending</span></tt> : This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</li>
+<li><tt class="docutils literal"><span class="pre">deployed</span></tt> : This is the configuration that is currently deployed to the associated running environment.</li>
+<li><tt class="docutils literal"><span class="pre">failed</span></tt> : This is a draft configuration that failed to successfully deploy.</li>
+</ul>
+</div></blockquote>
+<p>DateCreated -&gt; (timestamp)</p>
+<blockquote>
+<div>The date (in UTC time) when this configuration set was created.</div></blockquote>
+<p>DateUpdated -&gt; (timestamp)</p>
+<blockquote>
+<div>The date (in UTC time) when this configuration set was last modified.</div></blockquote>
+<p>OptionSettings -&gt; (list)</p>
+<blockquote>
+<div><p>A list of the configuration options and their values in this configuration set.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A specification identifying an individual configuration option along with its current value. For a list of possible option values, go to <a class="reference external" href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the <em>AWS Elastic Beanstalk Developer Guide</em> .</p>
+<p>ResourceName -&gt; (string)</p>
+<blockquote>
+<div>A unique resource name for a time-based scaling configuration option.</div></blockquote>
+<p>Namespace -&gt; (string)</p>
+<blockquote>
+<div>A unique namespace identifying the option's associated AWS resource.</div></blockquote>
+<p>OptionName -&gt; (string)</p>
+<blockquote>
+<div>The name of the configuration option.</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div>The current value for the configuration option.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
 </div>
 </div>
 
@@ -218,6 +306,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -227,35 +324,21 @@
           <a href="create-environment.html" title="create-environment">next</a> |</li>
         <li class="right">
           <a href="create-application-version.html" title="create-application-version">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">elasticbeanstalk</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'create-application-version.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'create-environment.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/create-configuration-template.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:18 GMT -->
 </html>

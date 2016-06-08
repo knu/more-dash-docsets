@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/inspector/describe-assessment-runs.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:20 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-assessment-runs &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="inspector" href="index.html" />
+    <link rel="next" title="describe-assessment-targets" href="describe-assessment-targets.html" />
+    <link rel="prev" title="delete-assessment-template" href="delete-assessment-template.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="describe-assessment-targets.html" title="describe-assessment-targets" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="delete-assessment-template.html" title="delete-assessment-template" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">inspector</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="delete-assessment-template.html" title="previous chapter (use the left arrow)">&#8592; delete-assessment-template</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="describe-assessment-targets.html" title="next chapter (use the right arrow)">describe-assessment-targets &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-assessment-runs</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/inspector/describe-assessment-runs">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-inspector"><em>inspector</em></a> ]</p>
+<div class="section" id="describe-assessment-runs">
+<span id="cli-aws-inspector-describe-assessment-runs"></span><h1>describe-assessment-runs<a name="//apple_ref/cpp/Command/aws inspector describe-assessment-runs" class="dashAnchor" id="aws inspector describe-assessment-runs"></a><a class="headerlink" href="#describe-assessment-runs" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Describes the assessment runs that are specified by the ARNs of the assessment runs.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  describe-assessment-runs
+--assessment-run-arns &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--assessment-run-arns" class="dashAnchor" id="assessment-run-arns"></a><span class="pre">--assessment-run-arns</span></tt> (list)</p>
+<blockquote>
+<div>The ARN that specifies the assessment run that you want to describe.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>"string" "string" ...</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>assessmentRuns -&gt; (list)</p>
+<blockquote>
+<div><p>Information about the assessment run.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A snapshot of an Amazon Inspector assessment run that contains the findings of the assessment run .</p>
+<p>Used as the response element in the  describe-assessment-runs action.</p>
+<p>arn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the assessment run.</div></blockquote>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The auto-generated name for the assessment run.</div></blockquote>
+<p>assessmentTemplateArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the assessment template that is associated with the assessment run.</div></blockquote>
+<p>state -&gt; (string)</p>
+<blockquote>
+<div>The state of the assessment run.</div></blockquote>
+<p>durationInSeconds -&gt; (integer)</p>
+<blockquote>
+<div>The duration of the assessment run.</div></blockquote>
+<p>rulesPackageArns -&gt; (list)</p>
+<blockquote>
+<div><p>The rules packages selected for the assessment run.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>userAttributesForFindings -&gt; (list)</p>
+<blockquote>
+<div><p>The user-defined attributes that are assigned to every generated finding.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>This data type is used as a request parameter in the  add-attributes-to-findings and  create-assessment-template actions.</p>
+<p>key -&gt; (string)</p>
+<blockquote>
+<div>The attribute key.</div></blockquote>
+<p>value -&gt; (string)</p>
+<blockquote>
+<div>The value assigned to the attribute key.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>createdAt -&gt; (timestamp)</p>
+<blockquote>
+<div>The time when  start-assessment-run was called.</div></blockquote>
+<p>startedAt -&gt; (timestamp)</p>
+<blockquote>
+<div>The time when  start-assessment-run was called.</div></blockquote>
+<p>completedAt -&gt; (timestamp)</p>
+<blockquote>
+<div>The assessment run completion time that corresponds to the rules packages evaluation completion time or failure.</div></blockquote>
+<p>stateChangedAt -&gt; (timestamp)</p>
+<blockquote>
+<div>The last time when the assessment run's state changed.</div></blockquote>
+<p>dataCollected -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean value (true or false) that specifies whether the process of collecting data from the agents is completed.</div></blockquote>
+<p>stateChanges -&gt; (list)</p>
+<blockquote>
+<div><p>A list of the assessment run state changes.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Used as one of the elements of the  AssessmentRun data type.</p>
+<p>stateChangedAt -&gt; (timestamp)</p>
+<blockquote>
+<div>The last time the assessment run state changed.</div></blockquote>
+<p>state -&gt; (string)</p>
+<blockquote>
+<div>The assessment run state.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>notifications -&gt; (list)</p>
+<blockquote>
+<div><p>A list of notifications for the event subscriptions. A notification about a particular generated finding is added to this list only once.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Used as one of the elements of the  AssessmentRun data type.</p>
+<p>date -&gt; (timestamp)</p>
+<blockquote>
+<div>The date of the notification.</div></blockquote>
+<p>event -&gt; (string)</p>
+<blockquote>
+<div>The event for which a notification is sent.</div></blockquote>
+<p>message -&gt; (string)</p>
+<p>error -&gt; (boolean)</p>
+<blockquote>
+<div>The Boolean value that specifies whether the notification represents an error.</div></blockquote>
+<p>snsTopicArn -&gt; (string)</p>
+<blockquote>
+<div>The SNS topic to which the SNS notification is sent.</div></blockquote>
+<p>snsPublishStatusCode -&gt; (string)</p>
+<blockquote>
+<div>The status code of the SNS notification.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>failedItems -&gt; (map)</p>
+<blockquote>
+<div><p>Assessment run details that cannot be described. An error code is provided for each failed item.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>Includes details about the failed items.</p>
+<p>failureCode -&gt; (string)</p>
+<blockquote>
+<div>The status code of a failed item.</div></blockquote>
+<p>retryable -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether you can immediately retry a request for this item for a specified resource.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="delete-assessment-template.html" title="previous chapter (use the left arrow)">&#8592; delete-assessment-template</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="describe-assessment-targets.html" title="next chapter (use the right arrow)">describe-assessment-targets &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="describe-assessment-targets.html" title="describe-assessment-targets">next</a> |</li>
+        <li class="right">
+          <a href="delete-assessment-template.html" title="delete-assessment-template">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">inspector</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/inspector/describe-assessment-runs.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:20 GMT -->
+</html>

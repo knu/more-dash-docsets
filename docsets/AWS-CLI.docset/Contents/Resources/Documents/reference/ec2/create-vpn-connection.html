@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/create-vpn-connection.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>create-vpn-connection &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>create-vpn-connection &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +25,10 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="ec2" href="index.html" />
     <link rel="next" title="create-vpn-connection-route" href="create-vpn-connection-route.html" />
-    <link rel="prev" title="create-vpc" href="create-vpc.html" />
+    <link rel="prev" title="create-vpc-peering-connection" href="create-vpc-peering-connection.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
   
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -60,8 +63,8 @@
         <li class="right">
           <a href="create-vpn-connection-route.html" title="create-vpn-connection-route" accesskey="N">next</a> |</li>
         <li class="right">
-          <a href="create-vpc.html" title="create-vpc" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="create-vpc-peering-connection.html" title="create-vpc-peering-connection" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">ec2</a> &#187;</li> 
       </ul>
@@ -71,7 +74,7 @@
     <div class="top-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="create-vpc.html" title="previous chapter (use the left arrow)">&#8592; create-vpc</a>
+          <a href="create-vpc-peering-connection.html" title="previous chapter (use the left arrow)">&#8592; create-vpc-peering-connection</a>
           <span class="divider">/</span>
           
         </li>
@@ -82,23 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">create-vpn-connection</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,56 +112,206 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/ec2/create-vpn-connection">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ec2/create-vpn-connection">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>ec2</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-ec2"><em>ec2</em></a> ]</p>
 <div class="section" id="create-vpn-connection">
-<h1>create-vpn-connection<a class="headerlink" href="#create-vpn-connection" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-ec2-create-vpn-connection"></span><h1>create-vpn-connection<a name="//apple_ref/cpp/Command/aws ec2 create-vpn-connection" class="dashAnchor" id="aws ec2 create-vpn-connection"></a><a class="headerlink" href="#create-vpn-connection" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Creates a new VPN connection between an existing VPN gateway and customer gateway. The only supported connection type is ipsec.1.</p>
-<p>The response includes information that you need to configure your customer gateway, in XML format. We recommend you use the command line version of this operation (<tt class="docutils literal"><span class="pre">ec2-create-vpn-connection</span></tt>  ), which takes an <tt class="docutils literal"><span class="pre">-f</span></tt>  option (for format) and returns configuration information formatted as expected by the vendor you specified, or in a generic, human readable format. For information about the command, go to <tt class="docutils literal"><span class="pre">ec2-create-vpn-connection</span></tt>  in the Amazon Virtual Private Cloud Command Line Reference.</p>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Creates a VPN connection between an existing virtual private gateway and a VPN customer gateway. The only supported connection type is <tt class="docutils literal"><span class="pre">ipsec.1</span></tt> .</p>
+<p>The response includes information that you need to give to your network administrator to configure your customer gateway.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p>We strongly recommend you use HTTPS when calling this operation because the response contains sensitive cryptographic information for configuring your customer gateway.</p>
-<p class="last">If you decide to shut down your VPN connection for any reason and then create a new one, you must re-configure your customer gateway with the new information returned from this call.</p>
+<p class="last">We strongly recommend that you use HTTPS when calling this operation because the response contains sensitive cryptographic information for configuring your customer gateway.</p>
 </div>
+<p>If you decide to shut down your VPN connection for any reason and later create a new VPN connection, you must reconfigure your customer gateway with the new information returned from this call.</p>
+<p>This is an idempotent operation. If you perform the operation more than once, Amazon EC2 doesn't return an error.</p>
+<p>For more information about VPN connections, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding a Hardware Virtual Private Gateway to Your VPC</a> in the <em>Amazon Virtual Private Cloud User Guide</em> .</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  create-vpn-connection
 [--dry-run | --no-dry-run]
 --type &lt;value&gt;
 --customer-gateway-id &lt;value&gt;
 --vpn-gateway-id &lt;value&gt;
-[--options &lt;value&gt;]</pre>
+[--options &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--no-dry-run" class="dashAnchor" id="no-dry-run"></a><span class="pre">--no-dry-run</span></tt> (boolean)</p>
-<p>Checks whether you have the required permissions for the action, without actually making the request. Using this option will result in one of two possible errorresponses. If you have the required permissions, the error response will be <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt>  . Otherwise it will be <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt>  .</p>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><span class="pre">--no-dry-run</span></tt> (boolean)</p>
+<blockquote>
+<div>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt> . Otherwise, it is <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt> .</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--type" class="dashAnchor" id="type"></a><span class="pre">--type</span></tt> (string)</p>
 <blockquote>
-<div>The type of VPN connection.</div></blockquote>
+<div>The type of VPN connection (<tt class="docutils literal"><span class="pre">ipsec.1</span></tt> ).</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--customer-gateway-id" class="dashAnchor" id="customer-gateway-id"></a><span class="pre">--customer-gateway-id</span></tt> (string)</p>
 <blockquote>
 <div>The ID of the customer gateway.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--vpn-gateway-id" class="dashAnchor" id="vpn-gateway-id"></a><span class="pre">--vpn-gateway-id</span></tt> (string)</p>
 <blockquote>
-<div>The ID of the VPN gateway.</div></blockquote>
+<div>The ID of the virtual private gateway.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--options" class="dashAnchor" id="options"></a><span class="pre">--options</span></tt> (structure)</p>
+<blockquote>
+<div><p>Indicates whether the VPN connection requires static routes. If you are creating a VPN connection for a device that does not support BGP, you must specify <tt class="docutils literal"><span class="pre">true</span></tt> .</p>
+<p>Default: <tt class="docutils literal"><span class="pre">false</span></tt></p>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">StaticRoutesOnly</span><span class="o">=</span><span class="n">boolean</span>
+</pre></div>
+</div>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-  <span class="s">"StaticRoutesOnly"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span>
+  <span class="s2">"StaticRoutesOnly"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To create a VPN connection with dynamic routing</strong></p>
+<p>This example creates a VPN connection between the specified virtual private gateway and the specified customer gateway. The output includes the configuration information that your network administrator needs, in XML format.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 create-vpn-connection --type ipsec.1 --customer-gateway-id cgw-0e11f167 --vpn-gateway-id vgw-9a4cacf3</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><pre>{
+    "VpnConnection": {
+        "VpnConnectionId": "vpn-40f41529"
+        "CustomerGatewayConfiguration": "...configuration information...",
+        "State": "available",
+        "VpnGatewayId": "vgw-f211f09b",
+        "CustomerGatewayId": "cgw-b4de3fdd"
+    }
+}</pre>
+</div>
+<p><strong>To create a VPN connection with static routing</strong></p>
+<p>This example creates a VPN connection between the specified virtual private gateway and the specified customer gateway. The options specify static routing. The output includes the configuration information that your network administrator needs, in XML format.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 create-vpn-connection --type ipsec.1 --customer-gateway-id cgw-0e11f167 --vpn-gateway-id vgw-9a4cacf3 --options "{\"StaticRoutesOnly\":true}"</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><pre>{
+    "VpnConnection": {
+        "VpnConnectionId": "vpn-40f41529"
+        "CustomerGatewayConfiguration": "...configuration information...",
+        "State": "pending",
+        "VpnGatewayId": "vgw-f211f09b",
+        "CustomerGatewayId": "cgw-b4de3fdd",
+        "Options": {
+            "StaticRoutesOnly": true
+        }
+    }
+}</pre>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>VpnConnection -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about the VPN connection.</p>
+<p>VpnConnectionId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the VPN connection.</div></blockquote>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div>The current state of the VPN connection.</div></blockquote>
+<p>CustomerGatewayConfiguration -&gt; (string)</p>
+<blockquote>
+<div>The configuration information for the VPN connection's customer gateway (in the native XML format). This element is always present in the  create-vpn-connection response; however, it's present in the  describe-vpn-connections response only if the VPN connection is in the <tt class="docutils literal"><span class="pre">pending</span></tt> or <tt class="docutils literal"><span class="pre">available</span></tt> state.</div></blockquote>
+<p>Type -&gt; (string)</p>
+<blockquote>
+<div>The type of VPN connection.</div></blockquote>
+<p>CustomerGatewayId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the customer gateway at your end of the VPN connection.</div></blockquote>
+<p>VpnGatewayId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the virtual private gateway at the AWS side of the VPN connection.</div></blockquote>
+<p>Tags -&gt; (list)</p>
+<blockquote>
+<div><p>Any tags assigned to the VPN connection.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a tag.</p>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div><p>The key of the tag.</p>
+<p>Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <tt class="docutils literal"><span class="pre">aws:</span></tt></p>
+</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div><p>The value of the tag.</p>
+<p>Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>VgwTelemetry -&gt; (list)</p>
+<blockquote>
+<div><p>Information about the VPN tunnel.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes telemetry for a VPN tunnel.</p>
+<p>OutsideIpAddress -&gt; (string)</p>
+<blockquote>
+<div>The Internet-routable IP address of the virtual private gateway's outside interface.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status of the VPN tunnel.</div></blockquote>
+<p>LastStatusChange -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time of the last change in status.</div></blockquote>
+<p>StatusMessage -&gt; (string)</p>
+<blockquote>
+<div>If an error occurs, a description of the error.</div></blockquote>
+<p>AcceptedRouteCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of accepted routes.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Options -&gt; (structure)</p>
+<blockquote>
+<div><p>The VPN connection options.</p>
+<p>StaticRoutesOnly -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether the VPN connection uses static routes only. Static routes must be used for devices that don't support BGP.</div></blockquote>
+</div></blockquote>
+<p>Routes -&gt; (list)</p>
+<blockquote>
+<div><p>The static routes associated with the VPN connection.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a static route for a VPN connection.</p>
+<p>DestinationCidrBlock -&gt; (string)</p>
+<blockquote>
+<div>The CIDR block associated with the local subnet of the customer data center.</div></blockquote>
+<p>Source -&gt; (string)</p>
+<blockquote>
+<div>Indicates how the routes were provided.</div></blockquote>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div>The current state of the static route.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
 </div>
 </div>
 
@@ -168,7 +323,7 @@
     <div class="footer-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="create-vpc.html" title="previous chapter (use the left arrow)">&#8592; create-vpc</a>
+          <a href="create-vpc-peering-connection.html" title="previous chapter (use the left arrow)">&#8592; create-vpc-peering-connection</a>
           <span class="divider">/</span>
           
         </li>
@@ -178,6 +333,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -186,36 +350,22 @@
         <li class="right">
           <a href="create-vpn-connection-route.html" title="create-vpn-connection-route">next</a> |</li>
         <li class="right">
-          <a href="create-vpc.html" title="create-vpc">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="create-vpc-peering-connection.html" title="create-vpc-peering-connection">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">ec2</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'create-vpc.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'create-vpn-connection-route.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/create-vpn-connection.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
 </html>

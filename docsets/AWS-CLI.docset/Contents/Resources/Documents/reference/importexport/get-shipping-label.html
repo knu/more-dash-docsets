@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/importexport/get-shipping-label.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:20 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-shipping-label &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="importexport" href="index.html" />
+    <link rel="next" title="get-status" href="get-status.html" />
+    <link rel="prev" title="create-job" href="create-job.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="get-status.html" title="get-status" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="create-job.html" title="create-job" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">importexport</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="create-job.html" title="previous chapter (use the left arrow)">&#8592; create-job</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="get-status.html" title="next chapter (use the right arrow)">get-status &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-shipping-label</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/importexport/get-shipping-label">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-importexport"><em>importexport</em></a> ]</p>
+<div class="section" id="get-shipping-label">
+<span id="cli-aws-importexport-get-shipping-label"></span><h1>get-shipping-label<a name="//apple_ref/cpp/Command/aws importexport get-shipping-label" class="dashAnchor" id="aws importexport get-shipping-label"></a><a class="headerlink" href="#get-shipping-label" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>This operation generates a pre-paid UPS shipping label that you will use to ship your device to AWS for processing.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  get-shipping-label
+--job-ids &lt;value&gt;
+[--name &lt;value&gt;]
+[--company &lt;value&gt;]
+[--phone-number &lt;value&gt;]
+[--country &lt;value&gt;]
+[--state-or-province &lt;value&gt;]
+[--city &lt;value&gt;]
+[--postal-code &lt;value&gt;]
+[--street-1 &lt;value&gt;]
+[--street-2 &lt;value&gt;]
+[--street-3 &lt;value&gt;]
+[--api-version &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--job-ids" class="dashAnchor" id="job-ids"></a><span class="pre">--job-ids</span></tt> (list)</p>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>"string" "string" ...</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--name" class="dashAnchor" id="name"></a><span class="pre">--name</span></tt> (string)
+Specifies the name of the person responsible for shipping this package.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--company" class="dashAnchor" id="company"></a><span class="pre">--company</span></tt> (string)
+Specifies the name of the company that will ship this package.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--phone-number" class="dashAnchor" id="phone-number"></a><span class="pre">--phone-number</span></tt> (string)
+Specifies the phone number of the person responsible for shipping this package.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--country" class="dashAnchor" id="country"></a><span class="pre">--country</span></tt> (string)
+Specifies the name of your country for the return address.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--state-or-province" class="dashAnchor" id="state-or-province"></a><span class="pre">--state-or-province</span></tt> (string)
+Specifies the name of your state or your province for the return address.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--city" class="dashAnchor" id="city"></a><span class="pre">--city</span></tt> (string)
+Specifies the name of your city for the return address.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--postal-code" class="dashAnchor" id="postal-code"></a><span class="pre">--postal-code</span></tt> (string)
+Specifies the postal code for the return address.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--street-1" class="dashAnchor" id="street-1"></a><span class="pre">--street-1</span></tt> (string)
+Specifies the first part of the street address for the return address, for example 1234 Main Street.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--street-2" class="dashAnchor" id="street-2"></a><span class="pre">--street-2</span></tt> (string)
+Specifies the optional second part of the street address for the return address, for example Suite 100.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--street-3" class="dashAnchor" id="street-3"></a><span class="pre">--street-3</span></tt> (string)
+Specifies the optional third part of the street address for the return address, for example c/o Jane Doe.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--api-version" class="dashAnchor" id="api-version"></a><span class="pre">--api-version</span></tt> (string)
+Specifies the version of the client tool.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p>The following command creates a pre-paid shipping label for the specified job:</p>
+<div class="highlight-python"><pre>aws importexport get-shipping-label --job-ids EX1ID --name "Jane Roe" --company "Example Corp." --phone-number "206-555-1111" --country "USA" --state-or-province "WA" --city "Anytown" --postal-code "91011-1111" --street-1 "123 Any Street"</pre>
+</div>
+<p>The output for the get-shipping-label command looks like the following:</p>
+<div class="highlight-python"><pre>https://s3.amazonaws.com/myBucket/shipping-label-EX1ID.pdf</pre>
+</div>
+<p>The link in the output contains the pre-paid shipping label generated in a PDF. It also contains shipping instructions with a unique bar code to identify and authenticate your device. For more information about using the pre-paid shipping label and shipping your device, see <a class="reference external" href="http://docs.aws.amazon.com/AWSImportExport/latest/DG/CHAP_ShippingYourStorageDevice.html">Shipping Your Storage Device</a> in the <em>AWS Import/Export Developer Guide</em>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>ShippingLabelURL -&gt; (string)</p>
+<p>Warning -&gt; (string)</p>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="create-job.html" title="previous chapter (use the left arrow)">&#8592; create-job</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="get-status.html" title="next chapter (use the right arrow)">get-status &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="get-status.html" title="get-status">next</a> |</li>
+        <li class="right">
+          <a href="create-job.html" title="create-job">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">importexport</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/importexport/get-shipping-label.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:20 GMT -->
+</html>

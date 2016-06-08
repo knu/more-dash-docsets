@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/autoscaling/create-auto-scaling-group.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:57 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>create-auto-scaling-group &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>create-auto-scaling-group &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +25,10 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="autoscaling" href="index.html" />
     <link rel="next" title="create-launch-configuration" href="create-launch-configuration.html" />
-    <link rel="prev" title="autoscaling" href="index.html" />
+    <link rel="prev" title="complete-lifecycle-action" href="complete-lifecycle-action.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
   
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -60,8 +63,8 @@
         <li class="right">
           <a href="create-launch-configuration.html" title="create-launch-configuration" accesskey="N">next</a> |</li>
         <li class="right">
-          <a href="index.html" title="autoscaling" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="complete-lifecycle-action.html" title="complete-lifecycle-action" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">autoscaling</a> &#187;</li> 
       </ul>
@@ -71,7 +74,7 @@
     <div class="top-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="index.html" title="previous chapter (use the left arrow)">&#8592; autoscaling</a>
+          <a href="complete-lifecycle-action.html" title="previous chapter (use the left arrow)">&#8592; complete-lifecycle-action</a>
           <span class="divider">/</span>
           
         </li>
@@ -82,24 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">create-auto-scaling-group</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
 <li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -108,29 +112,33 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/autoscaling/create-auto-scaling-group">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/autoscaling/create-auto-scaling-group">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>autoscaling</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-autoscaling"><em>autoscaling</em></a> ]</p>
 <div class="section" id="create-auto-scaling-group">
-<h1>create-auto-scaling-group<a class="headerlink" href="#create-auto-scaling-group" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-autoscaling-create-auto-scaling-group"></span><h1>create-auto-scaling-group<a name="//apple_ref/cpp/Command/aws autoscaling create-auto-scaling-group" class="dashAnchor" id="aws autoscaling create-auto-scaling-group"></a><a class="headerlink" href="#create-auto-scaling-group" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Creates a new Auto Scaling group with the specified name and other attributes. When the creation request is completed, the Auto Scaling group is ready to be used in other calls.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The Auto Scaling group name must be unique within the scope of your AWS account, and under the quota of Auto Scaling groups allowed for your account.</p>
-</div>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Creates an Auto Scaling group with the specified name and attributes.</p>
+<p>If you exceed your maximum limit of Auto Scaling groups, which by default is 20 per region, the call fails. For information about viewing and updating this limit, see  describe-account-limits .</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroup.html">Auto Scaling Groups</a> in the <em>Auto Scaling Developer Guide</em> .</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  create-auto-scaling-group
 --auto-scaling-group-name &lt;value&gt;
---launch-configuration-name &lt;value&gt;
+[--launch-configuration-name &lt;value&gt;]
+[--instance-id &lt;value&gt;]
 --min-size &lt;value&gt;
 --max-size &lt;value&gt;
 [--desired-capacity &lt;value&gt;]
@@ -142,69 +150,92 @@
 [--placement-group &lt;value&gt;]
 [--vpc-zone-identifier &lt;value&gt;]
 [--termination-policies &lt;value&gt;]
-[--tags &lt;value&gt;]</pre>
+[--new-instances-protected-from-scale-in | --no-new-instances-protected-from-scale-in]
+[--tags &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--auto-scaling-group-name" class="dashAnchor" id="auto-scaling-group-name"></a><span class="pre">--auto-scaling-group-name</span></tt> (string)</p>
 <blockquote>
-<div>The name of the Auto Scaling group.</div></blockquote>
+<div>The name of the group. This name must be unique within the scope of your AWS account.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--launch-configuration-name" class="dashAnchor" id="launch-configuration-name"></a><span class="pre">--launch-configuration-name</span></tt> (string)</p>
 <blockquote>
-<div>The name of the launch configuration to use with the Auto Scaling group.</div></blockquote>
+<div>The name of the launch configuration. Alternatively, specify an EC2 instance instead of a launch configuration.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--instance-id" class="dashAnchor" id="instance-id"></a><span class="pre">--instance-id</span></tt> (string)</p>
+<blockquote>
+<div><p>The ID of the instance used to create a launch configuration for the group. Alternatively, specify a launch configuration instead of an EC2 instance.</p>
+<p>When you specify an ID of an instance, Auto Scaling creates a new launch configuration and associates it with the group. This launch configuration derives its attributes from the specified instance, with the exception of the block device mapping.</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-asg-from-instance.html">Create an Auto Scaling Group Using an EC2 Instance</a> in the <em>Auto Scaling Developer Guide</em> .</p>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--min-size" class="dashAnchor" id="min-size"></a><span class="pre">--min-size</span></tt> (integer)</p>
 <blockquote>
-<div>The minimum size of the Auto Scaling group.</div></blockquote>
+<div>The minimum size of the group.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-size" class="dashAnchor" id="max-size"></a><span class="pre">--max-size</span></tt> (integer)</p>
 <blockquote>
-<div>The maximum size of the Auto Scaling group.</div></blockquote>
+<div>The maximum size of the group.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--desired-capacity" class="dashAnchor" id="desired-capacity"></a><span class="pre">--desired-capacity</span></tt> (integer)</p>
 <blockquote>
-<div>The number of Amazon EC2 instances that should be running in the group.</div></blockquote>
+<div>The number of EC2 instances that should be running in the group. This number must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--default-cooldown" class="dashAnchor" id="default-cooldown"></a><span class="pre">--default-cooldown</span></tt> (integer)</p>
 <blockquote>
-<div>The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling activities can start.</div></blockquote>
+<div><p>The amount of time, in seconds, after a scaling activity completes before another scaling activity can start. The default is 300.</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto Scaling Cooldowns</a> in the <em>Auto Scaling Developer Guide</em> .</p>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--availability-zones" class="dashAnchor" id="availability-zones"></a><span class="pre">--availability-zones</span></tt> (list)</p>
 <blockquote>
-<div>A list of Availability Zones for the Auto Scaling group. This is required unless you have specified subnets.</div></blockquote>
+<div>One or more Availability Zones for the group. This parameter is optional if you specify one or more subnets.</div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--load-balancer-names" class="dashAnchor" id="load-balancer-names"></a><span class="pre">--load-balancer-names</span></tt> (list)</p>
 <blockquote>
-<div>A list of load balancers to use.</div></blockquote>
+<div><p>One or more load balancers.</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SetUpASLBApp.html">Using a Load Balancer With an Auto Scaling Group</a> in the <em>Auto Scaling Developer Guide</em> .</p>
+</div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--health-check-type" class="dashAnchor" id="health-check-type"></a><span class="pre">--health-check-type</span></tt> (string)</p>
 <blockquote>
-<div>The service you want the health status from, Amazon EC2 or Elastic Load Balancer. Valid values are <tt class="docutils literal"><span class="pre">EC2</span></tt>  or <tt class="docutils literal"><span class="pre">ELB</span></tt>  .</div></blockquote>
+<div><p>The service to use for the health checks. The valid values are <tt class="docutils literal"><span class="pre">EC2</span></tt> and <tt class="docutils literal"><span class="pre">ELB</span></tt> .</p>
+<p>By default, health checks use Amazon EC2 instance status checks to determine the health of an instance. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health Checks</a> in the <em>Auto Scaling Developer Guide</em> .</p>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--health-check-grace-period" class="dashAnchor" id="health-check-grace-period"></a><span class="pre">--health-check-grace-period</span></tt> (integer)</p>
 <blockquote>
-<div>Length of time in seconds after a new Amazon EC2 instance comes into service that Auto Scaling starts checking its health.</div></blockquote>
+<div><p>The amount of time, in seconds, that Auto Scaling waits before checking the health status of an EC2 instance that has come into service. During this time, any health check failures for the instance are ignored. The default is 300.</p>
+<p>This parameter is required if you are adding an <tt class="docutils literal"><span class="pre">ELB</span></tt> health check.</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health Checks</a> in the <em>Auto Scaling Developer Guide</em> .</p>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--placement-group" class="dashAnchor" id="placement-group"></a><span class="pre">--placement-group</span></tt> (string)</p>
 <blockquote>
-<div>Physical location of your cluster placement group created in Amazon EC2. For more information about cluster placement group, see <a class="reference external" href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Using Cluster Instances</a></div></blockquote>
+<div>The name of the placement group into which you'll launch your instances, if any. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--vpc-zone-identifier" class="dashAnchor" id="vpc-zone-identifier"></a><span class="pre">--vpc-zone-identifier</span></tt> (string)</p>
 <blockquote>
-<div><p>A comma-separated list of subnet identifiers of Amazon Virtual Private Clouds (Amazon VPCs).</p>
+<div><p>A comma-separated list of subnet identifiers for your virtual private cloud (VPC).</p>
 <p>If you specify subnets and Availability Zones with this call, ensure that the subnets' Availability Zones match the Availability Zones specified.</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching Auto Scaling Instances in a VPC</a> in the <em>Auto Scaling Developer Guide</em> .</p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--termination-policies" class="dashAnchor" id="termination-policies"></a><span class="pre">--termination-policies</span></tt> (list)</p>
 <blockquote>
-<div><p>A standalone termination policy or a list of termination policies used to select the instance to terminate. The policies are executed in the order that they are listed.</p>
-<p>For more information on configuring a termination policy for your Auto Scaling group, go to <a class="reference external" href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance Termination Policy for Your Auto Scaling Group</a> in the the <em>Auto Scaling Developer Guide</em> .</p>
+<div><p>One or more termination policies used to select the instance to terminate. These policies are executed in the order that they are listed.</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html">Controlling Which Instances Auto Scaling Terminates During Scale In</a> in the <em>Auto Scaling Developer Guide</em> .</p>
 </div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--new-instances-protected-from-scale-in" class="dashAnchor" id="new-instances-protected-from-scale-in"></a><span class="pre">--new-instances-protected-from-scale-in</span></tt> | <tt class="docutils literal"><span class="pre">--no-new-instances-protected-from-scale-in</span></tt> (boolean)</p>
+<blockquote>
+<div>Indicates whether newly launched instances are protected from termination by Auto Scaling when scaling in.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--tags" class="dashAnchor" id="tags"></a><span class="pre">--tags</span></tt> (list)</p>
 <blockquote>
-<div>The tag to be created or updated. Each tag should be defined by its resource type, resource ID, key, value, and a propagate flag. Valid values: key=*value* , value=*value* , propagate=*true* or <em>false</em> . Value and propagate are optional parameters.</div></blockquote>
+<div><p>One or more tags.</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tagging Auto Scaling Groups and Instances</a> in the <em>Auto Scaling Developer Guide</em> .</p>
+</div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><pre>  Key value pairs, with multiple values separated by a space.
---tags ResourceId=string,ResourceType=string,Key=string,Value=string,PropagateAtLaunch=boolean</pre>
+<div class="highlight-python"><pre>ResourceId=string,ResourceType=string,Key=string,Value=string,PropagateAtLaunch=boolean ...</pre>
 </div>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><pre>[
@@ -218,14 +249,30 @@
   ...
 ]</pre>
 </div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
 </div>
 <div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
-<p><strong>To launch an Auto Scaling group</strong></p>
-<p>The following <tt class="docutils literal"><span class="pre">create-auto-scaling-group</span></tt> command launches an Auto Scaling group:</p>
-<div class="highlight-python"><pre>aws autoscaling create-auto-scaling-group auto-scaling-group-name my-test-windows-asg launch-configuration-name my-test-windows-lc min-size 0 max-size 1 desired-capacity 1 availability-zones us-west-2c</pre>
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To create an Auto Scaling group</strong></p>
+<p>This example creates an Auto Scaling group in a VPC:</p>
+<div class="highlight-python"><pre>aws autoscaling create-auto-scaling-group --auto-scaling-group-name my-auto-scaling-group --launch-configuration-name my-launch-config --min-size 1 --max-size 3 --vpc-zone-identifier subnet-41767929c</pre>
 </div>
-<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_BasicSetup.html">Basic Auto Scaling Configuration</a> in the <em>Auto Scaling Developer Guide</em>.</p>
+<p>This example creates an Auto Scaling group and configures it to use an Elastic Load Balancing load balancer:</p>
+<div class="highlight-python"><pre>aws autoscaling create-auto-scaling-group --auto-scaling-group-name my-auto-scaling-group --launch-configuration-name my-launch-config --load-balancer-names my-load-balancer --health-check-type ELB --health-check-grace-period 120</pre>
+</div>
+<p>This example creates an Auto Scaling group. It specifies Availability Zones instead of subnets. It also launches instances into a placement group and sets the termination policy to terminate the oldest instances first:</p>
+<div class="highlight-python"><pre>aws autoscaling create-auto-scaling-group --auto-scaling-group-name my-auto-scaling-group --launch-configuration-name my-launch-config --min-size 1 --max-size 3 --desired-capacity 2 --default-cooldown 600 --placement-group my-placement-group --termination-policies "OldestInstance" --availability-zones us-west-2c</pre>
+</div>
+<p>This example creates an Auto Scaling group from the specified EC2 instance and assigns a tag to instances in the group:</p>
+<div class="highlight-python"><pre>aws autoscaling create-auto-scaling-group --auto-scaling-group-name my-auto-scaling-group --instance-id i-22c99e2a --min-size 1 --max-size 3 --vpc-zone-identifier subnet-41767929 --tags ResourceId=my-auto-scaling-group,ResourceType=auto-scaling-group,Key=Role,Value=WebServer</pre>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>None</p>
 </div>
 </div>
 
@@ -237,7 +284,7 @@
     <div class="footer-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="index.html" title="previous chapter (use the left arrow)">&#8592; autoscaling</a>
+          <a href="complete-lifecycle-action.html" title="previous chapter (use the left arrow)">&#8592; complete-lifecycle-action</a>
           <span class="divider">/</span>
           
         </li>
@@ -247,6 +294,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -255,36 +311,22 @@
         <li class="right">
           <a href="create-launch-configuration.html" title="create-launch-configuration">next</a> |</li>
         <li class="right">
-          <a href="index.html" title="autoscaling">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="complete-lifecycle-action.html" title="complete-lifecycle-action">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">autoscaling</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'index.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'create-launch-configuration.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/autoscaling/create-auto-scaling-group.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:57 GMT -->
 </html>

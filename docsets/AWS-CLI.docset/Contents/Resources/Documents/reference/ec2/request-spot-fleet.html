@@ -1,0 +1,450 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/request-spot-fleet.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>request-spot-fleet &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="ec2" href="index.html" />
+    <link rel="next" title="request-spot-instances" href="request-spot-instances.html" />
+    <link rel="prev" title="report-instance-status" href="report-instance-status.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="request-spot-instances.html" title="request-spot-instances" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="report-instance-status.html" title="report-instance-status" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">ec2</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="report-instance-status.html" title="previous chapter (use the left arrow)">&#8592; report-instance-status</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="request-spot-instances.html" title="next chapter (use the right arrow)">request-spot-instances &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">request-spot-fleet</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ec2/request-spot-fleet">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-ec2"><em>ec2</em></a> ]</p>
+<div class="section" id="request-spot-fleet">
+<span id="cli-aws-ec2-request-spot-fleet"></span><h1>request-spot-fleet<a name="//apple_ref/cpp/Command/aws ec2 request-spot-fleet" class="dashAnchor" id="aws ec2 request-spot-fleet"></a><a class="headerlink" href="#request-spot-fleet" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Creates a Spot fleet request.</p>
+<p>You can submit a single request that includes multiple launch specifications that vary by instance type, AMI, Availability Zone, or subnet.</p>
+<p>By default, the Spot fleet requests Spot instances in the Spot pool where the price per unit is the lowest. Each launch specification can include its own instance weighting that reflects the value of the instance type to your application workload.</p>
+<p>Alternatively, you can specify that the Spot fleet distribute the target capacity across the Spot pools included in its launch specifications. By ensuring that the Spot instances in your Spot fleet are in different Spot pools, you can improve the availability of your fleet.</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot Fleet Requests</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  request-spot-fleet
+[--dry-run | --no-dry-run]
+--spot-fleet-request-config &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><span class="pre">--no-dry-run</span></tt> (boolean)</p>
+<blockquote>
+<div>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt> . Otherwise, it is <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--spot-fleet-request-config" class="dashAnchor" id="spot-fleet-request-config"></a><span class="pre">--spot-fleet-request-config</span></tt> (structure)</p>
+<blockquote>
+<div>The configuration for the Spot fleet request.</div></blockquote>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{
+  "ClientToken": "string",
+  "SpotPrice": "string",
+  "TargetCapacity": integer,
+  "ValidFrom": timestamp,
+  "ValidUntil": timestamp,
+  "TerminateInstancesWithExpiration": true|false,
+  "IamFleetRole": "string",
+  "LaunchSpecifications": [
+    {
+      "ImageId": "string",
+      "KeyName": "string",
+      "SecurityGroups": [
+        {
+          "GroupName": "string",
+          "GroupId": "string"
+        }
+        ...
+      ],
+      "UserData": "string",
+      "AddressingType": "string",
+      "InstanceType": "t1.micro"|"m1.small"|"m1.medium"|"m1.large"|"m1.xlarge"|"m3.medium"|"m3.large"|"m3.xlarge"|"m3.2xlarge"|"m4.large"|"m4.xlarge"|"m4.2xlarge"|"m4.4xlarge"|"m4.10xlarge"|"t2.nano"|"t2.micro"|"t2.small"|"t2.medium"|"t2.large"|"m2.xlarge"|"m2.2xlarge"|"m2.4xlarge"|"cr1.8xlarge"|"x1.4xlarge"|"x1.8xlarge"|"x1.16xlarge"|"x1.32xlarge"|"i2.xlarge"|"i2.2xlarge"|"i2.4xlarge"|"i2.8xlarge"|"hi1.4xlarge"|"hs1.8xlarge"|"c1.medium"|"c1.xlarge"|"c3.large"|"c3.xlarge"|"c3.2xlarge"|"c3.4xlarge"|"c3.8xlarge"|"c4.large"|"c4.xlarge"|"c4.2xlarge"|"c4.4xlarge"|"c4.8xlarge"|"cc1.4xlarge"|"cc2.8xlarge"|"g2.2xlarge"|"g2.8xlarge"|"cg1.4xlarge"|"r3.large"|"r3.xlarge"|"r3.2xlarge"|"r3.4xlarge"|"r3.8xlarge"|"d2.xlarge"|"d2.2xlarge"|"d2.4xlarge"|"d2.8xlarge",
+      "Placement": {
+        "AvailabilityZone": "string",
+        "GroupName": "string"
+      },
+      "KernelId": "string",
+      "RamdiskId": "string",
+      "BlockDeviceMappings": [
+        {
+          "VirtualName": "string",
+          "DeviceName": "string",
+          "Ebs": {
+            "SnapshotId": "string",
+            "VolumeSize": integer,
+            "DeleteOnTermination": true|false,
+            "VolumeType": "standard"|"io1"|"gp2"|"sc1"|"st1",
+            "Iops": integer,
+            "Encrypted": true|false
+          },
+          "NoDevice": "string"
+        }
+        ...
+      ],
+      "Monitoring": {
+        "Enabled": true|false
+      },
+      "SubnetId": "string",
+      "NetworkInterfaces": [
+        {
+          "NetworkInterfaceId": "string",
+          "DeviceIndex": integer,
+          "SubnetId": "string",
+          "Description": "string",
+          "PrivateIpAddress": "string",
+          "Groups": ["string", ...],
+          "DeleteOnTermination": true|false,
+          "PrivateIpAddresses": [
+            {
+              "PrivateIpAddress": "string",
+              "Primary": true|false
+            }
+            ...
+          ],
+          "SecondaryPrivateIpAddressCount": integer,
+          "AssociatePublicIpAddress": true|false
+        }
+        ...
+      ],
+      "IamInstanceProfile": {
+        "Arn": "string",
+        "Name": "string"
+      },
+      "EbsOptimized": true|false,
+      "WeightedCapacity": double,
+      "SpotPrice": "string"
+    }
+    ...
+  ],
+  "ExcessCapacityTerminationPolicy": "noTermination"|"default",
+  "AllocationStrategy": "lowestPrice"|"diversified",
+  "FulfilledCapacity": double,
+  "Type": "request"|"maintain"
+}</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To request a Spot fleet in the subnet with the lowest price</strong></p>
+<p>This example command creates a Spot fleet request with two launch specifications that differ only by subnet.
+The Spot fleet launches the instances in the specified subnet with the lowest price.
+If the instances are launched in a default VPC, they receive a public IP address by default.
+If the instances are launched in a nondefault VPC, they do not receive a public IP address by default.</p>
+<p>Note that you can't specify different subnets from the same Availability Zone in a Spot fleet request.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 request-spot-fleet --spot-fleet-request-config file://config.json</pre>
+</div>
+<p>Config.json:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"SpotPrice"</span><span class="p">:</span> <span class="s2">"0.04"</span><span class="p">,</span>
+  <span class="s2">"TargetCapacity"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="s2">"IamFleetRole"</span><span class="p">:</span> <span class="s2">"arn:aws:iam::123456789012:role/my-spot-fleet-role"</span><span class="p">,</span>
+  <span class="s2">"LaunchSpecifications"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">"ImageId"</span><span class="p">:</span> <span class="s2">"ami-1a2b3c4d"</span><span class="p">,</span>
+          <span class="s2">"KeyName"</span><span class="p">:</span> <span class="s2">"my-key-pair"</span><span class="p">,</span>
+          <span class="s2">"SecurityGroups"</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                  <span class="s2">"GroupId"</span><span class="p">:</span> <span class="s2">"sg-1a2b3c4d"</span>
+              <span class="p">}</span>
+          <span class="p">],</span>
+          <span class="s2">"InstanceType"</span><span class="p">:</span> <span class="s2">"m3.medium"</span><span class="p">,</span>
+          <span class="s2">"SubnetId"</span><span class="p">:</span> <span class="s2">"subnet-1a2b3c4d, subnet-3c4d5e6f"</span><span class="p">,</span>
+          <span class="s2">"IamInstanceProfile"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">"Arn"</span><span class="p">:</span> <span class="s2">"arn:aws:iam::123456789012:instance-profile/my-iam-role"</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"SpotFleetRequestId"</span><span class="p">:</span> <span class="s2">"sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>To request a Spot fleet in the Availability Zone with the lowest price</strong></p>
+<p>This example command creates a Spot fleet request with two launch specifications that differ only by Availability Zone.
+The Spot fleet launches the instances in the specified Availability Zone with the lowest price.
+If your account supports EC2-VPC only, Amazon EC2 launches the Spot instances in the default subnet of the Availability Zone.
+If your account supports EC2-Classic, Amazon EC2 launches the instances in EC2-Classic in the Availability Zone.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 request-spot-fleet --spot-fleet-request-config file://config.json</pre>
+</div>
+<p>Config.json:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"SpotPrice"</span><span class="p">:</span> <span class="s2">"0.04"</span><span class="p">,</span>
+  <span class="s2">"TargetCapacity"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="s2">"IamFleetRole"</span><span class="p">:</span> <span class="s2">"arn:aws:iam::123456789012:role/my-spot-fleet-role"</span><span class="p">,</span>
+  <span class="s2">"LaunchSpecifications"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">"ImageId"</span><span class="p">:</span> <span class="s2">"ami-1a2b3c4d"</span><span class="p">,</span>
+          <span class="s2">"KeyName"</span><span class="p">:</span> <span class="s2">"my-key-pair"</span><span class="p">,</span>
+          <span class="s2">"SecurityGroups"</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                  <span class="s2">"GroupId"</span><span class="p">:</span> <span class="s2">"sg-1a2b3c4d"</span>
+              <span class="p">}</span>
+          <span class="p">],</span>
+          <span class="s2">"InstanceType"</span><span class="p">:</span> <span class="s2">"m3.medium"</span><span class="p">,</span>
+          <span class="s2">"Placement"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">"AvailabilityZone"</span><span class="p">:</span> <span class="s2">"us-west-2a, us-west-2b"</span>
+          <span class="p">},</span>
+          <span class="s2">"IamInstanceProfile"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">"Arn"</span><span class="p">:</span> <span class="s2">"arn:aws:iam::123456789012:instance-profile/my-iam-role"</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>To launch Spot instances in a subnet and assign them public IP addresses</strong></p>
+<p>This example command assigns public addresses to instances launched in a nondefault VPC.
+Note that when you specify a network interface, you must include the subnet ID and security group ID
+using the network interface.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 request-spot-fleet --spot-fleet-request-config file://config.json</pre>
+</div>
+<p>Config.json:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"SpotPrice"</span><span class="p">:</span> <span class="s2">"0.04"</span><span class="p">,</span>
+  <span class="s2">"TargetCapacity"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="s2">"IamFleetRole"</span><span class="p">:</span> <span class="s2">"arn:aws:iam::123456789012:role/my-spot-fleet-role"</span><span class="p">,</span>
+  <span class="s2">"LaunchSpecifications"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">"ImageId"</span><span class="p">:</span> <span class="s2">"ami-1a2b3c4d"</span><span class="p">,</span>
+          <span class="s2">"KeyName"</span><span class="p">:</span> <span class="s2">"my-key-pair"</span><span class="p">,</span>
+          <span class="s2">"InstanceType"</span><span class="p">:</span> <span class="s2">"m3.medium"</span><span class="p">,</span>
+          <span class="s2">"NetworkInterfaces"</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                  <span class="s2">"DeviceIndex"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="s2">"SubnetId"</span><span class="p">:</span> <span class="s2">"subnet-1a2b3c4d"</span><span class="p">,</span>
+                  <span class="s2">"Groups"</span><span class="p">:</span> <span class="p">[</span> <span class="s2">"sg-1a2b3c4d"</span> <span class="p">],</span>
+                  <span class="s2">"AssociatePublicIpAddress"</span><span class="p">:</span> <span class="n">true</span>
+              <span class="p">}</span>
+          <span class="p">],</span>
+          <span class="s2">"IamInstanceProfile"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">"Arn"</span><span class="p">:</span> <span class="s2">"arn:aws:iam::880185128111:instance-profile/my-iam-role"</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>To request a Spot fleet using the diversified allocation strategy</strong></p>
+<p>This example command creates a Spot fleet request that launches 30 instances using the diversified allocation strategy.
+The launch specifications differ by instance type. The Spot fleet distributes the instances
+across the launch specifications such that there are 10 instances of each type.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 request-spot-fleet --spot-fleet-request-config file://config.json</pre>
+</div>
+<p>Config.json:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"SpotPrice"</span><span class="p">:</span> <span class="s2">"0.70"</span><span class="p">,</span>
+  <span class="s2">"TargetCapacity"</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="s2">"AllocationStrategy"</span><span class="p">:</span> <span class="s2">"diversified"</span><span class="p">,</span>
+  <span class="s2">"IamFleetRole"</span><span class="p">:</span> <span class="s2">"arn:aws:iam::123456789012:role/my-spot-fleet-role"</span><span class="p">,</span>
+  <span class="s2">"LaunchSpecifications"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">"ImageId"</span><span class="p">:</span> <span class="s2">"ami-1a2b3c4d"</span><span class="p">,</span>
+          <span class="s2">"InstanceType"</span><span class="p">:</span> <span class="s2">"c4.2xlarge"</span><span class="p">,</span>
+          <span class="s2">"SubnetId"</span><span class="p">:</span> <span class="s2">"subnet-1a2b3c4d"</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="s2">"ImageId"</span><span class="p">:</span> <span class="s2">"ami-1a2b3c4d"</span><span class="p">,</span>
+          <span class="s2">"InstanceType"</span><span class="p">:</span> <span class="s2">"m3.2xlarge"</span><span class="p">,</span>
+          <span class="s2">"SubnetId"</span><span class="p">:</span> <span class="s2">"subnet-1a2b3c4d"</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="s2">"ImageId"</span><span class="p">:</span> <span class="s2">"ami-1a2b3c4d"</span><span class="p">,</span>
+          <span class="s2">"InstanceType"</span><span class="p">:</span> <span class="s2">"r3.2xlarge"</span><span class="p">,</span>
+          <span class="s2">"SubnetId"</span><span class="p">:</span> <span class="s2">"subnet-1a2b3c4d"</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot Fleet Requests</a> in the <em>Amazon Elastic Compute Cloud User Guide</em>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>SpotFleetRequestId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the Spot fleet request.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="report-instance-status.html" title="previous chapter (use the left arrow)">&#8592; report-instance-status</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="request-spot-instances.html" title="next chapter (use the right arrow)">request-spot-instances &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="request-spot-instances.html" title="request-spot-instances">next</a> |</li>
+        <li class="right">
+          <a href="report-instance-status.html" title="report-instance-status">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">ec2</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/request-spot-fleet.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
+</html>

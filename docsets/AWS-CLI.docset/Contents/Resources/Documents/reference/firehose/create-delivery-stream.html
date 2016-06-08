@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/firehose/create-delivery-stream.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:19 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-delivery-stream &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="firehose" href="index.html" />
+    <link rel="next" title="delete-delivery-stream" href="delete-delivery-stream.html" />
+    <link rel="prev" title="firehose" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="delete-delivery-stream.html" title="delete-delivery-stream" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="index.html" title="firehose" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">firehose</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="index.html" title="previous chapter (use the left arrow)">&#8592; firehose</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="delete-delivery-stream.html" title="next chapter (use the right arrow)">delete-delivery-stream &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-delivery-stream</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/firehose/create-delivery-stream">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-firehose"><em>firehose</em></a> ]</p>
+<div class="section" id="create-delivery-stream">
+<span id="cli-aws-firehose-create-delivery-stream"></span><h1>create-delivery-stream<a name="//apple_ref/cpp/Command/aws firehose create-delivery-stream" class="dashAnchor" id="aws firehose create-delivery-stream"></a><a class="headerlink" href="#create-delivery-stream" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Creates a delivery stream.</p>
+<blockquote>
+<div>create-delivery-stream is an asynchronous operation that immediately returns. The initial status of the delivery stream is <tt class="docutils literal"><span class="pre">CREATING</span></tt> . After the delivery stream is created, its status is <tt class="docutils literal"><span class="pre">ACTIVE</span></tt> and it now accepts data. Attempts to send data to a delivery stream that is not in the <tt class="docutils literal"><span class="pre">ACTIVE</span></tt> state cause an exception. To check the state of a delivery stream, use  describe-delivery-stream .</div></blockquote>
+<p>The name of a delivery stream identifies it. You can't have two delivery streams with the same name in the same region. Two delivery streams in different AWS accounts or different regions in the same AWS account can have the same name.</p>
+<p>By default, you can create up to 20 delivery streams per region.</p>
+<p>A delivery stream can only be configured with a single destination, Amazon S3, Amazon Elasticsearch Service, or Amazon Redshift. For correct  create-delivery-stream request syntax, specify only one destination configuration parameter: either <strong>s3-destination-configuration</strong> , <strong>elasticsearch-destination-configuration</strong> , or <strong>redshift-destination-configuration</strong> .</p>
+<p>As part of <strong>s3-destination-configuration</strong> , optional values <strong>BufferingHints</strong> , <strong>EncryptionConfiguration</strong> , and <strong>CompressionFormat</strong> can be provided. By default, if no <strong>BufferingHints</strong> value is provided, Firehose buffers data up to 5 MB or for 5 minutes, whichever condition is satisfied first. Note that <strong>BufferingHints</strong> is a hint, so there are some cases where the service cannot adhere to these conditions strictly; for example, record boundaries are such that the size is a little over or under the configured buffering size. By default, no encryption is performed. We strongly recommend that you enable encryption to ensure secure data storage in Amazon S3.</p>
+<p>A few notes about <strong>redshift-destination-configuration</strong> :</p>
+<ul class="simple">
+<li>An Amazon Redshift destination requires an S3 bucket as intermediate location, as Firehose first delivers data to S3 and then uses <tt class="docutils literal"><span class="pre">COPY</span></tt> syntax to load data into an Amazon Redshift table. This is specified in the <strong>RedshiftDestinationConfiguration.S3Configuration</strong> parameter element.</li>
+<li>The compression formats <tt class="docutils literal"><span class="pre">SNAPPY</span></tt> or <tt class="docutils literal"><span class="pre">ZIP</span></tt> cannot be specified in <strong>RedshiftDestinationConfiguration.S3Configuration</strong> because the Amazon Redshift <tt class="docutils literal"><span class="pre">COPY</span></tt> operation that reads from the S3 bucket doesn't support these compression formats.</li>
+<li>We strongly recommend that the username and password provided is used exclusively for Firehose purposes, and that the permissions for the account are restricted for Amazon Redshift <tt class="docutils literal"><span class="pre">INSERT</span></tt> permissions.</li>
+</ul>
+<p>Firehose assumes the IAM role that is configured as part of destinations. The IAM role should allow the Firehose principal to assume the role, and the role should have permissions that allows the service to deliver the data. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon S3 Bucket Access</a> in the <em>Amazon Kinesis Firehose Developer Guide</em> .</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  create-delivery-stream
+--delivery-stream-name &lt;value&gt;
+[--s3-destination-configuration &lt;value&gt;]
+[--redshift-destination-configuration &lt;value&gt;]
+[--elasticsearch-destination-configuration &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--delivery-stream-name" class="dashAnchor" id="delivery-stream-name"></a><span class="pre">--delivery-stream-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the delivery stream.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--s3-destination-configuration" class="dashAnchor" id="s3-destination-configuration"></a><span class="pre">--s3-destination-configuration</span></tt> (structure)</p>
+<blockquote>
+<div>The destination in Amazon S3. This value must be specified if <strong>elasticsearch-destination-configuration</strong> or <strong>redshift-destination-configuration</strong> is specified (see restrictions listed above).</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>RoleARN=string,BucketARN=string,Prefix=string,BufferingHints={SizeInMBs=integer,IntervalInSeconds=integer},CompressionFormat=string,EncryptionConfiguration={NoEncryptionConfig=string,KMSEncryptionConfig={AWSKMSKeyARN=string}},CloudWatchLoggingOptions={Enabled=boolean,LogGroupName=string,LogStreamName=string}</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"RoleARN"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"BucketARN"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"Prefix"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"BufferingHints"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"SizeInMBs"</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+    <span class="s2">"IntervalInSeconds"</span><span class="p">:</span> <span class="n">integer</span>
+  <span class="p">},</span>
+  <span class="s2">"CompressionFormat"</span><span class="p">:</span> <span class="s2">"UNCOMPRESSED"</span><span class="o">|</span><span class="s2">"GZIP"</span><span class="o">|</span><span class="s2">"ZIP"</span><span class="o">|</span><span class="s2">"Snappy"</span><span class="p">,</span>
+  <span class="s2">"EncryptionConfiguration"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"NoEncryptionConfig"</span><span class="p">:</span> <span class="s2">"NoEncryption"</span><span class="p">,</span>
+    <span class="s2">"KMSEncryptionConfig"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"AWSKMSKeyARN"</span><span class="p">:</span> <span class="s2">"string"</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">"CloudWatchLoggingOptions"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Enabled"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+    <span class="s2">"LogGroupName"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+    <span class="s2">"LogStreamName"</span><span class="p">:</span> <span class="s2">"string"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--redshift-destination-configuration" class="dashAnchor" id="redshift-destination-configuration"></a><span class="pre">--redshift-destination-configuration</span></tt> (structure)</p>
+<blockquote>
+<div>The destination in Amazon Redshift. This value cannot be specified if Amazon S3 or Amazon Elasticsearch is the desired destination (see restrictions listed above).</div></blockquote>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"RoleARN"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"ClusterJDBCURL"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"CopyCommand"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"DataTableName"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+    <span class="s2">"DataTableColumns"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+    <span class="s2">"CopyOptions"</span><span class="p">:</span> <span class="s2">"string"</span>
+  <span class="p">},</span>
+  <span class="s2">"Username"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"Password"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"RetryOptions"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"DurationInSeconds"</span><span class="p">:</span> <span class="n">integer</span>
+  <span class="p">},</span>
+  <span class="s2">"S3Configuration"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"RoleARN"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+    <span class="s2">"BucketARN"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+    <span class="s2">"Prefix"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+    <span class="s2">"BufferingHints"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"SizeInMBs"</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+      <span class="s2">"IntervalInSeconds"</span><span class="p">:</span> <span class="n">integer</span>
+    <span class="p">},</span>
+    <span class="s2">"CompressionFormat"</span><span class="p">:</span> <span class="s2">"UNCOMPRESSED"</span><span class="o">|</span><span class="s2">"GZIP"</span><span class="o">|</span><span class="s2">"ZIP"</span><span class="o">|</span><span class="s2">"Snappy"</span><span class="p">,</span>
+    <span class="s2">"EncryptionConfiguration"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"NoEncryptionConfig"</span><span class="p">:</span> <span class="s2">"NoEncryption"</span><span class="p">,</span>
+      <span class="s2">"KMSEncryptionConfig"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"AWSKMSKeyARN"</span><span class="p">:</span> <span class="s2">"string"</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">"CloudWatchLoggingOptions"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"Enabled"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+      <span class="s2">"LogGroupName"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+      <span class="s2">"LogStreamName"</span><span class="p">:</span> <span class="s2">"string"</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">"CloudWatchLoggingOptions"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Enabled"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+    <span class="s2">"LogGroupName"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+    <span class="s2">"LogStreamName"</span><span class="p">:</span> <span class="s2">"string"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--elasticsearch-destination-configuration" class="dashAnchor" id="elasticsearch-destination-configuration"></a><span class="pre">--elasticsearch-destination-configuration</span></tt> (structure)</p>
+<blockquote>
+<div>The destination in Amazon ES. This value cannot be specified if Amazon S3 or Amazon Redshift is the desired destination (see restrictions listed above).</div></blockquote>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"RoleARN"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"DomainARN"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"IndexName"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"TypeName"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"IndexRotationPeriod"</span><span class="p">:</span> <span class="s2">"NoRotation"</span><span class="o">|</span><span class="s2">"OneHour"</span><span class="o">|</span><span class="s2">"OneDay"</span><span class="o">|</span><span class="s2">"OneWeek"</span><span class="o">|</span><span class="s2">"OneMonth"</span><span class="p">,</span>
+  <span class="s2">"BufferingHints"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"IntervalInSeconds"</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+    <span class="s2">"SizeInMBs"</span><span class="p">:</span> <span class="n">integer</span>
+  <span class="p">},</span>
+  <span class="s2">"RetryOptions"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"DurationInSeconds"</span><span class="p">:</span> <span class="n">integer</span>
+  <span class="p">},</span>
+  <span class="s2">"S3BackupMode"</span><span class="p">:</span> <span class="s2">"FailedDocumentsOnly"</span><span class="o">|</span><span class="s2">"AllDocuments"</span><span class="p">,</span>
+  <span class="s2">"S3Configuration"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"RoleARN"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+    <span class="s2">"BucketARN"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+    <span class="s2">"Prefix"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+    <span class="s2">"BufferingHints"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"SizeInMBs"</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+      <span class="s2">"IntervalInSeconds"</span><span class="p">:</span> <span class="n">integer</span>
+    <span class="p">},</span>
+    <span class="s2">"CompressionFormat"</span><span class="p">:</span> <span class="s2">"UNCOMPRESSED"</span><span class="o">|</span><span class="s2">"GZIP"</span><span class="o">|</span><span class="s2">"ZIP"</span><span class="o">|</span><span class="s2">"Snappy"</span><span class="p">,</span>
+    <span class="s2">"EncryptionConfiguration"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"NoEncryptionConfig"</span><span class="p">:</span> <span class="s2">"NoEncryption"</span><span class="p">,</span>
+      <span class="s2">"KMSEncryptionConfig"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"AWSKMSKeyARN"</span><span class="p">:</span> <span class="s2">"string"</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">"CloudWatchLoggingOptions"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"Enabled"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+      <span class="s2">"LogGroupName"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+      <span class="s2">"LogStreamName"</span><span class="p">:</span> <span class="s2">"string"</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">"CloudWatchLoggingOptions"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Enabled"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+    <span class="s2">"LogGroupName"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+    <span class="s2">"LogStreamName"</span><span class="p">:</span> <span class="s2">"string"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>DeliveryStreamARN -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the delivery stream.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="index.html" title="previous chapter (use the left arrow)">&#8592; firehose</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="delete-delivery-stream.html" title="next chapter (use the right arrow)">delete-delivery-stream &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="delete-delivery-stream.html" title="delete-delivery-stream">next</a> |</li>
+        <li class="right">
+          <a href="index.html" title="firehose">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">firehose</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/firehose/create-delivery-stream.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:19 GMT -->
+</html>

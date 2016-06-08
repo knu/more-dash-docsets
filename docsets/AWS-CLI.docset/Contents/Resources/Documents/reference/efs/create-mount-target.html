@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/efs/create-mount-target.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:16 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-mount-target &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="efs" href="index.html" />
+    <link rel="next" title="create-tags" href="create-tags.html" />
+    <link rel="prev" title="create-file-system" href="create-file-system.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="create-tags.html" title="create-tags" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="create-file-system.html" title="create-file-system" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">efs</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="create-file-system.html" title="previous chapter (use the left arrow)">&#8592; create-file-system</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-tags.html" title="next chapter (use the right arrow)">create-tags &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-mount-target</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/efs/create-mount-target">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-efs"><em>efs</em></a> ]</p>
+<div class="section" id="create-mount-target">
+<span id="cli-aws-efs-create-mount-target"></span><h1>create-mount-target<a name="//apple_ref/cpp/Command/aws efs create-mount-target" class="dashAnchor" id="aws efs create-mount-target"></a><a class="headerlink" href="#create-mount-target" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Creates a mount target for a file system. You can then mount the file system on EC2 instances via the mount target.</p>
+<p>You can create one mount target in each Availability Zone in your VPC. All EC2 instances in a VPC within a given Availability Zone share a single mount target for a given file system. If you have multiple subnets in an Availability Zone, you create a mount target in one of the subnets. EC2 instances do not need to be in the same subnet as the mount target in order to access their file system. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS: How it Works</a> .</p>
+<p>In the request, you also specify a file system ID for which you are creating the mount target and the file system's lifecycle state must be "available" (see  describe-file-systems ).</p>
+<p>In the request, you also provide a subnet ID, which serves several purposes:</p>
+<ul class="simple">
+<li>It determines the VPC in which Amazon EFS creates the mount target.</li>
+<li>It determines the Availability Zone in which Amazon EFS creates the mount target.</li>
+<li>It determines the IP address range from which Amazon EFS selects the IP address of the mount target if you don't specify an IP address in the request.</li>
+</ul>
+<p>After creating the mount target, Amazon EFS returns a response that includes, a <tt class="docutils literal"><span class="pre">MountTargetId</span></tt> and an <tt class="docutils literal"><span class="pre">ip-address</span></tt> . You use this IP address when mounting the file system in an EC2 instance. You can also use the mount target's DNS name when mounting the file system. The EC2 instance on which you mount the file system via the mount target can resolve the mount target's DNS name to its IP address. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html#how-it-works-implementation">How it Works: Implementation Overview</a> .</p>
+<p>Note that you can create mount targets for a file system in only one VPC, and there can be only one mount target per Availability Zone. That is, if the file system already has one or more mount targets created for it, the request to add another mount target must meet the following requirements:</p>
+<ul class="simple">
+<li>The subnet specified in the request must belong to the same VPC as the subnets of the existing mount targets.</li>
+<li>The subnet specified in the request must not be in the same Availability Zone as any of the subnets of the existing mount targets.</li>
+</ul>
+<p>If the request satisfies the requirements, Amazon EFS does the following:</p>
+<ul class="simple">
+<li>Creates a new mount target in the specified subnet.</li>
+<li>Also creates a new network interface in the subnet as follows:<ul>
+<li>If the request provides an <tt class="docutils literal"><span class="pre">ip-address</span></tt> , Amazon EFS assigns that IP address to the network interface. Otherwise, Amazon EFS assigns a free address in the subnet (in the same way that the Amazon EC2 <tt class="docutils literal"><span class="pre">CreateNetworkInterface</span></tt> call does when a request does not specify a primary private IP address).</li>
+<li>If the request provides <tt class="docutils literal"><span class="pre">security-groups</span></tt> , this network interface is associated with those security groups. Otherwise, it belongs to the default security group for the subnet's VPC.</li>
+<li>Assigns the description <tt class="docutils literal"><span class="pre">"Mount</span> <span class="pre">target</span> <span class="pre">*fsmt-id*</span> <span class="pre">for</span> <span class="pre">file</span> <span class="pre">system</span> <span class="pre">*fs-id*</span> <span class="pre">"</span></tt> where <tt class="docutils literal"><span class="pre">*fsmt-id*</span></tt> is the mount target ID, and <tt class="docutils literal"><span class="pre">*fs-id*</span></tt> is the <tt class="docutils literal"><span class="pre">file-system-id</span></tt> .</li>
+<li>Sets the <tt class="docutils literal"><span class="pre">requesterManaged</span></tt> property of the network interface to "true", and the <tt class="docutils literal"><span class="pre">requesterId</span></tt> value to "EFS".</li>
+</ul>
+</li>
+</ul>
+<p>Each Amazon EFS mount target has one corresponding requestor-managed EC2 network interface. After the network interface is created, Amazon EFS sets the <tt class="docutils literal"><span class="pre">NetworkInterfaceId</span></tt> field in the mount target's description to the network interface ID, and the <tt class="docutils literal"><span class="pre">ip-address</span></tt> field to its address. If network interface creation fails, the entire <tt class="docutils literal"><span class="pre">create-mount-target</span></tt> operation fails.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <tt class="docutils literal"><span class="pre">create-mount-target</span></tt> call returns only after creating the network interface, but while the mount target state is still "creating". You can check the mount target creation status by calling the  describe-file-systems API, which among other things returns the mount target state.</p>
+</div>
+<p>We recommend you create a mount target in each of the Availability Zones. There are cost considerations for using a file system in an Availability Zone through a mount target created in another Availability Zone. For more information, go to <a class="reference external" href="http://aws.amazon.com/efs/">Amazon EFS</a> product detail page. In addition, by always using a mount target local to the instance's Availability Zone, you eliminate a partial failure scenario; if the Availability Zone in which your mount target is created goes down, then you won't be able to access your file system through that mount target.</p>
+<p>This operation requires permission for the following action on the file system:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">elasticfilesystem:CreateMountTarget</span></tt></li>
+</ul>
+<p>This operation also requires permission for the following Amazon EC2 actions:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ec2:DescribeSubnets</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ec2:DescribeNetworkInterfaces</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ec2:CreateNetworkInterface</span></tt></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>AWS CLI support for this service is only available in a preview stage.</strong> You can enable this service by running: <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">configure</span> <span class="pre">set</span> <span class="pre">preview.efs</span> <span class="pre">true</span></tt></p>
+</div>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  create-mount-target
+--file-system-id &lt;value&gt;
+--subnet-id &lt;value&gt;
+[--ip-address &lt;value&gt;]
+[--security-groups &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--file-system-id" class="dashAnchor" id="file-system-id"></a><span class="pre">--file-system-id</span></tt> (string)</p>
+<blockquote>
+<div>The ID of the file system for which to create the mount target.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--subnet-id" class="dashAnchor" id="subnet-id"></a><span class="pre">--subnet-id</span></tt> (string)</p>
+<blockquote>
+<div>The ID of the subnet to add the mount target in.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ip-address" class="dashAnchor" id="ip-address"></a><span class="pre">--ip-address</span></tt> (string)</p>
+<blockquote>
+<div>A valid IPv4 address within the address range of the specified subnet.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--security-groups" class="dashAnchor" id="security-groups"></a><span class="pre">--security-groups</span></tt> (list)</p>
+<blockquote>
+<div>Up to 5 VPC security group IDs, of the form "sg-xxxxxxxx". These must be for the same VPC as subnet specified.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>"string" "string" ...</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>OwnerId -&gt; (string)</p>
+<blockquote>
+<div>The AWS account ID that owns the resource.</div></blockquote>
+<p>MountTargetId -&gt; (string)</p>
+<blockquote>
+<div>The system-assigned mount target ID.</div></blockquote>
+<p>FileSystemId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the file system for which the mount target is intended.</div></blockquote>
+<p>SubnetId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the subnet that the mount target is in.</div></blockquote>
+<p>LifeCycleState -&gt; (string)</p>
+<blockquote>
+<div>The lifecycle state the mount target is in.</div></blockquote>
+<p>IpAddress -&gt; (string)</p>
+<blockquote>
+<div>The address at which the file system may be mounted via the mount target.</div></blockquote>
+<p>NetworkInterfaceId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the network interface that Amazon EFS created when it created the mount target.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="create-file-system.html" title="previous chapter (use the left arrow)">&#8592; create-file-system</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-tags.html" title="next chapter (use the right arrow)">create-tags &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="create-tags.html" title="create-tags">next</a> |</li>
+        <li class="right">
+          <a href="create-file-system.html" title="create-file-system">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">efs</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/efs/create-mount-target.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:16 GMT -->
+</html>

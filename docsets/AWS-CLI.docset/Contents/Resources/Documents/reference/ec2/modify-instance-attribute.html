@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/modify-instance-attribute.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>modify-instance-attribute &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>modify-instance-attribute &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,9 +25,9 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="ec2" href="index.html" />
-    <link rel="next" title="modify-network-interface-attribute" href="modify-network-interface-attribute.html" />
+    <link rel="next" title="modify-instance-placement" href="modify-instance-placement.html" />
     <link rel="prev" title="modify-image-attribute" href="modify-image-attribute.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -58,10 +61,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
         <li class="right">
-          <a href="modify-network-interface-attribute.html" title="modify-network-interface-attribute" accesskey="N">next</a> |</li>
+          <a href="modify-instance-placement.html" title="modify-instance-placement" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="modify-image-attribute.html" title="modify-image-attribute" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">ec2</a> &#187;</li> 
       </ul>
@@ -75,30 +78,32 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="modify-network-interface-attribute.html" title="next chapter (use the right arrow)">modify-network-interface-attribute &#8594;</a></li>
+          <li><a href="modify-instance-placement.html" title="next chapter (use the right arrow)">modify-instance-placement &#8594;</a></li>
       </ul>
     </div>
   
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">modify-instance-attribute</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,61 +112,87 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/ec2/modify-instance-attribute">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ec2/modify-instance-attribute">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>ec2</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-ec2"><em>ec2</em></a> ]</p>
 <div class="section" id="modify-instance-attribute">
-<h1>modify-instance-attribute<a class="headerlink" href="#modify-instance-attribute" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-ec2-modify-instance-attribute"></span><h1>modify-instance-attribute<a name="//apple_ref/cpp/Command/aws ec2 modify-instance-attribute" class="dashAnchor" id="aws ec2 modify-instance-attribute"></a><a class="headerlink" href="#modify-instance-attribute" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Modifies an attribute of an instance.</p>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Modifies the specified attribute of the specified instance. You can specify only one attribute at a time.</p>
+<p>To modify some attributes, the instance must be stopped. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modifying Attributes of a Stopped Instance</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  modify-instance-attribute
 [--dry-run | --no-dry-run]
 --instance-id &lt;value&gt;
 [--attribute &lt;value&gt;]
 [--value &lt;value&gt;]
 [--block-device-mappings &lt;value&gt;]
-[--source-dest-check &lt;value&gt;]
-[--disable-api-termination &lt;value&gt;]
+[--source-dest-check | --no-source-dest-check]
+[--disable-api-termination | --no-disable-api-termination]
 [--instance-type &lt;value&gt;]
 [--kernel &lt;value&gt;]
 [--ramdisk &lt;value&gt;]
 [--user-data &lt;value&gt;]
 [--instance-initiated-shutdown-behavior &lt;value&gt;]
 [--groups &lt;value&gt;]
-[--ebs-optimized &lt;value&gt;]</pre>
+[--ebs-optimized | --no-ebs-optimized]
+[--sriov-net-support &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--no-dry-run" class="dashAnchor" id="no-dry-run"></a><span class="pre">--no-dry-run</span></tt> (boolean)</p>
-<p>Checks whether you have the required permissions for the action, without actually making the request. Using this option will result in one of two possible errorresponses. If you have the required permissions, the error response will be <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt>  . Otherwise it will be <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt>  .</p>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><span class="pre">--no-dry-run</span></tt> (boolean)</p>
+<blockquote>
+<div>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt> . Otherwise, it is <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt> .</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--instance-id" class="dashAnchor" id="instance-id"></a><span class="pre">--instance-id</span></tt> (string)</p>
 <blockquote>
-<div>The ID of the instance whose attribute is being modified.</div></blockquote>
+<div>The ID of the instance.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--attribute" class="dashAnchor" id="attribute"></a><span class="pre">--attribute</span></tt> (string)</p>
 <blockquote>
-<div><p>The name of the attribute being modified.</p>
-<p>Available attribute names: <tt class="docutils literal"><span class="pre">instanceType</span></tt>  , <tt class="docutils literal"><span class="pre">kernel</span></tt>  , <tt class="docutils literal"><span class="pre">ramdisk</span></tt>  , <tt class="docutils literal"><span class="pre">userData</span></tt>  , <tt class="docutils literal"><span class="pre">disableApiTermination</span></tt>  , <tt class="docutils literal"><span class="pre">instanceInitiatedShutdownBehavior</span></tt>  , <tt class="docutils literal"><span class="pre">rootDevice</span></tt>  , <tt class="docutils literal"><span class="pre">blockDeviceMapping</span></tt></p>
+<div><p>The name of the attribute.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">instanceType</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">kernel</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ramdisk</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">userData</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">disableApiTermination</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">instanceInitiatedShutdownBehavior</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">rootDeviceName</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">blockDeviceMapping</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">productCodes</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">sourceDestCheck</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">groupSet</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ebsOptimized</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">sriovNetSupport</span></tt></li>
+</ul>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--value" class="dashAnchor" id="value"></a><span class="pre">--value</span></tt> (string)</p>
 <blockquote>
-<div><p>The new value of the instance attribute being modified.</p>
-<p>Only valid when <tt class="docutils literal"><span class="pre">kernel</span></tt>  , <tt class="docutils literal"><span class="pre">ramdisk</span></tt>  , <tt class="docutils literal"><span class="pre">userData</span></tt>  , <tt class="docutils literal"><span class="pre">disableApiTermination</span></tt>  or <tt class="docutils literal"><span class="pre">instanceInitiateShutdownBehavior</span></tt>  is specified as the attribute being modified.</p>
-</div></blockquote>
+<div>A new value for the attribute. Use only with the <tt class="docutils literal"><span class="pre">kernel</span></tt> , <tt class="docutils literal"><span class="pre">ramdisk</span></tt> , <tt class="docutils literal"><span class="pre">userData</span></tt> , <tt class="docutils literal"><span class="pre">disableApiTermination</span></tt> , or <tt class="docutils literal"><span class="pre">instanceInitiatedShutdownBehavior</span></tt> attribute.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--block-device-mappings" class="dashAnchor" id="block-device-mappings"></a><span class="pre">--block-device-mappings</span></tt> (list)</p>
 <blockquote>
-<div><p>The new block device mappings for the instance whose attributes are being modified.</p>
-<p>Only valid when blockDeviceMapping is specified as the attribute being modified.</p>
+<div><p>Modifies the <tt class="docutils literal"><span class="pre">DeleteOnTermination</span></tt> attribute for volumes that are currently attached. The volume must be owned by the caller. If no value is specified for <tt class="docutils literal"><span class="pre">DeleteOnTermination</span></tt> , the default is <tt class="docutils literal"><span class="pre">true</span></tt> and the volume is deleted when the instance is terminated.</p>
+<p>To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the instance. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating the Block Device Mapping when Launching an Instance</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
 </div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>DeviceName=string,Ebs={VolumeId=string,DeleteOnTermination=boolean},VirtualName=string,NoDevice=string ...</pre>
+</div>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><pre>[
   {
@@ -176,74 +207,83 @@
   ...
 ]</pre>
 </div>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--source-dest-check" class="dashAnchor" id="source-dest-check"></a><span class="pre">--source-dest-check</span></tt> (structure)
-Boolean value</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--source-dest-check" class="dashAnchor" id="source-dest-check"></a><span class="pre">--source-dest-check</span></tt> | <tt class="docutils literal"><span class="pre">--no-source-dest-check</span></tt> (structure)</p>
+<blockquote>
+<div>Specifies whether source/destination checking is enabled. A value of <tt class="docutils literal"><span class="pre">true</span></tt> means that checking is enabled, and <tt class="docutils literal"><span class="pre">false</span></tt> means checking is disabled. This value must be <tt class="docutils literal"><span class="pre">false</span></tt> for a NAT instance to perform NAT.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--disable-api-termination" class="dashAnchor" id="disable-api-termination"></a><span class="pre">--disable-api-termination</span></tt> | <tt class="docutils literal"><span class="pre">--no-disable-api-termination</span></tt> (structure)</p>
+<blockquote>
+<div>If the value is <tt class="docutils literal"><span class="pre">true</span></tt> , you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this paramater for Spot Instances.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--instance-type" class="dashAnchor" id="instance-type"></a><span class="pre">--instance-type</span></tt> (structure)</p>
+<blockquote>
+<div>Changes the instance type to the specified value. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> . If the instance type is not valid, the error returned is <tt class="docutils literal"><span class="pre">InvalidInstanceAttributeValue</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--kernel" class="dashAnchor" id="kernel"></a><span class="pre">--kernel</span></tt> (structure)</p>
+<blockquote>
+<div>Changes the instance's kernel to the specified value. We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a> .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ramdisk" class="dashAnchor" id="ramdisk"></a><span class="pre">--ramdisk</span></tt> (structure)</p>
+<blockquote>
+<div>Changes the instance's RAM disk to the specified value. We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a> .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--user-data" class="dashAnchor" id="user-data"></a><span class="pre">--user-data</span></tt> (structure)</p>
+<blockquote>
+<div>Changes the instance's user data to the specified base64-encoded value. For command line tools, base64 encoding is performed for you.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Value</span><span class="o">=</span><span class="n">blob</span>
+</pre></div>
+</div>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-  <span class="s">"Value"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span>
+  <span class="s2">"Value"</span><span class="p">:</span> <span class="n">blob</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--disable-api-termination" class="dashAnchor" id="disable-api-termination"></a><span class="pre">--disable-api-termination</span></tt> (structure)
-Boolean value</p>
-<p>JSON Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-  <span class="s">"Value"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--instance-type" class="dashAnchor" id="instance-type"></a><span class="pre">--instance-type</span></tt> (structure)
-String value</p>
-<p>JSON Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-  <span class="s">"Value"</span><span class="p">:</span> <span class="s">"string"</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--kernel" class="dashAnchor" id="kernel"></a><span class="pre">--kernel</span></tt> (structure)
-String value</p>
-<p>JSON Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-  <span class="s">"Value"</span><span class="p">:</span> <span class="s">"string"</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ramdisk" class="dashAnchor" id="ramdisk"></a><span class="pre">--ramdisk</span></tt> (structure)
-String value</p>
-<p>JSON Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-  <span class="s">"Value"</span><span class="p">:</span> <span class="s">"string"</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--user-data" class="dashAnchor" id="user-data"></a><span class="pre">--user-data</span></tt> (structure)
-String value</p>
-<p>JSON Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-  <span class="s">"Value"</span><span class="p">:</span> <span class="n">blob</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--instance-initiated-shutdown-behavior" class="dashAnchor" id="instance-initiated-shutdown-behavior"></a><span class="pre">--instance-initiated-shutdown-behavior</span></tt> (structure)
-String value</p>
-<p>JSON Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-  <span class="s">"Value"</span><span class="p">:</span> <span class="s">"string"</span>
-<span class="p">}</span>
-</pre></div>
-</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--instance-initiated-shutdown-behavior" class="dashAnchor" id="instance-initiated-shutdown-behavior"></a><span class="pre">--instance-initiated-shutdown-behavior</span></tt> (structure)</p>
+<blockquote>
+<div>Specifies whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--groups" class="dashAnchor" id="groups"></a><span class="pre">--groups</span></tt> (list)</p>
+<blockquote>
+<div>[EC2-VPC] Changes the security groups of the instance. You must specify at least one security group, even if it's just the default security group for the VPC. You must specify the security group ID, not the security group name.</div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ebs-optimized" class="dashAnchor" id="ebs-optimized"></a><span class="pre">--ebs-optimized</span></tt> (structure)
-Boolean value</p>
-<p>JSON Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-  <span class="s">"Value"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span>
-<span class="p">}</span>
-</pre></div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ebs-optimized" class="dashAnchor" id="ebs-optimized"></a><span class="pre">--ebs-optimized</span></tt> | <tt class="docutils literal"><span class="pre">--no-ebs-optimized</span></tt> (structure)</p>
+<blockquote>
+<div>Specifies whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--sriov-net-support" class="dashAnchor" id="sriov-net-support"></a><span class="pre">--sriov-net-support</span></tt> (structure)</p>
+<blockquote>
+<div><p>Set to <tt class="docutils literal"><span class="pre">simple</span></tt> to enable enhanced networking for the instance.</p>
+<p>There is no way to disable enhanced networking at this time.</p>
+<p>This option is supported only for HVM instances. Specifying this option with a PV instance can make it unreachable.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
 </div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To modify the instance type</strong></p>
+<p>This example modifies the instance type of the specified instance. The instance must be in the <tt class="docutils literal"><span class="pre">stopped</span></tt> state. If the command succeeds, no output is returned.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 modify-instance-attribute --instance-id i-1234567890abcdef0 --instance-type "{\"Value\": \"m1.small\"}"</pre>
+</div>
+<p><strong>To enable enhanced networking on an instance</strong></p>
+<p>This example enables enhanced networking for the specified instance. The instance must be in the <tt class="docutils literal"><span class="pre">stopped</span></tt> state. If the command succeeds, no output is returned.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 modify-instance-attribute --instance-id i-1234567890abcdef0 --sriov-net-support simple</pre>
+</div>
+<p><strong>To modify the sourceDestCheck attribute</strong></p>
+<p>This example sets the <tt class="docutils literal"><span class="pre">sourceDestCheck</span></tt> attribute of the specified instance to <tt class="docutils literal"><span class="pre">true</span></tt>. The instance must be in a VPC. If the command succeeds, no output is returned.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 modify-instance-attribute --instance-id i-1234567890abcdef0 --source-dest-check "{\"Value\": true}"</pre>
+</div>
+<p><strong>To modify the deleteOnTermination attribute of the root volume</strong></p>
+<p>This example sets the <tt class="docutils literal"><span class="pre">deleteOnTermination</span></tt> attribute for the root volume of the specified Amazon EBS-backed instance to <tt class="docutils literal"><span class="pre">false</span></tt>. By default, this attribute is <tt class="docutils literal"><span class="pre">true</span></tt> for the root volume. If the command succeeds, no output is returned.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 modify-instance-attribute --instance-id i-1234567890abcdef0 --block-device-mappings "[{\"DeviceName\": \"/dev/sda1\",\"Ebs\":{\"DeleteOnTermination\":false}}]"</pre>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>None</p>
 </div>
 </div>
 
@@ -259,50 +299,45 @@ Boolean value</p>
           <span class="divider">/</span>
           
         </li>
-          <li><a href="modify-network-interface-attribute.html" title="next chapter (use the right arrow)">modify-network-interface-attribute &#8594;</a></li>
+          <li><a href="modify-instance-placement.html" title="next chapter (use the right arrow)">modify-instance-placement &#8594;</a></li>
       </ul>
     </div>
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index">index</a></li>
         <li class="right">
-          <a href="modify-network-interface-attribute.html" title="modify-network-interface-attribute">next</a> |</li>
+          <a href="modify-instance-placement.html" title="modify-instance-placement">next</a> |</li>
         <li class="right">
           <a href="modify-image-attribute.html" title="modify-image-attribute">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">ec2</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'modify-image-attribute.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'modify-network-interface-attribute.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/modify-instance-attribute.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
 </html>

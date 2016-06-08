@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/configservice/put-configuration-recorder.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:00 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>put-configuration-recorder &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="configservice" href="index.html" />
+    <link rel="next" title="put-delivery-channel" href="put-delivery-channel.html" />
+    <link rel="prev" title="put-config-rule" href="put-config-rule.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="put-delivery-channel.html" title="put-delivery-channel" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="put-config-rule.html" title="put-config-rule" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">configservice</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="put-config-rule.html" title="previous chapter (use the left arrow)">&#8592; put-config-rule</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="put-delivery-channel.html" title="next chapter (use the right arrow)">put-delivery-channel &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">put-configuration-recorder</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/configservice/put-configuration-recorder">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-configservice"><em>configservice</em></a> ]</p>
+<div class="section" id="put-configuration-recorder">
+<span id="cli-aws-configservice-put-configuration-recorder"></span><h1>put-configuration-recorder<a name="//apple_ref/cpp/Command/aws configservice put-configuration-recorder" class="dashAnchor" id="aws configservice put-configuration-recorder"></a><a class="headerlink" href="#put-configuration-recorder" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Creates a new configuration recorder to record the selected resource configurations.</p>
+<p>You can use this action to change the role <tt class="docutils literal"><span class="pre">roleARN</span></tt> and/or the <tt class="docutils literal"><span class="pre">recordingGroup</span></tt> of an existing recorder. To change the role, call the action on the existing configuration recorder and specify a role.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Currently, you can specify only one configuration recorder per account.</p>
+<p class="last">If <tt class="docutils literal"><span class="pre">configuration-recorder</span></tt> does not have the <strong>recordingGroup</strong> parameter specified, the default is to record all supported resource types.</p>
+</div>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  put-configuration-recorder
+--configuration-recorder &lt;value&gt;
+[--recording-group &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--configuration-recorder" class="dashAnchor" id="configuration-recorder"></a><span class="pre">--configuration-recorder</span></tt> (structure)</p>
+<blockquote>
+<div>The configuration recorder object that records each configuration change made to the resources.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">name</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">roleARN</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"roleARN"</span><span class="p">:</span> <span class="s2">"string"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--recording-group" class="dashAnchor" id="recording-group"></a><span class="pre">--recording-group</span></tt> (structure)</p>
+<blockquote>
+<div>Specifies the types of AWS resource for which AWS Config records configuration changes.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">allSupported</span><span class="o">=</span><span class="n">boolean</span><span class="p">,</span><span class="n">includeGlobalResourceTypes</span><span class="o">=</span><span class="n">boolean</span><span class="p">,</span><span class="n">resourceTypes</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"allSupported"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+  <span class="s2">"includeGlobalResourceTypes"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+  <span class="s2">"resourceTypes"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"AWS::EC2::CustomerGateway"</span><span class="o">|</span><span class="s2">"AWS::EC2::EIP"</span><span class="o">|</span><span class="s2">"AWS::EC2::Host"</span><span class="o">|</span><span class="s2">"AWS::EC2::Instance"</span><span class="o">|</span><span class="s2">"AWS::EC2::InternetGateway"</span><span class="o">|</span><span class="s2">"AWS::EC2::NetworkAcl"</span><span class="o">|</span><span class="s2">"AWS::EC2::NetworkInterface"</span><span class="o">|</span><span class="s2">"AWS::EC2::RouteTable"</span><span class="o">|</span><span class="s2">"AWS::EC2::SecurityGroup"</span><span class="o">|</span><span class="s2">"AWS::EC2::Subnet"</span><span class="o">|</span><span class="s2">"AWS::CloudTrail::Trail"</span><span class="o">|</span><span class="s2">"AWS::EC2::Volume"</span><span class="o">|</span><span class="s2">"AWS::EC2::VPC"</span><span class="o">|</span><span class="s2">"AWS::EC2::VPNConnection"</span><span class="o">|</span><span class="s2">"AWS::EC2::VPNGateway"</span><span class="o">|</span><span class="s2">"AWS::IAM::Group"</span><span class="o">|</span><span class="s2">"AWS::IAM::Policy"</span><span class="o">|</span><span class="s2">"AWS::IAM::Role"</span><span class="o">|</span><span class="s2">"AWS::IAM::User"</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To record all supported resources</strong></p>
+<p>The following command creates a configuration recorder that tracks changes to all supported resource types, including global resource types:</p>
+<div class="highlight-python"><pre>aws configservice put-configuration-recorder --configuration-recorder name=default,roleARN=arn:aws:iam::123456789012:role/config-role --recording-group allSupported=true,includeGlobalResourceTypes=true</pre>
+</div>
+<p><strong>To record specific types of resources</strong></p>
+<p>The following command creates a configuration recorder that tracks changes to only those types of resources that are specified in the JSON file for the <cite>--recording-group</cite> option:</p>
+<div class="highlight-python"><pre>aws configservice put-configuration-recorder --configuration-recorder name=default,roleARN=arn:aws:iam::123456789012:role/config-role --recording-group file://recordingGroup.json</pre>
+</div>
+<p><cite>recordingGroup.json</cite> is a JSON file that specifies the types of resources that AWS Config will record:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"allSupported"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+  <span class="s2">"includeGlobalResourceTypes"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+  <span class="s2">"resourceTypes"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">"AWS::EC2::EIP"</span><span class="p">,</span>
+    <span class="s2">"AWS::EC2::Instance"</span><span class="p">,</span>
+    <span class="s2">"AWS::EC2::NetworkAcl"</span><span class="p">,</span>
+    <span class="s2">"AWS::EC2::SecurityGroup"</span><span class="p">,</span>
+    <span class="s2">"AWS::CloudTrail::Trail"</span><span class="p">,</span>
+    <span class="s2">"AWS::EC2::Volume"</span><span class="p">,</span>
+    <span class="s2">"AWS::EC2::VPC"</span><span class="p">,</span>
+    <span class="s2">"AWS::IAM::User"</span><span class="p">,</span>
+    <span class="s2">"AWS::IAM::Policy"</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Before you can specify resource types for the <cite>resourceTypes</cite> key, you must set the <cite>allSupported</cite> and <cite>includeGlobalResourceTypes</cite> options to false or omit them.</p>
+<p>If the command succeeds, AWS Config returns no output. To verify the settings of your configuration recorder, run the <a class="reference external" href="describe-configuration-recorders.html">describe-configuration-recorders</a> command.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>None</p>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="put-config-rule.html" title="previous chapter (use the left arrow)">&#8592; put-config-rule</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="put-delivery-channel.html" title="next chapter (use the right arrow)">put-delivery-channel &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="put-delivery-channel.html" title="put-delivery-channel">next</a> |</li>
+        <li class="right">
+          <a href="put-config-rule.html" title="put-config-rule">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">configservice</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/configservice/put-configuration-recorder.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:00 GMT -->
+</html>

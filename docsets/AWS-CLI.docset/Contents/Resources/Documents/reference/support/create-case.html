@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/support/create-case.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>create-case &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>create-case &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,9 +25,9 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="support" href="index.html" />
-    <link rel="next" title="describe-cases" href="describe-cases.html" />
+    <link rel="next" title="describe-attachment" href="describe-attachment.html" />
     <link rel="prev" title="add-communication-to-case" href="add-communication-to-case.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -58,10 +61,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
         <li class="right">
-          <a href="describe-cases.html" title="describe-cases" accesskey="N">next</a> |</li>
+          <a href="describe-attachment.html" title="describe-attachment" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="add-communication-to-case.html" title="add-communication-to-case" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">support</a> &#187;</li> 
       </ul>
@@ -75,30 +78,31 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="describe-cases.html" title="next chapter (use the right arrow)">describe-cases &#8594;</a></li>
+          <li><a href="describe-attachment.html" title="next chapter (use the right arrow)">describe-attachment &#8594;</a></li>
       </ul>
     </div>
   
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">create-case</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,58 +111,68 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/support/create-case">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/support/create-case">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>support</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-support"><em>support</em></a> ]</p>
 <div class="section" id="create-case">
-<h1>create-case<a class="headerlink" href="#create-case" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-support-create-case"></span><h1>create-case<a name="//apple_ref/cpp/Command/aws support create-case" class="dashAnchor" id="aws support create-case"></a><a class="headerlink" href="#create-case" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Creates a new case in the AWS Support Center. This action is modeled on the behavior of the AWS Support Center <a class="reference external" href="https://aws.amazon.com/support/createCase">Open a new case</a> page. Its parameters require you to specify the following information:</p>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Creates a new case in the AWS Support Center. This operation is modeled on the behavior of the AWS Support Center <a class="reference external" href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page. Its parameters require you to specify the following information:</p>
 <ul class="simple">
-<li><strong>ServiceCode.</strong> Represents a code for an AWS service. You obtain the <em>ServiceCode</em> by calling <a class="reference external" href="API_DescribeServices.html">describe-services</a> .</li>
-<li><strong>CategoryCode</strong> . Represents a category for the service defined for the ServiceCode value. You also obtain the cateogory code for a service by calling <a class="reference external" href="API_DescribeServices.html">describe-services</a> . Each AWS service defines its own set of category codes.</li>
-<li><strong>SeverityCode</strong> . Represents a value that specifies the urgency of the case, and the time interval in which your service level agreement specifies a response from AWS Support. You obtain the SeverityCode by calling <a class="reference external" href="API_DescribeSeverityLevels.html">describe-severity-levels</a> .</li>
-<li><strong>Subject</strong> . Represents the <strong>Subject</strong> field on the AWS Support Center <a class="reference external" href="https://aws.amazon.com/support/createCase">Open a new case</a> page.</li>
-<li><strong>CommunicationBody</strong> . Represents the <strong>Description</strong> field on the AWS Support Center <a class="reference external" href="https://aws.amazon.com/support/createCase">Open a new case</a> page.</li>
-<li><strong>Language</strong> . Specifies the human --language in which AWS Support handles the case. The API currently supports English and Japanese.</li>
-<li><strong>CcEmailAddresses</strong> . Represents the AWS Support Center <strong>CC</strong> field on the <a class="reference external" href="https://aws.amazon.com/support/createCase">Open a new case</a> page. You can list email addresses to be copied on any correspondence about the case. The account that opens the case is already identified by passing the AWS Credentials in the HTTP POST method or in a method or function call from one of the programming languages supported by an <a class="reference external" href="http://aws.amazon.com/tools/">AWS SDK</a> .</li>
+<li><strong>IssueType.</strong> The type of issue for the case. You can specify either "customer-service" or "technical." If you do not indicate a value, the default is "technical."</li>
+<li><strong>ServiceCode.</strong> The code for an AWS service. You obtain the <tt class="docutils literal"><span class="pre">service-code</span></tt> by calling  describe-services .</li>
+<li><strong>CategoryCode.</strong> The category for the service defined for the <tt class="docutils literal"><span class="pre">service-code</span></tt> value. You also obtain the category code for a service by calling  describe-services . Each AWS service defines its own set of category codes.</li>
+<li><strong>SeverityCode.</strong> A value that indicates the urgency of the case, which in turn determines the response time according to your service level agreement with AWS Support. You obtain the severity-code by calling  describe-severity-levels .</li>
+<li><strong>Subject.</strong> The <strong>subject</strong> field on the AWS Support Center <a class="reference external" href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</li>
+<li><strong>CommunicationBody.</strong> The <strong>Description</strong> field on the AWS Support Center <a class="reference external" href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</li>
+<li><strong>AttachmentSetId.</strong> The ID of a set of attachments that has been created by using  add-attachments-to-set .</li>
+<li><strong>Language.</strong> The human language in which AWS Support handles the case. English and Japanese are currently supported.</li>
+<li><strong>CcEmailAddresses.</strong> The AWS Support Center <strong>CC</strong> field on the <a class="reference external" href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page. You can list email addresses to be copied on any correspondence about the case. The account that opens the case is already identified by passing the AWS Credentials in the HTTP POST method or in a method or function call from one of the programming languages supported by an <a class="reference external" href="http://aws.amazon.com/tools/">AWS SDK</a> .</li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The AWS Support API does not currently support the ability to add attachments to cases. You can, however, call <a class="reference external" href="API_AddCommunicationToCase.html">add-communication-to-case</a> to add information to an open case.</p>
+<p class="last">To add additional communication or attachments to an existing case, use  add-communication-to-case .</p>
 </div>
-<p>A successful <a class="reference external" href="API_CreateCase.html">create-case</a> request returns an AWS Support case number. Case numbers are used by <a class="reference external" href="API_DescribeCases.html">describe-cases</a> request to retrieve existing AWS Support support cases.</p>
+<p>A successful  create-case request returns an AWS Support case number. Case numbers are used by the  describe-cases operation to retrieve existing AWS Support cases.</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  create-case
 --subject &lt;value&gt;
---service-code &lt;value&gt;
+[--service-code &lt;value&gt;]
 [--severity-code &lt;value&gt;]
---category-code &lt;value&gt;
+[--category-code &lt;value&gt;]
 --communication-body &lt;value&gt;
 [--cc-email-addresses &lt;value&gt;]
 [--language &lt;value&gt;]
-[--issue-type &lt;value&gt;]</pre>
+[--issue-type &lt;value&gt;]
+[--attachment-set-id &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--subject" class="dashAnchor" id="subject"></a><span class="pre">--subject</span></tt> (string)</p>
 <blockquote>
-<div>Title of the AWS Support case.</div></blockquote>
+<div>The title of the AWS Support case.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--service-code" class="dashAnchor" id="service-code"></a><span class="pre">--service-code</span></tt> (string)</p>
 <blockquote>
-<div>Code for the AWS service returned by the call to <a class="reference external" href="API_DescribeServices.html">describe-services</a> .</div></blockquote>
+<div>The code for the AWS service returned by the call to  describe-services .</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--severity-code" class="dashAnchor" id="severity-code"></a><span class="pre">--severity-code</span></tt> (string)</p>
 <blockquote>
-<div><p>Code for the severity level returned by the call to <a class="reference external" href="API_DescribeSeverityLevels.html">describe-severity-levels</a> .</p>
+<div><p>The code for the severity level returned by the call to  describe-severity-levels .</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The availability of severity levels depends on each customer's support subscription. In other words, your subscription may not necessarily require the urgent level of response time.</p>
@@ -166,22 +180,35 @@
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--category-code" class="dashAnchor" id="category-code"></a><span class="pre">--category-code</span></tt> (string)</p>
 <blockquote>
-<div>Specifies the category of problem for the AWS Support case.</div></blockquote>
+<div>The category of problem for the AWS Support case.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--communication-body" class="dashAnchor" id="communication-body"></a><span class="pre">--communication-body</span></tt> (string)</p>
 <blockquote>
-<div>Parameter that represents the communication body text when you create an AWS Support case by calling <a class="reference external" href="API_CreateCase.html">create-case</a> .</div></blockquote>
+<div>The communication body text when you create an AWS Support case by calling  create-case .</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cc-email-addresses" class="dashAnchor" id="cc-email-addresses"></a><span class="pre">--cc-email-addresses</span></tt> (list)</p>
 <blockquote>
-<div>List of email addresses that AWS Support copies on case correspondence.</div></blockquote>
+<div>A list of email addresses that AWS Support copies on case correspondence.</div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--language" class="dashAnchor" id="language"></a><span class="pre">--language</span></tt> (string)</p>
 <blockquote>
-<div>Specifies the ISO 639-1 code for the --language in which AWS provides support. AWS Support currently supports English and Japanese, for which the codes are <em>en</em> and <em>ja</em> , respectively. Language parameters must be passed explicitly for operations that take them.</div></blockquote>
+<div>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja"). language parameters must be passed explicitly for operations that take them.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--issue-type" class="dashAnchor" id="issue-type"></a><span class="pre">--issue-type</span></tt> (string)</p>
 <blockquote>
-<div>Field passed as a parameter in a <a class="reference external" href="API_CreateCase.html">create-case</a> call.</div></blockquote>
+<div>The type of issue for the case. You can specify either "customer-service" or "technical." If you do not indicate a value, the default is "technical."</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--attachment-set-id" class="dashAnchor" id="attachment-set-id"></a><span class="pre">--attachment-set-id</span></tt> (string)</p>
+<blockquote>
+<div>The ID of a set of one or more attachments for the case. Create the set by using  add-attachments-to-set .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>caseId -&gt; (string)</p>
+<blockquote>
+<div>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<em>12345678910-2013-c4c1d2bf33c5cf47</em></div></blockquote>
 </div>
 </div>
 
@@ -197,50 +224,45 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="describe-cases.html" title="next chapter (use the right arrow)">describe-cases &#8594;</a></li>
+          <li><a href="describe-attachment.html" title="next chapter (use the right arrow)">describe-attachment &#8594;</a></li>
       </ul>
     </div>
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index">index</a></li>
         <li class="right">
-          <a href="describe-cases.html" title="describe-cases">next</a> |</li>
+          <a href="describe-attachment.html" title="describe-attachment">next</a> |</li>
         <li class="right">
           <a href="add-communication-to-case.html" title="add-communication-to-case">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">support</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'add-communication-to-case.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'describe-cases.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/support/create-case.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
 </html>

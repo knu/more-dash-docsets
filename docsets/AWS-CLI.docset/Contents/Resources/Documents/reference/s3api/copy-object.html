@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/s3api/copy-object.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:28 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>copy-object &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>copy-object &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="s3api" href="index.html" />
     <link rel="next" title="create-bucket" href="create-bucket.html" />
     <link rel="prev" title="complete-multipart-upload" href="complete-multipart-upload.html" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -61,7 +64,7 @@
           <a href="create-bucket.html" title="create-bucket" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="complete-multipart-upload.html" title="complete-multipart-upload" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">s3api</a> &#187;</li> 
       </ul>
@@ -82,23 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">copy-object</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,22 +112,27 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/s3api/copy-object">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/s3api/copy-object">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>s3api</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-s3api"><em>s3api</em></a> ]</p>
 <div class="section" id="copy-object">
-<h1>copy-object<a class="headerlink" href="#copy-object" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-s3api-copy-object"></span><h1>copy-object<a name="//apple_ref/cpp/Command/aws s3api copy-object" class="dashAnchor" id="aws s3api copy-object"></a><a class="headerlink" href="#copy-object" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
 <p>Creates a copy of an object that is already stored in Amazon S3.</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  copy-object
 [--acl &lt;value&gt;]
 --bucket &lt;value&gt;
@@ -146,13 +156,35 @@
 [--metadata-directive &lt;value&gt;]
 [--server-side-encryption &lt;value&gt;]
 [--storage-class &lt;value&gt;]
-[--website-redirect-location &lt;value&gt;]</pre>
+[--website-redirect-location &lt;value&gt;]
+[--sse-customer-algorithm &lt;value&gt;]
+[--sse-customer-key &lt;value&gt;]
+[--sse-customer-key-md5 &lt;value&gt;]
+[--ssekms-key-id &lt;value&gt;]
+[--copy-source-sse-customer-algorithm &lt;value&gt;]
+[--copy-source-sse-customer-key &lt;value&gt;]
+[--copy-source-sse-customer-key-md5 &lt;value&gt;]
+[--request-payer &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--acl" class="dashAnchor" id="acl"></a><span class="pre">--acl</span></tt> (string)
-The canned --acl to apply to the object.</p>
+The canned ACL to apply to the object.</p>
+<blockquote>
+<div><p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">private</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">public-read</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">public-read-write</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">authenticated-read</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">aws-exec-read</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">bucket-owner-read</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">bucket-owner-full-control</span></tt></li>
+</ul>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--bucket" class="dashAnchor" id="bucket"></a><span class="pre">--bucket</span></tt> (string)</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cache-control" class="dashAnchor" id="cache-control"></a><span class="pre">--cache-control</span></tt> (string)
 Specifies caching behavior along the request/reply chain.</p>
@@ -166,11 +198,11 @@ The language the content is in.</p>
 A standard MIME type describing the format of the object data.</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--copy-source" class="dashAnchor" id="copy-source"></a><span class="pre">--copy-source</span></tt> (string)
 The name of the source bucket and key name of the source object, separated by a slash (/). Must be URL-encoded.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--copy-source-if-match" class="dashAnchor" id="copy-source-if-match"></a><span class="pre">--copy-source-if-match</span></tt> (timestamp)
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--copy-source-if-match" class="dashAnchor" id="copy-source-if-match"></a><span class="pre">--copy-source-if-match</span></tt> (string)
 Copies the object if its entity tag (ETag) matches the specified tag.</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--copy-source-if-modified-since" class="dashAnchor" id="copy-source-if-modified-since"></a><span class="pre">--copy-source-if-modified-since</span></tt> (timestamp)
 Copies the object if it has been modified since the specified time.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--copy-source-if-none-match" class="dashAnchor" id="copy-source-if-none-match"></a><span class="pre">--copy-source-if-none-match</span></tt> (timestamp)
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--copy-source-if-none-match" class="dashAnchor" id="copy-source-if-none-match"></a><span class="pre">--copy-source-if-none-match</span></tt> (string)
 Copies the object if its entity tag (ETag) is different than the specified ETag.</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--copy-source-if-unmodified-since" class="dashAnchor" id="copy-source-if-unmodified-since"></a><span class="pre">--copy-source-if-unmodified-since</span></tt> (timestamp)
 Copies the object if it hasn't been modified since the specified time.</p>
@@ -183,12 +215,13 @@ Allows grantee to read the object data and its metadata.</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--grant-read-acp" class="dashAnchor" id="grant-read-acp"></a><span class="pre">--grant-read-acp</span></tt> (string)
 Allows grantee to read the object ACL.</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--grant-write-acp" class="dashAnchor" id="grant-write-acp"></a><span class="pre">--grant-write-acp</span></tt> (string)
-Allows grantee to write the --acl for the applicable object.</p>
+Allows grantee to write the ACL for the applicable object.</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--key" class="dashAnchor" id="key"></a><span class="pre">--key</span></tt> (string)</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--metadata" class="dashAnchor" id="metadata"></a><span class="pre">--metadata</span></tt> (map)
 A map of metadata to store with the object in S3.</p>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><pre>--metadata key_name=string,key_name2=string</pre>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">KeyName1</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">KeyName2</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
 </div>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><pre>{"string": "string"
@@ -196,12 +229,106 @@ A map of metadata to store with the object in S3.</p>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--metadata-directive" class="dashAnchor" id="metadata-directive"></a><span class="pre">--metadata-directive</span></tt> (string)
 Specifies whether the metadata is copied from the source object or replaced with metadata provided in the request.</p>
+<blockquote>
+<div><p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">COPY</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">REPLACE</span></tt></li>
+</ul>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--server-side-encryption" class="dashAnchor" id="server-side-encryption"></a><span class="pre">--server-side-encryption</span></tt> (string)
-The Server-side encryption algorithm used when storing this object in S3.</p>
+The Server-side encryption algorithm used when storing this object in S3 (e.g., AES256, aws:kms).</p>
+<blockquote>
+<div><p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">AES256</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">aws:kms</span></tt></li>
+</ul>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--storage-class" class="dashAnchor" id="storage-class"></a><span class="pre">--storage-class</span></tt> (string)
 The type of storage to use for the object. Defaults to 'STANDARD'.</p>
+<blockquote>
+<div><p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">STANDARD</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">REDUCED_REDUNDANCY</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">STANDARD_IA</span></tt></li>
+</ul>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--website-redirect-location" class="dashAnchor" id="website-redirect-location"></a><span class="pre">--website-redirect-location</span></tt> (string)
 If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--sse-customer-algorithm" class="dashAnchor" id="sse-customer-algorithm"></a><span class="pre">--sse-customer-algorithm</span></tt> (string)
+Specifies the algorithm to use to when encrypting the object (e.g., AES256).</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--sse-customer-key" class="dashAnchor" id="sse-customer-key"></a><span class="pre">--sse-customer-key</span></tt> (string)
+Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon does not store the encryption key. The key must be appropriate for use with the algorithm specified in the x-amz-server-side&#8203;-encryption&#8203;-customer-algorithm header.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--sse-customer-key-md5" class="dashAnchor" id="sse-customer-key-md5"></a><span class="pre">--sse-customer-key-md5</span></tt> (string)
+Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure the encryption key was transmitted without error.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ssekms-key-id" class="dashAnchor" id="ssekms-key-id"></a><span class="pre">--ssekms-key-id</span></tt> (string)
+Specifies the AWS KMS key ID to use for object encryption. All GET and PUT requests for an object protected by AWS KMS will fail if not made via SSL or using SigV4. Documentation on configuring any of the officially supported AWS SDKs and CLI can be found at <a class="reference external" href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version</a></p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--copy-source-sse-customer-algorithm" class="dashAnchor" id="copy-source-sse-customer-algorithm"></a><span class="pre">--copy-source-sse-customer-algorithm</span></tt> (string)
+Specifies the algorithm to use when decrypting the source object (e.g., AES256).</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--copy-source-sse-customer-key" class="dashAnchor" id="copy-source-sse-customer-key"></a><span class="pre">--copy-source-sse-customer-key</span></tt> (string)
+Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source object. The encryption key provided in this header must be one that was used when the source object was created.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--copy-source-sse-customer-key-md5" class="dashAnchor" id="copy-source-sse-customer-key-md5"></a><span class="pre">--copy-source-sse-customer-key-md5</span></tt> (string)
+Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure the encryption key was transmitted without error.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--request-payer" class="dashAnchor" id="request-payer"></a><span class="pre">--request-payer</span></tt> (string)
+Confirms that the requester knows that she or he will be charged for the request. Bucket owners need not specify this parameter in their requests. Documentation on downloading objects from requester pays buckets can be found at <a class="reference external" href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">http://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html</a></p>
+<blockquote>
+<div><p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">requester</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p>The following command copies an object from <tt class="docutils literal"><span class="pre">bucket-1</span></tt> to <tt class="docutils literal"><span class="pre">bucket-2</span></tt>:</p>
+<div class="highlight-python"><pre>aws s3api copy-object --copy-source bucket-1/test.txt --key test.txt --bucket bucket-2</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"CopyObjectResult"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"LastModified"</span><span class="p">:</span> <span class="s2">"2015-11-10T01:07:25.000Z"</span><span class="p">,</span>
+        <span class="s2">"ETag"</span><span class="p">:</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">589c8b79c230a6ecd5a7e1d040a9a030</span><span class="se">\"</span><span class="s2">"</span>
+    <span class="p">},</span>
+    <span class="s2">"VersionId"</span><span class="p">:</span> <span class="s2">"YdnYvTCVDqRRFA.NFJjy36p0hxifMlkA"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>CopyObjectResult -&gt; (structure)</p>
+<blockquote>
+<div><p>ETag -&gt; (string)</p>
+<p>LastModified -&gt; (timestamp)</p>
+</div></blockquote>
+<p>Expiration -&gt; (string)</p>
+<blockquote>
+<div>If the object expiration is configured, the response includes this header.</div></blockquote>
+<p>CopySourceVersionId -&gt; (string)</p>
+<p>VersionId -&gt; (string)</p>
+<blockquote>
+<div>Version ID of the newly created copy.</div></blockquote>
+<p>ServerSideEncryption -&gt; (string)</p>
+<blockquote>
+<div>The Server-side encryption algorithm used when storing this object in S3 (e.g., AES256, aws:kms).</div></blockquote>
+<p>SSECustomerAlgorithm -&gt; (string)</p>
+<blockquote>
+<div>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</div></blockquote>
+<p>SSECustomerKeyMD5 -&gt; (string)</p>
+<blockquote>
+<div>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round trip message integrity verification of the customer-provided encryption key.</div></blockquote>
+<p>SSEKMSKeyId -&gt; (string)</p>
+<blockquote>
+<div>If present, specifies the ID of the AWS Key Management Service (KMS) master encryption key that was used for the object.</div></blockquote>
+<p>RequestCharged -&gt; (string)</p>
+<blockquote>
+<div>If present, indicates that the requester was successfully charged for the request.</div></blockquote>
 </div>
 </div>
 
@@ -223,6 +350,15 @@ If the bucket is configured as a website, redirects requests for this object to 
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -232,35 +368,21 @@ If the bucket is configured as a website, redirects requests for this object to 
           <a href="create-bucket.html" title="create-bucket">next</a> |</li>
         <li class="right">
           <a href="complete-multipart-upload.html" title="complete-multipart-upload">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">s3api</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'complete-multipart-upload.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'create-bucket.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/s3api/copy-object.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:28 GMT -->
 </html>

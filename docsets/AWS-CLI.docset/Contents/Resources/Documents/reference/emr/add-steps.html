@@ -1,0 +1,425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/emr/add-steps.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:19 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>add-steps &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="emr" href="index.html" />
+    <link rel="next" title="add-tags" href="add-tags.html" />
+    <link rel="prev" title="add-instance-groups" href="add-instance-groups.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="add-tags.html" title="add-tags" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="add-instance-groups.html" title="add-instance-groups" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">emr</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="add-instance-groups.html" title="previous chapter (use the left arrow)">&#8592; add-instance-groups</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="add-tags.html" title="next chapter (use the right arrow)">add-tags &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">add-steps</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/emr/add-steps">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-emr"><em>emr</em></a> ]</p>
+<div class="section" id="add-steps">
+<span id="cli-aws-emr-add-steps"></span><h1>add-steps<a name="//apple_ref/cpp/Command/aws emr add-steps" class="dashAnchor" id="aws emr add-steps"></a><a class="headerlink" href="#add-steps" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Add a list of steps to a cluster.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  add-steps
+--cluster-id &lt;value&gt;
+--steps &lt;value&gt; [&lt;value&gt;...]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cluster-id" class="dashAnchor" id="cluster-id"></a><span class="pre">--cluster-id</span></tt> (string)</p>
+<blockquote>
+<div>A unique string that identifies the cluster. This identifier is returned by <tt class="docutils literal"><span class="pre">create-cluster</span></tt> and can also be obtained from <tt class="docutils literal"><span class="pre">list-clusters</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--steps" class="dashAnchor" id="steps"></a><span class="pre">--steps</span></tt> (list)</p>
+<blockquote>
+<div>A list of steps to be executed by the cluster. A step can be specified either using the shorthand syntax, JSON file or as a JSON string. Note: [Args] supplied with steps should either be a comma-separated list of values (e.g. Args=arg1,arg2,arg3) or a bracket-enclosed list of values and/or key-value pairs (e.g. Args=[arg1,arg2=arg3,arg4]).</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Name=string,Args=string,string,Jar=string,ActionOnFailure=string,MainClass=string,Type=string,Properties=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    "Name": "string",
+    "Args": ["string", ...],
+    "Jar": "string",
+    "ActionOnFailure": "TERMINATE_CLUSTER"|"CANCEL_AND_WAIT"|"CONTINUE",
+    "MainClass": "string",
+    "Type": "CUSTOM_JAR"|"STREAMING"|"HIVE"|"PIG"|"IMPALA",
+    "Properties": "string"
+  }
+  ...
+]</pre>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>1. To add Custom JAR steps to a cluster</strong></p>
+<ul>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr add-steps --cluster-id j-XXXXXXXX --steps Type=CUSTOM_JAR,Name=CustomJAR,ActionOnFailure=CONTINUE,Jar=s3://mybucket/mytest.jar,Args=arg1,arg2,arg3 Type=CUSTOM_JAR,Name=CustomJAR,ActionOnFailure=CONTINUE,Jar=s3://mybucket/mytest.jar,MainClass=mymainclass,Args=arg1,arg2,arg3</pre>
+</div>
+</li>
+<li><p class="first">Required parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Jar</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Optional parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Type</span><span class="p">,</span> <span class="n">Name</span><span class="p">,</span> <span class="n">ActionOnFailure</span><span class="p">,</span> <span class="n">Args</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"StepIds"</span><span class="p">:[</span>
+        <span class="s2">"s-XXXXXXXX"</span><span class="p">,</span>
+        <span class="s2">"s-YYYYYYYY"</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>2. To add Streaming steps to a cluster</strong></p>
+<ul>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr add-steps --cluster-id j-XXXXXXXX --steps Type=STREAMING,Name='Streaming Program',ActionOnFailure=CONTINUE,Args=[-files,s3://elasticmapreduce/samples/wordcount/wordSplitter.py,-mapper,wordSplitter.py,-reducer,aggregate,-input,s3://elasticmapreduce/samples/wordcount/input,-output,s3://mybucket/wordcount/output]</pre>
+</div>
+</li>
+<li><p class="first">Required parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Type</span><span class="p">,</span> <span class="n">Args</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Optional parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Name</span><span class="p">,</span> <span class="n">ActionOnFailure</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">JSON equivalent (contents of step.json):</p>
+<div class="highlight-python"><pre> [
+  {
+    "Name": "JSON Streaming Step",
+    "Args": ["-files","s3://elasticmapreduce/samples/wordcount/wordSplitter.py","-mapper","wordSplitter.py","-reducer","aggregate","-input","s3://elasticmapreduce/samples/wordcount/input","-output","s3://mybucket/wordcount/output"],
+    "ActionOnFailure": "CONTINUE",
+    "Type": "STREAMING"
+  }
+]</pre>
+</div>
+</li>
+</ul>
+<p>NOTE: JSON arguments must include options and values as their own items in the list.</p>
+<ul>
+<li><p class="first">Command (using step.json):</p>
+<div class="highlight-python"><pre>aws emr add-steps --cluster-id j-XXXXXXXX --steps file://./step.json</pre>
+</div>
+</li>
+<li><p class="first">Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"StepIds"</span><span class="p">:[</span>
+        <span class="s2">"s-XXXXXXXX"</span><span class="p">,</span>
+        <span class="s2">"s-YYYYYYYY"</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>3. To add a Streaming step with multiple files to a cluster (JSON only)</strong></p>
+<ul>
+<li><p class="first">JSON (multiplefiles.json):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span>
+  <span class="p">{</span>
+     <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"JSON Streaming Step"</span><span class="p">,</span>
+     <span class="s2">"Type"</span><span class="p">:</span> <span class="s2">"STREAMING"</span><span class="p">,</span>
+     <span class="s2">"ActionOnFailure"</span><span class="p">:</span> <span class="s2">"CONTINUE"</span><span class="p">,</span>
+     <span class="s2">"Args"</span><span class="p">:</span> <span class="p">[</span>
+         <span class="s2">"-files"</span><span class="p">,</span>
+         <span class="s2">"s3://mybucket/mapper.py,s3://mybucket/reducer.py"</span><span class="p">,</span>
+         <span class="s2">"-mapper"</span><span class="p">,</span>
+         <span class="s2">"mapper.py"</span><span class="p">,</span>
+         <span class="s2">"-reducer"</span><span class="p">,</span>
+         <span class="s2">"reducer.py"</span><span class="p">,</span>
+         <span class="s2">"-input"</span><span class="p">,</span>
+         <span class="s2">"s3://mybucket/input"</span><span class="p">,</span>
+         <span class="s2">"-output"</span><span class="p">,</span>
+         <span class="s2">"s3://mybucket/output"</span><span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr add-steps --cluster-id j-XXXXXXXX  --steps file://./multiplefiles.json</pre>
+</div>
+</li>
+<li><p class="first">Required parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Type</span><span class="p">,</span> <span class="n">Args</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Optional parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Name</span><span class="p">,</span> <span class="n">ActionOnFailure</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"StepIds"</span><span class="p">:[</span>
+        <span class="s2">"s-XXXXXXXX"</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>4. To add Hive steps to a cluster</strong></p>
+<ul>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr add-steps --cluster-id j-XXXXXXXX --steps Type=HIVE,Name='Hive program',ActionOnFailure=CONTINUE,Args=[-f,s3://mybuckey/myhivescript.q,-d,INPUT=s3://mybucket/myhiveinput,-d,OUTPUT=s3://mybucket/myhiveoutput,arg1,arg2] Type=HIVE,Name='Hive steps',ActionOnFailure=TERMINATE_CLUSTER,Args=[-f,s3://elasticmapreduce/samples/hive-ads/libs/model-build.q,-d,INPUT=s3://elasticmapreduce/samples/hive-ads/tables,-d,OUTPUT=s3://mybucket/hive-ads/output/2014-04-18/11-07-32,-d,LIBS=s3://elasticmapreduce/samples/hive-ads/libs]</pre>
+</div>
+</li>
+<li><p class="first">Required parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Type</span><span class="p">,</span> <span class="n">Args</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Optional parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Name</span><span class="p">,</span> <span class="n">ActionOnFailure</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"StepIds"</span><span class="p">:[</span>
+        <span class="s2">"s-XXXXXXXX"</span><span class="p">,</span>
+        <span class="s2">"s-YYYYYYYY"</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>5. To add Pig steps to a cluster</strong></p>
+<ul>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr add-steps --cluster-id j-XXXXXXXX --steps Type=PIG,Name='Pig program',ActionOnFailure=CONTINUE,Args=[-f,s3://mybuckey/mypigscript.pig,-p,INPUT=s3://mybucket/mypiginput,-p,OUTPUT=s3://mybucket/mypigoutput,arg1,arg2] Type=PIG,Name='Pig program',Args=[-f,s3://elasticmapreduce/samples/pig-apache/do-reports2.pig,-p,INPUT=s3://elasticmapreduce/samples/pig-apache/input,-p,OUTPUT=s3://mybucket/pig-apache/output,arg1,arg2]</pre>
+</div>
+</li>
+<li><p class="first">Required parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Type</span><span class="p">,</span> <span class="n">Args</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Optional parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Name</span><span class="p">,</span> <span class="n">ActionOnFailure</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"StepIds"</span><span class="p">:[</span>
+        <span class="s2">"s-XXXXXXXX"</span><span class="p">,</span>
+        <span class="s2">"s-YYYYYYYY"</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>6. To add Impala steps to a cluster</strong></p>
+<ul>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr add-steps --cluster-id j-XXXXXXXX --steps Type=IMPALA,Name='Impala program',ActionOnFailure=CONTINUE,Args=--impala-script,s3://myimpala/input,--console-output-path,s3://myimpala/output</pre>
+</div>
+</li>
+<li><p class="first">Required parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Type</span><span class="p">,</span> <span class="n">Args</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Optional parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Name</span><span class="p">,</span> <span class="n">ActionOnFailure</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"StepIds"</span><span class="p">:[</span>
+        <span class="s2">"s-XXXXXXXX"</span><span class="p">,</span>
+        <span class="s2">"s-YYYYYYYY"</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="add-instance-groups.html" title="previous chapter (use the left arrow)">&#8592; add-instance-groups</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="add-tags.html" title="next chapter (use the right arrow)">add-tags &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="add-tags.html" title="add-tags">next</a> |</li>
+        <li class="right">
+          <a href="add-instance-groups.html" title="add-instance-groups">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">emr</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/emr/add-steps.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:19 GMT -->
+</html>

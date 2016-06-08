@@ -1,0 +1,872 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:19 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-cluster &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="emr" href="index.html" />
+    <link rel="next" title="create-default-roles" href="create-default-roles.html" />
+    <link rel="prev" title="add-tags" href="add-tags.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="create-default-roles.html" title="create-default-roles" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="add-tags.html" title="add-tags" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">emr</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="add-tags.html" title="previous chapter (use the left arrow)">&#8592; add-tags</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-default-roles.html" title="next chapter (use the right arrow)">create-default-roles &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-cluster</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/emr/create-cluster">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-emr"><em>emr</em></a> ]</p>
+<div class="section" id="create-cluster">
+<span id="cli-aws-emr-create-cluster"></span><h1>create-cluster<a name="//apple_ref/cpp/Command/aws emr create-cluster" class="dashAnchor" id="aws emr create-cluster"></a><a class="headerlink" href="#create-cluster" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Creates an Amazon EMR cluster with specified software.</p>
+<p>Quick start:</p>
+<p>aws emr create-cluster --release-label &lt;release-label&gt; --instance-type &lt;instance-type&gt; [--instance-count &lt;instance-count&gt;]</p>
+<p>Values for variables Instance Profile (under EC2 Attributes), Service Role, Log URI, and Key Name (under EC2 Attributes) can be set in the AWS CLI config file using the "aws configure set" command.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre> create-cluster
+--release-label &lt;value&gt; | --ami-version &lt;value&gt;
+--instance-type &lt;value&gt; | --instance-groups &lt;value&gt;
+--instance-count &lt;value&gt;
+[--auto-terminate | --no-auto-terminate]
+[--use-default-roles]
+[--service-role &lt;value&gt;]
+[--configurations &lt;value&gt;]
+[--name &lt;value&gt;]
+[--log-uri &lt;value&gt;]
+[--additional-info &lt;value&gt;]
+[--ec2-attributes &lt;value&gt;]
+[--termination-protected | --no-termination-protected]
+[--visible-to-all-users | --no-visible-to-all-users]
+[--enable-debugging | --no-enable-debugging]
+[--tags &lt;value&gt;]
+[--applications &lt;value&gt;]
+[--emrfs &lt;value&gt;]
+[--bootstrap-actions &lt;value&gt;]
+[--steps &lt;value&gt;]
+[--restore-from-hbase-backup &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--release-label" class="dashAnchor" id="release-label"></a><span class="pre">--release-label</span></tt> (string)</p>
+<blockquote>
+<div><p>The identifier for the EMR release, which includes a set of software, to use with Amazon EC2 instances that are part of an Amazon EMR cluster. For example, --release-label emr-4.0.0 You cannot specify both a release label (emr-4.0.0 and later) and AMI version (3.x or 2.x) on a cluster.</p>
+<p>For details about the releases available in Amazon Elastic MapReduce, go to Releases Available in Amazon Elastic MapReduce in the Amazon Elastic MapReduce Documentation.</p>
+<p><a class="reference external" href="http://docs.aws.amazon.com/ElasticMapReduce/latest/Applications/emr-release.html">http://docs.aws.amazon.com/ElasticMapReduce/latest/Applications/emr-release.html</a></p>
+<p>Please use ami-version if you want to specify AMI Versions for your Amazon EMR cluster (3.x and 2.x)</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ami-version" class="dashAnchor" id="ami-version"></a><span class="pre">--ami-version</span></tt> (string)</p>
+<blockquote>
+<div><p>The version number of the Amazon Machine Image (AMI) to use for Amazon EC2 instances in the cluster. For example,--ami-version 3.1.0 You cannot specify both a release label (emr-4.0.0 and later) and an AMI version (3.x or 2.x) on a cluster</p>
+<p>For details about the AMIs currently supported by Amazon Elastic MapReduce, go to AMI Versions Supported in Amazon Elastic MapReduce in the Amazon Elastic MapReduce Developer's Guide.</p>
+<p><a class="reference external" href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/ami-versions-supported.html">http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/ami-versions-supported.html</a></p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--instance-groups" class="dashAnchor" id="instance-groups"></a><span class="pre">--instance-groups</span></tt> (list)</p>
+<blockquote>
+<div><p>A specification of the number and type of Amazon EC2 instances to create instance groups in a cluster.</p>
+<p>Each instance group takes the following parameters: <tt class="docutils literal"><span class="pre">[Name],</span> <span class="pre">InstanceGroupType,</span> <span class="pre">InstanceType,</span> <span class="pre">InstanceCount,</span> <span class="pre">[BidPrice],</span> <span class="pre">[EbsConfiguration]</span></tt> . [EbsConfiguration] is optional. EbsConfiguration takes the following parameters: <tt class="docutils literal"><span class="pre">EbsOptimized</span></tt> and <tt class="docutils literal"><span class="pre">EbsBlockDeviceConfigs</span></tt> . EbsBlockDeviceConfigs is an array of EBS volume specifications, which takes the following parameters : <tt class="docutils literal"><span class="pre">([VolumeType],</span> <span class="pre">[SizeInGB],</span> <span class="pre">Iops)</span></tt> and VolumesPerInstance which is the count of EBS volumes per instance with this specification.</p>
+</div></blockquote>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    "InstanceCount": integer,
+    "Name": "string",
+    "InstanceGroupType": "MASTER"|"CORE"|"TASK",
+    "EbsConfiguration": {
+      "EbsOptimized": true|false,
+      "EbsBlockDeviceConfigs": [
+        {
+          "VolumeSpecification": {
+            "Iops": integer,
+            "VolumeType": "string",
+            "SizeInGB": integer
+          },
+          "VolumesPerInstance": integer
+        }
+        ...
+      ]
+    },
+    "BidPrice": "string",
+    "InstanceType": "string"
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--instance-type" class="dashAnchor" id="instance-type"></a><span class="pre">--instance-type</span></tt> (string)</p>
+<blockquote>
+<div>Shortcut option for --instance-groups. A specification of the type of Amazon EC2 instances used together with --instance-count (optional) to create instance groups in a cluster. Specifying the --instance-type argument without also specifying --instance-count launches a single-node cluster.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--instance-count" class="dashAnchor" id="instance-count"></a><span class="pre">--instance-count</span></tt> (string)</p>
+<blockquote>
+<div>Shortcut option for --instance-groups. A specification of the number of Amazon EC2 instances used together with --instance-type to create instance groups in a cluster. EMR will use one node as the cluster's master node and use the remainder of the nodes as core nodes. Specifying the --instance-type argument without also specifying --instance-count launches a single-node cluster.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--auto-terminate" class="dashAnchor" id="auto-terminate"></a><span class="pre">--auto-terminate</span></tt> | <tt class="docutils literal"><span class="pre">--no-auto-terminate</span></tt> (boolean)</p>
+<blockquote>
+<div>Specifies whether the cluster should terminate after completing all the steps. Auto termination is off by default.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--name" class="dashAnchor" id="name"></a><span class="pre">--name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the cluster. The default is "Development Cluster".</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--log-uri" class="dashAnchor" id="log-uri"></a><span class="pre">--log-uri</span></tt> (string)</p>
+<blockquote>
+<div>The location in Amazon S3 to write the log files of the cluster. If a value is not provided, logs are not created.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--service-role" class="dashAnchor" id="service-role"></a><span class="pre">--service-role</span></tt> (string)</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--use-default-roles" class="dashAnchor" id="use-default-roles"></a><span class="pre">--use-default-roles</span></tt> (boolean)</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--configurations" class="dashAnchor" id="configurations"></a><span class="pre">--configurations</span></tt> (string)</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ec2-attributes" class="dashAnchor" id="ec2-attributes"></a><span class="pre">--ec2-attributes</span></tt> (structure)</p>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">ServiceAccessSecurityGroup</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">AvailabilityZone</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">EmrManagedMasterSecurityGroup</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">KeyName</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">SubnetId</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">AdditionalMasterSecurityGroups</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="n">EmrManagedSlaveSecurityGroup</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">InstanceProfile</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">AdditionalSlaveSecurityGroups</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"ServiceAccessSecurityGroup"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"AvailabilityZone"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"EmrManagedMasterSecurityGroup"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"KeyName"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"SubnetId"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"AdditionalMasterSecurityGroups"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"string"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+  <span class="s2">"EmrManagedSlaveSecurityGroup"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"InstanceProfile"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"AdditionalSlaveSecurityGroups"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"string"</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--termination-protected" class="dashAnchor" id="termination-protected"></a><span class="pre">--termination-protected</span></tt> | <tt class="docutils literal"><span class="pre">--no-termination-protected</span></tt> (boolean)</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--visible-to-all-users" class="dashAnchor" id="visible-to-all-users"></a><span class="pre">--visible-to-all-users</span></tt> | <tt class="docutils literal"><span class="pre">--no-visible-to-all-users</span></tt> (boolean)</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--enable-debugging" class="dashAnchor" id="enable-debugging"></a><span class="pre">--enable-debugging</span></tt> | <tt class="docutils literal"><span class="pre">--no-enable-debugging</span></tt> (boolean)</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--tags" class="dashAnchor" id="tags"></a><span class="pre">--tags</span></tt> (list)</p>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>"string" "string" ...</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--bootstrap-actions" class="dashAnchor" id="bootstrap-actions"></a><span class="pre">--bootstrap-actions</span></tt> (list)</p>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Path=string,Args=string,string,Name=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    "Path": "string",
+    "Args": ["string", ...],
+    "Name": "string"
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--applications" class="dashAnchor" id="applications"></a><span class="pre">--applications</span></tt> (list)</p>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Args=string,string,Name=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    "Args": ["string", ...],
+    "Name": "MapR"|"HUE"|"HIVE"|"PIG"|"HBASE"|"IMPALA"|"GANGLIA"|"HADOOP"|"SPARK"
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--emrfs" class="dashAnchor" id="emrfs"></a><span class="pre">--emrfs</span></tt> (structure)</p>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Args</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="n">Encryption</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">Consistent</span><span class="o">=</span><span class="n">boolean</span><span class="p">,</span><span class="n">ProviderType</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">KMSKeyId</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">CustomProviderLocation</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">SSE</span><span class="o">=</span><span class="n">boolean</span><span class="p">,</span><span class="n">RetryCount</span><span class="o">=</span><span class="n">integer</span><span class="p">,</span><span class="n">RetryPeriod</span><span class="o">=</span><span class="n">integer</span><span class="p">,</span><span class="n">CustomProviderClass</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"Args"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"string"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+  <span class="s2">"Encryption"</span><span class="p">:</span> <span class="s2">"SERVERSIDE"</span><span class="o">|</span><span class="s2">"CLIENTSIDE"</span><span class="p">,</span>
+  <span class="s2">"Consistent"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+  <span class="s2">"ProviderType"</span><span class="p">:</span> <span class="s2">"KMS"</span><span class="o">|</span><span class="s2">"CUSTOM"</span><span class="p">,</span>
+  <span class="s2">"KMSKeyId"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"CustomProviderLocation"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"SSE"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+  <span class="s2">"RetryCount"</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+  <span class="s2">"RetryPeriod"</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+  <span class="s2">"CustomProviderClass"</span><span class="p">:</span> <span class="s2">"string"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--steps" class="dashAnchor" id="steps"></a><span class="pre">--steps</span></tt> (list)</p>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Name=string,Args=string,string,Jar=string,ActionOnFailure=string,MainClass=string,Type=string,Properties=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    "Name": "string",
+    "Args": ["string", ...],
+    "Jar": "string",
+    "ActionOnFailure": "TERMINATE_CLUSTER"|"CANCEL_AND_WAIT"|"CONTINUE",
+    "MainClass": "string",
+    "Type": "CUSTOM_JAR"|"STREAMING"|"HIVE"|"PIG"|"IMPALA",
+    "Properties": "string"
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--additional-info" class="dashAnchor" id="additional-info"></a><span class="pre">--additional-info</span></tt> (string)</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--restore-from-hbase-backup" class="dashAnchor" id="restore-from-hbase-backup"></a><span class="pre">--restore-from-hbase-backup</span></tt> (structure)</p>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">BackupVersion</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">Dir</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"BackupVersion"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"Dir"</span><span class="p">:</span> <span class="s2">"string"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p>Note: some of these examples assume you have specified your EMR service role and EC2 instance profile in the AWS CLI configuration file. If you have not done this, you must specify each required IAM role or use the --use-default-roles parameter when creating your cluster. You can learn more about specifying parameter values for EMR commands here:
+<a class="reference external" href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-aws-cli-config.html">http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-aws-cli-config.html</a></p>
+<p><strong>1. Quick start: to create an Amazon EMR cluster</strong></p>
+<ul>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --release-label emr-4.0.0  --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge --auto-terminate</pre>
+</div>
+</li>
+</ul>
+<p><strong>2. Create an Amazon EMR cluster with ServiceRole and InstanceProfile</strong></p>
+<ul>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --release-label emr-4.0.0  --service-role EMR_DefaultRole --ec2-attributes InstanceProfile=EMR_EC2_DefaultRole --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge</pre>
+</div>
+</li>
+</ul>
+<p><strong>3. Create an Amazon EMR cluster with default roles</strong></p>
+<ul>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --release-label emr-4.0.0  --use-default-roles --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge --auto-terminate</pre>
+</div>
+</li>
+</ul>
+<p><strong>4. Create an Amazon EMR cluster with MASTER, CORE, and TASK instance groups</strong></p>
+<ul>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --release-label emr-4.0.0  --auto-terminate --instance-groups Name=Master,InstanceGroupType=MASTER,InstanceType=m3.xlarge,InstanceCount=1 Name=Core,InstanceGroupType=CORE,InstanceType=m3.xlarge,InstanceCount=2 Name=Task,InstanceGroupType=TASK,InstanceType=m3.xlarge,InstanceCount=2</pre>
+</div>
+</li>
+</ul>
+<p><strong>5. Specify whether the cluster should terminate after completing all the steps</strong></p>
+<ul>
+<li><p class="first">Create an Amazon EMR cluster that will terminate after completing all the steps:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --release-label emr-4.0.0   --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge  InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge --auto-terminate</pre>
+</div>
+</li>
+</ul>
+<p><strong>6. Specify EC2 Attributes</strong></p>
+<ul>
+<li><p class="first">Create an Amazon EMR cluster with Amazon EC2 Key Pair "myKey" and instance profile "myProfile":</p>
+<div class="highlight-python"><pre>aws emr create-cluster --ec2-attributes KeyName=myKey,InstanceProfile=myProfile --release-label emr-4.0.0   --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge --auto-terminate</pre>
+</div>
+</li>
+<li><p class="first">Create an Amazon EMR cluster in an Amazon VPC subnet:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --ec2-attributes SubnetId=subnet-xxxxx --release-label emr-4.0.0   --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge --auto-terminate</pre>
+</div>
+</li>
+<li><p class="first">Create an Amazon EMR cluster in an AvailabilityZone. For example, us-east-1b:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --ec2-attributes AvailabilityZone=us-east-1b --release-label emr-4.0.0  --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge</pre>
+</div>
+</li>
+<li><p class="first">Create an Amazon EMR cluster specifying the Amazon EC2 security groups:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --release-label emr-4.0.0 --service-role myServiceRole --ec2-attributes InstanceProfile=myRole,EmrManagedMasterSecurityGroup=sg-master1,EmrManagedSlaveSecurityGroup=sg-slave1,AdditionalMasterSecurityGroups=[sg-addMaster1,sg-addMaster2,sg-addMaster3,sg-addMaster4],AdditionalSlaveSecurityGroups=[sg-addSlave1,sg-addSlave2,sg-addSlave3,sg-addSlave4] --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge</pre>
+</div>
+</li>
+<li><p class="first">Create an Amazon EMR cluster specifying only the EMR managed Amazon EC2 security groups:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --release-label emr-4.0.0 --service-role myServiceRole --ec2-attributes InstanceProfile=myRole,EmrManagedMasterSecurityGroup=sg-master1,EmrManagedSlaveSecurityGroup=sg-slave1 --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge</pre>
+</div>
+</li>
+<li><p class="first">Create an Amazon EMR cluster specifying only the additional Amazon EC2 security groups:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --release-label emr-4.0.0 --service-role myServiceRole --ec2-attributes InstanceProfile=myRole,AdditionalMasterSecurityGroups=[sg-addMaster1,sg-addMaster2,sg-addMaster3,sg-addMaster4],AdditionalSlaveSecurityGroups=[sg-addSlave1,sg-addSlave2,sg-addSlave3,sg-addSlave4] --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge</pre>
+</div>
+</li>
+<li><p class="first">Create an Amazon EMR cluster in a VPC private subnet and use a specific Amazon EC2 security group to enable the Amazon EMR service access (required for clusters in private subnets):</p>
+<div class="highlight-python"><pre>aws  emr create-cluster --release-label emr-4.2.0 --service-role myServiceRole --ec2-attributes InstanceProfile=myRole,ServiceAccessSecurityGroup=sg-service-access,EmrManagedMasterSecurityGroup=sg-master,EmrManagedSlaveSecurityGroup=sg-slave --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge</pre>
+</div>
+</li>
+<li><p class="first">JSON equivalent (contents of ec2_attributes.json):</p>
+<div class="highlight-python"><pre> [
+  {
+    "SubnetId": "subnet-xxxxx",
+    "KeyName": "myKey",
+    "InstanceProfile":"myRole",
+    "EmrManagedMasterSecurityGroup": "sg-master1",
+    "EmrManagedSlaveSecurityGroup": "sg-slave1",
+    "ServiceAccessSecurityGroup": "sg-service-access"
+    "AdditionalMasterSecurityGroups": ["sg-addMaster1","sg-addMaster2","sg-addMaster3","sg-addMaster4"],
+    "AdditionalSlaveSecurityGroups": ["sg-addSlave1","sg-addSlave2","sg-addSlave3","sg-addSlave4"]
+  }
+]</pre>
+</div>
+</li>
+</ul>
+<p>NOTE: JSON arguments must include options and values as their own items in the list.</p>
+<ul>
+<li><p class="first">Command (using ec2_attributes.json):</p>
+<div class="highlight-python"><pre>aws emr create-cluster --release-label emr-4.0.0 --service-role myServiceRole --ec2-attributes file://./ec2_attributes.json  --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge</pre>
+</div>
+</li>
+</ul>
+<p><strong>7. Enable debugging and specify a Log URI</strong></p>
+<ul>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --enable-debugging --log-uri s3://myBucket/myLog  --release-label emr-4.0.0  --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge --auto-terminate</pre>
+</div>
+</li>
+</ul>
+<p><strong>8. Add tags when creating an Amazon EMR cluster</strong></p>
+<ul>
+<li><p class="first">Add a list of tags:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --tags name="John Doe" age=29 address="123 East NW Seattle" --release-label emr-4.0.0  --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge --auto-terminate</pre>
+</div>
+</li>
+<li><p class="first">List tags of an Amazon EMR cluster:</p>
+<div class="highlight-python"><pre>aws emr describe-cluster --cluster-id j-XXXXXXYY --query Cluster.Tags</pre>
+</div>
+</li>
+</ul>
+<p><strong>9. Add a list of bootstrap actions when creating an Amazon EMR Cluster</strong></p>
+<ul>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --bootstrap-actions Path=s3://mybucket/myscript1,Name=BootstrapAction1,Args=[arg1,arg2] Path=s3://mybucket/myscript2,Name=BootstrapAction2,Args=[arg1,arg2] --release-label emr-4.0.0  --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge --auto-terminate</pre>
+</div>
+</li>
+</ul>
+<p><strong>10. Configure Hadoop MapReduce component in an EMR release</strong></p>
+<p>The following example changes the maximum number of map tasks and sets the NameNode heap size:</p>
+<ul>
+<li><p class="first">Specifying configurations from a local file:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --configurations file://configurations.json --release-label emr-4.0.0 --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge --auto-terminate</pre>
+</div>
+</li>
+<li><p class="first">Specifying configurations from a file in Amazon S3:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --configurations https://s3.amazonaws.com/myBucket/configurations.json --release-label emr-4.0.0 --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge --auto-terminate</pre>
+</div>
+</li>
+<li><p class="first">Contents of configurations.json:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span>
+ <span class="p">{</span>
+   <span class="s2">"Classification"</span><span class="p">:</span> <span class="s2">"mapred-site"</span><span class="p">,</span>
+   <span class="s2">"Properties"</span><span class="p">:</span> <span class="p">{</span>
+       <span class="s2">"mapred.tasktracker.map.tasks.maximum"</span><span class="p">:</span> <span class="mi">2</span>
+   <span class="p">}</span>
+ <span class="p">},</span>
+ <span class="p">{</span>
+   <span class="s2">"Classification"</span><span class="p">:</span> <span class="s2">"hadoop-env"</span><span class="p">,</span>
+   <span class="s2">"Properties"</span><span class="p">:</span> <span class="p">{},</span>
+   <span class="s2">"Configurations"</span><span class="p">:</span> <span class="p">[</span>
+       <span class="p">{</span>
+         <span class="s2">"Classification"</span><span class="p">:</span> <span class="s2">"export"</span><span class="p">,</span>
+         <span class="s2">"Properties"</span><span class="p">:</span> <span class="p">{</span>
+             <span class="s2">"HADOOP_DATANODE_HEAPSIZE"</span><span class="p">:</span> <span class="mi">2048</span><span class="p">,</span>
+             <span class="s2">"HADOOP_NAMENODE_OPTS"</span><span class="p">:</span> <span class="s2">"-XX:GCTimeRatio=19"</span>
+         <span class="p">}</span>
+       <span class="p">}</span>
+   <span class="p">]</span>
+ <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>11. Create an Amazon EMR cluster with applications</strong></p>
+<ul>
+<li><p class="first">Create an Amazon EMR cluster with Hadoop, Hive and Pig installed:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --applications Name=Hadoop Name=Hive Name=Pig --release-label emr-4.0.0  --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge --auto-terminate</pre>
+</div>
+</li>
+<li><p class="first">Create an Amazon EMR cluster with Spark installed:</p>
+<blockquote>
+<div><p>aws emr create-cluster --release-label emr-4.0.0 --applications Name=Spark --ec2-attributes KeyName=myKey --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge --auto-terminate</p>
+</div></blockquote>
+</li>
+<li><p class="first">Create an Amazon EMR cluster with MapR M7 edition:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --applications Name=MapR,Args=--edition,m7,--version,4.0.2 --ami-version 3.3.2 --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge --auto-terminate</pre>
+</div>
+</li>
+</ul>
+<p><strong>12. Restore HBase data from backup when creating an Amazon EMR cluster</strong></p>
+<p>Only supported with AMI versions.</p>
+<p>-Command:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --applications Name=HBase --restore-from-hbase-backup Dir=s3://myBucket/myBackup,BackupVersion=myBackupVersion --ami-version 3.1.0  --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge --auto-terminate</pre>
+</div>
+<p><strong>13. To add Custom JAR steps to a cluster when creating an Amazon EMR cluster</strong></p>
+<ul>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --steps Type=CUSTOM_JAR,Name=CustomJAR,ActionOnFailure=CONTINUE,Jar=s3://myBucket/mytest.jar,Args=arg1,arg2,arg3 Type=CUSTOM_JAR,Name=CustomJAR,ActionOnFailure=CONTINUE,Jar=s3://myBucket/mytest.jar,MainClass=mymainclass,Args=arg1,arg2,arg3  --release-label emr-4.0.0  --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge --auto-terminate</pre>
+</div>
+</li>
+<li><p class="first">Custom JAR steps required parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Jar</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Custom JAR steps optional parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Type</span><span class="p">,</span> <span class="n">Name</span><span class="p">,</span> <span class="n">ActionOnFailure</span><span class="p">,</span> <span class="n">Args</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>14. To add Streaming steps when creating an Amazon EMR cluster</strong></p>
+<ul>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --steps Type=STREAMING,Name='Streaming Program',ActionOnFailure=CONTINUE,Args=[-files,s3://elasticmapreduce/samples/wordcount/wordSplitter.py,-mapper,wordSplitter.py,-reducer,aggregate,-input,s3://elasticmapreduce/samples/wordcount/input,-output,s3://mybucket/wordcount/output] --release-label emr-4.0.0  --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge --auto-terminate</pre>
+</div>
+</li>
+<li><p class="first">Streaming steps required parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Type</span><span class="p">,</span> <span class="n">Args</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Streaming steps optional parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Name</span><span class="p">,</span> <span class="n">ActionOnFailure</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">JSON equivalent (contents of step.json):</p>
+<div class="highlight-python"><pre> [
+  {
+    "Name": "JSON Streaming Step",
+    "Args": ["-files","s3://elasticmapreduce/samples/wordcount/wordSplitter.py","-mapper","wordSplitter.py","-reducer","aggregate","-input","s3://elasticmapreduce/samples/wordcount/input","-output","s3://mybucket/wordcount/output"],
+    "ActionOnFailure": "CONTINUE",
+    "Type": "STREAMING"
+  }
+]</pre>
+</div>
+</li>
+</ul>
+<p>NOTE: JSON arguments must include options and values as their own items in the list.</p>
+<ul>
+<li><p class="first">Command (using step.json):</p>
+<div class="highlight-python"><pre>aws emr create-cluster --steps file://./step.json --release-label emr-4.0.0  --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge --auto-terminate</pre>
+</div>
+</li>
+</ul>
+<p><strong>15. To use multiple files in a Streaming step (JSON only)</strong></p>
+<ul>
+<li><p class="first">JSON (multiplefiles.json):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span>
+  <span class="p">{</span>
+     <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"JSON Streaming Step"</span><span class="p">,</span>
+     <span class="s2">"Type"</span><span class="p">:</span> <span class="s2">"STREAMING"</span><span class="p">,</span>
+     <span class="s2">"ActionOnFailure"</span><span class="p">:</span> <span class="s2">"CONTINUE"</span><span class="p">,</span>
+     <span class="s2">"Args"</span><span class="p">:</span> <span class="p">[</span>
+         <span class="s2">"-files"</span><span class="p">,</span>
+         <span class="s2">"s3://mybucket/mapper.py,s3://mybucket/reducer.py"</span><span class="p">,</span>
+         <span class="s2">"-mapper"</span><span class="p">,</span>
+         <span class="s2">"mapper.py"</span><span class="p">,</span>
+         <span class="s2">"-reducer"</span><span class="p">,</span>
+         <span class="s2">"reducer.py"</span><span class="p">,</span>
+         <span class="s2">"-input"</span><span class="p">,</span>
+         <span class="s2">"s3://mybucket/input"</span><span class="p">,</span>
+         <span class="s2">"-output"</span><span class="p">,</span>
+         <span class="s2">"s3://mybucket/output"</span><span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --steps file://./multiplefiles.json --release-label emr-4.0.0 --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge --auto-terminate</pre>
+</div>
+</li>
+</ul>
+<p><strong>16. To add Hive steps when creating an Amazon EMR cluster</strong></p>
+<ul>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --steps Type=HIVE,Name='Hive program',ActionOnFailure=CONTINUE,ActionOnFailure=TERMINATE_CLUSTER,Args=[-f,s3://elasticmapreduce/samples/hive-ads/libs/model-build.q,-d,INPUT=s3://elasticmapreduce/samples/hive-ads/tables,-d,OUTPUT=s3://mybucket/hive-ads/output/2014-04-18/11-07-32,-d,LIBS=s3://elasticmapreduce/samples/hive-ads/libs] --applications Name=Hive --release-label emr-4.0.0  --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge</pre>
+</div>
+</li>
+<li><p class="first">Hive steps required parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Type</span><span class="p">,</span> <span class="n">Args</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Hive steps optional parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Name</span><span class="p">,</span> <span class="n">ActionOnFailure</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>17. To add Pig steps when creating an Amazon EMR cluster</strong></p>
+<ul>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --steps Type=PIG,Name='Pig program',ActionOnFailure=CONTINUE,Args=[-f,s3://elasticmapreduce/samples/pig-apache/do-reports2.pig,-p,INPUT=s3://elasticmapreduce/samples/pig-apache/input,-p,OUTPUT=s3://mybucket/pig-apache/output] --applications Name=Pig --release-label emr-4.0.0  --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge</pre>
+</div>
+</li>
+<li><p class="first">Pig steps required parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Type</span><span class="p">,</span> <span class="n">Args</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Pig steps optional parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Name</span><span class="p">,</span> <span class="n">ActionOnFailure</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>18. To add Impala steps when creating an Amazon EMR cluster</strong></p>
+<ul>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --steps Type=CUSTOM_JAR,Name='Wikipedia Impala program',ActionOnFailure=CONTINUE,Jar=s3://elasticmapreduce/libs/script-runner/script-runner.jar,Args="/home/hadoop/impala/examples/wikipedia/wikipedia-with-s3distcp.sh" Type=IMPALA,Name='Impala program',ActionOnFailure=CONTINUE,Args=-f,--impala-script,s3://myimpala/input,--console-output-path,s3://myimpala/output --applications Name=Impala --ami-version 3.1.0  --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge</pre>
+</div>
+</li>
+<li><p class="first">Impala steps required parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Type</span><span class="p">,</span> <span class="n">Args</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Impala steps optional parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Name</span><span class="p">,</span> <span class="n">ActionOnFailure</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>19. To enable consistent view in EMRFS and change the RetryCount and Retry Period settings when creating an Amazon EMR cluster</strong></p>
+<ul>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --instance-type m3.xlarge --release-label emr-4.0.0 --emrfs Consistent=true,RetryCount=5,RetryPeriod=30</pre>
+</div>
+</li>
+<li><p class="first">Required parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Consistent</span><span class="o">=</span><span class="n">true</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">JSON equivalent (contents of emrfs.json):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"Consistent"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">"RetryCount"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+  <span class="s2">"RetryPeriod"</span><span class="p">:</span> <span class="mi">30</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Command (Using emrfs.json):</p>
+<div class="highlight-python"><pre>aws emr create-cluster --instance-type m3.xlarge --release-label emr-4.0.0 --emrfs file://emrfs.json</pre>
+</div>
+</li>
+</ul>
+<p><strong>20. To enable consistent view with arguments e.g. change the DynamoDB read and write capacity when creating an Amazon EMR cluster</strong></p>
+<ul>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --instance-type m3.xlarge --release-label emr-4.0.0 --emrfs Consistent=true,RetryCount=5,RetryPeriod=30,Args=[fs.s3.consistent.metadata.read.capacity=600,fs.s3.consistent.metadata.write.capacity=300]</pre>
+</div>
+</li>
+<li><p class="first">Required parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Consistent</span><span class="o">=</span><span class="n">true</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">JSON equivalent (contents of emrfs.json):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"Consistent"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">"RetryCount"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+  <span class="s2">"RetryPeriod"</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="s2">"Args"</span><span class="p">:[</span><span class="s2">"fs.s3.consistent.metadata.read.capacity=600"</span><span class="p">,</span> <span class="s2">"fs.s3.consistent.metadata.write.capacity=300"</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Command (Using emrfs.json):</p>
+<div class="highlight-python"><pre>aws emr create-cluster --instance-type m3.xlarge --release-label emr-4.0.0 --emrfs file://emrfs.json</pre>
+</div>
+</li>
+</ul>
+<p><strong>21. To enable Amazon S3 server-side encryption in EMRFS when creating an Amazon EMR cluster</strong></p>
+<ul>
+<li><p class="first">Command (Use Encryption=ServerSide):</p>
+<div class="highlight-python"><pre>aws emr create-cluster --instance-type m3.xlarge --release-label emr-4.0.0 --emrfs Encryption=ServerSide</pre>
+</div>
+</li>
+<li><p class="first">Required parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Encryption</span><span class="o">=</span><span class="n">ServerSide</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Optional parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Args</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">JSON equivalent (contents of emrfs.json):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"Encryption"</span><span class="p">:</span> <span class="s2">"ServerSide"</span><span class="p">,</span>
+  <span class="s2">"Args"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"fs.s3.serverSideEncryptionAlgorithm=AES256"</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>22. To enable Amazon S3 client-side encryption using a key managed by AWS Key Management Service (KMS) in EMRFS when creating an Amazon EMR cluster</strong></p>
+<ul>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --instance-type m3.xlarge --release-label emr-4.0.0 --emrfs Encryption=ClientSide,ProviderType=KMS,KMSKeyId=myKMSKeyId</pre>
+</div>
+</li>
+<li><p class="first">Required parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Encryption</span><span class="o">=</span><span class="n">ClientSide</span><span class="p">,</span> <span class="n">ProviderType</span><span class="o">=</span><span class="n">KMS</span><span class="p">,</span> <span class="n">KMSKeyId</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Optional parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Args</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">JSON equivalent (contents of emrfs.json):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"Encryption"</span><span class="p">:</span> <span class="s2">"ClientSide"</span><span class="p">,</span>
+  <span class="s2">"ProviderType"</span><span class="p">:</span> <span class="s2">"KMS"</span><span class="p">,</span>
+  <span class="s2">"KMSKeyId"</span><span class="p">:</span> <span class="s2">"myKMSKeyId"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>23. To enable Amazon S3 client-side encryption with a custom encryption provider in EMRFS when creating an Amazon EMR cluster</strong></p>
+<ul>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --instance-type m3.xlarge --release-label emr-4.0.0 --emrfs Encryption=ClientSide,ProviderType=Custom,CustomProviderLocation=s3://mybucket/myfolder/provider.jar,CustomProviderClass=classname</pre>
+</div>
+</li>
+<li><p class="first">Required parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Encryption</span><span class="o">=</span><span class="n">ClientSide</span><span class="p">,</span> <span class="n">ProviderType</span><span class="o">=</span><span class="n">Custom</span><span class="p">,</span> <span class="n">CustomProviderLocation</span><span class="p">,</span> <span class="n">CustomProviderClass</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Optional parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Args</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">JSON equivalent (contents of emrfs.json):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"Encryption"</span><span class="p">:</span> <span class="s2">"ClientSide"</span><span class="p">,</span>
+  <span class="s2">"ProviderType"</span><span class="p">:</span> <span class="s2">"Custom"</span><span class="p">,</span>
+  <span class="s2">"CustomProviderLocation"</span><span class="p">:</span> <span class="s2">"s3://mybucket/myfolder/provider.jar"</span><span class="p">,</span>
+  <span class="s2">"CustomProviderClass"</span><span class="p">:</span> <span class="s2">"classname"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>24. To enable Amazon S3 client-side encryption with a custom encryption provider in EMRFS and passing arguments expected by the class</strong></p>
+<ul>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --release-label emr-4.0.0 --instance-type m3.xlarge --instance-count 2 --emrfs Encryption=ClientSide,ProviderName=myProvider,CustomProviderLocation=s3://mybucket/myfolder/myprovider.jar,CustomProviderClass=classname,Args=[myProvider.arg1=value1,myProvider.arg2=value2]</pre>
+</div>
+</li>
+<li><p class="first">Required parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Encryption</span><span class="o">=</span><span class="n">ClientSide</span><span class="p">,</span> <span class="n">ProviderType</span><span class="o">=</span><span class="n">Custom</span><span class="p">,</span> <span class="n">CustomProviderLocation</span><span class="p">,</span> <span class="n">CustomProviderClass</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Optional parameters:</p>
+<div class="highlight-python"><pre>Args (expected by CustomProviderClass, passed to emrfs-site.xml using configure-hadoop bootstrap action)</pre>
+</div>
+</li>
+<li><p class="first">JSON equivalent (contents of emrfs.json):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"Encryption"</span><span class="p">:</span> <span class="s2">"ClientSide"</span><span class="p">,</span>
+  <span class="s2">"ProviderType"</span><span class="p">:</span> <span class="s2">"Custom"</span><span class="p">,</span>
+  <span class="s2">"CustomProviderLocation"</span><span class="p">:</span> <span class="s2">"s3://mybucket/myfolder/provider.jar"</span><span class="p">,</span>
+  <span class="s2">"CustomProviderClass"</span><span class="p">:</span> <span class="s2">"classname"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<blockquote>
+<div><dl class="docutils">
+<dt><a href="#id1"><span class="problematic" id="id2">**</span></a>25. Create a cluster with EBS volumes configured to the instance groups:</dt>
+<dd>to create an Amazon EMR cluster**</dd>
+</dl>
+</div></blockquote>
+<ul>
+<li><p class="first">Create a cluster with multiple EBS volumes attached to the CORE instance group. EBS volumes can be attached to MASTER, CORE, and TASK instance groups. For instance groups with EBS configurations, which have an embedded JSON structure, you should enclose the entire instance group argument with single quotes. For instance groups with no EBS configuration, using single quotes is optional.</p>
+</li>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --release-label emr-4.2.0  --use-default-roles --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=d2.xlarge 'InstanceGroupType=CORE,InstanceCount=2,InstanceType=d2.xlarge,EbsConfiguration={EbsOptimized=true,EbsBlockDeviceConfigs=[{VolumeSpecification={VolumeType=gp2,SizeInGB=100}},{VolumeSpecification={VolumeType=io1,SizeInGB=100,Iops=100},VolumesPerInstance=4}]}' --auto-terminate</pre>
+</div>
+</li>
+<li><p class="first">Create a cluster with multiple EBS volumes attached to the MASTER instance group.</p>
+</li>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr create-cluster --release-label emr-4.2.0 --use-default-roles --instance-groups 'InstanceGroupType=MASTER, InstanceCount=1, InstanceType=d2.xlarge, EbsConfiguration={EbsOptimized=true, EbsBlockDeviceConfigs=[{VolumeSpecification={VolumeType=io1, SizeInGB=100, Iops=100}},{VolumeSpecification={VolumeType=standard,SizeInGB=50},VolumesPerInstance=3}]}' InstanceGroupType=CORE,InstanceCount=2,InstanceType=d2.xlarge --auto-terminate</pre>
+</div>
+</li>
+<li><p class="first">Required parameters:</p>
+<div class="highlight-python"><pre>VolumeType, SizeInGB if EbsBlockDeviceConfigs specified</pre>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="add-tags.html" title="previous chapter (use the left arrow)">&#8592; add-tags</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-default-roles.html" title="next chapter (use the right arrow)">create-default-roles &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="create-default-roles.html" title="create-default-roles">next</a> |</li>
+        <li class="right">
+          <a href="add-tags.html" title="add-tags">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">emr</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:19 GMT -->
+</html>

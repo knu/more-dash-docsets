@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/gamelift/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:28:32 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>gamelift &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="create-alias" href="create-alias.html" />
+    <link rel="prev" title="update-destination" href="../firehose/update-destination.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="create-alias.html" title="create-alias" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="../firehose/update-destination.html" title="update-destination" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../firehose/update-destination.html" title="previous chapter (use the left arrow)">&#8592; update-destination</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-alias.html" title="next chapter (use the right arrow)">create-alias &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">gamelift</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/gamelift/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="gamelift">
+<span id="cli-aws-gamelift"></span><h1>gamelift<a name="//apple_ref/cpp/Command/aws gamelift" class="dashAnchor" id="aws gamelift"></a><a class="headerlink" href="#gamelift" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Welcome to the <em>Amazon GameLift API Reference</em> . Amazon GameLift is a managed Amazon Web Services (AWS) service for developers who need a scalable, server-based solution for multiplayer games. Amazon GameLift provides setup and deployment of game servers, and handles infrastructure scaling and session management. For more information about the GameLift service, including a feature overview, getting started guide, and tutorial, see the accompanying <a class="reference external" href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a> .</p>
+<p>This reference describes the low-level service API for GameLift. You can call this API directly or use the <a class="reference external" href="https://aws.amazon.com/tools/">AWS SDK</a> for your preferred language. The AWS SDK includes a set of high-level GameLift actions multiplayer game sessions. Alternatively, you can use the <a class="reference external" href="https://aws.amazon.com/cli/">AWS command-line interface</a> (CLI) tool, which includes commands for GameLift. For administrative actions, you can use the Amazon GameLift console.</p>
+<p><strong>Managing Game and Player Sessions Through GameLift</strong></p>
+<p>Call these actions from your game clients and/or services to create and manage multiplayer game sessions.</p>
+<ul class="simple">
+<li><strong>Game sessions</strong><ul>
+<li>create-game-session</li>
+<li>describe-game-sessions</li>
+<li>describe-game-session-details</li>
+<li>update-game-session</li>
+</ul>
+</li>
+<li><strong>Player sessions</strong><ul>
+<li>create-player-session</li>
+<li>create-player-sessions</li>
+<li>describe-player-sessions</li>
+</ul>
+</li>
+<li><strong>Other actions:</strong><ul>
+<li>get-game-session-log-url</li>
+</ul>
+</li>
+</ul>
+<p><strong>Setting Up Game Servers</strong></p>
+<p>Use these administrative actions to configure GameLift to host your game servers. When configuring GameLift, you'll need to (1) configure a build for your game and provide build files, and (2) set up one or more fleets to host game sessions.</p>
+<ul class="simple">
+<li><strong>Build actions:</strong><ul>
+<li>list-builds</li>
+<li>create-build</li>
+<li>describe-build</li>
+<li>update-build</li>
+<li>delete-build</li>
+<li>request-upload-credentials</li>
+</ul>
+</li>
+<li><strong>Fleet actions:</strong><ul>
+<li>list-fleets</li>
+<li>create-fleet</li>
+<li>Describe fleet actions:<ul>
+<li>describe-fleet-attributes</li>
+<li>describe-fleet-capacity</li>
+<li>describe-fleet-port-settings</li>
+<li>describe-fleet-utilization</li>
+<li>describe-ec2-instance-limits</li>
+<li>describe-fleet-events</li>
+</ul>
+</li>
+<li>Update fleet actions:<ul>
+<li>update-fleet-attributes</li>
+<li>update-fleet-capacity</li>
+<li>update-fleet-port-settings</li>
+</ul>
+</li>
+<li>delete-fleet</li>
+</ul>
+</li>
+<li><strong>Alias actions:</strong><ul>
+<li>list-aliases</li>
+<li>create-alias</li>
+<li>describe-alias</li>
+<li>update-alias</li>
+<li>delete-alias</li>
+<li>resolve-alias</li>
+</ul>
+</li>
+<li><strong>Scaling policy actions:</strong><ul>
+<li>put-scaling-policy</li>
+<li>describe-scaling-policies</li>
+<li>delete-scaling-policy</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a name="//apple_ref/cpp/Section/Available Commands" class="dashAnchor" id="Available Commands"></a><a class="headerlink" href="#available-commands" title="Permalink to this headline">&#182;</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-alias" class="dashAnchor" id="create-alias"></a><a class="reference internal" href="create-alias.html">create-alias</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-build" class="dashAnchor" id="create-build"></a><a class="reference internal" href="create-build.html">create-build</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-fleet" class="dashAnchor" id="create-fleet"></a><a class="reference internal" href="create-fleet.html">create-fleet</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-game-session" class="dashAnchor" id="create-game-session"></a><a class="reference internal" href="create-game-session.html">create-game-session</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-player-session" class="dashAnchor" id="create-player-session"></a><a class="reference internal" href="create-player-session.html">create-player-session</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-player-sessions" class="dashAnchor" id="create-player-sessions"></a><a class="reference internal" href="create-player-sessions.html">create-player-sessions</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-alias" class="dashAnchor" id="delete-alias"></a><a class="reference internal" href="delete-alias.html">delete-alias</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-build" class="dashAnchor" id="delete-build"></a><a class="reference internal" href="delete-build.html">delete-build</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-fleet" class="dashAnchor" id="delete-fleet"></a><a class="reference internal" href="delete-fleet.html">delete-fleet</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-scaling-policy" class="dashAnchor" id="delete-scaling-policy"></a><a class="reference internal" href="delete-scaling-policy.html">delete-scaling-policy</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-alias" class="dashAnchor" id="describe-alias"></a><a class="reference internal" href="describe-alias.html">describe-alias</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-build" class="dashAnchor" id="describe-build"></a><a class="reference internal" href="describe-build.html">describe-build</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-ec2-instance-limits" class="dashAnchor" id="describe-ec2-instance-limits"></a><a class="reference internal" href="describe-ec2-instance-limits.html">describe-ec2-instance-limits</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-fleet-attributes" class="dashAnchor" id="describe-fleet-attributes"></a><a class="reference internal" href="describe-fleet-attributes.html">describe-fleet-attributes</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-fleet-capacity" class="dashAnchor" id="describe-fleet-capacity"></a><a class="reference internal" href="describe-fleet-capacity.html">describe-fleet-capacity</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-fleet-events" class="dashAnchor" id="describe-fleet-events"></a><a class="reference internal" href="describe-fleet-events.html">describe-fleet-events</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-fleet-port-settings" class="dashAnchor" id="describe-fleet-port-settings"></a><a class="reference internal" href="describe-fleet-port-settings.html">describe-fleet-port-settings</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-fleet-utilization" class="dashAnchor" id="describe-fleet-utilization"></a><a class="reference internal" href="describe-fleet-utilization.html">describe-fleet-utilization</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-game-session-details" class="dashAnchor" id="describe-game-session-details"></a><a class="reference internal" href="describe-game-session-details.html">describe-game-session-details</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-game-sessions" class="dashAnchor" id="describe-game-sessions"></a><a class="reference internal" href="describe-game-sessions.html">describe-game-sessions</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-player-sessions" class="dashAnchor" id="describe-player-sessions"></a><a class="reference internal" href="describe-player-sessions.html">describe-player-sessions</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-scaling-policies" class="dashAnchor" id="describe-scaling-policies"></a><a class="reference internal" href="describe-scaling-policies.html">describe-scaling-policies</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-game-session-log" class="dashAnchor" id="get-game-session-log"></a><a class="reference internal" href="get-game-session-log.html">get-game-session-log</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-game-session-log-url" class="dashAnchor" id="get-game-session-log-url"></a><a class="reference internal" href="get-game-session-log-url.html">get-game-session-log-url</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-aliases" class="dashAnchor" id="list-aliases"></a><a class="reference internal" href="list-aliases.html">list-aliases</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-builds" class="dashAnchor" id="list-builds"></a><a class="reference internal" href="list-builds.html">list-builds</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-fleets" class="dashAnchor" id="list-fleets"></a><a class="reference internal" href="list-fleets.html">list-fleets</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/put-scaling-policy" class="dashAnchor" id="put-scaling-policy"></a><a class="reference internal" href="put-scaling-policy.html">put-scaling-policy</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/request-upload-credentials" class="dashAnchor" id="request-upload-credentials"></a><a class="reference internal" href="request-upload-credentials.html">request-upload-credentials</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/resolve-alias" class="dashAnchor" id="resolve-alias"></a><a class="reference internal" href="resolve-alias.html">resolve-alias</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-alias" class="dashAnchor" id="update-alias"></a><a class="reference internal" href="update-alias.html">update-alias</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-build" class="dashAnchor" id="update-build"></a><a class="reference internal" href="update-build.html">update-build</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-fleet-attributes" class="dashAnchor" id="update-fleet-attributes"></a><a class="reference internal" href="update-fleet-attributes.html">update-fleet-attributes</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-fleet-capacity" class="dashAnchor" id="update-fleet-capacity"></a><a class="reference internal" href="update-fleet-capacity.html">update-fleet-capacity</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-fleet-port-settings" class="dashAnchor" id="update-fleet-port-settings"></a><a class="reference internal" href="update-fleet-port-settings.html">update-fleet-port-settings</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-game-session" class="dashAnchor" id="update-game-session"></a><a class="reference internal" href="update-game-session.html">update-game-session</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/upload-build" class="dashAnchor" id="upload-build"></a><a class="reference internal" href="upload-build.html">upload-build</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../firehose/update-destination.html" title="previous chapter (use the left arrow)">&#8592; update-destination</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-alias.html" title="next chapter (use the right arrow)">create-alias &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="create-alias.html" title="create-alias">next</a> |</li>
+        <li class="right">
+          <a href="../firehose/update-destination.html" title="update-destination">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/gamelift/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:28:47 GMT -->
+</html>

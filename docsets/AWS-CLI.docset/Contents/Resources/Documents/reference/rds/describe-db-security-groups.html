@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/rds/describe-db-security-groups.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:25 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>describe-db-security-groups &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>describe-db-security-groups &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,9 +25,9 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="rds" href="index.html" />
-    <link rel="next" title="describe-db-snapshots" href="describe-db-snapshots.html" />
+    <link rel="next" title="describe-db-snapshot-attributes" href="describe-db-snapshot-attributes.html" />
     <link rel="prev" title="describe-db-parameters" href="describe-db-parameters.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -58,10 +61,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
         <li class="right">
-          <a href="describe-db-snapshots.html" title="describe-db-snapshots" accesskey="N">next</a> |</li>
+          <a href="describe-db-snapshot-attributes.html" title="describe-db-snapshot-attributes" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="describe-db-parameters.html" title="describe-db-parameters" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">rds</a> &#187;</li> 
       </ul>
@@ -75,30 +78,31 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="describe-db-snapshots.html" title="next chapter (use the right arrow)">describe-db-snapshots &#8594;</a></li>
+          <li><a href="describe-db-snapshot-attributes.html" title="next chapter (use the right arrow)">describe-db-snapshot-attributes &#8594;</a></li>
       </ul>
     </div>
   
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">describe-db-security-groups</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,40 +111,144 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/rds/describe-db-security-groups">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/rds/describe-db-security-groups">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>rds</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-rds"><em>rds</em></a> ]</p>
 <div class="section" id="describe-db-security-groups">
-<h1>describe-db-security-groups<a class="headerlink" href="#describe-db-security-groups" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-rds-describe-db-security-groups"></span><h1>describe-db-security-groups<a name="//apple_ref/cpp/Command/aws rds describe-db-security-groups" class="dashAnchor" id="aws rds describe-db-security-groups"></a><a class="headerlink" href="#describe-db-security-groups" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Returns a list of DBSecurityGroup descriptions. If a --db-security-group-name is specified, the list will contain only the descriptions of the specified DBSecurityGroup.</p>
-<p>For an overview of CIDR ranges, go to the <a class="reference external" href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia Tutorial</a> .</p>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Returns a list of <tt class="docutils literal"><span class="pre">DBSecurityGroup</span></tt> descriptions. If a <tt class="docutils literal"><span class="pre">DBSecurityGroupName</span></tt> is specified, the list will contain only the descriptions of the specified DB security group.</p>
+<p><tt class="docutils literal"><span class="pre">describe-db-security-groups</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">DBSecurityGroups</span></tt></p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  describe-db-security-groups
 [--db-security-group-name &lt;value&gt;]
+[--filters &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
 [--starting-token &lt;value&gt;]
-[--max-items &lt;value&gt;]</pre>
+[--page-size &lt;value&gt;]
+[--max-items &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--db-security-group-name" class="dashAnchor" id="db-security-group-name"></a><span class="pre">--db-security-group-name</span></tt> (string)</p>
 <blockquote>
-<div>The name of the DB Security Group to return details for.</div></blockquote>
+<div>The name of the DB security group to return details for.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--filters" class="dashAnchor" id="filters"></a><span class="pre">--filters</span></tt> (list)</p>
+<blockquote>
+<div>This parameter is not currently supported.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Name=string,Values=string,string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    "Name": "string",
+    "Values": ["string", ...]
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--starting-token" class="dashAnchor" id="starting-token"></a><span class="pre">--starting-token</span></tt> (string)</p>
 <blockquote>
-<div>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt>  from a previously truncated response.</div></blockquote>
+<div>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--page-size" class="dashAnchor" id="page-size"></a><span class="pre">--page-size</span></tt> (integer)</p>
+<blockquote>
+<div>The size of each page.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-items" class="dashAnchor" id="max-items"></a><span class="pre">--max-items</span></tt> (integer)</p>
 <blockquote>
-<div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">NextMarker</span></tt>  will be provided in the output that you can use to resume pagination.</div></blockquote>
+<div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">NextToken</span></tt> will be provided in the output that you can use to resume pagination. This <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element should <strong>not</strong> be used directly outside of the AWS CLI.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Marker -&gt; (string)</p>
+<blockquote>
+<div>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <tt class="docutils literal"><span class="pre">MaxRecords</span></tt> .</div></blockquote>
+<p>DBSecurityGroups -&gt; (list)</p>
+<blockquote>
+<div><p>A list of  DBSecurityGroup instances.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Contains the result of a successful invocation of the following actions:</p>
+<ul class="simple">
+<li>describe-db-security-groups</li>
+<li>authorize-db-security-group-ingress</li>
+<li>create-db-security-group</li>
+<li>revoke-db-security-group-ingress</li>
+</ul>
+<p>This data type is used as a response element in the  describe-db-security-groups action.</p>
+<p>OwnerId -&gt; (string)</p>
+<blockquote>
+<div>Provides the AWS ID of the owner of a specific DB security group.</div></blockquote>
+<p>DBSecurityGroupName -&gt; (string)</p>
+<blockquote>
+<div>Specifies the name of the DB security group.</div></blockquote>
+<p>DBSecurityGroupDescription -&gt; (string)</p>
+<blockquote>
+<div>Provides the description of the DB security group.</div></blockquote>
+<p>VpcId -&gt; (string)</p>
+<blockquote>
+<div>Provides the VpcId of the DB security group.</div></blockquote>
+<p>EC2SecurityGroups -&gt; (list)</p>
+<blockquote>
+<div><p>Contains a list of  EC2SecurityGroup elements.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>This data type is used as a response element in the following actions:</p>
+<ul class="simple">
+<li>authorize-db-security-group-ingress</li>
+<li>describe-db-security-groups</li>
+<li>revoke-db-security-group-ingress</li>
+</ul>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>Provides the status of the EC2 security group. Status can be "authorizing", "authorized", "revoking", and "revoked".</div></blockquote>
+<p>EC2SecurityGroupName -&gt; (string)</p>
+<blockquote>
+<div>Specifies the name of the EC2 security group.</div></blockquote>
+<p>EC2SecurityGroupId -&gt; (string)</p>
+<blockquote>
+<div>Specifies the id of the EC2 security group.</div></blockquote>
+<p>EC2SecurityGroupOwnerId -&gt; (string)</p>
+<blockquote>
+<div>Specifies the AWS ID of the owner of the EC2 security group specified in the <tt class="docutils literal"><span class="pre">EC2SecurityGroupName</span></tt> field.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>IPRanges -&gt; (list)</p>
+<blockquote>
+<div><p>Contains a list of  IPRange elements.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>This data type is used as a response element in the  describe-db-security-groups action.</p>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".</div></blockquote>
+<p>CIDRIP -&gt; (string)</p>
+<blockquote>
+<div>Specifies the IP range.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
 </div>
 </div>
 
@@ -156,50 +264,45 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="describe-db-snapshots.html" title="next chapter (use the right arrow)">describe-db-snapshots &#8594;</a></li>
+          <li><a href="describe-db-snapshot-attributes.html" title="next chapter (use the right arrow)">describe-db-snapshot-attributes &#8594;</a></li>
       </ul>
     </div>
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index">index</a></li>
         <li class="right">
-          <a href="describe-db-snapshots.html" title="describe-db-snapshots">next</a> |</li>
+          <a href="describe-db-snapshot-attributes.html" title="describe-db-snapshot-attributes">next</a> |</li>
         <li class="right">
           <a href="describe-db-parameters.html" title="describe-db-parameters">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">rds</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'describe-db-parameters.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'describe-db-snapshots.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/rds/describe-db-security-groups.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:25 GMT -->
 </html>

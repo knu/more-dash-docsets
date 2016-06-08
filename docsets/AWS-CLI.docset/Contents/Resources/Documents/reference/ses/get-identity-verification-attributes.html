@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ses/get-identity-verification-attributes.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>get-identity-verification-attributes &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>get-identity-verification-attributes &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +25,10 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="ses" href="index.html" />
     <link rel="next" title="get-send-quota" href="get-send-quota.html" />
-    <link rel="prev" title="get-identity-notification-attributes" href="get-identity-notification-attributes.html" />
+    <link rel="prev" title="get-identity-policies" href="get-identity-policies.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
   
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -60,8 +63,8 @@
         <li class="right">
           <a href="get-send-quota.html" title="get-send-quota" accesskey="N">next</a> |</li>
         <li class="right">
-          <a href="get-identity-notification-attributes.html" title="get-identity-notification-attributes" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="get-identity-policies.html" title="get-identity-policies" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">ses</a> &#187;</li> 
       </ul>
@@ -71,7 +74,7 @@
     <div class="top-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="get-identity-notification-attributes.html" title="previous chapter (use the left arrow)">&#8592; get-identity-notification-attributes</a>
+          <a href="get-identity-policies.html" title="previous chapter (use the left arrow)">&#8592; get-identity-policies</a>
           <span class="divider">/</span>
           
         </li>
@@ -82,24 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">get-identity-verification-attributes</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
 <li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -108,60 +112,86 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/ses/get-identity-verification-attributes">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ses/get-identity-verification-attributes">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>ses</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-ses"><em>ses</em></a> ]</p>
 <div class="section" id="get-identity-verification-attributes">
-<h1>get-identity-verification-attributes<a class="headerlink" href="#get-identity-verification-attributes" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-ses-get-identity-verification-attributes"></span><h1>get-identity-verification-attributes<a name="//apple_ref/cpp/Command/aws ses get-identity-verification-attributes" class="dashAnchor" id="aws ses get-identity-verification-attributes"></a><a class="headerlink" href="#get-identity-verification-attributes" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
 <p>Given a list of identities (email addresses and/or domains), returns the verification status and (for domain identities) the verification token for each identity.</p>
-<p>This action is throttled at one request per second.</p>
+<p>This action is throttled at one request per second and can only get verification attributes for up to 100 identities at a time.</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  get-identity-verification-attributes
---identities &lt;value&gt;</pre>
+--identities &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--identities" class="dashAnchor" id="identities"></a><span class="pre">--identities</span></tt> (list)</p>
 <blockquote>
 <div>A list of identities.</div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
 </div>
 <div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
 <p><strong>To get the Amazon SES verification status for a list of identities</strong></p>
 <p>The following example uses the <tt class="docutils literal"><span class="pre">get-identity-verification-attributes</span></tt> command to retrieve the Amazon SES verification status for a list of identities:</p>
 <div class="highlight-python"><pre>aws ses get-identity-verification-attributes --identities "user1@example.com" "user2@example.com"</pre>
 </div>
 <p>Output:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-   <span class="s">"VerificationAttributes"</span><span class="p">:</span> <span class="p">{</span>
-       <span class="s">"user1@example.com"</span><span class="p">:</span> <span class="p">{</span>
-           <span class="s">"VerificationStatus"</span><span class="p">:</span> <span class="s">"Success"</span>
+   <span class="s2">"VerificationAttributes"</span><span class="p">:</span> <span class="p">{</span>
+       <span class="s2">"user1@example.com"</span><span class="p">:</span> <span class="p">{</span>
+           <span class="s2">"VerificationStatus"</span><span class="p">:</span> <span class="s2">"Success"</span>
        <span class="p">},</span>
-       <span class="s">"user2@example.com"</span><span class="p">:</span> <span class="p">{</span>
-           <span class="s">"VerificationStatus"</span><span class="p">:</span> <span class="s">"Pending"</span>
+       <span class="s2">"user2@example.com"</span><span class="p">:</span> <span class="p">{</span>
+           <span class="s2">"VerificationStatus"</span><span class="p">:</span> <span class="s2">"Pending"</span>
        <span class="p">}</span>
-   <span class="p">},</span>
-   <span class="s">"ResponseMetadata"</span><span class="p">:</span> <span class="p">{</span>
-       <span class="s">"RequestId"</span><span class="p">:</span> <span class="s">"1ce6c9b9-d482-11e2-bc12-e98118b9c6e7"</span>
    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>If you call this command with an identity that you have never submitted for verification, that identity won't appear in the output.</p>
 <p>For more information about verified identities, see <a class="reference external" href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying Email Addresses and Domains in Amazon SES</a> in the <em>Amazon Simple Email Service Developer Guide</em>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>VerificationAttributes -&gt; (map)</p>
+<blockquote>
+<div><p>A map of Identities to IdentityVerificationAttributes objects.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents the verification attributes of a single identity.</p>
+<p>VerificationStatus -&gt; (string)</p>
+<blockquote>
+<div>The verification status of the identity: "Pending", "Success", "Failed", or "TemporaryFailure".</div></blockquote>
+<p>VerificationToken -&gt; (string)</p>
+<blockquote>
+<div>The verification token for a domain identity. Null for email address identities.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
 </div>
 </div>
 
@@ -173,7 +203,7 @@
     <div class="footer-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="get-identity-notification-attributes.html" title="previous chapter (use the left arrow)">&#8592; get-identity-notification-attributes</a>
+          <a href="get-identity-policies.html" title="previous chapter (use the left arrow)">&#8592; get-identity-policies</a>
           <span class="divider">/</span>
           
         </li>
@@ -183,6 +213,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -191,36 +230,22 @@
         <li class="right">
           <a href="get-send-quota.html" title="get-send-quota">next</a> |</li>
         <li class="right">
-          <a href="get-identity-notification-attributes.html" title="get-identity-notification-attributes">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="get-identity-policies.html" title="get-identity-policies">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">ses</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'get-identity-notification-attributes.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'get-send-quota.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ses/get-identity-verification-attributes.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
 </html>

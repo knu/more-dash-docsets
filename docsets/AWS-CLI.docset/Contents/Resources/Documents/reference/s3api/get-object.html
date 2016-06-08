@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/s3api/get-object.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:28 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>get-object &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>get-object &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="s3api" href="index.html" />
     <link rel="next" title="get-object-acl" href="get-object-acl.html" />
     <link rel="prev" title="get-bucket-website" href="get-bucket-website.html" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -61,7 +64,7 @@
           <a href="get-object-acl.html" title="get-object-acl" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="get-bucket-website.html" title="get-bucket-website" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">s3api</a> &#187;</li> 
       </ul>
@@ -82,27 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">get-object</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
-<li><a class="reference internal" href="#examples">Examples</a><ul>
-<li><a class="reference internal" href="#get-an-object">Get an object</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -111,22 +112,27 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/s3api/get-object">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/s3api/get-object">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>s3api</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-s3api"><em>s3api</em></a> ]</p>
 <div class="section" id="get-object">
-<h1>get-object<a class="headerlink" href="#get-object" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-s3api-get-object"></span><h1>get-object<a name="//apple_ref/cpp/Command/aws s3api get-object" class="dashAnchor" id="aws s3api get-object"></a><a class="headerlink" href="#get-object" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
 <p>Retrieves objects from Amazon S3.</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  get-object
 --bucket &lt;value&gt;
 [--if-match &lt;value&gt;]
@@ -142,11 +148,15 @@
 [--response-content-type &lt;value&gt;]
 [--response-expires &lt;value&gt;]
 [--version-id &lt;value&gt;]
+[--sse-customer-algorithm &lt;value&gt;]
+[--sse-customer-key &lt;value&gt;]
+[--sse-customer-key-md5 &lt;value&gt;]
+[--request-payer &lt;value&gt;]
 outfile &lt;value&gt;</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--bucket" class="dashAnchor" id="bucket"></a><span class="pre">--bucket</span></tt> (string)</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--if-match" class="dashAnchor" id="if-match"></a><span class="pre">--if-match</span></tt> (string)
 Return the object only if its entity tag (ETag) is the same as the one specified, otherwise return a 412 (precondition failed).</p>
@@ -158,7 +168,7 @@ Return the object only if its entity tag (ETag) is different from the one specif
 Return the object only if it has not been modified since the specified time, otherwise return a 412 (precondition failed).</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--key" class="dashAnchor" id="key"></a><span class="pre">--key</span></tt> (string)</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--range" class="dashAnchor" id="range"></a><span class="pre">--range</span></tt> (string)
-Downloads the specified range bytes of an object. For more information about the HTTP --range header, go to <a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
+Downloads the specified range bytes of an object. For more information about the HTTP range header, go to <a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--response-cache-control" class="dashAnchor" id="response-cache-control"></a><span class="pre">--response-cache-control</span></tt> (string)
 Sets the Cache-Control header of the response.</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--response-content-disposition" class="dashAnchor" id="response-content-disposition"></a><span class="pre">--response-content-disposition</span></tt> (string)
@@ -172,19 +182,109 @@ Sets the Content-Type header of the response.</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--response-expires" class="dashAnchor" id="response-expires"></a><span class="pre">--response-expires</span></tt> (timestamp)
 Sets the Expires header of the response.</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--version-id" class="dashAnchor" id="version-id"></a><span class="pre">--version-id</span></tt> (string)
---version-id used to reference a specific version of the object.</p>
+VersionId used to reference a specific version of the object.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--sse-customer-algorithm" class="dashAnchor" id="sse-customer-algorithm"></a><span class="pre">--sse-customer-algorithm</span></tt> (string)
+Specifies the algorithm to use to when encrypting the object (e.g., AES256).</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--sse-customer-key" class="dashAnchor" id="sse-customer-key"></a><span class="pre">--sse-customer-key</span></tt> (string)
+Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon does not store the encryption key. The key must be appropriate for use with the algorithm specified in the x-amz-server-side&#8203;-encryption&#8203;-customer-algorithm header.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--sse-customer-key-md5" class="dashAnchor" id="sse-customer-key-md5"></a><span class="pre">--sse-customer-key-md5</span></tt> (string)
+Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure the encryption key was transmitted without error.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--request-payer" class="dashAnchor" id="request-payer"></a><span class="pre">--request-payer</span></tt> (string)
+Confirms that the requester knows that she or he will be charged for the request. Bucket owners need not specify this parameter in their requests. Documentation on downloading objects from requester pays buckets can be found at <a class="reference external" href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">http://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html</a></p>
+<blockquote>
+<div><p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">requester</span></tt></li>
+</ul>
+</div></blockquote>
 <p><tt class="docutils literal"><span class="pre">outfile</span></tt> (string)
 Filename where the content will be saved</p>
 </div>
 <div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
-<div class="section" id="get-an-object">
-<h3>Get an object<a class="headerlink" href="#get-an-object" title="Permalink to this headline">&#182;</a></h3>
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
 <p>The following example uses the <tt class="docutils literal"><span class="pre">get-object</span></tt> command to download an object from Amazon S3:</p>
 <div class="highlight-python"><pre>aws s3api get-object --bucket text-content --key dir/my_images.tar.bz2 my_images.tar.bz2</pre>
 </div>
+<p>Note that the outfile parameter is specified without an option name such as "--outfile". The name of the output file must be the last parameter in the command.</p>
 <p>For more information about retrieving objects, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonS3/latest/dev/GettingObjectsUsingAPIs.html">Getting Objects</a> in the <em>Amazon S3 Developer Guide</em>.</p>
 </div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Body -&gt; (blob)</p>
+<blockquote>
+<div>Object data.</div></blockquote>
+<p>DeleteMarker -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If false, this response header does not appear in the response.</div></blockquote>
+<p>AcceptRanges -&gt; (string)</p>
+<p>Expiration -&gt; (string)</p>
+<blockquote>
+<div>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the expiry-date and rule-id key value pairs providing object expiration information. The value of the rule-id is URL encoded.</div></blockquote>
+<p>Restore -&gt; (string)</p>
+<blockquote>
+<div>Provides information about object restoration operation and expiration time of the restored object copy.</div></blockquote>
+<p>LastModified -&gt; (timestamp)</p>
+<blockquote>
+<div>Last modified date of the object</div></blockquote>
+<p>ContentLength -&gt; (integer)</p>
+<blockquote>
+<div>Size of the body in bytes.</div></blockquote>
+<p>ETag -&gt; (string)</p>
+<blockquote>
+<div>An ETag is an opaque identifier assigned by a web server to a specific version of a resource found at a URL</div></blockquote>
+<p>MissingMeta -&gt; (integer)</p>
+<blockquote>
+<div>This is set to the number of metadata entries not returned in x-amz-meta headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</div></blockquote>
+<p>VersionId -&gt; (string)</p>
+<blockquote>
+<div>Version of the object.</div></blockquote>
+<p>CacheControl -&gt; (string)</p>
+<blockquote>
+<div>Specifies caching behavior along the request/reply chain.</div></blockquote>
+<p>ContentDisposition -&gt; (string)</p>
+<blockquote>
+<div>Specifies presentational information for the object.</div></blockquote>
+<p>ContentEncoding -&gt; (string)</p>
+<blockquote>
+<div>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</div></blockquote>
+<p>ContentLanguage -&gt; (string)</p>
+<blockquote>
+<div>The language the content is in.</div></blockquote>
+<p>ContentRange -&gt; (string)</p>
+<blockquote>
+<div>The portion of the object returned in the response.</div></blockquote>
+<p>ContentType -&gt; (string)</p>
+<blockquote>
+<div>A standard MIME type describing the format of the object data.</div></blockquote>
+<p>Expires -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time at which the object is no longer cacheable.</div></blockquote>
+<p>WebsiteRedirectLocation -&gt; (string)</p>
+<blockquote>
+<div>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</div></blockquote>
+<p>ServerSideEncryption -&gt; (string)</p>
+<blockquote>
+<div>The Server-side encryption algorithm used when storing this object in S3 (e.g., AES256, aws:kms).</div></blockquote>
+<p>Metadata -&gt; (map)</p>
+<blockquote>
+<div><p>A map of metadata to store with the object in S3.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+<p>SSECustomerAlgorithm -&gt; (string)</p>
+<blockquote>
+<div>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</div></blockquote>
+<p>SSECustomerKeyMD5 -&gt; (string)</p>
+<blockquote>
+<div>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round trip message integrity verification of the customer-provided encryption key.</div></blockquote>
+<p>SSEKMSKeyId -&gt; (string)</p>
+<blockquote>
+<div>If present, specifies the ID of the AWS Key Management Service (KMS) master encryption key that was used for the object.</div></blockquote>
+<p>StorageClass -&gt; (string)</p>
+<p>RequestCharged -&gt; (string)</p>
+<blockquote>
+<div>If present, indicates that the requester was successfully charged for the request.</div></blockquote>
+<p>ReplicationStatus -&gt; (string)</p>
 </div>
 </div>
 
@@ -206,6 +306,15 @@ Filename where the content will be saved</p>
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -215,35 +324,21 @@ Filename where the content will be saved</p>
           <a href="get-object-acl.html" title="get-object-acl">next</a> |</li>
         <li class="right">
           <a href="get-bucket-website.html" title="get-bucket-website">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">s3api</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'get-bucket-website.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'get-object-acl.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/s3api/get-object.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:28 GMT -->
 </html>

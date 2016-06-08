@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudtrail/create-trail.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:00 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-trail &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="cloudtrail" href="index.html" />
+    <link rel="next" title="delete-trail" href="delete-trail.html" />
+    <link rel="prev" title="create-subscription" href="create-subscription.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="delete-trail.html" title="delete-trail" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="create-subscription.html" title="create-subscription" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">cloudtrail</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="create-subscription.html" title="previous chapter (use the left arrow)">&#8592; create-subscription</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="delete-trail.html" title="next chapter (use the right arrow)">delete-trail &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-trail</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/cloudtrail/create-trail">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-cloudtrail"><em>cloudtrail</em></a> ]</p>
+<div class="section" id="create-trail">
+<span id="cli-aws-cloudtrail-create-trail"></span><h1>create-trail<a name="//apple_ref/cpp/Command/aws cloudtrail create-trail" class="dashAnchor" id="aws cloudtrail create-trail"></a><a class="headerlink" href="#create-trail" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket. A maximum of five trails can exist in a region, irrespective of the region in which they were created.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  create-trail
+--name &lt;value&gt;
+--s3-bucket-name &lt;value&gt;
+[--s3-key-prefix &lt;value&gt;]
+[--sns-topic-name &lt;value&gt;]
+[--include-global-service-events | --no-include-global-service-events]
+[--is-multi-region-trail | --no-is-multi-region-trail]
+[--enable-log-file-validation | --no-enable-log-file-validation]
+[--cloud-watch-logs-log-group-arn &lt;value&gt;]
+[--cloud-watch-logs-role-arn &lt;value&gt;]
+[--kms-key-id &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--name" class="dashAnchor" id="name"></a><span class="pre">--name</span></tt> (string)</p>
+<blockquote>
+<div><p>Specifies the name of the trail. The name must meet the following requirements:</p>
+<ul class="simple">
+<li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</li>
+<li>Start with a letter or number, and end with a letter or number</li>
+<li>Be between 3 and 128 characters</li>
+<li>Have no adjacent periods, underscores or dashes. Names like <tt class="docutils literal"><span class="pre">my-_namespace</span></tt> and <tt class="docutils literal"><span class="pre">my--namespace</span></tt> are invalid.</li>
+<li>Not be in IP address format (for example, 192.168.5.4)</li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--s3-bucket-name" class="dashAnchor" id="s3-bucket-name"></a><span class="pre">--s3-bucket-name</span></tt> (string)</p>
+<blockquote>
+<div>Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a class="reference external" href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a> .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--s3-key-prefix" class="dashAnchor" id="s3-key-prefix"></a><span class="pre">--s3-key-prefix</span></tt> (string)</p>
+<blockquote>
+<div>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a> . The maximum length is 200 characters.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--sns-topic-name" class="dashAnchor" id="sns-topic-name"></a><span class="pre">--sns-topic-name</span></tt> (string)</p>
+<blockquote>
+<div>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--include-global-service-events" class="dashAnchor" id="include-global-service-events"></a><span class="pre">--include-global-service-events</span></tt> | <tt class="docutils literal"><span class="pre">--no-include-global-service-events</span></tt> (boolean)</p>
+<blockquote>
+<div>Specifies whether the trail is publishing events from global services such as IAM to the log files.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--is-multi-region-trail" class="dashAnchor" id="is-multi-region-trail"></a><span class="pre">--is-multi-region-trail</span></tt> | <tt class="docutils literal"><span class="pre">--no-is-multi-region-trail</span></tt> (boolean)</p>
+<blockquote>
+<div>Specifies whether the trail is created in the current region or in all regions. The default is false.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--enable-log-file-validation" class="dashAnchor" id="enable-log-file-validation"></a><span class="pre">--enable-log-file-validation</span></tt> | <tt class="docutils literal"><span class="pre">--no-enable-log-file-validation</span></tt> (boolean)</p>
+<blockquote>
+<div><p>Specifies whether log file integrity validation is enabled. The default is false.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail will not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cloud-watch-logs-log-group-arn" class="dashAnchor" id="cloud-watch-logs-log-group-arn"></a><span class="pre">--cloud-watch-logs-log-group-arn</span></tt> (string)</p>
+<blockquote>
+<div>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. Not required unless you specify CloudWatchLogsRoleArn.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cloud-watch-logs-role-arn" class="dashAnchor" id="cloud-watch-logs-role-arn"></a><span class="pre">--cloud-watch-logs-role-arn</span></tt> (string)</p>
+<blockquote>
+<div>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--kms-key-id" class="dashAnchor" id="kms-key-id"></a><span class="pre">--kms-key-id</span></tt> (string)</p>
+<blockquote>
+<div><p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be a an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li>alias/MyAliasName</li>
+<li>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
+<li>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
+<li>12345678-1234-1234-1234-123456789012</li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To create a trail</strong></p>
+<p>The following <tt class="docutils literal"><span class="pre">create-trail</span></tt> command creates a multi-region trail named <tt class="docutils literal"><span class="pre">Trail1</span></tt> and specifies an S3 bucket:</p>
+<div class="highlight-python"><pre>aws cloudtrail create-trail --name Trail1 --s3-bucket-name my-bucket --is-multi-region-trail</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"IncludeGlobalServiceEvents"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"Trail1"</span><span class="p">,</span>
+  <span class="s2">"TrailARN"</span><span class="p">:</span> <span class="s2">"arn:aws:cloudtrail:us-west-2:123456789012:trail/Trail1"</span><span class="p">,</span>
+  <span class="s2">"LogFileValidationEnabled"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+  <span class="s2">"IsMultiRegionTrail"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">"S3BucketName"</span><span class="p">:</span> <span class="s2">"my-bucket"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>Specifies the name of the trail.</div></blockquote>
+<p>S3BucketName -&gt; (string)</p>
+<blockquote>
+<div>Specifies the name of the Amazon S3 bucket designated for publishing log files.</div></blockquote>
+<p>S3KeyPrefix -&gt; (string)</p>
+<blockquote>
+<div>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a> .</div></blockquote>
+<p>SnsTopicName -&gt; (string)</p>
+<blockquote>
+<div>Specifies the name of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered.</div></blockquote>
+<p>SnsTopicARN -&gt; (string)</p>
+<blockquote>
+<div><p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The format of a topic ARN is:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">arn:aws:sns:us-east-1:123456789012:MyTopic</span></tt></div></blockquote>
+</div></blockquote>
+<p>IncludeGlobalServiceEvents -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether the trail is publishing events from global services such as IAM to the log files.</div></blockquote>
+<p>IsMultiRegionTrail -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether the trail exists in one region or in all regions.</div></blockquote>
+<p>TrailARN -&gt; (string)</p>
+<blockquote>
+<div><p>Specifies the ARN of the trail that was created. The format of a trail ARN is:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</span></tt></div></blockquote>
+</div></blockquote>
+<p>LogFileValidationEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether log file integrity validation is enabled.</div></blockquote>
+<p>CloudWatchLogsLogGroupArn -&gt; (string)</p>
+<blockquote>
+<div>Specifies the Amazon Resource Name (ARN) of the log group to which CloudTrail logs will be delivered.</div></blockquote>
+<p>CloudWatchLogsRoleArn -&gt; (string)</p>
+<blockquote>
+<div>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</div></blockquote>
+<p>KmsKeyId -&gt; (string)</p>
+<blockquote>
+<div><p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the format:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</span></tt></div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="create-subscription.html" title="previous chapter (use the left arrow)">&#8592; create-subscription</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="delete-trail.html" title="next chapter (use the right arrow)">delete-trail &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="delete-trail.html" title="delete-trail">next</a> |</li>
+        <li class="right">
+          <a href="create-subscription.html" title="create-subscription">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">cloudtrail</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudtrail/create-trail.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:00 GMT -->
+</html>

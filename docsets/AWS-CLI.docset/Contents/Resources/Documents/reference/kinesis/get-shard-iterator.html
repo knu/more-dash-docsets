@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/kinesis/get-shard-iterator.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:20 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-shard-iterator &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="kinesis" href="index.html" />
+    <link rel="next" title="increase-stream-retention-period" href="increase-stream-retention-period.html" />
+    <link rel="prev" title="get-records" href="get-records.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="increase-stream-retention-period.html" title="increase-stream-retention-period" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="get-records.html" title="get-records" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">kinesis</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-records.html" title="previous chapter (use the left arrow)">&#8592; get-records</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="increase-stream-retention-period.html" title="next chapter (use the right arrow)">increase-stream-retention-period &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-shard-iterator</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/kinesis/get-shard-iterator">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-kinesis"><em>kinesis</em></a> ]</p>
+<div class="section" id="get-shard-iterator">
+<span id="cli-aws-kinesis-get-shard-iterator"></span><h1>get-shard-iterator<a name="//apple_ref/cpp/Command/aws kinesis get-shard-iterator" class="dashAnchor" id="aws kinesis get-shard-iterator"></a><a class="headerlink" href="#get-shard-iterator" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Gets an Amazon Kinesis shard iterator. A shard iterator expires five minutes after it is returned to the requester.</p>
+<p>A shard iterator specifies the shard position from which to start reading data records sequentially. The position is specified using the sequence number of a data record in a shard. A sequence number is the identifier associated with every record ingested in the stream, and is assigned when a record is put into the stream. Each stream has one or more shards.</p>
+<p>You must specify the shard iterator type. For example, you can set the <tt class="docutils literal"><span class="pre">shard-iterator-type</span></tt> parameter to read exactly from the position denoted by a specific sequence number by using the <tt class="docutils literal"><span class="pre">AT_SEQUENCE_NUMBER</span></tt> shard iterator type, or right after the sequence number by using the <tt class="docutils literal"><span class="pre">AFTER_SEQUENCE_NUMBER</span></tt> shard iterator type, using sequence numbers returned by earlier calls to  put-record ,  put-records ,  get-records , or  describe-stream . In the request, you can specify the shard iterator type <tt class="docutils literal"><span class="pre">AT_TIMESTAMP</span></tt> to read records from an arbitrary point in time, <tt class="docutils literal"><span class="pre">TRIM_HORIZON</span></tt> to cause <tt class="docutils literal"><span class="pre">ShardIterator</span></tt> to point to the last untrimmed record in the shard in the system (the oldest data record in the shard), or <tt class="docutils literal"><span class="pre">LATEST</span></tt> so that you always read the most recent data in the shard.</p>
+<p>When you read repeatedly from a stream, use a  get-shard-iterator request to get the first shard iterator for use in your first  get-records request and for subsequent reads use the shard iterator returned by the  get-records request in <tt class="docutils literal"><span class="pre">NextShardIterator</span></tt> . A new shard iterator is returned by every  get-records request in <tt class="docutils literal"><span class="pre">NextShardIterator</span></tt> , which you use in the <tt class="docutils literal"><span class="pre">ShardIterator</span></tt> parameter of the next  get-records request.</p>
+<p>If a  get-shard-iterator request is made too often, you receive a <tt class="docutils literal"><span class="pre">ProvisionedThroughputExceededException</span></tt> . For more information about throughput limits, see  get-records , and <a class="reference external" href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the <em>Amazon Kinesis Streams Developer Guide</em> .</p>
+<p>If the shard is closed,  get-shard-iterator returns a valid iterator for the last sequence number of the shard. Note that a shard can be closed as a result of using  split-shard or  merge-shards .</p>
+<blockquote>
+<div>get-shard-iterator has a limit of 5 transactions per second per account per open shard.</div></blockquote>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  get-shard-iterator
+--stream-name &lt;value&gt;
+--shard-id &lt;value&gt;
+--shard-iterator-type &lt;value&gt;
+[--starting-sequence-number &lt;value&gt;]
+[--timestamp &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--stream-name" class="dashAnchor" id="stream-name"></a><span class="pre">--stream-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the Amazon Kinesis stream.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--shard-id" class="dashAnchor" id="shard-id"></a><span class="pre">--shard-id</span></tt> (string)</p>
+<blockquote>
+<div>The shard ID of the Amazon Kinesis shard to get the iterator for.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--shard-iterator-type" class="dashAnchor" id="shard-iterator-type"></a><span class="pre">--shard-iterator-type</span></tt> (string)</p>
+<blockquote>
+<div><p>Determines how the shard iterator is used to start reading data records from the shard.</p>
+<p>The following are the valid Amazon Kinesis shard iterator types:</p>
+<ul class="simple">
+<li>AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in the value <tt class="docutils literal"><span class="pre">StartingSequenceNumber</span></tt> .</li>
+<li>AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number, provided in the value <tt class="docutils literal"><span class="pre">StartingSequenceNumber</span></tt> .</li>
+<li>AT_TIMESTAMP - Start reading from the position denoted by a specific timestamp, provided in the value <tt class="docutils literal"><span class="pre">timestamp</span></tt> .</li>
+<li>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</li>
+<li>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</li>
+</ul>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">AT_SEQUENCE_NUMBER</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AFTER_SEQUENCE_NUMBER</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">TRIM_HORIZON</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">LATEST</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AT_TIMESTAMP</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--starting-sequence-number" class="dashAnchor" id="starting-sequence-number"></a><span class="pre">--starting-sequence-number</span></tt> (string)</p>
+<blockquote>
+<div>The sequence number of the data record in the shard from which to start reading. Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--timestamp" class="dashAnchor" id="timestamp"></a><span class="pre">--timestamp</span></tt> (timestamp)</p>
+<blockquote>
+<div>The timestamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A timestamp is the Unix epoch date with precision in milliseconds. For example, <tt class="docutils literal"><span class="pre">2016-04-04T19:58:46.480-00:00</span></tt> or <tt class="docutils literal"><span class="pre">1459799926.480</span></tt> . If a record with this exact timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON).</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>ShardIterator -&gt; (string)</p>
+<blockquote>
+<div>The position in the shard from which to start reading data records sequentially. A shard iterator specifies this position using the sequence number of a data record in a shard.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-records.html" title="previous chapter (use the left arrow)">&#8592; get-records</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="increase-stream-retention-period.html" title="next chapter (use the right arrow)">increase-stream-retention-period &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="increase-stream-retention-period.html" title="increase-stream-retention-period">next</a> |</li>
+        <li class="right">
+          <a href="get-records.html" title="get-records">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">kinesis</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/kinesis/get-shard-iterator.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:20 GMT -->
+</html>

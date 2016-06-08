@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/wait/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>wait &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../../index-2.html" />
+    <link rel="up" title="ec2" href="../index.html" />
+    <link rel="next" title="bundle-task-complete" href="bundle-task-complete.html" />
+    <link rel="prev" title="unmonitor-instances" href="../unmonitor-instances.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../../index-2.html">Home</a></li>
+<li><a href="../../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="bundle-task-complete.html" title="bundle-task-complete" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="../unmonitor-instances.html" title="unmonitor-instances" accesskey="P">previous</a> |</li>
+        <li><a href="../../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../../index.html">aws</a> &#187;</li>
+          <li><a href="../index.html" accesskey="U">ec2</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../unmonitor-instances.html" title="previous chapter (use the left arrow)">&#8592; unmonitor-instances</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="bundle-task-complete.html" title="next chapter (use the right arrow)">bundle-task-complete &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../../index-2.html">
+    <img class="logo" src="../../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">wait</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ec2/wait/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../index.html#cli-aws-ec2"><em>ec2</em></a> ]</p>
+<div class="section" id="wait">
+<span id="cli-aws-ec2-wait"></span><h1>wait<a name="//apple_ref/cpp/Command/aws ec2 wait" class="dashAnchor" id="aws ec2 wait"></a><a class="headerlink" href="#wait" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Wait until a particular condition is satisfied.</p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a name="//apple_ref/cpp/Section/Available Commands" class="dashAnchor" id="Available Commands"></a><a class="headerlink" href="#available-commands" title="Permalink to this headline">&#182;</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/bundle-task-complete" class="dashAnchor" id="bundle-task-complete"></a><a class="reference internal" href="bundle-task-complete.html">bundle-task-complete</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/console-output-available" class="dashAnchor" id="console-output-available"></a><a class="reference internal" href="console-output-available.html">console-output-available</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/conversion-task-cancelled" class="dashAnchor" id="conversion-task-cancelled"></a><a class="reference internal" href="conversion-task-cancelled.html">conversion-task-cancelled</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/conversion-task-completed" class="dashAnchor" id="conversion-task-completed"></a><a class="reference internal" href="conversion-task-completed.html">conversion-task-completed</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/conversion-task-deleted" class="dashAnchor" id="conversion-task-deleted"></a><a class="reference internal" href="conversion-task-deleted.html">conversion-task-deleted</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/customer-gateway-available" class="dashAnchor" id="customer-gateway-available"></a><a class="reference internal" href="customer-gateway-available.html">customer-gateway-available</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/export-task-cancelled" class="dashAnchor" id="export-task-cancelled"></a><a class="reference internal" href="export-task-cancelled.html">export-task-cancelled</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/export-task-completed" class="dashAnchor" id="export-task-completed"></a><a class="reference internal" href="export-task-completed.html">export-task-completed</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/image-available" class="dashAnchor" id="image-available"></a><a class="reference internal" href="image-available.html">image-available</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/image-exists" class="dashAnchor" id="image-exists"></a><a class="reference internal" href="image-exists.html">image-exists</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/instance-exists" class="dashAnchor" id="instance-exists"></a><a class="reference internal" href="instance-exists.html">instance-exists</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/instance-running" class="dashAnchor" id="instance-running"></a><a class="reference internal" href="instance-running.html">instance-running</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/instance-status-ok" class="dashAnchor" id="instance-status-ok"></a><a class="reference internal" href="instance-status-ok.html">instance-status-ok</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/instance-stopped" class="dashAnchor" id="instance-stopped"></a><a class="reference internal" href="instance-stopped.html">instance-stopped</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/instance-terminated" class="dashAnchor" id="instance-terminated"></a><a class="reference internal" href="instance-terminated.html">instance-terminated</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/key-pair-exists" class="dashAnchor" id="key-pair-exists"></a><a class="reference internal" href="key-pair-exists.html">key-pair-exists</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/nat-gateway-available" class="dashAnchor" id="nat-gateway-available"></a><a class="reference internal" href="nat-gateway-available.html">nat-gateway-available</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/network-interface-available" class="dashAnchor" id="network-interface-available"></a><a class="reference internal" href="network-interface-available.html">network-interface-available</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/password-data-available" class="dashAnchor" id="password-data-available"></a><a class="reference internal" href="password-data-available.html">password-data-available</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/snapshot-completed" class="dashAnchor" id="snapshot-completed"></a><a class="reference internal" href="snapshot-completed.html">snapshot-completed</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/spot-instance-request-fulfilled" class="dashAnchor" id="spot-instance-request-fulfilled"></a><a class="reference internal" href="spot-instance-request-fulfilled.html">spot-instance-request-fulfilled</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/subnet-available" class="dashAnchor" id="subnet-available"></a><a class="reference internal" href="subnet-available.html">subnet-available</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/system-status-ok" class="dashAnchor" id="system-status-ok"></a><a class="reference internal" href="system-status-ok.html">system-status-ok</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/volume-available" class="dashAnchor" id="volume-available"></a><a class="reference internal" href="volume-available.html">volume-available</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/volume-deleted" class="dashAnchor" id="volume-deleted"></a><a class="reference internal" href="volume-deleted.html">volume-deleted</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/volume-in-use" class="dashAnchor" id="volume-in-use"></a><a class="reference internal" href="volume-in-use.html">volume-in-use</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/vpc-available" class="dashAnchor" id="vpc-available"></a><a class="reference internal" href="vpc-available.html">vpc-available</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/vpc-peering-connection-exists" class="dashAnchor" id="vpc-peering-connection-exists"></a><a class="reference internal" href="vpc-peering-connection-exists.html">vpc-peering-connection-exists</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/vpn-connection-available" class="dashAnchor" id="vpn-connection-available"></a><a class="reference internal" href="vpn-connection-available.html">vpn-connection-available</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/vpn-connection-deleted" class="dashAnchor" id="vpn-connection-deleted"></a><a class="reference internal" href="vpn-connection-deleted.html">vpn-connection-deleted</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../unmonitor-instances.html" title="previous chapter (use the left arrow)">&#8592; unmonitor-instances</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="bundle-task-complete.html" title="next chapter (use the right arrow)">bundle-task-complete &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="bundle-task-complete.html" title="bundle-task-complete">next</a> |</li>
+        <li class="right">
+          <a href="../unmonitor-instances.html" title="unmonitor-instances">previous</a> |</li>
+        <li><a href="../../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../../index.html">aws</a> &#187;</li>
+          <li><a href="../index.html">ec2</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/wait/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:15 GMT -->
+</html>

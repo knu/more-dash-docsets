@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/rds/copy-db-snapshot.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:24 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>copy-db-snapshot &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>copy-db-snapshot &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +25,10 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="rds" href="index.html" />
-    <link rel="next" title="create-db-instance" href="create-db-instance.html" />
-    <link rel="prev" title="authorize-db-security-group-ingress" href="authorize-db-security-group-ingress.html" />
+    <link rel="next" title="copy-option-group" href="copy-option-group.html" />
+    <link rel="prev" title="copy-db-parameter-group" href="copy-db-parameter-group.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
   
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -58,10 +61,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
         <li class="right">
-          <a href="create-db-instance.html" title="create-db-instance" accesskey="N">next</a> |</li>
+          <a href="copy-option-group.html" title="copy-option-group" accesskey="N">next</a> |</li>
         <li class="right">
-          <a href="authorize-db-security-group-ingress.html" title="authorize-db-security-group-ingress" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="copy-db-parameter-group.html" title="copy-db-parameter-group" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">rds</a> &#187;</li> 
       </ul>
@@ -71,34 +74,35 @@
     <div class="top-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="authorize-db-security-group-ingress.html" title="previous chapter (use the left arrow)">&#8592; authorize-db-security-group-ingress</a>
+          <a href="copy-db-parameter-group.html" title="previous chapter (use the left arrow)">&#8592; copy-db-parameter-group</a>
           <span class="divider">/</span>
           
         </li>
-          <li><a href="create-db-instance.html" title="next chapter (use the right arrow)">create-db-instance &#8594;</a></li>
+          <li><a href="copy-option-group.html" title="next chapter (use the right arrow)">copy-option-group &#8594;</a></li>
       </ul>
     </div>
   
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">copy-db-snapshot</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,37 +111,52 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/rds/copy-db-snapshot">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/rds/copy-db-snapshot">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>rds</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-rds"><em>rds</em></a> ]</p>
 <div class="section" id="copy-db-snapshot">
-<h1>copy-db-snapshot<a class="headerlink" href="#copy-db-snapshot" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-rds-copy-db-snapshot"></span><h1>copy-db-snapshot<a name="//apple_ref/cpp/Command/aws rds copy-db-snapshot" class="dashAnchor" id="aws rds copy-db-snapshot"></a><a class="headerlink" href="#copy-db-snapshot" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Copies the specified DBSnapshot. The source DBSnapshot must be in the "available" state.</p>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Copies the specified DB snapshot. The source DB snapshot must be in the "available" state.</p>
+<p>If you are copying from a shared manual DB snapshot, the <tt class="docutils literal"><span class="pre">SourceDBSnapshotIdentifier</span></tt> must be the ARN of the shared DB snapshot.</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  copy-db-snapshot
 --source-db-snapshot-identifier &lt;value&gt;
---target-db-snapshot-identifier &lt;value&gt;</pre>
+--target-db-snapshot-identifier &lt;value&gt;
+[--kms-key-id &lt;value&gt;]
+[--tags &lt;value&gt;]
+[--copy-tags | --no-copy-tags]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--source-db-snapshot-identifier" class="dashAnchor" id="source-db-snapshot-identifier"></a><span class="pre">--source-db-snapshot-identifier</span></tt> (string)</p>
 <blockquote>
 <div><p>The identifier for the source DB snapshot.</p>
+<p>If you are copying from a shared manual DB snapshot, this must be the ARN of the shared DB snapshot.</p>
 <p>Constraints:</p>
 <ul class="simple">
-<li>Must be the identifier for a valid system snapshot in the "available" state.</li>
+<li>Must specify a valid system snapshot in the "available" state.</li>
+<li>If the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier.</li>
+<li>If the source snapshot is in a different region than the copy, specify a valid DB snapshot ARN. For more information, go to <a class="reference external" href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">Copying a DB Snapshot</a> .</li>
 </ul>
 <p>Example: <tt class="docutils literal"><span class="pre">rds:mydb-2012-04-02-00-01</span></tt></p>
+<p>Example: <tt class="docutils literal"><span class="pre">arn:aws:rds:rr-regn-1:123456789012:snapshot:mysql-instance1-snapshot-20130805</span></tt></p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--target-db-snapshot-identifier" class="dashAnchor" id="target-db-snapshot-identifier"></a><span class="pre">--target-db-snapshot-identifier</span></tt> (string)</p>
 <blockquote>
@@ -151,6 +170,116 @@
 </ul>
 <p>Example: <tt class="docutils literal"><span class="pre">my-db-snapshot</span></tt></p>
 </div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--kms-key-id" class="dashAnchor" id="kms-key-id"></a><span class="pre">--kms-key-id</span></tt> (string)</p>
+<blockquote>
+<div><p>The AWS Key Management Service (AWS KMS) key identifier for an encrypted DB snapshot. The KMS key identifier is the Amazon Resource Name (ARN) or the KMS key alias for the KMS encryption key.</p>
+<p>If you copy an unencrypted DB snapshot and specify a value for the <tt class="docutils literal"><span class="pre">KmsKeyId</span></tt> parameter, Amazon RDS encrypts the target DB snapshot using the specified KMS encryption key.</p>
+<p>If you copy an encrypted DB snapshot from your AWS account, you can specify a value for <tt class="docutils literal"><span class="pre">KmsKeyId</span></tt> to encrypt the copy with a new KMS encryption key. If you don't specify a value for <tt class="docutils literal"><span class="pre">KmsKeyId</span></tt> then the copy of the DB snapshot is encrypted with the same KMS key as the source DB snapshot.</p>
+<p>If you copy an encrypted DB snapshot that is shared from another AWS account, then you must specify a value for <tt class="docutils literal"><span class="pre">KmsKeyId</span></tt> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--tags" class="dashAnchor" id="tags"></a><span class="pre">--tags</span></tt> (list)</p>
+<blockquote>
+<div>A list of tags.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Key=string,Value=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    "Key": "string",
+    "Value": "string"
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--copy-tags" class="dashAnchor" id="copy-tags"></a><span class="pre">--copy-tags</span></tt> | <tt class="docutils literal"><span class="pre">--no-copy-tags</span></tt> (boolean)</p>
+<blockquote>
+<div>True to copy all tags from the source DB snapshot to the target DB snapshot; otherwise false. The default is false.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>DBSnapshot -&gt; (structure)</p>
+<blockquote>
+<div><p>Contains the result of a successful invocation of the following actions:</p>
+<ul class="simple">
+<li>create-db-snapshot</li>
+<li>delete-db-snapshot</li>
+</ul>
+<p>This data type is used as a response element in the  describe-db-snapshots action.</p>
+<p>DBSnapshotIdentifier -&gt; (string)</p>
+<blockquote>
+<div>Specifies the identifier for the DB snapshot.</div></blockquote>
+<p>DBInstanceIdentifier -&gt; (string)</p>
+<blockquote>
+<div>Specifies the DB instance identifier of the DB instance this DB snapshot was created from.</div></blockquote>
+<p>SnapshotCreateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).</div></blockquote>
+<p>Engine -&gt; (string)</p>
+<blockquote>
+<div>Specifies the name of the database engine.</div></blockquote>
+<p>AllocatedStorage -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the allocated storage size in gigabytes (GB).</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>Specifies the status of this DB snapshot.</div></blockquote>
+<p>Port -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the port that the database engine was listening on at the time of the snapshot.</div></blockquote>
+<p>AvailabilityZone -&gt; (string)</p>
+<blockquote>
+<div>Specifies the name of the Availability Zone the DB instance was located in at the time of the DB snapshot.</div></blockquote>
+<p>VpcId -&gt; (string)</p>
+<blockquote>
+<div>Provides the VPC ID associated with the DB snapshot.</div></blockquote>
+<p>InstanceCreateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC).</div></blockquote>
+<p>MasterUsername -&gt; (string)</p>
+<blockquote>
+<div>Provides the master username for the DB snapshot.</div></blockquote>
+<p>EngineVersion -&gt; (string)</p>
+<blockquote>
+<div>Specifies the version of the database engine.</div></blockquote>
+<p>LicenseModel -&gt; (string)</p>
+<blockquote>
+<div>License model information for the restored DB instance.</div></blockquote>
+<p>SnapshotType -&gt; (string)</p>
+<blockquote>
+<div>Provides the type of the DB snapshot.</div></blockquote>
+<p>Iops -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the Provisioned IOPS (I/O operations per second) value of the DB instance at the time of the snapshot.</div></blockquote>
+<p>OptionGroupName -&gt; (string)</p>
+<blockquote>
+<div>Provides the option group name for the DB snapshot.</div></blockquote>
+<p>PercentProgress -&gt; (integer)</p>
+<blockquote>
+<div>The percentage of the estimated data that has been transferred.</div></blockquote>
+<p>SourceRegion -&gt; (string)</p>
+<blockquote>
+<div>The region that the DB snapshot was created in or copied from.</div></blockquote>
+<p>SourceDBSnapshotIdentifier -&gt; (string)</p>
+<blockquote>
+<div>The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or cross region copy.</div></blockquote>
+<p>StorageType -&gt; (string)</p>
+<blockquote>
+<div>Specifies the storage type associated with DB Snapshot.</div></blockquote>
+<p>TdeCredentialArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN from the Key Store with which to associate the instance for TDE encryption.</div></blockquote>
+<p>Encrypted -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether the DB snapshot is encrypted.</div></blockquote>
+<p>KmsKeyId -&gt; (string)</p>
+<blockquote>
+<div>If <tt class="docutils literal"><span class="pre">Encrypted</span></tt> is true, the KMS key identifier for the encrypted DB snapshot.</div></blockquote>
+</div></blockquote>
 </div>
 </div>
 
@@ -162,54 +291,49 @@
     <div class="footer-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="authorize-db-security-group-ingress.html" title="previous chapter (use the left arrow)">&#8592; authorize-db-security-group-ingress</a>
+          <a href="copy-db-parameter-group.html" title="previous chapter (use the left arrow)">&#8592; copy-db-parameter-group</a>
           <span class="divider">/</span>
           
         </li>
-          <li><a href="create-db-instance.html" title="next chapter (use the right arrow)">create-db-instance &#8594;</a></li>
+          <li><a href="copy-option-group.html" title="next chapter (use the right arrow)">copy-option-group &#8594;</a></li>
       </ul>
     </div>
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index">index</a></li>
         <li class="right">
-          <a href="create-db-instance.html" title="create-db-instance">next</a> |</li>
+          <a href="copy-option-group.html" title="copy-option-group">next</a> |</li>
         <li class="right">
-          <a href="authorize-db-security-group-ingress.html" title="authorize-db-security-group-ingress">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="copy-db-parameter-group.html" title="copy-db-parameter-group">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">rds</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'authorize-db-security-group-ingress.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'create-db-instance.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/rds/copy-db-snapshot.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:24 GMT -->
 </html>

@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53/list-resource-record-sets.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:28 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>list-resource-record-sets &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>list-resource-record-sets &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +25,10 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="route53" href="index.html" />
-    <link rel="next" title="s3" href="../s3/index.html" />
-    <link rel="prev" title="list-hosted-zones" href="list-hosted-zones.html" />
+    <link rel="next" title="list-reusable-delegation-sets" href="list-reusable-delegation-sets.html" />
+    <link rel="prev" title="list-hosted-zones-by-name" href="list-hosted-zones-by-name.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
   
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -58,10 +61,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
         <li class="right">
-          <a href="../s3/index.html" title="s3" accesskey="N">next</a> |</li>
+          <a href="list-reusable-delegation-sets.html" title="list-reusable-delegation-sets" accesskey="N">next</a> |</li>
         <li class="right">
-          <a href="list-hosted-zones.html" title="list-hosted-zones" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="list-hosted-zones-by-name.html" title="list-hosted-zones-by-name" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">route53</a> &#187;</li> 
       </ul>
@@ -71,34 +74,36 @@
     <div class="top-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="list-hosted-zones.html" title="previous chapter (use the left arrow)">&#8592; list-hosted-zones</a>
+          <a href="list-hosted-zones-by-name.html" title="previous chapter (use the left arrow)">&#8592; list-hosted-zones-by-name</a>
           <span class="divider">/</span>
           
         </li>
-          <li><a href="../s3/index.html" title="next chapter (use the right arrow)">s3 &#8594;</a></li>
+          <li><a href="list-reusable-delegation-sets.html" title="next chapter (use the right arrow)">list-reusable-delegation-sets &#8594;</a></li>
       </ul>
     </div>
   
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">list-resource-record-sets</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,64 +112,294 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/route53/list-resource-record-sets">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/route53/list-resource-record-sets">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>route53</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-route53"><em>route53</em></a> ]</p>
 <div class="section" id="list-resource-record-sets">
-<h1>list-resource-record-sets<a class="headerlink" href="#list-resource-record-sets" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-route53-list-resource-record-sets"></span><h1>list-resource-record-sets<a name="//apple_ref/cpp/Command/aws route53 list-resource-record-sets" class="dashAnchor" id="aws route53 list-resource-record-sets"></a><a class="headerlink" href="#list-resource-record-sets" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Imagine all the resource record sets in a zone listed out in front of you. Imagine them sorted lexicographically first by DNS name (with the labels reversed, like "com.amazon.www" for example), and secondarily, lexicographically by record type. This operation retrieves at most --max-items resource record sets from this list, in order, starting at a position specified by the Name and Type arguments:</p>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Imagine all the resource record sets in a zone listed out in front of you. Imagine them sorted lexicographically first by DNS name (with the labels reversed, like "com.amazon.www" for example), and secondarily, lexicographically by record type. This operation retrieves at most MaxItems resource record sets from this list, in order, starting at a position specified by the Name and Type arguments:</p>
 <ul class="simple">
 <li>If both Name and Type are omitted, this means start the results at the first RRSET in the HostedZone.</li>
 <li>If Name is specified but Type is omitted, this means start the results at the first RRSET in the list whose name is greater than or equal to Name.</li>
 <li>If both Name and Type are specified, this means start the results at the first RRSET in the list whose name is greater than or equal to Name and whose type is greater than or equal to Type.</li>
 <li>It is an error to specify the Type but not the Name.</li>
 </ul>
-<p>Use list-resource-record-sets to retrieve a single known record set by specifying the record set's name and type, and setting --max-items = 1</p>
+<p>Use list-resource-record-sets to retrieve a single known record set by specifying the record set's name and type, and setting MaxItems = 1</p>
 <p>To retrieve all the records in a HostedZone, first pause any processes making calls to ChangeResourceRecordSets. Initially call list-resource-record-sets without a Name and Type to get the first page of record sets. For subsequent calls, set Name and Type to the NextName and NextType values returned by the previous response.</p>
 <p>In the presence of concurrent change-resource-record-sets calls, there is no consistency of results across calls to ListResourceRecordSets. The only way to get a consistent multi-page snapshot of all RRSETs in a zone is to stop making changes while pagination is in progress.</p>
 <p>However, the results from list-resource-record-sets are consistent within a page. If MakeChange calls are taking place concurrently, the result of each one will either be completely visible in your results or not at all. You will not see partial changes, or changes that do not ultimately succeed. (This follows from the fact that MakeChange is atomic)</p>
 <p>The results from list-resource-record-sets are strongly consistent with ChangeResourceRecordSets. To be precise, if a single process makes a call to change-resource-record-sets and receives a successful response, the effects of that change will be visible in a subsequent call to list-resource-record-sets by that process.</p>
+<p><tt class="docutils literal"><span class="pre">list-resource-record-sets</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">ResourceRecordSets</span></tt></p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  list-resource-record-sets
 --hosted-zone-id &lt;value&gt;
-[--start-record-name &lt;value&gt;]
-[--start-record-type &lt;value&gt;]
-[--start-record-identifier &lt;value&gt;]
-[--max-items &lt;value&gt;]</pre>
+[--max-items &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--starting-token &lt;value&gt;]
+[--page-size &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--hosted-zone-id" class="dashAnchor" id="hosted-zone-id"></a><span class="pre">--hosted-zone-id</span></tt> (string)</p>
 <blockquote>
 <div>The ID of the hosted zone that contains the resource record sets that you want to get.</div></blockquote>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--start-record-name" class="dashAnchor" id="start-record-name"></a><span class="pre">--start-record-name</span></tt> (string)</p>
-<blockquote>
-<div>The first name in the lexicographic ordering of domain names that you want the <tt class="docutils literal"><span class="pre">list-resource-record-sets</span></tt>  request to list.</div></blockquote>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--start-record-type" class="dashAnchor" id="start-record-type"></a><span class="pre">--start-record-type</span></tt> (string)</p>
-<blockquote>
-<div><p>The DNS type at which to begin the listing of resource record sets.</p>
-<p>Valid values: <tt class="docutils literal"><span class="pre">A</span></tt>  | <tt class="docutils literal"><span class="pre">AAAA</span></tt>  | <tt class="docutils literal"><span class="pre">CNAME</span></tt>  | <tt class="docutils literal"><span class="pre">MX</span></tt>  | <tt class="docutils literal"><span class="pre">NS</span></tt>  | <tt class="docutils literal"><span class="pre">PTR</span></tt>  | <tt class="docutils literal"><span class="pre">SOA</span></tt>  | <tt class="docutils literal"><span class="pre">SPF</span></tt>  | <tt class="docutils literal"><span class="pre">SRV</span></tt>  | <tt class="docutils literal"><span class="pre">TXT</span></tt></p>
-<p>Values for Weighted Resource Record Sets: <tt class="docutils literal"><span class="pre">A</span></tt>  | <tt class="docutils literal"><span class="pre">AAAA</span></tt>  | <tt class="docutils literal"><span class="pre">CNAME</span></tt>  | <tt class="docutils literal"><span class="pre">TXT</span></tt></p>
-<p>Values for Regional Resource Record Sets: <tt class="docutils literal"><span class="pre">A</span></tt>  | <tt class="docutils literal"><span class="pre">AAAA</span></tt>  | <tt class="docutils literal"><span class="pre">CNAME</span></tt>  | <tt class="docutils literal"><span class="pre">TXT</span></tt></p>
-<p>Values for Alias Resource Record Sets: <tt class="docutils literal"><span class="pre">A</span></tt>  | <tt class="docutils literal"><span class="pre">AAAA</span></tt></p>
-<p>Constraint: Specifying <tt class="docutils literal"><span class="pre">type</span></tt>  without specifying <tt class="docutils literal"><span class="pre">name</span></tt>  returns an  InvalidInput error.</p>
-</div></blockquote>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--start-record-identifier" class="dashAnchor" id="start-record-identifier"></a><span class="pre">--start-record-identifier</span></tt> (string)</p>
-<blockquote>
-<div><em>Weighted resource record sets only:</em> If results were truncated for a given DNS name and type, specify the value of <tt class="docutils literal"><span class="pre">ListResourceRecordSetsResponse$NextRecordIdentifier</span></tt>  from the previous response to get the next resource record set that has the current DNS name and type.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-items" class="dashAnchor" id="max-items"></a><span class="pre">--max-items</span></tt> (string)</p>
 <blockquote>
-<div>The maximum number of records you want in the response body.</div></blockquote>
+<div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">NextToken</span></tt> will be provided in the output that you can use to resume pagination. This <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element should <strong>not</strong> be used directly outside of the AWS CLI.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--starting-token" class="dashAnchor" id="starting-token"></a><span class="pre">--starting-token</span></tt> (string)</p>
+<blockquote>
+<div>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--page-size" class="dashAnchor" id="page-size"></a><span class="pre">--page-size</span></tt> (string)</p>
+<blockquote>
+<div>The size of each page.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To list the resource record sets in a hosted zone</strong></p>
+<p>The following <tt class="docutils literal"><span class="pre">list-resource-record-sets</span></tt> command lists summary information about the first 100 resource record sets in a specified hosted zone.:</p>
+<div class="highlight-python"><pre>aws route53 list-resource-record-sets --hosted-zone-id Z2LD58HEXAMPLE</pre>
+</div>
+<p>If the hosted zone contains more than 100 resource record sets, or if you want to list them in groups smaller than 100, include the <tt class="docutils literal"><span class="pre">--maxitems</span></tt> parameter. For example, to list resource record sets one at a time, use the following command:</p>
+<div class="highlight-python"><pre>aws route53 list-resource-record-sets --hosted-zone-id Z2LD58HEXAMPLE --max-items 1</pre>
+</div>
+<p>To view information about the next resource record set in the hosted zone, take the value of <tt class="docutils literal"><span class="pre">NextToken</span></tt> from the response to the previous command, and include it in the <tt class="docutils literal"><span class="pre">--starting-token</span></tt> parameter, for example:</p>
+<div class="highlight-python"><pre>aws route53 list-resource-record-sets --hosted-zone-id Z2LD58HEXAMPLE --max-items 1 --starting-token Z3M3LMPEXAMPLE</pre>
+</div>
+<p>To view all the resource record sets of a particular name, use the <tt class="docutils literal"><span class="pre">--query</span></tt> parameter to filter them out. For example:</p>
+<div class="highlight-python"><pre>aws route53 list-resource-record-sets --hosted-zone-id Z2LD58HEXAMPLE --query "ResourceRecordSets[?Name == 'example.domain.']"</pre>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>ResourceRecordSets -&gt; (list)</p>
+<blockquote>
+<div><p>A complex type that contains information about the resource record sets that are returned by the request.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A complex type that contains information about the current resource record set.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div><p>The name of the domain you want to perform the action on.</p>
+<p>Enter a fully qualified domain name, for example, <tt class="docutils literal"><span class="pre">www.example.com</span></tt> . You can optionally include a trailing dot. If you omit the trailing dot, Amazon Route 53 still assumes that the domain name that you specify is fully qualified. This means that Amazon Route 53 treats <tt class="docutils literal"><span class="pre">www.example.com</span></tt> (without a trailing dot) and <tt class="docutils literal"><span class="pre">www.example.com.</span></tt> (with a trailing dot) as identical.</p>
+<p>For information about how to specify characters other than a-z, 0-9, and - (hyphen) and how to specify internationalized domain names, see <a class="reference external" href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <em>Amazon Route 53 Developer Guide</em> .</p>
+<p>You can use an asterisk (*) character in the name. DNS treats the * character either as a wildcard or as the * character (ASCII 42), depending on where it appears in the name. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-asterisk">Using an Asterisk (*) in the Names of Hosted Zones and Resource Record Sets</a> in the <em>Amazon Route 53 Developer Guide</em></p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">You can't use the * wildcard for resource records sets that have a type of NS.</p>
+</div>
+</div></blockquote>
+<p>Type -&gt; (string)</p>
+<blockquote>
+<div><p>The DNS record type. For information about different record types and how data is encoded for them, see <a class="reference external" href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <em>Amazon Route 53 Developer Guide</em> .</p>
+<p>Valid values for basic resource record sets: <tt class="docutils literal"><span class="pre">A</span></tt> | <tt class="docutils literal"><span class="pre">AAAA</span></tt> | <tt class="docutils literal"><span class="pre">CNAME</span></tt> | <tt class="docutils literal"><span class="pre">MX</span></tt> | <tt class="docutils literal"><span class="pre">NS</span></tt> | <tt class="docutils literal"><span class="pre">PTR</span></tt> | <tt class="docutils literal"><span class="pre">SOA</span></tt> | <tt class="docutils literal"><span class="pre">SPF</span></tt> | <tt class="docutils literal"><span class="pre">SRV</span></tt> | <tt class="docutils literal"><span class="pre">TXT</span></tt></p>
+<p>Values for weighted, latency, geolocation, and failover resource record sets: <tt class="docutils literal"><span class="pre">A</span></tt> | <tt class="docutils literal"><span class="pre">AAAA</span></tt> | <tt class="docutils literal"><span class="pre">CNAME</span></tt> | <tt class="docutils literal"><span class="pre">MX</span></tt> | <tt class="docutils literal"><span class="pre">PTR</span></tt> | <tt class="docutils literal"><span class="pre">SPF</span></tt> | <tt class="docutils literal"><span class="pre">SRV</span></tt> | <tt class="docutils literal"><span class="pre">TXT</span></tt> . When creating a group of weighted, latency, geolocation, or failover resource record sets, specify the same value for all of the resource record sets in the group.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">SPF records were formerly used to verify the identity of the sender of email messages. However, we no longer recommend that you create resource record sets for which the value of <tt class="docutils literal"><span class="pre">Type</span></tt> is <tt class="docutils literal"><span class="pre">SPF</span></tt> . RFC 7208, <em>Sender Policy Framework (SPF) for Authorizing Use of Domains in Email, Version 1</em> , has been updated to say, "...[I]ts existence and mechanism defined in [RFC4408] have led to some interoperability issues. Accordingly, its use is no longer appropriate for SPF version 1; implementations are not to use it." In RFC 7208, see section 14.1, <a class="reference external" href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record Type</a> .</p>
+</div>
+<p>Values for alias resource record sets:</p>
+<ul class="simple">
+<li><strong>CloudFront distributions:</strong>  <tt class="docutils literal"><span class="pre">A</span></tt></li>
+<li><strong>ELB load balancers:</strong>  <tt class="docutils literal"><span class="pre">A</span></tt> | <tt class="docutils literal"><span class="pre">AAAA</span></tt></li>
+<li><strong>Amazon S3 buckets:</strong> A</li>
+<li><strong>Another resource record set in this hosted zone:</strong> Specify the type of the resource record set for which you're creating the alias. Specify any value except <tt class="docutils literal"><span class="pre">NS</span></tt> or <tt class="docutils literal"><span class="pre">SOA</span></tt> .</li>
+</ul>
+</div></blockquote>
+<p>SetIdentifier -&gt; (string)</p>
+<blockquote>
+<div><em>Weighted, Latency, Geo, and Failover resource record sets only:</em> An identifier that differentiates among multiple resource record sets that have the same combination of DNS name and type. The value of <tt class="docutils literal"><span class="pre">SetIdentifier</span></tt> must be unique for each resource record set that has the same combination of DNS name and type.</div></blockquote>
+<p>Weight -&gt; (long)</p>
+<blockquote>
+<div><p><em>Weighted resource record sets only:</em> Among resource record sets that have the same combination of DNS name and type, a value that determines the proportion of DNS queries that Amazon Route 53 responds to using the current resource record set. Amazon Route 53 calculates the sum of the weights for the resource record sets that have the same combination of DNS name and type. Amazon Route 53 then responds to queries based on the ratio of a resource's weight to the total. Note the following:</p>
+<ul class="simple">
+<li>You must specify a value for the <tt class="docutils literal"><span class="pre">Weight</span></tt> element for every weighted resource record set.</li>
+<li>You can only specify one <tt class="docutils literal"><span class="pre">ResourceRecord</span></tt> per weighted resource record set.</li>
+<li>You cannot create latency, failover, or geolocation resource record sets that have the same values for the <tt class="docutils literal"><span class="pre">Name</span></tt> and <tt class="docutils literal"><span class="pre">Type</span></tt> elements as weighted resource record sets.</li>
+<li>You can create a maximum of 100 weighted resource record sets that have the same values for the <tt class="docutils literal"><span class="pre">Name</span></tt> and <tt class="docutils literal"><span class="pre">Type</span></tt> elements.</li>
+<li>For weighted (but not weighted alias) resource record sets, if you set <tt class="docutils literal"><span class="pre">Weight</span></tt> to <tt class="docutils literal"><span class="pre">0</span></tt> for a resource record set, Amazon Route 53 never responds to queries with the applicable value for that resource record set. However, if you set <tt class="docutils literal"><span class="pre">Weight</span></tt> to <tt class="docutils literal"><span class="pre">0</span></tt> for all resource record sets that have the same combination of DNS name and type, traffic is routed to all resources with equal probability. The effect of setting <tt class="docutils literal"><span class="pre">Weight</span></tt> to <tt class="docutils literal"><span class="pre">0</span></tt> is different when you associate health checks with weighted resource record sets. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html">Options for Configuring Amazon Route 53 Active-Active and Active-Passive Failover</a> in the <em>Amazon Route 53 Developer Guide</em> .</li>
+</ul>
+</div></blockquote>
+<p>Region -&gt; (string)</p>
+<blockquote>
+<div><p><em>Latency-based resource record sets only:</em> The Amazon EC2 region where the resource that is specified in this resource record set resides. The resource typically is an AWS resource, such as an Amazon EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can create latency and latency alias resource record sets only in public hosted zones.</p>
+</div>
+<p>When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource record sets, Amazon Route 53 selects the latency resource record set that has the lowest latency between the end user and the associated Amazon EC2 region. Amazon Route 53 then returns the value that is associated with the selected resource record set.</p>
+<p>Note the following:</p>
+<ul class="simple">
+<li>You can only specify one <tt class="docutils literal"><span class="pre">ResourceRecord</span></tt> per latency resource record set.</li>
+<li>You can only create one latency resource record set for each Amazon EC2 region.</li>
+<li>You are not required to create latency resource record sets for all Amazon EC2 regions. Amazon Route 53 will choose the region with the best latency from among the regions for which you create latency resource record sets.</li>
+<li>You cannot create non-latency resource record sets that have the same values for the <tt class="docutils literal"><span class="pre">Name</span></tt> and <tt class="docutils literal"><span class="pre">Type</span></tt> elements as latency resource record sets.</li>
+</ul>
+</div></blockquote>
+<p>GeoLocation -&gt; (structure)</p>
+<blockquote>
+<div><p><em>Geo location resource record sets only:</em> A complex type that lets you control how Amazon Route 53 responds to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to be routed to a web server with an IP address of <tt class="docutils literal"><span class="pre">192.0.2.111</span></tt> , create a resource record set with a <tt class="docutils literal"><span class="pre">Type</span></tt> of <tt class="docutils literal"><span class="pre">A</span></tt> and a <tt class="docutils literal"><span class="pre">ContinentCode</span></tt> of <tt class="docutils literal"><span class="pre">AF</span></tt> .</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can create geolocation and geolocation alias resource record sets only in public hosted zones.</p>
+</div>
+<p>If you create separate resource record sets for overlapping geographic regions (for example, one resource record set for a continent and one for a country on the same continent), priority goes to the smallest geographic region. This allows you to route most queries for a continent to one resource and to route queries for a country on that continent to a different resource.</p>
+<p>You cannot create two geolocation resource record sets that specify the same geographic location.</p>
+<p>The value <tt class="docutils literal"><span class="pre">*</span></tt> in the <tt class="docutils literal"><span class="pre">CountryCode</span></tt> element matches all geographic locations that aren't specified in other geolocation resource record sets that have the same values for the <tt class="docutils literal"><span class="pre">Name</span></tt> and <tt class="docutils literal"><span class="pre">Type</span></tt> elements.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to geographic locations, so even if you create geolocation resource record sets that cover all seven continents, Amazon Route 53 will receive some DNS queries from locations that it can't identify. We recommend that you create a resource record set for which the value of <tt class="docutils literal"><span class="pre">CountryCode</span></tt> is <tt class="docutils literal"><span class="pre">*</span></tt> , which handles both queries that come from locations for which you haven't created geolocation resource record sets and queries from IP addresses that aren't mapped to a location. If you don't create a <tt class="docutils literal"><span class="pre">*</span></tt> resource record set, Amazon Route 53 returns a "no answer" response for queries from those locations.</p>
+</div>
+<p>You cannot create non-geolocation resource record sets that have the same values for the <tt class="docutils literal"><span class="pre">Name</span></tt> and <tt class="docutils literal"><span class="pre">Type</span></tt> elements as geolocation resource record sets.</p>
+<p>ContinentCode -&gt; (string)</p>
+<blockquote>
+<div><p>The code for a continent geo location. Note: only continent locations have a continent code.</p>
+<p>Valid values: <tt class="docutils literal"><span class="pre">AF</span></tt> | <tt class="docutils literal"><span class="pre">AN</span></tt> | <tt class="docutils literal"><span class="pre">AS</span></tt> | <tt class="docutils literal"><span class="pre">EU</span></tt> | <tt class="docutils literal"><span class="pre">OC</span></tt> | <tt class="docutils literal"><span class="pre">NA</span></tt> | <tt class="docutils literal"><span class="pre">SA</span></tt></p>
+<p>Constraint: Specifying <tt class="docutils literal"><span class="pre">ContinentCode</span></tt> with either <tt class="docutils literal"><span class="pre">CountryCode</span></tt> or <tt class="docutils literal"><span class="pre">SubdivisionCode</span></tt> returns an  InvalidInput error.</p>
+</div></blockquote>
+<p>CountryCode -&gt; (string)</p>
+<blockquote>
+<div><p>The code for a country geo location. The default location uses '*' for the country code and will match all locations that are not matched by a geo location.</p>
+<p>The default geo location uses a <tt class="docutils literal"><span class="pre">*</span></tt> for the country code. All other country codes follow the ISO 3166 two-character code.</p>
+</div></blockquote>
+<p>SubdivisionCode -&gt; (string)</p>
+<blockquote>
+<div><p>The code for a country's subdivision (e.g., a province of Canada). A subdivision code is only valid with the appropriate country code.</p>
+<p>Constraint: Specifying <tt class="docutils literal"><span class="pre">SubdivisionCode</span></tt> without <tt class="docutils literal"><span class="pre">CountryCode</span></tt> returns an  InvalidInput error.</p>
+</div></blockquote>
+</div></blockquote>
+<p>Failover -&gt; (string)</p>
+<blockquote>
+<div><p><em>Failover resource record sets only:</em> To configure failover, you add the <tt class="docutils literal"><span class="pre">Failover</span></tt> element to two resource record sets. For one resource record set, you specify <tt class="docutils literal"><span class="pre">PRIMARY</span></tt> as the value for <tt class="docutils literal"><span class="pre">Failover</span></tt> ; for the other resource record set, you specify <tt class="docutils literal"><span class="pre">SECONDARY</span></tt> . In addition, you include the <tt class="docutils literal"><span class="pre">HealthCheckId</span></tt> element and specify the health check that you want Amazon Route 53 to perform for each resource record set.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can create failover and failover alias resource record sets only in public hosted zones.</p>
+</div>
+<p>Except where noted, the following failover behaviors assume that you have included the <tt class="docutils literal"><span class="pre">HealthCheckId</span></tt> element in both resource record sets:</p>
+<ul class="simple">
+<li>When the primary resource record set is healthy, Amazon Route 53 responds to DNS queries with the applicable value from the primary resource record set regardless of the health of the secondary resource record set.</li>
+<li>When the primary resource record set is unhealthy and the secondary resource record set is healthy, Amazon Route 53 responds to DNS queries with the applicable value from the secondary resource record set.</li>
+<li>When the secondary resource record set is unhealthy, Amazon Route 53 responds to DNS queries with the applicable value from the primary resource record set regardless of the health of the primary resource record set.</li>
+<li>If you omit the <tt class="docutils literal"><span class="pre">HealthCheckId</span></tt> element for the secondary resource record set, and if the primary resource record set is unhealthy, Amazon Route 53 always responds to DNS queries with the applicable value from the secondary resource record set. This is true regardless of the health of the associated endpoint.</li>
+</ul>
+<p>You cannot create non-failover resource record sets that have the same values for the <tt class="docutils literal"><span class="pre">Name</span></tt> and <tt class="docutils literal"><span class="pre">Type</span></tt> elements as failover resource record sets.</p>
+<p>For failover alias resource record sets, you must also include the <tt class="docutils literal"><span class="pre">EvaluateTargetHealth</span></tt> element and set the value to true.</p>
+<p>For more information about configuring failover for Amazon Route 53, see <a class="reference external" href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks and DNS Failover</a> in the <em>Amazon Route 53 Developer Guide</em> .</p>
+<p>Valid values: <tt class="docutils literal"><span class="pre">PRIMARY</span></tt> | <tt class="docutils literal"><span class="pre">SECONDARY</span></tt></p>
+</div></blockquote>
+<p>TTL -&gt; (long)</p>
+<blockquote>
+<div><p>The cache time to live for the current resource record set. Note the following:</p>
+<ul class="simple">
+<li>If you're creating an alias resource record set, omit <tt class="docutils literal"><span class="pre">TTL</span></tt> . Amazon Route 53 uses the value of <tt class="docutils literal"><span class="pre">TTL</span></tt> for the alias target.</li>
+<li>If you're associating this resource record set with a health check (if you're adding a <tt class="docutils literal"><span class="pre">HealthCheckId</span></tt> element), we recommend that you specify a <tt class="docutils literal"><span class="pre">TTL</span></tt> of 60 seconds or less so clients respond quickly to changes in health status.</li>
+<li>All of the resource record sets in a group of weighted, latency, geolocation, or failover resource record sets must have the same value for <tt class="docutils literal"><span class="pre">TTL</span></tt> .</li>
+<li>If a group of weighted resource record sets includes one or more weighted alias resource record sets for which the alias target is an ELB load balancer, we recommend that you specify a <tt class="docutils literal"><span class="pre">TTL</span></tt> of 60 seconds for all of the non-alias weighted resource record sets that have the same name and type. Values other than 60 seconds (the TTL for load balancers) will change the effect of the values that you specify for <tt class="docutils literal"><span class="pre">Weight</span></tt> .</li>
+</ul>
+</div></blockquote>
+<p>ResourceRecords -&gt; (list)</p>
+<blockquote>
+<div><p>A complex type that contains the resource records for the current resource record set.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A complex type that contains the value of the <tt class="docutils literal"><span class="pre">Value</span></tt> element for the current resource record set.</p>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div><p>The current or new DNS record value, not to exceed 4,000 characters. In the case of a <tt class="docutils literal"><span class="pre">DELETE</span></tt> action, if the current value does not match the actual value, an error is returned. For descriptions about how to format <tt class="docutils literal"><span class="pre">Value</span></tt> for different record types, see <a class="reference external" href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <em>Amazon Route 53 Developer Guide</em> .</p>
+<p>You can specify more than one value for all record types except <tt class="docutils literal"><span class="pre">CNAME</span></tt> and <tt class="docutils literal"><span class="pre">SOA</span></tt> .</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>AliasTarget -&gt; (structure)</p>
+<blockquote>
+<div><p><em>Alias resource record sets only:</em> Information about the AWS resource to which you are redirecting traffic.</p>
+<p>HostedZoneId -&gt; (string)</p>
+<blockquote>
+<div><p><em>Alias resource record sets only:</em> The value you use depends on where you want to route queries:</p>
+<ul class="simple">
+<li><strong>A CloudFront distribution:</strong> Specify <tt class="docutils literal"><span class="pre">Z2FDTNDATAQYW2</span></tt> .</li>
+<li>An ELB load balancer: Specify the value of the hosted zone ID for the load balancer. You can get the hosted zone ID by using the AWS Management Console, the ELB API, or the AWS CLI. Use the same method to get values for <tt class="docutils literal"><span class="pre">HostedZoneId</span></tt> and <tt class="docutils literal"><span class="pre">start-record-name</span></tt> . If you get one value from the console and the other value from the API or the CLI, creating the resource record set will fail.</li>
+<li><strong>An Amazon S3 bucket that is configured as a static website:</strong> Specify the hosted zone ID for the Amazon S3 website endpoint in which you created the bucket. For more information about valid values, see the table <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service (S3) Website Endpoints</a> in the <em>Amazon Web Services General Reference</em> .</li>
+<li><strong>Another Amazon Route 53 resource record set in your hosted zone:</strong> Specify the hosted zone ID of your hosted zone. (An alias resource record set cannot reference a resource record set in a different hosted zone.)</li>
+</ul>
+<p>For more information and an example, see <a class="reference external" href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example: Creating Alias Resource Record Sets</a> in the <em>Amazon Route 53 API Reference</em> .</p>
+</div></blockquote>
+<p>DNSName -&gt; (string)</p>
+<blockquote>
+<div><p><em>Alias resource record sets only:</em> The external DNS name associated with the AWS Resource. The value that you specify depends on where you want to route queries:</p>
+<ul class="simple">
+<li><strong>A CloudFront distribution:</strong> Specify the domain name that CloudFront assigned when you created your distribution. Your CloudFront distribution must include an alternate domain name that matches the name of the resource record set. For example, if the name of the resource record set is <tt class="docutils literal"><span class="pre">acme.example.com</span></tt> , your CloudFront distribution must include <tt class="docutils literal"><span class="pre">acme.example.com</span></tt> as one of the alternate domain names. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names (CNAMEs)</a> in the <em>Amazon CloudFront Developer Guide</em> .</li>
+<li><strong>An ELB load balancer:</strong> Specify the DNS name associated with the load balancer. You can get the DNS name by using the AWS Management Console, the ELB API, or the AWS CLI. Use the same method to get values for <tt class="docutils literal"><span class="pre">HostedZoneId</span></tt> and <tt class="docutils literal"><span class="pre">start-record-name</span></tt> . If you get one value from the console and the other value from the API or the CLI, creating the resource record set will fail.</li>
+<li><strong>An Elastic Beanstalk environment:</strong> Specify the CNAME attribute for the environment. (The environment must have a regionalized domain name.)</li>
+<li><strong>An Amazon S3 bucket that is configured as a static website:</strong> Specify the domain name of the Amazon S3 website endpoint in which you created the bucket; for example, <tt class="docutils literal"><span class="pre">s3-website-us-east-1.amazonaws.com</span></tt> . For more information about valid values, see the table <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service (S3) Website Endpoints</a> in the <em>Amazon Web Services General Reference</em> . For more information about using Amazon S3 buckets for websites, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting a Static Website on Amazon S3</a> in the <em>Amazon Simple Storage Service Developer Guide</em> .</li>
+<li><strong>Another Amazon Route 53 resource record set:</strong> Specify the value of the <tt class="docutils literal"><span class="pre">Name</span></tt> element for a resource record set in the current hosted zone.</li>
+</ul>
+<p>For more information and an example, see <a class="reference external" href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example: Creating Alias Resource Record Sets</a> in the <em>Amazon Route 53 API Reference</em> .</p>
+</div></blockquote>
+<p>EvaluateTargetHealth -&gt; (boolean)</p>
+<blockquote>
+<div><p><em>Alias resource record sets only:</em> If you set the value of <tt class="docutils literal"><span class="pre">EvaluateTargetHealth</span></tt> to <tt class="docutils literal"><span class="pre">true</span></tt> for the resource record set or sets in an alias, weighted alias, latency alias, or failover alias resource record set, and if you specify a value for <tt class="docutils literal"><span class="pre">HealthCheckId</span></tt> for every resource record set that is referenced by these alias resource record sets, the alias resource record sets inherit the health of the referenced resource record sets.</p>
+<p>In this configuration, when Amazon Route 53 receives a DNS query for an alias resource record set:</p>
+<ul class="simple">
+<li>Amazon Route 53 looks at the resource record sets that are referenced by the alias resource record sets to determine which health checks they're using.</li>
+<li>Amazon Route 53 checks the current status of each health check. (Amazon Route 53 periodically checks the health of the endpoint that is specified in a health check; it doesn't perform the health check when the DNS query arrives.)</li>
+<li>Based on the status of the health checks, Amazon Route 53 determines which resource record sets are healthy. Unhealthy resource record sets are immediately removed from consideration. In addition, if all of the resource record sets that are referenced by an alias resource record set are unhealthy, that alias resource record set also is immediately removed from consideration.</li>
+<li>Based on the configuration of the alias resource record sets (weighted alias or latency alias, for example) and the configuration of the resource record sets that they reference, Amazon Route 53 chooses a resource record set from the healthy resource record sets, and responds to the query.</li>
+</ul>
+<p>Note the following:</p>
+<ul class="simple">
+<li>You cannot set <tt class="docutils literal"><span class="pre">EvaluateTargetHealth</span></tt> to true when the alias target is a CloudFront distribution.</li>
+<li>If the AWS resource that you specify in <tt class="docutils literal"><span class="pre">AliasTarget</span></tt> is a resource record set or a group of resource record sets (for example, a group of weighted resource record sets), but it is not another alias resource record set, we recommend that you associate a health check with all of the resource record sets in the alias target. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What Happens When You Omit Health Checks?</a> in the <em>Amazon Route 53 Developer Guide</em> .</li>
+<li>If you specify an ELB load balancer in <tt class="docutils literal"><span class="pre">AliasTarget</span></tt> , Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. If no Amazon EC2 instances are healthy or if the load balancer itself is unhealthy, and if <tt class="docutils literal"><span class="pre">EvaluateTargetHealth</span></tt> is <tt class="docutils literal"><span class="pre">true</span></tt> for the corresponding alias resource record set, Amazon Route 53 routes queries to other resources.</li>
+<li>When you create a load balancer, you configure settings for Elastic Load Balancing health checks; they're not Amazon Route 53 health checks, but they perform a similar function. Do not create Amazon Route 53 health checks for the Amazon EC2 instances that you register with an ELB load balancer. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html">How Health Checks Work in More Complex Amazon Route 53 Configurations</a> in the <em>Amazon Route 53 Developer Guide</em> .</li>
+</ul>
+<p>We recommend that you set <tt class="docutils literal"><span class="pre">EvaluateTargetHealth</span></tt> to <tt class="docutils literal"><span class="pre">true</span></tt> only when you have enough idle capacity to handle the failure of one or more endpoints.</p>
+<p>For more information and examples, see <a class="reference external" href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks and DNS Failover</a> in the <em>Amazon Route 53 Developer Guide</em> .</p>
+</div></blockquote>
+</div></blockquote>
+<p>HealthCheckId -&gt; (string)</p>
+<blockquote>
+<div><em>Health Check resource record sets only, not required for alias resource record sets:</em> An identifier that is used to identify health check associated with the resource record set.</div></blockquote>
+<p>TrafficPolicyInstanceId -&gt; (string)</p>
+</div></blockquote>
+</div></blockquote>
+<p>IsTruncated -&gt; (boolean)</p>
+<blockquote>
+<div><p>A flag that indicates whether there are more resource record sets to be listed. If your results were truncated, you can make a follow-up request for the next page of results by using the  ListResourceRecordSetsResponse$NextRecordName element.</p>
+<p>Valid Values: <tt class="docutils literal"><span class="pre">true</span></tt> | <tt class="docutils literal"><span class="pre">false</span></tt></p>
+</div></blockquote>
+<p>NextRecordName -&gt; (string)</p>
+<blockquote>
+<div>If the results were truncated, the name of the next record in the list. This element is present only if  ListResourceRecordSetsResponse$IsTruncated is true.</div></blockquote>
+<p>NextRecordType -&gt; (string)</p>
+<blockquote>
+<div>If the results were truncated, the type of the next record in the list. This element is present only if  ListResourceRecordSetsResponse$IsTruncated is true.</div></blockquote>
+<p>NextRecordIdentifier -&gt; (string)</p>
+<blockquote>
+<div><em>Weighted resource record sets only:</em> If results were truncated for a given DNS name and type, the value of <tt class="docutils literal"><span class="pre">SetIdentifier</span></tt> for the next resource record set that has the current DNS name and type.</div></blockquote>
+<p>MaxItems -&gt; (string)</p>
+<blockquote>
+<div>The maximum number of records you requested. The maximum value of <tt class="docutils literal"><span class="pre">MaxItems</span></tt> is 100.</div></blockquote>
 </div>
 </div>
 
@@ -176,54 +411,49 @@
     <div class="footer-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="list-hosted-zones.html" title="previous chapter (use the left arrow)">&#8592; list-hosted-zones</a>
+          <a href="list-hosted-zones-by-name.html" title="previous chapter (use the left arrow)">&#8592; list-hosted-zones-by-name</a>
           <span class="divider">/</span>
           
         </li>
-          <li><a href="../s3/index.html" title="next chapter (use the right arrow)">s3 &#8594;</a></li>
+          <li><a href="list-reusable-delegation-sets.html" title="next chapter (use the right arrow)">list-reusable-delegation-sets &#8594;</a></li>
       </ul>
     </div>
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index">index</a></li>
         <li class="right">
-          <a href="../s3/index.html" title="s3">next</a> |</li>
+          <a href="list-reusable-delegation-sets.html" title="list-reusable-delegation-sets">next</a> |</li>
         <li class="right">
-          <a href="list-hosted-zones.html" title="list-hosted-zones">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="list-hosted-zones-by-name.html" title="list-hosted-zones-by-name">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">route53</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'list-hosted-zones.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = '../s3/index.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53/list-resource-record-sets.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:28 GMT -->
 </html>

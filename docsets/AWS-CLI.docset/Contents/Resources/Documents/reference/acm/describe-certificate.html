@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/acm/describe-certificate.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:57 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-certificate &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="acm" href="index.html" />
+    <link rel="next" title="get-certificate" href="get-certificate.html" />
+    <link rel="prev" title="delete-certificate" href="delete-certificate.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="get-certificate.html" title="get-certificate" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="delete-certificate.html" title="delete-certificate" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">acm</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="delete-certificate.html" title="previous chapter (use the left arrow)">&#8592; delete-certificate</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="get-certificate.html" title="next chapter (use the right arrow)">get-certificate &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-certificate</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/acm/describe-certificate">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-acm"><em>acm</em></a> ]</p>
+<div class="section" id="describe-certificate">
+<span id="cli-aws-acm-describe-certificate"></span><h1>describe-certificate<a name="//apple_ref/cpp/Command/aws acm describe-certificate" class="dashAnchor" id="aws acm describe-certificate"></a><a class="headerlink" href="#describe-certificate" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Returns a list of the fields contained in the specified ACM Certificate. For example, this action returns the certificate status, a flag that indicates whether the certificate is associated with any other AWS service, and the date at which the certificate request was created. You specify the ACM Certificate on input by its Amazon Resource Name (ARN).</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  describe-certificate
+--certificate-arn &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--certificate-arn" class="dashAnchor" id="certificate-arn"></a><span class="pre">--certificate-arn</span></tt> (string)</p>
+<blockquote>
+<div><p>String that contains an ACM Certificate ARN. The ARN must be of the form:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</span></tt></div></blockquote>
+<p>For more information about ARNs, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To retrieve the fields contained in an ACM certificate</strong></p>
+<p>The following <tt class="docutils literal"><span class="pre">describe-certificate</span></tt> command retrieves all of the fields for the certificate with the specified ARN:</p>
+<div class="highlight-python"><pre>aws acm describe-certificate --certificate-arn arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</pre>
+</div>
+<p>Output similar to the following is displayed:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"Certificate"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"CertificateArn"</span><span class="p">:</span> <span class="s2">"arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012"</span><span class="p">,</span>
+    <span class="s2">"CreatedAt"</span><span class="p">:</span> <span class="mf">1446835267.0</span><span class="p">,</span>
+    <span class="s2">"DomainName"</span><span class="p">:</span> <span class="s2">"www.example.com"</span><span class="p">,</span>
+    <span class="s2">"DomainValidationOptions"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">"DomainName"</span><span class="p">:</span> <span class="s2">"www.example.com"</span><span class="p">,</span>
+        <span class="s2">"ValidationDomain"</span><span class="p">:</span> <span class="s2">"www.example.com"</span><span class="p">,</span>
+        <span class="s2">"ValidationEmails"</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">"hostmaster@example.com"</span><span class="p">,</span>
+          <span class="s2">"admin@example.com"</span><span class="p">,</span>
+          <span class="s2">"owner@example.com.whoisprivacyservice.org"</span><span class="p">,</span>
+          <span class="s2">"tech@example.com.whoisprivacyservice.org"</span><span class="p">,</span>
+          <span class="s2">"admin@example.com.whoisprivacyservice.org"</span><span class="p">,</span>
+          <span class="s2">"postmaster@example.com"</span><span class="p">,</span>
+          <span class="s2">"webmaster@example.com"</span><span class="p">,</span>
+          <span class="s2">"administrator@example.com"</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s2">"DomainName"</span><span class="p">:</span> <span class="s2">"www.example.net"</span><span class="p">,</span>
+        <span class="s2">"ValidationDomain"</span><span class="p">:</span> <span class="s2">"www.example.net"</span><span class="p">,</span>
+        <span class="s2">"ValidationEmails"</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">"postmaster@example.net"</span><span class="p">,</span>
+          <span class="s2">"admin@example.net"</span><span class="p">,</span>
+          <span class="s2">"owner@example.net.whoisprivacyservice.org"</span><span class="p">,</span>
+          <span class="s2">"tech@example.net.whoisprivacyservice.org"</span><span class="p">,</span>
+          <span class="s2">"admin@example.net.whoisprivacyservice.org"</span><span class="p">,</span>
+          <span class="s2">"hostmaster@example.net"</span><span class="p">,</span>
+          <span class="s2">"administrator@example.net"</span><span class="p">,</span>
+          <span class="s2">"webmaster@example.net"</span>
+        <span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">"InUseBy"</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="s2">"IssuedAt"</span><span class="p">:</span> <span class="mf">1446835815.0</span><span class="p">,</span>
+    <span class="s2">"Issuer"</span><span class="p">:</span> <span class="s2">"Amazon"</span><span class="p">,</span>
+    <span class="s2">"KeyAlgorithm"</span><span class="p">:</span> <span class="s2">"RSA-2048"</span><span class="p">,</span>
+    <span class="s2">"NotAfter"</span><span class="p">:</span> <span class="mf">1478433600.0</span><span class="p">,</span>
+    <span class="s2">"NotBefore"</span><span class="p">:</span> <span class="mf">1446768000.0</span><span class="p">,</span>
+    <span class="s2">"Serial"</span><span class="p">:</span> <span class="s2">"0f:ac:b0:a3:8d:ea:65:52:2d:7d:01:3a:39:36:db:d6"</span><span class="p">,</span>
+    <span class="s2">"SignatureAlgorithm"</span><span class="p">:</span> <span class="s2">"SHA256WITHRSA"</span><span class="p">,</span>
+    <span class="s2">"Status"</span><span class="p">:</span> <span class="s2">"ISSUED"</span><span class="p">,</span>
+    <span class="s2">"Subject"</span><span class="p">:</span> <span class="s2">"CN=www.example.com"</span><span class="p">,</span>
+    <span class="s2">"SubjectAlternativeNames"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">"www.example.com"</span><span class="p">,</span>
+      <span class="s2">"www.example.net"</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Certificate -&gt; (structure)</p>
+<blockquote>
+<div><p>Contains a  CertificateDetail structure that lists the fields of an ACM Certificate.</p>
+<p>CertificateArn -&gt; (string)</p>
+<blockquote>
+<div><p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</span></tt></div></blockquote>
+<p>For more information about ARNs, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> .</p>
+</div></blockquote>
+<p>DomainName -&gt; (string)</p>
+<blockquote>
+<div>Fully qualified domain name (FQDN), such as www.example.com or example.com, for the certificate.</div></blockquote>
+<p>SubjectAlternativeNames -&gt; (list)</p>
+<blockquote>
+<div><p>One or more domain names (subject alternative names) included in the certificate request. After the certificate is issued, this list includes the domain names bound to the public key contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>DomainValidationOptions -&gt; (list)</p>
+<blockquote>
+<div><p>References a  DomainValidation structure that contains the domain name in the certificate and the email address that can be used for validation.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Structure that contains the domain name, the base validation domain to which validation email is sent, and the email addresses used to validate the domain identity.</p>
+<p>DomainName -&gt; (string)</p>
+<blockquote>
+<div>Fully Qualified Domain Name (FQDN) of the form <tt class="docutils literal"><span class="pre">www.example.com</span> <span class="pre">or</span></tt> <tt class="docutils literal"><span class="pre">example.com</span></tt></div></blockquote>
+<p>ValidationEmails -&gt; (list)</p>
+<blockquote>
+<div><p>A list of contact address for the domain registrant.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>ValidationDomain -&gt; (string)</p>
+<blockquote>
+<div>The base validation domain that acts as the suffix of the email addresses that are used to send the emails.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Serial -&gt; (string)</p>
+<blockquote>
+<div>String that contains the serial number of the certificate.</div></blockquote>
+<p>Subject -&gt; (string)</p>
+<blockquote>
+<div>The X.500 distinguished name of the entity associated with the public key contained in the certificate.</div></blockquote>
+<p>Issuer -&gt; (string)</p>
+<blockquote>
+<div>The X.500 distinguished name of the CA that issued and signed the certificate.</div></blockquote>
+<p>CreatedAt -&gt; (timestamp)</p>
+<blockquote>
+<div>Time at which the certificate was requested.</div></blockquote>
+<p>IssuedAt -&gt; (timestamp)</p>
+<blockquote>
+<div>Time at which the certificate was issued.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div><p>A <tt class="docutils literal"><span class="pre">CertificateStatus</span></tt> enumeration value that can contain one of the following:</p>
+<ul class="simple">
+<li>PENDING_VALIDATION</li>
+<li>ISSUED</li>
+<li>INACTIVE</li>
+<li>EXPIRED</li>
+<li>REVOKED</li>
+<li>FAILED</li>
+<li>VALIDATION_TIMED_OUT</li>
+</ul>
+</div></blockquote>
+<p>RevokedAt -&gt; (timestamp)</p>
+<blockquote>
+<div>The time, if any, at which the certificate was revoked. This value exists only if the certificate has been revoked.</div></blockquote>
+<p>RevocationReason -&gt; (string)</p>
+<blockquote>
+<div><p>A <tt class="docutils literal"><span class="pre">RevocationReason</span></tt> enumeration value that indicates why the certificate was revoked. This value exists only if the certificate has been revoked. This can be one of the following vales:</p>
+<ul class="simple">
+<li>UNSPECIFIED</li>
+<li>KEY_COMPROMISE</li>
+<li>CA_COMPROMISE</li>
+<li>AFFILIATION_CHANGED</li>
+<li>SUPERCEDED</li>
+<li>CESSATION_OF_OPERATION</li>
+<li>CERTIFICATE_HOLD</li>
+<li>REMOVE_FROM_CRL</li>
+<li>PRIVILEGE_WITHDRAWN</li>
+<li>A_A_COMPROMISE</li>
+</ul>
+</div></blockquote>
+<p>NotBefore -&gt; (timestamp)</p>
+<blockquote>
+<div>Time before which the certificate is not valid.</div></blockquote>
+<p>NotAfter -&gt; (timestamp)</p>
+<blockquote>
+<div>Time after which the certificate is not valid.</div></blockquote>
+<p>KeyAlgorithm -&gt; (string)</p>
+<blockquote>
+<div>Asymmetric algorithm used to generate the public and private key pair. Currently the only supported value is <tt class="docutils literal"><span class="pre">RSA_2048</span></tt> .</div></blockquote>
+<p>SignatureAlgorithm -&gt; (string)</p>
+<blockquote>
+<div>Algorithm used to generate a signature. Currently the only supported value is <tt class="docutils literal"><span class="pre">SHA256WITHRSA</span></tt> .</div></blockquote>
+<p>InUseBy -&gt; (list)</p>
+<blockquote>
+<div><p>List that identifies ARNs that are using the certificate. A single ACM Certificate can be used by multiple AWS resources.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="delete-certificate.html" title="previous chapter (use the left arrow)">&#8592; delete-certificate</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="get-certificate.html" title="next chapter (use the right arrow)">get-certificate &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="get-certificate.html" title="get-certificate">next</a> |</li>
+        <li class="right">
+          <a href="delete-certificate.html" title="delete-certificate">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">acm</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/acm/describe-certificate.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:57 GMT -->
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53domains/transfer-domain.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:28 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>transfer-domain &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="route53domains" href="index.html" />
+    <link rel="next" title="update-domain-contact" href="update-domain-contact.html" />
+    <link rel="prev" title="retrieve-domain-auth-code" href="retrieve-domain-auth-code.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="update-domain-contact.html" title="update-domain-contact" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="retrieve-domain-auth-code.html" title="retrieve-domain-auth-code" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">route53domains</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="retrieve-domain-auth-code.html" title="previous chapter (use the left arrow)">&#8592; retrieve-domain-auth-code</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="update-domain-contact.html" title="next chapter (use the right arrow)">update-domain-contact &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">transfer-domain</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/route53domains/transfer-domain">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-route53domains"><em>route53domains</em></a> ]</p>
+<div class="section" id="transfer-domain">
+<span id="cli-aws-route53domains-transfer-domain"></span><h1>transfer-domain<a name="//apple_ref/cpp/Command/aws route53domains transfer-domain" class="dashAnchor" id="aws route53domains transfer-domain"></a><a class="headerlink" href="#transfer-domain" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>This operation transfers a domain from another registrar to Amazon Route 53. When the transfer is complete, the domain is registered with the AWS registrar partner, Gandi.</p>
+<p>For transfer requirements, a detailed procedure, and information about viewing the status of a domain transfer, see <a class="reference external" href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html">Transferring Registration for a Domain to Amazon Route 53</a> in the Amazon Route 53 Developer Guide.</p>
+<p>If the registrar for your domain is also the DNS service provider for the domain, we highly recommend that you consider transferring your DNS service to Amazon Route 53 or to another DNS service provider before you transfer your registration. Some registrars provide free DNS service when you purchase a domain registration. When you transfer the registration, the previous registrar will not renew your domain registration and could end your DNS service at any time.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Caution! If the registrar for your domain is also the DNS service provider for the domain and you don't transfer DNS service to another provider, your website, email, and the web applications associated with the domain might become unavailable.</p>
+</div>
+<p>If the transfer is successful, this method returns an operation ID that you can use to track the progress and completion of the action. If the transfer doesn't complete successfully, the domain registrant will be notified by email.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  transfer-domain
+--domain-name &lt;value&gt;
+[--idn-lang-code &lt;value&gt;]
+--duration-in-years &lt;value&gt;
+[--nameservers &lt;value&gt;]
+[--auth-code &lt;value&gt;]
+[--auto-renew | --no-auto-renew]
+--admin-contact &lt;value&gt;
+--registrant-contact &lt;value&gt;
+--tech-contact &lt;value&gt;
+[--privacy-protect-admin-contact | --no-privacy-protect-admin-contact]
+[--privacy-protect-registrant-contact | --no-privacy-protect-registrant-contact]
+[--privacy-protect-tech-contact | --no-privacy-protect-tech-contact]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--domain-name" class="dashAnchor" id="domain-name"></a><span class="pre">--domain-name</span></tt> (string)</p>
+<blockquote>
+<div><p>The name of a domain.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not supported.</p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--idn-lang-code" class="dashAnchor" id="idn-lang-code"></a><span class="pre">--idn-lang-code</span></tt> (string)</p>
+<blockquote>
+<div>Reserved for future use.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--duration-in-years" class="dashAnchor" id="duration-in-years"></a><span class="pre">--duration-in-years</span></tt> (integer)</p>
+<blockquote>
+<div><p>The number of years the domain will be registered. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain.</p>
+<p>Type: Integer</p>
+<p>Default: 1</p>
+<p>Valid values: Integer from 1 to 10</p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--nameservers" class="dashAnchor" id="nameservers"></a><span class="pre">--nameservers</span></tt> (list)</p>
+<blockquote>
+<div><p>Contains details for the host and glue IP addresses.</p>
+<p>Type: Complex</p>
+<p>Children: <tt class="docutils literal"><span class="pre">GlueIps</span></tt> , <tt class="docutils literal"><span class="pre">Name</span></tt></p>
+<p>Required: No</p>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Name=string,GlueIps=string,string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    "Name": "string",
+    "GlueIps": ["string", ...]
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--auth-code" class="dashAnchor" id="auth-code"></a><span class="pre">--auth-code</span></tt> (string)</p>
+<blockquote>
+<div><p>The authorization code for the domain. You get this value from the current registrar.</p>
+<p>Type: String</p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--auto-renew" class="dashAnchor" id="auto-renew"></a><span class="pre">--auto-renew</span></tt> | <tt class="docutils literal"><span class="pre">--no-auto-renew</span></tt> (boolean)</p>
+<blockquote>
+<div><p>Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect after the account is charged.</p>
+<p>Type: auto-renew</p>
+<p>Valid values: <tt class="docutils literal"><span class="pre">true</span></tt> | <tt class="docutils literal"><span class="pre">false</span></tt></p>
+<p>Default: true</p>
+<p>Required: No</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--admin-contact" class="dashAnchor" id="admin-contact"></a><span class="pre">--admin-contact</span></tt> (structure)</p>
+<blockquote>
+<div><p>Provides detailed contact information.</p>
+<p>Type: Complex</p>
+<p>Children: <tt class="docutils literal"><span class="pre">FirstName</span></tt> , <tt class="docutils literal"><span class="pre">MiddleName</span></tt> , <tt class="docutils literal"><span class="pre">LastName</span></tt> , <tt class="docutils literal"><span class="pre">ContactType</span></tt> , <tt class="docutils literal"><span class="pre">OrganizationName</span></tt> , <tt class="docutils literal"><span class="pre">AddressLine1</span></tt> , <tt class="docutils literal"><span class="pre">AddressLine2</span></tt> , <tt class="docutils literal"><span class="pre">City</span></tt> , <tt class="docutils literal"><span class="pre">State</span></tt> , <tt class="docutils literal"><span class="pre">CountryCode</span></tt> , <tt class="docutils literal"><span class="pre">ZipCode</span></tt> , <tt class="docutils literal"><span class="pre">PhoneNumber</span></tt> , <tt class="docutils literal"><span class="pre">Email</span></tt> , <tt class="docutils literal"><span class="pre">Fax</span></tt> , <tt class="docutils literal"><span class="pre">ExtraParams</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>FirstName=string,LastName=string,ContactType=string,OrganizationName=string,AddressLine1=string,AddressLine2=string,City=string,State=string,CountryCode=string,ZipCode=string,PhoneNumber=string,Email=string,Fax=string,ExtraParams=[{Name=string,Value=string},{Name=string,Value=string}]</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{
+  "FirstName": "string",
+  "LastName": "string",
+  "ContactType": "PERSON"|"COMPANY"|"ASSOCIATION"|"PUBLIC_BODY"|"RESELLER",
+  "OrganizationName": "string",
+  "AddressLine1": "string",
+  "AddressLine2": "string",
+  "City": "string",
+  "State": "string",
+  "CountryCode": "AD"|"AE"|"AF"|"AG"|"AI"|"AL"|"AM"|"AN"|"AO"|"AQ"|"AR"|"AS"|"AT"|"AU"|"AW"|"AZ"|"BA"|"BB"|"BD"|"BE"|"BF"|"BG"|"BH"|"BI"|"BJ"|"BL"|"BM"|"BN"|"BO"|"BR"|"BS"|"BT"|"BW"|"BY"|"BZ"|"CA"|"CC"|"CD"|"CF"|"CG"|"CH"|"CI"|"CK"|"CL"|"CM"|"CN"|"CO"|"CR"|"CU"|"CV"|"CX"|"CY"|"CZ"|"DE"|"DJ"|"DK"|"DM"|"DO"|"DZ"|"EC"|"EE"|"EG"|"ER"|"ES"|"ET"|"FI"|"FJ"|"FK"|"FM"|"FO"|"FR"|"GA"|"GB"|"GD"|"GE"|"GH"|"GI"|"GL"|"GM"|"GN"|"GQ"|"GR"|"GT"|"GU"|"GW"|"GY"|"HK"|"HN"|"HR"|"HT"|"HU"|"ID"|"IE"|"IL"|"IM"|"IN"|"IQ"|"IR"|"IS"|"IT"|"JM"|"JO"|"JP"|"KE"|"KG"|"KH"|"KI"|"KM"|"KN"|"KP"|"KR"|"KW"|"KY"|"KZ"|"LA"|"LB"|"LC"|"LI"|"LK"|"LR"|"LS"|"LT"|"LU"|"LV"|"LY"|"MA"|"MC"|"MD"|"ME"|"MF"|"MG"|"MH"|"MK"|"ML"|"MM"|"MN"|"MO"|"MP"|"MR"|"MS"|"MT"|"MU"|"MV"|"MW"|"MX"|"MY"|"MZ"|"NA"|"NC"|"NE"|"NG"|"NI"|"NL"|"NO"|"NP"|"NR"|"NU"|"NZ"|"OM"|"PA"|"PE"|"PF"|"PG"|"PH"|"PK"|"PL"|"PM"|"PN"|"PR"|"PT"|"PW"|"PY"|"QA"|"RO"|"RS"|"RU"|"RW"|"SA"|"SB"|"SC"|"SD"|"SE"|"SG"|"SH"|"SI"|"SK"|"SL"|"SM"|"SN"|"SO"|"SR"|"ST"|"SV"|"SY"|"SZ"|"TC"|"TD"|"TG"|"TH"|"TJ"|"TK"|"TL"|"TM"|"TN"|"TO"|"TR"|"TT"|"TV"|"TW"|"TZ"|"UA"|"UG"|"US"|"UY"|"UZ"|"VA"|"VC"|"VE"|"VG"|"VI"|"VN"|"VU"|"WF"|"WS"|"YE"|"YT"|"ZA"|"ZM"|"ZW",
+  "ZipCode": "string",
+  "PhoneNumber": "string",
+  "Email": "string",
+  "Fax": "string",
+  "ExtraParams": [
+    {
+      "Name": "DUNS_NUMBER"|"BRAND_NUMBER"|"BIRTH_DEPARTMENT"|"BIRTH_DATE_IN_YYYY_MM_DD"|"BIRTH_COUNTRY"|"BIRTH_CITY"|"DOCUMENT_NUMBER"|"AU_ID_NUMBER"|"AU_ID_TYPE"|"CA_LEGAL_TYPE"|"CA_BUSINESS_ENTITY_TYPE"|"ES_IDENTIFICATION"|"ES_IDENTIFICATION_TYPE"|"ES_LEGAL_FORM"|"FI_BUSINESS_NUMBER"|"FI_ID_NUMBER"|"IT_PIN"|"RU_PASSPORT_DATA"|"SE_ID_NUMBER"|"SG_ID_NUMBER"|"VAT_NUMBER",
+      "Value": "string"
+    }
+    ...
+  ]
+}</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--registrant-contact" class="dashAnchor" id="registrant-contact"></a><span class="pre">--registrant-contact</span></tt> (structure)</p>
+<blockquote>
+<div><p>Provides detailed contact information.</p>
+<p>Type: Complex</p>
+<p>Children: <tt class="docutils literal"><span class="pre">FirstName</span></tt> , <tt class="docutils literal"><span class="pre">MiddleName</span></tt> , <tt class="docutils literal"><span class="pre">LastName</span></tt> , <tt class="docutils literal"><span class="pre">ContactType</span></tt> , <tt class="docutils literal"><span class="pre">OrganizationName</span></tt> , <tt class="docutils literal"><span class="pre">AddressLine1</span></tt> , <tt class="docutils literal"><span class="pre">AddressLine2</span></tt> , <tt class="docutils literal"><span class="pre">City</span></tt> , <tt class="docutils literal"><span class="pre">State</span></tt> , <tt class="docutils literal"><span class="pre">CountryCode</span></tt> , <tt class="docutils literal"><span class="pre">ZipCode</span></tt> , <tt class="docutils literal"><span class="pre">PhoneNumber</span></tt> , <tt class="docutils literal"><span class="pre">Email</span></tt> , <tt class="docutils literal"><span class="pre">Fax</span></tt> , <tt class="docutils literal"><span class="pre">ExtraParams</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>FirstName=string,LastName=string,ContactType=string,OrganizationName=string,AddressLine1=string,AddressLine2=string,City=string,State=string,CountryCode=string,ZipCode=string,PhoneNumber=string,Email=string,Fax=string,ExtraParams=[{Name=string,Value=string},{Name=string,Value=string}]</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{
+  "FirstName": "string",
+  "LastName": "string",
+  "ContactType": "PERSON"|"COMPANY"|"ASSOCIATION"|"PUBLIC_BODY"|"RESELLER",
+  "OrganizationName": "string",
+  "AddressLine1": "string",
+  "AddressLine2": "string",
+  "City": "string",
+  "State": "string",
+  "CountryCode": "AD"|"AE"|"AF"|"AG"|"AI"|"AL"|"AM"|"AN"|"AO"|"AQ"|"AR"|"AS"|"AT"|"AU"|"AW"|"AZ"|"BA"|"BB"|"BD"|"BE"|"BF"|"BG"|"BH"|"BI"|"BJ"|"BL"|"BM"|"BN"|"BO"|"BR"|"BS"|"BT"|"BW"|"BY"|"BZ"|"CA"|"CC"|"CD"|"CF"|"CG"|"CH"|"CI"|"CK"|"CL"|"CM"|"CN"|"CO"|"CR"|"CU"|"CV"|"CX"|"CY"|"CZ"|"DE"|"DJ"|"DK"|"DM"|"DO"|"DZ"|"EC"|"EE"|"EG"|"ER"|"ES"|"ET"|"FI"|"FJ"|"FK"|"FM"|"FO"|"FR"|"GA"|"GB"|"GD"|"GE"|"GH"|"GI"|"GL"|"GM"|"GN"|"GQ"|"GR"|"GT"|"GU"|"GW"|"GY"|"HK"|"HN"|"HR"|"HT"|"HU"|"ID"|"IE"|"IL"|"IM"|"IN"|"IQ"|"IR"|"IS"|"IT"|"JM"|"JO"|"JP"|"KE"|"KG"|"KH"|"KI"|"KM"|"KN"|"KP"|"KR"|"KW"|"KY"|"KZ"|"LA"|"LB"|"LC"|"LI"|"LK"|"LR"|"LS"|"LT"|"LU"|"LV"|"LY"|"MA"|"MC"|"MD"|"ME"|"MF"|"MG"|"MH"|"MK"|"ML"|"MM"|"MN"|"MO"|"MP"|"MR"|"MS"|"MT"|"MU"|"MV"|"MW"|"MX"|"MY"|"MZ"|"NA"|"NC"|"NE"|"NG"|"NI"|"NL"|"NO"|"NP"|"NR"|"NU"|"NZ"|"OM"|"PA"|"PE"|"PF"|"PG"|"PH"|"PK"|"PL"|"PM"|"PN"|"PR"|"PT"|"PW"|"PY"|"QA"|"RO"|"RS"|"RU"|"RW"|"SA"|"SB"|"SC"|"SD"|"SE"|"SG"|"SH"|"SI"|"SK"|"SL"|"SM"|"SN"|"SO"|"SR"|"ST"|"SV"|"SY"|"SZ"|"TC"|"TD"|"TG"|"TH"|"TJ"|"TK"|"TL"|"TM"|"TN"|"TO"|"TR"|"TT"|"TV"|"TW"|"TZ"|"UA"|"UG"|"US"|"UY"|"UZ"|"VA"|"VC"|"VE"|"VG"|"VI"|"VN"|"VU"|"WF"|"WS"|"YE"|"YT"|"ZA"|"ZM"|"ZW",
+  "ZipCode": "string",
+  "PhoneNumber": "string",
+  "Email": "string",
+  "Fax": "string",
+  "ExtraParams": [
+    {
+      "Name": "DUNS_NUMBER"|"BRAND_NUMBER"|"BIRTH_DEPARTMENT"|"BIRTH_DATE_IN_YYYY_MM_DD"|"BIRTH_COUNTRY"|"BIRTH_CITY"|"DOCUMENT_NUMBER"|"AU_ID_NUMBER"|"AU_ID_TYPE"|"CA_LEGAL_TYPE"|"CA_BUSINESS_ENTITY_TYPE"|"ES_IDENTIFICATION"|"ES_IDENTIFICATION_TYPE"|"ES_LEGAL_FORM"|"FI_BUSINESS_NUMBER"|"FI_ID_NUMBER"|"IT_PIN"|"RU_PASSPORT_DATA"|"SE_ID_NUMBER"|"SG_ID_NUMBER"|"VAT_NUMBER",
+      "Value": "string"
+    }
+    ...
+  ]
+}</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--tech-contact" class="dashAnchor" id="tech-contact"></a><span class="pre">--tech-contact</span></tt> (structure)</p>
+<blockquote>
+<div><p>Provides detailed contact information.</p>
+<p>Type: Complex</p>
+<p>Children: <tt class="docutils literal"><span class="pre">FirstName</span></tt> , <tt class="docutils literal"><span class="pre">MiddleName</span></tt> , <tt class="docutils literal"><span class="pre">LastName</span></tt> , <tt class="docutils literal"><span class="pre">ContactType</span></tt> , <tt class="docutils literal"><span class="pre">OrganizationName</span></tt> , <tt class="docutils literal"><span class="pre">AddressLine1</span></tt> , <tt class="docutils literal"><span class="pre">AddressLine2</span></tt> , <tt class="docutils literal"><span class="pre">City</span></tt> , <tt class="docutils literal"><span class="pre">State</span></tt> , <tt class="docutils literal"><span class="pre">CountryCode</span></tt> , <tt class="docutils literal"><span class="pre">ZipCode</span></tt> , <tt class="docutils literal"><span class="pre">PhoneNumber</span></tt> , <tt class="docutils literal"><span class="pre">Email</span></tt> , <tt class="docutils literal"><span class="pre">Fax</span></tt> , <tt class="docutils literal"><span class="pre">ExtraParams</span></tt></p>
+<p>Required: Yes</p>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>FirstName=string,LastName=string,ContactType=string,OrganizationName=string,AddressLine1=string,AddressLine2=string,City=string,State=string,CountryCode=string,ZipCode=string,PhoneNumber=string,Email=string,Fax=string,ExtraParams=[{Name=string,Value=string},{Name=string,Value=string}]</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{
+  "FirstName": "string",
+  "LastName": "string",
+  "ContactType": "PERSON"|"COMPANY"|"ASSOCIATION"|"PUBLIC_BODY"|"RESELLER",
+  "OrganizationName": "string",
+  "AddressLine1": "string",
+  "AddressLine2": "string",
+  "City": "string",
+  "State": "string",
+  "CountryCode": "AD"|"AE"|"AF"|"AG"|"AI"|"AL"|"AM"|"AN"|"AO"|"AQ"|"AR"|"AS"|"AT"|"AU"|"AW"|"AZ"|"BA"|"BB"|"BD"|"BE"|"BF"|"BG"|"BH"|"BI"|"BJ"|"BL"|"BM"|"BN"|"BO"|"BR"|"BS"|"BT"|"BW"|"BY"|"BZ"|"CA"|"CC"|"CD"|"CF"|"CG"|"CH"|"CI"|"CK"|"CL"|"CM"|"CN"|"CO"|"CR"|"CU"|"CV"|"CX"|"CY"|"CZ"|"DE"|"DJ"|"DK"|"DM"|"DO"|"DZ"|"EC"|"EE"|"EG"|"ER"|"ES"|"ET"|"FI"|"FJ"|"FK"|"FM"|"FO"|"FR"|"GA"|"GB"|"GD"|"GE"|"GH"|"GI"|"GL"|"GM"|"GN"|"GQ"|"GR"|"GT"|"GU"|"GW"|"GY"|"HK"|"HN"|"HR"|"HT"|"HU"|"ID"|"IE"|"IL"|"IM"|"IN"|"IQ"|"IR"|"IS"|"IT"|"JM"|"JO"|"JP"|"KE"|"KG"|"KH"|"KI"|"KM"|"KN"|"KP"|"KR"|"KW"|"KY"|"KZ"|"LA"|"LB"|"LC"|"LI"|"LK"|"LR"|"LS"|"LT"|"LU"|"LV"|"LY"|"MA"|"MC"|"MD"|"ME"|"MF"|"MG"|"MH"|"MK"|"ML"|"MM"|"MN"|"MO"|"MP"|"MR"|"MS"|"MT"|"MU"|"MV"|"MW"|"MX"|"MY"|"MZ"|"NA"|"NC"|"NE"|"NG"|"NI"|"NL"|"NO"|"NP"|"NR"|"NU"|"NZ"|"OM"|"PA"|"PE"|"PF"|"PG"|"PH"|"PK"|"PL"|"PM"|"PN"|"PR"|"PT"|"PW"|"PY"|"QA"|"RO"|"RS"|"RU"|"RW"|"SA"|"SB"|"SC"|"SD"|"SE"|"SG"|"SH"|"SI"|"SK"|"SL"|"SM"|"SN"|"SO"|"SR"|"ST"|"SV"|"SY"|"SZ"|"TC"|"TD"|"TG"|"TH"|"TJ"|"TK"|"TL"|"TM"|"TN"|"TO"|"TR"|"TT"|"TV"|"TW"|"TZ"|"UA"|"UG"|"US"|"UY"|"UZ"|"VA"|"VC"|"VE"|"VG"|"VI"|"VN"|"VU"|"WF"|"WS"|"YE"|"YT"|"ZA"|"ZM"|"ZW",
+  "ZipCode": "string",
+  "PhoneNumber": "string",
+  "Email": "string",
+  "Fax": "string",
+  "ExtraParams": [
+    {
+      "Name": "DUNS_NUMBER"|"BRAND_NUMBER"|"BIRTH_DEPARTMENT"|"BIRTH_DATE_IN_YYYY_MM_DD"|"BIRTH_COUNTRY"|"BIRTH_CITY"|"DOCUMENT_NUMBER"|"AU_ID_NUMBER"|"AU_ID_TYPE"|"CA_LEGAL_TYPE"|"CA_BUSINESS_ENTITY_TYPE"|"ES_IDENTIFICATION"|"ES_IDENTIFICATION_TYPE"|"ES_LEGAL_FORM"|"FI_BUSINESS_NUMBER"|"FI_ID_NUMBER"|"IT_PIN"|"RU_PASSPORT_DATA"|"SE_ID_NUMBER"|"SG_ID_NUMBER"|"VAT_NUMBER",
+      "Value": "string"
+    }
+    ...
+  ]
+}</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--privacy-protect-admin-contact" class="dashAnchor" id="privacy-protect-admin-contact"></a><span class="pre">--privacy-protect-admin-contact</span></tt> | <tt class="docutils literal"><span class="pre">--no-privacy-protect-admin-contact</span></tt> (boolean)</p>
+<blockquote>
+<div><p>Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact information that you enter.</p>
+<p>Type: auto-renew</p>
+<p>Default: <tt class="docutils literal"><span class="pre">true</span></tt></p>
+<p>Valid values: <tt class="docutils literal"><span class="pre">true</span></tt> | <tt class="docutils literal"><span class="pre">false</span></tt></p>
+<p>Required: No</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--privacy-protect-registrant-contact" class="dashAnchor" id="privacy-protect-registrant-contact"></a><span class="pre">--privacy-protect-registrant-contact</span></tt> | <tt class="docutils literal"><span class="pre">--no-privacy-protect-registrant-contact</span></tt> (boolean)</p>
+<blockquote>
+<div><p>Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact information that you enter.</p>
+<p>Type: auto-renew</p>
+<p>Default: <tt class="docutils literal"><span class="pre">true</span></tt></p>
+<p>Valid values: <tt class="docutils literal"><span class="pre">true</span></tt> | <tt class="docutils literal"><span class="pre">false</span></tt></p>
+<p>Required: No</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--privacy-protect-tech-contact" class="dashAnchor" id="privacy-protect-tech-contact"></a><span class="pre">--privacy-protect-tech-contact</span></tt> | <tt class="docutils literal"><span class="pre">--no-privacy-protect-tech-contact</span></tt> (boolean)</p>
+<blockquote>
+<div><p>Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact information that you enter.</p>
+<p>Type: auto-renew</p>
+<p>Default: <tt class="docutils literal"><span class="pre">true</span></tt></p>
+<p>Valid values: <tt class="docutils literal"><span class="pre">true</span></tt> | <tt class="docutils literal"><span class="pre">false</span></tt></p>
+<p>Required: No</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>OperationId -&gt; (string)</p>
+<blockquote>
+<div><p>Identifier for tracking the progress of the request. To use this ID to query the operation status, use GetOperationDetail.</p>
+<p>Type: String</p>
+<p>Default: None</p>
+<p>Constraints: Maximum 255 characters.</p>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="retrieve-domain-auth-code.html" title="previous chapter (use the left arrow)">&#8592; retrieve-domain-auth-code</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="update-domain-contact.html" title="next chapter (use the right arrow)">update-domain-contact &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="update-domain-contact.html" title="update-domain-contact">next</a> |</li>
+        <li class="right">
+          <a href="retrieve-domain-auth-code.html" title="retrieve-domain-auth-code">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">route53domains</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53domains/transfer-domain.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:28 GMT -->
+</html>

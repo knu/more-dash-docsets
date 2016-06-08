@@ -1,0 +1,327 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:37:00 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>aws &mdash; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../index-2.html" />
+    <link rel="next" title="acm" href="acm/index.html" />
+    <link rel="prev" title="AWS CLI Command Reference" href="../index-2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../index-2.html">Home</a></li>
+<li><a href="../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="acm/index.html" title="acm"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index-2.html" title="AWS CLI Command Reference"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index-2.html">AWS CLI 1.10.36 Command Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../index-2.html" title="previous chapter (use the left arrow)">&larr; AWS CLI Command Reference</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="acm/index.html" title="next chapter (use the right arrow)">acm &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../index-2.html">
+    <img class="logo" src="../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">aws</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#available-services">Available Services</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <div class="section" id="aws">
+<span id="cli-aws"></span><h1>aws<a class="headerlink" href="#aws" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The AWS Command Line Interface is a unified tool to manage your AWS services.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>aws [options] &lt;command&gt; &lt;subcommand&gt; [parameters]</pre>
+</div>
+<p>Use <em>aws command help</em> for information on a specific command. Use <em>aws help topics</em> to view a list of available help topics. The synopsis for each command shows its parameters and their usage. Optional parameters are shown in square brackets.</p>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--debug</span></tt> (boolean)</p>
+<p>Turn on debug logging.</p>
+<p><tt class="docutils literal"><span class="pre">--endpoint-url</span></tt> (string)</p>
+<p>Override command's default URL with the given URL.</p>
+<p><tt class="docutils literal"><span class="pre">--no-verify-ssl</span></tt> (boolean)</p>
+<p>By default, the AWS CLI uses SSL when communicating with AWS services. For each SSL connection, the AWS CLI will verify SSL certificates. This option overrides the default behavior of verifying SSL certificates.</p>
+<p><tt class="docutils literal"><span class="pre">--no-paginate</span></tt> (boolean)</p>
+<p>Disable automatic pagination.</p>
+<p><tt class="docutils literal"><span class="pre">--output</span></tt> (string)</p>
+<p>The formatting style for command output.</p>
+<ul class="simple">
+<li>json</li>
+<li>text</li>
+<li>table</li>
+</ul>
+<p><tt class="docutils literal"><span class="pre">--query</span></tt> (string)</p>
+<p>A JMESPath query to use in filtering the response data.</p>
+<p><tt class="docutils literal"><span class="pre">--profile</span></tt> (string)</p>
+<p>Use a specific profile from your credential file.</p>
+<p><tt class="docutils literal"><span class="pre">--region</span></tt> (string)</p>
+<p>The region to use. Overrides config/env settings.</p>
+<p><tt class="docutils literal"><span class="pre">--version</span></tt> (string)</p>
+<p>Display the version of this tool.</p>
+<p><tt class="docutils literal"><span class="pre">--color</span></tt> (string)</p>
+<p>Turn on/off color output.</p>
+<ul class="simple">
+<li>on</li>
+<li>off</li>
+<li>auto</li>
+</ul>
+<p><tt class="docutils literal"><span class="pre">--no-sign-request</span></tt> (boolean)</p>
+<p>Do not sign requests. Credentials will not be loaded if this argument is provided.</p>
+<p><tt class="docutils literal"><span class="pre">--ca-bundle</span></tt> (string)</p>
+<p>The CA certificate bundle to use when verifying SSL certificates. Overrides config/env settings.</p>
+<p><tt class="docutils literal"><span class="pre">--cli-read-timeout</span></tt> (int)</p>
+<p>The maximum socket read time in seconds. If the value is set to 0, the socket read will be blocking and not timeout.</p>
+<p><tt class="docutils literal"><span class="pre">--cli-connect-timeout</span></tt> (int)</p>
+<p>The maximum socket connect time in seconds. If the value is set to 0, the socket connect will be blocking and not timeout.</p>
+</div>
+<div class="section" id="available-services">
+<h2>Available Services<a class="headerlink" href="#available-services" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="acm/index.html">acm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apigateway/index.html">apigateway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="application-autoscaling/index.html">application-autoscaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autoscaling/index.html">autoscaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cloudformation/index.html">cloudformation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cloudfront/index.html">cloudfront</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cloudhsm/index.html">cloudhsm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cloudsearch/index.html">cloudsearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cloudsearchdomain/index.html">cloudsearchdomain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cloudtrail/index.html">cloudtrail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cloudwatch/index.html">cloudwatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codecommit/index.html">codecommit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codepipeline/index.html">codepipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cognito-identity/index.html">cognito-identity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cognito-idp/index.html">cognito-idp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cognito-sync/index.html">cognito-sync</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configservice/index.html">configservice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configure/index.html">configure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datapipeline/index.html">datapipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploy/index.html">deploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devicefarm/index.html">devicefarm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directconnect/index.html">directconnect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="discovery/index.html">discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dms/index.html">dms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ds/index.html">ds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dynamodb/index.html">dynamodb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dynamodbstreams/index.html">dynamodbstreams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ec2/index.html">ec2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ecr/index.html">ecr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ecs/index.html">ecs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="efs/index.html">efs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="elasticache/index.html">elasticache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="elasticbeanstalk/index.html">elasticbeanstalk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="elastictranscoder/index.html">elastictranscoder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="elb/index.html">elb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="emr/index.html">emr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="es/index.html">es</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events/index.html">events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firehose/index.html">firehose</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gamelift/index.html">gamelift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glacier/index.html">glacier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iam/index.html">iam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="importexport/index.html">importexport</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inspector/index.html">inspector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iot/index.html">iot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iot-data/index.html">iot-data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kinesis/index.html">kinesis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kms/index.html">kms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lambda/index.html">lambda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logs/index.html">logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="machinelearning/index.html">machinelearning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="marketplacecommerceanalytics/index.html">marketplacecommerceanalytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meteringmarketplace/index.html">meteringmarketplace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opsworks/index.html">opsworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rds/index.html">rds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="redshift/index.html">redshift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="route53/index.html">route53</a></li>
+<li class="toctree-l1"><a class="reference internal" href="route53domains/index.html">route53domains</a></li>
+<li class="toctree-l1"><a class="reference internal" href="s3/index.html">s3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="s3api/index.html">s3api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdb/index.html">sdb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ses/index.html">ses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sns/index.html">sns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sqs/index.html">sqs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ssm/index.html">ssm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="storagegateway/index.html">storagegateway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sts/index.html">sts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support/index.html">support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swf/index.html">swf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="waf/index.html">waf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workspaces/index.html">workspaces</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../topic/index.html#cli-aws-help-topics"><em>aws help topics</em></a></li>
+</ul>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../index-2.html" title="previous chapter (use the left arrow)">&larr; AWS CLI Command Reference</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="acm/index.html" title="next chapter (use the right arrow)">acm &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="acm/index.html" title="acm"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../index-2.html" title="AWS CLI Command Reference"
+             >previous</a> |</li>
+        <li><a href="../index-2.html">AWS CLI 1.10.36 Command Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:37:00 GMT -->
+</html>

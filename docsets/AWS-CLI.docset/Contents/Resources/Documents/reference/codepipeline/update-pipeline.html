@@ -1,0 +1,532 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/codepipeline/update-pipeline.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:00 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>update-pipeline &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="codepipeline" href="index.html" />
+    <link rel="next" title="cognito-identity" href="../cognito-identity/index.html" />
+    <link rel="prev" title="start-pipeline-execution" href="start-pipeline-execution.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="../cognito-identity/index.html" title="cognito-identity" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="start-pipeline-execution.html" title="start-pipeline-execution" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">codepipeline</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="start-pipeline-execution.html" title="previous chapter (use the left arrow)">&#8592; start-pipeline-execution</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../cognito-identity/index.html" title="next chapter (use the right arrow)">cognito-identity &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">update-pipeline</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/codepipeline/update-pipeline">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-codepipeline"><em>codepipeline</em></a> ]</p>
+<div class="section" id="update-pipeline">
+<span id="cli-aws-codepipeline-update-pipeline"></span><h1>update-pipeline<a name="//apple_ref/cpp/Command/aws codepipeline update-pipeline" class="dashAnchor" id="aws codepipeline update-pipeline"></a><a class="headerlink" href="#update-pipeline" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Updates a specified pipeline with edits or changes to its structure. Use a JSON file with the pipeline structure in conjunction with update-pipeline to provide the full structure of the pipeline. Updating the pipeline increases the version number of the pipeline by 1.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  update-pipeline
+--pipeline &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--pipeline" class="dashAnchor" id="pipeline"></a><span class="pre">--pipeline</span></tt> (structure)</p>
+<blockquote>
+<div>The name of the pipeline to be updated.</div></blockquote>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{
+  "name": "string",
+  "roleArn": "string",
+  "artifactStore": {
+    "type": "S3",
+    "location": "string",
+    "encryptionKey": {
+      "id": "string",
+      "type": "KMS"
+    }
+  },
+  "stages": [
+    {
+      "name": "string",
+      "blockers": [
+        {
+          "name": "string",
+          "type": "Schedule"
+        }
+        ...
+      ],
+      "actions": [
+        {
+          "name": "string",
+          "actionTypeId": {
+            "category": "Source"|"Build"|"Deploy"|"Test"|"Invoke",
+            "owner": "AWS"|"ThirdParty"|"Custom",
+            "provider": "string",
+            "version": "string"
+          },
+          "runOrder": integer,
+          "configuration": {"string": "string"
+            ...},
+          "outputArtifacts": [
+            {
+              "name": "string"
+            }
+            ...
+          ],
+          "inputArtifacts": [
+            {
+              "name": "string"
+            }
+            ...
+          ],
+          "roleArn": "string"
+        }
+        ...
+      ]
+    }
+    ...
+  ],
+  "version": integer
+}</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To update the structure of a pipeline</strong></p>
+<p>This example updates the structure of a pipeline by using a pre-defined JSON file (MyFirstPipeline.json) to supply the new structure.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws codepipeline update-pipeline --cli-input-json file://MyFirstPipeline.json</pre>
+</div>
+<p>Sample JSON file contents:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+ <span class="s2">"pipeline"</span><span class="p">:</span> <span class="p">{</span>
+  <span class="s2">"roleArn"</span><span class="p">:</span> <span class="s2">"arn:aws:iam::111111111111:role/AWS-CodePipeline-Service"</span><span class="p">,</span>
+  <span class="s2">"stages"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Source"</span><span class="p">,</span>
+      <span class="s2">"actions"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"inputArtifacts"</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Source"</span><span class="p">,</span>
+          <span class="s2">"actionTypeId"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"category"</span><span class="p">:</span> <span class="s2">"Source"</span><span class="p">,</span>
+            <span class="s2">"owner"</span><span class="p">:</span> <span class="s2">"AWS"</span><span class="p">,</span>
+            <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
+            <span class="s2">"provider"</span><span class="p">:</span> <span class="s2">"S3"</span>
+          <span class="p">},</span>
+          <span class="s2">"outputArtifacts"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+              <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"MyApp"</span>
+            <span class="p">}</span>
+          <span class="p">],</span>
+          <span class="s2">"configuration"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"S3Bucket"</span><span class="p">:</span> <span class="s2">"awscodepipeline-demo-bucket2"</span><span class="p">,</span>
+            <span class="s2">"S3ObjectKey"</span><span class="p">:</span> <span class="s2">"aws-codepipeline-s3-aws-codedeploy_linux.zip"</span>
+          <span class="p">},</span>
+          <span class="s2">"runOrder"</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Beta"</span><span class="p">,</span>
+      <span class="s2">"actions"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"inputArtifacts"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+              <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"MyApp"</span>
+            <span class="p">}</span>
+          <span class="p">],</span>
+          <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"CodePipelineDemoFleet"</span><span class="p">,</span>
+          <span class="s2">"actionTypeId"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"category"</span><span class="p">:</span> <span class="s2">"Deploy"</span><span class="p">,</span>
+            <span class="s2">"owner"</span><span class="p">:</span> <span class="s2">"AWS"</span><span class="p">,</span>
+            <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
+            <span class="s2">"provider"</span><span class="p">:</span> <span class="s2">"CodeDeploy"</span>
+          <span class="p">},</span>
+          <span class="s2">"outputArtifacts"</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="s2">"configuration"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"ApplicationName"</span><span class="p">:</span> <span class="s2">"CodePipelineDemoApplication"</span><span class="p">,</span>
+            <span class="s2">"DeploymentGroupName"</span><span class="p">:</span> <span class="s2">"CodePipelineDemoFleet"</span>
+          <span class="p">},</span>
+          <span class="s2">"runOrder"</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"artifactStore"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"S3"</span><span class="p">,</span>
+    <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"codepipeline-us-east-1-11EXAMPLE11"</span>
+  <span class="p">},</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"MyFirstPipeline"</span><span class="p">,</span>
+  <span class="s2">"version"</span><span class="p">:</span> <span class="mi">1</span>
+ <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+ <span class="s2">"pipeline"</span><span class="p">:</span> <span class="p">{</span>
+  <span class="s2">"artifactStore"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"codepipeline-us-east-1-11EXAMPLE11"</span><span class="p">,</span>
+    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"S3"</span>
+  <span class="p">},</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"MyFirstPipeline"</span><span class="p">,</span>
+  <span class="s2">"roleArn"</span><span class="p">:</span> <span class="s2">"arn:aws:iam::111111111111:role/AWS-CodePipeline-Service"</span><span class="p">,</span>
+  <span class="s2">"stages"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"actions"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"actionTypeId"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"__type"</span><span class="p">:</span> <span class="s2">"ActionTypeId"</span><span class="p">,</span>
+            <span class="s2">"category"</span><span class="p">:</span> <span class="s2">"Source"</span><span class="p">,</span>
+            <span class="s2">"owner"</span><span class="p">:</span> <span class="s2">"AWS"</span><span class="p">,</span>
+            <span class="s2">"provider"</span><span class="p">:</span> <span class="s2">"S3"</span><span class="p">,</span>
+            <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"1"</span>
+          <span class="p">},</span>
+          <span class="s2">"configuration"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"S3Bucket"</span><span class="p">:</span> <span class="s2">"awscodepipeline-demo-bucket2"</span><span class="p">,</span>
+            <span class="s2">"S3ObjectKey"</span><span class="p">:</span> <span class="s2">"aws-codepipeline-s3-aws-codedeploy_linux.zip"</span>
+          <span class="p">},</span>
+          <span class="s2">"inputArtifacts"</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Source"</span><span class="p">,</span>
+          <span class="s2">"outputArtifacts"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+              <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"MyApp"</span>
+            <span class="p">}</span>
+          <span class="p">],</span>
+          <span class="s2">"runOrder"</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Source"</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">"actions"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"actionTypeId"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"__type"</span><span class="p">:</span> <span class="s2">"ActionTypeId"</span><span class="p">,</span>
+            <span class="s2">"category"</span><span class="p">:</span> <span class="s2">"Deploy"</span><span class="p">,</span>
+            <span class="s2">"owner"</span><span class="p">:</span> <span class="s2">"AWS"</span><span class="p">,</span>
+            <span class="s2">"provider"</span><span class="p">:</span> <span class="s2">"CodeDeploy"</span><span class="p">,</span>
+            <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"1"</span>
+          <span class="p">},</span>
+          <span class="s2">"configuration"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"ApplicationName"</span><span class="p">:</span> <span class="s2">"CodePipelineDemoApplication"</span><span class="p">,</span>
+            <span class="s2">"DeploymentGroupName"</span><span class="p">:</span> <span class="s2">"CodePipelineDemoFleet"</span>
+          <span class="p">},</span>
+          <span class="s2">"inputArtifacts"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+              <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"MyApp"</span>
+            <span class="p">}</span>
+          <span class="p">],</span>
+          <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"CodePipelineDemoFleet"</span><span class="p">,</span>
+          <span class="s2">"outputArtifacts"</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="s2">"runOrder"</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Beta"</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"version"</span><span class="p">:</span> <span class="mi">3</span>
+ <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>pipeline -&gt; (structure)</p>
+<blockquote>
+<div><p>The structure of the updated pipeline.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name of the action to be performed.</div></blockquote>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no actionRoleArn, or to use to assume roles for actions with an actionRoleArn.</div></blockquote>
+<p>artifactStore -&gt; (structure)</p>
+<blockquote>
+<div><p>The Amazon S3 location where artifacts are stored for the pipeline. If this Amazon S3 bucket is created manually, it must meet the requirements for AWS CodePipeline. For more information, see the <a class="reference external" href="http://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#CPS3Bucket">Concepts</a> .</p>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div>The type of the artifact store, such as S3.</div></blockquote>
+<p>location -&gt; (string)</p>
+<blockquote>
+<div>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</div></blockquote>
+<p>encryptionKey -&gt; (structure)</p>
+<blockquote>
+<div><p>The encryption key used to encrypt the data in the artifact store, such as an AWS Key Management Service (AWS KMS) key. If this is undefined, the default key for Amazon S3 is used.</p>
+<p>id -&gt; (string)</p>
+<blockquote>
+<div>The ID used to identify the key. For an AWS KMS key, this is the key ID or key ARN.</div></blockquote>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div>The type of encryption key, such as an AWS Key Management Service (AWS KMS) key. When creating or updating a pipeline, the value must be set to 'KMS'.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>stages -&gt; (list)</p>
+<blockquote>
+<div><p>The stage in which to perform the action.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents information about a stage and its definition.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name of the stage.</div></blockquote>
+<p>blockers -&gt; (list)</p>
+<blockquote>
+<div><p>Reserved for future use.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Reserved for future use.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>Reserved for future use.</div></blockquote>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div>Reserved for future use.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>actions -&gt; (list)</p>
+<blockquote>
+<div><p>The actions included in a stage.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents information about an action declaration.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The action declaration's name.</div></blockquote>
+<p>actionTypeId -&gt; (structure)</p>
+<blockquote>
+<div><p>The configuration information for the action type.</p>
+<p>category -&gt; (string)</p>
+<blockquote>
+<div>A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the values below.</div></blockquote>
+<p>owner -&gt; (string)</p>
+<blockquote>
+<div>The creator of the action being called.</div></blockquote>
+<p>provider -&gt; (string)</p>
+<blockquote>
+<div>The provider of the service being called by the action. Valid providers are determined by the action category. For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be specified as CodeDeploy.</div></blockquote>
+<p>version -&gt; (string)</p>
+<blockquote>
+<div>A string that identifies the action type.</div></blockquote>
+</div></blockquote>
+<p>runOrder -&gt; (integer)</p>
+<blockquote>
+<div>The order in which actions are run.</div></blockquote>
+<p>configuration -&gt; (map)</p>
+<blockquote>
+<div><p>The action declaration's configuration.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+<p>outputArtifacts -&gt; (list)</p>
+<blockquote>
+<div><p>The name or ID of the result of the action declaration, such as a test or build artifact.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents information about the output of an action.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div><p>The name of the output of an artifact, such as "My App".</p>
+<p>The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.</p>
+<p>Output artifact names must be unique within a pipeline.</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>inputArtifacts -&gt; (list)</p>
+<blockquote>
+<div><p>The name or ID of the artifact consumed by the action, such as a test or build artifact.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents information about an artifact to be worked on, such as a test or build artifact.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div><p>The name of the artifact to be worked on, for example, "My App".</p>
+<p>The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the IAM service role that will perform the declared action. This is assumed through the roleArn for the pipeline.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>version -&gt; (integer)</p>
+<blockquote>
+<div>The version number of the pipeline. A new pipeline always has a version number of 1. This number is automatically incremented when a pipeline is updated.</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="start-pipeline-execution.html" title="previous chapter (use the left arrow)">&#8592; start-pipeline-execution</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../cognito-identity/index.html" title="next chapter (use the right arrow)">cognito-identity &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="../cognito-identity/index.html" title="cognito-identity">next</a> |</li>
+        <li class="right">
+          <a href="start-pipeline-execution.html" title="start-pipeline-execution">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">codepipeline</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/codepipeline/update-pipeline.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:00 GMT -->
+</html>

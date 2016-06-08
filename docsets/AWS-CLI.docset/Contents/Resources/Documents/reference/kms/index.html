@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/kms/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:30:36 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>kms &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="cancel-key-deletion" href="cancel-key-deletion.html" />
+    <link rel="prev" title="stream-not-exists" href="../kinesis/wait/stream-not-exists.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="cancel-key-deletion.html" title="cancel-key-deletion" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="../kinesis/wait/stream-not-exists.html" title="stream-not-exists" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../kinesis/wait/stream-not-exists.html" title="previous chapter (use the left arrow)">&#8592; stream-not-exists</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="cancel-key-deletion.html" title="next chapter (use the right arrow)">cancel-key-deletion &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">kms</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/kms/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="kms">
+<span id="cli-aws-kms"></span><h1>kms<a name="//apple_ref/cpp/Command/aws kms" class="dashAnchor" id="aws kms"></a><a class="headerlink" href="#kms" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>AWS Key Management Service (AWS KMS) is an encryption and key management web service. This guide describes the AWS KMS operations that you can call programmatically. For general information about AWS KMS, see the <a class="reference external" href="http://docs.aws.amazon.com/kms/latest/developerguide/">AWS Key Management Service Developer Guide</a> .</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">AWS provides SDKs that consist of libraries and sample code for various programming languages and platforms (Java, Ruby, .Net, iOS, Android, etc.). The SDKs provide a convenient way to create programmatic access to AWS KMS and other AWS services. For example, the SDKs take care of tasks such as signing requests (see below), managing errors, and retrying requests automatically. For more information about the AWS SDKs, including how to download and install them, see <a class="reference external" href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a> .</p>
+</div>
+<p>We recommend that you use the AWS SDKs to make programmatic API calls to AWS KMS.</p>
+<p>Clients must support TLS (Transport Layer Security) 1.0. We recommend TLS 1.2. Clients must also support cipher suites with Perfect Forward Secrecy (PFS) such as Ephemeral Diffie-Hellman (DHE) or Elliptic Curve Ephemeral Diffie-Hellman (ECDHE). Most modern systems such as Java 7 and later support these modes.</p>
+<blockquote>
+<div><strong>Signing Requests</strong></div></blockquote>
+<p>Requests must be signed by using an access key ID and a secret access key. We strongly recommend that you <em>do not</em> use your AWS account (root) access key ID and secret key for everyday work with AWS KMS. Instead, use the access key ID and secret access key for an IAM user, or you can use the AWS Security Token Service to generate temporary security credentials that you can use to sign requests.</p>
+<p>All AWS KMS operations require <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a> .</p>
+<blockquote>
+<div><strong>Logging API Requests</strong></div></blockquote>
+<p>AWS KMS supports AWS CloudTrail, a service that logs AWS API calls and related events for your AWS account and delivers them to an Amazon S3 bucket that you specify. By using the information collected by CloudTrail, you can determine what requests were made to AWS KMS, who made the request, when it was made, and so on. To learn more about CloudTrail, including how to turn it on and find your log files, see the <a class="reference external" href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/">AWS CloudTrail User Guide</a> .</p>
+<blockquote>
+<div><strong>Additional Resources</strong></div></blockquote>
+<p>For more information about credentials and request signing, see the following:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS Security Credentials</a> - This topic provides general information about the types of credentials used for accessing AWS.</li>
+<li><a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html">Temporary Security Credentials</a> - This section of the <em>IAM User Guide</em> describes how to create and use temporary security credentials.</li>
+<li><a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a> - This set of topics walks you through the process of signing a request using an access key ID and a secret access key.</li>
+</ul>
+<blockquote>
+<div><strong>Commonly Used APIs</strong></div></blockquote>
+<p>Of the APIs discussed in this guide, the following will prove the most useful for most applications. You will likely perform actions other than these, such as creating keys and assigning policies, by using the console.</p>
+<ul class="simple">
+<li>encrypt</li>
+<li>decrypt</li>
+<li>generate-data-key</li>
+<li>generate-data-key-without-plaintext</li>
+</ul>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a name="//apple_ref/cpp/Section/Available Commands" class="dashAnchor" id="Available Commands"></a><a class="headerlink" href="#available-commands" title="Permalink to this headline">&#182;</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/cancel-key-deletion" class="dashAnchor" id="cancel-key-deletion"></a><a class="reference internal" href="cancel-key-deletion.html">cancel-key-deletion</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-alias" class="dashAnchor" id="create-alias"></a><a class="reference internal" href="create-alias.html">create-alias</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-grant" class="dashAnchor" id="create-grant"></a><a class="reference internal" href="create-grant.html">create-grant</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-key" class="dashAnchor" id="create-key"></a><a class="reference internal" href="create-key.html">create-key</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/decrypt" class="dashAnchor" id="decrypt"></a><a class="reference internal" href="decrypt.html">decrypt</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-alias" class="dashAnchor" id="delete-alias"></a><a class="reference internal" href="delete-alias.html">delete-alias</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-key" class="dashAnchor" id="describe-key"></a><a class="reference internal" href="describe-key.html">describe-key</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/disable-key" class="dashAnchor" id="disable-key"></a><a class="reference internal" href="disable-key.html">disable-key</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/disable-key-rotation" class="dashAnchor" id="disable-key-rotation"></a><a class="reference internal" href="disable-key-rotation.html">disable-key-rotation</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/enable-key" class="dashAnchor" id="enable-key"></a><a class="reference internal" href="enable-key.html">enable-key</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/enable-key-rotation" class="dashAnchor" id="enable-key-rotation"></a><a class="reference internal" href="enable-key-rotation.html">enable-key-rotation</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/encrypt" class="dashAnchor" id="encrypt"></a><a class="reference internal" href="encrypt.html">encrypt</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/generate-data-key" class="dashAnchor" id="generate-data-key"></a><a class="reference internal" href="generate-data-key.html">generate-data-key</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/generate-data-key-without-plaintext" class="dashAnchor" id="generate-data-key-without-plaintext"></a><a class="reference internal" href="generate-data-key-without-plaintext.html">generate-data-key-without-plaintext</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/generate-random" class="dashAnchor" id="generate-random"></a><a class="reference internal" href="generate-random.html">generate-random</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-key-policy" class="dashAnchor" id="get-key-policy"></a><a class="reference internal" href="get-key-policy.html">get-key-policy</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-key-rotation-status" class="dashAnchor" id="get-key-rotation-status"></a><a class="reference internal" href="get-key-rotation-status.html">get-key-rotation-status</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-aliases" class="dashAnchor" id="list-aliases"></a><a class="reference internal" href="list-aliases.html">list-aliases</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-grants" class="dashAnchor" id="list-grants"></a><a class="reference internal" href="list-grants.html">list-grants</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-key-policies" class="dashAnchor" id="list-key-policies"></a><a class="reference internal" href="list-key-policies.html">list-key-policies</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-keys" class="dashAnchor" id="list-keys"></a><a class="reference internal" href="list-keys.html">list-keys</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-retirable-grants" class="dashAnchor" id="list-retirable-grants"></a><a class="reference internal" href="list-retirable-grants.html">list-retirable-grants</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/put-key-policy" class="dashAnchor" id="put-key-policy"></a><a class="reference internal" href="put-key-policy.html">put-key-policy</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/re-encrypt" class="dashAnchor" id="re-encrypt"></a><a class="reference internal" href="re-encrypt.html">re-encrypt</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/retire-grant" class="dashAnchor" id="retire-grant"></a><a class="reference internal" href="retire-grant.html">retire-grant</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/revoke-grant" class="dashAnchor" id="revoke-grant"></a><a class="reference internal" href="revoke-grant.html">revoke-grant</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/schedule-key-deletion" class="dashAnchor" id="schedule-key-deletion"></a><a class="reference internal" href="schedule-key-deletion.html">schedule-key-deletion</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-alias" class="dashAnchor" id="update-alias"></a><a class="reference internal" href="update-alias.html">update-alias</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-key-description" class="dashAnchor" id="update-key-description"></a><a class="reference internal" href="update-key-description.html">update-key-description</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../kinesis/wait/stream-not-exists.html" title="previous chapter (use the left arrow)">&#8592; stream-not-exists</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="cancel-key-deletion.html" title="next chapter (use the right arrow)">cancel-key-deletion &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="cancel-key-deletion.html" title="cancel-key-deletion">next</a> |</li>
+        <li class="right">
+          <a href="../kinesis/wait/stream-not-exists.html" title="stream-not-exists">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/kms/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:30:48 GMT -->
+</html>

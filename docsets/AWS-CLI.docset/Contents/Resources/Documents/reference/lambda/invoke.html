@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/lambda/invoke.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:21 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>invoke &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="lambda" href="index.html" />
+    <link rel="next" title="invoke-async" href="invoke-async.html" />
+    <link rel="prev" title="get-policy" href="get-policy.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="invoke-async.html" title="invoke-async" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="get-policy.html" title="get-policy" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">lambda</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-policy.html" title="previous chapter (use the left arrow)">&#8592; get-policy</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="invoke-async.html" title="next chapter (use the right arrow)">invoke-async &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">invoke</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/lambda/invoke">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-lambda"><em>lambda</em></a> ]</p>
+<div class="section" id="invoke">
+<span id="cli-aws-lambda-invoke"></span><h1>invoke<a name="//apple_ref/cpp/Command/aws lambda invoke" class="dashAnchor" id="aws lambda invoke"></a><a class="headerlink" href="#invoke" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Invokes a specific Lambda function.</p>
+<p>If you are using the versioning feature, you can invoke the specific function version by providing function version or alias name that is pointing to the function version using the <tt class="docutils literal"><span class="pre">qualifier</span></tt> parameter in the request. If you don't provide the <tt class="docutils literal"><span class="pre">qualifier</span></tt> parameter, the <tt class="docutils literal"><span class="pre">$LATEST</span></tt> version of the Lambda function is invoked. For information about the versioning feature, see <a class="reference external" href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda Function Versioning and Aliases</a> .</p>
+<p>This operation requires permission for the <tt class="docutils literal"><span class="pre">lambda:InvokeFunction</span></tt> action.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  invoke
+--function-name &lt;value&gt;
+[--invocation-type &lt;value&gt;]
+[--log-type &lt;value&gt;]
+[--client-context &lt;value&gt;]
+[--payload &lt;value&gt;]
+[--qualifier &lt;value&gt;]
+outfile &lt;value&gt;</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--function-name" class="dashAnchor" id="function-name"></a><span class="pre">--function-name</span></tt> (string)</p>
+<blockquote>
+<div><p>The Lambda function name.</p>
+<p>You can specify a function name (for example, <tt class="docutils literal"><span class="pre">Thumbnail</span></tt> ) or you can specify Amazon Resource Name (ARN) of the function (for example, <tt class="docutils literal"><span class="pre">arn:aws:lambda:us-west-2:account-id:function:ThumbNail</span></tt> ). AWS Lambda also allows you to specify a partial ARN (for example, <tt class="docutils literal"><span class="pre">account-id:Thumbnail</span></tt> ). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--invocation-type" class="dashAnchor" id="invocation-type"></a><span class="pre">--invocation-type</span></tt> (string)</p>
+<blockquote>
+<div><p>By default, the <tt class="docutils literal"><span class="pre">invoke</span></tt> API assumes <tt class="docutils literal"><span class="pre">RequestResponse</span></tt> invocation type. You can optionally request asynchronous execution by specifying <tt class="docutils literal"><span class="pre">Event</span></tt> as the <tt class="docutils literal"><span class="pre">invocation-type</span></tt> . You can also use this parameter to request AWS Lambda to not execute the function but do some verification, such as if the caller is authorized to invoke the function and if the inputs are valid. You request this by specifying <tt class="docutils literal"><span class="pre">DryRun</span></tt> as the <tt class="docutils literal"><span class="pre">invocation-type</span></tt> . This is useful in a cross-account scenario when you want to verify access to a function without running it.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Event</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">RequestResponse</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">DryRun</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--log-type" class="dashAnchor" id="log-type"></a><span class="pre">--log-type</span></tt> (string)</p>
+<blockquote>
+<div><p>You can set this optional parameter to <tt class="docutils literal"><span class="pre">Tail</span></tt> in the request only if you specify the <tt class="docutils literal"><span class="pre">invocation-type</span></tt> parameter with value <tt class="docutils literal"><span class="pre">RequestResponse</span></tt> . In this case, AWS Lambda returns the base64-encoded last 4 KB of log data produced by your Lambda function in the <tt class="docutils literal"><span class="pre">x-amz-log-results</span></tt> header.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">None</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Tail</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--client-context" class="dashAnchor" id="client-context"></a><span class="pre">--client-context</span></tt> (string)</p>
+<blockquote>
+<div><p>Using the <tt class="docutils literal"><span class="pre">ClientContext</span></tt> you can pass client-specific information to the Lambda function you are invoking. You can then process the client information in your Lambda function as you choose through the context variable. For an example of a <tt class="docutils literal"><span class="pre">ClientContext</span></tt> JSON, see <a class="reference external" href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a> in the <em>Amazon Mobile Analytics API Reference and User Guide</em> .</p>
+<p>The ClientContext JSON must be base64-encoded.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--payload" class="dashAnchor" id="payload"></a><span class="pre">--payload</span></tt> (blob)</p>
+<blockquote>
+<div>JSON that you want to provide to your Lambda function as input.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--qualifier" class="dashAnchor" id="qualifier"></a><span class="pre">--qualifier</span></tt> (string)</p>
+<blockquote>
+<div><p>You can use this optional parameter to specify a Lambda function version or alias name. If you specify a function version, the API uses the qualified function ARN to invoke a specific Lambda function. If you specify an alias name, the API uses the alias ARN to invoke the Lambda function version to which the alias points.</p>
+<p>If you don't provide this parameter, then the API uses unqualified function ARN which results in invocation of the <tt class="docutils literal"><span class="pre">$LATEST</span></tt> version.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">outfile</span></tt> (string)
+Filename where the content will be saved</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>StatusCode -&gt; (integer)</p>
+<blockquote>
+<div>The HTTP status code will be in the 200 range for successful request. For the <tt class="docutils literal"><span class="pre">RequestResonse</span></tt> invocation type this status code will be 200. For the <tt class="docutils literal"><span class="pre">Event</span></tt> invocation type this status code will be 202. For the <tt class="docutils literal"><span class="pre">DryRun</span></tt> invocation type the status code will be 204.</div></blockquote>
+<p>FunctionError -&gt; (string)</p>
+<blockquote>
+<div>Indicates whether an error occurred while executing the Lambda function. If an error occurred this field will have one of two values; <tt class="docutils literal"><span class="pre">Handled</span></tt> or <tt class="docutils literal"><span class="pre">Unhandled</span></tt> . <tt class="docutils literal"><span class="pre">Handled</span></tt> errors are errors that are reported by the function while the <tt class="docutils literal"><span class="pre">Unhandled</span></tt> errors are those detected and reported by AWS Lambda. Unhandled errors include out of memory errors and function timeouts. For information about how to report an <tt class="docutils literal"><span class="pre">Handled</span></tt> error, see <a class="reference external" href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model.html">Programming Model</a> .</div></blockquote>
+<p>LogResult -&gt; (string)</p>
+<blockquote>
+<div>It is the base64-encoded logs for the Lambda function invocation. This is present only if the invocation type is <tt class="docutils literal"><span class="pre">RequestResponse</span></tt> and the logs were requested.</div></blockquote>
+<p>Payload -&gt; (blob)</p>
+<blockquote>
+<div><p>It is the JSON representation of the object returned by the Lambda function. In This is present only if the invocation type is <tt class="docutils literal"><span class="pre">RequestResponse</span></tt> .</p>
+<p>In the event of a function error this field contains a message describing the error. For the <tt class="docutils literal"><span class="pre">Handled</span></tt> errors the Lambda function will report this message. For <tt class="docutils literal"><span class="pre">Unhandled</span></tt> errors AWS Lambda reports the message.</p>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-policy.html" title="previous chapter (use the left arrow)">&#8592; get-policy</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="invoke-async.html" title="next chapter (use the right arrow)">invoke-async &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="invoke-async.html" title="invoke-async">next</a> |</li>
+        <li class="right">
+          <a href="get-policy.html" title="get-policy">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">lambda</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/lambda/invoke.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:21 GMT -->
+</html>

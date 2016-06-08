@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/authorize-security-group-egress.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>authorize-security-group-egress &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>authorize-security-group-egress &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="ec2" href="index.html" />
     <link rel="next" title="authorize-security-group-ingress" href="authorize-security-group-ingress.html" />
     <link rel="prev" title="attach-vpn-gateway" href="attach-vpn-gateway.html" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -61,7 +64,7 @@
           <a href="authorize-security-group-ingress.html" title="authorize-security-group-ingress" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="attach-vpn-gateway.html" title="attach-vpn-gateway" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">ec2</a> &#187;</li> 
       </ul>
@@ -82,23 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">authorize-security-group-egress</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,52 +112,64 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/ec2/authorize-security-group-egress">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ec2/authorize-security-group-egress">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>ec2</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-ec2"><em>ec2</em></a> ]</p>
 <div class="section" id="authorize-security-group-egress">
-<h1>authorize-security-group-egress<a class="headerlink" href="#authorize-security-group-egress" title="Permalink to this headline">&#182;</a></h1>
-<div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>This action applies only to security groups in a VPC; it's not supported for EC2 security groups. For information about Amazon Virtual Private Cloud and VPC security groups, go to the Amazon Virtual Private Cloud User Guide.</p>
-<p>The action adds one or more egress rules to a VPC security group. Specifically, this permits instances in a security group to send traffic to either one or more destination CIDR IP address ranges, or to one or more destination security groups in the same VPC.</p>
-<p>Each rule consists of the protocol (e.g., TCP), plus either a CIDR range, or a source group. For the TCP and UDP protocols, you must also specify the destination port or port range. For the ICMP protocol, you must also specify the ICMP type and code. You can use <tt class="docutils literal"><span class="pre">-1</span></tt>  as a wildcard for the ICMP type or code.</p>
-<p>Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay might occur.</p>
-<blockquote>
-<div><strong>Important:</strong> For VPC security groups: You can have up to 50 rules total per group (covering both ingress and egress).</div></blockquote>
+<span id="cli-aws-ec2-authorize-security-group-egress"></span><h1>authorize-security-group-egress<a name="//apple_ref/cpp/Command/aws ec2 authorize-security-group-egress" class="dashAnchor" id="aws ec2 authorize-security-group-egress"></a><a class="headerlink" href="#authorize-security-group-egress" title="Permalink to this headline">&#182;</a></h1>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">To specify multiple rules in a single command use the <tt class="docutils literal"><span class="pre">--ip-permissions</span></tt>  option</p>
+<p class="last">To specify multiple rules in a single command use the <tt class="docutils literal"><span class="pre">--ip-permissions</span></tt> option</p>
 </div>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>[EC2-VPC only] Adds one or more egress rules to a security group for use with a VPC. Specifically, this action permits instances to send traffic to one or more destination CIDR IP address ranges, or to one or more destination security groups for the same VPC. This action doesn't apply to security groups for use in EC2-Classic. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <em>Amazon Virtual Private Cloud User Guide</em> .</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">You can have up to 50 rules per security group (covering both ingress and egress rules).</p>
+</div>
+<p>Each rule consists of the protocol (for example, TCP), plus either a CIDR range or a source group. For the TCP and UDP protocols, you must also specify the destination port or port range. For the ICMP protocol, you must also specify the ICMP type and code. You can use -1 for the type or code to mean all types or all codes.</p>
+<p>Rule changes are propagated to affected instances as quickly as possible. However, a small delay might occur.</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  authorize-security-group-egress
 [--dry-run | --no-dry-run]
 --group-id &lt;value&gt;
 [--ip-permissions &lt;value&gt;]
---protocol &lt;value&gt;
---port &lt;value&gt;
---cidr &lt;value&gt;
---source-group &lt;value&gt;
---group-owner &lt;value&gt;</pre>
+[--protocol &lt;value&gt;]
+[--port &lt;value&gt;]
+[--cidr &lt;value&gt;]
+[--source-group &lt;value&gt;]
+[--group-owner &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--no-dry-run" class="dashAnchor" id="no-dry-run"></a><span class="pre">--no-dry-run</span></tt> (boolean)</p>
-<p>Checks whether you have the required permissions for the action, without actually making the request. Using this option will result in one of two possible errorresponses. If you have the required permissions, the error response will be <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt>  . Otherwise it will be <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt>  .</p>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><span class="pre">--no-dry-run</span></tt> (boolean)</p>
+<blockquote>
+<div>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt> . Otherwise, it is <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt> .</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--group-id" class="dashAnchor" id="group-id"></a><span class="pre">--group-id</span></tt> (string)</p>
 <blockquote>
-<div>ID of the VPC security group to modify.</div></blockquote>
+<div>The ID of the security group.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ip-permissions" class="dashAnchor" id="ip-permissions"></a><span class="pre">--ip-permissions</span></tt> (list)</p>
 <blockquote>
-<div>List of IP permissions to authorize on the specified security group. Specifying permissions through IP permissions is the preferred way of authorizing permissions since it offers more flexibility and control.</div></blockquote>
+<div>A set of IP permissions. You can't specify a destination security group and a CIDR IP address range.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>IpProtocol=string,FromPort=integer,ToPort=integer,UserIdGroupPairs=[{UserId=string,GroupName=string,GroupId=string,VpcId=string,VpcPeeringConnectionId=string,PeeringStatus=string},{UserId=string,GroupName=string,GroupId=string,VpcId=string,VpcPeeringConnectionId=string,PeeringStatus=string}],IpRanges=[{CidrIp=string},{CidrIp=string}],PrefixListIds=[{PrefixListId=string},{PrefixListId=string}] ...</pre>
+</div>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><pre>[
   {
@@ -163,13 +180,22 @@
       {
         "UserId": "string",
         "GroupName": "string",
-        "GroupId": "string"
+        "GroupId": "string",
+        "VpcId": "string",
+        "VpcPeeringConnectionId": "string",
+        "PeeringStatus": "string"
       }
       ...
     ],
     "IpRanges": [
       {
         "CidrIp": "string"
+      }
+      ...
+    ],
+    "PrefixListIds": [
+      {
+        "PrefixListId": "string"
       }
       ...
     ]
@@ -180,20 +206,43 @@
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--protocol" class="dashAnchor" id="protocol"></a><span class="pre">--protocol</span></tt> (string)</p>
 <blockquote>
 <div><p>The IP protocol of this permission.</p>
-<p>Valid protocol values: <tt class="docutils literal"><span class="pre">tcp</span></tt>  , <tt class="docutils literal"><span class="pre">udp</span></tt>  , <tt class="docutils literal"><span class="pre">icmp</span></tt></p>
+<p>Valid protocol values: <tt class="docutils literal"><span class="pre">tcp</span></tt> , <tt class="docutils literal"><span class="pre">udp</span></tt> , <tt class="docutils literal"><span class="pre">icmp</span></tt></p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--port" class="dashAnchor" id="port"></a><span class="pre">--port</span></tt> (string)</p>
 <blockquote>
-<div>For TCP or UDP: The range of ports to allow. A single integer or a range (min-max). You can specify <tt class="docutils literal"><span class="pre">all</span></tt>  to mean all ports</div></blockquote>
+<div><p>For TCP or UDP: The range of ports to allow. A single integer or a range (<tt class="docutils literal"><span class="pre">min-max</span></tt> ).</p>
+<p>For ICMP: A single integer or a range (<tt class="docutils literal"><span class="pre">type-code</span></tt> ) representing the ICMP type number and the ICMP code number respectively. A value of -1 indicates all ICMP codes for all ICMP types. A value of -1 just for <tt class="docutils literal"><span class="pre">type</span></tt> indicates all ICMP codes for the specified ICMP type.</p>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cidr" class="dashAnchor" id="cidr"></a><span class="pre">--cidr</span></tt> (string)</p>
 <blockquote>
 <div>The CIDR IP range.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--source-group" class="dashAnchor" id="source-group"></a><span class="pre">--source-group</span></tt> (string)</p>
 <blockquote>
-<div>The name of the source security group. Cannot be used when specifying a CIDR IP address.</div></blockquote>
+<div>The name or ID of the source security group. Cannot be used when specifying a CIDR IP address.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--group-owner" class="dashAnchor" id="group-owner"></a><span class="pre">--group-owner</span></tt> (string)</p>
 <blockquote>
 <div>The AWS account ID that owns the source security group. Cannot be used when specifying a CIDR IP address.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To add a rule that allows outbound traffic to a specific address range</strong></p>
+<p>This example command adds a rule that grants access to the specified address ranges on TCP port 80.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 authorize-security-group-egress --group-id sg-1a2b3c4d --ip-permissions '[{"IpProtocol": "tcp", "FromPort": 80, "ToPort": 80, "IpRanges": [{"CidrIp": "10.0.0.0/16"}]}]'</pre>
+</div>
+<p><strong>To add a rule that allows outbound traffic to a specific security group</strong></p>
+<p>This example command adds a rule that grants access to the specified security group on TCP port 80.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 authorize-security-group-egress --group-id sg-1a2b3c4d --ip-permissions '[{"IpProtocol": "tcp", "FromPort": 80, "ToPort": 80, "UserIdGroupPairs": [{"GroupId": "sg-4b51a32f"}]}]'</pre>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>None</p>
 </div>
 </div>
 
@@ -215,6 +264,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -224,35 +282,21 @@
           <a href="authorize-security-group-ingress.html" title="authorize-security-group-ingress">next</a> |</li>
         <li class="right">
           <a href="attach-vpn-gateway.html" title="attach-vpn-gateway">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">ec2</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'attach-vpn-gateway.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'authorize-security-group-ingress.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/authorize-security-group-egress.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
 </html>

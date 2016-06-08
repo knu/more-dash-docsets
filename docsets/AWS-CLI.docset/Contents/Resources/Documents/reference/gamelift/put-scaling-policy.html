@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/gamelift/put-scaling-policy.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:19 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>put-scaling-policy &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="gamelift" href="index.html" />
+    <link rel="next" title="request-upload-credentials" href="request-upload-credentials.html" />
+    <link rel="prev" title="list-fleets" href="list-fleets.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="request-upload-credentials.html" title="request-upload-credentials" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="list-fleets.html" title="list-fleets" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">gamelift</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="list-fleets.html" title="previous chapter (use the left arrow)">&#8592; list-fleets</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="request-upload-credentials.html" title="next chapter (use the right arrow)">request-upload-credentials &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">put-scaling-policy</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/gamelift/put-scaling-policy">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-gamelift"><em>gamelift</em></a> ]</p>
+<div class="section" id="put-scaling-policy">
+<span id="cli-aws-gamelift-put-scaling-policy"></span><h1>put-scaling-policy<a name="//apple_ref/cpp/Command/aws gamelift put-scaling-policy" class="dashAnchor" id="aws gamelift put-scaling-policy"></a><a class="headerlink" href="#put-scaling-policy" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Creates or updates a scaling policy for a fleet. An active scaling policy prompts GameLift to track a certain metric for a fleet and automatically change the fleet's capacity in specific circumstances. Each scaling policy contains one rule statement. Fleets can have multiple scaling policies in force simultaneously.</p>
+<p>A scaling policy rule statement has the following structure:</p>
+<p>If <em>[MetricName]</em> is <em>[ComparisonOperator]</em>  <em>[Threshold]</em> for <em>[EvaluationPeriods]</em> minutes, then <em>[ScalingAdjustmentType]</em> to/by <em>[ScalingAdjustment]</em> .</p>
+<p>For example, this policy: "If the number of idle instances exceeds 20 for more than 15 minutes, then reduce the fleet capacity by 10 instances" could be implemented as the following rule statement:</p>
+<p>If [IdleInstances] is [GreaterThanOrEqualToThreshold] [20] for [15] minutes, then [ChangeInCapacity] by [-10].</p>
+<p>To create or update a scaling policy, specify a unique combination of name and fleet ID, and set the rule values. All parameters for this action are required. If successful, the policy name is returned. Scaling policies cannot be suspended or made inactive. To stop enforcing a scaling policy, call  delete-scaling-policy .</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  put-scaling-policy
+--name &lt;value&gt;
+--fleet-id &lt;value&gt;
+--scaling-adjustment &lt;value&gt;
+--scaling-adjustment-type &lt;value&gt;
+--threshold &lt;value&gt;
+--comparison-operator &lt;value&gt;
+--evaluation-periods &lt;value&gt;
+--metric-name &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--name" class="dashAnchor" id="name"></a><span class="pre">--name</span></tt> (string)</p>
+<blockquote>
+<div>Descriptive label associated with this scaling policy. Policy names do not need to be unique. A fleet can have only one scaling policy with the same name.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--fleet-id" class="dashAnchor" id="fleet-id"></a><span class="pre">--fleet-id</span></tt> (string)</p>
+<blockquote>
+<div>Unique identity for the fleet to scale with this policy.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--scaling-adjustment" class="dashAnchor" id="scaling-adjustment"></a><span class="pre">--scaling-adjustment</span></tt> (integer)</p>
+<blockquote>
+<div>Amount of adjustment to make, based on the scaling adjustment type.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--scaling-adjustment-type" class="dashAnchor" id="scaling-adjustment-type"></a><span class="pre">--scaling-adjustment-type</span></tt> (string)</p>
+<blockquote>
+<div><p>Type of adjustment to make to a fleet's instance count (see  FleetCapacity ):</p>
+<ul class="simple">
+<li>ChangeInCapacity: add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</li>
+<li>ExactCapacity: set the instance count to the scaling adjustment value.</li>
+<li>PercentChangeInCapacity: increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down; for example, a value of "-10" scales the fleet down by 10%.</li>
+</ul>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ChangeInCapacity</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ExactCapacity</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">PercentChangeInCapacity</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--threshold" class="dashAnchor" id="threshold"></a><span class="pre">--threshold</span></tt> (double)</p>
+<blockquote>
+<div>Metric value used to trigger a scaling event.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--comparison-operator" class="dashAnchor" id="comparison-operator"></a><span class="pre">--comparison-operator</span></tt> (string)</p>
+<blockquote>
+<div><p>Comparison operator to use when measuring the metric against the threshold value.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GreaterThanOrEqualToThreshold</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">GreaterThanThreshold</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">LessThanThreshold</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">LessThanOrEqualToThreshold</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--evaluation-periods" class="dashAnchor" id="evaluation-periods"></a><span class="pre">--evaluation-periods</span></tt> (integer)</p>
+<blockquote>
+<div>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--metric-name" class="dashAnchor" id="metric-name"></a><span class="pre">--metric-name</span></tt> (string)</p>
+<blockquote>
+<div><p>Name of the Service-defined metric that is used to trigger an adjustment.</p>
+<ul class="simple">
+<li>ActivatingGameSessions: number of game sessions in the process of being created (game session status = ACTIVATING).</li>
+<li>ActiveGameSessions: number of game sessions currently running (game session status = ACTIVE).</li>
+<li>CurrentPlayerSessions: number of active or reserved player sessions (player session status = ACTIVE or RESERVED).</li>
+<li>AvailablePlayerSessions: number of player session slots currently available in active game sessions across the fleet, calculated by subtracting a game session's current player session count from its maximum player session count. This number includes game sessions that are not currently accepting players (game session PlayerSessionCreationPolicy = DENY_ALL).</li>
+<li>ActiveInstances: number of instances currently running a game session.</li>
+<li>IdleInstances: number of instances not currently running a game session.</li>
+</ul>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ActivatingGameSessions</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ActiveGameSessions</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ActiveInstances</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AvailablePlayerSessions</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">CurrentPlayerSessions</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">IdleInstances</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="list-fleets.html" title="previous chapter (use the left arrow)">&#8592; list-fleets</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="request-upload-credentials.html" title="next chapter (use the right arrow)">request-upload-credentials &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="request-upload-credentials.html" title="request-upload-credentials">next</a> |</li>
+        <li class="right">
+          <a href="list-fleets.html" title="list-fleets">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">gamelift</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/gamelift/put-scaling-policy.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:19 GMT -->
+</html>

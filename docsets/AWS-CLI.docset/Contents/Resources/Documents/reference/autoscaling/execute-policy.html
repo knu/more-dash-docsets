@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/autoscaling/execute-policy.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:57 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>execute-policy &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>execute-policy &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +25,10 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="autoscaling" href="index.html" />
-    <link rel="next" title="put-notification-configuration" href="put-notification-configuration.html" />
-    <link rel="prev" title="enable-metrics-collection" href="enable-metrics-collection.html" />
+    <link rel="next" title="exit-standby" href="exit-standby.html" />
+    <link rel="prev" title="enter-standby" href="enter-standby.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
   
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -58,10 +61,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
         <li class="right">
-          <a href="put-notification-configuration.html" title="put-notification-configuration" accesskey="N">next</a> |</li>
+          <a href="exit-standby.html" title="exit-standby" accesskey="N">next</a> |</li>
         <li class="right">
-          <a href="enable-metrics-collection.html" title="enable-metrics-collection" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="enter-standby.html" title="enter-standby" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">autoscaling</a> &#187;</li> 
       </ul>
@@ -71,34 +74,36 @@
     <div class="top-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="enable-metrics-collection.html" title="previous chapter (use the left arrow)">&#8592; enable-metrics-collection</a>
+          <a href="enter-standby.html" title="previous chapter (use the left arrow)">&#8592; enter-standby</a>
           <span class="divider">/</span>
           
         </li>
-          <li><a href="put-notification-configuration.html" title="next chapter (use the right arrow)">put-notification-configuration &#8594;</a></li>
+          <li><a href="exit-standby.html" title="next chapter (use the right arrow)">exit-standby &#8594;</a></li>
       </ul>
     </div>
   
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">execute-policy</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,39 +112,78 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/autoscaling/execute-policy">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/autoscaling/execute-policy">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>autoscaling</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-autoscaling"><em>autoscaling</em></a> ]</p>
 <div class="section" id="execute-policy">
-<h1>execute-policy<a class="headerlink" href="#execute-policy" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-autoscaling-execute-policy"></span><h1>execute-policy<a name="//apple_ref/cpp/Command/aws autoscaling execute-policy" class="dashAnchor" id="aws autoscaling execute-policy"></a><a class="headerlink" href="#execute-policy" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Runs the policy you create for your Auto Scaling group in  put-scaling-policy .</p>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Executes the specified policy.</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  execute-policy
 [--auto-scaling-group-name &lt;value&gt;]
 --policy-name &lt;value&gt;
-[--honor-cooldown | --no-honor-cooldown]</pre>
+[--honor-cooldown | --no-honor-cooldown]
+[--metric-value &lt;value&gt;]
+[--breach-threshold &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--auto-scaling-group-name" class="dashAnchor" id="auto-scaling-group-name"></a><span class="pre">--auto-scaling-group-name</span></tt> (string)</p>
 <blockquote>
-<div>The name or ARN of the Auto Scaling group.</div></blockquote>
+<div>The name or Amazon Resource Name (ARN) of the Auto Scaling group.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--policy-name" class="dashAnchor" id="policy-name"></a><span class="pre">--policy-name</span></tt> (string)</p>
 <blockquote>
-<div>The name or PolicyARN of the policy you want to run.</div></blockquote>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--honor-cooldown" class="dashAnchor" id="honor-cooldown"></a><span class="pre">--honor-cooldown</span></tt> | <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--no-honor-cooldown" class="dashAnchor" id="no-honor-cooldown"></a><span class="pre">--no-honor-cooldown</span></tt> (boolean)</p>
+<div>The name or ARN of the policy.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--honor-cooldown" class="dashAnchor" id="honor-cooldown"></a><span class="pre">--honor-cooldown</span></tt> | <tt class="docutils literal"><span class="pre">--no-honor-cooldown</span></tt> (boolean)</p>
 <blockquote>
-<div>Set to <tt class="docutils literal"><span class="pre">True</span></tt>  if you want Auto Scaling to reject this request when the Auto Scaling group is in cooldown.</div></blockquote>
+<div><p>If this parameter is true, Auto Scaling waits for the cooldown period to complete before executing the policy. Otherwise, Auto Scaling executes the policy without waiting for the cooldown period to complete.</p>
+<p>This parameter is not supported if the policy type is <tt class="docutils literal"><span class="pre">StepScaling</span></tt> .</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto Scaling Cooldowns</a> in the <em>Auto Scaling Developer Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--metric-value" class="dashAnchor" id="metric-value"></a><span class="pre">--metric-value</span></tt> (double)</p>
+<blockquote>
+<div><p>The metric value to compare to <tt class="docutils literal"><span class="pre">BreachThreshold</span></tt> . This enables you to execute a policy of type <tt class="docutils literal"><span class="pre">StepScaling</span></tt> and determine which step adjustment to use. For example, if the breach threshold is 50 and you want to use a step adjustment with a lower bound of 0 and an upper bound of 10, you can set the metric value to 59.</p>
+<p>If you specify a metric value that doesn't correspond to a step adjustment for the policy, the call returns an error.</p>
+<p>This parameter is required if the policy type is <tt class="docutils literal"><span class="pre">StepScaling</span></tt> and not supported otherwise.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--breach-threshold" class="dashAnchor" id="breach-threshold"></a><span class="pre">--breach-threshold</span></tt> (double)</p>
+<blockquote>
+<div><p>The breach threshold for the alarm.</p>
+<p>This parameter is required if the policy type is <tt class="docutils literal"><span class="pre">StepScaling</span></tt> and not supported otherwise.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To execute an Auto Scaling policy</strong></p>
+<p>This example executes the specified Auto Scaling policy for the specified Auto Scaling group:</p>
+<div class="highlight-python"><pre>aws autoscaling execute-policy --auto-scaling-group-name my-auto-scaling-group --policy-name ScaleIn --honor-cooldown</pre>
+</div>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic Scaling</a> in the <em>Auto Scaling Developer Guide</em>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>None</p>
 </div>
 </div>
 
@@ -151,54 +195,49 @@
     <div class="footer-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="enable-metrics-collection.html" title="previous chapter (use the left arrow)">&#8592; enable-metrics-collection</a>
+          <a href="enter-standby.html" title="previous chapter (use the left arrow)">&#8592; enter-standby</a>
           <span class="divider">/</span>
           
         </li>
-          <li><a href="put-notification-configuration.html" title="next chapter (use the right arrow)">put-notification-configuration &#8594;</a></li>
+          <li><a href="exit-standby.html" title="next chapter (use the right arrow)">exit-standby &#8594;</a></li>
       </ul>
     </div>
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index">index</a></li>
         <li class="right">
-          <a href="put-notification-configuration.html" title="put-notification-configuration">next</a> |</li>
+          <a href="exit-standby.html" title="exit-standby">next</a> |</li>
         <li class="right">
-          <a href="enable-metrics-collection.html" title="enable-metrics-collection">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="enter-standby.html" title="enter-standby">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">autoscaling</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'enable-metrics-collection.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'put-notification-configuration.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/autoscaling/execute-policy.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:57 GMT -->
 </html>

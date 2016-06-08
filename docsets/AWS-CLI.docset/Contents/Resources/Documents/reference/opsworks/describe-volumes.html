@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/opsworks/describe-volumes.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:22 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>describe-volumes &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>describe-volumes &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="opsworks" href="index.html" />
     <link rel="next" title="detach-elastic-load-balancer" href="detach-elastic-load-balancer.html" />
     <link rel="prev" title="describe-user-profiles" href="describe-user-profiles.html" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -61,7 +64,7 @@
           <a href="detach-elastic-load-balancer.html" title="detach-elastic-load-balancer" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="describe-user-profiles.html" title="describe-user-profiles" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">opsworks</a> &#187;</li> 
       </ul>
@@ -82,23 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">describe-volumes</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,42 +112,141 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/opsworks/describe-volumes">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/opsworks/describe-volumes">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>opsworks</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-opsworks"><em>opsworks</em></a> ]</p>
 <div class="section" id="describe-volumes">
-<h1>describe-volumes<a class="headerlink" href="#describe-volumes" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-opsworks-describe-volumes"></span><h1>describe-volumes<a name="//apple_ref/cpp/Command/aws opsworks describe-volumes" class="dashAnchor" id="aws opsworks describe-volumes"></a><a class="headerlink" href="#describe-volumes" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
 <p>Describes an instance's Amazon EBS volumes.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You must specify at least one of the parameters.</p>
+</div>
+<p><strong>Required Permissions</strong> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a class="reference external" href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a> .</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  describe-volumes
 [--instance-id &lt;value&gt;]
+[--stack-id &lt;value&gt;]
 [--raid-array-id &lt;value&gt;]
-[--volume-ids &lt;value&gt;]</pre>
+[--volume-ids &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--instance-id" class="dashAnchor" id="instance-id"></a><span class="pre">--instance-id</span></tt> (string)</p>
 <blockquote>
-<div>The instance ID. If you use this parameter, <tt class="docutils literal"><span class="pre">describe-volumes</span></tt>  returns descriptions of the volumes associated with the specified instance.</div></blockquote>
+<div>The instance ID. If you use this parameter, <tt class="docutils literal"><span class="pre">describe-volumes</span></tt> returns descriptions of the volumes associated with the specified instance.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--stack-id" class="dashAnchor" id="stack-id"></a><span class="pre">--stack-id</span></tt> (string)</p>
+<blockquote>
+<div>A stack ID. The action describes the stack's registered Amazon EBS volumes.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--raid-array-id" class="dashAnchor" id="raid-array-id"></a><span class="pre">--raid-array-id</span></tt> (string)</p>
 <blockquote>
-<div>The RAID array ID. If you use this parameter, <tt class="docutils literal"><span class="pre">describe-volumes</span></tt>  returns descriptions of the volumes associated with the specified RAID array.</div></blockquote>
+<div>The RAID array ID. If you use this parameter, <tt class="docutils literal"><span class="pre">describe-volumes</span></tt> returns descriptions of the volumes associated with the specified RAID array.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--volume-ids" class="dashAnchor" id="volume-ids"></a><span class="pre">--volume-ids</span></tt> (list)</p>
 <blockquote>
-<div>Am array of volume IDs. If you use this parameter, <tt class="docutils literal"><span class="pre">describe-volumes</span></tt>  returns descriptions of the specified volumes. Otherwise, it returns a description of every volume.</div></blockquote>
+<div>Am array of volume IDs. If you use this parameter, <tt class="docutils literal"><span class="pre">describe-volumes</span></tt> returns descriptions of the specified volumes. Otherwise, it returns a description of every volume.</div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To describe a stack's volumes</strong></p>
+<p>The following example describes a stack's EBS volumes.</p>
+<div class="highlight-python"><pre>aws opsworks --region us-east-1 describe-volumes --stack-id 8c428b08-a1a1-46ce-a5f8-feddc43771b8</pre>
+</div>
+<p><strong>Note</strong>: AWS OpsWorks CLI commands should set the region to <tt class="docutils literal"><span class="pre">us-east-1</span></tt> regardless of the stack's location.</p>
+<p><em>Output</em>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"Volumes"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"Status"</span><span class="p">:</span> <span class="s2">"in-use"</span><span class="p">,</span>
+      <span class="s2">"AvailabilityZone"</span><span class="p">:</span> <span class="s2">"us-west-2a"</span><span class="p">,</span>
+      <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"CLITest"</span><span class="p">,</span>
+      <span class="s2">"InstanceId"</span><span class="p">:</span> <span class="s2">"dfe18b02-5327-493d-91a4-c5c0c448927f"</span><span class="p">,</span>
+      <span class="s2">"VolumeType"</span><span class="p">:</span> <span class="s2">"standard"</span><span class="p">,</span>
+      <span class="s2">"VolumeId"</span><span class="p">:</span> <span class="s2">"56b66fbd-e1a1-4aff-9227-70f77118d4c5"</span><span class="p">,</span>
+      <span class="s2">"Device"</span><span class="p">:</span> <span class="s2">"/dev/sdi"</span><span class="p">,</span>
+      <span class="s2">"Ec2VolumeId"</span><span class="p">:</span> <span class="s2">"vol-295c1638"</span><span class="p">,</span>
+      <span class="s2">"MountPoint"</span><span class="p">:</span> <span class="s2">"/mnt/myvolume"</span><span class="p">,</span>
+      <span class="s2">"Size"</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>More Information</strong></p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a> in the <em>AWS OpsWorks User Guide</em>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Volumes -&gt; (list)</p>
+<blockquote>
+<div><p>An array of volume IDs.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes an instance's Amazon EBS volume.</p>
+<p>VolumeId -&gt; (string)</p>
+<blockquote>
+<div>The volume ID.</div></blockquote>
+<p>Ec2VolumeId -&gt; (string)</p>
+<blockquote>
+<div>The Amazon EC2 volume ID.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The volume name.</div></blockquote>
+<p>RaidArrayId -&gt; (string)</p>
+<blockquote>
+<div>The RAID array ID.</div></blockquote>
+<p>InstanceId -&gt; (string)</p>
+<blockquote>
+<div>The instance ID.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The value returned by <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">describe-volumes</a> .</div></blockquote>
+<p>Size -&gt; (integer)</p>
+<blockquote>
+<div>The volume size.</div></blockquote>
+<p>Device -&gt; (string)</p>
+<blockquote>
+<div>The device name.</div></blockquote>
+<p>MountPoint -&gt; (string)</p>
+<blockquote>
+<div>The volume mount point. For example, "/mnt/disk1".</div></blockquote>
+<p>Region -&gt; (string)</p>
+<blockquote>
+<div>The AWS region. For more information about AWS regions, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> .</div></blockquote>
+<p>AvailabilityZone -&gt; (string)</p>
+<blockquote>
+<div>The volume Availability Zone. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> .</div></blockquote>
+<p>VolumeType -&gt; (string)</p>
+<blockquote>
+<div>The volume type, standard or PIOPS.</div></blockquote>
+<p>Iops -&gt; (integer)</p>
+<blockquote>
+<div>For PIOPS volumes, the IOPS per disk.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
 </div>
 </div>
 
@@ -164,6 +268,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -173,35 +286,21 @@
           <a href="detach-elastic-load-balancer.html" title="detach-elastic-load-balancer">next</a> |</li>
         <li class="right">
           <a href="describe-user-profiles.html" title="describe-user-profiles">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">opsworks</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'describe-user-profiles.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'detach-elastic-load-balancer.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/opsworks/describe-volumes.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:22 GMT -->
 </html>

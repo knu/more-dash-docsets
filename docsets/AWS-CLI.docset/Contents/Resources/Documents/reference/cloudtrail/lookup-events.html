@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudtrail/lookup-events.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:00 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>lookup-events &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="cloudtrail" href="index.html" />
+    <link rel="next" title="remove-tags" href="remove-tags.html" />
+    <link rel="prev" title="list-tags" href="list-tags.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="remove-tags.html" title="remove-tags" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="list-tags.html" title="list-tags" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">cloudtrail</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="list-tags.html" title="previous chapter (use the left arrow)">&#8592; list-tags</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="remove-tags.html" title="next chapter (use the right arrow)">remove-tags &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">lookup-events</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/cloudtrail/lookup-events">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-cloudtrail"><em>cloudtrail</em></a> ]</p>
+<div class="section" id="lookup-events">
+<span id="cli-aws-cloudtrail-lookup-events"></span><h1>lookup-events<a name="//apple_ref/cpp/Command/aws cloudtrail lookup-events" class="dashAnchor" id="aws cloudtrail lookup-events"></a><a class="headerlink" href="#lookup-events" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Looks up API activity events captured by CloudTrail that create, update, or delete resources in your account. Events for a region can be looked up for the times in which you had CloudTrail turned on in that region during the last seven days. Lookup supports five different attributes: time range (defined by a start time and end time), user name, event name, resource type, and resource name. All attributes are optional. The maximum number of attributes that can be specified in any one lookup request are time range and one other attribute. The default number of results returned is 10, with a maximum of 50 possible. The response includes a token that you can use to get the next page of results.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The rate of lookup requests is limited to one per second per account. If this limit is exceeded, a throttling error occurs.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Events that occurred during the selected time range will not be available for lookup if CloudTrail logging was not enabled when the events occurred.</p>
+</div>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  lookup-events
+[--lookup-attributes &lt;value&gt;]
+[--start-time &lt;value&gt;]
+[--end-time &lt;value&gt;]
+[--max-results &lt;value&gt;]
+[--next-token &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--lookup-attributes" class="dashAnchor" id="lookup-attributes"></a><span class="pre">--lookup-attributes</span></tt> (list)</p>
+<blockquote>
+<div>Contains a list of lookup attributes. Currently the list can contain only one item.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>AttributeKey=string,AttributeValue=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    "AttributeKey": "EventId"|"EventName"|"Username"|"ResourceType"|"ResourceName",
+    "AttributeValue": "string"
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--start-time" class="dashAnchor" id="start-time"></a><span class="pre">--start-time</span></tt> (timestamp)</p>
+<blockquote>
+<div>Specifies that only events that occur after or at the specified time are returned. If the specified start time is after the specified end time, an error is returned.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--end-time" class="dashAnchor" id="end-time"></a><span class="pre">--end-time</span></tt> (timestamp)</p>
+<blockquote>
+<div>Specifies that only events that occur before or at the specified time are returned. If the specified end time is before the specified start time, an error is returned.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-results" class="dashAnchor" id="max-results"></a><span class="pre">--max-results</span></tt> (integer)</p>
+<blockquote>
+<div>The number of events to return. Possible values are 1 through 50. The default is 10.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--next-token" class="dashAnchor" id="next-token"></a><span class="pre">--next-token</span></tt> (string)</p>
+<blockquote>
+<div>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with next-token should include those same parameters.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To look up events for a trail</strong></p>
+<p>The following <tt class="docutils literal"><span class="pre">lookup-events</span></tt> command looks up API activity events by the attribute <tt class="docutils literal"><span class="pre">EventName</span></tt>:</p>
+<div class="highlight-python"><pre>aws cloudtrail lookup-events --lookup-attributes AttributeKey=EventName,AttributeValue=ConsoleLogin</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"Events"</span><span class="p">:</span> <span class="p">[</span>
+     <span class="p">{</span>
+         <span class="s2">"EventId"</span><span class="p">:</span> <span class="s2">"654ccbc0-ba0d-486a-9076-dbf7274677a7"</span><span class="p">,</span>
+         <span class="s2">"Username"</span><span class="p">:</span> <span class="s2">"my-session-name"</span><span class="p">,</span>
+         <span class="s2">"EventTime"</span><span class="p">:</span> <span class="mf">1453844532.0</span><span class="p">,</span>
+         <span class="s2">"CloudTrailEvent"</span><span class="p">:</span> <span class="s2">"{</span><span class="se">\"</span><span class="s2">eventVersion</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">1.02</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">userIdentity</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">type</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">AssumedRole</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">principalId</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">AROAJIKPFTA72SWU4L7T4:my-session-name</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">arn</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">arn:aws:sts::123456789012:assumed-role/my-role/my-session-name</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">accountId</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">123456789012</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">sessionContext</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">attributes</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">mfaAuthenticated</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">false</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">creationDate</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">2016-01-26T21:42:12Z</span><span class="se">\"</span><span class="s2">},</span><span class="se">\"</span><span class="s2">sessionIssuer</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">type</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Role</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">principalId</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">AROAJIKPFTA72SWU4L7T4</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">arn</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">arn:aws:iam::123456789012:role/my-role</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">accountId</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">123456789012</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">userName</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">my-role</span><span class="se">\"</span><span class="s2">}}},</span><span class="se">\"</span><span class="s2">eventTime</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">2016-01-26T21:42:12Z</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">eventSource</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">signin.amazonaws.com</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">eventName</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">ConsoleLogin</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">awsRegion</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">us-east-1</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">sourceIPAddress</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">72.21.198.70</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">userAgent</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">requestParameters</span><span class="se">\"</span><span class="s2">:null,</span><span class="se">\"</span><span class="s2">responseElements</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">ConsoleLogin</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Success</span><span class="se">\"</span><span class="s2">},</span><span class="se">\"</span><span class="s2">additionalEventData</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">MobileVersion</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">No</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">MFAUsed</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">No</span><span class="se">\"</span><span class="s2">},</span><span class="se">\"</span><span class="s2">eventID</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">654ccbc0-ba0d-486a-9076-dbf7274677a7</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">eventType</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">AwsConsoleSignIn</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">recipientAccountId</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">123456789012</span><span class="se">\"</span><span class="s2">}"</span><span class="p">,</span>
+         <span class="s2">"EventName"</span><span class="p">:</span> <span class="s2">"ConsoleLogin"</span><span class="p">,</span>
+         <span class="s2">"Resources"</span><span class="p">:</span> <span class="p">[]</span>
+     <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Events -&gt; (list)</p>
+<blockquote>
+<div><p>A list of events returned based on the lookup attributes specified and the CloudTrail event. The events list is sorted by time. The most recent event is listed first.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Contains information about an event that was returned by a lookup request. The result includes a representation of a CloudTrail event.</p>
+<p>EventId -&gt; (string)</p>
+<blockquote>
+<div>The CloudTrail ID of the event returned.</div></blockquote>
+<p>EventName -&gt; (string)</p>
+<blockquote>
+<div>The name of the event returned.</div></blockquote>
+<p>EventTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time of the event returned.</div></blockquote>
+<p>Username -&gt; (string)</p>
+<blockquote>
+<div>A user name or role name of the requester that called the API in the event returned.</div></blockquote>
+<p>Resources -&gt; (list)</p>
+<blockquote>
+<div><p>A list of resources referenced by the event returned.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Specifies the type and name of a resource referenced by an event.</p>
+<p>ResourceType -&gt; (string)</p>
+<blockquote>
+<div>The type of a resource referenced by the event returned. When the resource type cannot be determined, null is returned. Some examples of resource types are: <strong>Instance</strong> for EC2, <strong>Trail</strong> for CloudTrail, <strong>DBInstance</strong> for RDS, and <strong>AccessKey</strong> for IAM. For a list of resource types supported for event lookup, see <a class="reference external" href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/lookup_supported_resourcetypes.html">Resource Types Supported for Event Lookup</a> .</div></blockquote>
+<p>ResourceName -&gt; (string)</p>
+<blockquote>
+<div>The name of the resource referenced by the event returned. These are user-created names whose values will depend on the environment. For example, the resource name might be "auto-scaling-test-group" for an Auto Scaling Group or "i-1234567" for an EC2 Instance.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>CloudTrailEvent -&gt; (string)</p>
+<blockquote>
+<div>A JSON string that contains a representation of the event returned.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with next-token should include those same parameters.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="list-tags.html" title="previous chapter (use the left arrow)">&#8592; list-tags</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="remove-tags.html" title="next chapter (use the right arrow)">remove-tags &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="remove-tags.html" title="remove-tags">next</a> |</li>
+        <li class="right">
+          <a href="list-tags.html" title="list-tags">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">cloudtrail</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudtrail/lookup-events.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:00 GMT -->
+</html>

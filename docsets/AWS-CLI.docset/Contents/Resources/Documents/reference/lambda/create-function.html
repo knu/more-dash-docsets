@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/lambda/create-function.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:21 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-function &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="lambda" href="index.html" />
+    <link rel="next" title="delete-alias" href="delete-alias.html" />
+    <link rel="prev" title="create-event-source-mapping" href="create-event-source-mapping.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="delete-alias.html" title="delete-alias" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="create-event-source-mapping.html" title="create-event-source-mapping" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">lambda</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="create-event-source-mapping.html" title="previous chapter (use the left arrow)">&#8592; create-event-source-mapping</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="delete-alias.html" title="next chapter (use the right arrow)">delete-alias &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-function</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/lambda/create-function">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-lambda"><em>lambda</em></a> ]</p>
+<div class="section" id="create-function">
+<span id="cli-aws-lambda-create-function"></span><h1>create-function<a name="//apple_ref/cpp/Command/aws lambda create-function" class="dashAnchor" id="aws lambda create-function"></a><a class="headerlink" href="#create-function" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Creates a new Lambda function. The function metadata is created from the request parameters, and the code for the function is provided by a .zip file in the request body. If the function name already exists, the operation will fail. Note that the function name is case-sensitive.</p>
+<p>If you are using versioning, you can also publish a version of the Lambda function you are creating using the <tt class="docutils literal"><span class="pre">Publish</span></tt> parameter. For more information about versioning, see <a class="reference external" href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda Function Versioning and Aliases</a> .</p>
+<p>This operation requires permission for the <tt class="docutils literal"><span class="pre">lambda:CreateFunction</span></tt> action.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  create-function
+--function-name &lt;value&gt;
+--runtime &lt;value&gt;
+--role &lt;value&gt;
+--handler &lt;value&gt;
+[--code &lt;value&gt;]
+[--description &lt;value&gt;]
+[--timeout &lt;value&gt;]
+[--memory-size &lt;value&gt;]
+[--publish | --no-publish]
+[--vpc-config &lt;value&gt;]
+[--zip-file &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--function-name" class="dashAnchor" id="function-name"></a><span class="pre">--function-name</span></tt> (string)</p>
+<blockquote>
+<div>The name you want to assign to the function you are uploading. The function names appear in the console and are returned in the  list-functions API. Function names are used to specify functions to other AWS Lambda APIs, such as  invoke .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--runtime" class="dashAnchor" id="runtime"></a><span class="pre">--runtime</span></tt> (string)</p>
+<blockquote>
+<div><p>The runtime environment for the Lambda function you are uploading.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">nodejs</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">nodejs4.3</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">java8</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">python2.7</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--role" class="dashAnchor" id="role"></a><span class="pre">--role</span></tt> (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any other Amazon Web Services (AWS) resources. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS Lambda: How it Works</a> .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--handler" class="dashAnchor" id="handler"></a><span class="pre">--handler</span></tt> (string)</p>
+<blockquote>
+<div>The function within your code that Lambda calls to begin execution. For Node.js, it is the <em>module-name</em> .*export* value in your function. For Java, it can be <tt class="docutils literal"><span class="pre">package.class-name::handler</span></tt> or <tt class="docutils literal"><span class="pre">package.class-name</span></tt> . For more information, see <a class="reference external" href="http://docs.aws.amazon.com/lambda/latest/dg/java-programming-model-handler-types.html">Lambda Function handler (Java)</a> .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--code" class="dashAnchor" id="code"></a><span class="pre">--code</span></tt> (structure)</p>
+<blockquote>
+<div>The code for the Lambda function.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">S3Bucket</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">S3Key</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">S3ObjectVersion</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"S3Bucket"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"S3Key"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"S3ObjectVersion"</span><span class="p">:</span> <span class="s2">"string"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--description" class="dashAnchor" id="description"></a><span class="pre">--description</span></tt> (string)</p>
+<blockquote>
+<div>A short, user-defined function description. Lambda does not use this value. Assign a meaningful description as you see fit.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--timeout" class="dashAnchor" id="timeout"></a><span class="pre">--timeout</span></tt> (integer)</p>
+<blockquote>
+<div>The function execution time at which Lambda should terminate the function. Because the execution time has cost implications, we recommend you set this value based on your expected execution time. The default is 3 seconds.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--memory-size" class="dashAnchor" id="memory-size"></a><span class="pre">--memory-size</span></tt> (integer)</p>
+<blockquote>
+<div>The amount of memory, in MB, your Lambda function is given. Lambda uses this memory size to infer the amount of CPU and memory allocated to your function. Your function use-case determines your CPU and memory requirements. For example, a database operation might need less memory compared to an image processing function. The default value is 128 MB. The value must be a multiple of 64 MB.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--publish" class="dashAnchor" id="publish"></a><span class="pre">--publish</span></tt> | <tt class="docutils literal"><span class="pre">--no-publish</span></tt> (boolean)</p>
+<blockquote>
+<div>This boolean parameter can be used to request AWS Lambda to create the Lambda function and publish a version as an atomic operation.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--vpc-config" class="dashAnchor" id="vpc-config"></a><span class="pre">--vpc-config</span></tt> (structure)</p>
+<blockquote>
+<div>If your Lambda function accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and one subnet ID.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">SubnetIds</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="n">SecurityGroupIds</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"SubnetIds"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"string"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+  <span class="s2">"SecurityGroupIds"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"string"</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--zip-file" class="dashAnchor" id="zip-file"></a><span class="pre">--zip-file</span></tt> (blob)</p>
+<blockquote>
+<div>The path to the zip file of the code you are uploading. Example: fileb://code.zip</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>FunctionName -&gt; (string)</p>
+<blockquote>
+<div>The name of the function.</div></blockquote>
+<p>FunctionArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) assigned to the function.</div></blockquote>
+<p>Runtime -&gt; (string)</p>
+<blockquote>
+<div>The runtime environment for the Lambda function.</div></blockquote>
+<p>Role -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any other Amazon Web Services (AWS) resources.</div></blockquote>
+<p>Handler -&gt; (string)</p>
+<blockquote>
+<div>The function Lambda calls to begin executing your function.</div></blockquote>
+<p>CodeSize -&gt; (long)</p>
+<blockquote>
+<div>The size, in bytes, of the function .zip file you uploaded.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>The user-provided description.</div></blockquote>
+<p>Timeout -&gt; (integer)</p>
+<blockquote>
+<div>The function execution time at which Lambda should terminate the function. Because the execution time has cost implications, we recommend you set this value based on your expected execution time. The default is 3 seconds.</div></blockquote>
+<p>MemorySize -&gt; (integer)</p>
+<blockquote>
+<div>The memory size, in MB, you configured for the function. Must be a multiple of 64 MB.</div></blockquote>
+<p>LastModified -&gt; (string)</p>
+<blockquote>
+<div>The time stamp of the last time you updated the function.</div></blockquote>
+<p>CodeSha256 -&gt; (string)</p>
+<blockquote>
+<div>It is the SHA256 hash of your function deployment package.</div></blockquote>
+<p>Version -&gt; (string)</p>
+<blockquote>
+<div>The version of the Lambda function.</div></blockquote>
+<p>VpcConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>VPC configuration associated with your Lambda function.</p>
+<p>SubnetIds -&gt; (list)</p>
+<blockquote>
+<div><p>A list of subnet IDs associated with the Lambda function.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>SecurityGroupIds -&gt; (list)</p>
+<blockquote>
+<div><p>A list of security group IDs associated with the Lambda function.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>VpcId -&gt; (string)</p>
+<blockquote>
+<div>The VPC ID associated with you Lambda function.</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="create-event-source-mapping.html" title="previous chapter (use the left arrow)">&#8592; create-event-source-mapping</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="delete-alias.html" title="next chapter (use the right arrow)">delete-alias &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="delete-alias.html" title="delete-alias">next</a> |</li>
+        <li class="right">
+          <a href="create-event-source-mapping.html" title="create-event-source-mapping">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">lambda</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/lambda/create-function.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:21 GMT -->
+</html>

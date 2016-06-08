@@ -1,0 +1,339 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/machinelearning/get-ml-model.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:21 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-ml-model &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="machinelearning" href="index.html" />
+    <link rel="next" title="predict" href="predict.html" />
+    <link rel="prev" title="get-evaluation" href="get-evaluation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="predict.html" title="predict" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="get-evaluation.html" title="get-evaluation" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">machinelearning</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-evaluation.html" title="previous chapter (use the left arrow)">&#8592; get-evaluation</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="predict.html" title="next chapter (use the right arrow)">predict &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-ml-model</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/machinelearning/get-ml-model">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-machinelearning"><em>machinelearning</em></a> ]</p>
+<div class="section" id="get-ml-model">
+<span id="cli-aws-machinelearning-get-ml-model"></span><h1>get-ml-model<a name="//apple_ref/cpp/Command/aws machinelearning get-ml-model" class="dashAnchor" id="aws machinelearning get-ml-model"></a><a class="headerlink" href="#get-ml-model" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Returns an <tt class="docutils literal"><span class="pre">MLModel</span></tt> that includes detailed metadata, data source information, and the current status of the <tt class="docutils literal"><span class="pre">MLModel</span></tt> .</p>
+<p><tt class="docutils literal"><span class="pre">get-ml-model</span></tt> provides results in normal or verbose format.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  get-ml-model
+--ml-model-id &lt;value&gt;
+[--verbose | --no-verbose]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ml-model-id" class="dashAnchor" id="ml-model-id"></a><span class="pre">--ml-model-id</span></tt> (string)</p>
+<blockquote>
+<div>The ID assigned to the <tt class="docutils literal"><span class="pre">MLModel</span></tt> at creation.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--verbose" class="dashAnchor" id="verbose"></a><span class="pre">--verbose</span></tt> | <tt class="docutils literal"><span class="pre">--no-verbose</span></tt> (boolean)</p>
+<blockquote>
+<div><p>Specifies whether the <tt class="docutils literal"><span class="pre">get-ml-model</span></tt> operation should return <tt class="docutils literal"><span class="pre">Recipe</span></tt> .</p>
+<p>If true, <tt class="docutils literal"><span class="pre">Recipe</span></tt> is returned.</p>
+<p>If false, <tt class="docutils literal"><span class="pre">Recipe</span></tt> is not returned.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>MLModelId -&gt; (string)</p>
+<blockquote>
+<div>The MLModel ID,which is same as the <tt class="docutils literal"><span class="pre">MLModelId</span></tt> in the request.</div></blockquote>
+<p>TrainingDataSourceId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the training <tt class="docutils literal"><span class="pre">DataSource</span></tt> .</div></blockquote>
+<p>CreatedByIamUser -&gt; (string)</p>
+<blockquote>
+<div>The AWS user account from which the <tt class="docutils literal"><span class="pre">MLModel</span></tt> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</div></blockquote>
+<p>CreatedAt -&gt; (timestamp)</p>
+<blockquote>
+<div>The time that the <tt class="docutils literal"><span class="pre">MLModel</span></tt> was created. The time is expressed in epoch time.</div></blockquote>
+<p>LastUpdatedAt -&gt; (timestamp)</p>
+<blockquote>
+<div>The time of the most recent edit to the <tt class="docutils literal"><span class="pre">MLModel</span></tt> . The time is expressed in epoch time.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>A user-supplied name or description of the <tt class="docutils literal"><span class="pre">MLModel</span></tt> .</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div><p>The current status of the <tt class="docutils literal"><span class="pre">MLModel</span></tt> . This element can have one of the following values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">PENDING</span></tt> - Amazon Machine Learning (Amazon ML) submitted a request to describe a <tt class="docutils literal"><span class="pre">MLModel</span></tt> .</li>
+<li><tt class="docutils literal"><span class="pre">INPROGRESS</span></tt> - The request is processing.</li>
+<li><tt class="docutils literal"><span class="pre">FAILED</span></tt> - The request did not run to completion. The ML model isn't usable.</li>
+<li><tt class="docutils literal"><span class="pre">COMPLETED</span></tt> - The request completed successfully.</li>
+<li><tt class="docutils literal"><span class="pre">DELETED</span></tt> - The <tt class="docutils literal"><span class="pre">MLModel</span></tt> is marked as deleted. It isn't usable.</li>
+</ul>
+</div></blockquote>
+<p>SizeInBytes -&gt; (long)</p>
+<blockquote>
+<div>Long integer type that is a 64-bit signed number.</div></blockquote>
+<p>EndpointInfo -&gt; (structure)</p>
+<blockquote>
+<div><p>The current endpoint of the <tt class="docutils literal"><span class="pre">MLModel</span></tt></p>
+<p>PeakRequestsPerSecond -&gt; (integer)</p>
+<blockquote>
+<div>The maximum processing rate for the real-time endpoint for <tt class="docutils literal"><span class="pre">MLModel</span></tt> , measured in incoming requests per second.</div></blockquote>
+<p>CreatedAt -&gt; (timestamp)</p>
+<blockquote>
+<div>The time that the request to create the real-time endpoint for the <tt class="docutils literal"><span class="pre">MLModel</span></tt> was received. The time is expressed in epoch time.</div></blockquote>
+<p>EndpointUrl -&gt; (string)</p>
+<blockquote>
+<div><p>The URI that specifies where to send real-time prediction requests for the <tt class="docutils literal"><span class="pre">MLModel</span></tt> .</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Note</p>
+<p class="last">The application must wait until the real-time endpoint is ready before using this URI.</p>
+</div>
+</div></blockquote>
+<p>EndpointStatus -&gt; (string)</p>
+<blockquote>
+<div><p>The current status of the real-time endpoint for the <tt class="docutils literal"><span class="pre">MLModel</span></tt> . This element can have one of the following values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">NONE</span></tt> - Endpoint does not exist or was previously deleted.</li>
+<li><tt class="docutils literal"><span class="pre">READY</span></tt> - Endpoint is ready to be used for real-time predictions.</li>
+<li><tt class="docutils literal"><span class="pre">UPDATING</span></tt> - Updating/creating the endpoint.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p>TrainingParameters -&gt; (map)</p>
+<blockquote>
+<div><p>A list of the training parameters in the <tt class="docutils literal"><span class="pre">MLModel</span></tt> . The list is implemented as a map of key-value pairs.</p>
+<p>The following is the current set of training parameters:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">sgd.maxMLModelSizeInBytes</span></tt> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance. The value is an integer that ranges from <tt class="docutils literal"><span class="pre">100000</span></tt> to <tt class="docutils literal"><span class="pre">2147483648</span></tt> . The default value is <tt class="docutils literal"><span class="pre">33554432</span></tt> .</li>
+<li><tt class="docutils literal"><span class="pre">sgd.maxPasses</span></tt> - The number of times that the training process traverses the observations to build the <tt class="docutils literal"><span class="pre">MLModel</span></tt> . The value is an integer that ranges from <tt class="docutils literal"><span class="pre">1</span></tt> to <tt class="docutils literal"><span class="pre">10000</span></tt> . The default value is <tt class="docutils literal"><span class="pre">10</span></tt> .</li>
+<li><tt class="docutils literal"><span class="pre">sgd.shuffleType</span></tt> - Whether Amazon ML shuffles the training data. Shuffling data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <tt class="docutils literal"><span class="pre">auto</span></tt> and <tt class="docutils literal"><span class="pre">none</span></tt> . The default value is <tt class="docutils literal"><span class="pre">none</span></tt> . We strongly recommend that you shuffle your data.</li>
+<li><tt class="docutils literal"><span class="pre">sgd.l1RegularizationAmount</span></tt> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <tt class="docutils literal"><span class="pre">1.0E-08</span></tt> . The value is a double that ranges from <tt class="docutils literal"><span class="pre">0</span></tt> to <tt class="docutils literal"><span class="pre">MAX_DOUBLE</span></tt> . The default is to not use L1 normalization. This parameter can't be used when <tt class="docutils literal"><span class="pre">L2</span></tt> is specified. Use this parameter sparingly.</li>
+<li><tt class="docutils literal"><span class="pre">sgd.l2RegularizationAmount</span></tt> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <tt class="docutils literal"><span class="pre">1.0E-08</span></tt> . The value is a double that ranges from <tt class="docutils literal"><span class="pre">0</span></tt> to <tt class="docutils literal"><span class="pre">MAX_DOUBLE</span></tt> . The default is to not use L2 normalization. This parameter can't be used when <tt class="docutils literal"><span class="pre">L1</span></tt> is specified. Use this parameter sparingly.</li>
+</ul>
+<p>key -&gt; (string)</p>
+<blockquote>
+<div>String type.</div></blockquote>
+<p>value -&gt; (string)</p>
+<blockquote>
+<div>String type.</div></blockquote>
+</div></blockquote>
+<p>InputDataLocationS3 -&gt; (string)</p>
+<blockquote>
+<div>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</div></blockquote>
+<p>MLModelType -&gt; (string)</p>
+<blockquote>
+<div><p>Identifies the <tt class="docutils literal"><span class="pre">MLModel</span></tt> category. The following are the available types:</p>
+<ul class="simple">
+<li>REGRESSION -- Produces a numeric result. For example, "What price should a house be listed at?"</li>
+<li>BINARY -- Produces one of two possible results. For example, "Is this an e-commerce website?"</li>
+<li>MULTICLASS -- Produces one of several possible results. For example, "Is this a HIGH, LOW or MEDIUM risk trade?"</li>
+</ul>
+</div></blockquote>
+<p>ScoreThreshold -&gt; (float)</p>
+<blockquote>
+<div><p>The scoring threshold is used in binary classification <tt class="docutils literal"><span class="pre">MLModel</span></tt>  models. It marks the boundary between a positive prediction and a negative prediction.</p>
+<p>Output values greater than or equal to the threshold receive a positive result from the MLModel, such as <tt class="docutils literal"><span class="pre">true</span></tt> . Output values less than the threshold receive a negative response from the MLModel, such as <tt class="docutils literal"><span class="pre">false</span></tt> .</p>
+</div></blockquote>
+<p>ScoreThresholdLastUpdatedAt -&gt; (timestamp)</p>
+<blockquote>
+<div>The time of the most recent edit to the <tt class="docutils literal"><span class="pre">ScoreThreshold</span></tt> . The time is expressed in epoch time.</div></blockquote>
+<p>LogUri -&gt; (string)</p>
+<blockquote>
+<div>A link to the file that contains logs of the <tt class="docutils literal"><span class="pre">create-ml-model</span></tt> operation.</div></blockquote>
+<p>Message -&gt; (string)</p>
+<blockquote>
+<div>A description of the most recent details about accessing the <tt class="docutils literal"><span class="pre">MLModel</span></tt> .</div></blockquote>
+<p>Recipe -&gt; (string)</p>
+<blockquote>
+<div><p>The recipe to use when training the <tt class="docutils literal"><span class="pre">MLModel</span></tt> . The <tt class="docutils literal"><span class="pre">Recipe</span></tt> provides detailed information about the observation data to use during training, and manipulations to perform on the observation data during training.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Note</p>
+<p class="last">This parameter is provided as part of the verbose format.</p>
+</div>
+</div></blockquote>
+<p>Schema -&gt; (string)</p>
+<blockquote>
+<div><p>The schema used by all of the data files referenced by the <tt class="docutils literal"><span class="pre">DataSource</span></tt> .</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Note</p>
+<p class="last">This parameter is provided as part of the verbose format.</p>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-evaluation.html" title="previous chapter (use the left arrow)">&#8592; get-evaluation</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="predict.html" title="next chapter (use the right arrow)">predict &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="predict.html" title="predict">next</a> |</li>
+        <li class="right">
+          <a href="get-evaluation.html" title="get-evaluation">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">machinelearning</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/machinelearning/get-ml-model.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:21 GMT -->
+</html>

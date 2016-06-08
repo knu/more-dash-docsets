@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/lambda/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:30:48 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>lambda &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="add-permission" href="add-permission.html" />
+    <link rel="prev" title="update-key-description" href="../kms/update-key-description.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="add-permission.html" title="add-permission" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="../kms/update-key-description.html" title="update-key-description" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../kms/update-key-description.html" title="previous chapter (use the left arrow)">&#8592; update-key-description</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="add-permission.html" title="next chapter (use the right arrow)">add-permission &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">lambda</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/lambda/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="lambda">
+<span id="cli-aws-lambda"></span><h1>lambda<a name="//apple_ref/cpp/Command/aws lambda" class="dashAnchor" id="aws lambda"></a><a class="headerlink" href="#lambda" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>Overview</strong></p>
+<p>This is the <em>AWS Lambda API Reference</em> . The AWS Lambda Developer Guide provides additional information. For the service overview, go to <a class="reference external" href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What is AWS Lambda</a> , and for information about how the service works, go to <a class="reference external" href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS Lambda: How it Works</a> in the <em>AWS Lambda Developer Guide</em> .</p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a name="//apple_ref/cpp/Section/Available Commands" class="dashAnchor" id="Available Commands"></a><a class="headerlink" href="#available-commands" title="Permalink to this headline">&#182;</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/add-permission" class="dashAnchor" id="add-permission"></a><a class="reference internal" href="add-permission.html">add-permission</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-alias" class="dashAnchor" id="create-alias"></a><a class="reference internal" href="create-alias.html">create-alias</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-event-source-mapping" class="dashAnchor" id="create-event-source-mapping"></a><a class="reference internal" href="create-event-source-mapping.html">create-event-source-mapping</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-function" class="dashAnchor" id="create-function"></a><a class="reference internal" href="create-function.html">create-function</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-alias" class="dashAnchor" id="delete-alias"></a><a class="reference internal" href="delete-alias.html">delete-alias</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-event-source-mapping" class="dashAnchor" id="delete-event-source-mapping"></a><a class="reference internal" href="delete-event-source-mapping.html">delete-event-source-mapping</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-function" class="dashAnchor" id="delete-function"></a><a class="reference internal" href="delete-function.html">delete-function</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-alias" class="dashAnchor" id="get-alias"></a><a class="reference internal" href="get-alias.html">get-alias</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-event-source-mapping" class="dashAnchor" id="get-event-source-mapping"></a><a class="reference internal" href="get-event-source-mapping.html">get-event-source-mapping</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-function" class="dashAnchor" id="get-function"></a><a class="reference internal" href="get-function.html">get-function</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-function-configuration" class="dashAnchor" id="get-function-configuration"></a><a class="reference internal" href="get-function-configuration.html">get-function-configuration</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-policy" class="dashAnchor" id="get-policy"></a><a class="reference internal" href="get-policy.html">get-policy</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/invoke" class="dashAnchor" id="invoke"></a><a class="reference internal" href="invoke.html">invoke</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/invoke-async" class="dashAnchor" id="invoke-async"></a><a class="reference internal" href="invoke-async.html">invoke-async</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-aliases" class="dashAnchor" id="list-aliases"></a><a class="reference internal" href="list-aliases.html">list-aliases</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-event-source-mappings" class="dashAnchor" id="list-event-source-mappings"></a><a class="reference internal" href="list-event-source-mappings.html">list-event-source-mappings</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-functions" class="dashAnchor" id="list-functions"></a><a class="reference internal" href="list-functions.html">list-functions</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-versions-by-function" class="dashAnchor" id="list-versions-by-function"></a><a class="reference internal" href="list-versions-by-function.html">list-versions-by-function</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/publish-version" class="dashAnchor" id="publish-version"></a><a class="reference internal" href="publish-version.html">publish-version</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/remove-permission" class="dashAnchor" id="remove-permission"></a><a class="reference internal" href="remove-permission.html">remove-permission</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-alias" class="dashAnchor" id="update-alias"></a><a class="reference internal" href="update-alias.html">update-alias</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-event-source-mapping" class="dashAnchor" id="update-event-source-mapping"></a><a class="reference internal" href="update-event-source-mapping.html">update-event-source-mapping</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-function-code" class="dashAnchor" id="update-function-code"></a><a class="reference internal" href="update-function-code.html">update-function-code</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-function-configuration" class="dashAnchor" id="update-function-configuration"></a><a class="reference internal" href="update-function-configuration.html">update-function-configuration</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../kms/update-key-description.html" title="previous chapter (use the left arrow)">&#8592; update-key-description</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="add-permission.html" title="next chapter (use the right arrow)">add-permission &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="add-permission.html" title="add-permission">next</a> |</li>
+        <li class="right">
+          <a href="../kms/update-key-description.html" title="update-key-description">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/lambda/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:30:58 GMT -->
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cognito-idp/update-user-pool.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:00 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>update-user-pool &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="cognito-idp" href="index.html" />
+    <link rel="next" title="update-user-pool-client" href="update-user-pool-client.html" />
+    <link rel="prev" title="update-user-attributes" href="update-user-attributes.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="update-user-pool-client.html" title="update-user-pool-client" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="update-user-attributes.html" title="update-user-attributes" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">cognito-idp</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="update-user-attributes.html" title="previous chapter (use the left arrow)">&#8592; update-user-attributes</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="update-user-pool-client.html" title="next chapter (use the right arrow)">update-user-pool-client &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">update-user-pool</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/cognito-idp/update-user-pool">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-cognito-idp"><em>cognito-idp</em></a> ]</p>
+<div class="section" id="update-user-pool">
+<span id="cli-aws-cognito-idp-update-user-pool"></span><h1>update-user-pool<a name="//apple_ref/cpp/Command/aws cognito-idp update-user-pool" class="dashAnchor" id="aws cognito-idp update-user-pool"></a><a class="headerlink" href="#update-user-pool" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Updates the specified user pool with the specified attributes.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  update-user-pool
+--user-pool-id &lt;value&gt;
+[--policies &lt;value&gt;]
+[--lambda-config &lt;value&gt;]
+[--auto-verified-attributes &lt;value&gt;]
+[--sms-verification-message &lt;value&gt;]
+[--email-verification-message &lt;value&gt;]
+[--email-verification-subject &lt;value&gt;]
+[--sms-authentication-message &lt;value&gt;]
+[--mfa-configuration &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--user-pool-id" class="dashAnchor" id="user-pool-id"></a><span class="pre">--user-pool-id</span></tt> (string)</p>
+<blockquote>
+<div>The user pool ID for the user pool you want to update.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--policies" class="dashAnchor" id="policies"></a><span class="pre">--policies</span></tt> (structure)</p>
+<blockquote>
+<div>A container with the policies you wish to update in a user pool.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>PasswordPolicy={MinimumLength=integer,RequireUppercase=boolean,RequireLowercase=boolean,RequireNumbers=boolean,RequireSymbols=boolean}</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"PasswordPolicy"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"MinimumLength"</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+    <span class="s2">"RequireUppercase"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+    <span class="s2">"RequireLowercase"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+    <span class="s2">"RequireNumbers"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+    <span class="s2">"RequireSymbols"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--lambda-config" class="dashAnchor" id="lambda-config"></a><span class="pre">--lambda-config</span></tt> (structure)</p>
+<blockquote>
+<div>The AWS Lambda configuration information from the request to update the user pool.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">PreSignUp</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">CustomMessage</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">PostConfirmation</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">PreAuthentication</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">PostAuthentication</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"PreSignUp"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"CustomMessage"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"PostConfirmation"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"PreAuthentication"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"PostAuthentication"</span><span class="p">:</span> <span class="s2">"string"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--auto-verified-attributes" class="dashAnchor" id="auto-verified-attributes"></a><span class="pre">--auto-verified-attributes</span></tt> (list)</p>
+<blockquote>
+<div>The attributes that are automatically verified when the Amazon Cognito service makes a request to update user pools.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>"string" "string" ...
+
+Where valid values are:
+  phone_number
+  email</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--sms-verification-message" class="dashAnchor" id="sms-verification-message"></a><span class="pre">--sms-verification-message</span></tt> (string)</p>
+<blockquote>
+<div>A container with information about the SMS verification message.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--email-verification-message" class="dashAnchor" id="email-verification-message"></a><span class="pre">--email-verification-message</span></tt> (string)</p>
+<blockquote>
+<div>The contents of the email verification message.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--email-verification-subject" class="dashAnchor" id="email-verification-subject"></a><span class="pre">--email-verification-subject</span></tt> (string)</p>
+<blockquote>
+<div>The subject of the email verfication message</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--sms-authentication-message" class="dashAnchor" id="sms-authentication-message"></a><span class="pre">--sms-authentication-message</span></tt> (string)</p>
+<blockquote>
+<div>The contents of the SMS authentication message.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--mfa-configuration" class="dashAnchor" id="mfa-configuration"></a><span class="pre">--mfa-configuration</span></tt> (string)</p>
+<blockquote>
+<div><p>Can be one of the following values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">OFF</span></tt> - MFA tokens are not required and cannot be specified during user registration.</li>
+<li><tt class="docutils literal"><span class="pre">ON</span></tt> - MFA tokens are required for all user registrations. You can only specify required when you are initially creating a user pool.</li>
+<li><tt class="docutils literal"><span class="pre">OPTIONAL</span></tt> - Users have the option when registering to create an MFA token.</li>
+</ul>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">OFF</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ON</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">OPTIONAL</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="update-user-attributes.html" title="previous chapter (use the left arrow)">&#8592; update-user-attributes</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="update-user-pool-client.html" title="next chapter (use the right arrow)">update-user-pool-client &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="update-user-pool-client.html" title="update-user-pool-client">next</a> |</li>
+        <li class="right">
+          <a href="update-user-attributes.html" title="update-user-attributes">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">cognito-idp</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cognito-idp/update-user-pool.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:00 GMT -->
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/redshift/disable-snapshot-copy.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:27 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>disable-snapshot-copy &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="redshift" href="index.html" />
+    <link rel="next" title="enable-logging" href="enable-logging.html" />
+    <link rel="prev" title="disable-logging" href="disable-logging.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="enable-logging.html" title="enable-logging" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="disable-logging.html" title="disable-logging" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">redshift</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="disable-logging.html" title="previous chapter (use the left arrow)">&#8592; disable-logging</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="enable-logging.html" title="next chapter (use the right arrow)">enable-logging &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">disable-snapshot-copy</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/redshift/disable-snapshot-copy">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-redshift"><em>redshift</em></a> ]</p>
+<div class="section" id="disable-snapshot-copy">
+<span id="cli-aws-redshift-disable-snapshot-copy"></span><h1>disable-snapshot-copy<a name="//apple_ref/cpp/Command/aws redshift disable-snapshot-copy" class="dashAnchor" id="aws redshift disable-snapshot-copy"></a><a class="headerlink" href="#disable-snapshot-copy" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Disables the automatic copying of snapshots from one region to another region for a specified cluster.</p>
+<p>If your cluster and its snapshots are encrypted using a customer master key (CMK) from AWS KMS, use  delete-snapshot-copy-grant to delete the grant that grants Amazon Redshift permission to the CMK in the destination region.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  disable-snapshot-copy
+--cluster-identifier &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cluster-identifier" class="dashAnchor" id="cluster-identifier"></a><span class="pre">--cluster-identifier</span></tt> (string)</p>
+<blockquote>
+<div><p>The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region.</p>
+<p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Cluster -&gt; (structure)</p>
+<blockquote>
+<div><p>Describes a cluster.</p>
+<p>ClusterIdentifier -&gt; (string)</p>
+<blockquote>
+<div>The unique identifier of the cluster.</div></blockquote>
+<p>NodeType -&gt; (string)</p>
+<blockquote>
+<div>The node type for the nodes in the cluster.</div></blockquote>
+<p>ClusterStatus -&gt; (string)</p>
+<blockquote>
+<div><p>The current state of the cluster. Possible values are:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">available</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">creating</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">deleting</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">final-snapshot</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">hardware-failure</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">incompatible-hsm</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">incompatible-network</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">incompatible-parameters</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">incompatible-restore</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">modifying</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">rebooting</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">renaming</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">resizing</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">rotating-keys</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">storage-full</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">updating-hsm</span></tt></li>
+</ul>
+</div></blockquote>
+<p>ModifyStatus -&gt; (string)</p>
+<blockquote>
+<div>The status of a modify operation, if any, initiated for the cluster.</div></blockquote>
+<p>MasterUsername -&gt; (string)</p>
+<blockquote>
+<div>The master user name for the cluster. This name is used to connect to the database that is specified in <strong>DBName</strong> .</div></blockquote>
+<p>DBName -&gt; (string)</p>
+<blockquote>
+<div>The name of the initial database that was created when the cluster was created. This same name is returned for the life of the cluster. If an initial database was not specified, a database named "dev" was created by default.</div></blockquote>
+<p>Endpoint -&gt; (structure)</p>
+<blockquote>
+<div><p>The connection endpoint.</p>
+<p>Address -&gt; (string)</p>
+<blockquote>
+<div>The DNS address of the Cluster.</div></blockquote>
+<p>Port -&gt; (integer)</p>
+<blockquote>
+<div>The port that the database engine is listening on.</div></blockquote>
+</div></blockquote>
+<p>ClusterCreateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time that the cluster was created.</div></blockquote>
+<p>AutomatedSnapshotRetentionPeriod -&gt; (integer)</p>
+<blockquote>
+<div>The number of days that automatic cluster snapshots are retained.</div></blockquote>
+<p>ClusterSecurityGroups -&gt; (list)</p>
+<blockquote>
+<div><p>A list of cluster security group that are associated with the cluster. Each security group is represented by an element that contains <tt class="docutils literal"><span class="pre">ClusterSecurityGroup.Name</span></tt> and <tt class="docutils literal"><span class="pre">ClusterSecurityGroup.Status</span></tt> subelements.</p>
+<p>Cluster security groups are used when the cluster is not created in a VPC. Clusters that are created in a VPC use VPC security groups, which are listed by the <strong>VpcSecurityGroups</strong> parameter.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a cluster security group.</p>
+<p>ClusterSecurityGroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the cluster security group.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status of the cluster security group.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>VpcSecurityGroups -&gt; (list)</p>
+<blockquote>
+<div><p>A list of Virtual Private Cloud (VPC) security groups that are associated with the cluster. This parameter is returned only if the cluster is in a VPC.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the members of a VPC security group.</p>
+<p>VpcSecurityGroupId -&gt; (string)</p>
+<blockquote>
+<div>The identifier of the VPC security group.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status of the VPC security group.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ClusterParameterGroups -&gt; (list)</p>
+<blockquote>
+<div><p>The list of cluster parameter groups that are associated with this cluster. Each parameter group in the list is returned with its status.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the status of a parameter group.</p>
+<p>ParameterGroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the cluster parameter group.</div></blockquote>
+<p>ParameterApplyStatus -&gt; (string)</p>
+<blockquote>
+<div>The status of parameter updates.</div></blockquote>
+<p>ClusterParameterStatusList -&gt; (list)</p>
+<blockquote>
+<div><p>The list of parameter statuses.</p>
+<p>For more information about parameters and parameter groups, go to <a class="reference external" href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <em>Amazon Redshift Cluster Management Guide</em> .</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the status of a parameter group.</p>
+<p>ParameterName -&gt; (string)</p>
+<blockquote>
+<div>The name of the parameter.</div></blockquote>
+<p>ParameterApplyStatus -&gt; (string)</p>
+<blockquote>
+<div><p>The status of the parameter that indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when being applied.</p>
+<p>The following are possible statuses and descriptions.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">in-sync</span></tt> : The parameter value is in sync with the database.</li>
+<li><tt class="docutils literal"><span class="pre">pending-reboot</span></tt> : The parameter value will be applied after the cluster reboots.</li>
+<li><tt class="docutils literal"><span class="pre">applying</span></tt> : The parameter value is being applied to the database.</li>
+<li><tt class="docutils literal"><span class="pre">invalid-parameter</span></tt> : Cannot apply the parameter value because it has an invalid value or syntax.</li>
+<li><tt class="docutils literal"><span class="pre">apply-deferred</span></tt> : The parameter contains static property changes. The changes are deferred until the cluster reboots.</li>
+<li><tt class="docutils literal"><span class="pre">apply-error</span></tt> : Cannot connect to the cluster. The parameter change will be applied after the cluster reboots.</li>
+<li><tt class="docutils literal"><span class="pre">unknown-error</span></tt> : Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</li>
+</ul>
+</div></blockquote>
+<p>ParameterApplyErrorDescription -&gt; (string)</p>
+<blockquote>
+<div>The error that prevented the parameter from being applied to the database.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ClusterSubnetGroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the subnet group that is associated with the cluster. This parameter is valid only when the cluster is in a VPC.</div></blockquote>
+<p>VpcId -&gt; (string)</p>
+<blockquote>
+<div>The identifier of the VPC the cluster is in, if the cluster is in a VPC.</div></blockquote>
+<p>AvailabilityZone -&gt; (string)</p>
+<blockquote>
+<div>The name of the Availability Zone in which the cluster is located.</div></blockquote>
+<p>PreferredMaintenanceWindow -&gt; (string)</p>
+<blockquote>
+<div>The weekly time range (in UTC) during which system maintenance can occur.</div></blockquote>
+<p>PendingModifiedValues -&gt; (structure)</p>
+<blockquote>
+<div><p>If present, changes to the cluster are pending. Specific pending changes are identified by subelements.</p>
+<p>MasterUserPassword -&gt; (string)</p>
+<blockquote>
+<div>The pending or in-progress change of the master user password for the cluster.</div></blockquote>
+<p>NodeType -&gt; (string)</p>
+<blockquote>
+<div>The pending or in-progress change of the cluster's node type.</div></blockquote>
+<p>NumberOfNodes -&gt; (integer)</p>
+<blockquote>
+<div>The pending or in-progress change of the number of nodes in the cluster.</div></blockquote>
+<p>ClusterType -&gt; (string)</p>
+<blockquote>
+<div>The pending or in-progress change of the cluster type.</div></blockquote>
+<p>ClusterVersion -&gt; (string)</p>
+<blockquote>
+<div>The pending or in-progress change of the service version.</div></blockquote>
+<p>AutomatedSnapshotRetentionPeriod -&gt; (integer)</p>
+<blockquote>
+<div>The pending or in-progress change of the automated snapshot retention period.</div></blockquote>
+<p>ClusterIdentifier -&gt; (string)</p>
+<blockquote>
+<div>The pending or in-progress change of the new identifier for the cluster.</div></blockquote>
+<p>PubliclyAccessible -&gt; (boolean)</p>
+<blockquote>
+<div>The pending or in-progress change of the ability to connect to the cluster from the public network.</div></blockquote>
+</div></blockquote>
+<p>ClusterVersion -&gt; (string)</p>
+<blockquote>
+<div>The version ID of the Amazon Redshift engine that is running on the cluster.</div></blockquote>
+<p>AllowVersionUpgrade -&gt; (boolean)</p>
+<blockquote>
+<div>If <tt class="docutils literal"><span class="pre">true</span></tt> , major version upgrades will be applied automatically to the cluster during the maintenance window.</div></blockquote>
+<p>NumberOfNodes -&gt; (integer)</p>
+<blockquote>
+<div>The number of compute nodes in the cluster.</div></blockquote>
+<p>PubliclyAccessible -&gt; (boolean)</p>
+<blockquote>
+<div>If <tt class="docutils literal"><span class="pre">true</span></tt> , the cluster can be accessed from a public network.</div></blockquote>
+<p>Encrypted -&gt; (boolean)</p>
+<blockquote>
+<div>If <tt class="docutils literal"><span class="pre">true</span></tt> , data in the cluster is encrypted at rest.</div></blockquote>
+<p>RestoreStatus -&gt; (structure)</p>
+<blockquote>
+<div><p>Describes the status of a cluster restore action. Returns null if the cluster was not created by restoring a snapshot.</p>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status of the restore action. Returns starting, restoring, completed, or failed.</div></blockquote>
+<p>CurrentRestoreRateInMegaBytesPerSecond -&gt; (double)</p>
+<blockquote>
+<div>The number of megabytes per second being transferred from the backup storage. Returns the average rate for a completed backup.</div></blockquote>
+<p>SnapshotSizeInMegaBytes -&gt; (long)</p>
+<blockquote>
+<div>The size of the set of snapshot data used to restore the cluster.</div></blockquote>
+<p>ProgressInMegaBytes -&gt; (long)</p>
+<blockquote>
+<div>The number of megabytes that have been transferred from snapshot storage.</div></blockquote>
+<p>ElapsedTimeInSeconds -&gt; (long)</p>
+<blockquote>
+<div>The amount of time an in-progress restore has been running, or the amount of time it took a completed restore to finish.</div></blockquote>
+<p>EstimatedTimeToCompletionInSeconds -&gt; (long)</p>
+<blockquote>
+<div>The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore.</div></blockquote>
+</div></blockquote>
+<p>HsmStatus -&gt; (structure)</p>
+<blockquote>
+<div><p>Reports whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p>
+<p>Values: active, applying</p>
+<p>HsmClientCertificateIdentifier -&gt; (string)</p>
+<blockquote>
+<div>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</div></blockquote>
+<p>HsmConfigurationIdentifier -&gt; (string)</p>
+<blockquote>
+<div>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div><p>Reports whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p>
+<p>Values: active, applying</p>
+</div></blockquote>
+</div></blockquote>
+<p>ClusterSnapshotCopyStatus -&gt; (structure)</p>
+<blockquote>
+<div><p>Returns the destination region and retention period that are configured for cross-region snapshot copy.</p>
+<p>DestinationRegion -&gt; (string)</p>
+<blockquote>
+<div>The destination region that snapshots are automatically copied to when cross-region snapshot copy is enabled.</div></blockquote>
+<p>RetentionPeriod -&gt; (long)</p>
+<blockquote>
+<div>The number of days that automated snapshots are retained in the destination region after they are copied from a source region.</div></blockquote>
+<p>SnapshotCopyGrantName -&gt; (string)</p>
+<blockquote>
+<div>The name of the snapshot copy grant.</div></blockquote>
+</div></blockquote>
+<p>ClusterPublicKey -&gt; (string)</p>
+<blockquote>
+<div>The public key for the cluster.</div></blockquote>
+<p>ClusterNodes -&gt; (list)</p>
+<blockquote>
+<div><p>The nodes in a cluster.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The identifier of a node in a cluster.</p>
+<p>NodeRole -&gt; (string)</p>
+<blockquote>
+<div>Whether the node is a leader node or a compute node.</div></blockquote>
+<p>PrivateIPAddress -&gt; (string)</p>
+<blockquote>
+<div>The private IP address of a node within a cluster.</div></blockquote>
+<p>PublicIPAddress -&gt; (string)</p>
+<blockquote>
+<div>The public IP address of a node within a cluster.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ElasticIpStatus -&gt; (structure)</p>
+<blockquote>
+<div><p>The status of the elastic IP (EIP) address.</p>
+<p>ElasticIp -&gt; (string)</p>
+<blockquote>
+<div>The elastic IP (EIP) address for the cluster.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status of the elastic IP (EIP) address.</div></blockquote>
+</div></blockquote>
+<p>ClusterRevisionNumber -&gt; (string)</p>
+<blockquote>
+<div>The specific revision number of the database in the cluster.</div></blockquote>
+<p>Tags -&gt; (list)</p>
+<blockquote>
+<div><p>The list of tags for the cluster.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A tag consisting of a name/value pair for a resource.</p>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div>The key, or name, for the resource tag.</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div>The value for the resource tag.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>KmsKeyId -&gt; (string)</p>
+<blockquote>
+<div>The AWS Key Management Service (KMS) key ID of the encryption key used to encrypt data in the cluster.</div></blockquote>
+<p>IamRoles -&gt; (list)</p>
+<blockquote>
+<div><p>A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other AWS services.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>An AWS Identity and Access Management (IAM) role that can be used by the associated Amazon Redshift cluster to access other AWS services.</p>
+<p>IamRoleArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the IAM role. For example, <tt class="docutils literal"><span class="pre">arn:aws:iam::123456789012:role/RedshiftCopyUnload</span></tt> .</div></blockquote>
+<p>ApplyStatus -&gt; (string)</p>
+<blockquote>
+<div><p>Describes the status of the IAM role's association with an Amazon Redshift cluster.</p>
+<p>The following are possible statuses and descriptions.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">in-sync</span></tt> : The role is available for use by the cluster.</li>
+<li><tt class="docutils literal"><span class="pre">adding</span></tt> : The role is in the process of being associated with the cluster.</li>
+<li><tt class="docutils literal"><span class="pre">removing</span></tt> : The role is in the process of being disassociated with the cluster.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="disable-logging.html" title="previous chapter (use the left arrow)">&#8592; disable-logging</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="enable-logging.html" title="next chapter (use the right arrow)">enable-logging &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="enable-logging.html" title="enable-logging">next</a> |</li>
+        <li class="right">
+          <a href="disable-logging.html" title="disable-logging">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">redshift</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/redshift/disable-snapshot-copy.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:27 GMT -->
+</html>

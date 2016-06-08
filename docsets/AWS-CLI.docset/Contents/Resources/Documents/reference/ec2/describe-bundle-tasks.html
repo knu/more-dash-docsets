@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/describe-bundle-tasks.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>describe-bundle-tasks &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>describe-bundle-tasks &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,9 +25,9 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="ec2" href="index.html" />
-    <link rel="next" title="describe-conversion-tasks" href="describe-conversion-tasks.html" />
+    <link rel="next" title="describe-classic-link-instances" href="describe-classic-link-instances.html" />
     <link rel="prev" title="describe-availability-zones" href="describe-availability-zones.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -58,10 +61,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
         <li class="right">
-          <a href="describe-conversion-tasks.html" title="describe-conversion-tasks" accesskey="N">next</a> |</li>
+          <a href="describe-classic-link-instances.html" title="describe-classic-link-instances" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="describe-availability-zones.html" title="describe-availability-zones" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">ec2</a> &#187;</li> 
       </ul>
@@ -75,43 +78,32 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="describe-conversion-tasks.html" title="next chapter (use the right arrow)">describe-conversion-tasks &#8594;</a></li>
+          <li><a href="describe-classic-link-instances.html" title="next chapter (use the right arrow)">describe-classic-link-instances &#8594;</a></li>
       </ul>
     </div>
   
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">describe-bundle-tasks</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
-<li><a class="reference internal" href="#filters">Filters</a><ul>
-<li><a class="reference internal" href="#bundle-id">bundle-id</a></li>
-<li><a class="reference internal" href="#error-code">error-code</a></li>
-<li><a class="reference internal" href="#error-message">error-message</a></li>
-<li><a class="reference internal" href="#instance-id">instance-id</a></li>
-<li><a class="reference internal" href="#progress">progress</a></li>
-<li><a class="reference internal" href="#s3-bucket">s3-bucket</a></li>
-<li><a class="reference internal" href="#s3-prefix">s3-prefix</a></li>
-<li><a class="reference internal" href="#start-time">start-time</a></li>
-<li><a class="reference internal" href="#state">state</a></li>
-<li><a class="reference internal" href="#update-time">update-time</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -120,44 +112,70 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/ec2/describe-bundle-tasks">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ec2/describe-bundle-tasks">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>ec2</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-ec2"><em>ec2</em></a> ]</p>
 <div class="section" id="describe-bundle-tasks">
-<h1>describe-bundle-tasks<a class="headerlink" href="#describe-bundle-tasks" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-ec2-describe-bundle-tasks"></span><h1>describe-bundle-tasks<a name="//apple_ref/cpp/Command/aws ec2 describe-bundle-tasks" class="dashAnchor" id="aws ec2 describe-bundle-tasks"></a><a class="headerlink" href="#describe-bundle-tasks" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>The describe-bundle-tasks operation describes in-progress and recent bundle tasks. Complete and failed tasks are removed from the list a short time after completion. If no bundle ids are given, all bundle tasks are returned.</p>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Describes one or more of your bundling tasks.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Completed bundle tasks are listed for only a limited time. If your bundle task is no longer in the list, you can still register an AMI from it. Just use <tt class="docutils literal"><span class="pre">register-image</span></tt> with the Amazon S3 bucket name and image manifest name you provided to the bundle task.</p>
+</div>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  describe-bundle-tasks
 [--dry-run | --no-dry-run]
 [--bundle-ids &lt;value&gt;]
-[--filters &lt;value&gt;]</pre>
+[--filters &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--no-dry-run" class="dashAnchor" id="no-dry-run"></a><span class="pre">--no-dry-run</span></tt> (boolean)</p>
-<p>Checks whether you have the required permissions for the action, without actually making the request. Using this option will result in one of two possible errorresponses. If you have the required permissions, the error response will be <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt>  . Otherwise it will be <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt>  .</p>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><span class="pre">--no-dry-run</span></tt> (boolean)</p>
+<blockquote>
+<div>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt> . Otherwise, it is <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt> .</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--bundle-ids" class="dashAnchor" id="bundle-ids"></a><span class="pre">--bundle-ids</span></tt> (list)</p>
 <blockquote>
-<div>The list of bundle task IDs to describe.</div></blockquote>
+<div><p>One or more bundle task IDs.</p>
+<p>Default: Describes all your bundle tasks.</p>
+</div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--filters" class="dashAnchor" id="filters"></a><span class="pre">--filters</span></tt> (list)</p>
 <blockquote>
-<div>A list of filters used to match properties for BundleTasks. For a complete reference to the available filter keys for this operation, see the <a class="reference external" href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a> .</div></blockquote>
+<div><p>One or more filters.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">bundle-id</span></tt> - The ID of the bundle task.</li>
+<li><tt class="docutils literal"><span class="pre">error-code</span></tt> - If the task failed, the error code returned.</li>
+<li><tt class="docutils literal"><span class="pre">error-message</span></tt> - If the task failed, the error message returned.</li>
+<li><tt class="docutils literal"><span class="pre">instance-id</span></tt> - The ID of the instance.</li>
+<li><tt class="docutils literal"><span class="pre">progress</span></tt> - The level of task completion, as a percentage (for example, 20%).</li>
+<li><tt class="docutils literal"><span class="pre">s3-bucket</span></tt> - The Amazon S3 bucket to store the AMI.</li>
+<li><tt class="docutils literal"><span class="pre">s3-prefix</span></tt> - The beginning of the AMI name.</li>
+<li><tt class="docutils literal"><span class="pre">start-time</span></tt> - The time the task started (for example, 2013-09-15T17:15:20.000Z).</li>
+<li><tt class="docutils literal"><span class="pre">state</span></tt> - The state of the task (<tt class="docutils literal"><span class="pre">pending</span></tt> | <tt class="docutils literal"><span class="pre">waiting-for-shutdown</span></tt> | <tt class="docutils literal"><span class="pre">bundling</span></tt> | <tt class="docutils literal"><span class="pre">storing</span></tt> | <tt class="docutils literal"><span class="pre">cancelling</span></tt> | <tt class="docutils literal"><span class="pre">complete</span></tt> | <tt class="docutils literal"><span class="pre">failed</span></tt> ).</li>
+<li><tt class="docutils literal"><span class="pre">update-time</span></tt> - The time of the most recent update for the task.</li>
+</ul>
+</div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><pre>  Key value pairs, where values are separated by commas.
---filters Name=string1,Values=string1,string2</pre>
+<div class="highlight-python"><pre>Name=string,Values=string,string ...</pre>
 </div>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><pre>[
@@ -168,50 +186,101 @@
   ...
 ]</pre>
 </div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
 </div>
-<div class="section" id="filters">
-<h2>Filters<a class="headerlink" href="#filters" title="Permalink to this headline">&#182;</a></h2>
-<div class="section" id="bundle-id">
-<h3>bundle-id<a class="headerlink" href="#bundle-id" title="Permalink to this headline">&#182;</a></h3>
-<p>The ID of the bundle task.</p>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To describe your bundle tasks</strong></p>
+<p>This example describes all of your bundle tasks.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 describe-bundle-tasks</pre>
 </div>
-<div class="section" id="error-code">
-<h3>error-code<a class="headerlink" href="#error-code" title="Permalink to this headline">&#182;</a></h3>
-<p>If the task failed, the error code returned.</p>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"BundleTasks"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"UpdateTime"</span><span class="p">:</span> <span class="s2">"2015-09-15T13:26:54.000Z"</span><span class="p">,</span>
+      <span class="s2">"InstanceId"</span><span class="p">:</span> <span class="s2">"i-1234567890abcdef0"</span><span class="p">,</span>
+      <span class="s2">"Storage"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"S3"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"Prefix"</span><span class="p">:</span> <span class="s2">"winami"</span><span class="p">,</span>
+            <span class="s2">"Bucket"</span><span class="p">:</span> <span class="s2">"bundletasks"</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="s2">"State"</span><span class="p">:</span> <span class="s2">"bundling"</span><span class="p">,</span>
+      <span class="s2">"StartTime"</span><span class="p">:</span> <span class="s2">"2015-09-15T13:24:35.000Z"</span><span class="p">,</span>
+      <span class="s2">"Progress"</span><span class="p">:</span> <span class="s2">"3%"</span><span class="p">,</span>
+      <span class="s2">"BundleId"</span><span class="p">:</span> <span class="s2">"bun-2a4e041c"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
 </div>
-<div class="section" id="error-message">
-<h3>error-message<a class="headerlink" href="#error-message" title="Permalink to this headline">&#182;</a></h3>
-<p>If the task failed, the error message returned.</p>
 </div>
-<div class="section" id="instance-id">
-<h3>instance-id<a class="headerlink" href="#instance-id" title="Permalink to this headline">&#182;</a></h3>
-<p>The ID of the instance that was bundled.</p>
-</div>
-<div class="section" id="progress">
-<h3>progress<a class="headerlink" href="#progress" title="Permalink to this headline">&#182;</a></h3>
-<p>The level of task completion, as a percentage (for example, 20%).</p>
-</div>
-<div class="section" id="s3-bucket">
-<h3>s3-bucket<a class="headerlink" href="#s3-bucket" title="Permalink to this headline">&#182;</a></h3>
-<p>The Amazon S3 bucket to store the AMI.</p>
-</div>
-<div class="section" id="s3-prefix">
-<h3>s3-prefix<a class="headerlink" href="#s3-prefix" title="Permalink to this headline">&#182;</a></h3>
-<p>The beginning of the AMI name.</p>
-</div>
-<div class="section" id="start-time">
-<h3>start-time<a class="headerlink" href="#start-time" title="Permalink to this headline">&#182;</a></h3>
-<p>The time the task started (for example, 2008-09-15T17:15:20.000Z).</p>
-</div>
-<div class="section" id="state">
-<h3>state<a class="headerlink" href="#state" title="Permalink to this headline">&#182;</a></h3>
-<p>The state of the task.</p>
-<p>Valid Values: pending|waiting-for-shutdown|bundling|storing|cancelling|complete|failed</p>
-</div>
-<div class="section" id="update-time">
-<h3>update-time<a class="headerlink" href="#update-time" title="Permalink to this headline">&#182;</a></h3>
-<p>The time of the most recent update for the task (for example, 2008-09-15T17:15:20.000Z).</p>
-</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>BundleTasks -&gt; (list)</p>
+<blockquote>
+<div><p>Information about one or more bundle tasks.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a bundle task.</p>
+<p>InstanceId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the instance associated with this bundle task.</div></blockquote>
+<p>BundleId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the bundle task.</div></blockquote>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div>The state of the task.</div></blockquote>
+<p>StartTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The time this task started.</div></blockquote>
+<p>UpdateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The time of the most recent update for the task.</div></blockquote>
+<p>Storage -&gt; (structure)</p>
+<blockquote>
+<div><p>The Amazon S3 storage locations.</p>
+<p>S3 -&gt; (structure)</p>
+<blockquote>
+<div><p>An Amazon S3 storage location.</p>
+<p>Bucket -&gt; (string)</p>
+<blockquote>
+<div>The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.</div></blockquote>
+<p>Prefix -&gt; (string)</p>
+<blockquote>
+<div>The beginning of the file name of the AMI.</div></blockquote>
+<p>AWSAccessKeyId -&gt; (string)</p>
+<blockquote>
+<div>The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and follow the guidance in <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for Managing AWS Access Keys</a> .</div></blockquote>
+<p>UploadPolicy -&gt; (blob)</p>
+<blockquote>
+<div>A base64-encoded Amazon S3 upload policy that gives Amazon EC2 permission to upload items into Amazon S3 on your behalf. For command line tools, base64 encoding is performed for you.</div></blockquote>
+<p>UploadPolicySignature -&gt; (string)</p>
+<blockquote>
+<div>The signature of the Base64 encoded JSON document.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Progress -&gt; (string)</p>
+<blockquote>
+<div>The level of task completion, as a percent (for example, 20%).</div></blockquote>
+<p>BundleTaskError -&gt; (structure)</p>
+<blockquote>
+<div><p>If the task fails, a description of the error.</p>
+<p>Code -&gt; (string)</p>
+<blockquote>
+<div>The error code.</div></blockquote>
+<p>Message -&gt; (string)</p>
+<blockquote>
+<div>The error message.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
 </div>
 </div>
 
@@ -227,50 +296,45 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="describe-conversion-tasks.html" title="next chapter (use the right arrow)">describe-conversion-tasks &#8594;</a></li>
+          <li><a href="describe-classic-link-instances.html" title="next chapter (use the right arrow)">describe-classic-link-instances &#8594;</a></li>
       </ul>
     </div>
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index">index</a></li>
         <li class="right">
-          <a href="describe-conversion-tasks.html" title="describe-conversion-tasks">next</a> |</li>
+          <a href="describe-classic-link-instances.html" title="describe-classic-link-instances">next</a> |</li>
         <li class="right">
           <a href="describe-availability-zones.html" title="describe-availability-zones">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">ec2</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'describe-availability-zones.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'describe-conversion-tasks.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/describe-bundle-tasks.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
 </html>

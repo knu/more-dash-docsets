@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/sts/assume-role-with-web-identity.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>assume-role-with-web-identity &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>assume-role-with-web-identity &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +25,10 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="sts" href="index.html" />
     <link rel="next" title="decode-authorization-message" href="decode-authorization-message.html" />
-    <link rel="prev" title="assume-role" href="assume-role.html" />
+    <link rel="prev" title="assume-role-with-saml" href="assume-role-with-saml.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
   
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -60,8 +63,8 @@
         <li class="right">
           <a href="decode-authorization-message.html" title="decode-authorization-message" accesskey="N">next</a> |</li>
         <li class="right">
-          <a href="assume-role.html" title="assume-role" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="assume-role-with-saml.html" title="assume-role-with-saml" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">sts</a> &#187;</li> 
       </ul>
@@ -71,7 +74,7 @@
     <div class="top-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="assume-role.html" title="previous chapter (use the left arrow)">&#8592; assume-role</a>
+          <a href="assume-role-with-saml.html" title="previous chapter (use the left arrow)">&#8592; assume-role-with-saml</a>
           <span class="divider">/</span>
           
         </li>
@@ -82,23 +85,24 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">assume-role-with-web-identity</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,54 +111,139 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/sts/assume-role-with-web-identity">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/sts/assume-role-with-web-identity">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>sts</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-sts"><em>sts</em></a> ]</p>
 <div class="section" id="assume-role-with-web-identity">
-<h1>assume-role-with-web-identity<a class="headerlink" href="#assume-role-with-web-identity" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-sts-assume-role-with-web-identity"></span><h1>assume-role-with-web-identity<a name="//apple_ref/cpp/Command/aws sts assume-role-with-web-identity" class="dashAnchor" id="aws sts assume-role-with-web-identity"></a><a class="headerlink" href="#assume-role-with-web-identity" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Returns a set of temporary security credentials for users who have been authenticated in a mobile or web application with a web identity provider, such as Login with Amazon, Facebook, or Google. <tt class="docutils literal"><span class="pre">assume-role-with-web-identity</span></tt>  is an API call that does not require the use of AWS security credentials. Therefore, you can distribute an application (for example, on mobile devices) that requests temporary security credentials without including long-term AWS credentials in the application or by deploying server-based proxy services that use long-term AWS credentials. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html#MobileApplication-KnownProvider">Creating a Mobile Application with Third-Party Sign-In</a> in <em>AWS Security Token Service</em> .</p>
-<p>The temporary security credentials consist of an access key ID, a secret access key, and a security token. Applications can use these temporary security credentials to sign calls to AWS service APIs. The credentials are valid for the duration that you specified when calling <tt class="docutils literal"><span class="pre">assume-role-with-web-identity</span></tt>  , which can be from 900 seconds (15 minutes) to 3600 seconds (1 hour). By default, the temporary security credentials are valid for 1 hour.</p>
-<p>The temporary security credentials that are returned from the <tt class="docutils literal"><span class="pre">assume-role-with-web-identity</span></tt>  response have the permissions that are associated with the access policy of the role being assumed. You can further restrict the permissions of the temporary security credentials by passing a policy in the request. The resulting permissions are an intersection of the role's access policy and the policy that you passed. These policies and any applicable resource-based policies are evaluated when calls to AWS service APIs are made using the temporary security credentials.</p>
-<p>Before your application can call <tt class="docutils literal"><span class="pre">assume-role-with-web-identity</span></tt>  , you must have an identity token from a supported identity provider and create a role that the application can assume. The role that your application assumes must trust the identity provider that is associated with the identity token. In other words, the identity provider must be specified in the role's trust policy. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingWIF.html">Creating Temporary Security Credentials for Mobile Apps Using Third-Party Identity Providers</a> .</p>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Returns a set of temporary security credentials for users who have been authenticated in a mobile or web application with a web identity provider, such as Amazon Cognito, Login with Amazon, Facebook, Google, or any OpenID Connect-compatible identity provider.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>For mobile applications, we recommend that you use Amazon Cognito. You can use Amazon Cognito with the <a class="reference external" href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS</a> and the <a class="reference external" href="http://aws.amazon.com/sdkforandroid/">AWS SDK for Android</a> to uniquely identify a user and supply the user with a consistent identity throughout the lifetime of an application.</p>
+<p class="last">To learn more about Amazon Cognito, see <a class="reference external" href="http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664">Amazon Cognito Overview</a> in the <em>AWS SDK for Android Developer Guide</em> guide and <a class="reference external" href="http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664">Amazon Cognito Overview</a> in the <em>AWS SDK for iOS Developer Guide</em> .</p>
+</div>
+<p>Calling <tt class="docutils literal"><span class="pre">assume-role-with-web-identity</span></tt> does not require the use of AWS security credentials. Therefore, you can distribute an application (for example, on mobile devices) that requests temporary security credentials without including long-term AWS credentials in the application, and without deploying server-based proxy services that use long-term AWS credentials. Instead, the identity of the caller is validated by using a token from the web identity provider. For a comparison of <tt class="docutils literal"><span class="pre">assume-role-with-web-identity</span></tt> with the other APIs that produce temporary credentials, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting Temporary Security Credentials</a> and <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing the AWS STS APIs</a> in the <em>IAM User Guide</em> .</p>
+<p>The temporary security credentials returned by this API consist of an access key ID, a secret access key, and a security token. Applications can use these temporary security credentials to sign calls to AWS service APIs.</p>
+<p>The credentials are valid for the duration that you specified when calling <tt class="docutils literal"><span class="pre">assume-role-with-web-identity</span></tt> , which can be from 900 seconds (15 minutes) to a maximum of 3600 seconds (1 hour). The default is 1 hour.</p>
+<p>The temporary security credentials created by <tt class="docutils literal"><span class="pre">assume-role-with-web-identity</span></tt> can be used to make API calls to any AWS service with the following exception: you cannot call the STS service's <tt class="docutils literal"><span class="pre">get-federation-token</span></tt> or <tt class="docutils literal"><span class="pre">get-session-token</span></tt> APIs.</p>
+<p>Optionally, you can pass an IAM access policy to this operation. If you choose not to pass a policy, the temporary security credentials that are returned by the operation have the permissions that are defined in the access policy of the role that is being assumed. If you pass a policy to this operation, the temporary security credentials that are returned by the operation have the permissions that are allowed by both the access policy of the role that is being assumed, * <strong>and</strong> * the policy that you pass. This gives you a way to further restrict the permissions for the resulting temporary security credentials. You cannot use the passed policy to grant permissions that are in excess of those allowed by the access policy of the role that is being assumed. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions for AssumeRole, AssumeRoleWithSAML, and assume-role-with-web-identity</a> in the <em>IAM User Guide</em> .</p>
+<p>Before your application can call <tt class="docutils literal"><span class="pre">assume-role-with-web-identity</span></tt> , you must have an identity token from a supported identity provider and create a role that the application can assume. The role that your application assumes must trust the identity provider that is associated with the identity token. In other words, the identity provider must be specified in the role's trust policy.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Calling <tt class="docutils literal"><span class="pre">assume-role-with-web-identity</span></tt> can result in an entry in your AWS CloudTrail logs. The entry includes the <a class="reference external" href="http://openid.net/specs/openid-connect-core-1_0.html#Claims">Subject</a> of the provided Web Identity Token. We recommend that you avoid using any personally identifiable information (PII) in this field. For example, you could instead use a GUID or a pairwise identifier, as <a class="reference external" href="http://openid.net/specs/openid-connect-core-1_0.html#SubjectIDTypes">suggested in the OIDC specification</a> .</p>
+</div>
+<p>For more information about how to use web identity federation and the <tt class="docutils literal"><span class="pre">assume-role-with-web-identity</span></tt> API, see the following resources:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual">Using Web Identity Federation APIs for Mobile Apps</a> and <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation Through a Web-based Identity Provider</a> .</li>
+<li><a class="reference external" href="https://web-identity-federation-playground.s3.amazonaws.com/index.html">Web Identity Federation Playground</a> . This interactive website lets you walk through the process of authenticating via Login with Amazon, Facebook, or Google, getting temporary security credentials, and then using those credentials to make a request to AWS.</li>
+<li><a class="reference external" href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS</a> and <a class="reference external" href="http://aws.amazon.com/sdkforandroid/">AWS SDK for Android</a> . These toolkits contain sample apps that show how to invoke the identity providers, and then how to use the information from these providers to get and use temporary security credentials.</li>
+<li><a class="reference external" href="http://aws.amazon.com/articles/4617974389850313">Web Identity Federation with Mobile Applications</a> . This article discusses web identity federation and shows an example of how to use web identity federation to get access to content in Amazon S3.</li>
+</ul>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  assume-role-with-web-identity
 --role-arn &lt;value&gt;
 --role-session-name &lt;value&gt;
 --web-identity-token &lt;value&gt;
 [--provider-id &lt;value&gt;]
 [--policy &lt;value&gt;]
-[--duration-seconds &lt;value&gt;]</pre>
+[--duration-seconds &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--role-arn" class="dashAnchor" id="role-arn"></a><span class="pre">--role-arn</span></tt> (string)</p>
 <blockquote>
 <div>The Amazon Resource Name (ARN) of the role that the caller is assuming.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--role-session-name" class="dashAnchor" id="role-session-name"></a><span class="pre">--role-session-name</span></tt> (string)</p>
 <blockquote>
-<div>An identifier for the assumed role session. Typically, you pass the name or identifier that is associated with the user who is using your application. That way, the temporary security credentials that your application will use are associated with that user. This session name is included as part of the ARN and assumed role ID in the <tt class="docutils literal"><span class="pre">AssumedRoleUser</span></tt>  response element.</div></blockquote>
+<div><p>An identifier for the assumed role session. Typically, you pass the name or identifier that is associated with the user who is using your application. That way, the temporary security credentials that your application will use are associated with that user. This session name is included as part of the ARN and assumed role ID in the <tt class="docutils literal"><span class="pre">AssumedRoleUser</span></tt> response element.</p>
+<p>The format for this parameter, as described by its regex pattern, is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</p>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--web-identity-token" class="dashAnchor" id="web-identity-token"></a><span class="pre">--web-identity-token</span></tt> (string)</p>
 <blockquote>
-<div>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application must get this token by authenticating the user who is using your application with a web identity provider before the application makes an <tt class="docutils literal"><span class="pre">assume-role-with-web-identity</span></tt>  call.</div></blockquote>
+<div>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application must get this token by authenticating the user who is using your application with a web identity provider before the application makes an <tt class="docutils literal"><span class="pre">assume-role-with-web-identity</span></tt> call.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--provider-id" class="dashAnchor" id="provider-id"></a><span class="pre">--provider-id</span></tt> (string)</p>
 <blockquote>
-<div>The fully-qualified host component of the domain name of the identity provider. Specify this value only for OAuth access tokens. Do not specify this value for OpenID Connect ID tokens, such as <tt class="docutils literal"><span class="pre">accounts.google.com</span></tt>  . Do not include URL schemes and port numbers. Currently, <tt class="docutils literal"><span class="pre">www.amazon.com</span></tt>  and <tt class="docutils literal"><span class="pre">graph.facebook.com</span></tt>  are supported.</div></blockquote>
+<div><p>The fully qualified host component of the domain name of the identity provider.</p>
+<p>Specify this value only for OAuth 2.0 access tokens. Currently <tt class="docutils literal"><span class="pre">www.amazon.com</span></tt> and <tt class="docutils literal"><span class="pre">graph.facebook.com</span></tt> are the only supported identity providers for OAuth 2.0 access tokens. Do not include URL schemes and port numbers.</p>
+<p>Do not specify this value for OpenID Connect ID tokens.</p>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--policy" class="dashAnchor" id="policy"></a><span class="pre">--policy</span></tt> (string)</p>
 <blockquote>
-<div>A supplemental policy that is associated with the temporary security credentials from the <tt class="docutils literal"><span class="pre">assume-role-with-web-identity</span></tt>  call. The resulting permissions of the temporary security credentials are an intersection of this policy and the access policy that is associated with the role. Use this policy to further restrict the permissions of the temporary security credentials.</div></blockquote>
+<div><p>An IAM policy in JSON format.</p>
+<p>The policy parameter is optional. If you pass a policy, the temporary security credentials that are returned by the operation have the permissions that are allowed by both the access policy of the role that is being assumed, * <strong>and</strong> * the policy that you pass. This gives you a way to further restrict the permissions for the resulting temporary security credentials. You cannot use the passed policy to grant permissions that are in excess of those allowed by the access policy of the role that is being assumed. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions for assume-role-with-web-identity</a> in the <em>IAM User Guide</em> .</p>
+<p>The format for this parameter, as described by its regex pattern, is a string of characters up to 2048 characters in length. The characters can be any ASCII character from the space character to the end of the valid character list (u0020-u00FF). It can also include the tab (u0009), linefeed (u000A), and carriage return (u000D) characters.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The policy plain text must be 2048 bytes or shorter. However, an internal conversion compresses it into a packed binary format with a separate limit. The PackedPolicySize response element indicates by percentage how close to the upper size limit the policy is, with 100% equaling the maximum allowed size.</p>
+</div>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--duration-seconds" class="dashAnchor" id="duration-seconds"></a><span class="pre">--duration-seconds</span></tt> (integer)</p>
 <blockquote>
 <div>The duration, in seconds, of the role session. The value can range from 900 seconds (15 minutes) to 3600 seconds (1 hour). By default, the value is set to 3600 seconds.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Credentials -&gt; (structure)</p>
+<blockquote>
+<div><p>The temporary security credentials, which include an access key ID, a secret access key, and a security token.</p>
+<blockquote>
+<div><strong>Note:</strong> The size of the security token that STS APIs return is not fixed. We strongly recommend that you make no assumptions about the maximum size. As of this writing, the typical size is less than 4096 bytes, but that can vary. Also, future updates to AWS might require larger sizes.</div></blockquote>
+<p>AccessKeyId -&gt; (string)</p>
+<blockquote>
+<div>The access key ID that identifies the temporary security credentials.</div></blockquote>
+<p>SecretAccessKey -&gt; (string)</p>
+<blockquote>
+<div>The secret access key that can be used to sign requests.</div></blockquote>
+<p>SessionToken -&gt; (string)</p>
+<blockquote>
+<div>The token that users must pass to the service API to use the temporary credentials.</div></blockquote>
+<p>Expiration -&gt; (timestamp)</p>
+<blockquote>
+<div>The date on which the current credentials expire.</div></blockquote>
+</div></blockquote>
+<p>SubjectFromWebIdentityToken -&gt; (string)</p>
+<blockquote>
+<div>The unique user identifier that is returned by the identity provider. This identifier is associated with the <tt class="docutils literal"><span class="pre">WebIdentityToken</span></tt> that was submitted with the <tt class="docutils literal"><span class="pre">assume-role-with-web-identity</span></tt> call. The identifier is typically unique to the user and the application that acquired the <tt class="docutils literal"><span class="pre">WebIdentityToken</span></tt> (pairwise identifier). For OpenID Connect ID tokens, this field contains the value returned by the identity provider as the token's <tt class="docutils literal"><span class="pre">sub</span></tt> (Subject) claim.</div></blockquote>
+<p>AssumedRoleUser -&gt; (structure)</p>
+<blockquote>
+<div><p>The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers that you can use to refer to the resulting temporary security credentials. For example, you can reference these credentials as a principal in a resource-based policy by using the ARN or assumed role ID. The ARN and ID include the <tt class="docutils literal"><span class="pre">RoleSessionName</span></tt> that you specified when you called <tt class="docutils literal"><span class="pre">assume-role</span></tt> .</p>
+<p>AssumedRoleId -&gt; (string)</p>
+<blockquote>
+<div>A unique identifier that contains the role ID and the role session name of the role that is being assumed. The role ID is generated by AWS when the role is created.</div></blockquote>
+<p>Arn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the temporary security credentials that are returned from the  assume-role action. For more information about ARNs and how to use them in policies, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in <em>Using IAM</em> .</div></blockquote>
+</div></blockquote>
+<p>PackedPolicySize -&gt; (integer)</p>
+<blockquote>
+<div>A percentage value that indicates the size of the policy in packed form. The service rejects any policy with a packed size greater than 100 percent, which means the policy exceeded the allowed space.</div></blockquote>
+<p>Provider -&gt; (string)</p>
+<blockquote>
+<div>The issuing authority of the web identity token presented. For OpenID Connect ID Tokens this contains the value of the <tt class="docutils literal"><span class="pre">iss</span></tt> field. For OAuth 2.0 access tokens, this contains the value of the <tt class="docutils literal"><span class="pre">ProviderId</span></tt> parameter that was passed in the <tt class="docutils literal"><span class="pre">assume-role-with-web-identity</span></tt> request.</div></blockquote>
+<p>Audience -&gt; (string)</p>
+<blockquote>
+<div>The intended audience (also known as client ID) of the web identity token. This is traditionally the client identifier issued to the application that requested the web identity token.</div></blockquote>
 </div>
 </div>
 
@@ -166,7 +255,7 @@
     <div class="footer-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="assume-role.html" title="previous chapter (use the left arrow)">&#8592; assume-role</a>
+          <a href="assume-role-with-saml.html" title="previous chapter (use the left arrow)">&#8592; assume-role-with-saml</a>
           <span class="divider">/</span>
           
         </li>
@@ -176,6 +265,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -184,36 +282,22 @@
         <li class="right">
           <a href="decode-authorization-message.html" title="decode-authorization-message">next</a> |</li>
         <li class="right">
-          <a href="assume-role.html" title="assume-role">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="assume-role-with-saml.html" title="assume-role-with-saml">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">sts</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'assume-role.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'decode-authorization-message.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/sts/assume-role-with-web-identity.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
 </html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/machinelearning/create-data-source-from-rds.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:21 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-data-source-from-rds &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="machinelearning" href="index.html" />
+    <link rel="next" title="create-data-source-from-redshift" href="create-data-source-from-redshift.html" />
+    <link rel="prev" title="create-batch-prediction" href="create-batch-prediction.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="create-data-source-from-redshift.html" title="create-data-source-from-redshift" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="create-batch-prediction.html" title="create-batch-prediction" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">machinelearning</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="create-batch-prediction.html" title="previous chapter (use the left arrow)">&#8592; create-batch-prediction</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-data-source-from-redshift.html" title="next chapter (use the right arrow)">create-data-source-from-redshift &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-data-source-from-rds</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/machinelearning/create-data-source-from-rds">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-machinelearning"><em>machinelearning</em></a> ]</p>
+<div class="section" id="create-data-source-from-rds">
+<span id="cli-aws-machinelearning-create-data-source-from-rds"></span><h1>create-data-source-from-rds<a name="//apple_ref/cpp/Command/aws machinelearning create-data-source-from-rds" class="dashAnchor" id="aws machinelearning create-data-source-from-rds"></a><a class="headerlink" href="#create-data-source-from-rds" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Creates a <tt class="docutils literal"><span class="pre">DataSource</span></tt> object from an <a class="reference external" href="http://aws.amazon.com/rds/">Amazon Relational Database Service</a> (Amazon RDS). A <tt class="docutils literal"><span class="pre">DataSource</span></tt> references data that can be used to perform <tt class="docutils literal"><span class="pre">create-ml-model</span></tt> , <tt class="docutils literal"><span class="pre">create-evaluation</span></tt> , or <tt class="docutils literal"><span class="pre">create-batch-prediction</span></tt> operations.</p>
+<p><tt class="docutils literal"><span class="pre">create-data-source-from-rds</span></tt> is an asynchronous operation. In response to <tt class="docutils literal"><span class="pre">create-data-source-from-rds</span></tt> , Amazon Machine Learning (Amazon ML) immediately returns and sets the <tt class="docutils literal"><span class="pre">DataSource</span></tt> status to <tt class="docutils literal"><span class="pre">PENDING</span></tt> . After the <tt class="docutils literal"><span class="pre">DataSource</span></tt> is created and ready for use, Amazon ML sets the <tt class="docutils literal"><span class="pre">Status</span></tt> parameter to <tt class="docutils literal"><span class="pre">COMPLETED</span></tt> . <tt class="docutils literal"><span class="pre">DataSource</span></tt> in the <tt class="docutils literal"><span class="pre">COMPLETED</span></tt> or <tt class="docutils literal"><span class="pre">PENDING</span></tt> state can be used only to perform <tt class="docutils literal"><span class="pre">create-ml-model</span></tt> , <tt class="docutils literal"><span class="pre">create-evaluation</span></tt> , or <tt class="docutils literal"><span class="pre">create-batch-prediction</span></tt> operations.</p>
+<p>If Amazon ML cannot accept the input source, it sets the <tt class="docutils literal"><span class="pre">Status</span></tt> parameter to <tt class="docutils literal"><span class="pre">FAILED</span></tt> and includes an error message in the <tt class="docutils literal"><span class="pre">Message</span></tt> attribute of the <tt class="docutils literal"><span class="pre">get-data-source</span></tt> operation response.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  create-data-source-from-rds
+--data-source-id &lt;value&gt;
+[--data-source-name &lt;value&gt;]
+--rds-data &lt;value&gt;
+--role-arn &lt;value&gt;
+[--compute-statistics | --no-compute-statistics]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--data-source-id" class="dashAnchor" id="data-source-id"></a><span class="pre">--data-source-id</span></tt> (string)</p>
+<blockquote>
+<div>A user-supplied ID that uniquely identifies the <tt class="docutils literal"><span class="pre">DataSource</span></tt> . Typically, an Amazon Resource Number (ARN) becomes the ID for a <tt class="docutils literal"><span class="pre">DataSource</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--data-source-name" class="dashAnchor" id="data-source-name"></a><span class="pre">--data-source-name</span></tt> (string)</p>
+<blockquote>
+<div>A user-supplied name or description of the <tt class="docutils literal"><span class="pre">DataSource</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--rds-data" class="dashAnchor" id="rds-data"></a><span class="pre">--rds-data</span></tt> (structure)</p>
+<blockquote>
+<div><p>The data specification of an Amazon RDS <tt class="docutils literal"><span class="pre">DataSource</span></tt> :</p>
+<ul class="simple">
+<li>DatabaseInformation -<ul>
+<li><tt class="docutils literal"><span class="pre">DatabaseName</span></tt> - The name of the Amazon RDS database.</li>
+<li><tt class="docutils literal"><span class="pre">InstanceIdentifier</span></tt> - A unique identifier for the Amazon RDS database instance.</li>
+</ul>
+</li>
+<li>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</li>
+<li>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a class="reference external" href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</li>
+<li>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</li>
+<li>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<tt class="docutils literal"><span class="pre">SubnetId</span></tt> , <tt class="docutils literal"><span class="pre">SecurityGroupIds</span></tt> ] pair for a VPC-based RDS DB instance.</li>
+<li>SelectSqlQuery - A query that is used to retrieve the observation data for the <tt class="docutils literal"><span class="pre">Datasource</span></tt> .</li>
+<li>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <tt class="docutils literal"><span class="pre">SelectSqlQuery</span></tt> is stored in this location.</li>
+<li>DataSchemaUri - The Amazon S3 location of the <tt class="docutils literal"><span class="pre">DataSchema</span></tt> .</li>
+<li>DataSchema - A JSON string representing the schema. This is not required if <tt class="docutils literal"><span class="pre">DataSchemaUri</span></tt> is specified.</li>
+<li>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <tt class="docutils literal"><span class="pre">Datasource</span></tt> .   Sample - <tt class="docutils literal"><span class="pre">"{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</span></tt></li>
+</ul>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>DatabaseInformation={InstanceIdentifier=string,DatabaseName=string},SelectSqlQuery=string,DatabaseCredentials={Username=string,Password=string},S3StagingLocation=string,DataRearrangement=string,DataSchema=string,DataSchemaUri=string,ResourceRole=string,ServiceRole=string,SubnetId=string,SecurityGroupIds=string,string</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"DatabaseInformation"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"InstanceIdentifier"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+    <span class="s2">"DatabaseName"</span><span class="p">:</span> <span class="s2">"string"</span>
+  <span class="p">},</span>
+  <span class="s2">"SelectSqlQuery"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"DatabaseCredentials"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Username"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+    <span class="s2">"Password"</span><span class="p">:</span> <span class="s2">"string"</span>
+  <span class="p">},</span>
+  <span class="s2">"S3StagingLocation"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"DataRearrangement"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"DataSchema"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"DataSchemaUri"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"ResourceRole"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"ServiceRole"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"SubnetId"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"SecurityGroupIds"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"string"</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--role-arn" class="dashAnchor" id="role-arn"></a><span class="pre">--role-arn</span></tt> (string)</p>
+<blockquote>
+<div>The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's account and copy data using the <tt class="docutils literal"><span class="pre">SelectSqlQuery</span></tt> query from Amazon RDS to Amazon S3.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--compute-statistics" class="dashAnchor" id="compute-statistics"></a><span class="pre">--compute-statistics</span></tt> | <tt class="docutils literal"><span class="pre">--no-compute-statistics</span></tt> (boolean)</p>
+<blockquote>
+<div>The compute statistics for a <tt class="docutils literal"><span class="pre">DataSource</span></tt> . The statistics are generated from the observation data referenced by a <tt class="docutils literal"><span class="pre">DataSource</span></tt> . Amazon ML uses the statistics internally during <tt class="docutils literal"><span class="pre">MLModel</span></tt> training. This parameter must be set to <tt class="docutils literal"><span class="pre">true</span></tt> if the <a href="#id1"><span class="problematic" id="id2">``</span></a>`` DataSource```` needs to be used for <tt class="docutils literal"><span class="pre">MLModel</span></tt> training.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>DataSourceId -&gt; (string)</p>
+<blockquote>
+<div>A user-supplied ID that uniquely identifies the datasource. This value should be identical to the value of the <tt class="docutils literal"><span class="pre">DataSourceID</span></tt> in the request.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="create-batch-prediction.html" title="previous chapter (use the left arrow)">&#8592; create-batch-prediction</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-data-source-from-redshift.html" title="next chapter (use the right arrow)">create-data-source-from-redshift &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="create-data-source-from-redshift.html" title="create-data-source-from-redshift">next</a> |</li>
+        <li class="right">
+          <a href="create-batch-prediction.html" title="create-batch-prediction">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">machinelearning</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/machinelearning/create-data-source-from-rds.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:21 GMT -->
+</html>

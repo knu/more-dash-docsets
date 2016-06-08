@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/dynamodb/scan.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:01 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>scan &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>scan &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="dynamodb" href="index.html" />
     <link rel="next" title="update-item" href="update-item.html" />
     <link rel="prev" title="query" href="query.html" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -61,7 +64,7 @@
           <a href="update-item.html" title="update-item" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="query.html" title="query" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">dynamodb</a> &#187;</li> 
       </ul>
@@ -82,23 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">scan</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,81 +112,109 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/dynamodb/scan">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/dynamodb/scan">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>dynamodb</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-dynamodb"><em>dynamodb</em></a> ]</p>
 <div class="section" id="scan">
-<h1>scan<a class="headerlink" href="#scan" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-dynamodb-scan"></span><h1>scan<a name="//apple_ref/cpp/Command/aws dynamodb scan" class="dashAnchor" id="aws dynamodb scan"></a><a class="headerlink" href="#scan" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>The <em>scan</em> operation returns one or more items and item attributes by accessing every item in the table. To have Amazon DynamoDB return fewer items, you can provide a <em>--scan-filter</em> .</p>
-<p>If the total number of scanned items exceeds the maximum data set size limit of 1 MB, the scan stops and results are returned to the user with a <em>LastEvaluatedKey</em> to continue the scan in a subsequent operation. The results also include the number of items exceeding the limit. A scan can result in no table data meeting the filter criteria.</p>
-<p>The result set is eventually consistent.</p>
-<p>By default, <em>scan</em> operations proceed sequentially; however, for faster performance on large tables, applications can request a parallel <em>scan</em> by specifying the <em>--segment</em> and <em>--total-segments</em> parameters. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan">Parallel scan</a> in the Amazon DynamoDB Developer Guide.</p>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>The <em>scan</em> operation returns one or more items and item attributes by accessing every item in a table or a secondary index. To have DynamoDB return fewer items, you can provide a <em>ScanFilter</em> operation.</p>
+<p>If the total number of scanned items exceeds the maximum data set size limit of 1 MB, the scan stops and results are returned to the user as a <em>LastEvaluatedKey</em> value to continue the scan in a subsequent operation. The results also include the number of items exceeding the limit. A scan can result in no table data meeting the filter criteria.</p>
+<p>By default, <em>scan</em> operations proceed sequentially; however, for faster performance on a large table or secondary index, applications can request a parallel <em>scan</em> operation by providing the <em>Segment</em> and <em>TotalSegments</em> parameters. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan">Parallel scan</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
+<p>By default, <em>scan</em> uses eventually consistent reads when accessing the data in a table; therefore, the result set might not include the changes to data in the table immediately before the operation began. If you need a consistent copy of the data, as of the time that the scan begins, you can set the <em>consistent-read</em> parameter to <em>true</em> .</p>
+<p><tt class="docutils literal"><span class="pre">scan</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">Items</span></tt>, <tt class="docutils literal"><span class="pre">Count</span></tt>, <tt class="docutils literal"><span class="pre">ScannedCount</span></tt></p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  scan
 --table-name &lt;value&gt;
+[--index-name &lt;value&gt;]
 [--attributes-to-get &lt;value&gt;]
-[--limit &lt;value&gt;]
 [--select &lt;value&gt;]
 [--scan-filter &lt;value&gt;]
-[--exclusive-start-key &lt;value&gt;]
+[--conditional-operator &lt;value&gt;]
 [--return-consumed-capacity &lt;value&gt;]
 [--total-segments &lt;value&gt;]
-[--segment &lt;value&gt;]</pre>
+[--segment &lt;value&gt;]
+[--projection-expression &lt;value&gt;]
+[--filter-expression &lt;value&gt;]
+[--expression-attribute-names &lt;value&gt;]
+[--expression-attribute-values &lt;value&gt;]
+[--consistent-read | --no-consistent-read]
+[--cli-input-json &lt;value&gt;]
+[--starting-token &lt;value&gt;]
+[--page-size &lt;value&gt;]
+[--max-items &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--table-name" class="dashAnchor" id="table-name"></a><span class="pre">--table-name</span></tt> (string)</p>
 <blockquote>
-<div>The name of the table containing the requested items.</div></blockquote>
+<div>The name of the table containing the requested items; or, if you provide <tt class="docutils literal"><span class="pre">index-name</span></tt> , the name of the table to which that index belongs.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--index-name" class="dashAnchor" id="index-name"></a><span class="pre">--index-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of a secondary index to scan. This index can be any local secondary index or global secondary index. Note that if you use the <tt class="docutils literal"><span class="pre">index-name</span></tt> parameter, you must also provide <tt class="docutils literal"><span class="pre">table-name</span></tt> .</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--attributes-to-get" class="dashAnchor" id="attributes-to-get"></a><span class="pre">--attributes-to-get</span></tt> (list)</p>
 <blockquote>
-<div>The names of one or more attributes to retrieve. If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</div></blockquote>
+<div><div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>This is a legacy parameter, for backward compatibility. New applications should use <em>projection-expression</em> instead. Do not combine legacy parameters and expression parameters in a single API call; otherwise, DynamoDB will return a <em>ValidationException</em> exception.</p>
+<p class="last">This parameter allows you to retrieve attributes of type List or Map; however, it cannot retrieve individual elements within a List or a Map.</p>
+</div>
+<p>The names of one or more attributes to retrieve. If no attribute names are provided, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
+<p>Note that <em>AttributesToGet</em> has no effect on provisioned throughput consumption. DynamoDB determines capacity units consumed based on item size, not on the amount of data that is returned to an application.</p>
+</div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--limit" class="dashAnchor" id="limit"></a><span class="pre">--limit</span></tt> (integer)</p>
-<blockquote>
-<div>The maximum number of items to evaluate (not necessarily the number of matching items). If Amazon DynamoDB processes the number of items up to the limit while processing the results, it stops the operation and returns the matching values up to that point, and a <em>LastEvaluatedKey</em> to apply in a subsequent operation, so that you can pick up where you left off. Also, if the processed data set size exceeds 1 MB before Amazon DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a <em>LastEvaluatedKey</em> to apply in a subsequent operation to continue the operation. For more information see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">query and scan</a> in the Amazon DynamoDB Developer Guide.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--select" class="dashAnchor" id="select"></a><span class="pre">--select</span></tt> (string)</p>
 <blockquote>
-<div><p>The attributes to be returned in the result. You can retrieve all item attributes, specific item attributes, the count of matching items, or in the case of an index, some or all of the attributes projected into the index.</p>
+<div><p>The attributes to be returned in the result. You can retrieve all item attributes, specific item attributes, or the count of matching items.</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">ALL_ATTRIBUTES</span></tt>  : Returns all of the item attributes. For a table, this is the default. For an index, this mode causes Amazon DynamoDB to fetch the full item from the table for each matching item in the index. If the index is configured to project all item attributes, the matching items will not be fetched from the table. Fetching items from the table incurs additional throughput cost and latency.</li>
-<li><tt class="docutils literal"><span class="pre">ALL_PROJECTED_ATTRIBUTES</span></tt>  : Retrieves all attributes which have been projected into the index. If the index is configured to project all attributes, this is equivalent to specifying <em>ALL_ATTRIBUTES</em> .</li>
-<li><tt class="docutils literal"><span class="pre">COUNT</span></tt>  : Returns the number of matching items, rather than the matching items themselves.</li>
-<li><tt class="docutils literal"><span class="pre">SPECIFIC_ATTRIBUTES</span></tt>  : Returns only the attributes listed in <em>--attributes-to-get</em> . This is equivalent to specifying <em>--attributes-to-get</em> without specifying any value for <em>--select</em> . If you are querying an index and request only attributes that are projected into that index, the operation will read only the index and not the table. If any of the requested attributes are not projected into the index, Amazon DynamoDB will need to fetch each matching item from the table. This extra fetching incurs additional throughput cost and latency.</li>
+<li><tt class="docutils literal"><span class="pre">ALL_ATTRIBUTES</span></tt> - Returns all of the item attributes.</li>
+<li><tt class="docutils literal"><span class="pre">ALL_PROJECTED_ATTRIBUTES</span></tt> - Allowed only when querying an index. Retrieves all attributes that have been projected into the index. If the index is configured to project all attributes, this return value is equivalent to specifying <tt class="docutils literal"><span class="pre">ALL_ATTRIBUTES</span></tt> .</li>
+<li><tt class="docutils literal"><span class="pre">COUNT</span></tt> - Returns the number of matching items, rather than the matching items themselves.</li>
+<li><tt class="docutils literal"><span class="pre">SPECIFIC_ATTRIBUTES</span></tt> - Returns only the attributes listed in <em>AttributesToGet</em> . This return value is equivalent to specifying <em>AttributesToGet</em> without specifying any value for <em>select</em> .</li>
 </ul>
-<p>When neither <em>--select</em> nor <em>--attributes-to-get</em> are specified, Amazon DynamoDB defaults to <tt class="docutils literal"><span class="pre">ALL_ATTRIBUTES</span></tt>  when accessing a table, and <tt class="docutils literal"><span class="pre">ALL_PROJECTED_ATTRIBUTES</span></tt>  when accessing an index. You cannot use both <em>--select</em> and <em>--attributes-to-get</em> together in a single request, <em>unless</em> the value for <em>--select</em> is <tt class="docutils literal"><span class="pre">SPECIFIC_ATTRIBUTES</span></tt>  . (This usage is equivalent to specifying <em>--attributes-to-get</em> without any value for <em>--select</em> .)</p>
+<p>If neither <em>select</em> nor <em>AttributesToGet</em> are specified, DynamoDB defaults to <tt class="docutils literal"><span class="pre">ALL_ATTRIBUTES</span></tt> . You cannot use both <em>AttributesToGet</em> and <em>select</em> together in a single request, unless the value for <em>select</em> is <tt class="docutils literal"><span class="pre">SPECIFIC_ATTRIBUTES</span></tt> . (This usage is equivalent to specifying <em>AttributesToGet</em> without any value for <em>select</em> .)</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ALL_ATTRIBUTES</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ALL_PROJECTED_ATTRIBUTES</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">SPECIFIC_ATTRIBUTES</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">COUNT</span></tt></li>
+</ul>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--scan-filter" class="dashAnchor" id="scan-filter"></a><span class="pre">--scan-filter</span></tt> (map)</p>
 <blockquote>
-<div><p>Evaluates the scan results and returns only the desired values. Multiple conditions are treated as "AND" operations: all conditions must be met to be included in the results.</p>
-<p>Each <em>ScanConditions</em> element consists of an attribute name to compare, along with the following:</p>
+<div><div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This is a legacy parameter, for backward compatibility. New applications should use <em>FilterExpression</em> instead. Do not combine legacy parameters and expression parameters in a single API call; otherwise, DynamoDB will return a <em>ValidationException</em> exception.</p>
+</div>
+<p>A condition that evaluates the scan results and returns only the desired values.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This parameter does not support attributes of type List or Map.</p>
+</div>
+<p>If you specify more than one condition in the <em>ScanFilter</em> map, then by default all of the conditions must evaluate to true. In other words, the conditions are ANDed together. (You can use the <em>conditional-operator</em> parameter to OR the conditions instead. If you do this, then at least one of the conditions must evaluate to true, rather than all of them.)</p>
+<p>Each <em>ScanFilter</em> element consists of an attribute name to compare, along with the following:</p>
 <ul class="simple">
-<li><em>AttributeValueList</em> - One or more values to evaluate against the supplied attribute. This list contains exactly one value, except for a <tt class="docutils literal"><span class="pre">BETWEEN</span></tt>  or <tt class="docutils literal"><span class="pre">IN</span></tt>  comparison, in which case the list contains two values. .. note:: For type Number, value comparisons are numeric. String value comparisons for greater than, equals, or less than are based on ASCII character code values. For example, <tt class="docutils literal"><span class="pre">a</span></tt>  is greater than <tt class="docutils literal"><span class="pre">A</span></tt>  , and <tt class="docutils literal"><span class="pre">aa</span></tt>  is greater than <tt class="docutils literal"><span class="pre">B</span></tt>  . For a list of code values, see <a class="reference external" href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a> . For Binary, Amazon DynamoDB treats each byte of the binary data as unsigned when it compares binary values, for example when evaluating query expressions.</li>
-<li><em>ComparisonOperator</em> - A comparator for evaluating attributes. For example, equals, greater than, less than, etc. Valid comparison operators for Scan: <tt class="docutils literal"><span class="pre">EQ</span> <span class="pre">|</span> <span class="pre">NE</span> <span class="pre">|</span> <span class="pre">LE</span> <span class="pre">|</span> <span class="pre">LT</span> <span class="pre">|</span> <span class="pre">GE</span> <span class="pre">|</span> <span class="pre">GT</span> <span class="pre">|</span> <span class="pre">NOT_NULL</span> <span class="pre">|</span> <span class="pre">NULL</span> <span class="pre">|</span> <span class="pre">CONTAINS</span> <span class="pre">|</span> <span class="pre">NOT_CONTAINS</span> <span class="pre">|</span> <span class="pre">BEGINS_WITH</span> <span class="pre">|</span> <span class="pre">IN</span> <span class="pre">|</span> <span class="pre">BETWEEN</span></tt>   For information on specifying data types in JSON, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the Amazon DynamoDB Developer Guide. The following are descriptions of each comparison operator.  *  <tt class="docutils literal"><span class="pre">EQ</span></tt>  : Equal.  <em>AttributeValueList</em> can contain only one <em>AttributeValue</em> of type String, Number, or Binary (not a set). If an item contains an <em>AttributeValue</em> of a different type than the one specified in the request, the value does not match. For example, <tt class="docutils literal"><span class="pre">{"S":"6"}</span></tt>  does not equal <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt>  . Also, <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt>  does not equal <tt class="docutils literal"><span class="pre">{"NS":["6",</span> <span class="pre">"2",</span> <span class="pre">"1"]}</span></tt>  .</li>
-<li><tt class="docutils literal"><span class="pre">NE</span></tt>  : Not equal.  <em>AttributeValueList</em> can contain only one <em>AttributeValue</em> of type String, Number, or Binary (not a set). If an item contains an <em>AttributeValue</em> of a different type than the one specified in the request, the value does not match. For example, <tt class="docutils literal"><span class="pre">{"S":"6"}</span></tt>  does not equal <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt>  . Also, <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt>  does not equal <tt class="docutils literal"><span class="pre">{"NS":["6",</span> <span class="pre">"2",</span> <span class="pre">"1"]}</span></tt>  .</li>
-<li><tt class="docutils literal"><span class="pre">LE</span></tt>  : Less than or equal.  <em>AttributeValueList</em> can contain only one <em>AttributeValue</em> of type String, Number, or Binary (not a set). If an item contains an <em>AttributeValue</em> of a different type than the one specified in the request, the value does not match. For example, <tt class="docutils literal"><span class="pre">{"S":"6"}</span></tt>  does not equal <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt>  . Also, <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt>  does not compare to <tt class="docutils literal"><span class="pre">{"NS":["6",</span> <span class="pre">"2",</span> <span class="pre">"1"]}</span></tt>  .</li>
-<li><tt class="docutils literal"><span class="pre">LT</span></tt>  : Less than.  <em>AttributeValueList</em> can contain only one <em>AttributeValue</em> of type String, Number, or Binary (not a set). If an item contains an <em>AttributeValue</em> of a different type than the one specified in the request, the value does not match. For example, <tt class="docutils literal"><span class="pre">{"S":"6"}</span></tt>  does not equal <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt>  . Also, <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt>  does not compare to <tt class="docutils literal"><span class="pre">{"NS":["6",</span> <span class="pre">"2",</span> <span class="pre">"1"]}</span></tt>  .</li>
-<li><tt class="docutils literal"><span class="pre">GE</span></tt>  : Greater than or equal.  <em>AttributeValueList</em> can contain only one <em>AttributeValue</em> of type String, Number, or Binary (not a set). If an item contains an <em>AttributeValue</em> of a different type than the one specified in the request, the value does not match. For example, <tt class="docutils literal"><span class="pre">{"S":"6"}</span></tt>  does not equal <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt>  . Also, <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt>  does not compare to <tt class="docutils literal"><span class="pre">{"NS":["6",</span> <span class="pre">"2",</span> <span class="pre">"1"]}</span></tt>  .</li>
-<li><tt class="docutils literal"><span class="pre">GT</span></tt>  : Greater than.  <em>AttributeValueList</em> can contain only one <em>AttributeValue</em> of type String, Number, or Binary (not a set). If an item contains an <em>AttributeValue</em> of a different type than the one specified in the request, the value does not match. For example, <tt class="docutils literal"><span class="pre">{"S":"6"}</span></tt>  does not equal <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt>  . Also, <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt>  does not compare to <tt class="docutils literal"><span class="pre">{"NS":["6",</span> <span class="pre">"2",</span> <span class="pre">"1"]}</span></tt>  .</li>
-<li><tt class="docutils literal"><span class="pre">NOT_NULL</span></tt>  : The attribute exists.</li>
-<li><tt class="docutils literal"><span class="pre">NULL</span></tt>  : The attribute does not exist.</li>
-<li><tt class="docutils literal"><span class="pre">CONTAINS</span></tt>  : checks for a subsequence, or value in a set. <em>AttributeValueList</em> can contain only one <em>AttributeValue</em> of type String, Number, or Binary (not a set). If the target attribute of the comparison is a String, then the operation checks for a substring match. If the target attribute of the comparison is Binary, then the operation looks for a subsequence of the target that matches the input. If the target attribute of the comparison is a set ("SS", "NS", or "BS"), then the operation checks for a member of the set (not as a substring).</li>
-<li><tt class="docutils literal"><span class="pre">NOT_CONTAINS</span></tt>  : checks for absence of a subsequence, or absence of a value in a set. <em>AttributeValueList</em> can contain only one <em>AttributeValue</em> of type String, Number, or Binary (not a set). If the target attribute of the comparison is a String, then the operation checks for the absence of a substring match. If the target attribute of the comparison is Binary, then the operation checks for the absence of a subsequence of the target that matches the input. If the target attribute of the comparison is a set ("SS", "NS", or "BS"), then the operation checks for the absence of a member of the set (not as a substring).</li>
-<li><tt class="docutils literal"><span class="pre">BEGINS_WITH</span></tt>  : checks for a prefix.  <em>AttributeValueList</em> can contain only one <em>AttributeValue</em> of type String or Binary (not a Number or a set). The target attribute of the comparison must be a String or Binary (not a Number or a set).</li>
-<li><tt class="docutils literal"><span class="pre">IN</span></tt>  : checks for exact matches. <em>AttributeValueList</em> can contain more than one <em>AttributeValue</em> of type String, Number, or Binary (not a set). The target attribute of the comparison must be of the same type and exact value to match. A String never matches a String set.</li>
-<li><tt class="docutils literal"><span class="pre">BETWEEN</span></tt>  : Greater than or equal to the first value, and less than or equal to the second value.  <em>AttributeValueList</em> must contain two <em>AttributeValue</em> elements of the same type, either String, Number, or Binary (not a set). A target attribute matches if the target value is greater than, or equal to, the first element and less than, or equal to, the second element. If an item contains an <em>AttributeValue</em> of a different type than the one specified in the request, the value does not match. For example, <tt class="docutils literal"><span class="pre">{"S":"6"}</span></tt>  does not compare to <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt>  . Also, <tt class="docutils literal"><span class="pre">{"N":"6"}</span></tt>  does not compare to <tt class="docutils literal"><span class="pre">{"NS":["6",</span> <span class="pre">"2",</span> <span class="pre">"1"]}</span></tt></li>
+<li><em>AttributeValueList</em> - One or more values to evaluate against the supplied attribute. The number of values in the list depends on the operator specified in <em>ComparisonOperator</em> . For type Number, value comparisons are numeric. String value comparisons for greater than, equals, or less than are based on ASCII character code values. For example, <tt class="docutils literal"><span class="pre">a</span></tt> is greater than <tt class="docutils literal"><span class="pre">A</span></tt> , and <tt class="docutils literal"><span class="pre">a</span></tt> is greater than <tt class="docutils literal"><span class="pre">B</span></tt> . For a list of code values, see <a class="reference external" href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a> . For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values. For information on specifying data types in JSON, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the <em>Amazon DynamoDB Developer Guide</em> .</li>
+<li><em>ComparisonOperator</em> - A comparator for evaluating attributes. For example, equals, greater than, less than, etc. The following comparison operators are available:  <tt class="docutils literal"><span class="pre">EQ</span> <span class="pre">|</span> <span class="pre">NE</span> <span class="pre">|</span> <span class="pre">LE</span> <span class="pre">|</span> <span class="pre">LT</span> <span class="pre">|</span> <span class="pre">GE</span> <span class="pre">|</span> <span class="pre">GT</span> <span class="pre">|</span> <span class="pre">NOT_NULL</span> <span class="pre">|</span> <span class="pre">NULL</span> <span class="pre">|</span> <span class="pre">CONTAINS</span> <span class="pre">|</span> <span class="pre">NOT_CONTAINS</span> <span class="pre">|</span> <span class="pre">BEGINS_WITH</span> <span class="pre">|</span> <span class="pre">IN</span> <span class="pre">|</span> <span class="pre">BETWEEN</span></tt>   For complete descriptions of all comparison operators, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a> .</li>
 </ul>
 </div></blockquote>
 <p>JSON Syntax:</p>
@@ -193,7 +226,45 @@
           "B": blob,
           "SS": ["string", ...],
           "NS": ["string", ...],
-          "BS": [blob, ...]
+          "BS": [blob, ...],
+          "M": {"string": {
+                "S": "string",
+                "N": "string",
+                "B": blob,
+                "SS": ["string", ...],
+                "NS": ["string", ...],
+                "BS": [blob, ...],
+                "M": {"string": { ... recursive ... }
+                  ...},
+                "L": [
+                  { ... recursive ... }
+                  ...
+                ],
+                "NULL": true|false,
+                "BOOL": true|false
+              }
+            ...},
+          "L": [
+            {
+              "S": "string",
+              "N": "string",
+              "B": blob,
+              "SS": ["string", ...],
+              "NS": ["string", ...],
+              "BS": [blob, ...],
+              "M": {"string": { ... recursive ... }
+                ...},
+              "L": [
+                { ... recursive ... }
+                ...
+              ],
+              "NULL": true|false,
+              "BOOL": true|false
+            }
+            ...
+          ],
+          "NULL": true|false,
+          "BOOL": true|false
         }
         ...
       ],
@@ -201,11 +272,128 @@
     }
   ...}</pre>
 </div>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--exclusive-start-key" class="dashAnchor" id="exclusive-start-key"></a><span class="pre">--exclusive-start-key</span></tt> (map)</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--conditional-operator" class="dashAnchor" id="conditional-operator"></a><span class="pre">--conditional-operator</span></tt> (string)</p>
 <blockquote>
-<div><p>The primary key of the first item that this operation will evaluate. Use the value that was returned for <em>LastEvaluatedKey</em> in the previous operation.</p>
-<p>The data type for <em>--exclusive-start-key</em> must be String, Number or Binary. No set data types are allowed.</p>
-<p>In a parallel scan, a <em>scan</em> request that includes <em>--exclusive-start-key</em> must specify the same segment whose previous <em>scan</em> returned the corresponding value of <em>LastEvaluatedKey</em> .</p>
+<div><div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This is a legacy parameter, for backward compatibility. New applications should use <em>FilterExpression</em> instead. Do not combine legacy parameters and expression parameters in a single API call; otherwise, DynamoDB will return a <em>ValidationException</em> exception.</p>
+</div>
+<p>A logical operator to apply to the conditions in a <em>ScanFilter</em> map:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">AND</span></tt> - If all of the conditions evaluate to true, then the entire map evaluates to true.</li>
+<li><tt class="docutils literal"><span class="pre">OR</span></tt> - If at least one of the conditions evaluate to true, then the entire map evaluates to true.</li>
+</ul>
+<p>If you omit <em>conditional-operator</em> , then <tt class="docutils literal"><span class="pre">AND</span></tt> is the default.</p>
+<p>The operation will succeed only if the entire map evaluates to true.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This parameter does not support attributes of type List or Map.</p>
+</div>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">AND</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">OR</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--return-consumed-capacity" class="dashAnchor" id="return-consumed-capacity"></a><span class="pre">--return-consumed-capacity</span></tt> (string)</p>
+<blockquote>
+<div><p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
+<ul class="simple">
+<li><em>INDEXES</em> - The response includes the aggregate <em>ConsumedCapacity</em> for the operation, together with <em>ConsumedCapacity</em> for each table and secondary index that was accessed. Note that some operations, such as <em>get-item</em> and <em>batch-get-item</em> , do not access any indexes at all. In these cases, specifying <em>INDEXES</em> will only return <em>ConsumedCapacity</em> information for table(s).</li>
+<li><em>TOTAL</em> - The response includes only the aggregate <em>ConsumedCapacity</em> for the operation.</li>
+<li><em>NONE</em> - No <em>ConsumedCapacity</em> details are included in the response.</li>
+</ul>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">INDEXES</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">TOTAL</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">NONE</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--total-segments" class="dashAnchor" id="total-segments"></a><span class="pre">--total-segments</span></tt> (integer)</p>
+<blockquote>
+<div><p>For a parallel <em>scan</em> request, <em>TotalSegments</em> represents the total number of segments into which the <em>scan</em> operation will be divided. The value of <em>TotalSegments</em> corresponds to the number of application workers that will perform the parallel scan. For example, if you want to use four application threads to scan a table or an index, specify a <em>TotalSegments</em> value of 4.</p>
+<p>The value for <em>TotalSegments</em> must be greater than or equal to 1, and less than or equal to 1000000. If you specify a <em>TotalSegments</em> value of 1, the <em>scan</em> operation will be sequential rather than parallel.</p>
+<p>If you specify <em>TotalSegments</em> , you must also specify <em>Segment</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--segment" class="dashAnchor" id="segment"></a><span class="pre">--segment</span></tt> (integer)</p>
+<blockquote>
+<div><p>For a parallel <em>scan</em> request, <em>Segment</em> identifies an individual segment to be scanned by an application worker.</p>
+<p>Segment IDs are zero-based, so the first segment is always 0. For example, if you want to use four application threads to scan a table or an index, then the first thread specifies a <em>Segment</em> value of 0, the second thread specifies 1, and so on.</p>
+<p>The value of <em>LastEvaluatedKey</em> returned from a parallel <em>scan</em> request must be used as <em>ExclusiveStartKey</em> with the same segment ID in a subsequent <em>scan</em> operation.</p>
+<p>The value for <em>Segment</em> must be greater than or equal to 0, and less than the value provided for <em>TotalSegments</em> .</p>
+<p>If you provide <em>Segment</em> , you must also provide <em>TotalSegments</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--projection-expression" class="dashAnchor" id="projection-expression"></a><span class="pre">--projection-expression</span></tt> (string)</p>
+<blockquote>
+<div><p>A string that identifies one or more attributes to retrieve from the specified table or index. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p>
+<p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><em>projection-expression</em> replaces the legacy <em>AttributesToGet</em> parameter.</p>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--filter-expression" class="dashAnchor" id="filter-expression"></a><span class="pre">--filter-expression</span></tt> (string)</p>
+<blockquote>
+<div><p>A string that contains conditions that DynamoDB applies after the <em>scan</em> operation, but before the data is returned to you. Items that do not satisfy the <em>FilterExpression</em> criteria are not returned.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">A <em>FilterExpression</em> is applied after the items have already been read; the process of filtering does not consume any additional read capacity units.</p>
+</div>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter Expressions</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><em>FilterExpression</em> replaces the legacy <em>ScanFilter</em> and <em>conditional-operator</em> parameters.</p>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--expression-attribute-names" class="dashAnchor" id="expression-attribute-names"></a><span class="pre">--expression-attribute-names</span></tt> (map)</p>
+<blockquote>
+<div><p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <em>ExpressionAttributeNames</em> :</p>
+<ul class="simple">
+<li>To access an attribute whose name conflicts with a DynamoDB reserved word.</li>
+<li>To create a placeholder for repeating occurrences of an attribute name in an expression.</li>
+<li>To prevent special characters in an attribute name from being misinterpreted in an expression.</li>
+</ul>
+<p>Use the <strong>#</strong> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Percentile</span></tt></li>
+</ul>
+<p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <em>Amazon DynamoDB Developer Guide</em> ). To work around this, you could specify the following for <em>ExpressionAttributeNames</em> :</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">{"#P":"Percentile"}</span></tt></li>
+</ul>
+<p>You could then use this substitution in an expression, as in this example:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">#P</span> <span class="pre">=</span> <span class="pre">:val</span></tt></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Tokens that begin with the <strong>:</strong> character are <em>expression attribute values</em> , which are placeholders for the actual value at runtime.</p>
+</div>
+<p>For more information on expression attribute names, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">KeyName1</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">KeyName2</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{"string": "string"
+  ...}</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--expression-attribute-values" class="dashAnchor" id="expression-attribute-values"></a><span class="pre">--expression-attribute-values</span></tt> (map)</p>
+<blockquote>
+<div><p>One or more values that can be substituted in an expression.</p>
+<p>Use the <strong>:</strong> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <em>ProductStatus</em> attribute was one of the following:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">Available</span> <span class="pre">|</span> <span class="pre">Backordered</span> <span class="pre">|</span> <span class="pre">Discontinued</span></tt></div></blockquote>
+<p>You would first need to specify <em>ExpressionAttributeValues</em> as follows:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">{</span> <span class="pre">":avail":{"S":"Available"},</span> <span class="pre">":back":{"S":"Backordered"},</span> <span class="pre">":disc":{"S":"Discontinued"}</span> <span class="pre">}</span></tt></div></blockquote>
+<p>You could then use these values in an expression, such as this:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">ProductStatus</span> <span class="pre">IN</span> <span class="pre">(:avail,</span> <span class="pre">:back,</span> <span class="pre">:disc)</span></tt></div></blockquote>
+<p>For more information on expression attribute values, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
 </div></blockquote>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><pre>{"string": {
@@ -214,28 +402,459 @@
       "B": blob,
       "SS": ["string", ...],
       "NS": ["string", ...],
-      "BS": [blob, ...]
+      "BS": [blob, ...],
+      "M": {"string": {
+            "S": "string",
+            "N": "string",
+            "B": blob,
+            "SS": ["string", ...],
+            "NS": ["string", ...],
+            "BS": [blob, ...],
+            "M": {"string": { ... recursive ... }
+              ...},
+            "L": [
+              { ... recursive ... }
+              ...
+            ],
+            "NULL": true|false,
+            "BOOL": true|false
+          }
+        ...},
+      "L": [
+        {
+          "S": "string",
+          "N": "string",
+          "B": blob,
+          "SS": ["string", ...],
+          "NS": ["string", ...],
+          "BS": [blob, ...],
+          "M": {"string": { ... recursive ... }
+            ...},
+          "L": [
+            { ... recursive ... }
+            ...
+          ],
+          "NULL": true|false,
+          "BOOL": true|false
+        }
+        ...
+      ],
+      "NULL": true|false,
+      "BOOL": true|false
     }
   ...}</pre>
 </div>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--return-consumed-capacity" class="dashAnchor" id="return-consumed-capacity"></a><span class="pre">--return-consumed-capacity</span></tt> (string)</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--consistent-read" class="dashAnchor" id="consistent-read"></a><span class="pre">--consistent-read</span></tt> | <tt class="docutils literal"><span class="pre">--no-consistent-read</span></tt> (boolean)</p>
 <blockquote>
-<div>If set to <tt class="docutils literal"><span class="pre">TOTAL</span></tt>  , <em>ConsumedCapacity</em> is included in the response; if set to <tt class="docutils literal"><span class="pre">NONE</span></tt>  (the default), <em>ConsumedCapacity</em> is not included.</div></blockquote>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--total-segments" class="dashAnchor" id="total-segments"></a><span class="pre">--total-segments</span></tt> (integer)</p>
-<blockquote>
-<div><p>For a parallel <em>scan</em> request, <em>--total-segments</em> represents the total number of segments into which the <em>scan</em> operation will be divided. The value of <em>--total-segments</em> corresponds to the number of application workers that will perform the parallel scan. For example, if you want to scan a table using four application threads, you would specify a <em>--total-segments</em> value of 4.</p>
-<p>The value for <em>--total-segments</em> must be greater than or equal to 1, and less than or equal to 4096. If you specify a <em>--total-segments</em> value of 1, the <em>scan</em> will be sequential rather than parallel.</p>
-<p>If you specify <em>--total-segments</em> , you must also specify <em>--segment</em> .</p>
+<div><p>A Boolean value that determines the read consistency model during the scan:</p>
+<ul class="simple">
+<li>If <em>consistent-read</em> is <tt class="docutils literal"><span class="pre">false</span></tt> , then the data returned from <em>scan</em> might not contain the results from other recently completed write operations (PutItem, update-item or DeleteItem).</li>
+<li>If <em>consistent-read</em> is <tt class="docutils literal"><span class="pre">true</span></tt> , then all of the write operations that completed before the <em>scan</em> began are guaranteed to be contained in the <em>scan</em> response.</li>
+</ul>
+<p>The default setting for <em>consistent-read</em> is <tt class="docutils literal"><span class="pre">false</span></tt> .</p>
+<p>The <em>consistent-read</em> parameter is not supported on global secondary indexes. If you scan a global secondary index with <em>consistent-read</em> set to true, you will receive a <em>ValidationException</em> .</p>
 </div></blockquote>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--segment" class="dashAnchor" id="segment"></a><span class="pre">--segment</span></tt> (integer)</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--starting-token" class="dashAnchor" id="starting-token"></a><span class="pre">--starting-token</span></tt> (string)</p>
 <blockquote>
-<div><p>For a parallel <em>scan</em> request, <em>--segment</em> identifies an individual segment to be scanned by an application worker.</p>
-<p class="attribution">&#8212;segment IDs are zero-based, so the first segment is always 0. For example, if you want to scan a table using four application threads, the first thread would specify a <em>--segment</em> value of 0, the second thread would specify 1, and so on.</p>
+<div>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--page-size" class="dashAnchor" id="page-size"></a><span class="pre">--page-size</span></tt> (integer)</p>
+<blockquote>
+<div>The size of each page.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-items" class="dashAnchor" id="max-items"></a><span class="pre">--max-items</span></tt> (integer)</p>
+<blockquote>
+<div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">NextToken</span></tt> will be provided in the output that you can use to resume pagination. This <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element should <strong>not</strong> be used directly outside of the AWS CLI.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To scan a table</strong></p>
+<p>This example scans the entire <em>MusicCollection</em> table, and then narrows the results to songs by the artist "No One You Know". For each item, only the album title and song title are returned.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws dynamodb scan --table-name MusicCollection --filter-expression "Artist = :a" --projection-expression "#ST, #AT" --expression-attribute-names file://expression-attribute-names.json --expression-attribute-values file://expression-attribute-values.json</pre>
+</div>
+<p>The arguments for <tt class="docutils literal"><span class="pre">--expression-attribute-names</span></tt> are stored in a JSON file, <tt class="docutils literal"><span class="pre">expression-attribute-names.json</span></tt>.  Here are the contents of that file:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"#ST"</span><span class="p">:</span> <span class="s2">"SongTitle"</span><span class="p">,</span>
+    <span class="s2">"#AT"</span><span class="p">:</span><span class="s2">"AlbumTitle"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The arguments for <tt class="docutils literal"><span class="pre">--expression-attribute-values</span></tt> are stored in a JSON file, <tt class="docutils literal"><span class="pre">expression-attribute-values.json</span></tt>.  Here are the contents of that file:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">":a"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"S"</span><span class="p">:</span> <span class="s2">"No One You Know"</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"Count"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">"Items"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"SongTitle"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"S"</span><span class="p">:</span> <span class="s2">"Call Me Today"</span>
+            <span class="p">},</span>
+            <span class="s2">"AlbumTitle"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"S"</span><span class="p">:</span> <span class="s2">"Somewhat Famous"</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"SongTitle"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"S"</span><span class="p">:</span> <span class="s2">"Scared of My Shadow"</span>
+            <span class="p">},</span>
+            <span class="s2">"AlbumTitle"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"S"</span><span class="p">:</span> <span class="s2">"Blue Sky Blues"</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">"ScannedCount"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s2">"ConsumedCapacity"</span><span class="p">:</span> <span class="n">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Items -&gt; (list)</p>
+<blockquote>
+<div><p>An array of item attributes that match the scan criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
+<p>(map)</p>
+<blockquote>
+<div><p>key -&gt; (string)</p>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
+<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<p>S -&gt; (string)</p>
+<blockquote>
+<div>A String data type.</div></blockquote>
+<p>N -&gt; (string)</p>
+<blockquote>
+<div>A Number data type.</div></blockquote>
+<p>B -&gt; (blob)</p>
+<blockquote>
+<div>A Binary data type.</div></blockquote>
+<p>SS -&gt; (list)</p>
+<blockquote>
+<div><p>A String Set data type.</p>
+<p>(string)</p>
 </div></blockquote>
+<p>NS -&gt; (list)</p>
 <blockquote>
-<div><p>The value of <em>LastEvaluatedKey</em> returned from a parallel <em>scan</em> request must be used as <em>--exclusive-start-key</em> with the same --segment ID in a subsequent <em>scan</em> operation.</p>
-<p>The value for <em>--segment</em> must be greater than or equal to 0, and less than the value provided for <em>--total-segments</em> .</p>
-<p>If you specify <em>--segment</em> , you must also specify <em>--total-segments</em> .</p>
+<div><p>A Number Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>BS -&gt; (list)</p>
+<blockquote>
+<div><p>A Binary Set data type.</p>
+<p>(blob)</p>
+</div></blockquote>
+<p>M -&gt; (map)</p>
+<blockquote>
+<div><p>A Map of attribute values.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
+<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<p>S -&gt; (string)</p>
+<blockquote>
+<div>A String data type.</div></blockquote>
+<p>N -&gt; (string)</p>
+<blockquote>
+<div>A Number data type.</div></blockquote>
+<p>B -&gt; (blob)</p>
+<blockquote>
+<div>A Binary data type.</div></blockquote>
+<p>SS -&gt; (list)</p>
+<blockquote>
+<div><p>A String Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>NS -&gt; (list)</p>
+<blockquote>
+<div><p>A Number Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>BS -&gt; (list)</p>
+<blockquote>
+<div><p>A Binary Set data type.</p>
+<p>(blob)</p>
+</div></blockquote>
+<p>M -&gt; (map)</p>
+<blockquote>
+<div><p>A Map of attribute values.</p>
+<p>key -&gt; (string)</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>L -&gt; (list)</p>
+<blockquote>
+<div><p>A List of attribute values.</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>NULL -&gt; (boolean)</p>
+<blockquote>
+<div>A Null data type.</div></blockquote>
+<p>BOOL -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean data type.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>L -&gt; (list)</p>
+<blockquote>
+<div><p>A List of attribute values.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
+<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<p>S -&gt; (string)</p>
+<blockquote>
+<div>A String data type.</div></blockquote>
+<p>N -&gt; (string)</p>
+<blockquote>
+<div>A Number data type.</div></blockquote>
+<p>B -&gt; (blob)</p>
+<blockquote>
+<div>A Binary data type.</div></blockquote>
+<p>SS -&gt; (list)</p>
+<blockquote>
+<div><p>A String Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>NS -&gt; (list)</p>
+<blockquote>
+<div><p>A Number Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>BS -&gt; (list)</p>
+<blockquote>
+<div><p>A Binary Set data type.</p>
+<p>(blob)</p>
+</div></blockquote>
+<p>M -&gt; (map)</p>
+<blockquote>
+<div><p>A Map of attribute values.</p>
+<p>key -&gt; (string)</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>L -&gt; (list)</p>
+<blockquote>
+<div><p>A List of attribute values.</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>NULL -&gt; (boolean)</p>
+<blockquote>
+<div>A Null data type.</div></blockquote>
+<p>BOOL -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean data type.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NULL -&gt; (boolean)</p>
+<blockquote>
+<div>A Null data type.</div></blockquote>
+<p>BOOL -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean data type.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Count -&gt; (integer)</p>
+<blockquote>
+<div><p>The number of items in the response.</p>
+<p>If you set <em>ScanFilter</em> in the request, then <em>Count</em> is the number of items returned after the filter was applied, and <em>ScannedCount</em> is the number of matching items before the filter was applied.</p>
+<p>If you did not use a filter in the request, then <em>Count</em> is the same as <em>ScannedCount</em> .</p>
+</div></blockquote>
+<p>ScannedCount -&gt; (integer)</p>
+<blockquote>
+<div><p>The number of items evaluated, before any <em>ScanFilter</em> is applied. A high <em>ScannedCount</em> value with few, or no, <em>Count</em> results indicates an inefficient <em>scan</em> operation. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
+<p>If you did not use a filter in the request, then <em>ScannedCount</em> is the same as <em>Count</em> .</p>
+</div></blockquote>
+<p>LastEvaluatedKey -&gt; (map)</p>
+<blockquote>
+<div><p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
+<p>If <em>LastEvaluatedKey</em> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p>
+<p>If <em>LastEvaluatedKey</em> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <em>LastEvaluatedKey</em> is empty.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
+<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<p>S -&gt; (string)</p>
+<blockquote>
+<div>A String data type.</div></blockquote>
+<p>N -&gt; (string)</p>
+<blockquote>
+<div>A Number data type.</div></blockquote>
+<p>B -&gt; (blob)</p>
+<blockquote>
+<div>A Binary data type.</div></blockquote>
+<p>SS -&gt; (list)</p>
+<blockquote>
+<div><p>A String Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>NS -&gt; (list)</p>
+<blockquote>
+<div><p>A Number Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>BS -&gt; (list)</p>
+<blockquote>
+<div><p>A Binary Set data type.</p>
+<p>(blob)</p>
+</div></blockquote>
+<p>M -&gt; (map)</p>
+<blockquote>
+<div><p>A Map of attribute values.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
+<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<p>S -&gt; (string)</p>
+<blockquote>
+<div>A String data type.</div></blockquote>
+<p>N -&gt; (string)</p>
+<blockquote>
+<div>A Number data type.</div></blockquote>
+<p>B -&gt; (blob)</p>
+<blockquote>
+<div>A Binary data type.</div></blockquote>
+<p>SS -&gt; (list)</p>
+<blockquote>
+<div><p>A String Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>NS -&gt; (list)</p>
+<blockquote>
+<div><p>A Number Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>BS -&gt; (list)</p>
+<blockquote>
+<div><p>A Binary Set data type.</p>
+<p>(blob)</p>
+</div></blockquote>
+<p>M -&gt; (map)</p>
+<blockquote>
+<div><p>A Map of attribute values.</p>
+<p>key -&gt; (string)</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>L -&gt; (list)</p>
+<blockquote>
+<div><p>A List of attribute values.</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>NULL -&gt; (boolean)</p>
+<blockquote>
+<div>A Null data type.</div></blockquote>
+<p>BOOL -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean data type.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>L -&gt; (list)</p>
+<blockquote>
+<div><p>A List of attribute values.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
+<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<p>S -&gt; (string)</p>
+<blockquote>
+<div>A String data type.</div></blockquote>
+<p>N -&gt; (string)</p>
+<blockquote>
+<div>A Number data type.</div></blockquote>
+<p>B -&gt; (blob)</p>
+<blockquote>
+<div>A Binary data type.</div></blockquote>
+<p>SS -&gt; (list)</p>
+<blockquote>
+<div><p>A String Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>NS -&gt; (list)</p>
+<blockquote>
+<div><p>A Number Set data type.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>BS -&gt; (list)</p>
+<blockquote>
+<div><p>A Binary Set data type.</p>
+<p>(blob)</p>
+</div></blockquote>
+<p>M -&gt; (map)</p>
+<blockquote>
+<div><p>A Map of attribute values.</p>
+<p>key -&gt; (string)</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>L -&gt; (list)</p>
+<blockquote>
+<div><p>A List of attribute values.</p>
+<p>( ... recursive ... )</p>
+</div></blockquote>
+<p>NULL -&gt; (boolean)</p>
+<blockquote>
+<div>A Null data type.</div></blockquote>
+<p>BOOL -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean data type.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NULL -&gt; (boolean)</p>
+<blockquote>
+<div>A Null data type.</div></blockquote>
+<p>BOOL -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean data type.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ConsumedCapacity -&gt; (structure)</p>
+<blockquote>
+<div><p>The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <em>ConsumedCapacity</em> is only returned if the request asked for it. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
+<p>TableName -&gt; (string)</p>
+<blockquote>
+<div>The name of the table that was affected by the operation.</div></blockquote>
+<p>CapacityUnits -&gt; (double)</p>
+<blockquote>
+<div>The total number of capacity units consumed by the operation.</div></blockquote>
+<p>Table -&gt; (structure)</p>
+<blockquote>
+<div><p>The amount of throughput consumed on the table affected by the operation.</p>
+<p>CapacityUnits -&gt; (double)</p>
+<blockquote>
+<div>The total number of capacity units consumed on a table or an index.</div></blockquote>
+</div></blockquote>
+<p>LocalSecondaryIndexes -&gt; (map)</p>
+<blockquote>
+<div><p>The amount of throughput consumed on each local index affected by the operation.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents the amount of provisioned throughput capacity consumed on a table or an index.</p>
+<p>CapacityUnits -&gt; (double)</p>
+<blockquote>
+<div>The total number of capacity units consumed on a table or an index.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>GlobalSecondaryIndexes -&gt; (map)</p>
+<blockquote>
+<div><p>The amount of throughput consumed on each global index affected by the operation.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents the amount of provisioned throughput capacity consumed on a table or an index.</p>
+<p>CapacityUnits -&gt; (double)</p>
+<blockquote>
+<div>The total number of capacity units consumed on a table or an index.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
 </div></blockquote>
 </div>
 </div>
@@ -258,6 +877,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -267,35 +895,21 @@
           <a href="update-item.html" title="update-item">next</a> |</li>
         <li class="right">
           <a href="query.html" title="query">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">dynamodb</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'query.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'update-item.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/dynamodb/scan.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:01 GMT -->
 </html>

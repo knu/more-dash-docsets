@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/configure/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:23:52 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>configure &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="add-model" href="add-model.html" />
+    <link rel="prev" title="subscribe" href="../configservice/subscribe.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="add-model.html" title="add-model" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="../configservice/subscribe.html" title="subscribe" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../configservice/subscribe.html" title="previous chapter (use the left arrow)">&#8592; subscribe</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="add-model.html" title="next chapter (use the right arrow)">add-model &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">configure</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#configuration-variables">Configuration Variables</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/configure/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="configure">
+<span id="cli-aws-configure"></span><h1>configure<a name="//apple_ref/cpp/Command/aws configure" class="dashAnchor" id="aws configure"></a><a class="headerlink" href="#configure" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Configure AWS CLI options. If this command is run with no
+arguments, you will be prompted for configuration values such as your AWS
+Access Key Id and you AWS Secret Access Key.  You can configure a named
+profile using the <tt class="docutils literal"><span class="pre">--profile</span></tt> argument.  If your config file does not exist
+(the default location is <tt class="docutils literal"><span class="pre">~/.aws/config</span></tt>), the AWS CLI will create it
+for you.  To keep an existing value, hit enter when prompted for the value.
+When you are prompted for information, the current value will be displayed in
+<tt class="docutils literal"><span class="pre">[brackets]</span></tt>.  If the config item has no value, it be displayed as
+<tt class="docutils literal"><span class="pre">[None]</span></tt>.  Note that the <tt class="docutils literal"><span class="pre">configure</span></tt> command only work with values from the
+config file.  It does not use any configuration values from environment
+variables or the IAM role.</p>
+<p>Note: the values you provide for the AWS Access Key ID and the AWS Secret
+Access Key will be written to the shared credentials file
+(<tt class="docutils literal"><span class="pre">~/.aws/credentials</span></tt>).</p>
+</div>
+<div class="section" id="configuration-variables">
+<h2>Configuration Variables<a name="//apple_ref/cpp/Section/Configuration Variables" class="dashAnchor" id="Configuration Variables"></a><a class="headerlink" href="#configuration-variables" title="Permalink to this headline">&#182;</a></h2>
+<p>The following configuration variables are supported in the config file:</p>
+<ul class="simple">
+<li><strong>aws_access_key_id</strong> - The AWS access key part of your credentials</li>
+<li><strong>aws_secret_access_key</strong> - The AWS secret access key part of your credentials</li>
+<li><strong>aws_session_token</strong> - The session token part of your credentials (session tokens only)</li>
+<li><strong>metadata_service_timeout</strong> - The number of seconds to wait until the metadata service
+request times out.  This is used if you are using an IAM role to provide
+your credentials.</li>
+<li><strong>metadata_service_num_attempts</strong> - The number of attempts to try to retrieve
+credentials.  If you know for certain you will be using an IAM role on an
+Amazon EC2 instance, you can set this value to ensure any intermittent
+failures are retried.  By default this value is 1.</li>
+</ul>
+<p>For more information on configuration options, see <a class="reference external" href="../../userguide/cli-chap-getting-started.html">Configuring the AWS Command Line Interface</a> in the <em>AWS CLI User Guide</em>.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>aws configure [--profile profile-name]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><em>None</em></p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a name="//apple_ref/cpp/Section/Available Commands" class="dashAnchor" id="Available Commands"></a><a class="headerlink" href="#available-commands" title="Permalink to this headline">&#182;</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/add-model" class="dashAnchor" id="add-model"></a><a class="reference internal" href="add-model.html">add-model</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get" class="dashAnchor" id="get"></a><a class="reference internal" href="get.html">get</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list" class="dashAnchor" id="list"></a><a class="reference internal" href="list.html">list</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/set" class="dashAnchor" id="set"></a><a class="reference internal" href="set.html">set</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p>To create a new configuration:</p>
+<div class="highlight-python"><pre>$ aws configure
+AWS Access Key ID [None]: accesskey
+AWS Secret Access Key [None]: secretkey
+Default region name [None]: us-west-2
+Default output format [None]:</pre>
+</div>
+<p>To update just the region name:</p>
+<div class="highlight-python"><pre>$ aws configure
+AWS Access Key ID [****]:
+AWS Secret Access Key [****]:
+Default region name [us-west-1]: us-west-2
+Default output format [None]:</pre>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../configservice/subscribe.html" title="previous chapter (use the left arrow)">&#8592; subscribe</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="add-model.html" title="next chapter (use the right arrow)">add-model &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="add-model.html" title="add-model">next</a> |</li>
+        <li class="right">
+          <a href="../configservice/subscribe.html" title="subscribe">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/configure/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:23:54 GMT -->
+</html>

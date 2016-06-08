@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/s3api/list-parts.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:28 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>list-parts &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>list-parts &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +25,10 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="s3api" href="index.html" />
-    <link rel="next" title="put-bucket-acl" href="put-bucket-acl.html" />
-    <link rel="prev" title="list-objects" href="list-objects.html" />
+    <link rel="next" title="put-bucket-accelerate-configuration" href="put-bucket-accelerate-configuration.html" />
+    <link rel="prev" title="list-objects-v2" href="list-objects-v2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
   
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -58,10 +61,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
         <li class="right">
-          <a href="put-bucket-acl.html" title="put-bucket-acl" accesskey="N">next</a> |</li>
+          <a href="put-bucket-accelerate-configuration.html" title="put-bucket-accelerate-configuration" accesskey="N">next</a> |</li>
         <li class="right">
-          <a href="list-objects.html" title="list-objects" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="list-objects-v2.html" title="list-objects-v2" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">s3api</a> &#187;</li> 
       </ul>
@@ -71,34 +74,36 @@
     <div class="top-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="list-objects.html" title="previous chapter (use the left arrow)">&#8592; list-objects</a>
+          <a href="list-objects-v2.html" title="previous chapter (use the left arrow)">&#8592; list-objects-v2</a>
           <span class="divider">/</span>
           
         </li>
-          <li><a href="put-bucket-acl.html" title="next chapter (use the right arrow)">put-bucket-acl &#8594;</a></li>
+          <li><a href="put-bucket-accelerate-configuration.html" title="next chapter (use the right arrow)">put-bucket-accelerate-configuration &#8594;</a></li>
       </ul>
     </div>
   
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">list-parts</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,42 +112,177 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/s3api/list-parts">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/s3api/list-parts">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>s3api</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-s3api"><em>s3api</em></a> ]</p>
 <div class="section" id="list-parts">
-<h1>list-parts<a class="headerlink" href="#list-parts" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-s3api-list-parts"></span><h1>list-parts<a name="//apple_ref/cpp/Command/aws s3api list-parts" class="dashAnchor" id="aws s3api list-parts"></a><a class="headerlink" href="#list-parts" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
 <p>Lists the parts that have been uploaded for a specific multipart upload.</p>
+<p><tt class="docutils literal"><span class="pre">list-parts</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">Parts</span></tt></p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  list-parts
 --bucket &lt;value&gt;
 --key &lt;value&gt;
 --upload-id &lt;value&gt;
+[--request-payer &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
 [--starting-token &lt;value&gt;]
-[--max-items &lt;value&gt;]</pre>
+[--page-size &lt;value&gt;]
+[--max-items &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--bucket" class="dashAnchor" id="bucket"></a><span class="pre">--bucket</span></tt> (string)</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--key" class="dashAnchor" id="key"></a><span class="pre">--key</span></tt> (string)</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--upload-id" class="dashAnchor" id="upload-id"></a><span class="pre">--upload-id</span></tt> (string)
 Upload ID identifying the multipart upload whose parts are being listed.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--request-payer" class="dashAnchor" id="request-payer"></a><span class="pre">--request-payer</span></tt> (string)
+Confirms that the requester knows that she or he will be charged for the request. Bucket owners need not specify this parameter in their requests. Documentation on downloading objects from requester pays buckets can be found at <a class="reference external" href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">http://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html</a></p>
+<blockquote>
+<div><p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">requester</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--starting-token" class="dashAnchor" id="starting-token"></a><span class="pre">--starting-token</span></tt> (string)</p>
 <blockquote>
-<div>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt>  from a previously truncated response.</div></blockquote>
+<div>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--page-size" class="dashAnchor" id="page-size"></a><span class="pre">--page-size</span></tt> (integer)</p>
+<blockquote>
+<div>The size of each page.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-items" class="dashAnchor" id="max-items"></a><span class="pre">--max-items</span></tt> (integer)</p>
 <blockquote>
-<div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">NextMarker</span></tt>  will be provided in the output that you can use to resume pagination.</div></blockquote>
+<div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">NextToken</span></tt> will be provided in the output that you can use to resume pagination. This <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element should <strong>not</strong> be used directly outside of the AWS CLI.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p>The following command lists all of the parts that have been uploaded for a multipart upload with key <tt class="docutils literal"><span class="pre">multipart/01</span></tt> in the bucket <tt class="docutils literal"><span class="pre">my-bucket</span></tt>:</p>
+<div class="highlight-python"><pre>aws s3api list-parts --bucket my-bucket --key 'multipart/01' --upload-id dfRtDYU0WWCCcH43C3WFbkRONycyCpTJJvxu2i5GYkZljF.Yxwh6XG7WfS2vC4to6HiV6Yjlx.cph0gtNBtJ8P3URCSbB7rjxI5iEwVDmgaXZOGgkk5nVTW16HOQ5l0R</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">"Owner"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"DisplayName"</span><span class="p">:</span> <span class="s2">"aws-account-name"</span><span class="p">,</span>
+        <span class="s2">"ID"</span><span class="p">:</span> <span class="s2">"100719349fc3b6dcd7c820a124bf7aecd408092c3d7b51b38494939801fc248b"</span>
+    <span class="p">},</span>
+    <span class="s2">"Initiator"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"DisplayName"</span><span class="p">:</span> <span class="s2">"username"</span><span class="p">,</span>
+        <span class="s2">"ID"</span><span class="p">:</span> <span class="s2">"arn:aws:iam::0123456789012:user/username"</span>
+    <span class="p">},</span>
+    <span class="s2">"Parts"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"LastModified"</span><span class="p">:</span> <span class="s2">"2015-06-02T18:07:35.000Z"</span><span class="p">,</span>
+            <span class="s2">"PartNumber"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">"ETag"</span><span class="p">:</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">e868e0f4719e394144ef36531ee6824c</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span>
+            <span class="s2">"Size"</span><span class="p">:</span> <span class="mi">5242880</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"LastModified"</span><span class="p">:</span> <span class="s2">"2015-06-02T18:07:42.000Z"</span><span class="p">,</span>
+            <span class="s2">"PartNumber"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s2">"ETag"</span><span class="p">:</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">6bb2b12753d66fe86da4998aa33fffb0</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span>
+            <span class="s2">"Size"</span><span class="p">:</span> <span class="mi">5242880</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"LastModified"</span><span class="p">:</span> <span class="s2">"2015-06-02T18:07:47.000Z"</span><span class="p">,</span>
+            <span class="s2">"PartNumber"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="s2">"ETag"</span><span class="p">:</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">d0a0112e841abec9c9ec83406f0159c8</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span>
+            <span class="s2">"Size"</span><span class="p">:</span> <span class="mi">5242880</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">"StorageClass"</span><span class="p">:</span> <span class="s2">"STANDARD"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>AbortDate -&gt; (timestamp)</p>
+<blockquote>
+<div>Date when multipart upload will become eligible for abort operation by lifecycle.</div></blockquote>
+<p>AbortRuleId -&gt; (string)</p>
+<blockquote>
+<div>Id of the lifecycle rule that makes a multipart upload eligible for abort operation.</div></blockquote>
+<p>Bucket -&gt; (string)</p>
+<blockquote>
+<div>Name of the bucket to which the multipart upload was initiated.</div></blockquote>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div>Object key for which the multipart upload was initiated.</div></blockquote>
+<p>UploadId -&gt; (string)</p>
+<blockquote>
+<div>Upload ID identifying the multipart upload whose parts are being listed.</div></blockquote>
+<p>PartNumberMarker -&gt; (integer)</p>
+<blockquote>
+<div>Part number after which listing begins.</div></blockquote>
+<p>NextPartNumberMarker -&gt; (integer)</p>
+<blockquote>
+<div>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the part-number-marker request parameter in a subsequent request.</div></blockquote>
+<p>MaxParts -&gt; (integer)</p>
+<blockquote>
+<div>Maximum number of parts that were allowed in the response.</div></blockquote>
+<p>IsTruncated -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether the returned list of parts is truncated.</div></blockquote>
+<p>Parts -&gt; (list)</p>
+<blockquote>
+<div><p>(structure)</p>
+<blockquote>
+<div><p>PartNumber -&gt; (integer)</p>
+<blockquote>
+<div>Part number identifying the part. This is a positive integer between 1 and 10,000.</div></blockquote>
+<p>LastModified -&gt; (timestamp)</p>
+<blockquote>
+<div>Date and time at which the part was uploaded.</div></blockquote>
+<p>ETag -&gt; (string)</p>
+<blockquote>
+<div>Entity tag returned when the part was uploaded.</div></blockquote>
+<p>Size -&gt; (integer)</p>
+<blockquote>
+<div>Size of the uploaded part data.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Initiator -&gt; (structure)</p>
+<blockquote>
+<div><p>Identifies who initiated the multipart upload.</p>
+<p>ID -&gt; (string)</p>
+<blockquote>
+<div>If the principal is an AWS account, it provides the Canonical User ID. If the principal is an IAM User, it provides a user ARN value.</div></blockquote>
+<p>DisplayName -&gt; (string)</p>
+<blockquote>
+<div>Name of the Principal.</div></blockquote>
+</div></blockquote>
+<p>Owner -&gt; (structure)</p>
+<blockquote>
+<div><p>DisplayName -&gt; (string)</p>
+<p>ID -&gt; (string)</p>
+</div></blockquote>
+<p>StorageClass -&gt; (string)</p>
+<blockquote>
+<div>The class of storage used to store the object.</div></blockquote>
+<p>RequestCharged -&gt; (string)</p>
+<blockquote>
+<div>If present, indicates that the requester was successfully charged for the request.</div></blockquote>
 </div>
 </div>
 
@@ -154,54 +294,49 @@ Upload ID identifying the multipart upload whose parts are being listed.</p>
     <div class="footer-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="list-objects.html" title="previous chapter (use the left arrow)">&#8592; list-objects</a>
+          <a href="list-objects-v2.html" title="previous chapter (use the left arrow)">&#8592; list-objects-v2</a>
           <span class="divider">/</span>
           
         </li>
-          <li><a href="put-bucket-acl.html" title="next chapter (use the right arrow)">put-bucket-acl &#8594;</a></li>
+          <li><a href="put-bucket-accelerate-configuration.html" title="next chapter (use the right arrow)">put-bucket-accelerate-configuration &#8594;</a></li>
       </ul>
     </div>
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index">index</a></li>
         <li class="right">
-          <a href="put-bucket-acl.html" title="put-bucket-acl">next</a> |</li>
+          <a href="put-bucket-accelerate-configuration.html" title="put-bucket-accelerate-configuration">next</a> |</li>
         <li class="right">
-          <a href="list-objects.html" title="list-objects">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="list-objects-v2.html" title="list-objects-v2">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">s3api</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'list-objects.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'put-bucket-acl.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/s3api/list-parts.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:28 GMT -->
 </html>

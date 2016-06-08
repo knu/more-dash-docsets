@@ -1,0 +1,527 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/firehose/describe-delivery-stream.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:19 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-delivery-stream &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="firehose" href="index.html" />
+    <link rel="next" title="list-delivery-streams" href="list-delivery-streams.html" />
+    <link rel="prev" title="delete-delivery-stream" href="delete-delivery-stream.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="list-delivery-streams.html" title="list-delivery-streams" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="delete-delivery-stream.html" title="delete-delivery-stream" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">firehose</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="delete-delivery-stream.html" title="previous chapter (use the left arrow)">&#8592; delete-delivery-stream</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="list-delivery-streams.html" title="next chapter (use the right arrow)">list-delivery-streams &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-delivery-stream</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/firehose/describe-delivery-stream">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-firehose"><em>firehose</em></a> ]</p>
+<div class="section" id="describe-delivery-stream">
+<span id="cli-aws-firehose-describe-delivery-stream"></span><h1>describe-delivery-stream<a name="//apple_ref/cpp/Command/aws firehose describe-delivery-stream" class="dashAnchor" id="aws firehose describe-delivery-stream"></a><a class="headerlink" href="#describe-delivery-stream" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Describes the specified delivery stream and gets the status. For example, after your delivery stream is created, call  describe-delivery-stream to see if the delivery stream is <tt class="docutils literal"><span class="pre">ACTIVE</span></tt> and therefore ready for data to be sent to it.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  describe-delivery-stream
+--delivery-stream-name &lt;value&gt;
+[--limit &lt;value&gt;]
+[--exclusive-start-destination-id &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--delivery-stream-name" class="dashAnchor" id="delivery-stream-name"></a><span class="pre">--delivery-stream-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the delivery stream.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--limit" class="dashAnchor" id="limit"></a><span class="pre">--limit</span></tt> (integer)</p>
+<blockquote>
+<div>The limit on the number of destinations to return. Currently, you can have one destination per delivery stream.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--exclusive-start-destination-id" class="dashAnchor" id="exclusive-start-destination-id"></a><span class="pre">--exclusive-start-destination-id</span></tt> (string)</p>
+<blockquote>
+<div>Specifies the destination ID to start returning the destination information. Currently Firehose supports one destination per delivery stream.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>DeliveryStreamDescription -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about the delivery stream.</p>
+<p>DeliveryStreamName -&gt; (string)</p>
+<blockquote>
+<div>The name of the delivery stream.</div></blockquote>
+<p>DeliveryStreamARN -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the delivery stream.</div></blockquote>
+<p>DeliveryStreamStatus -&gt; (string)</p>
+<blockquote>
+<div>The status of the delivery stream.</div></blockquote>
+<p>VersionId -&gt; (string)</p>
+<blockquote>
+<div>Used when calling the  update-destination operation. Each time the destination is updated for the delivery stream, the VersionId is changed, and the current VersionId is required when updating the destination. This is so that the service knows it is applying the changes to the correct version of the delivery stream.</div></blockquote>
+<p>CreateTimestamp -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time that the delivery stream was created.</div></blockquote>
+<p>LastUpdateTimestamp -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time that the delivery stream was last updated.</div></blockquote>
+<p>Destinations -&gt; (list)</p>
+<blockquote>
+<div><p>The destinations.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the destination for a delivery stream.</p>
+<p>DestinationId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the destination.</div></blockquote>
+<p>S3DestinationDescription -&gt; (structure)</p>
+<blockquote>
+<div><p>The Amazon S3 destination.</p>
+<p>RoleARN -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the AWS credentials.</div></blockquote>
+<p>BucketARN -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the S3 bucket.</div></blockquote>
+<p>Prefix -&gt; (string)</p>
+<blockquote>
+<div>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3 files. You can specify an extra prefix to be added in front of the time format prefix. Note that if the prefix ends with a slash, it appears as a folder in the S3 bucket. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon S3 Object Name Format</a> in the <a class="reference external" href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis Firehose Developer Guide</a> .</div></blockquote>
+<p>BufferingHints -&gt; (structure)</p>
+<blockquote>
+<div><p>The buffering option. If no value is specified, <strong>BufferingHints</strong> object default values are used.</p>
+<p>SizeInMBs -&gt; (integer)</p>
+<blockquote>
+<div><p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5.</p>
+<p>We recommend setting SizeInMBs to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec set SizeInMBs to be 10 MB or higher.</p>
+</div></blockquote>
+<p>IntervalInSeconds -&gt; (integer)</p>
+<blockquote>
+<div>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300.</div></blockquote>
+</div></blockquote>
+<p>CompressionFormat -&gt; (string)</p>
+<blockquote>
+<div>The compression format. If no value is specified, the default is <tt class="docutils literal"><span class="pre">NOCOMPRESSION</span></tt> .</div></blockquote>
+<p>EncryptionConfiguration -&gt; (structure)</p>
+<blockquote>
+<div><p>The encryption configuration. If no value is specified, the default is no encryption.</p>
+<p>NoEncryptionConfig -&gt; (string)</p>
+<blockquote>
+<div>Specifically override existing encryption information to ensure no encryption is used.</div></blockquote>
+<p>KMSEncryptionConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>The encryption key.</p>
+<p>AWSKMSKeyARN -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the encryption key. Must belong to the same region as the destination Amazon S3 bucket.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>CloudWatchLoggingOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>Describes CloudWatch logging options for your delivery stream.</p>
+<p>Enabled -&gt; (boolean)</p>
+<blockquote>
+<div>Enables or disables CloudWatch logging.</div></blockquote>
+<p>LogGroupName -&gt; (string)</p>
+<blockquote>
+<div>The CloudWatch group name for logging. This value is required if Enabled is true.</div></blockquote>
+<p>LogStreamName -&gt; (string)</p>
+<blockquote>
+<div>The CloudWatch log stream name for logging. This value is required if Enabled is true.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>RedshiftDestinationDescription -&gt; (structure)</p>
+<blockquote>
+<div><p>The destination in Amazon Redshift.</p>
+<p>RoleARN -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the AWS credentials.</div></blockquote>
+<p>ClusterJDBCURL -&gt; (string)</p>
+<blockquote>
+<div>The database connection string.</div></blockquote>
+<p>CopyCommand -&gt; (structure)</p>
+<blockquote>
+<div><p>The <tt class="docutils literal"><span class="pre">COPY</span></tt> command.</p>
+<p>DataTableName -&gt; (string)</p>
+<blockquote>
+<div>The name of the target table. The table must already exist in the database.</div></blockquote>
+<p>DataTableColumns -&gt; (string)</p>
+<blockquote>
+<div>A comma-separated list of column names.</div></blockquote>
+<p>CopyOptions -&gt; (string)</p>
+<blockquote>
+<div><p>Optional parameters to use with the Amazon Redshift <tt class="docutils literal"><span class="pre">COPY</span></tt> command. For more information, see the "Optional Parameters" section of <a class="reference external" href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift COPY command</a> . Some possible examples that would apply to Firehose are as follows.</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">delimiter</span> <span class="pre">'\t'</span> <span class="pre">lzop;</span></tt> - fields are delimited with "t" (TAB character) and compressed using lzop.</p>
+<p><tt class="docutils literal"><span class="pre">delimiter</span> <span class="pre">'|</span></tt> - fields are delimited with "|" (this is the default delimiter).</p>
+<p><tt class="docutils literal"><span class="pre">delimiter</span> <span class="pre">'|'</span> <span class="pre">escape</span></tt> - the delimiter should be escaped.</p>
+<p><tt class="docutils literal"><span class="pre">fixedwidth</span> <span class="pre">'venueid:3,venuename:25,venuecity:12,venuestate:2,venueseats:6'</span></tt> - fields are fixed width in the source, with each width specified after every column in the table.</p>
+<p><tt class="docutils literal"><span class="pre">JSON</span> <span class="pre">'s3://mybucket/jsonpaths.txt'</span></tt> - data is in JSON format, and the path specified is the format of the data.</p>
+</div></blockquote>
+<p>For more examples, see <a class="reference external" href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html">Amazon Redshift COPY command examples</a> .</p>
+</div></blockquote>
+</div></blockquote>
+<p>Username -&gt; (string)</p>
+<blockquote>
+<div>The name of the user.</div></blockquote>
+<p>RetryOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>Configures retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+<p>DurationInSeconds -&gt; (integer)</p>
+<blockquote>
+<div>The length of time during which Firehose retries delivery after a failure, starting from the initial request and including the first attempt. The default value is 3600 seconds (60 minutes). Firehose does not retry if the value of <tt class="docutils literal"><span class="pre">DurationInSeconds</span></tt> is 0 (zero) or if the first delivery attempt takes longer than the current value.</div></blockquote>
+</div></blockquote>
+<p>S3DestinationDescription -&gt; (structure)</p>
+<blockquote>
+<div><p>The Amazon S3 destination.</p>
+<p>RoleARN -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the AWS credentials.</div></blockquote>
+<p>BucketARN -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the S3 bucket.</div></blockquote>
+<p>Prefix -&gt; (string)</p>
+<blockquote>
+<div>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3 files. You can specify an extra prefix to be added in front of the time format prefix. Note that if the prefix ends with a slash, it appears as a folder in the S3 bucket. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon S3 Object Name Format</a> in the <a class="reference external" href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis Firehose Developer Guide</a> .</div></blockquote>
+<p>BufferingHints -&gt; (structure)</p>
+<blockquote>
+<div><p>The buffering option. If no value is specified, <strong>BufferingHints</strong> object default values are used.</p>
+<p>SizeInMBs -&gt; (integer)</p>
+<blockquote>
+<div><p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5.</p>
+<p>We recommend setting SizeInMBs to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec set SizeInMBs to be 10 MB or higher.</p>
+</div></blockquote>
+<p>IntervalInSeconds -&gt; (integer)</p>
+<blockquote>
+<div>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300.</div></blockquote>
+</div></blockquote>
+<p>CompressionFormat -&gt; (string)</p>
+<blockquote>
+<div>The compression format. If no value is specified, the default is <tt class="docutils literal"><span class="pre">NOCOMPRESSION</span></tt> .</div></blockquote>
+<p>EncryptionConfiguration -&gt; (structure)</p>
+<blockquote>
+<div><p>The encryption configuration. If no value is specified, the default is no encryption.</p>
+<p>NoEncryptionConfig -&gt; (string)</p>
+<blockquote>
+<div>Specifically override existing encryption information to ensure no encryption is used.</div></blockquote>
+<p>KMSEncryptionConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>The encryption key.</p>
+<p>AWSKMSKeyARN -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the encryption key. Must belong to the same region as the destination Amazon S3 bucket.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>CloudWatchLoggingOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>Describes CloudWatch logging options for your delivery stream.</p>
+<p>Enabled -&gt; (boolean)</p>
+<blockquote>
+<div>Enables or disables CloudWatch logging.</div></blockquote>
+<p>LogGroupName -&gt; (string)</p>
+<blockquote>
+<div>The CloudWatch group name for logging. This value is required if Enabled is true.</div></blockquote>
+<p>LogStreamName -&gt; (string)</p>
+<blockquote>
+<div>The CloudWatch log stream name for logging. This value is required if Enabled is true.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>CloudWatchLoggingOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>Describes CloudWatch logging options for your delivery stream.</p>
+<p>Enabled -&gt; (boolean)</p>
+<blockquote>
+<div>Enables or disables CloudWatch logging.</div></blockquote>
+<p>LogGroupName -&gt; (string)</p>
+<blockquote>
+<div>The CloudWatch group name for logging. This value is required if Enabled is true.</div></blockquote>
+<p>LogStreamName -&gt; (string)</p>
+<blockquote>
+<div>The CloudWatch log stream name for logging. This value is required if Enabled is true.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ElasticsearchDestinationDescription -&gt; (structure)</p>
+<blockquote>
+<div><p>The destination in Amazon ES.</p>
+<p>RoleARN -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the AWS credentials.</div></blockquote>
+<p>DomainARN -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the Amazon ES domain.</div></blockquote>
+<p>IndexName -&gt; (string)</p>
+<blockquote>
+<div>The Elasticsearch index name.</div></blockquote>
+<p>TypeName -&gt; (string)</p>
+<blockquote>
+<div>The Elasticsearch type name.</div></blockquote>
+<p>IndexRotationPeriod -&gt; (string)</p>
+<blockquote>
+<div>The Elasticsearch index rotation period</div></blockquote>
+<p>BufferingHints -&gt; (structure)</p>
+<blockquote>
+<div><p>Buffering options.</p>
+<p>IntervalInSeconds -&gt; (integer)</p>
+<blockquote>
+<div>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300 (5 minutes).</div></blockquote>
+<p>SizeInMBs -&gt; (integer)</p>
+<blockquote>
+<div><p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5.</p>
+<p>We recommend setting <strong>SizeInMBs</strong> to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, set <strong>SizeInMBs</strong> to be 10 MB or higher.</p>
+</div></blockquote>
+</div></blockquote>
+<p>RetryOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>Elasticsearch retry options.</p>
+<p>DurationInSeconds -&gt; (integer)</p>
+<blockquote>
+<div>After an initial failure to deliver to Amazon ES, the total amount of time during which Firehose re-attempts delivery (including the first attempt). After this time has elapsed, the failed documents are written to Amazon S3. Default value is 300 seconds (5 minutes). A value of 0 (zero) results in no retries.</div></blockquote>
+</div></blockquote>
+<p>S3BackupMode -&gt; (string)</p>
+<blockquote>
+<div>Amazon S3 backup mode.</div></blockquote>
+<p>S3DestinationDescription -&gt; (structure)</p>
+<blockquote>
+<div><p>Describes a destination in Amazon S3.</p>
+<p>RoleARN -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the AWS credentials.</div></blockquote>
+<p>BucketARN -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the S3 bucket.</div></blockquote>
+<p>Prefix -&gt; (string)</p>
+<blockquote>
+<div>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3 files. You can specify an extra prefix to be added in front of the time format prefix. Note that if the prefix ends with a slash, it appears as a folder in the S3 bucket. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon S3 Object Name Format</a> in the <a class="reference external" href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis Firehose Developer Guide</a> .</div></blockquote>
+<p>BufferingHints -&gt; (structure)</p>
+<blockquote>
+<div><p>The buffering option. If no value is specified, <strong>BufferingHints</strong> object default values are used.</p>
+<p>SizeInMBs -&gt; (integer)</p>
+<blockquote>
+<div><p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5.</p>
+<p>We recommend setting SizeInMBs to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec set SizeInMBs to be 10 MB or higher.</p>
+</div></blockquote>
+<p>IntervalInSeconds -&gt; (integer)</p>
+<blockquote>
+<div>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300.</div></blockquote>
+</div></blockquote>
+<p>CompressionFormat -&gt; (string)</p>
+<blockquote>
+<div>The compression format. If no value is specified, the default is <tt class="docutils literal"><span class="pre">NOCOMPRESSION</span></tt> .</div></blockquote>
+<p>EncryptionConfiguration -&gt; (structure)</p>
+<blockquote>
+<div><p>The encryption configuration. If no value is specified, the default is no encryption.</p>
+<p>NoEncryptionConfig -&gt; (string)</p>
+<blockquote>
+<div>Specifically override existing encryption information to ensure no encryption is used.</div></blockquote>
+<p>KMSEncryptionConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>The encryption key.</p>
+<p>AWSKMSKeyARN -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the encryption key. Must belong to the same region as the destination Amazon S3 bucket.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>CloudWatchLoggingOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>Describes CloudWatch logging options for your delivery stream.</p>
+<p>Enabled -&gt; (boolean)</p>
+<blockquote>
+<div>Enables or disables CloudWatch logging.</div></blockquote>
+<p>LogGroupName -&gt; (string)</p>
+<blockquote>
+<div>The CloudWatch group name for logging. This value is required if Enabled is true.</div></blockquote>
+<p>LogStreamName -&gt; (string)</p>
+<blockquote>
+<div>The CloudWatch log stream name for logging. This value is required if Enabled is true.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>CloudWatchLoggingOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>CloudWatch logging options.</p>
+<p>Enabled -&gt; (boolean)</p>
+<blockquote>
+<div>Enables or disables CloudWatch logging.</div></blockquote>
+<p>LogGroupName -&gt; (string)</p>
+<blockquote>
+<div>The CloudWatch group name for logging. This value is required if Enabled is true.</div></blockquote>
+<p>LogStreamName -&gt; (string)</p>
+<blockquote>
+<div>The CloudWatch log stream name for logging. This value is required if Enabled is true.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>HasMoreDestinations -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether there are more destinations available to list.</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="delete-delivery-stream.html" title="previous chapter (use the left arrow)">&#8592; delete-delivery-stream</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="list-delivery-streams.html" title="next chapter (use the right arrow)">list-delivery-streams &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="list-delivery-streams.html" title="list-delivery-streams">next</a> |</li>
+        <li class="right">
+          <a href="delete-delivery-stream.html" title="delete-delivery-stream">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">firehose</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/firehose/describe-delivery-stream.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:19 GMT -->
+</html>

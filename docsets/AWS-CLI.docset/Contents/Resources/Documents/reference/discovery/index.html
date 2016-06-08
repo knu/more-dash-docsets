@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/discovery/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:24:43 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>discovery &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="create-tags" href="create-tags.html" />
+    <link rel="prev" title="describe-virtual-interfaces" href="../directconnect/describe-virtual-interfaces.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="create-tags.html" title="create-tags" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="../directconnect/describe-virtual-interfaces.html" title="describe-virtual-interfaces" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../directconnect/describe-virtual-interfaces.html" title="previous chapter (use the left arrow)">&#8592; describe-virtual-interfaces</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-tags.html" title="next chapter (use the right arrow)">create-tags &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">discovery</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/discovery/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="discovery">
+<span id="cli-aws-discovery"></span><h1>discovery<a name="//apple_ref/cpp/Command/aws discovery" class="dashAnchor" id="aws discovery"></a><a class="headerlink" href="#discovery" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>The AWS Application Discovery Service helps Systems Integrators quickly and reliably plan application migration projects by automatically identifying applications running in on-premises data centers, their associated dependencies, and their performance profile.</p>
+<p>Planning data center migrations can involve thousands of workloads that are often deeply interdependent. Application discovery and dependency mapping are important early first steps in the migration process, but difficult to perform at scale due to the lack of automated tools.</p>
+<p>The AWS Application Discovery Service automatically collects configuration and usage data from servers to develop a list of applications, how they perform, and how they are interdependent. This information is securely retained in an AWS Application Discovery Service database which you can export as a CSV file into your preferred visualization tool or cloud migration solution to help reduce the complexity and time in planning your cloud migration.</p>
+<p>The Application Discovery Service is currently available for preview. Only customers who are engaged with <a class="reference external" href="https://aws.amazon.com/professional-services/">AWS Professional Services</a> or a certified AWS partner can use the service. To see the list of certified partners and request access to the Application Discovery Service, complete the following <a class="reference external" href="http://aws.amazon.com/application-discovery/preview/">preview form</a> .</p>
+<p>This API reference provides descriptions, syntax, and usage examples for each of the actions and data types for the Discovery Service. The topic for each action shows the API request parameters and the response. Alternatively, you can use one of the AWS SDKs to access an API that is tailored to the programming language or platform that you're using. For more information, see <a class="reference external" href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a> .</p>
+<p>This guide is intended for use with the ` <em>AWS Discovery Service User Guide</em> <a class="reference external" href="http://docs.aws.amazon.com/application-discovery/latest/userguide/what-is-appdiscovery">http://docs.aws.amazon.com/application-discovery/latest/userguide/what-is-appdiscovery</a>.html`_ .</p>
+<p>The following are short descriptions of each API action, organized by function.</p>
+<blockquote>
+<div><strong>Managing AWS Agents Using the Application Discovery Service</strong></div></blockquote>
+<p>An AWS agent is software that you install on on-premises servers and virtual machines that are targeted for discovery and migration. Agents run on Linux and Windows Server and collect server configuration and activity information about your applications and infrastructure. Specifically, agents collect the following information and send it to the Application Discovery Service using Secure Sockets Layer (SSL) encryption:</p>
+<ul class="simple">
+<li>User information (user name, home directory)</li>
+<li>Group information (name)</li>
+<li>List of installed packages</li>
+<li>List of kernel modules</li>
+<li>All create and stop process events</li>
+<li>DNS queries</li>
+<li>NIC information</li>
+<li>TCP/UDP process listening ports</li>
+<li>TCPV4/V6 connections</li>
+<li>Operating system information</li>
+<li>System performance</li>
+<li>Process performance</li>
+</ul>
+<p>The Application Discovery Service API includes the following actions to manage AWS agents:</p>
+<ul class="simple">
+<li><em>start-data-collection-by-agent-ids</em> : Instructs the specified agents to start collecting data. The Application Discovery Service takes several minutes to receive and process data after you initiate data collection.</li>
+<li><em>stop-data-collection-by-agent-ids</em> : Instructs the specified agents to stop collecting data.</li>
+<li><em>describe-agents</em> : Lists AWS agents by ID or lists all agents associated with your user account if you did not specify an agent ID. The output includes agent IDs, IP addresses, media access control (MAC) addresses, agent health, host name where the agent resides, and the version number of each agent.</li>
+</ul>
+<blockquote>
+<div><strong>Querying Configuration Items</strong></div></blockquote>
+<p>A <em>configuration item</em> is an IT asset that was discovered in your data center by an AWS agent. When you use the Application Discovery Service, you can specify filters and query specific configuration items. The service supports Server, Process, and Connection configuration items. This means you can specify a value for the following keys and query your IT assets:</p>
+<blockquote>
+<div><strong>Server</strong></div></blockquote>
+<ul class="simple">
+<li>server.HostName</li>
+<li>server.osName</li>
+<li>server.osVersion</li>
+<li>server.configurationId</li>
+<li>server.agentId</li>
+</ul>
+<blockquote>
+<div><strong>Process</strong></div></blockquote>
+<ul class="simple">
+<li>process.name</li>
+<li>process.CommandLine</li>
+<li>process.configurationId</li>
+<li>server.hostName</li>
+<li>server.osName</li>
+<li>server.osVersion</li>
+<li>server.configurationId</li>
+<li>server.agentId</li>
+</ul>
+<blockquote>
+<div><strong>Connection</strong></div></blockquote>
+<ul class="simple">
+<li>connection.sourceIp</li>
+<li>connection.sourcePort</li>
+<li>connection.destinationIp</li>
+<li>connection.destinationPort</li>
+<li>sourceProcess.configurationId</li>
+<li>sourceProcess.commandLine</li>
+<li>sourceProcess.name</li>
+<li>destinationProcessId.configurationId</li>
+<li>destinationProcess.commandLine</li>
+<li>destinationProcess.name</li>
+<li>sourceServer.configurationId</li>
+<li>sourceServer.hostName</li>
+<li>sourceServer.osName</li>
+<li>sourceServer.osVersion</li>
+<li>destinationServer.configurationId</li>
+<li>destinationServer.hostName</li>
+<li>destinationServer.osName</li>
+<li>destinationServer.osVersion</li>
+</ul>
+<p>The Application Discovery Service includes the following actions for querying configuration items.</p>
+<ul class="simple">
+<li><em>describe-configurations</em> : Retrieves a list of attributes for a specific configuration ID. For example, the output for a <em>server</em> configuration item includes a list of attributes about the server, including host name, operating system, number of network cards, etc.</li>
+<li><em>list-configurations</em> : Retrieves a list of configuration items according to the criteria you specify in a filter. The filter criteria identify relationship requirements. For example, you can specify filter criteria of process.name with values of <em>nginx</em> and <em>apache</em> .</li>
+</ul>
+<blockquote>
+<div><strong>Tagging Discovered Configuration Items</strong></div></blockquote>
+<p>You can tag discovered configuration items. Tags are metadata that help you categorize IT assets in your data center. Tags use a <em>key</em> -<em>value</em> format. For example, <tt class="docutils literal"><span class="pre">{"key":</span> <span class="pre">"serverType",</span> <span class="pre">"value":</span> <span class="pre">"webServer"}</span></tt> .</p>
+<ul class="simple">
+<li><em>create-tags</em> : Creates one or more tags for a configuration items.</li>
+<li><em>describe-tags</em> : Retrieves a list of configuration items that are tagged with a specific tag. <em>Or</em> , retrieves a list of all tags assigned to a specific configuration item.</li>
+<li><em>delete-tags</em> : Deletes the association between a configuration item and one or more tags.</li>
+</ul>
+<blockquote>
+<div><strong>Exporting Data</strong></div></blockquote>
+<p>You can export data as a CSV file to an Amazon S3 bucket or into your preferred visualization tool or cloud migration solution to help reduce the complexity and time in planning your cloud migration.</p>
+<ul class="simple">
+<li><em>export-configurations</em> : Exports all discovered configuration data to an Amazon S3 bucket. Data includes tags and tag associations, processes, connections, servers, and system performance. This API returns an export ID which you can query using the GetExportStatus API.</li>
+<li><em>describe-export-configurations</em> : Gets the status of the data export. When the export is complete, the service returns an Amazon S3 URL where you can download CSV files that include the data.</li>
+</ul>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a name="//apple_ref/cpp/Section/Available Commands" class="dashAnchor" id="Available Commands"></a><a class="headerlink" href="#available-commands" title="Permalink to this headline">&#182;</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-tags" class="dashAnchor" id="create-tags"></a><a class="reference internal" href="create-tags.html">create-tags</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-tags" class="dashAnchor" id="delete-tags"></a><a class="reference internal" href="delete-tags.html">delete-tags</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-agents" class="dashAnchor" id="describe-agents"></a><a class="reference internal" href="describe-agents.html">describe-agents</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-configurations" class="dashAnchor" id="describe-configurations"></a><a class="reference internal" href="describe-configurations.html">describe-configurations</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-export-configurations" class="dashAnchor" id="describe-export-configurations"></a><a class="reference internal" href="describe-export-configurations.html">describe-export-configurations</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-tags" class="dashAnchor" id="describe-tags"></a><a class="reference internal" href="describe-tags.html">describe-tags</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/export-configurations" class="dashAnchor" id="export-configurations"></a><a class="reference internal" href="export-configurations.html">export-configurations</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-configurations" class="dashAnchor" id="list-configurations"></a><a class="reference internal" href="list-configurations.html">list-configurations</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/start-data-collection-by-agent-ids" class="dashAnchor" id="start-data-collection-by-agent-ids"></a><a class="reference internal" href="start-data-collection-by-agent-ids.html">start-data-collection-by-agent-ids</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/stop-data-collection-by-agent-ids" class="dashAnchor" id="stop-data-collection-by-agent-ids"></a><a class="reference internal" href="stop-data-collection-by-agent-ids.html">stop-data-collection-by-agent-ids</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../directconnect/describe-virtual-interfaces.html" title="previous chapter (use the left arrow)">&#8592; describe-virtual-interfaces</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-tags.html" title="next chapter (use the right arrow)">create-tags &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="create-tags.html" title="create-tags">next</a> |</li>
+        <li class="right">
+          <a href="../directconnect/describe-virtual-interfaces.html" title="describe-virtual-interfaces">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/discovery/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:24:46 GMT -->
+</html>

@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53/create-health-check.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:27 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>create-health-check &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>create-health-check &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +25,10 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="route53" href="index.html" />
     <link rel="next" title="create-hosted-zone" href="create-hosted-zone.html" />
-    <link rel="prev" title="change-resource-record-sets" href="change-resource-record-sets.html" />
+    <link rel="prev" title="change-tags-for-resource" href="change-tags-for-resource.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
   
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -60,8 +63,8 @@
         <li class="right">
           <a href="create-hosted-zone.html" title="create-hosted-zone" accesskey="N">next</a> |</li>
         <li class="right">
-          <a href="change-resource-record-sets.html" title="change-resource-record-sets" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="change-tags-for-resource.html" title="change-tags-for-resource" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">route53</a> &#187;</li> 
       </ul>
@@ -71,7 +74,7 @@
     <div class="top-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="change-resource-record-sets.html" title="previous chapter (use the left arrow)">&#8592; change-resource-record-sets</a>
+          <a href="change-tags-for-resource.html" title="previous chapter (use the left arrow)">&#8592; change-tags-for-resource</a>
           <span class="divider">/</span>
           
         </li>
@@ -82,23 +85,25 @@
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">create-health-check</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,51 +112,228 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/route53/create-health-check">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/route53/create-health-check">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>route53</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-route53"><em>route53</em></a> ]</p>
 <div class="section" id="create-health-check">
-<h1>create-health-check<a class="headerlink" href="#create-health-check" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-route53-create-health-check"></span><h1>create-health-check<a name="//apple_ref/cpp/Command/aws route53 create-health-check" class="dashAnchor" id="aws route53 create-health-check"></a><a class="headerlink" href="#create-health-check" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
 <p>This action creates a new health check.</p>
-<p>To create a new health check, send a <tt class="docutils literal"><span class="pre">POST</span></tt>  request to the <tt class="docutils literal"><span class="pre">2012-12-12/healthcheck</span></tt>  resource. The request body must include an XML document with a <tt class="docutils literal"><span class="pre">CreateHealthCheckRequest</span></tt>  element. The response returns the <tt class="docutils literal"><span class="pre">CreateHealthCheckResponse</span></tt>  element that contains metadata about the health check.</p>
+<p>To create a new health check, send a <tt class="docutils literal"><span class="pre">POST</span></tt> request to the <tt class="docutils literal"><span class="pre">/*Route</span> <span class="pre">53</span> <span class="pre">API</span> <span class="pre">version*</span> <span class="pre">/healthcheck</span></tt> resource. The request body must include a document with a <tt class="docutils literal"><span class="pre">CreateHealthCheckRequest</span></tt> element. The response returns the <tt class="docutils literal"><span class="pre">CreateHealthCheckResponse</span></tt> element that contains metadata about the health check.</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  create-health-check
 --caller-reference &lt;value&gt;
---health-check-config &lt;value&gt;</pre>
+--health-check-config &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--caller-reference" class="dashAnchor" id="caller-reference"></a><span class="pre">--caller-reference</span></tt> (string)</p>
 <blockquote>
-<div><p>A unique string that identifies the request and that allows failed <tt class="docutils literal"><span class="pre">create-health-check</span></tt>  requests to be retried without the risk of executing the operation twice. You must use a unique <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--caller-reference" class="dashAnchor" id="caller-reference"></a><span class="pre">--caller-reference</span></tt>  string every time you create a health check. <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--caller-reference" class="dashAnchor" id="caller-reference"></a><span class="pre">--caller-reference</span></tt>  can be any unique string; you might choose to use a string that identifies your project.</p>
+<div><p>A unique string that identifies the request and that allows failed <tt class="docutils literal"><span class="pre">create-health-check</span></tt> requests to be retried without the risk of executing the operation twice. You must use a unique <tt class="docutils literal"><span class="pre">CallerReference</span></tt> string every time you create a health check. <tt class="docutils literal"><span class="pre">CallerReference</span></tt> can be any unique string; you might choose to use a string that identifies your project.</p>
 <p>Valid characters are any Unicode code points that are legal in an XML 1.0 document. The UTF-8 encoding of the value must be less than 128 bytes.</p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--health-check-config" class="dashAnchor" id="health-check-config"></a><span class="pre">--health-check-config</span></tt> (structure)</p>
 <blockquote>
 <div>A complex type that contains health check configuration.</div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><pre>--health-check-config IPAddress=value,Port=value,Type=value,ResourcePath=value,FullyQualifiedDomainName=value</pre>
+<div class="highlight-python"><pre>IPAddress=string,Port=integer,Type=string,ResourcePath=string,FullyQualifiedDomainName=string,SearchString=string,RequestInterval=integer,FailureThreshold=integer,MeasureLatency=boolean,Inverted=boolean,HealthThreshold=integer,ChildHealthChecks=string,string,EnableSNI=boolean,Regions=string,string,AlarmIdentifier={Region=string,Name=string},InsufficientDataHealthStatus=string</pre>
 </div>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-  <span class="s">"IPAddress"</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
-  <span class="s">"Port"</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
-  <span class="s">"Type"</span><span class="p">:</span> <span class="s">"HTTP"</span><span class="o">|</span><span class="s">"TCP"</span><span class="p">,</span>
-  <span class="s">"ResourcePath"</span><span class="p">:</span> <span class="s">"string"</span><span class="p">,</span>
-  <span class="s">"FullyQualifiedDomainName"</span><span class="p">:</span> <span class="s">"string"</span>
+  <span class="s2">"IPAddress"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"Port"</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+  <span class="s2">"Type"</span><span class="p">:</span> <span class="s2">"HTTP"</span><span class="o">|</span><span class="s2">"HTTPS"</span><span class="o">|</span><span class="s2">"HTTP_STR_MATCH"</span><span class="o">|</span><span class="s2">"HTTPS_STR_MATCH"</span><span class="o">|</span><span class="s2">"TCP"</span><span class="o">|</span><span class="s2">"CALCULATED"</span><span class="o">|</span><span class="s2">"CLOUDWATCH_METRIC"</span><span class="p">,</span>
+  <span class="s2">"ResourcePath"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"FullyQualifiedDomainName"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"SearchString"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"RequestInterval"</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+  <span class="s2">"FailureThreshold"</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+  <span class="s2">"MeasureLatency"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+  <span class="s2">"Inverted"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+  <span class="s2">"HealthThreshold"</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+  <span class="s2">"ChildHealthChecks"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"string"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+  <span class="s2">"EnableSNI"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+  <span class="s2">"Regions"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"us-east-1"</span><span class="o">|</span><span class="s2">"us-west-1"</span><span class="o">|</span><span class="s2">"us-west-2"</span><span class="o">|</span><span class="s2">"eu-west-1"</span><span class="o">|</span><span class="s2">"ap-southeast-1"</span><span class="o">|</span><span class="s2">"ap-southeast-2"</span><span class="o">|</span><span class="s2">"ap-northeast-1"</span><span class="o">|</span><span class="s2">"sa-east-1"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+  <span class="s2">"AlarmIdentifier"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Region"</span><span class="p">:</span> <span class="s2">"us-east-1"</span><span class="o">|</span><span class="s2">"us-west-1"</span><span class="o">|</span><span class="s2">"us-west-2"</span><span class="o">|</span><span class="s2">"eu-central-1"</span><span class="o">|</span><span class="s2">"eu-west-1"</span><span class="o">|</span><span class="s2">"ap-southeast-1"</span><span class="o">|</span><span class="s2">"ap-southeast-2"</span><span class="o">|</span><span class="s2">"ap-northeast-1"</span><span class="o">|</span><span class="s2">"ap-northeast-2"</span><span class="o">|</span><span class="s2">"sa-east-1"</span><span class="p">,</span>
+    <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"string"</span>
+  <span class="p">},</span>
+  <span class="s2">"InsufficientDataHealthStatus"</span><span class="p">:</span> <span class="s2">"Healthy"</span><span class="o">|</span><span class="s2">"Unhealthy"</span><span class="o">|</span><span class="s2">"LastKnownStatus"</span>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To create a health check</strong></p>
+<p>The following <tt class="docutils literal"><span class="pre">create-health-check</span></tt> command creates a health check using the caller reference <tt class="docutils literal"><span class="pre">2014-04-01-18:47</span></tt> and the JSON-formatted configuration in the file <tt class="docutils literal"><span class="pre">C:\awscli\route53\create-health-check.json</span></tt>:</p>
+<div class="highlight-python"><pre>aws route53 create-health-check --caller-reference 2014-04-01-18:47 --health-check-config file://C:\awscli\route53\create-health-check.json</pre>
+</div>
+<p>JSON syntax:</p>
+<div class="highlight-python"><pre>{
+  "IPAddress": "IP address of the endpoint to check",
+  "Port": port on the endpoint to check--required when Type is "TCP",
+  "Type": "HTTP"|"HTTPS"|"HTTP_STR_MATCH"|"HTTPS_STR_MATCH"|"TCP",
+  "ResourcePath": "path of the file that you want Amazon Route 53 to request--all Types except TCP",
+  "FullyQualifiedDomainName": "domain name of the endpoint to check--all Types except TCP",
+  "SearchString": "if Type is HTTP_STR_MATCH or HTTPS_STR_MATCH, the string to search for in the response body from the specified resource",
+  "RequestInterval": 10 | 30,
+  "FailureThreshold": integer between 1 and 10
+}</pre>
+</div>
+<p>To add the health check to a Route 53 resource record set, use the <tt class="docutils literal"><span class="pre">change-resource-record-sets</span></tt> command.</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks and DNS Failover</a> in the <em>Amazon Route 53 Developer Guide</em>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>HealthCheck -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that contains identifying information about the health check.</p>
+<p>Id -&gt; (string)</p>
+<blockquote>
+<div>The ID of the specified health check.</div></blockquote>
+<p>CallerReference -&gt; (string)</p>
+<blockquote>
+<div>A unique string that identifies the request to create the health check.</div></blockquote>
+<p>HealthCheckConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that contains the health check configuration.</p>
+<p>IPAddress -&gt; (string)</p>
+<blockquote>
+<div>IP Address of the instance being checked.</div></blockquote>
+<p>Port -&gt; (integer)</p>
+<blockquote>
+<div>Port on which connection will be opened to the instance to health check. For HTTP and HTTP_STR_MATCH this defaults to 80 if the port is not specified. For HTTPS and HTTPS_STR_MATCH this defaults to 443 if the port is not specified.</div></blockquote>
+<p>Type -&gt; (string)</p>
+<blockquote>
+<div>The type of health check to be performed. Currently supported types are TCP, HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, CALCULATED and CLOUDWATCH_METRIC.</div></blockquote>
+<p>ResourcePath -&gt; (string)</p>
+<blockquote>
+<div>Path to ping on the instance to check the health. Required for HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH health checks. The HTTP request is issued to the instance on the given port and path.</div></blockquote>
+<p>FullyQualifiedDomainName -&gt; (string)</p>
+<blockquote>
+<div>Fully qualified domain name of the instance to be health checked.</div></blockquote>
+<p>SearchString -&gt; (string)</p>
+<blockquote>
+<div>A string to search for in the body of a health check response. Required for HTTP_STR_MATCH and HTTPS_STR_MATCH health checks. Amazon Route 53 considers case when searching for <tt class="docutils literal"><span class="pre">SearchString</span></tt> in the response body.</div></blockquote>
+<p>RequestInterval -&gt; (integer)</p>
+<blockquote>
+<div><p>The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next health-check request.</p>
+<p>Each Amazon Route 53 health checker makes requests at this interval. Valid values are 10 and 30. The default value is 30.</p>
+</div></blockquote>
+<p>FailureThreshold -&gt; (integer)</p>
+<blockquote>
+<div><p>The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint from unhealthy to healthy or vice versa.</p>
+<p>Valid values are integers between 1 and 10. For more information, see "How Amazon Route 53 Determines Whether an Endpoint Is Healthy" in the Amazon Route 53 Developer Guide.</p>
+</div></blockquote>
+<p>MeasureLatency -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean value that indicates whether you want Amazon Route 53 to measure the latency between health checkers in multiple AWS regions and your endpoint and to display CloudWatch latency graphs in the Amazon Route 53 console.</div></blockquote>
+<p>Inverted -&gt; (boolean)</p>
+<blockquote>
+<div>A boolean value that indicates whether the status of health check should be inverted. For example, if a health check is healthy but <tt class="docutils literal"><span class="pre">Inverted</span></tt> is <tt class="docutils literal"><span class="pre">True</span></tt> , then Amazon Route 53 considers the health check to be unhealthy.</div></blockquote>
+<p>HealthThreshold -&gt; (integer)</p>
+<blockquote>
+<div>The minimum number of child health checks that must be healthy for Amazon Route 53 to consider the parent health check to be healthy. Valid values are integers between 0 and 256, inclusive.</div></blockquote>
+<p>ChildHealthChecks -&gt; (list)</p>
+<blockquote>
+<div><p>For a specified parent health check, a list of <tt class="docutils literal"><span class="pre">HealthCheckId</span></tt> values for the associated child health checks.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>EnableSNI -&gt; (boolean)</p>
+<blockquote>
+<div>Specify whether you want Amazon Route 53 to send the value of <tt class="docutils literal"><span class="pre">FullyQualifiedDomainName</span></tt> to the endpoint in the <tt class="docutils literal"><span class="pre">client_hello</span></tt> message during TLS negotiation. If you don't specify a value for <tt class="docutils literal"><span class="pre">EnableSNI</span></tt> , Amazon Route 53 defaults to <tt class="docutils literal"><span class="pre">true</span></tt> when <tt class="docutils literal"><span class="pre">Type</span></tt> is <tt class="docutils literal"><span class="pre">HTTPS</span></tt> or <tt class="docutils literal"><span class="pre">HTTPS_STR_MATCH</span></tt> and defaults to <tt class="docutils literal"><span class="pre">false</span></tt> when <tt class="docutils literal"><span class="pre">Type</span></tt> is any other value.</div></blockquote>
+<p>Regions -&gt; (list)</p>
+<blockquote>
+<div><p>A list of <tt class="docutils literal"><span class="pre">HealthCheckRegion</span></tt> values that you want Amazon Route 53 to use to perform health checks for the specified endpoint. You must specify at least three regions.</p>
+<p>(string)</p>
+<blockquote>
+<div>An Amazon EC2 region that you want Amazon Route 53 to use to perform health checks.</div></blockquote>
+</div></blockquote>
+<p>AlarmIdentifier -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that contains information to uniquely identify the CloudWatch alarm that you're associating with a Route 53 health check.</p>
+<p>Region -&gt; (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">CloudWatchRegion</span></tt> that the CloudWatch alarm was created in.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the CloudWatch alarm.</div></blockquote>
+</div></blockquote>
+<p>InsufficientDataHealthStatus -&gt; (string)</p>
+<blockquote>
+<div>The status of the health check when CloudWatch has insufficient data about the state of associated alarm. Valid values are <tt class="docutils literal"><span class="pre">Healthy</span></tt> , <tt class="docutils literal"><span class="pre">Unhealthy</span></tt> and <tt class="docutils literal"><span class="pre">LastKnownStatus</span></tt> .</div></blockquote>
+</div></blockquote>
+<p>HealthCheckVersion -&gt; (long)</p>
+<blockquote>
+<div>The version of the health check. You can optionally pass this value in a call to <tt class="docutils literal"><span class="pre">update-health-check</span></tt> to prevent overwriting another change to the health check.</div></blockquote>
+<p>CloudWatchAlarmConfiguration -&gt; (structure)</p>
+<blockquote>
+<div><p>For CLOUDWATCH_METRIC health checks, a complex type that contains information about the CloudWatch alarm that you're associating with the health check.</p>
+<p>EvaluationPeriods -&gt; (integer)</p>
+<blockquote>
+<div>The number of periods over which data is compared to the specified threshold.</div></blockquote>
+<p>Threshold -&gt; (double)</p>
+<blockquote>
+<div>The value that the metric is compared with to determine the state of the alarm. For example, if you want the health check to fail if the average TCP connection time is greater than 500 milliseconds for more than 60 seconds, the threshold is 500.</div></blockquote>
+<p>ComparisonOperator -&gt; (string)</p>
+<blockquote>
+<div><p>The arithmetic operation to use when comparing the specified Statistic and Threshold.</p>
+<p>Valid Values are <tt class="docutils literal"><span class="pre">GreaterThanOrEqualToThreshold</span></tt> , <tt class="docutils literal"><span class="pre">GreaterThanThreshold</span></tt> , <tt class="docutils literal"><span class="pre">LessThanThreshold</span></tt> and <tt class="docutils literal"><span class="pre">LessThanOrEqualToThreshold</span></tt></p>
+</div></blockquote>
+<p>Period -&gt; (integer)</p>
+<blockquote>
+<div>An integer that represents the period in seconds over which the statistic is applied.</div></blockquote>
+<p>MetricName -&gt; (string)</p>
+<blockquote>
+<div>The name of the CloudWatch metric that is associated with the CloudWatch alarm.</div></blockquote>
+<p>Namespace -&gt; (string)</p>
+<blockquote>
+<div>The namespace of the CloudWatch metric that is associated with the CloudWatch alarm.</div></blockquote>
+<p>Statistic -&gt; (string)</p>
+<blockquote>
+<div><p>The statistic to apply to the CloudWatch metric that is associated with the CloudWatch alarm.</p>
+<p>Valid Values are <tt class="docutils literal"><span class="pre">SampleCount</span></tt> , <tt class="docutils literal"><span class="pre">Average</span></tt> , <tt class="docutils literal"><span class="pre">Sum</span></tt> , <tt class="docutils literal"><span class="pre">Minimum</span></tt> and <tt class="docutils literal"><span class="pre">Maximum</span></tt></p>
+</div></blockquote>
+<p>Dimensions -&gt; (list)</p>
+<blockquote>
+<div><p>A list of <tt class="docutils literal"><span class="pre">Dimension</span></tt> elements for the CloudWatch metric that is associated with the CloudWatch alarm. For information about the metrics and dimensions that CloudWatch supports, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> .</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The name and value of a dimension for a CloudWatch metric.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the dimension.</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div>The value of the dimension.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Location -&gt; (string)</p>
+<blockquote>
+<div>The unique URL representing the new health check.</div></blockquote>
 </div>
 </div>
 
@@ -163,7 +345,7 @@
     <div class="footer-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="change-resource-record-sets.html" title="previous chapter (use the left arrow)">&#8592; change-resource-record-sets</a>
+          <a href="change-tags-for-resource.html" title="previous chapter (use the left arrow)">&#8592; change-tags-for-resource</a>
           <span class="divider">/</span>
           
         </li>
@@ -173,6 +355,15 @@
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
@@ -181,36 +372,22 @@
         <li class="right">
           <a href="create-hosted-zone.html" title="create-hosted-zone">next</a> |</li>
         <li class="right">
-          <a href="change-resource-record-sets.html" title="change-resource-record-sets">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+          <a href="change-tags-for-resource.html" title="change-tags-for-resource">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">route53</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'change-resource-record-sets.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'create-hosted-zone.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53/create-health-check.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:27 GMT -->
 </html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/codepipeline/create-custom-action-type.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:00 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-custom-action-type &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="codepipeline" href="index.html" />
+    <link rel="next" title="create-pipeline" href="create-pipeline.html" />
+    <link rel="prev" title="acknowledge-third-party-job" href="acknowledge-third-party-job.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="create-pipeline.html" title="create-pipeline" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="acknowledge-third-party-job.html" title="acknowledge-third-party-job" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">codepipeline</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="acknowledge-third-party-job.html" title="previous chapter (use the left arrow)">&#8592; acknowledge-third-party-job</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-pipeline.html" title="next chapter (use the right arrow)">create-pipeline &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-custom-action-type</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/codepipeline/create-custom-action-type">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-codepipeline"><em>codepipeline</em></a> ]</p>
+<div class="section" id="create-custom-action-type">
+<span id="cli-aws-codepipeline-create-custom-action-type"></span><h1>create-custom-action-type<a name="//apple_ref/cpp/Command/aws codepipeline create-custom-action-type" class="dashAnchor" id="aws codepipeline create-custom-action-type"></a><a class="headerlink" href="#create-custom-action-type" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Creates a new custom action that can be used in all pipelines associated with the AWS account. Only used for custom actions.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  create-custom-action-type
+--category &lt;value&gt;
+--provider &lt;value&gt;
+[--settings &lt;value&gt;]
+[--configuration-properties &lt;value&gt;]
+--input-artifact-details &lt;value&gt;
+--output-artifact-details &lt;value&gt;
+--action-version &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--category" class="dashAnchor" id="category"></a><span class="pre">--category</span></tt> (string)</p>
+<blockquote>
+<div><p>The category of the custom action, such as a source action or a build action.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Although Source is listed as a valid value, it is not currently functional. This value is reserved for future use.</p>
+</div>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Source</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Build</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Deploy</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Test</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Invoke</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--provider" class="dashAnchor" id="provider"></a><span class="pre">--provider</span></tt> (string)</p>
+<blockquote>
+<div>The provider of the service used in the custom action, such as AWS CodeDeploy.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--settings" class="dashAnchor" id="settings"></a><span class="pre">--settings</span></tt> (structure)</p>
+<blockquote>
+<div>Returns information about the settings for an action type.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">thirdPartyConfigurationUrl</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">entityUrlTemplate</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">executionUrlTemplate</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">revisionUrlTemplate</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"thirdPartyConfigurationUrl"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"entityUrlTemplate"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"executionUrlTemplate"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"revisionUrlTemplate"</span><span class="p">:</span> <span class="s2">"string"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--configuration-properties" class="dashAnchor" id="configuration-properties"></a><span class="pre">--configuration-properties</span></tt> (list)</p>
+<blockquote>
+<div><p>The configuration properties for the custom action.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:<em>name</em> }, as long as the configuration property is both required and not secret. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom Action for a Pipeline</a> .</p>
+</div>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>name=string,required=boolean,key=boolean,secret=boolean,queryable=boolean,description=string,type=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    "name": "string",
+    "required": true|false,
+    "key": true|false,
+    "secret": true|false,
+    "queryable": true|false,
+    "description": "string",
+    "type": "String"|"Number"|"Boolean"
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--input-artifact-details" class="dashAnchor" id="input-artifact-details"></a><span class="pre">--input-artifact-details</span></tt> (structure)</p>
+<blockquote>
+<div>Returns information about the details of an artifact.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">minimumCount</span><span class="o">=</span><span class="n">integer</span><span class="p">,</span><span class="n">maximumCount</span><span class="o">=</span><span class="n">integer</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"minimumCount"</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+  <span class="s2">"maximumCount"</span><span class="p">:</span> <span class="n">integer</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--output-artifact-details" class="dashAnchor" id="output-artifact-details"></a><span class="pre">--output-artifact-details</span></tt> (structure)</p>
+<blockquote>
+<div>Returns information about the details of an artifact.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">minimumCount</span><span class="o">=</span><span class="n">integer</span><span class="p">,</span><span class="n">maximumCount</span><span class="o">=</span><span class="n">integer</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"minimumCount"</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+  <span class="s2">"maximumCount"</span><span class="p">:</span> <span class="n">integer</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--action-version" class="dashAnchor" id="action-version"></a><span class="pre">--action-version</span></tt> (string)</p>
+<blockquote>
+<div>The version number of the custom action.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To create a custom action</strong></p>
+<p>This example creates a custom action for AWS CodePipeline using an already-created JSON file (here named MyCustomAction.json) that contains the structure of the custom action. For more information about the requirements for creating a custom action, including the structure of the file, see the AWS CodePipeline User Guide.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws codepipeline create-custom-action-type --cli-input-json file://MyCustomAction.json</pre>
+</div>
+<p>JSON file sample contents:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+ <span class="s2">"actionType"</span><span class="p">:</span> <span class="p">{</span>
+  <span class="s2">"actionConfigurationProperties"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"The name of the build project must be provided when this action is added to the pipeline."</span><span class="p">,</span>
+      <span class="s2">"key"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"MyJenkinsExampleBuildProject"</span><span class="p">,</span>
+      <span class="s2">"queryable"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+      <span class="s2">"required"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">"secret"</span><span class="p">:</span> <span class="n">false</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"id"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"__type"</span><span class="p">:</span> <span class="s2">"ActionTypeId"</span><span class="p">,</span>
+    <span class="s2">"category"</span><span class="p">:</span> <span class="s2">"Build"</span><span class="p">,</span>
+    <span class="s2">"owner"</span><span class="p">:</span> <span class="s2">"Custom"</span><span class="p">,</span>
+    <span class="s2">"provider"</span><span class="p">:</span> <span class="s2">"MyJenkinsProviderName"</span><span class="p">,</span>
+    <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"1"</span>
+  <span class="p">},</span>
+  <span class="s2">"inputArtifactDetails"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"maximumCount"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"minimumCount"</span><span class="p">:</span> <span class="mi">0</span>
+  <span class="p">},</span>
+  <span class="s2">"outputArtifactDetails"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"maximumCount"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"minimumCount"</span><span class="p">:</span> <span class="mi">0</span>
+  <span class="p">},</span>
+  <span class="s2">"settings"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"entityUrlTemplate"</span><span class="p">:</span> <span class="s2">"https://192.0.2.4/job/{Config:ProjectName}/"</span><span class="p">,</span>
+    <span class="s2">"executionUrlTemplate"</span><span class="p">:</span> <span class="s2">"https://192.0.2.4/job/{Config:ProjectName}/lastSuccessfulBuild/{ExternalExecutionId}/"</span>
+  <span class="p">}</span>
+ <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><pre>This command returns the structure of the custom action.</pre>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>actionType -&gt; (structure)</p>
+<blockquote>
+<div><p>Returns information about the details of an action type.</p>
+<p>id -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents information about an action type.</p>
+<p>category -&gt; (string)</p>
+<blockquote>
+<div>A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the values below.</div></blockquote>
+<p>owner -&gt; (string)</p>
+<blockquote>
+<div>The creator of the action being called.</div></blockquote>
+<p>provider -&gt; (string)</p>
+<blockquote>
+<div>The provider of the service being called by the action. Valid providers are determined by the action category. For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be specified as CodeDeploy.</div></blockquote>
+<p>version -&gt; (string)</p>
+<blockquote>
+<div>A string that identifies the action type.</div></blockquote>
+</div></blockquote>
+<p>settings -&gt; (structure)</p>
+<blockquote>
+<div><p>The settings for the action type.</p>
+<p>thirdPartyConfigurationUrl -&gt; (string)</p>
+<blockquote>
+<div>The URL of a sign-up page where users can sign up for an external service and perform initial configuration of the action provided by that service.</div></blockquote>
+<p>entityUrlTemplate -&gt; (string)</p>
+<blockquote>
+<div>The URL returned to the AWS CodePipeline console that provides a deep link to the resources of the external system, such as the configuration page for an AWS CodeDeploy deployment group. This link is provided as part of the action display within the pipeline.</div></blockquote>
+<p>executionUrlTemplate -&gt; (string)</p>
+<blockquote>
+<div>The URL returned to the AWS CodePipeline console that contains a link to the top-level landing page for the external system, such as console page for AWS CodeDeploy. This link is shown on the pipeline view page in the AWS CodePipeline console and provides a link to the execution entity of the external action.</div></blockquote>
+<p>revisionUrlTemplate -&gt; (string)</p>
+<blockquote>
+<div>The URL returned to the AWS CodePipeline console that contains a link to the page where customers can update or change the configuration of the external action.</div></blockquote>
+</div></blockquote>
+<p>actionConfigurationProperties -&gt; (list)</p>
+<blockquote>
+<div><p>The configuration properties for the action type.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents information about an action configuration property.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name of the action configuration property.</div></blockquote>
+<p>required -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the configuration property is a required value.</div></blockquote>
+<p>key -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the configuration property is a key.</div></blockquote>
+<p>secret -&gt; (boolean)</p>
+<blockquote>
+<div><p>Whether the configuration property is secret. Secrets are hidden from all calls except for GetJobDetails, GetThirdPartyJobDetails, PollForJobs, and PollForThirdPartyJobs.</p>
+<p>When updating a pipeline, passing * * * * * without changing any other values of the action will preserve the prior value of the secret.</p>
+</div></blockquote>
+<p>queryable -&gt; (boolean)</p>
+<blockquote>
+<div><p>Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p>
+<p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>
+</div></blockquote>
+<p>description -&gt; (string)</p>
+<blockquote>
+<div>The description of the action configuration property that will be displayed to users.</div></blockquote>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div>The type of the configuration property.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>inputArtifactDetails -&gt; (structure)</p>
+<blockquote>
+<div><p>The details of the input artifact for the action, such as its commit ID.</p>
+<p>minimumCount -&gt; (integer)</p>
+<blockquote>
+<div>The minimum number of artifacts allowed for the action type.</div></blockquote>
+<p>maximumCount -&gt; (integer)</p>
+<blockquote>
+<div>The maximum number of artifacts allowed for the action type.</div></blockquote>
+</div></blockquote>
+<p>outputArtifactDetails -&gt; (structure)</p>
+<blockquote>
+<div><p>The details of the output artifact of the action, such as its commit ID.</p>
+<p>minimumCount -&gt; (integer)</p>
+<blockquote>
+<div>The minimum number of artifacts allowed for the action type.</div></blockquote>
+<p>maximumCount -&gt; (integer)</p>
+<blockquote>
+<div>The maximum number of artifacts allowed for the action type.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="acknowledge-third-party-job.html" title="previous chapter (use the left arrow)">&#8592; acknowledge-third-party-job</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-pipeline.html" title="next chapter (use the right arrow)">create-pipeline &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="create-pipeline.html" title="create-pipeline">next</a> |</li>
+        <li class="right">
+          <a href="acknowledge-third-party-job.html" title="acknowledge-third-party-job">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">codepipeline</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/codepipeline/create-custom-action-type.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:00 GMT -->
+</html>

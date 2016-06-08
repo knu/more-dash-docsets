@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/importexport/create-job.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:20 GMT -->
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>create-job &#8212; AWS CLI 1.0.0 documentation</title>
+    <title>create-job &#8212; AWS CLI 1.10.36 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
-  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js.html"></script>
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
     <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.10.36',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,9 +25,9 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.0.0 documentation" href="../../index.html" />
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
     <link rel="up" title="importexport" href="index.html" />
-    <link rel="next" title="get-status" href="get-status.html" />
+    <link rel="next" title="get-shipping-label" href="get-shipping-label.html" />
     <link rel="prev" title="cancel-job" href="cancel-job.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
@@ -37,10 +39,10 @@
   <div class="navbar navbar-fixed-top ">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="../../index.html">AWS CLI</a>
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
         <ul class="nav">
-<li><a href="../../index.html">Home</a></li>
-<li><a href="http://aws.amazon.com/documentation/cli/">Documentation</a></li>
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
 <li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
 <li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
         </ul>
@@ -51,6 +53,7 @@
     </div>
   </div>
   
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
 
     <div class="related">
       <h3>Navigation</h3>
@@ -58,10 +61,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
         <li class="right">
-          <a href="get-status.html" title="get-status" accesskey="N">next</a> |</li>
+          <a href="get-shipping-label.html" title="get-shipping-label" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="cancel-job.html" title="cancel-job" accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">importexport</a> &#187;</li> 
       </ul>
@@ -75,30 +78,32 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="get-status.html" title="next chapter (use the right arrow)">get-status &#8594;</a></li>
+          <li><a href="get-shipping-label.html" title="next chapter (use the right arrow)">get-shipping-label &#8594;</a></li>
       </ul>
     </div>
   
         <div class="document clearer">
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
-  <a href="../../index.html">
+  <a href="../../index-2.html">
     <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
   </a>
 </p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">create-job</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
 </ul>
 
 <div id="searchbox" style="display: none">
     <h3>Quick search</h3>
-    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
         <input type="text" name="q" style="width: 105px" class="input-small search-query" />
         <button type="submit" class="btn btn-small">Search</button>
         <input type="hidden" name="check_keywords" value="yes" />
@@ -107,39 +112,132 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_02?service_name=AWSCLI&amp;guide_name=Guide&amp;api_version=1.0&amp;file_name=reference/importexport/create-job">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/importexport/create-job">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
 </div>
         </div>
       </div>
             <div class="body">
               
-  <p>[ <a class="reference internal" href="../index.html"><em>aws</em></a> . <a class="reference internal" href="index.html"><em>importexport</em></a> ]</p>
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-importexport"><em>importexport</em></a> ]</p>
 <div class="section" id="create-job">
-<h1>create-job<a class="headerlink" href="#create-job" title="Permalink to this headline">&#182;</a></h1>
+<span id="cli-aws-importexport-create-job"></span><h1>create-job<a name="//apple_ref/cpp/Command/aws importexport create-job" class="dashAnchor" id="aws importexport create-job"></a><a class="headerlink" href="#create-job" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
 <p>This operation initiates the process of scheduling an upload or download of your data. You include in the request a manifest that describes the data transfer specifics. The response to the request includes a job ID, which you can use in other operations, a signature that you use to identify your storage device, and the address where you should ship your storage device.</p>
 </div>
 <div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  create-job
 --job-type &lt;value&gt;
 --manifest &lt;value&gt;
 [--manifest-addendum &lt;value&gt;]
---validate-only | --no-validate-only</pre>
+--validate-only | --no-validate-only
+[--api-version &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
 </div>
 </div>
 <div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--job-type" class="dashAnchor" id="job-type"></a><span class="pre">--job-type</span></tt> (string)
 Specifies whether the job to initiate is an import or export job.</p>
+<blockquote>
+<div><p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Import</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Export</span></tt></li>
+</ul>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--manifest" class="dashAnchor" id="manifest"></a><span class="pre">--manifest</span></tt> (string)
 The UTF-8 encoded text of the manifest file.</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--manifest-addendum" class="dashAnchor" id="manifest-addendum"></a><span class="pre">--manifest-addendum</span></tt> (string)
 For internal use only.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--validate-only" class="dashAnchor" id="validate-only"></a><span class="pre">--validate-only</span></tt> | <tt class="docutils literal"><a name="//apple_ref/cpp/Option/--no-validate-only" class="dashAnchor" id="no-validate-only"></a><span class="pre">--no-validate-only</span></tt> (boolean)
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--validate-only" class="dashAnchor" id="validate-only"></a><span class="pre">--validate-only</span></tt> | <tt class="docutils literal"><span class="pre">--no-validate-only</span></tt> (boolean)
 Validate the manifest and parameter values in the request but do not actually create a job.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--api-version" class="dashAnchor" id="api-version"></a><span class="pre">--api-version</span></tt> (string)
+Specifies the version of the client tool.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p>The following command creates an import job from a manifest file:</p>
+<div class="highlight-python"><pre>aws importexport create-job --job-type import --manifest file://manifest --no-validate-only</pre>
+</div>
+<p>The file <tt class="docutils literal"><span class="pre">manifest</span></tt> is a YAML formatted text file in the current directory with the following content:</p>
+<div class="highlight-python"><pre>manifestVersion: 2.0;
+returnAddress:
+name: Jane Roe
+company: Example Corp.
+street1: 123 Any Street
+city: Anytown
+stateOrProvince: WA
+postalCode: 91011-1111
+phoneNumber: 206-555-1111
+country: USA
+deviceId: 49382
+eraseDevice: yes
+notificationEmail: john.doe@example.com;jane.roe@example.com
+bucket: myBucket</pre>
+</div>
+<p>For more information on the manifest file format, see <a class="reference external" href="http://docs.aws.amazon.com/AWSImportExport/latest/DG/ImportManifestFile.html">Creating Import Manifests</a> in the <em>AWS Import/Export Developer Guide</em>.</p>
+<p>You can also pass the manifest as a string in quotes:</p>
+<div class="highlight-python"><pre>aws importexport create-job --job-type import --manifest 'manifestVersion: 2.0;
+ returnAddress:
+ name: Jane Roe
+ company: Example Corp.
+ street1: 123 Any Street
+ city: Anytown
+ stateOrProvince: WA
+ postalCode: 91011-1111
+ phoneNumber: 206-555-1111
+ country: USA
+ deviceId: 49382
+ eraseDevice: yes
+ notificationEmail: john.doe@example.com;jane.roe@example.com
+ bucket: myBucket'</pre>
+</div>
+<p>For information on quoting string arguments and using files, see <a class="reference external" href="../../userguide/cli-using-param.html">Specifying Parameter Values</a> in the <em>AWS CLI User Guide</em>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>JobId -&gt; (string)</p>
+<blockquote>
+<div>A unique identifier which refers to a particular job.</div></blockquote>
+<p>JobType -&gt; (string)</p>
+<blockquote>
+<div>Specifies whether the job to initiate is an import or export job.</div></blockquote>
+<p>Signature -&gt; (string)</p>
+<blockquote>
+<div>An encrypted code used to authenticate the request and response, for example, "DV+TpDfx1/TdSE9ktyK9k/bDTVI=". Only use this value is you want to create the signature file yourself. Generally you should use the SignatureFileContents value.</div></blockquote>
+<p>SignatureFileContents -&gt; (string)</p>
+<blockquote>
+<div>The actual text of the SIGNATURE file to be written to disk.</div></blockquote>
+<p>WarningMessage -&gt; (string)</p>
+<blockquote>
+<div>An optional message notifying you of non-fatal issues with the job, such as use of an incompatible Amazon S3 bucket name.</div></blockquote>
+<p>ArtifactList -&gt; (list)</p>
+<blockquote>
+<div><p>A collection of artifacts.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A discrete item that contains the description and URL of an artifact (such as a PDF).</p>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>The associated description for this object.</div></blockquote>
+<p>URL -&gt; (string)</p>
+<blockquote>
+<div>The URL for a given Artifact.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
 </div>
 </div>
 
@@ -155,50 +253,45 @@ Validate the manifest and parameter values in the request but do not actually cr
           <span class="divider">/</span>
           
         </li>
-          <li><a href="get-status.html" title="next chapter (use the right arrow)">get-status &#8594;</a></li>
+          <li><a href="get-shipping-label.html" title="next chapter (use the right arrow)">get-shipping-label &#8594;</a></li>
       </ul>
     </div>
   
 
     </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index">index</a></li>
         <li class="right">
-          <a href="get-status.html" title="get-status">next</a> |</li>
+          <a href="get-shipping-label.html" title="get-shipping-label">next</a> |</li>
         <li class="right">
           <a href="cancel-job.html" title="cancel-job">previous</a> |</li>
-        <li><a href="../../index.html">AWS CLI 1.0.0 documentation</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">importexport</a> &#187;</li> 
       </ul>
     </div>
   <div class="footer container">
-    &#169; Copyright 2013, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
 
 
 
   
     
-      <script type="text/javascript"><![CDATA[
-        $(document).keydown(function(e){
-          if (e.keyCode == 37) {
-            
-            window.location = 'cancel-job.html';
-            return false;
-            
-          } else if (e.keyCode == 39) {
-            
-            window.location = 'get-status.html';
-            return false;
-            
-          }
-        });
-      ]]></script>
-    
   
   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/importexport/create-job.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:20 GMT -->
 </html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/dms/create-endpoint.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:01 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-endpoint &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="dms" href="index.html" />
+    <link rel="next" title="create-replication-instance" href="create-replication-instance.html" />
+    <link rel="prev" title="add-tags-to-resource" href="add-tags-to-resource.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="create-replication-instance.html" title="create-replication-instance" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="add-tags-to-resource.html" title="add-tags-to-resource" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">dms</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="add-tags-to-resource.html" title="previous chapter (use the left arrow)">&#8592; add-tags-to-resource</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-replication-instance.html" title="next chapter (use the right arrow)">create-replication-instance &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-endpoint</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/dms/create-endpoint">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-dms"><em>dms</em></a> ]</p>
+<div class="section" id="create-endpoint">
+<span id="cli-aws-dms-create-endpoint"></span><h1>create-endpoint<a name="//apple_ref/cpp/Command/aws dms create-endpoint" class="dashAnchor" id="aws dms create-endpoint"></a><a class="headerlink" href="#create-endpoint" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Creates an endpoint using the provided settings.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  create-endpoint
+--endpoint-identifier &lt;value&gt;
+--endpoint-type &lt;value&gt;
+--engine-name &lt;value&gt;
+--username &lt;value&gt;
+--password &lt;value&gt;
+--server-name &lt;value&gt;
+--port &lt;value&gt;
+[--database-name &lt;value&gt;]
+[--extra-connection-attributes &lt;value&gt;]
+[--kms-key-id &lt;value&gt;]
+[--tags &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--endpoint-identifier" class="dashAnchor" id="endpoint-identifier"></a><span class="pre">--endpoint-identifier</span></tt> (string)</p>
+<blockquote>
+<div>The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters, digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--endpoint-type" class="dashAnchor" id="endpoint-type"></a><span class="pre">--endpoint-type</span></tt> (string)</p>
+<blockquote>
+<div><p>The type of endpoint.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">source</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">target</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--engine-name" class="dashAnchor" id="engine-name"></a><span class="pre">--engine-name</span></tt> (string)</p>
+<blockquote>
+<div>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, SQLSERVER.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--username" class="dashAnchor" id="username"></a><span class="pre">--username</span></tt> (string)</p>
+<blockquote>
+<div>The user name to be used to login to the endpoint database.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--password" class="dashAnchor" id="password"></a><span class="pre">--password</span></tt> (string)</p>
+<blockquote>
+<div>The password to be used to login to the endpoint database.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--server-name" class="dashAnchor" id="server-name"></a><span class="pre">--server-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the server where the endpoint database resides.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--port" class="dashAnchor" id="port"></a><span class="pre">--port</span></tt> (integer)</p>
+<blockquote>
+<div>The port used by the endpoint database.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--database-name" class="dashAnchor" id="database-name"></a><span class="pre">--database-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the endpoint database.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--extra-connection-attributes" class="dashAnchor" id="extra-connection-attributes"></a><span class="pre">--extra-connection-attributes</span></tt> (string)</p>
+<blockquote>
+<div>Additional attributes associated with the connection.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--kms-key-id" class="dashAnchor" id="kms-key-id"></a><span class="pre">--kms-key-id</span></tt> (string)</p>
+<blockquote>
+<div>The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS region.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--tags" class="dashAnchor" id="tags"></a><span class="pre">--tags</span></tt> (list)</p>
+<blockquote>
+<div>Tags to be added to the endpoint.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Key=string,Value=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    "Key": "string",
+    "Value": "string"
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p>The following command creates a source endpoint for a MySQL RDS DB instance named <tt class="docutils literal"><span class="pre">mydb.cx1llnox7iyx.uswest-2.rds.amazonaws.com</span></tt>:</p>
+<div class="highlight-python"><pre>aws dms create-endpoint --endpoint-identifier test-endpoint-1 --endpoint-type source --engine-name mysql --username username --password password --server-name mydb.cx1llnox7iyx.uswest-2.rds.amazonaws.com --port 3306</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">"Endpoint"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Username"</span><span class="p">:</span> <span class="s2">"username"</span><span class="p">,</span>
+    <span class="s2">"Status"</span><span class="p">:</span> <span class="s2">"active"</span><span class="p">,</span>
+    <span class="s2">"EndpointArn"</span><span class="p">:</span> <span class="s2">"arn:aws:dms:us-east-1:123456789012:endpoint:RAAR3R22XSH46S3PWLC3NJAWKM"</span><span class="p">,</span>
+    <span class="s2">"ServerName"</span><span class="p">:</span> <span class="s2">"mydb.cx1llnox7iyx.us-west-2.rds.amazonaws.com"</span><span class="p">,</span>
+    <span class="s2">"EndpointType"</span><span class="p">:</span> <span class="s2">"SOURCE"</span><span class="p">,</span>
+    <span class="s2">"KmsKeyId"</span><span class="p">:</span> <span class="s2">"arn:aws:kms:us-east-1:123456789012:key/4c1731d6-5435-ed4d-be13-d53411a7cfbd"</span><span class="p">,</span>
+    <span class="s2">"EngineName"</span><span class="p">:</span> <span class="s2">"mysql"</span><span class="p">,</span>
+    <span class="s2">"EndpointIdentifier"</span><span class="p">:</span> <span class="s2">"test-endpoint-1"</span><span class="p">,</span>
+    <span class="s2">"Port"</span><span class="p">:</span> <span class="mi">3306</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Endpoint -&gt; (structure)</p>
+<blockquote>
+<div><p>The endpoint that was created.</p>
+<p>EndpointIdentifier -&gt; (string)</p>
+<blockquote>
+<div>The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters, digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.</div></blockquote>
+<p>EndpointType -&gt; (string)</p>
+<blockquote>
+<div>The type of endpoint.</div></blockquote>
+<p>EngineName -&gt; (string)</p>
+<blockquote>
+<div>The database engine name.</div></blockquote>
+<p>Username -&gt; (string)</p>
+<blockquote>
+<div>The user name used to connect to the endpoint.</div></blockquote>
+<p>ServerName -&gt; (string)</p>
+<blockquote>
+<div>The name of the server at the endpoint.</div></blockquote>
+<p>Port -&gt; (integer)</p>
+<blockquote>
+<div>The port value used to access the endpoint.</div></blockquote>
+<p>DatabaseName -&gt; (string)</p>
+<blockquote>
+<div>The name of the database at the endpoint.</div></blockquote>
+<p>ExtraConnectionAttributes -&gt; (string)</p>
+<blockquote>
+<div>Additional connection attributes used to connect to the endpoint.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status of the endpoint.</div></blockquote>
+<p>KmsKeyId -&gt; (string)</p>
+<blockquote>
+<div>The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS region.</div></blockquote>
+<p>EndpointArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="add-tags-to-resource.html" title="previous chapter (use the left arrow)">&#8592; add-tags-to-resource</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-replication-instance.html" title="next chapter (use the right arrow)">create-replication-instance &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="create-replication-instance.html" title="create-replication-instance">next</a> |</li>
+        <li class="right">
+          <a href="add-tags-to-resource.html" title="add-tags-to-resource">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">dms</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/dms/create-endpoint.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:01 GMT -->
+</html>

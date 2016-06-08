@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/waf/create-ip-set.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-ip-set &#8212; AWS CLI 1.10.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.10.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="waf" href="index.html" />
+    <link rel="next" title="create-rule" href="create-rule.html" />
+    <link rel="prev" title="create-byte-match-set" href="create-byte-match-set.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="create-rule.html" title="create-rule" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="create-byte-match-set.html" title="create-byte-match-set" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">waf</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="create-byte-match-set.html" title="previous chapter (use the left arrow)">&#8592; create-byte-match-set</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-rule.html" title="next chapter (use the right arrow)">create-rule &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-ip-set</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/waf/create-ip-set">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-waf"><em>waf</em></a> ]</p>
+<div class="section" id="create-ip-set">
+<span id="cli-aws-waf-create-ip-set"></span><h1>create-ip-set<a name="//apple_ref/cpp/Command/aws waf create-ip-set" class="dashAnchor" id="aws waf create-ip-set"></a><a class="headerlink" href="#create-ip-set" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Creates an  IPSet , which you use to specify which web requests you want to allow or block based on the IP addresses that the requests originate from. For example, if you're receiving a lot of requests from one or more individual IP addresses or one or more ranges of IP addresses and you want to block the requests, you can create an <tt class="docutils literal"><span class="pre">IPSet</span></tt> that contains those IP addresses and then configure AWS WAF to block the requests.</p>
+<p>To create and configure an <tt class="docutils literal"><span class="pre">IPSet</span></tt> , perform the following steps:</p>
+<ul class="simple">
+<li>Use  get-change-token to get the change token that you provide in the <tt class="docutils literal"><span class="pre">change-token</span></tt> parameter of a <tt class="docutils literal"><span class="pre">create-ip-set</span></tt> request.</li>
+<li>Submit a <tt class="docutils literal"><span class="pre">create-ip-set</span></tt> request.</li>
+<li>Use <tt class="docutils literal"><span class="pre">get-change-token</span></tt> to get the change token that you provide in the <tt class="docutils literal"><span class="pre">change-token</span></tt> parameter of an  update-ip-set request.</li>
+<li>Submit an <tt class="docutils literal"><span class="pre">update-ip-set</span></tt> request to specify the IP addresses that you want AWS WAF to watch for.</li>
+</ul>
+<p>For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a class="reference external" href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a> .</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  create-ip-set
+--name &lt;value&gt;
+--change-token &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--name" class="dashAnchor" id="name"></a><span class="pre">--name</span></tt> (string)</p>
+<blockquote>
+<div>A friendly name or description of the  IPSet . You can't change <tt class="docutils literal"><span class="pre">Name</span></tt> after you create the <tt class="docutils literal"><span class="pre">IPSet</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--change-token" class="dashAnchor" id="change-token"></a><span class="pre">--change-token</span></tt> (string)</p>
+<blockquote>
+<div>The value returned by the most recent call to  get-change-token .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
+Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>IPSet -&gt; (structure)</p>
+<blockquote>
+<div><p>The  IPSet returned in the <tt class="docutils literal"><span class="pre">create-ip-set</span></tt> response.</p>
+<p>IPSetId -&gt; (string)</p>
+<blockquote>
+<div><p>The <tt class="docutils literal"><span class="pre">IPSetId</span></tt> for an <tt class="docutils literal"><span class="pre">IPSet</span></tt> . You use <tt class="docutils literal"><span class="pre">IPSetId</span></tt> to get information about an <tt class="docutils literal"><span class="pre">IPSet</span></tt> (see  get-ip-set ), update an <tt class="docutils literal"><span class="pre">IPSet</span></tt> (see  update-ip-set ), insert an <tt class="docutils literal"><span class="pre">IPSet</span></tt> into a <tt class="docutils literal"><span class="pre">Rule</span></tt> or delete one from a <tt class="docutils literal"><span class="pre">Rule</span></tt> (see  update-rule ), and delete an <tt class="docutils literal"><span class="pre">IPSet</span></tt> from AWS WAF (see  delete-ip-set ).</p>
+<p><tt class="docutils literal"><span class="pre">IPSetId</span></tt> is returned by  create-ip-set and by  list-ip-sets .</p>
+</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>A friendly name or description of the  IPSet . You can't change the name of an <tt class="docutils literal"><span class="pre">IPSet</span></tt> after you create it.</div></blockquote>
+<p>IPSetDescriptors -&gt; (list)</p>
+<blockquote>
+<div><p>The IP address type (<tt class="docutils literal"><span class="pre">IPV4</span></tt> ) and the IP address range (in CIDR notation) that web requests originate from. If the <tt class="docutils literal"><span class="pre">WebACL</span></tt> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">c-ip</span></tt> , if the viewer did not use an HTTP proxy or a load balancer to send the request</li>
+<li><tt class="docutils literal"><span class="pre">x-forwarded-for</span></tt> , if the viewer did use an HTTP proxy or a load balancer to send the request</li>
+</ul>
+<p>(structure)</p>
+<blockquote>
+<div><p>Specifies the IP address type (<tt class="docutils literal"><span class="pre">IPV4</span></tt> ) and the IP address range (in CIDR format) that web requests originate from.</p>
+<p>Type -&gt; (string)</p>
+<blockquote>
+<div>Specify <tt class="docutils literal"><span class="pre">IPV4</span></tt> .</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div><p>Specify an IPv4 address by using CIDR notation. For example:</p>
+<ul class="simple">
+<li>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <tt class="docutils literal"><span class="pre">192.0.2.44/32</span></tt> .</li>
+<li>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <tt class="docutils literal"><span class="pre">192.0.2.0/24</span></tt> .</li>
+</ul>
+<p>AWS WAF supports only /8, /16, /24, and /32 IP addresses.</p>
+<p>For more information about CIDR notation, see the Wikipedia entry <a class="reference external" href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a> .</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ChangeToken -&gt; (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">change-token</span></tt> that you used to submit the <tt class="docutils literal"><span class="pre">create-ip-set</span></tt> request. You can also use this value to query the status of the request. For more information, see  get-change-token-status .</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="create-byte-match-set.html" title="previous chapter (use the left arrow)">&#8592; create-byte-match-set</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-rule.html" title="next chapter (use the right arrow)">create-rule &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="create-rule.html" title="create-rule">next</a> |</li>
+        <li class="right">
+          <a href="create-byte-match-set.html" title="create-byte-match-set">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">waf</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/waf/create-ip-set.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+</html>
