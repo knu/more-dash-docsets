@@ -1,4 +1,5 @@
 require 'fileutils'
+require 'uri'
 require 'rubygems'
 # this is nokogiri 1.5.10
 require 'nokogiri'
@@ -268,6 +269,12 @@ class Dash
 
         # return @names
         return new_toc
+    end
+
+    BASE_URI = URI('http://localhost/')
+
+    def resolve_url(*paths)
+        paths.inject(BASE_URI, :+).route_from(BASE_URI).path
     end
 
 
