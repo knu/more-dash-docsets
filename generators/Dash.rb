@@ -326,7 +326,7 @@ class Dash
         # puts "    Getting Nokogiri document: #{full_path}"
         if File.exists?(full_path)
             file  = File.new(full_path, 'r')
-            doc   = Nokogiri::HTML(file, nil, 'UTF-8')
+            doc   = Nokogiri::HTML(file, file_path, 'UTF-8')
             file.close
             return doc
         else
@@ -337,7 +337,7 @@ class Dash
 
 
     # file_path is relative to SRC_DOCS_PATH or can be absolute
-    def save_noko_doc(doc, file_path, xhtml = true)
+    def save_noko_doc(doc, file_path = doc.url, xhtml = true)
         full_path = File.join(@docs_root, file_path)
         if File.exists?(file_path)
             full_path = file_path
