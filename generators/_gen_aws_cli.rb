@@ -12,6 +12,63 @@ def add_fragment_for_dash(file, fragment, comment = '/* Added for Dash */')
     }
 end
 
+def index_command(dash, command, doc, parents = [])
+    if parents.empty?
+        # insert record for general aws command
+        remark = ''
+        dash.sql_insert(command, 'Command', doc.url)
+    else
+        # register categories
+        # e.g. <li class="toctree-l2"><a class="reference internal" href="reference/autoscaling/index.html">autoscaling</a></li>
+        remark = " (#{parents.join(' ')})"
+        dash.sql_insert(command + remark, 'Category', doc.url)
+    end
+
+    doc.css('.section .headerlink').each do |headerlink|
+        case headerlink.parent.name
+        when 'h1'
+            name = headerlink.at_xpath('./preceding-sibling::text()').content
+            newanchor = dash.get_dash_anchor(doc, (parents + [name]).join(' '), 'Command')
+        when 'h2'
+            name = headerlink.at_xpath('./preceding-sibling::text()').content
+            newanchor = dash.get_dash_anchor(doc, name, 'Section')
+        else
+            next
+        end
+        headerlink.before(newanchor)
+    end
+
+    # insert option anchors and catalog options
+    # e.g.
+    # <div class="section" id="options">
+    # <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+    # <p><tt class="docutils literal"><span class="pre">--auto-scaling-group-name</span></tt> (string)</p>
+    doc.css('#options p > .literal:first-child > span.pre').each do |span|
+        option      = span.content
+        newanchorid = option[/\-\-(.*)/, 1] or next
+        newanchor   = dash.get_dash_anchor(doc, option, 'Option', newanchorid)
+        span.before(newanchor)
+
+        dash.sql_insert( option + remark, 'Option', dash.resolve_url(doc.url, '#' + newanchorid) )
+    end
+
+    # dip into each category folder and grab the index.html which has links to all commands
+    # e.g. <li class="toctree-l1"><a class="reference internal" href="create-auto-scaling-group.html">create-auto-scaling-group</a></li>
+    doc.css('li.toctree-l1 a').each do |anchor|
+        # register (sub-)command
+        subcommand     = anchor.content
+        subcommand_url = dash.resolve_url(doc.url, anchor['href'])
+        subcommand_doc = dash.get_noko_doc(subcommand_url)
+
+        anchor.before(dash.get_dash_anchor(doc, subcommand, 'Option'))
+
+        index_command(dash, subcommand, subcommand_doc, parents + [command])
+    end
+
+    # rewrite the file, free up the memory
+    dash.save_noko_doc(doc)
+end
+
 dash = Dash.new({
     :name           => 'AWS-CLI',
     :display_name   => 'AWS CLI',
@@ -38,80 +95,14 @@ add_fragment_for_dash(File.expand_path('_static/bootstrap.min.css', dash.docs_ro
 EOS
 
 # register the Getting Started link as a guide
-dash.sql_insert( 'Getting Started', 'Guide', 'tutorial/getting_started.html' )
+dash.sql_insert( 'What Is the AWS Command Line Interface?', 'Guide', 'userguide/cli-chap-welcome.html' )
 
 
-# most of the top level links we need are in the root index.html file
-docIndex = dash.get_noko_doc('index.html')
+# let's grab the aws command/options recursively
+aws_url = File.join('reference', 'index.html')
+aws_doc = dash.get_noko_doc(aws_url)
 
-# while we're here, let's grab the aws command/options
-awsCmdFilePath = File.join('reference', 'index.html')
-docAwsCmd = dash.get_noko_doc(awsCmdFilePath)
-
-docAwsCmd.css('#options span.pre').each do |span|
-    option      = span.content
-    newanchorid = option[/\-\-(.*)/, 1]
-    newanchor   = dash.get_dash_anchor(docAwsCmd, option, 'Option', newanchorid)
-    span.before(newanchor)
-
-    dash.sql_insert( option, 'Option', [awsCmdFilePath, newanchorid].join('#') )
-end
-
-# rewrite the file, free up the memory
-dash.save_noko_doc(docAwsCmd, awsCmdFilePath)
-
-# insert record for general aws command
-dash.sql_insert( 'aws', 'Command', awsCmdFilePath )
-
-
-# register categories
-# e.g. <li class="toctree-l2"><a class="reference internal" href="reference/autoscaling/index.html">autoscaling</a></li>
-docIndex.css('li.toctree-l2').each do |li|
-    catHref = li.at_css('a')['href']
-    catPath = (catHref.split('/') - ['index.html']).join('/')
-    cat     = catHref.split('/')[1]
-    dash.sql_insert( cat, 'Category', catHref )
-
-    # file containing links to each category
-    docCatIndex = dash.get_noko_doc(catHref)
-
-    # dip into each category folder and grab the index.html which has links to all commands
-    # e.g. <li class="toctree-l1"><a class="reference internal" href="create-auto-scaling-group.html">create-auto-scaling-group</a></li>
-    docCatIndex.css('li.toctree-l1 a').each do |anchor|
-        # register command
-        cmd     = anchor.content
-        cmdPath = [ catPath, '/', cmd, '.html' ].join
-        dash.sql_insert( cmd, 'Command', cmdPath )
-
-        docOptions = dash.get_noko_doc(cmdPath)
-
-        # insert option anchors and catalog options
-        # e.g.
-        # <div class="section" id="options">
-        # <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-        # <p><tt class="docutils literal"><span class="pre">--auto-scaling-group-name</span></tt> (string)</p>
-        docOptions.css('#options span.pre').each do |span|
-            option = span.content
-
-            if option.match(/^\-\-/)
-                # insert right before span.pre
-                newanchorid = option[/\-\-(.*)/, 1]
-                newanchor   = dash.get_dash_anchor(docOptions, option, 'Option', newanchorid)
-                span.before(newanchor)
-
-                dash.sql_insert( option, 'Option', [cmdPath, newanchorid].join('#') )
-            end
-        end
-
-        # write the new file
-        dash.save_noko_doc(docOptions, cmdPath)
-
-        docOptions  = nil
-    end
-
-    docCatIndex = nil
-end
-
+index_command(dash, 'aws', aws_doc)
 
 # dash.sql_execute({
 #     :noop => true,
