@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/waf/list-xss-match-sets.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/waf/list-xss-match-sets.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:30 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>list-xss-match-sets &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>list-xss-match-sets &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="waf" href="index.html" />
     <link rel="next" title="update-byte-match-set" href="update-byte-match-set.html" />
     <link rel="prev" title="list-web-acls" href="list-web-acls.html" />
@@ -64,7 +64,7 @@
           <a href="update-byte-match-set.html" title="update-byte-match-set" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="list-web-acls.html" title="list-web-acls" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">waf</a> &#187;</li> 
       </ul>
@@ -111,7 +111,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/waf/list-xss-match-sets">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/waf/list-xss-match-sets">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -129,28 +129,35 @@
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
 <p>Returns an array of  XssMatchSet objects.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListXssMatchSets">AWS API Documentation</a></p>
+<p><tt class="docutils literal"><span class="pre">list-xss-match-sets</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">XssMatchSets</span></tt></p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  list-xss-match-sets
-[--next-marker &lt;value&gt;]
---limit &lt;value&gt;
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--starting-token &lt;value&gt;]
+[--page-size &lt;value&gt;]
+[--max-items &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
 <h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--next-marker" class="dashAnchor" id="next-marker"></a><span class="pre">--next-marker</span></tt> (string)</p>
-<blockquote>
-<div>If you specify a value for <tt class="docutils literal"><span class="pre">Limit</span></tt> and you have more  XssMatchSet objects than the value of <tt class="docutils literal"><span class="pre">Limit</span></tt> , AWS WAF returns a <tt class="docutils literal"><span class="pre">next-marker</span></tt> value in the response that allows you to list another group of <tt class="docutils literal"><span class="pre">XssMatchSets</span></tt> . For the second and subsequent <tt class="docutils literal"><span class="pre">list-xss-match-sets</span></tt> requests, specify the value of <tt class="docutils literal"><span class="pre">next-marker</span></tt> from the previous response to get information about another batch of <tt class="docutils literal"><span class="pre">XssMatchSets</span></tt> .</div></blockquote>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--limit" class="dashAnchor" id="limit"></a><span class="pre">--limit</span></tt> (integer)</p>
-<blockquote>
-<div>Specifies the number of  XssMatchSet objects that you want AWS WAF to return for this request. If you have more <tt class="docutils literal"><span class="pre">XssMatchSet</span></tt> objects than the number you specify for <tt class="docutils literal"><span class="pre">Limit</span></tt> , the response includes a <tt class="docutils literal"><span class="pre">next-marker</span></tt> value that you can use to get another batch of <tt class="docutils literal"><span class="pre">Rules</span></tt> .</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--starting-token" class="dashAnchor" id="starting-token"></a><span class="pre">--starting-token</span></tt> (string)</p>
+<blockquote>
+<div>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--page-size" class="dashAnchor" id="page-size"></a><span class="pre">--page-size</span></tt> (integer)</p>
+<blockquote>
+<div>The size of each page.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-items" class="dashAnchor" id="max-items"></a><span class="pre">--max-items</span></tt> (integer)</p>
+<blockquote>
+<div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">NextToken</span></tt> will be provided in the output that you can use to resume pagination. This <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element should <strong>not</strong> be used directly outside of the AWS CLI.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="output">
 <h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
@@ -166,7 +173,8 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <p>XssMatchSetId -&gt; (string)</p>
 <blockquote>
 <div><p>A unique identifier for an <tt class="docutils literal"><span class="pre">XssMatchSet</span></tt> . You use <tt class="docutils literal"><span class="pre">XssMatchSetId</span></tt> to get information about a <tt class="docutils literal"><span class="pre">XssMatchSet</span></tt> (see  get-xss-match-set ), update an <tt class="docutils literal"><span class="pre">XssMatchSet</span></tt> (see  update-xss-match-set ), insert an <tt class="docutils literal"><span class="pre">XssMatchSet</span></tt> into a <tt class="docutils literal"><span class="pre">Rule</span></tt> or delete one from a <tt class="docutils literal"><span class="pre">Rule</span></tt> (see  update-rule ), and delete an <tt class="docutils literal"><span class="pre">XssMatchSet</span></tt> from AWS WAF (see  delete-xss-match-set ).</p>
-<p><tt class="docutils literal"><span class="pre">XssMatchSetId</span></tt> is returned by  create-xss-match-set and by  list-xss-match-sets .</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">XssMatchSetId</span></tt> is returned by  create-xss-match-set and by  list-xss-match-sets .</div></blockquote>
 </div></blockquote>
 <p>Name -&gt; (string)</p>
 <blockquote>
@@ -212,7 +220,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
           <a href="update-byte-match-set.html" title="update-byte-match-set">next</a> |</li>
         <li class="right">
           <a href="list-web-acls.html" title="list-web-acls">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">waf</a> &#187;</li> 
       </ul>
@@ -228,5 +236,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/waf/list-xss-match-sets.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/waf/list-xss-match-sets.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:30 GMT -->
 </html>

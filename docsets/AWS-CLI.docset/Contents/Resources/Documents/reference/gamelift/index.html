@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/gamelift/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:28:32 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/gamelift/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 08:58:56 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>gamelift &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>gamelift &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="aws" href="../index.html" />
     <link rel="next" title="create-alias" href="create-alias.html" />
     <link rel="prev" title="update-destination" href="../firehose/update-destination.html" />
@@ -64,7 +64,7 @@
           <a href="create-alias.html" title="create-alias" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="../firehose/update-destination.html" title="update-destination" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html" accesskey="U">aws</a> &#187;</li> 
       </ul>
     </div>
@@ -110,7 +110,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/gamelift/index">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/gamelift/index">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -127,75 +127,116 @@
 <span id="cli-aws-gamelift"></span><h1>gamelift<a name="//apple_ref/cpp/Command/aws gamelift" class="dashAnchor" id="aws gamelift"></a><a class="headerlink" href="#gamelift" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Welcome to the <em>Amazon GameLift API Reference</em> . Amazon GameLift is a managed Amazon Web Services (AWS) service for developers who need a scalable, server-based solution for multiplayer games. Amazon GameLift provides setup and deployment of game servers, and handles infrastructure scaling and session management. For more information about the GameLift service, including a feature overview, getting started guide, and tutorial, see the accompanying <a class="reference external" href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a> .</p>
-<p>This reference describes the low-level service API for GameLift. You can call this API directly or use the <a class="reference external" href="https://aws.amazon.com/tools/">AWS SDK</a> for your preferred language. The AWS SDK includes a set of high-level GameLift actions multiplayer game sessions. Alternatively, you can use the <a class="reference external" href="https://aws.amazon.com/cli/">AWS command-line interface</a> (CLI) tool, which includes commands for GameLift. For administrative actions, you can use the Amazon GameLift console.</p>
-<p><strong>Managing Game and Player Sessions Through GameLift</strong></p>
-<p>Call these actions from your game clients and/or services to create and manage multiplayer game sessions.</p>
+<p>Amazon GameLift is a managed service for developers who need a scalable, dedicated server solution for their multiplayer games. Amazon GameLift provides tools to acquire computing resources and deploy game servers, scale game server capacity to meed player demand, and track in-depth metrics on player usage and server performance.</p>
+<p>The Amazon GameLift service API includes important functionality to:</p>
 <ul class="simple">
-<li><strong>Game sessions</strong><ul>
-<li>create-game-session</li>
-<li>describe-game-sessions</li>
-<li>describe-game-session-details</li>
-<li>update-game-session</li>
+<li>Find game sessions and match players to games &#8211; Retrieve information on available game sessions; create new game sessions; send player requests to join a game session.</li>
+<li>Configure and manage game server resources &#8211; Manage builds, fleets, queues, and aliases; set autoscaling policies; retrieve logs and metrics.</li>
 </ul>
-</li>
-<li><strong>Player sessions</strong><ul>
-<li>create-player-session</li>
-<li>create-player-sessions</li>
-<li>describe-player-sessions</li>
-</ul>
-</li>
-<li><strong>Other actions:</strong><ul>
-<li>get-game-session-log-url</li>
-</ul>
-</li>
-</ul>
-<p><strong>Setting Up Game Servers</strong></p>
-<p>Use these administrative actions to configure GameLift to host your game servers. When configuring GameLift, you'll need to (1) configure a build for your game and provide build files, and (2) set up one or more fleets to host game sessions.</p>
+<p>This reference guide describes the low-level service API for Amazon GameLift. We recommend using either the Amazon Web Services software development kit (<a class="reference external" href="http://aws.amazon.com/tools/#sdk">AWS SDK</a> ), available in multiple languages, or the <a class="reference external" href="http://aws.amazon.com/cli/">AWS command-line interface</a> (CLI) tool. Both of these align with the low-level service API. In addition, you can use the <a class="reference external" href="https://console.aws.amazon.com/gamelift/home">AWS Management Console</a> for Amazon GameLift for many administrative actions.</p>
+<blockquote>
+<div><strong>MORE RESOURCES</strong></div></blockquote>
 <ul class="simple">
-<li><strong>Build actions:</strong><ul>
-<li>list-builds</li>
-<li>create-build</li>
-<li>describe-build</li>
-<li>update-build</li>
-<li>delete-build</li>
-<li>request-upload-credentials</li>
+<li><a class="reference external" href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a> &#8211; Learn more about Amazon GameLift features and how to use them.</li>
+<li><a class="reference external" href="https://gamedev.amazon.com/forums/tutorials">Lumberyard and Amazon GameLift Tutorials</a> &#8211; Get started fast with walkthroughs and sample projects.</li>
+<li><a class="reference external" href="http://aws.amazon.com/blogs/gamedev/">GameDev Blog</a> &#8211; Stay up to date with new features and techniques.</li>
+<li><a class="reference external" href="https://gamedev.amazon.com/forums/spaces/123/gamelift-discussion.html">GameDev Forums</a> &#8211; Connect with the GameDev community.</li>
+<li><a class="reference external" href="http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">Amazon GameLift Document History</a> &#8211; See changes to the Amazon GameLift service, SDKs, and documentation, as well as links to release notes.</li>
+</ul>
+<blockquote>
+<div><strong>API SUMMARY</strong></div></blockquote>
+<p>This list offers a functional overview of the Amazon GameLift service API.</p>
+<blockquote>
+<div><strong>Finding Games and Joining Players</strong></div></blockquote>
+<p>You can enable players to connect to game servers on Amazon GameLift from a game client or through a game service (such as a matchmaking service). You can use these operations to discover actively running game or start new games. You can also match players to games, either singly or as a group.</p>
+<ul class="simple">
+<li><strong>Discover existing game sessions</strong><ul>
+<li>search-game-sessions &#8211; Get all available game sessions or search for game sessions that match a set of criteria.</li>
 </ul>
 </li>
-<li><strong>Fleet actions:</strong><ul>
-<li>list-fleets</li>
-<li>create-fleet</li>
-<li>Describe fleet actions:<ul>
-<li>describe-fleet-attributes</li>
-<li>describe-fleet-capacity</li>
-<li>describe-fleet-port-settings</li>
-<li>describe-fleet-utilization</li>
-<li>describe-ec2-instance-limits</li>
-<li>describe-fleet-events</li>
+<li><strong>Start a new game session</strong><ul>
+<li>Game session placement &#8211; Use a queue to process new game session requests and create game sessions on fleets designated for the queue.<ul>
+<li>start-game-session-placement &#8211; Request a new game session placement and add one or more players to it.</li>
+<li>describe-game-session-placement &#8211; Get details on a placement request, including status.</li>
+<li>stop-game-session-placement &#8211; Cancel a placement request.</li>
 </ul>
 </li>
-<li>Update fleet actions:<ul>
-<li>update-fleet-attributes</li>
-<li>update-fleet-capacity</li>
-<li>update-fleet-port-settings</li>
+<li>create-game-session &#8211; Start a new game session on a specific fleet.</li>
 </ul>
 </li>
-<li>delete-fleet</li>
+<li><strong>Manage game session objects</strong><ul>
+<li>describe-game-session-details &#8211; Retrieve metadata and protection policies associated with one or more game sessions, including length of time active and current player count.</li>
+<li>update-game-session &#8211; Change game session settings, such as maximum player count and join policy.</li>
+<li>get-game-session-log-url &#8211; Get the location of saved logs for a game session.</li>
 </ul>
 </li>
-<li><strong>Alias actions:</strong><ul>
-<li>list-aliases</li>
-<li>create-alias</li>
-<li>describe-alias</li>
-<li>update-alias</li>
-<li>delete-alias</li>
-<li>resolve-alias</li>
+<li><strong>Manage player sessions objects</strong><ul>
+<li>create-player-session &#8211; Send a request for a player to join a game session.</li>
+<li>create-player-sessions &#8211; Send a request for multiple players to join a game session.</li>
+<li>describe-player-sessions &#8211; Get details on player activity, including status, playing time, and player data.</li>
 </ul>
 </li>
-<li><strong>Scaling policy actions:</strong><ul>
-<li>put-scaling-policy</li>
-<li>describe-scaling-policies</li>
-<li>delete-scaling-policy</li>
+</ul>
+<blockquote>
+<div><strong>Setting Up and Managing Game Servers</strong></div></blockquote>
+<p>When setting up Amazon GameLift, first create a game build and upload the files to Amazon GameLift. Then use these operations to set up a fleet of resources to run your game servers. Manage games to scale capacity, adjust configuration settings, access raw utilization data, and more.</p>
+<ul class="simple">
+<li><strong>Manage game builds</strong><ul>
+<li>create-build &#8211; Create a new build by uploading files stored in an Amazon S3 bucket. (To create a build stored at a local file location, use the AWS CLI command <tt class="docutils literal"><span class="pre">upload-build</span></tt> .)</li>
+<li>list-builds &#8211; Get a list of all builds uploaded to a Amazon GameLift region.</li>
+<li>describe-build &#8211; Retrieve information associated with a build.</li>
+<li>update-build &#8211; Change build metadata, including build name and version.</li>
+<li>delete-build &#8211; Remove a build from Amazon GameLift.</li>
+</ul>
+</li>
+<li><strong>Manage fleets</strong><ul>
+<li>create-fleet &#8211; Configure and activate a new fleet to run a build's game servers.</li>
+<li>delete-fleet &#8211; Terminate a fleet that is no longer running game servers or hosting players.</li>
+<li>View / update fleet configurations.<ul>
+<li>list-fleets &#8211; Get a list of all fleet IDs in a Amazon GameLift region (all statuses).</li>
+<li>describe-fleet-attributes /  update-fleet-attributes &#8211; View or change a fleet's metadata and settings for game session protection and resource creation limits.</li>
+<li>describe-fleet-port-settings /  update-fleet-port-settings &#8211; View or change the inbound permissions (IP address and port setting ranges) allowed for a fleet.</li>
+<li>describe-runtime-configuration /  update-runtime-configuration &#8211; View or change what server processes (and how many) to run on each instance in a fleet.</li>
+<li>describe-instances &#8211; Get information on each instance in a fleet, including instance ID, IP address, and status.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Control fleet capacity</strong><ul>
+<li>describe-ec2-instance-limits &#8211; Retrieve maximum number of instances allowed for the current AWS account and the current usage level.</li>
+<li>describe-fleet-capacity /  update-fleet-capacity &#8211; Retrieve the capacity settings and the current number of instances in a fleet; adjust fleet capacity settings to scale up or down.</li>
+<li>Autoscale &#8211; Manage autoscaling rules and apply them to a fleet.<ul>
+<li>put-scaling-policy &#8211; Create a new autoscaling policy, or update an existing one.</li>
+<li>describe-scaling-policies &#8211; Retrieve an existing autoscaling policy.</li>
+<li>delete-scaling-policy &#8211; Delete an autoscaling policy and stop it from affecting a fleet's capacity.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Access fleet activity statistics</strong><ul>
+<li>describe-fleet-utilization &#8211; Get current data on the number of server processes, game sessions, and players currently active on a fleet.</li>
+<li>describe-fleet-events &#8211; Get a fleet's logged events for a specified time span.</li>
+<li>describe-game-sessions &#8211; Retrieve metadata associated with one or more game sessions, including length of time active and current player count.</li>
+</ul>
+</li>
+<li><strong>Remotely access an instance</strong><ul>
+<li>get-instance-access &#8211; Request access credentials needed to remotely connect to a specified instance on a fleet.</li>
+</ul>
+</li>
+<li><strong>Manage fleet aliases</strong><ul>
+<li>create-alias &#8211; Define a new alias and optionally assign it to a fleet.</li>
+<li>list-aliases &#8211; Get all fleet aliases defined in a Amazon GameLift region.</li>
+<li>describe-alias &#8211; Retrieve information on an existing alias.</li>
+<li>update-alias &#8211; Change settings for a alias, such as redirecting it from one fleet to another.</li>
+<li>delete-alias &#8211; Remove an alias from the region.</li>
+<li>resolve-alias &#8211; Get the fleet ID that a specified alias points to.</li>
+</ul>
+</li>
+<li><strong>Manage game session queues</strong><ul>
+<li>create-game-session-queue &#8211; Create a queue for processing requests for new game sessions.</li>
+<li>describe-game-session-queues &#8211; Get data on all game session queues defined in a Amazon GameLift region.</li>
+<li>update-game-session-queue &#8211; Change the configuration of a game session queue.</li>
+<li>delete-game-session-queue &#8211; Remove a game session queue from the region.</li>
 </ul>
 </li>
 </ul>
@@ -208,11 +249,13 @@
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-build" class="dashAnchor" id="create-build"></a><a class="reference internal" href="create-build.html">create-build</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-fleet" class="dashAnchor" id="create-fleet"></a><a class="reference internal" href="create-fleet.html">create-fleet</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-game-session" class="dashAnchor" id="create-game-session"></a><a class="reference internal" href="create-game-session.html">create-game-session</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-game-session-queue" class="dashAnchor" id="create-game-session-queue"></a><a class="reference internal" href="create-game-session-queue.html">create-game-session-queue</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-player-session" class="dashAnchor" id="create-player-session"></a><a class="reference internal" href="create-player-session.html">create-player-session</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-player-sessions" class="dashAnchor" id="create-player-sessions"></a><a class="reference internal" href="create-player-sessions.html">create-player-sessions</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-alias" class="dashAnchor" id="delete-alias"></a><a class="reference internal" href="delete-alias.html">delete-alias</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-build" class="dashAnchor" id="delete-build"></a><a class="reference internal" href="delete-build.html">delete-build</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-fleet" class="dashAnchor" id="delete-fleet"></a><a class="reference internal" href="delete-fleet.html">delete-fleet</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-game-session-queue" class="dashAnchor" id="delete-game-session-queue"></a><a class="reference internal" href="delete-game-session-queue.html">delete-game-session-queue</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-scaling-policy" class="dashAnchor" id="delete-scaling-policy"></a><a class="reference internal" href="delete-scaling-policy.html">delete-scaling-policy</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-alias" class="dashAnchor" id="describe-alias"></a><a class="reference internal" href="describe-alias.html">describe-alias</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-build" class="dashAnchor" id="describe-build"></a><a class="reference internal" href="describe-build.html">describe-build</a></li>
@@ -223,23 +266,33 @@
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-fleet-port-settings" class="dashAnchor" id="describe-fleet-port-settings"></a><a class="reference internal" href="describe-fleet-port-settings.html">describe-fleet-port-settings</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-fleet-utilization" class="dashAnchor" id="describe-fleet-utilization"></a><a class="reference internal" href="describe-fleet-utilization.html">describe-fleet-utilization</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-game-session-details" class="dashAnchor" id="describe-game-session-details"></a><a class="reference internal" href="describe-game-session-details.html">describe-game-session-details</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-game-session-placement" class="dashAnchor" id="describe-game-session-placement"></a><a class="reference internal" href="describe-game-session-placement.html">describe-game-session-placement</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-game-session-queues" class="dashAnchor" id="describe-game-session-queues"></a><a class="reference internal" href="describe-game-session-queues.html">describe-game-session-queues</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-game-sessions" class="dashAnchor" id="describe-game-sessions"></a><a class="reference internal" href="describe-game-sessions.html">describe-game-sessions</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-instances" class="dashAnchor" id="describe-instances"></a><a class="reference internal" href="describe-instances.html">describe-instances</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-player-sessions" class="dashAnchor" id="describe-player-sessions"></a><a class="reference internal" href="describe-player-sessions.html">describe-player-sessions</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-runtime-configuration" class="dashAnchor" id="describe-runtime-configuration"></a><a class="reference internal" href="describe-runtime-configuration.html">describe-runtime-configuration</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-scaling-policies" class="dashAnchor" id="describe-scaling-policies"></a><a class="reference internal" href="describe-scaling-policies.html">describe-scaling-policies</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-game-session-log" class="dashAnchor" id="get-game-session-log"></a><a class="reference internal" href="get-game-session-log.html">get-game-session-log</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-game-session-log-url" class="dashAnchor" id="get-game-session-log-url"></a><a class="reference internal" href="get-game-session-log-url.html">get-game-session-log-url</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-instance-access" class="dashAnchor" id="get-instance-access"></a><a class="reference internal" href="get-instance-access.html">get-instance-access</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-aliases" class="dashAnchor" id="list-aliases"></a><a class="reference internal" href="list-aliases.html">list-aliases</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-builds" class="dashAnchor" id="list-builds"></a><a class="reference internal" href="list-builds.html">list-builds</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-fleets" class="dashAnchor" id="list-fleets"></a><a class="reference internal" href="list-fleets.html">list-fleets</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/put-scaling-policy" class="dashAnchor" id="put-scaling-policy"></a><a class="reference internal" href="put-scaling-policy.html">put-scaling-policy</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/request-upload-credentials" class="dashAnchor" id="request-upload-credentials"></a><a class="reference internal" href="request-upload-credentials.html">request-upload-credentials</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/resolve-alias" class="dashAnchor" id="resolve-alias"></a><a class="reference internal" href="resolve-alias.html">resolve-alias</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/search-game-sessions" class="dashAnchor" id="search-game-sessions"></a><a class="reference internal" href="search-game-sessions.html">search-game-sessions</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/start-game-session-placement" class="dashAnchor" id="start-game-session-placement"></a><a class="reference internal" href="start-game-session-placement.html">start-game-session-placement</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/stop-game-session-placement" class="dashAnchor" id="stop-game-session-placement"></a><a class="reference internal" href="stop-game-session-placement.html">stop-game-session-placement</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-alias" class="dashAnchor" id="update-alias"></a><a class="reference internal" href="update-alias.html">update-alias</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-build" class="dashAnchor" id="update-build"></a><a class="reference internal" href="update-build.html">update-build</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-fleet-attributes" class="dashAnchor" id="update-fleet-attributes"></a><a class="reference internal" href="update-fleet-attributes.html">update-fleet-attributes</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-fleet-capacity" class="dashAnchor" id="update-fleet-capacity"></a><a class="reference internal" href="update-fleet-capacity.html">update-fleet-capacity</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-fleet-port-settings" class="dashAnchor" id="update-fleet-port-settings"></a><a class="reference internal" href="update-fleet-port-settings.html">update-fleet-port-settings</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-game-session" class="dashAnchor" id="update-game-session"></a><a class="reference internal" href="update-game-session.html">update-game-session</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-game-session-queue" class="dashAnchor" id="update-game-session-queue"></a><a class="reference internal" href="update-game-session-queue.html">update-game-session-queue</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-runtime-configuration" class="dashAnchor" id="update-runtime-configuration"></a><a class="reference internal" href="update-runtime-configuration.html">update-runtime-configuration</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/upload-build" class="dashAnchor" id="upload-build"></a><a class="reference internal" href="upload-build.html">upload-build</a></li>
 </ul>
 </div>
@@ -282,7 +335,7 @@
           <a href="create-alias.html" title="create-alias">next</a> |</li>
         <li class="right">
           <a href="../firehose/update-destination.html" title="update-destination">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li> 
       </ul>
     </div>
@@ -297,5 +350,5 @@
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/gamelift/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:28:47 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/gamelift/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 08:59:16 GMT -->
 </html>

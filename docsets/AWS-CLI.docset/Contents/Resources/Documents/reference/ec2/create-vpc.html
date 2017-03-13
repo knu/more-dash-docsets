@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/create-vpc.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/create-vpc.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:09:59 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>create-vpc &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>create-vpc &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="ec2" href="index.html" />
     <link rel="next" title="create-vpc-endpoint" href="create-vpc-endpoint.html" />
     <link rel="prev" title="create-volume" href="create-volume.html" />
@@ -64,7 +64,7 @@
           <a href="create-vpc-endpoint.html" title="create-vpc-endpoint" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="create-volume.html" title="create-volume" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">ec2</a> &#187;</li> 
       </ul>
@@ -112,7 +112,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ec2/create-vpc">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/ec2/create-vpc">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -129,10 +129,11 @@
 <span id="cli-aws-ec2-create-vpc"></span><h1>create-vpc<a name="//apple_ref/cpp/Command/aws ec2 create-vpc" class="dashAnchor" id="aws ec2 create-vpc"></a><a class="headerlink" href="#create-vpc" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Creates a VPC with the specified CIDR block.</p>
-<p>The smallest VPC you can create uses a /28 netmask (16 IP addresses), and the largest uses a /16 netmask (65,536 IP addresses). To help you decide how big to make your VPC, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your VPC and Subnets</a> in the <em>Amazon Virtual Private Cloud User Guide</em> .</p>
+<p>Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can create uses a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536 IPv4 addresses). To help you decide how big to make your VPC, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your VPC and Subnets</a> in the <em>Amazon Virtual Private Cloud User Guide</em> .</p>
+<p>You can optionally request an Amazon-provided IPv6 CIDR block for the VPC. The IPv6 CIDR block uses a /56 prefix length, and is allocated from Amazon's pool of IPv6 addresses. You cannot choose the IPv6 range for your VPC.</p>
 <p>By default, each instance you launch in the VPC has the default DHCP options, which includes only a default DNS server that we provide (AmazonProvidedDNS). For more information about DHCP options, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP Options Sets</a> in the <em>Amazon Virtual Private Cloud User Guide</em> .</p>
-<p>You can specify the instance tenancy value for the VPC when you create it. You can't change this value for the VPC after you create it. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html.html">Dedicated Instances</a> in the <em>Amazon Virtual Private Cloud User Guide</em> .</p>
+<p>You can specify the instance tenancy value for the VPC when you create it. You can't change this value for the VPC after you create it. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpc">AWS API Documentation</a></p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
@@ -140,8 +141,9 @@
 [--dry-run | --no-dry-run]
 --cidr-block &lt;value&gt;
 [--instance-tenancy &lt;value&gt;]
+[--amazon-provided-ipv6-cidr-block | --no-amazon-provided-ipv6-cidr-block]
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
@@ -151,11 +153,12 @@
 <div>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt> . Otherwise, it is <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt> .</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cidr-block" class="dashAnchor" id="cidr-block"></a><span class="pre">--cidr-block</span></tt> (string)</p>
 <blockquote>
-<div>The network range for the VPC, in CIDR notation. For example, <tt class="docutils literal"><span class="pre">10.0.0.0/16</span></tt> .</div></blockquote>
+<div>The IPv4 network range for the VPC, in CIDR notation. For example, <tt class="docutils literal"><span class="pre">10.0.0.0/16</span></tt> .</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--instance-tenancy" class="dashAnchor" id="instance-tenancy"></a><span class="pre">--instance-tenancy</span></tt> (string)</p>
 <blockquote>
 <div><p>The tenancy options for instances launched into the VPC. For <tt class="docutils literal"><span class="pre">default</span></tt> , instances are launched with shared tenancy by default. You can launch instances with any tenancy into a shared tenancy VPC. For <tt class="docutils literal"><span class="pre">dedicated</span></tt> , instances are launched as dedicated tenancy instances by default. You can only launch instances with a tenancy of <tt class="docutils literal"><span class="pre">dedicated</span></tt> or <tt class="docutils literal"><span class="pre">host</span></tt> into a dedicated tenancy VPC.</p>
-<p><strong>Important:</strong> The <tt class="docutils literal"><span class="pre">host</span></tt> value cannot be used with this parameter. Use the <tt class="docutils literal"><span class="pre">default</span></tt> or <tt class="docutils literal"><span class="pre">dedicated</span></tt> values only.</p>
+<blockquote>
+<div><strong>Important:</strong> The <tt class="docutils literal"><span class="pre">host</span></tt> value cannot be used with this parameter. Use the <tt class="docutils literal"><span class="pre">default</span></tt> or <tt class="docutils literal"><span class="pre">dedicated</span></tt> values only.</div></blockquote>
 <p>Default: <tt class="docutils literal"><span class="pre">default</span></tt></p>
 <p>Possible values:</p>
 <ul class="simple">
@@ -164,44 +167,81 @@
 <li><tt class="docutils literal"><span class="pre">host</span></tt></li>
 </ul>
 </div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--amazon-provided-ipv6-cidr-block" class="dashAnchor" id="amazon-provided-ipv6-cidr-block"></a><span class="pre">--amazon-provided-ipv6-cidr-block</span></tt> | <tt class="docutils literal"><span class="pre">--no-amazon-provided-ipv6-cidr-block</span></tt> (boolean)</p>
+<blockquote>
+<div>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of IP addresses, or the size of the CIDR block.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
 <p><strong>To create a VPC</strong></p>
-<p>This example creates a VPC with the specified CIDR block.</p>
+<p>This example creates a VPC with the specified IPv4 CIDR block.</p>
 <p>Command:</p>
 <div class="highlight-python"><pre>aws ec2 create-vpc --cidr-block 10.0.0.0/16</pre>
 </div>
 <p>Output:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">"Vpc"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"InstanceTenancy"</span><span class="p">:</span> <span class="s2">"default"</span><span class="p">,</span>
-        <span class="s2">"State"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
-        <span class="s2">"VpcId"</span><span class="p">:</span> <span class="s2">"vpc-a01106c2"</span><span class="p">,</span>
-        <span class="s2">"CidrBlock"</span><span class="p">:</span> <span class="s2">"10.0.0.0/16"</span><span class="p">,</span>
-        <span class="s2">"DhcpOptionsId"</span><span class="p">:</span> <span class="s2">"dopt-7a8b9c2d"</span>
+      <span class="s2">"VpcId"</span><span class="p">:</span> <span class="s2">"vpc-145db170"</span><span class="p">,</span>
+      <span class="s2">"InstanceTenancy"</span><span class="p">:</span> <span class="s2">"default"</span><span class="p">,</span>
+      <span class="s2">"CidrBlockAssociationSet"</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="s2">"Ipv6CidrBlockAssociationSet"</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="s2">"State"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+      <span class="s2">"DhcpOptionsId"</span><span class="p">:</span> <span class="s2">"dopt-dbedadb2"</span><span class="p">,</span>
+      <span class="s2">"CidrBlock"</span><span class="p">:</span> <span class="s2">"10.0.0.0/16"</span><span class="p">,</span>
+      <span class="s2">"IsDefault"</span><span class="p">:</span> <span class="n">false</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p><strong>To create a VPC with dedicated tenancy</strong></p>
-<p>This example creates a VPC with the specified CIDR block and <tt class="docutils literal"><span class="pre">dedicated</span></tt> tenancy.</p>
+<p>This example creates a VPC with the specified IPv4 CIDR block and <tt class="docutils literal"><span class="pre">dedicated</span></tt> tenancy.</p>
 <p>Command:</p>
 <div class="highlight-python"><pre>aws ec2 create-vpc --cidr-block 10.0.0.0/16 --instance-tenancy dedicated</pre>
 </div>
 <p>Output:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">"Vpc"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"InstanceTenancy"</span><span class="p">:</span> <span class="s2">"dedicated"</span><span class="p">,</span>
-        <span class="s2">"State"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
-        <span class="s2">"VpcId"</span><span class="p">:</span> <span class="s2">"vpc-a01106c2"</span><span class="p">,</span>
-        <span class="s2">"CidrBlock"</span><span class="p">:</span> <span class="s2">"10.0.0.0/16"</span><span class="p">,</span>
-        <span class="s2">"DhcpOptionsId"</span><span class="p">:</span> <span class="s2">"dopt-7a8b9c2d"</span>
+      <span class="s2">"VpcId"</span><span class="p">:</span> <span class="s2">"vpc-145db170"</span><span class="p">,</span>
+      <span class="s2">"InstanceTenancy"</span><span class="p">:</span> <span class="s2">"dedicated"</span><span class="p">,</span>
+      <span class="s2">"CidrBlockAssociationSet"</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="s2">"Ipv6CidrBlockAssociationSet"</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="s2">"State"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+      <span class="s2">"DhcpOptionsId"</span><span class="p">:</span> <span class="s2">"dopt-dbedadb2"</span><span class="p">,</span>
+      <span class="s2">"CidrBlock"</span><span class="p">:</span> <span class="s2">"10.0.0.0/16"</span><span class="p">,</span>
+      <span class="s2">"IsDefault"</span><span class="p">:</span> <span class="n">false</span>
     <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>To create a VPC with an IPv6 CIDR block</strong></p>
+<p>This example creates a VPC with an Amazon-provided IPv6 CIDR block.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 create-vpc --cidr-block 10.0.0.0/16 --amazon-provided-ipv6-cidr-block</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">"Vpc"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"VpcId"</span><span class="p">:</span> <span class="s2">"vpc-31896b55"</span><span class="p">,</span>
+      <span class="s2">"InstanceTenancy"</span><span class="p">:</span> <span class="s2">"default"</span><span class="p">,</span>
+      <span class="s2">"CidrBlockAssociationSet"</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="s2">"Ipv6CidrBlockAssociationSet"</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+              <span class="s2">"Ipv6CidrBlock"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+              <span class="s2">"AssociationId"</span><span class="p">:</span> <span class="s2">"vpc-cidr-assoc-17a5407e"</span><span class="p">,</span>
+              <span class="s2">"Ipv6CidrBlockState"</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="s2">"State"</span><span class="p">:</span> <span class="s2">"associating"</span>
+              <span class="p">}</span>
+          <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">"State"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+      <span class="s2">"DhcpOptionsId"</span><span class="p">:</span> <span class="s2">"dopt-dbedadb2"</span><span class="p">,</span>
+      <span class="s2">"CidrBlock"</span><span class="p">:</span> <span class="s2">"10.0.0.0/16"</span><span class="p">,</span>
+      <span class="s2">"IsDefault"</span><span class="p">:</span> <span class="n">false</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -219,7 +259,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div>The current state of the VPC.</div></blockquote>
 <p>CidrBlock -&gt; (string)</p>
 <blockquote>
-<div>The CIDR block for the VPC.</div></blockquote>
+<div>The IPv4 CIDR block for the VPC.</div></blockquote>
 <p>DhcpOptionsId -&gt; (string)</p>
 <blockquote>
 <div>The ID of the set of DHCP options you've associated with the VPC (or <tt class="docutils literal"><span class="pre">default</span></tt> if the default options are associated with the VPC).</div></blockquote>
@@ -247,6 +287,30 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <p>IsDefault -&gt; (boolean)</p>
 <blockquote>
 <div>Indicates whether the VPC is the default VPC.</div></blockquote>
+<p>Ipv6CidrBlockAssociationSet -&gt; (list)</p>
+<blockquote>
+<div><p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes an IPv6 CIDR block associated with a VPC.</p>
+<p>Ipv6CidrBlock -&gt; (string)</p>
+<blockquote>
+<div>The IPv6 CIDR block.</div></blockquote>
+<p>Ipv6CidrBlockState -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about the state of the CIDR block.</p>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div>The state of the CIDR block.</div></blockquote>
+<p>StatusMessage -&gt; (string)</p>
+<blockquote>
+<div>A message about the status of the CIDR block, if applicable.</div></blockquote>
+</div></blockquote>
+<p>AssociationId -&gt; (string)</p>
+<blockquote>
+<div>The association ID for the IPv6 CIDR block.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
 </div></blockquote>
 </div>
 </div>
@@ -287,7 +351,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
           <a href="create-vpc-endpoint.html" title="create-vpc-endpoint">next</a> |</li>
         <li class="right">
           <a href="create-volume.html" title="create-volume">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">ec2</a> &#187;</li> 
       </ul>
@@ -303,5 +367,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/create-vpc.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/create-vpc.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:09:59 GMT -->
 </html>

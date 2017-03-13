@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/update-environment.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:18 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/update-environment.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:15 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>update-environment &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>update-environment &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="elasticbeanstalk" href="index.html" />
     <link rel="next" title="validate-configuration-settings" href="validate-configuration-settings.html" />
     <link rel="prev" title="update-configuration-template" href="update-configuration-template.html" />
@@ -64,7 +64,7 @@
           <a href="validate-configuration-settings.html" title="validate-configuration-settings" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="update-configuration-template.html" title="update-configuration-template" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">elasticbeanstalk</a> &#187;</li> 
       </ul>
@@ -112,7 +112,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/elasticbeanstalk/update-environment">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/elasticbeanstalk/update-environment">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -132,6 +132,7 @@
 <p>Updates the environment description, deploys a new application version, updates the configuration settings to an entirely new configuration template, or updates select configuration option values in the running environment.</p>
 <p>Attempting to update both the release and configuration is not allowed and AWS Elastic Beanstalk returns an <tt class="docutils literal"><span class="pre">InvalidParameterCombination</span></tt> error.</p>
 <p>When updating the configuration settings to a new template or individual settings, a draft configuration is created and  describe-configuration-settings for this environment returns two setting descriptions with different <tt class="docutils literal"><span class="pre">DeploymentStatus</span></tt> values.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateEnvironment">AWS API Documentation</a></p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
@@ -145,10 +146,11 @@
 [--version-label &lt;value&gt;]
 [--template-name &lt;value&gt;]
 [--solution-stack-name &lt;value&gt;]
+[--platform-arn &lt;value&gt;]
 [--option-settings &lt;value&gt;]
 [--options-to-remove &lt;value&gt;]
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
@@ -179,11 +181,11 @@
 <p>Condition: At this time, if you change the tier version, name, or type, AWS Elastic Beanstalk returns <tt class="docutils literal"><span class="pre">InvalidParameterValue</span></tt> error.</p>
 </div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">Name</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">Type</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">Version</span><span class="o">=</span><span class="n">string</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Name</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">Type</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">Version</span><span class="o">=</span><span class="n">string</span>
 </pre></div>
 </div>
 <p>JSON Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
   <span class="s2">"Type"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
   <span class="s2">"Version"</span><span class="p">:</span> <span class="s2">"string"</span>
@@ -199,6 +201,9 @@
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--solution-stack-name" class="dashAnchor" id="solution-stack-name"></a><span class="pre">--solution-stack-name</span></tt> (string)</p>
 <blockquote>
 <div>This specifies the platform version that the environment will run after the environment is updated.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--platform-arn" class="dashAnchor" id="platform-arn"></a><span class="pre">--platform-arn</span></tt> (string)</p>
+<blockquote>
+<div>The ARN of the platform, if used.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--option-settings" class="dashAnchor" id="option-settings"></a><span class="pre">--option-settings</span></tt> (list)</p>
 <blockquote>
 <div>If specified, AWS Elastic Beanstalk updates the configuration set associated with the running environment and sets the specified configuration options to the requested value.</div></blockquote>
@@ -234,8 +239,8 @@
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
@@ -245,7 +250,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 </div>
 <p>This command requires that the "my-env" environment already exists and belongs to an application that has a valid application version with the label "v2".</p>
 <p>Output:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">"ApplicationName"</span><span class="p">:</span> <span class="s2">"my-app"</span><span class="p">,</span>
   <span class="s2">"EnvironmentName"</span><span class="p">:</span> <span class="s2">"my-env"</span><span class="p">,</span>
   <span class="s2">"VersionLabel"</span><span class="p">:</span> <span class="s2">"v2"</span><span class="p">,</span>
@@ -275,7 +280,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div class="highlight-python"><pre>aws elasticbeanstalk update-environment --environment-name my-env --option-settings file://options.json</pre>
 </div>
 <p><tt class="docutils literal"><span class="pre">options.json</span></tt> is a JSON object defining several settings:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">[</span>
   <span class="p">{</span>
     <span class="s2">"Namespace"</span><span class="p">:</span> <span class="s2">"aws:elb:healthcheck"</span><span class="p">,</span>
     <span class="s2">"OptionName"</span><span class="p">:</span> <span class="s2">"Interval"</span><span class="p">,</span>
@@ -300,7 +305,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 </pre></div>
 </div>
 <p>Output:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">"ApplicationName"</span><span class="p">:</span> <span class="s2">"my-app"</span><span class="p">,</span>
     <span class="s2">"EnvironmentName"</span><span class="p">:</span> <span class="s2">"my-env"</span><span class="p">,</span>
     <span class="s2">"VersionLabel"</span><span class="p">:</span> <span class="s2">"7f58-stage-150812_025409"</span><span class="p">,</span>
@@ -340,6 +345,9 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <p>SolutionStackName -&gt; (string)</p>
 <blockquote>
 <div>The name of the <tt class="docutils literal"><span class="pre">SolutionStack</span></tt> deployed with this environment.</div></blockquote>
+<p>PlatformArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the custom platform.</div></blockquote>
 <p>TemplateName -&gt; (string)</p>
 <blockquote>
 <div>The name of the configuration template used to originally launch this environment.</div></blockquote>
@@ -485,7 +493,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
           <a href="validate-configuration-settings.html" title="validate-configuration-settings">next</a> |</li>
         <li class="right">
           <a href="update-configuration-template.html" title="update-configuration-template">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">elasticbeanstalk</a> &#187;</li> 
       </ul>
@@ -501,5 +509,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/update-environment.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:18 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/update-environment.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:15 GMT -->
 </html>

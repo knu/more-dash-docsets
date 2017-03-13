@@ -1,0 +1,281 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/opsworkscm/start-maintenance.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:11:08 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>start-maintenance &mdash; AWS CLI 1.11.61 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.11.61',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    
+      <div class="rel-spacer clearer"></div>
+    
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">start-maintenance</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/opsworkscm/start-maintenance">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-opsworkscm"><em>opsworkscm</em></a> ]</p>
+<div class="section" id="start-maintenance">
+<span id="cli-aws-opsworkscm-start-maintenance"></span><h1>start-maintenance<a class="headerlink" href="#start-maintenance" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Manually starts server maintenance. This command can be useful if an earlier maintenance attempt failed, and the underlying cause of maintenance failure has been resolved. The server is in an <tt class="docutils literal"><span class="pre">UNDER_MAINTENANCE</span></tt> state while maintenance is in progress.</p>
+<p>Maintenance can only be started on servers in <tt class="docutils literal"><span class="pre">HEALTHY</span></tt> and <tt class="docutils literal"><span class="pre">UNHEALTHY</span></tt> states. Otherwise, an <tt class="docutils literal"><span class="pre">InvalidStateException</span></tt> is thrown. A <tt class="docutils literal"><span class="pre">ResourceNotFoundException</span></tt> is thrown when the server does not exist. A <tt class="docutils literal"><span class="pre">ValidationException</span></tt> is raised when parameters of the request are not valid.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/StartMaintenance">AWS API Documentation</a></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  start-maintenance
+--server-name &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--server-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the server on which to run maintenance.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Server -&gt; (structure)</p>
+<blockquote>
+<div><p>Contains the response to a <tt class="docutils literal"><span class="pre">start-maintenance</span></tt> request.</p>
+<p>AssociatePublicIpAddress -&gt; (boolean)</p>
+<blockquote>
+<div>Associate a public IP address with a server that you are launching.</div></blockquote>
+<p>BackupRetentionCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of automated backups to keep.</div></blockquote>
+<p>ServerName -&gt; (string)</p>
+<blockquote>
+<div>The name of the server.</div></blockquote>
+<p>CreatedAt -&gt; (timestamp)</p>
+<blockquote>
+<div>Time stamp of server creation. Example <tt class="docutils literal"><span class="pre">2016-07-29T13:38:47.520Z</span></tt></div></blockquote>
+<p>CloudFormationStackArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the CloudFormation stack that was used to create the server.</div></blockquote>
+<p>DisableAutomatedBackup -&gt; (boolean)</p>
+<blockquote>
+<div>Disables automated backups. The number of stored backups is dependent on the value of PreferredBackupCount.</div></blockquote>
+<p>Endpoint -&gt; (string)</p>
+<blockquote>
+<div>A DNS name that can be used to access the engine. Example: <tt class="docutils literal"><span class="pre">myserver-asdfghjkl.us-east-1.opsworks.io</span></tt></div></blockquote>
+<p>Engine -&gt; (string)</p>
+<blockquote>
+<div>The engine type of the server. The valid value in this release is <tt class="docutils literal"><span class="pre">Chef</span></tt> .</div></blockquote>
+<p>EngineModel -&gt; (string)</p>
+<blockquote>
+<div>The engine model of the server. The valid value in this release is <tt class="docutils literal"><span class="pre">Single</span></tt> .</div></blockquote>
+<p>EngineAttributes -&gt; (list)</p>
+<blockquote>
+<div><p>The response of a createServer() request returns the master credential to access the server in EngineAttributes. These credentials are not stored by AWS OpsWorks for Chef Automate; they are returned only as part of the result of createServer().</p>
+<blockquote>
+<div><strong>Attributes returned in a createServer response:</strong></div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">CHEF_PIVOTAL_KEY</span></tt> : A base64-encoded RSA private key that is generated by AWS OpsWorks for Chef Automate. This private key is required to access the Chef API.</li>
+<li><tt class="docutils literal"><span class="pre">CHEF_STARTER_KIT</span></tt> : A base64-encoded ZIP file. The ZIP file contains a Chef starter kit, which includes a README, a configuration file, and the required RSA private key. Save this file, unzip it, and then change to the directory where you've unzipped the file contents. From this directory, you can run Knife commands.</li>
+</ul>
+<p>(structure)</p>
+<blockquote>
+<div><p>A name and value pair that is specific to the engine of the server.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the engine attribute.</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div>The value of the engine attribute.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>EngineVersion -&gt; (string)</p>
+<blockquote>
+<div>The engine version of the server. Because Chef is the engine available in this release, the valid value for EngineVersion is <tt class="docutils literal"><span class="pre">12</span></tt> .</div></blockquote>
+<p>InstanceProfileArn -&gt; (string)</p>
+<blockquote>
+<div>The instance profile ARN of the server.</div></blockquote>
+<p>InstanceType -&gt; (string)</p>
+<blockquote>
+<div>The instance type for the server, as specified in the CloudFormation stack. This might not be the same instance type that is shown in the EC2 console.</div></blockquote>
+<p>KeyPair -&gt; (string)</p>
+<blockquote>
+<div>The key pair associated with the server.</div></blockquote>
+<p>MaintenanceStatus -&gt; (string)</p>
+<blockquote>
+<div>The status of the most recent server maintenance run. Shows <tt class="docutils literal"><span class="pre">SUCCESS</span></tt> or <tt class="docutils literal"><span class="pre">FAILED</span></tt> .</div></blockquote>
+<p>PreferredMaintenanceWindow -&gt; (string)</p>
+<blockquote>
+<div>The preferred maintenance period specified for the server.</div></blockquote>
+<p>PreferredBackupWindow -&gt; (string)</p>
+<blockquote>
+<div>The preferred backup period specified for the server.</div></blockquote>
+<p>SecurityGroupIds -&gt; (list)</p>
+<blockquote>
+<div><p>The security group IDs for the server, as specified in the CloudFormation stack. These might not be the same security groups that are shown in the EC2 console.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>ServiceRoleArn -&gt; (string)</p>
+<blockquote>
+<div>The service role ARN used to create the server.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The server's status. This field displays the states of actions in progress, such as creating, running, or backing up the server, as well as the server's health state.</div></blockquote>
+<p>StatusReason -&gt; (string)</p>
+<blockquote>
+<div>Depending on the server status, this field has either a human-readable message (such as a create or backup error), or an escaped block of JSON (used for health check results).</div></blockquote>
+<p>SubnetIds -&gt; (list)</p>
+<blockquote>
+<div><p>The subnet IDs specified in a create-server request.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>ServerArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the server.</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/opsworkscm/start-maintenance.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:11:08 GMT -->
+</html>

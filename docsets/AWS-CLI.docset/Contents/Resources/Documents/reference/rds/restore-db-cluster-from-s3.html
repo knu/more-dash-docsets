@@ -1,0 +1,559 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/rds/restore-db-cluster-from-s3.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:25 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>restore-db-cluster-from-s3 &#8212; AWS CLI 1.11.61 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.11.61',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="rds" href="index.html" />
+    <link rel="next" title="restore-db-cluster-from-snapshot" href="restore-db-cluster-from-snapshot.html" />
+    <link rel="prev" title="reset-db-parameter-group" href="reset-db-parameter-group.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="restore-db-cluster-from-snapshot.html" title="restore-db-cluster-from-snapshot" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="reset-db-parameter-group.html" title="reset-db-parameter-group" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">rds</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="reset-db-parameter-group.html" title="previous chapter (use the left arrow)">&#8592; reset-db-parameter-group</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="restore-db-cluster-from-snapshot.html" title="next chapter (use the right arrow)">restore-db-cluster-from-snapshot &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">restore-db-cluster-from-s3</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/rds/restore-db-cluster-from-s3">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-rds"><em>rds</em></a> ]</p>
+<div class="section" id="restore-db-cluster-from-s3">
+<span id="cli-aws-rds-restore-db-cluster-from-s3"></span><h1>restore-db-cluster-from-s3<a name="//apple_ref/cpp/Command/aws rds restore-db-cluster-from-s3" class="dashAnchor" id="aws rds restore-db-cluster-from-s3"></a><a class="headerlink" href="#restore-db-cluster-from-s3" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket. Amazon RDS must be authorized to access the Amazon S3 bucket and the data must be created using the Percona XtraBackup utility as described in <a class="reference external" href="AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">Migrating Data from MySQL by Using an Amazon S3 Bucket</a> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromS3">AWS API Documentation</a></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  restore-db-cluster-from-s3
+[--availability-zones &lt;value&gt;]
+[--backup-retention-period &lt;value&gt;]
+[--character-set-name &lt;value&gt;]
+[--database-name &lt;value&gt;]
+--db-cluster-identifier &lt;value&gt;
+[--db-cluster-parameter-group-name &lt;value&gt;]
+[--vpc-security-group-ids &lt;value&gt;]
+[--db-subnet-group-name &lt;value&gt;]
+--engine &lt;value&gt;
+[--engine-version &lt;value&gt;]
+[--port &lt;value&gt;]
+--master-username &lt;value&gt;
+--master-user-password &lt;value&gt;
+[--option-group-name &lt;value&gt;]
+[--preferred-backup-window &lt;value&gt;]
+[--preferred-maintenance-window &lt;value&gt;]
+[--tags &lt;value&gt;]
+[--storage-encrypted | --no-storage-encrypted]
+[--kms-key-id &lt;value&gt;]
+--source-engine &lt;value&gt;
+--source-engine-version &lt;value&gt;
+--s3-bucket-name &lt;value&gt;
+[--s3-prefix &lt;value&gt;]
+--s3-ingestion-role-arn &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--availability-zones" class="dashAnchor" id="availability-zones"></a><span class="pre">--availability-zones</span></tt> (list)</p>
+<blockquote>
+<div>A list of EC2 Availability Zones that instances in the restored DB cluster can be created in.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>"string" "string" ...</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--backup-retention-period" class="dashAnchor" id="backup-retention-period"></a><span class="pre">--backup-retention-period</span></tt> (integer)</p>
+<blockquote>
+<div><p>The number of days for which automated backups of the restored DB cluster are retained. You must specify a minimum value of 1.</p>
+<p>Default: 1</p>
+<p>Constraints:</p>
+<ul class="simple">
+<li>Must be a value from 1 to 35</li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--character-set-name" class="dashAnchor" id="character-set-name"></a><span class="pre">--character-set-name</span></tt> (string)</p>
+<blockquote>
+<div>A value that indicates that the restored DB cluster should be associated with the specified CharacterSet.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--database-name" class="dashAnchor" id="database-name"></a><span class="pre">--database-name</span></tt> (string)</p>
+<blockquote>
+<div>The database name for the restored DB cluster.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--db-cluster-identifier" class="dashAnchor" id="db-cluster-identifier"></a><span class="pre">--db-cluster-identifier</span></tt> (string)</p>
+<blockquote>
+<div><p>The name of the DB cluster to create from the source data in the S3 bucket. This parameter is isn't case-sensitive.</p>
+<p>Constraints:</p>
+<ul class="simple">
+<li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
+<li>First character must be a letter.</li>
+<li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+</ul>
+<p>Example: <tt class="docutils literal"><span class="pre">my-cluster1</span></tt></p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--db-cluster-parameter-group-name" class="dashAnchor" id="db-cluster-parameter-group-name"></a><span class="pre">--db-cluster-parameter-group-name</span></tt> (string)</p>
+<blockquote>
+<div><p>The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is omitted, <tt class="docutils literal"><span class="pre">default.aurora5.6</span></tt> will be used.</p>
+<p>Constraints:</p>
+<ul class="simple">
+<li>Must be 1 to 255 alphanumeric characters</li>
+<li>First character must be a letter</li>
+<li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--vpc-security-group-ids" class="dashAnchor" id="vpc-security-group-ids"></a><span class="pre">--vpc-security-group-ids</span></tt> (list)</p>
+<blockquote>
+<div>A list of EC2 VPC security groups to associate with the restored DB cluster.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>"string" "string" ...</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--db-subnet-group-name" class="dashAnchor" id="db-subnet-group-name"></a><span class="pre">--db-subnet-group-name</span></tt> (string)</p>
+<blockquote>
+<div><p>A DB subnet group to associate with the restored DB cluster.</p>
+<p>Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens. Must not be default.</p>
+<p>Example: <tt class="docutils literal"><span class="pre">mySubnetgroup</span></tt></p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--engine" class="dashAnchor" id="engine"></a><span class="pre">--engine</span></tt> (string)</p>
+<blockquote>
+<div><p>The name of the database engine to be used for the restored DB cluster.</p>
+<p>Valid Values: <tt class="docutils literal"><span class="pre">aurora</span></tt></p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--engine-version" class="dashAnchor" id="engine-version"></a><span class="pre">--engine-version</span></tt> (string)</p>
+<blockquote>
+<div><p>The version number of the database engine to use.</p>
+<blockquote>
+<div><strong>Aurora</strong></div></blockquote>
+<p>Example: <tt class="docutils literal"><span class="pre">5.6.10a</span></tt></p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--port" class="dashAnchor" id="port"></a><span class="pre">--port</span></tt> (integer)</p>
+<blockquote>
+<div><p>The port number on which the instances in the restored DB cluster accept connections.</p>
+<p>Default: <tt class="docutils literal"><span class="pre">3306</span></tt></p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--master-username" class="dashAnchor" id="master-username"></a><span class="pre">--master-username</span></tt> (string)</p>
+<blockquote>
+<div><p>The name of the master user for the restored DB cluster.</p>
+<p>Constraints:</p>
+<ul class="simple">
+<li>Must be 1 to 16 alphanumeric characters.</li>
+<li>First character must be a letter.</li>
+<li>Cannot be a reserved word for the chosen database engine.</li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--master-user-password" class="dashAnchor" id="master-user-password"></a><span class="pre">--master-user-password</span></tt> (string)</p>
+<blockquote>
+<div><p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
+<p>Constraints: Must contain from 8 to 41 characters.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--option-group-name" class="dashAnchor" id="option-group-name"></a><span class="pre">--option-group-name</span></tt> (string)</p>
+<blockquote>
+<div><p>A value that indicates that the restored DB cluster should be associated with the specified option group.</p>
+<p>Permanent options cannot be removed from an option group. An option group cannot be removed from a DB cluster once it is associated with a DB cluster.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--preferred-backup-window" class="dashAnchor" id="preferred-backup-window"></a><span class="pre">--preferred-backup-window</span></tt> (string)</p>
+<blockquote>
+<div><p>The daily time range during which automated backups are created if automated backups are enabled using the <tt class="docutils literal"><span class="pre">BackupRetentionPeriod</span></tt> parameter.</p>
+<p>Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time blocks available, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">Adjusting the Preferred Maintenance Window</a> in the <em>Amazon RDS User Guide.</em></p>
+<p>Constraints:</p>
+<ul class="simple">
+<li>Must be in the format <tt class="docutils literal"><span class="pre">hh24:mi-hh24:mi</span></tt> .</li>
+<li>Times should be in Universal Coordinated Time (UTC).</li>
+<li>Must not conflict with the preferred maintenance window.</li>
+<li>Must be at least 30 minutes.</li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--preferred-maintenance-window" class="dashAnchor" id="preferred-maintenance-window"></a><span class="pre">--preferred-maintenance-window</span></tt> (string)</p>
+<blockquote>
+<div><p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
+<p>Format: <tt class="docutils literal"><span class="pre">ddd:hh24:mi-ddd:hh24:mi</span></tt></p>
+<p>Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day of the week. To see the time blocks available, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">Adjusting the Preferred Maintenance Window</a> in the <em>Amazon RDS User Guide.</em></p>
+<p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
+<p>Constraints: Minimum 30-minute window.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--tags" class="dashAnchor" id="tags"></a><span class="pre">--tags</span></tt> (list)</p>
+<blockquote>
+<div>A list of tags.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Key=string,Value=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    "Key": "string",
+    "Value": "string"
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--storage-encrypted" class="dashAnchor" id="storage-encrypted"></a><span class="pre">--storage-encrypted</span></tt> | <tt class="docutils literal"><span class="pre">--no-storage-encrypted</span></tt> (boolean)</p>
+<blockquote>
+<div>Specifies whether the restored DB cluster is encrypted.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--kms-key-id" class="dashAnchor" id="kms-key-id"></a><span class="pre">--kms-key-id</span></tt> (string)</p>
+<blockquote>
+<div><p>The KMS key identifier for an encrypted DB cluster.</p>
+<p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KM encryption key.</p>
+<p>If the <tt class="docutils literal"><span class="pre">StorageEncrypted</span></tt> parameter is true, and you do not specify a value for the <tt class="docutils literal"><span class="pre">KmsKeyId</span></tt> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS region.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--source-engine" class="dashAnchor" id="source-engine"></a><span class="pre">--source-engine</span></tt> (string)</p>
+<blockquote>
+<div><p>The identifier for the database engine that was backed up to create the files stored in the Amazon S3 bucket.</p>
+<p>Valid values: <tt class="docutils literal"><span class="pre">mysql</span></tt></p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--source-engine-version" class="dashAnchor" id="source-engine-version"></a><span class="pre">--source-engine-version</span></tt> (string)</p>
+<blockquote>
+<div><p>The version of the database that the backup files were created from.</p>
+<p>MySQL version 5.5 and 5.6 are supported.</p>
+<p>Example: <tt class="docutils literal"><span class="pre">5.6.22</span></tt></p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--s3-bucket-name" class="dashAnchor" id="s3-bucket-name"></a><span class="pre">--s3-bucket-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the Amazon S3 bucket that contains the data used to create the Amazon Aurora DB cluster.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--s3-prefix" class="dashAnchor" id="s3-prefix"></a><span class="pre">--s3-prefix</span></tt> (string)</p>
+<blockquote>
+<div>The prefix for all of the file names that contain the data used to create the Amazon Aurora DB cluster. If you do not specify a <strong>SourceS3Prefix</strong> value, then the Amazon Aurora DB cluster is created by using all of the files in the Amazon S3 bucket.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--s3-ingestion-role-arn" class="dashAnchor" id="s3-ingestion-role-arn"></a><span class="pre">--s3-ingestion-role-arn</span></tt> (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon RDS to access the Amazon S3 bucket on your behalf.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>DBCluster -&gt; (structure)</p>
+<blockquote>
+<div><p>Contains the result of a successful invocation of the following actions:</p>
+<ul class="simple">
+<li>create-db-cluster</li>
+<li>delete-db-cluster</li>
+<li>failover-db-cluster</li>
+<li>modify-db-cluster</li>
+<li>restore-db-cluster-from-snapshot</li>
+<li>restore-db-cluster-to-point-in-time</li>
+</ul>
+<p>This data type is used as a response element in the  describe-db-clusters action.</p>
+<p>AllocatedStorage -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the allocated storage size in gigabytes (GB).</div></blockquote>
+<p>AvailabilityZones -&gt; (list)</p>
+<blockquote>
+<div><p>Provides the list of EC2 Availability Zones that instances in the DB cluster can be created in.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>BackupRetentionPeriod -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the number of days for which automatic DB snapshots are retained.</div></blockquote>
+<p>CharacterSetName -&gt; (string)</p>
+<blockquote>
+<div>If present, specifies the name of the character set that this cluster is associated with.</div></blockquote>
+<p>DatabaseName -&gt; (string)</p>
+<blockquote>
+<div>Contains the name of the initial database of this DB cluster that was provided at create time, if one was specified when the DB cluster was created. This same name is returned for the life of the DB cluster.</div></blockquote>
+<p>DBClusterIdentifier -&gt; (string)</p>
+<blockquote>
+<div>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</div></blockquote>
+<p>DBClusterParameterGroup -&gt; (string)</p>
+<blockquote>
+<div>Specifies the name of the DB cluster parameter group for the DB cluster.</div></blockquote>
+<p>DBSubnetGroup -&gt; (string)</p>
+<blockquote>
+<div>Specifies information on the subnet group associated with the DB cluster, including the name, description, and subnets in the subnet group.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>Specifies the current state of this DB cluster.</div></blockquote>
+<p>PercentProgress -&gt; (string)</p>
+<blockquote>
+<div>Specifies the progress of the operation as a percentage.</div></blockquote>
+<p>EarliestRestorableTime -&gt; (timestamp)</p>
+<blockquote>
+<div>Specifies the earliest time to which a database can be restored with point-in-time restore.</div></blockquote>
+<p>Endpoint -&gt; (string)</p>
+<blockquote>
+<div>Specifies the connection endpoint for the primary instance of the DB cluster.</div></blockquote>
+<p>ReaderEndpoint -&gt; (string)</p>
+<blockquote>
+<div><p>The reader endpoint for the DB cluster. The reader endpoint for a DB cluster load-balances connections across the Aurora Replicas that are available in a DB cluster. As clients request new connections to the reader endpoint, Aurora distributes the connection requests among the Aurora Replicas in the DB cluster. This functionality can help balance your read workload across multiple Aurora Replicas in your DB cluster.</p>
+<p>If a failover occurs, and the Aurora Replica that you are connected to is promoted to be the primary instance, your connection will be dropped. To continue sending your read workload to other Aurora Replicas in the cluster, you can then recoonect to the reader endpoint.</p>
+</div></blockquote>
+<p>MultiAZ -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether the DB cluster has instances in multiple Availability Zones.</div></blockquote>
+<p>Engine -&gt; (string)</p>
+<blockquote>
+<div>Provides the name of the database engine to be used for this DB cluster.</div></blockquote>
+<p>EngineVersion -&gt; (string)</p>
+<blockquote>
+<div>Indicates the database engine version.</div></blockquote>
+<p>LatestRestorableTime -&gt; (timestamp)</p>
+<blockquote>
+<div>Specifies the latest time to which a database can be restored with point-in-time restore.</div></blockquote>
+<p>Port -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the port that the database engine is listening on.</div></blockquote>
+<p>MasterUsername -&gt; (string)</p>
+<blockquote>
+<div>Contains the master username for the DB cluster.</div></blockquote>
+<p>DBClusterOptionGroupMemberships -&gt; (list)</p>
+<blockquote>
+<div><p>Provides the list of option group memberships for this DB cluster.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Contains status information for a DB cluster option group.</p>
+<p>DBClusterOptionGroupName -&gt; (string)</p>
+<blockquote>
+<div>Specifies the name of the DB cluster option group.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>Specifies the status of the DB cluster option group.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>PreferredBackupWindow -&gt; (string)</p>
+<blockquote>
+<div>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <tt class="docutils literal"><span class="pre">BackupRetentionPeriod</span></tt> .</div></blockquote>
+<p>PreferredMaintenanceWindow -&gt; (string)</p>
+<blockquote>
+<div>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</div></blockquote>
+<p>ReplicationSourceIdentifier -&gt; (string)</p>
+<blockquote>
+<div>Contains the identifier of the source DB cluster if this DB cluster is a Read Replica.</div></blockquote>
+<p>ReadReplicaIdentifiers -&gt; (list)</p>
+<blockquote>
+<div><p>Contains one or more identifiers of the Read Replicas associated with this DB cluster.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>DBClusterMembers -&gt; (list)</p>
+<blockquote>
+<div><p>Provides the list of instances that make up the DB cluster.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Contains information about an instance that is part of a DB cluster.</p>
+<p>DBInstanceIdentifier -&gt; (string)</p>
+<blockquote>
+<div>Specifies the instance identifier for this member of the DB cluster.</div></blockquote>
+<p>IsClusterWriter -&gt; (boolean)</p>
+<blockquote>
+<div>Value that is <tt class="docutils literal"><span class="pre">true</span></tt> if the cluster member is the primary instance for the DB cluster and <tt class="docutils literal"><span class="pre">false</span></tt> otherwise.</div></blockquote>
+<p>DBClusterParameterGroupStatus -&gt; (string)</p>
+<blockquote>
+<div>Specifies the status of the DB cluster parameter group for this member of the DB cluster.</div></blockquote>
+<p>PromotionTier -&gt; (integer)</p>
+<blockquote>
+<div>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">Fault Tolerance for an Aurora DB Cluster</a> .</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>VpcSecurityGroups -&gt; (list)</p>
+<blockquote>
+<div><p>Provides a list of VPC security groups that the DB cluster belongs to.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>This data type is used as a response element for queries on VPC security group membership.</p>
+<p>VpcSecurityGroupId -&gt; (string)</p>
+<blockquote>
+<div>The name of the VPC security group.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status of the VPC security group.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>HostedZoneId -&gt; (string)</p>
+<blockquote>
+<div>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</div></blockquote>
+<p>StorageEncrypted -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether the DB cluster is encrypted.</div></blockquote>
+<p>KmsKeyId -&gt; (string)</p>
+<blockquote>
+<div>If <tt class="docutils literal"><span class="pre">StorageEncrypted</span></tt> is true, the KMS key identifier for the encrypted DB cluster.</div></blockquote>
+<p>DbClusterResourceId -&gt; (string)</p>
+<blockquote>
+<div>The region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail log entries whenever the KMS key for the DB cluster is accessed.</div></blockquote>
+<p>DBClusterArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) for the DB cluster.</div></blockquote>
+<p>AssociatedRoles -&gt; (list)</p>
+<blockquote>
+<div><p>Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other AWS services on your behalf.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes an AWS Identity and Access Management (IAM) role that is associated with a DB cluster.</p>
+<p>RoleArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the IAM role that is associated with the DB cluster.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div><p>Describes the state of association between the IAM role and the DB cluster. The Status property returns one of the following values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ACTIVE</span></tt> - the IAM role ARN is associated with the DB cluster and can be used to access other AWS services on your behalf.</li>
+<li><tt class="docutils literal"><span class="pre">PENDING</span></tt> - the IAM role ARN is being associated with the DB cluster.</li>
+<li><tt class="docutils literal"><span class="pre">INVALID</span></tt> - the IAM role ARN is associated with the DB cluster, but the DB cluster is unable to assume the IAM role in order to access other AWS services on your behalf.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ClusterCreateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="reset-db-parameter-group.html" title="previous chapter (use the left arrow)">&#8592; reset-db-parameter-group</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="restore-db-cluster-from-snapshot.html" title="next chapter (use the right arrow)">restore-db-cluster-from-snapshot &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="restore-db-cluster-from-snapshot.html" title="restore-db-cluster-from-snapshot">next</a> |</li>
+        <li class="right">
+          <a href="reset-db-parameter-group.html" title="reset-db-parameter-group">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">rds</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/rds/restore-db-cluster-from-s3.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:26 GMT -->
+</html>

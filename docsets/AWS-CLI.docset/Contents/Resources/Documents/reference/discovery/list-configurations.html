@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/discovery/list-configurations.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:01 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/discovery/list-configurations.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:09:59 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>list-configurations &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>list-configurations &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,10 +25,10 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="discovery" href="index.html" />
-    <link rel="next" title="start-data-collection-by-agent-ids" href="start-data-collection-by-agent-ids.html" />
-    <link rel="prev" title="export-configurations" href="export-configurations.html" />
+    <link rel="next" title="list-server-neighbors" href="list-server-neighbors.html" />
+    <link rel="prev" title="get-discovery-summary" href="get-discovery-summary.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
   
@@ -61,10 +61,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
         <li class="right">
-          <a href="start-data-collection-by-agent-ids.html" title="start-data-collection-by-agent-ids" accesskey="N">next</a> |</li>
+          <a href="list-server-neighbors.html" title="list-server-neighbors" accesskey="N">next</a> |</li>
         <li class="right">
-          <a href="export-configurations.html" title="export-configurations" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <a href="get-discovery-summary.html" title="get-discovery-summary" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">discovery</a> &#187;</li> 
       </ul>
@@ -74,11 +74,11 @@
     <div class="top-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="export-configurations.html" title="previous chapter (use the left arrow)">&#8592; export-configurations</a>
+          <a href="get-discovery-summary.html" title="previous chapter (use the left arrow)">&#8592; get-discovery-summary</a>
           <span class="divider">/</span>
           
         </li>
-          <li><a href="start-data-collection-by-agent-ids.html" title="next chapter (use the right arrow)">start-data-collection-by-agent-ids &#8594;</a></li>
+          <li><a href="list-server-neighbors.html" title="next chapter (use the right arrow)">list-server-neighbors &#8594;</a></li>
       </ul>
     </div>
   
@@ -95,6 +95,7 @@
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
 <li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
@@ -111,7 +112,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/discovery/list-configurations">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/discovery/list-configurations">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -128,7 +129,8 @@
 <span id="cli-aws-discovery-list-configurations"></span><h1>list-configurations<a name="//apple_ref/cpp/Command/aws discovery list-configurations" class="dashAnchor" id="aws discovery list-configurations"></a><a class="headerlink" href="#list-configurations" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Retrieves a list of configurations items according to the criteria you specify in a filter. The filter criteria identify relationship requirements.</p>
+<p>Retrieves a list of configuration items according to criteria you specify in a filter. The filter criteria identify relationship requirements.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListConfigurations">AWS API Documentation</a></p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
@@ -137,8 +139,9 @@
 [--filters &lt;value&gt;]
 [--max-results &lt;value&gt;]
 [--next-token &lt;value&gt;]
+[--order-by &lt;value&gt;]
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
@@ -151,14 +154,15 @@
 <li><tt class="docutils literal"><span class="pre">SERVER</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">PROCESS</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">CONNECTION</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">APPLICATION</span></tt></li>
 </ul>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--filters" class="dashAnchor" id="filters"></a><span class="pre">--filters</span></tt> (list)</p>
 <blockquote>
-<div><p>You can filter the list using a <em>key</em> -<em>value</em> format. For example:</p>
+<div><p>You can filter the request using various logical operators and a <em>key</em> -<em>value</em> format. For example:</p>
 <blockquote>
 <div><tt class="docutils literal"><span class="pre">{"key":</span> <span class="pre">"serverType",</span> <span class="pre">"value":</span> <span class="pre">"webServer"}</span></tt></div></blockquote>
-<p>You can separate these items by using logical operators.</p>
+<p>For a complete list of filter options and guidance about using them with this action, see <a class="reference external" href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations">Querying Discovered Configuration Items</a> .</p>
 </div></blockquote>
 <p>Shorthand Syntax:</p>
 <div class="highlight-python"><pre>name=string,values=string,string,condition=string ...</pre>
@@ -178,11 +182,59 @@
 <div>The total number of items to return. The maximum value is 100.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--next-token" class="dashAnchor" id="next-token"></a><span class="pre">--next-token</span></tt> (string)</p>
 <blockquote>
-<div>A token to start the list. Use this token to get the next set of results.</div></blockquote>
+<div>Token to retrieve the next set of results. For example, if a previous call to list-configurations returned 100 items, but you set <tt class="docutils literal"><span class="pre">ListConfigurationsRequest$maxResults</span></tt> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--order-by" class="dashAnchor" id="order-by"></a><span class="pre">--order-by</span></tt> (list)</p>
+<blockquote>
+<div>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a class="reference external" href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations">Querying Discovered Configuration Items</a> .</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>fieldName=string,sortOrder=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    "fieldName": "string",
+    "sortOrder": "ASC"|"DESC"
+  }
+  ...
+]</pre>
+</div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To list all of the discovered servers meeting a set of filter conditions</strong></p>
+<p>This example command lists discovered servers matching either of two hostname patterns and not running Ubuntu.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws discovery list-configurations --configuration-type SERVER --filters name="server.hostName",values="172-31-35","172-31-42",condition="CONTAINS" name="server.osName",values="Ubuntu",condition="NOT_CONTAINS"</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">"configurations"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+            <span class="s2">"server.osVersion"</span><span class="p">:</span> <span class="s2">"3.14.48-33.39.amzn1.x86_64"</span><span class="p">,</span>
+            <span class="s2">"server.type"</span><span class="p">:</span> <span class="s2">"EC2"</span><span class="p">,</span>
+            <span class="s2">"server.hostName"</span><span class="p">:</span> <span class="s2">"ip-172-31-42-208"</span><span class="p">,</span>
+            <span class="s2">"server.timeOfCreation"</span><span class="p">:</span> <span class="s2">"2016-10-28 23:44:30.0"</span><span class="p">,</span>
+            <span class="s2">"server.configurationId"</span><span class="p">:</span> <span class="s2">"d-server-099385097ef9fbcfb"</span><span class="p">,</span>
+            <span class="s2">"server.osName"</span><span class="p">:</span> <span class="s2">"Linux - Amazon Linux AMI release 2015.03"</span><span class="p">,</span>
+            <span class="s2">"server.agentId"</span><span class="p">:</span> <span class="s2">"i-c142b99e"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"server.osVersion"</span><span class="p">:</span> <span class="s2">"3.14.48-33.39.amzn1.x86_64"</span><span class="p">,</span>
+            <span class="s2">"server.type"</span><span class="p">:</span> <span class="s2">"EC2"</span><span class="p">,</span>
+            <span class="s2">"server.hostName"</span><span class="p">:</span> <span class="s2">"ip-172-31-35-152"</span><span class="p">,</span>
+            <span class="s2">"server.timeOfCreation"</span><span class="p">:</span> <span class="s2">"2016-10-28 23:44:00.0"</span><span class="p">,</span>
+            <span class="s2">"server.configurationId"</span><span class="p">:</span> <span class="s2">"d-server-0c4f2dd1fee22c6c1"</span><span class="p">,</span>
+            <span class="s2">"server.osName"</span><span class="p">:</span> <span class="s2">"Linux - Amazon Linux AMI release 2015.03"</span><span class="p">,</span>
+            <span class="s2">"server.agentId"</span><span class="p">:</span> <span class="s2">"i-4447bc1b"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="output">
 <h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
@@ -197,7 +249,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 </div></blockquote>
 <p>nextToken -&gt; (string)</p>
 <blockquote>
-<div>The call returns a token. Use this token to get the next set of results.</div></blockquote>
+<div>Token to retrieve the next set of results. For example, if your call to list-configurations returned 100 items, but you set <tt class="docutils literal"><span class="pre">ListConfigurationsRequest$maxResults</span></tt> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</div></blockquote>
 </div>
 </div>
 
@@ -209,11 +261,11 @@ Prints a sample input JSON to standard output. Note the specified operation is n
     <div class="footer-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="export-configurations.html" title="previous chapter (use the left arrow)">&#8592; export-configurations</a>
+          <a href="get-discovery-summary.html" title="previous chapter (use the left arrow)">&#8592; get-discovery-summary</a>
           <span class="divider">/</span>
           
         </li>
-          <li><a href="start-data-collection-by-agent-ids.html" title="next chapter (use the right arrow)">start-data-collection-by-agent-ids &#8594;</a></li>
+          <li><a href="list-server-neighbors.html" title="next chapter (use the right arrow)">list-server-neighbors &#8594;</a></li>
       </ul>
     </div>
   
@@ -234,10 +286,10 @@ Prints a sample input JSON to standard output. Note the specified operation is n
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index">index</a></li>
         <li class="right">
-          <a href="start-data-collection-by-agent-ids.html" title="start-data-collection-by-agent-ids">next</a> |</li>
+          <a href="list-server-neighbors.html" title="list-server-neighbors">next</a> |</li>
         <li class="right">
-          <a href="export-configurations.html" title="export-configurations">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <a href="get-discovery-summary.html" title="get-discovery-summary">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">discovery</a> &#187;</li> 
       </ul>
@@ -253,5 +305,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/discovery/list-configurations.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:01 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/discovery/list-configurations.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:09:59 GMT -->
 </html>

@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elasticache/modify-replication-group.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:16 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elasticache/modify-replication-group.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:14 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>modify-replication-group &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>modify-replication-group &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="elasticache" href="index.html" />
     <link rel="next" title="purchase-reserved-cache-nodes-offering" href="purchase-reserved-cache-nodes-offering.html" />
     <link rel="prev" title="modify-cache-subnet-group" href="modify-cache-subnet-group.html" />
@@ -64,7 +64,7 @@
           <a href="purchase-reserved-cache-nodes-offering.html" title="purchase-reserved-cache-nodes-offering" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="modify-cache-subnet-group.html" title="modify-cache-subnet-group" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">elasticache</a> &#187;</li> 
       </ul>
@@ -112,7 +112,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/elasticache/modify-replication-group">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/elasticache/modify-replication-group">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -129,7 +129,16 @@
 <span id="cli-aws-elasticache-modify-replication-group"></span><h1>modify-replication-group<a name="//apple_ref/cpp/Command/aws elasticache modify-replication-group" class="dashAnchor" id="aws elasticache modify-replication-group"></a><a class="headerlink" href="#modify-replication-group" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>The <em>modify-replication-group</em> action modifies the settings for a replication group.</p>
+<p>Modifies the settings for a replication group.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Due to current limitations on Redis (cluster mode disabled), this operation or parameter is not supported on Redis (cluster mode enabled) replication groups.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This operation is valid for Redis only.</p>
+</div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroup">AWS API Documentation</a></p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
@@ -152,7 +161,7 @@
 [--snapshot-window &lt;value&gt;]
 [--cache-node-type &lt;value&gt;]
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
@@ -165,28 +174,28 @@
 <div>A description for the replication group. Maximum length is 255 characters.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--primary-cluster-id" class="dashAnchor" id="primary-cluster-id"></a><span class="pre">--primary-cluster-id</span></tt> (string)</p>
 <blockquote>
-<div>If this parameter is specified, ElastiCache will promote the specified cluster in the specified replication group to the primary role. The nodes of all other clusters in the replication group will be read replicas.</div></blockquote>
+<div>For replication groups with a single primary, if this parameter is specified, ElastiCache promotes the specified cluster in the specified replication group to the primary role. The nodes of all other clusters in the replication group are read replicas.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--snapshotting-cluster-id" class="dashAnchor" id="snapshotting-cluster-id"></a><span class="pre">--snapshotting-cluster-id</span></tt> (string)</p>
 <blockquote>
-<div>The cache cluster ID that will be used as the daily snapshot source for the replication group.</div></blockquote>
+<div>The cache cluster ID that is used as the daily snapshot source for the replication group. This parameter cannot be set for Redis (cluster mode enabled) replication groups.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--automatic-failover-enabled" class="dashAnchor" id="automatic-failover-enabled"></a><span class="pre">--automatic-failover-enabled</span></tt> | <tt class="docutils literal"><span class="pre">--no-automatic-failover-enabled</span></tt> (boolean)</p>
 <blockquote>
-<div><p>Whether a read replica will be automatically promoted to read/write primary if the existing primary encounters a failure.</p>
+<div><p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure.</p>
 <p>Valid values: <tt class="docutils literal"><span class="pre">true</span></tt> | <tt class="docutils literal"><span class="pre">false</span></tt></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>ElastiCache Multi-AZ replication groups are not supported on:</p>
 <ul class="last simple">
 <li>Redis versions earlier than 2.8.6.</li>
-<li>T1 and T2 cache node types.</li>
+<li>Redis (cluster mode disabled):T1 and T2 cache node types. Redis (cluster mode enabled): T1 node types.</li>
 </ul>
 </div>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cache-security-group-names" class="dashAnchor" id="cache-security-group-names"></a><span class="pre">--cache-security-group-names</span></tt> (list)</p>
 <blockquote>
 <div><p>A list of cache security group names to authorize for the clusters in this replication group. This change is asynchronously applied as soon as possible.</p>
-<p>This parameter can be used only with replication group containing cache clusters running outside of an Amazon Virtual Private Cloud (VPC).</p>
-<p>Constraints: Must contain no more than 255 alphanumeric characters. Must not be "Default".</p>
+<p>This parameter can be used only with replication group containing cache clusters running outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
+<p>Constraints: Must contain no more than 255 alphanumeric characters. Must not be <tt class="docutils literal"><span class="pre">Default</span></tt> .</p>
 </div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
@@ -194,14 +203,15 @@
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--security-group-ids" class="dashAnchor" id="security-group-ids"></a><span class="pre">--security-group-ids</span></tt> (list)</p>
 <blockquote>
 <div><p>Specifies the VPC Security Groups associated with the cache clusters in the replication group.</p>
-<p>This parameter can be used only with replication group containing cache clusters running in an Amazon Virtual Private Cloud (VPC).</p>
+<p>This parameter can be used only with replication group containing cache clusters running in an Amazon Virtual Private Cloud (Amazon VPC).</p>
 </div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--preferred-maintenance-window" class="dashAnchor" id="preferred-maintenance-window"></a><span class="pre">--preferred-maintenance-window</span></tt> (string)</p>
 <blockquote>
-<div><p>Specifies the weekly time range during which maintenance on the cache cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <tt class="docutils literal"><span class="pre">ddd</span></tt> are:</p>
+<div><p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
+<p>Valid values for <tt class="docutils literal"><span class="pre">ddd</span></tt> are:</p>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">sun</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">mon</span></tt></li>
@@ -211,11 +221,11 @@
 <li><tt class="docutils literal"><span class="pre">fri</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">sat</span></tt></li>
 </ul>
-<p>Example: <tt class="docutils literal"><span class="pre">sun:05:00-sun:09:00</span></tt></p>
+<p>Example: <tt class="docutils literal"><span class="pre">sun:23:00-mon:01:30</span></tt></p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--notification-topic-arn" class="dashAnchor" id="notification-topic-arn"></a><span class="pre">--notification-topic-arn</span></tt> (string)</p>
 <blockquote>
-<div><p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p>
+<div><p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The Amazon SNS topic owner must be same as the replication group owner.</p>
@@ -223,16 +233,16 @@
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cache-parameter-group-name" class="dashAnchor" id="cache-parameter-group-name"></a><span class="pre">--cache-parameter-group-name</span></tt> (string)</p>
 <blockquote>
-<div>The name of the cache parameter group to apply to all of the clusters in this replication group. This change is asynchronously applied as soon as possible for parameters when the <em>ApplyImmediately</em> parameter is specified as <em>true</em> for this request.</div></blockquote>
+<div>The name of the cache parameter group to apply to all of the clusters in this replication group. This change is asynchronously applied as soon as possible for parameters when the <tt class="docutils literal"><span class="pre">ApplyImmediately</span></tt> parameter is specified as <tt class="docutils literal"><span class="pre">true</span></tt> for this request.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--notification-topic-status" class="dashAnchor" id="notification-topic-status"></a><span class="pre">--notification-topic-status</span></tt> (string)</p>
 <blockquote>
-<div><p>The status of the Amazon SNS notification topic for the replication group. Notifications are sent only if the status is <em>active</em> .</p>
+<div><p>The status of the Amazon SNS notification topic for the replication group. Notifications are sent only if the status is <tt class="docutils literal"><span class="pre">active</span></tt> .</p>
 <p>Valid values: <tt class="docutils literal"><span class="pre">active</span></tt> | <tt class="docutils literal"><span class="pre">inactive</span></tt></p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--apply-immediately" class="dashAnchor" id="apply-immediately"></a><span class="pre">--apply-immediately</span></tt> | <tt class="docutils literal"><span class="pre">--no-apply-immediately</span></tt> (boolean)</p>
 <blockquote>
-<div><p>If <tt class="docutils literal"><span class="pre">true</span></tt> , this parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible, regardless of the <em>PreferredMaintenanceWindow</em> setting for the replication group.</p>
-<p>If <tt class="docutils literal"><span class="pre">false</span></tt> , then changes to the nodes in the replication group are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p>
+<div><p>If <tt class="docutils literal"><span class="pre">true</span></tt> , this parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible, regardless of the <tt class="docutils literal"><span class="pre">PreferredMaintenanceWindow</span></tt> setting for the replication group.</p>
+<p>If <tt class="docutils literal"><span class="pre">false</span></tt> , changes to the nodes in the replication group are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p>
 <p>Valid values: <tt class="docutils literal"><span class="pre">true</span></tt> | <tt class="docutils literal"><span class="pre">false</span></tt></p>
 <p>Default: <tt class="docutils literal"><span class="pre">false</span></tt></p>
 </div></blockquote>
@@ -247,23 +257,23 @@
 <div>This parameter is currently disabled.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--snapshot-retention-limit" class="dashAnchor" id="snapshot-retention-limit"></a><span class="pre">--snapshot-retention-limit</span></tt> (integer)</p>
 <blockquote>
-<div><p>The number of days for which ElastiCache will retain automatic node group snapshots before deleting them. For example, if you set <em>SnapshotRetentionLimit</em> to 5, then a snapshot that was taken today will be retained for 5 days before being deleted.</p>
+<div><p>The number of days for which ElastiCache retains automatic node group (shard) snapshots before deleting them. For example, if you set <tt class="docutils literal"><span class="pre">SnapshotRetentionLimit</span></tt> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
 <blockquote>
 <div><strong>Important</strong> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</div></blockquote>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--snapshot-window" class="dashAnchor" id="snapshot-window"></a><span class="pre">--snapshot-window</span></tt> (string)</p>
 <blockquote>
-<div><p>The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of the node group specified by <em>SnapshottingClusterId</em> .</p>
+<div><p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of the node group (shard) specified by <tt class="docutils literal"><span class="pre">SnapshottingClusterId</span></tt> .</p>
 <p>Example: <tt class="docutils literal"><span class="pre">05:00-09:00</span></tt></p>
-<p>If you do not specify this parameter, then ElastiCache will automatically choose an appropriate time range.</p>
+<p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cache-node-type" class="dashAnchor" id="cache-node-type"></a><span class="pre">--cache-node-type</span></tt> (string)</p>
 <blockquote>
-<div>A valid cache node type that you want to scale this replication group to. The value of this parameter must be one of the <em>ScaleUpModifications</em> values returned by the <tt class="docutils literal"><span class="pre">ListAllowedCacheNodeTypeModification</span></tt> action.</div></blockquote>
+<div>A valid cache node type that you want to scale this replication group to.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
@@ -280,7 +290,7 @@ If the specified group's <em>autofailover</em> is enabled, you cannot mannualy p
 <h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
 <p>ReplicationGroup -&gt; (structure)</p>
 <blockquote>
-<div><p>Contains all of the attributes of a specific replication group.</p>
+<div><p>Contains all of the attributes of a specific Redis replication group.</p>
 <p>ReplicationGroupId -&gt; (string)</p>
 <blockquote>
 <div>The identifier for the replication group.</div></blockquote>
@@ -289,22 +299,22 @@ If the specified group's <em>autofailover</em> is enabled, you cannot mannualy p
 <div>The description of the replication group.</div></blockquote>
 <p>Status -&gt; (string)</p>
 <blockquote>
-<div>The current state of this replication group - <em>creating</em> , <em>available</em> , etc.</div></blockquote>
+<div>The current state of this replication group - <tt class="docutils literal"><span class="pre">creating</span></tt> , <tt class="docutils literal"><span class="pre">available</span></tt> , <tt class="docutils literal"><span class="pre">modifying</span></tt> , <tt class="docutils literal"><span class="pre">deleting</span></tt> , <tt class="docutils literal"><span class="pre">create-failed</span></tt> , <tt class="docutils literal"><span class="pre">snapshotting</span></tt> .</div></blockquote>
 <p>PendingModifiedValues -&gt; (structure)</p>
 <blockquote>
 <div><p>A group of settings to be applied to the replication group, either immediately or during the next maintenance window.</p>
 <p>PrimaryClusterId -&gt; (string)</p>
 <blockquote>
-<div>The primary cluster ID which will be applied immediately (if <tt class="docutils literal"><span class="pre">--apply-immediately</span></tt> was specified), or during the next maintenance window.</div></blockquote>
+<div>The primary cluster ID that is applied immediately (if <tt class="docutils literal"><span class="pre">--apply-immediately</span></tt> was specified), or during the next maintenance window.</div></blockquote>
 <p>AutomaticFailoverStatus -&gt; (string)</p>
 <blockquote>
-<div><p>Indicates the status of Multi-AZ for this replication group.</p>
+<div><p>Indicates the status of Multi-AZ for this Redis replication group.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>ElastiCache Multi-AZ replication groups are not supported on:</p>
 <ul class="last simple">
 <li>Redis versions earlier than 2.8.6.</li>
-<li>T1 and T2 cache node types.</li>
+<li>Redis (cluster mode disabled):T1 and T2 cache node types. Redis (cluster mode enabled): T1 node types.</li>
 </ul>
 </div>
 </div></blockquote>
@@ -319,16 +329,16 @@ If the specified group's <em>autofailover</em> is enabled, you cannot mannualy p
 <div><p>A single element list with information about the nodes in the replication group.</p>
 <p>(structure)</p>
 <blockquote>
-<div><p>Represents a collection of cache nodes in a replication group.</p>
+<div><p>Represents a collection of cache nodes in a replication group. One node in the node group is the read/write primary node. All the other nodes are read-only Replica nodes.</p>
 <p>NodeGroupId -&gt; (string)</p>
 <blockquote>
-<div>The identifier for the node group. A replication group contains only one node group; therefore, the node group ID is 0001.</div></blockquote>
+<div>The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only 1 node group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group contains 1 to 15 node groups numbered 0001 to 0015.</div></blockquote>
 <p>Status -&gt; (string)</p>
 <blockquote>
-<div>The current state of this replication group - <em>creating</em> , <em>available</em> , etc.</div></blockquote>
+<div>The current state of this replication group - <tt class="docutils literal"><span class="pre">creating</span></tt> , <tt class="docutils literal"><span class="pre">available</span></tt> , etc.</div></blockquote>
 <p>PrimaryEndpoint -&gt; (structure)</p>
 <blockquote>
-<div><p>Represents the information required for client programs to connect to a cache node.</p>
+<div><p>The endpoint of the primary node in this node group (shard).</p>
 <p>Address -&gt; (string)</p>
 <blockquote>
 <div>The DNS hostname of the cache node.</div></blockquote>
@@ -336,12 +346,15 @@ If the specified group's <em>autofailover</em> is enabled, you cannot mannualy p
 <blockquote>
 <div>The port number that the cache engine is listening on.</div></blockquote>
 </div></blockquote>
+<p>Slots -&gt; (string)</p>
+<blockquote>
+<div>The keyspace for this node group (shard).</div></blockquote>
 <p>NodeGroupMembers -&gt; (list)</p>
 <blockquote>
-<div><p>A list containing information about individual nodes within the node group.</p>
+<div><p>A list containing information about individual nodes within the node group (shard).</p>
 <p>(structure)</p>
 <blockquote>
-<div><p>Represents a single node within a node group.</p>
+<div><p>Represents a single node within a node group (shard).</p>
 <p>CacheClusterId -&gt; (string)</p>
 <blockquote>
 <div>The ID of the cache cluster to which the node belongs.</div></blockquote>
@@ -363,7 +376,7 @@ If the specified group's <em>autofailover</em> is enabled, you cannot mannualy p
 <div>The name of the Availability Zone in which the node is located.</div></blockquote>
 <p>CurrentRole -&gt; (string)</p>
 <blockquote>
-<div>The role that is currently assigned to the node - <em>primary</em> or <em>replica</em> .</div></blockquote>
+<div>The role that is currently assigned to the node - <tt class="docutils literal"><span class="pre">primary</span></tt> or <tt class="docutils literal"><span class="pre">replica</span></tt> .</div></blockquote>
 </div></blockquote>
 </div></blockquote>
 </div></blockquote>
@@ -379,9 +392,35 @@ If the specified group's <em>autofailover</em> is enabled, you cannot mannualy p
 <p>ElastiCache Multi-AZ replication groups are not supported on:</p>
 <ul class="last simple">
 <li>Redis versions earlier than 2.8.6.</li>
-<li>T1 and T2 cache node types.</li>
+<li>Redis (cluster mode disabled):T1 and T2 cache node types. Redis (cluster mode enabled): T1 node types.</li>
 </ul>
 </div>
+</div></blockquote>
+<p>ConfigurationEndpoint -&gt; (structure)</p>
+<blockquote>
+<div><p>The configuration endpoint for this replicaiton group. Use the configuration endpoint to connect to this replication group.</p>
+<p>Address -&gt; (string)</p>
+<blockquote>
+<div>The DNS hostname of the cache node.</div></blockquote>
+<p>Port -&gt; (integer)</p>
+<blockquote>
+<div>The port number that the cache engine is listening on.</div></blockquote>
+</div></blockquote>
+<p>SnapshotRetentionLimit -&gt; (integer)</p>
+<blockquote>
+<div><p>The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them. For example, if you set <tt class="docutils literal"><span class="pre">SnapshotRetentionLimit</span></tt> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If the value of <tt class="docutils literal"><span class="pre">SnapshotRetentionLimit</span></tt> is set to zero (0), backups are turned off.</p>
+</div>
+</div></blockquote>
+<p>SnapshotWindow -&gt; (string)</p>
+<blockquote>
+<div><p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).</p>
+<p>Example: <tt class="docutils literal"><span class="pre">05:00-09:00</span></tt></p>
+<p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p>
+<blockquote>
+<div><strong>Note:</strong> This parameter is only valid if the <tt class="docutils literal"><span class="pre">Engine</span></tt> parameter is <tt class="docutils literal"><span class="pre">redis</span></tt> .</div></blockquote>
 </div></blockquote>
 </div></blockquote>
 </div>
@@ -423,7 +462,7 @@ If the specified group's <em>autofailover</em> is enabled, you cannot mannualy p
           <a href="purchase-reserved-cache-nodes-offering.html" title="purchase-reserved-cache-nodes-offering">next</a> |</li>
         <li class="right">
           <a href="modify-cache-subnet-group.html" title="modify-cache-subnet-group">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">elasticache</a> &#187;</li> 
       </ul>
@@ -439,5 +478,5 @@ If the specified group's <em>autofailover</em> is enabled, you cannot mannualy p
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elasticache/modify-replication-group.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:16 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elasticache/modify-replication-group.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:14 GMT -->
 </html>

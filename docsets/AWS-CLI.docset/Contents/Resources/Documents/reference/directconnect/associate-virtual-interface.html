@@ -1,0 +1,427 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/directconnect/associate-virtual-interface.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:09:59 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>associate-virtual-interface &#8212; AWS CLI 1.11.61 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.11.61',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="directconnect" href="index.html" />
+    <link rel="next" title="confirm-connection" href="confirm-connection.html" />
+    <link rel="prev" title="associate-hosted-connection" href="associate-hosted-connection.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="confirm-connection.html" title="confirm-connection" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="associate-hosted-connection.html" title="associate-hosted-connection" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">directconnect</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="associate-hosted-connection.html" title="previous chapter (use the left arrow)">&#8592; associate-hosted-connection</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="confirm-connection.html" title="next chapter (use the right arrow)">confirm-connection &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">associate-virtual-interface</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/directconnect/associate-virtual-interface">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-directconnect"><em>directconnect</em></a> ]</p>
+<div class="section" id="associate-virtual-interface">
+<span id="cli-aws-directconnect-associate-virtual-interface"></span><h1>associate-virtual-interface<a name="//apple_ref/cpp/Command/aws directconnect associate-virtual-interface" class="dashAnchor" id="aws directconnect associate-virtual-interface"></a><a class="headerlink" href="#associate-virtual-interface" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Associates a virtual interface with a specified link aggregation group (LAG) or connection. Connectivity to AWS is temporarily interrupted as the virtual interface is being migrated. If the target connection or LAG has an associated virtual interface with a conflicting VLAN number or a conflicting IP address, the operation fails.</p>
+<p>Virtual interfaces associated with a hosted connection cannot be associated with a LAG; hosted connections must be migrated along with their virtual interfaces using  associate-hosted-connection .</p>
+<p>Hosted virtual interfaces (an interface for which the owner of the connection is not the owner of physical connection) can only be reassociated by the owner of the physical connection.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateVirtualInterface">AWS API Documentation</a></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  associate-virtual-interface
+--virtual-interface-id &lt;value&gt;
+--connection-id &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--virtual-interface-id" class="dashAnchor" id="virtual-interface-id"></a><span class="pre">--virtual-interface-id</span></tt> (string)</p>
+<blockquote>
+<div><p>The ID of the virtual interface.</p>
+<p>Example: dxvif-123dfg56</p>
+<p>Default: None</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--connection-id" class="dashAnchor" id="connection-id"></a><span class="pre">--connection-id</span></tt> (string)</p>
+<blockquote>
+<div><p>The ID of the LAG or connection with which to associate the virtual interface.</p>
+<p>Example: dxlag-abc123 or dxcon-abc123</p>
+<p>Default: None</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To associate a virtual interface with a connection</strong></p>
+<p>The following example associates the specified virtual interface with the specified LAG. Alternatively, to associate the virtual interface with a connection, specify the ID of an AWS Direct Connect connection for <tt class="docutils literal"><span class="pre">--connection-id</span></tt>; for example, <tt class="docutils literal"><span class="pre">dxcon-ffnikghc</span></tt>.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws directconnect associate-virtual-interface --connection-id dxlag-ffjhj9lx --virtual-interface-id dxvif-fgputw0j</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">"virtualInterfaceState"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+  <span class="s2">"asn"</span><span class="p">:</span> <span class="mi">65000</span><span class="p">,</span>
+  <span class="s2">"vlan"</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+  <span class="s2">"customerAddress"</span><span class="p">:</span> <span class="s2">"169.254.255.2/30"</span><span class="p">,</span>
+  <span class="s2">"ownerAccount"</span><span class="p">:</span> <span class="s2">"123456789012"</span><span class="p">,</span>
+  <span class="s2">"connectionId"</span><span class="p">:</span> <span class="s2">"dxlag-ffjhj9lx"</span><span class="p">,</span>
+  <span class="s2">"addressFamily"</span><span class="p">:</span> <span class="s2">"ipv4"</span><span class="p">,</span>
+  <span class="s2">"virtualGatewayId"</span><span class="p">:</span> <span class="s2">"vgw-38e90b51"</span><span class="p">,</span>
+  <span class="s2">"virtualInterfaceId"</span><span class="p">:</span> <span class="s2">"dxvif-fgputw0j"</span><span class="p">,</span>
+  <span class="s2">"authKey"</span><span class="p">:</span> <span class="s2">"0x123pK5_VBqv.UQ3kJ4123_"</span><span class="p">,</span>
+  <span class="s2">"routeFilterPrefixes"</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"CSVA1"</span><span class="p">,</span>
+  <span class="s2">"bgpPeers"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">"bgpStatus"</span><span class="p">:</span> <span class="s2">"down"</span><span class="p">,</span>
+          <span class="s2">"customerAddress"</span><span class="p">:</span> <span class="s2">"169.254.255.2/30"</span><span class="p">,</span>
+          <span class="s2">"addressFamily"</span><span class="p">:</span> <span class="s2">"ipv4"</span><span class="p">,</span>
+          <span class="s2">"authKey"</span><span class="p">:</span> <span class="s2">"0x123pK5_VBqv.UQ3kJ4123_"</span><span class="p">,</span>
+          <span class="s2">"bgpPeerState"</span><span class="p">:</span> <span class="s2">"deleting"</span><span class="p">,</span>
+          <span class="s2">"amazonAddress"</span><span class="p">:</span> <span class="s2">"169.254.255.1/30"</span><span class="p">,</span>
+          <span class="s2">"asn"</span><span class="p">:</span> <span class="mi">65000</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="s2">"bgpStatus"</span><span class="p">:</span> <span class="s2">"down"</span><span class="p">,</span>
+          <span class="s2">"customerAddress"</span><span class="p">:</span> <span class="s2">"169.254.255.2/30"</span><span class="p">,</span>
+          <span class="s2">"addressFamily"</span><span class="p">:</span> <span class="s2">"ipv4"</span><span class="p">,</span>
+          <span class="s2">"authKey"</span><span class="p">:</span> <span class="s2">"0x123pK5_VBqv.UQ3kJ4123_"</span><span class="p">,</span>
+          <span class="s2">"bgpPeerState"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+          <span class="s2">"amazonAddress"</span><span class="p">:</span> <span class="s2">"169.254.255.1/30"</span><span class="p">,</span>
+          <span class="s2">"asn"</span><span class="p">:</span> <span class="mi">65000</span>
+      <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"customerRouterConfig"</span><span class="p">:</span> <span class="s2">"&lt;?xml version=</span><span class="se">\"</span><span class="s2">1.0</span><span class="se">\"</span><span class="s2"> encoding=</span><span class="se">\"</span><span class="s2">UTF-8</span><span class="se">\"</span><span class="s2">?&gt;</span><span class="se">\n</span><span class="s2">&lt;logical_connection id=</span><span class="se">\"</span><span class="s2">dxvif-fgputw0j</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\n</span><span class="s2">  &lt;vlan&gt;123&lt;/vlan&gt;</span><span class="se">\n</span><span class="s2">  &lt;customer_address&gt;169.254.255.2/30&lt;/customer_address&gt;</span><span class="se">\n</span><span class="s2">  &lt;amazon_address&gt;169.254.255.1/30&lt;/amazon_address&gt;</span><span class="se">\n</span><span class="s2">  &lt;bgp_asn&gt;65000&lt;/bgp_asn&gt;</span><span class="se">\n</span><span class="s2">  &lt;bgp_auth_key&gt;0x123pK5_VBqv.UQ3kJ4123_&lt;/bgp_auth_key&gt;</span><span class="se">\n</span><span class="s2">  &lt;amazon_bgp_asn&gt;7224&lt;/amazon_bgp_asn&gt;</span><span class="se">\n</span><span class="s2">  &lt;connection_type&gt;private&lt;/connection_type&gt;</span><span class="se">\n</span><span class="s2">&lt;/logical_connection&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span>
+  <span class="s2">"amazonAddress"</span><span class="p">:</span> <span class="s2">"169.254.255.1/30"</span><span class="p">,</span>
+  <span class="s2">"virtualInterfaceType"</span><span class="p">:</span> <span class="s2">"private"</span><span class="p">,</span>
+  <span class="s2">"virtualInterfaceName"</span><span class="p">:</span> <span class="s2">"VIF1A"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>ownerAccount -&gt; (string)</p>
+<blockquote>
+<div>The AWS account that will own the new virtual interface.</div></blockquote>
+<p>virtualInterfaceId -&gt; (string)</p>
+<blockquote>
+<div><p>The ID of the virtual interface.</p>
+<p>Example: dxvif-123dfg56</p>
+<p>Default: None</p>
+</div></blockquote>
+<p>location -&gt; (string)</p>
+<blockquote>
+<div><p>Where the connection is located.</p>
+<p>Example: EqSV5</p>
+<p>Default: None</p>
+</div></blockquote>
+<p>connectionId -&gt; (string)</p>
+<blockquote>
+<div><p>The ID of the connection. This field is also used as the ID type for operations that use multiple connection types (LAG, interconnect, and/or connection).</p>
+<p>Example: dxcon-fg5678gh</p>
+<p>Default: None</p>
+</div></blockquote>
+<p>virtualInterfaceType -&gt; (string)</p>
+<blockquote>
+<div><p>The type of virtual interface.</p>
+<p>Example: private (Amazon VPC) or public (Amazon S3, Amazon DynamoDB, and so on.)</p>
+</div></blockquote>
+<p>virtualInterfaceName -&gt; (string)</p>
+<blockquote>
+<div><p>The name of the virtual interface assigned by the customer.</p>
+<p>Example: "My VPC"</p>
+</div></blockquote>
+<p>vlan -&gt; (integer)</p>
+<blockquote>
+<div><p>The VLAN ID.</p>
+<p>Example: 101</p>
+</div></blockquote>
+<p>asn -&gt; (integer)</p>
+<blockquote>
+<div><p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+<p>Example: 65000</p>
+</div></blockquote>
+<p>authKey -&gt; (string)</p>
+<blockquote>
+<div><p>The authentication key for BGP configuration.</p>
+<p>Example: asdf34example</p>
+</div></blockquote>
+<p>amazonAddress -&gt; (string)</p>
+<blockquote>
+<div><p>IP address assigned to the Amazon interface.</p>
+<p>Example: 192.168.1.1/30 or 2001:db8::1/125</p>
+</div></blockquote>
+<p>customerAddress -&gt; (string)</p>
+<blockquote>
+<div><p>IP address assigned to the customer interface.</p>
+<p>Example: 192.168.1.2/30 or 2001:db8::2/125</p>
+</div></blockquote>
+<p>addressFamily -&gt; (string)</p>
+<blockquote>
+<div><p>Indicates the address family for the BGP peer.</p>
+<ul class="simple">
+<li><strong>ipv4</strong> : IPv4 address family</li>
+<li><strong>ipv6</strong> : IPv6 address family</li>
+</ul>
+</div></blockquote>
+<p>virtualInterfaceState -&gt; (string)</p>
+<blockquote>
+<div><p>State of the virtual interface.</p>
+<ul class="simple">
+<li><strong>Confirming</strong> : The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</li>
+<li><strong>Verifying</strong> : This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</li>
+<li><strong>Pending</strong> : A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</li>
+<li><strong>Available</strong> : A virtual interface that is able to forward traffic.</li>
+<li><strong>Down</strong> : A virtual interface that is BGP down.</li>
+<li><strong>Deleting</strong> : A virtual interface is in this state immediately after calling  delete-virtual-interface until it can no longer forward traffic.</li>
+<li><strong>Deleted</strong> : A virtual interface that cannot forward traffic.</li>
+<li><strong>Rejected</strong> : The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the 'Confirming' state is deleted by the virtual interface owner, the virtual interface will enter the 'Rejected' state.</li>
+</ul>
+</div></blockquote>
+<p>customerRouterConfig -&gt; (string)</p>
+<blockquote>
+<div>Information for generating the customer router configuration.</div></blockquote>
+<p>virtualGatewayId -&gt; (string)</p>
+<blockquote>
+<div><p>The ID of the virtual private gateway to a VPC. This only applies to private virtual interfaces.</p>
+<p>Example: vgw-123er56</p>
+</div></blockquote>
+<p>routeFilterPrefixes -&gt; (list)</p>
+<blockquote>
+<div><p>A list of routes to be advertised to the AWS network in this region (public virtual interface).</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A route filter prefix that the customer can advertise through Border Gateway Protocol (BGP) over a public virtual interface.</p>
+<p>cidr -&gt; (string)</p>
+<blockquote>
+<div><p>CIDR notation for the advertised route. Multiple routes are separated by commas.</p>
+<p>IPv6 CIDRs must be at least a /64 or shorter</p>
+<p>Example: 10.10.10.0/24,10.10.11.0/24,2001:db8::/64</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>bgpPeers -&gt; (list)</p>
+<blockquote>
+<div><p>A list of the BGP peers configured on this virtual interface.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A structure containing information about a BGP peer.</p>
+<p>asn -&gt; (integer)</p>
+<blockquote>
+<div><p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+<p>Example: 65000</p>
+</div></blockquote>
+<p>authKey -&gt; (string)</p>
+<blockquote>
+<div><p>The authentication key for BGP configuration.</p>
+<p>Example: asdf34example</p>
+</div></blockquote>
+<p>addressFamily -&gt; (string)</p>
+<blockquote>
+<div><p>Indicates the address family for the BGP peer.</p>
+<ul class="simple">
+<li><strong>ipv4</strong> : IPv4 address family</li>
+<li><strong>ipv6</strong> : IPv6 address family</li>
+</ul>
+</div></blockquote>
+<p>amazonAddress -&gt; (string)</p>
+<blockquote>
+<div><p>IP address assigned to the Amazon interface.</p>
+<p>Example: 192.168.1.1/30 or 2001:db8::1/125</p>
+</div></blockquote>
+<p>customerAddress -&gt; (string)</p>
+<blockquote>
+<div><p>IP address assigned to the customer interface.</p>
+<p>Example: 192.168.1.2/30 or 2001:db8::2/125</p>
+</div></blockquote>
+<p>bgpPeerState -&gt; (string)</p>
+<blockquote>
+<div><p>The state of the BGP peer.</p>
+<ul class="simple">
+<li><strong>Verifying</strong> : The BGP peering addresses or ASN require validation before the BGP peer can be created. This state only applies to BGP peers on a public virtual interface.</li>
+<li><strong>Pending</strong> : The BGP peer has been created, and is in this state until it is ready to be established.</li>
+<li><strong>Available</strong> : The BGP peer can be established.</li>
+<li><strong>Deleting</strong> : The BGP peer is in the process of being deleted.</li>
+<li><strong>Deleted</strong> : The BGP peer has been deleted and cannot be established.</li>
+</ul>
+</div></blockquote>
+<p>bgpStatus -&gt; (string)</p>
+<blockquote>
+<div><p>The Up/Down state of the BGP peer.</p>
+<ul class="simple">
+<li><strong>Up</strong> : The BGP peer is established.</li>
+<li><strong>Down</strong> : The BGP peer is down.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="associate-hosted-connection.html" title="previous chapter (use the left arrow)">&#8592; associate-hosted-connection</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="confirm-connection.html" title="next chapter (use the right arrow)">confirm-connection &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="confirm-connection.html" title="confirm-connection">next</a> |</li>
+        <li class="right">
+          <a href="associate-hosted-connection.html" title="associate-hosted-connection">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">directconnect</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/directconnect/associate-virtual-interface.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:09:59 GMT -->
+</html>

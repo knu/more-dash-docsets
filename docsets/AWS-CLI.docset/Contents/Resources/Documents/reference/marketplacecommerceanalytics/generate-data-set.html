@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/marketplacecommerceanalytics/generate-data-set.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:22 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/marketplacecommerceanalytics/generate-data-set.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:21 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>generate-data-set &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>generate-data-set &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="marketplacecommerceanalytics" href="index.html" />
-    <link rel="next" title="meteringmarketplace" href="../meteringmarketplace/index.html" />
+    <link rel="next" title="start-support-data-export" href="start-support-data-export.html" />
     <link rel="prev" title="marketplacecommerceanalytics" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
@@ -61,10 +61,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
         <li class="right">
-          <a href="../meteringmarketplace/index.html" title="meteringmarketplace" accesskey="N">next</a> |</li>
+          <a href="start-support-data-export.html" title="start-support-data-export" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="index.html" title="marketplacecommerceanalytics" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">marketplacecommerceanalytics</a> &#187;</li> 
       </ul>
@@ -78,7 +78,7 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="../meteringmarketplace/index.html" title="next chapter (use the right arrow)">meteringmarketplace &#8594;</a></li>
+          <li><a href="start-support-data-export.html" title="next chapter (use the right arrow)">start-support-data-export &#8594;</a></li>
       </ul>
     </div>
   
@@ -111,7 +111,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/marketplacecommerceanalytics/generate-data-set">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/marketplacecommerceanalytics/generate-data-set">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -129,6 +129,7 @@
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
 <p>Given a data set type and data set publication date, asynchronously publishes the requested data set to the specified S3 bucket and notifies the specified SNS topic once the data is available. Returns a unique request identifier that can be used to correlate requests with notifications from the SNS topic. Data sets will be published in comma-separated values (CSV) format with the file name {data_set_type}_YYYY-MM-DD.csv. If a file with the same name already exists (e.g. if the same data set is requested twice), the original file will be overwritten by the new file. Requires a Role with an attached permissions policy providing Allow permissions for the following actions: s3:PutObject, s3:GetBucketLocation, sns:GetTopicAttributes, sns:Publish, iam:GetRolePolicy.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet">AWS API Documentation</a></p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
@@ -141,7 +142,7 @@
 --sns-topic-arn &lt;value&gt;
 [--customer-defined-values &lt;value&gt;]
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
@@ -162,12 +163,14 @@
 <li><em>monthly_revenue_annual_subscriptions</em> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li>
 <li><em>disbursed_amount_by_product</em> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li>
 <li><em>disbursed_amount_by_product_with_uncollected_funds</em> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds.</li>
+<li><em>disbursed_amount_by_instance_hours</em> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li>
 <li><em>disbursed_amount_by_customer_geo</em> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li>
 <li><em>disbursed_amount_by_age_of_uncollected_funds</em> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li>
 <li><em>disbursed_amount_by_age_of_disbursed_funds</em> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li>
 <li><em>customer_profile_by_industry</em> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
 <li><em>customer_profile_by_revenue</em> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
 <li><em>customer_profile_by_geography</em> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
+<li><em>sales_compensation_billed_revenue</em> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li>
 </ul>
 <p>Possible values:</p>
 <ul class="simple">
@@ -183,12 +186,14 @@
 <li><tt class="docutils literal"><span class="pre">monthly_revenue_annual_subscriptions</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">disbursed_amount_by_product</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">disbursed_amount_by_product_with_uncollected_funds</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">disbursed_amount_by_instance_hours</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">disbursed_amount_by_customer_geo</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">disbursed_amount_by_age_of_uncollected_funds</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">disbursed_amount_by_age_of_disbursed_funds</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">customer_profile_by_industry</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">customer_profile_by_revenue</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">customer_profile_by_geography</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">sales_compensation_billed_revenue</span></tt></li>
 </ul>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--data-set-publication-date" class="dashAnchor" id="data-set-publication-date"></a><span class="pre">--data-set-publication-date</span></tt> (timestamp)
@@ -204,7 +209,7 @@ Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--customer-defined-values" class="dashAnchor" id="customer-defined-values"></a><span class="pre">--customer-defined-values</span></tt> (map)
 (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file. These key-value pairs can be used to correlated responses with tracking information from other systems.</p>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">KeyName1</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">KeyName2</span><span class="o">=</span><span class="n">string</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">KeyName1</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">KeyName2</span><span class="o">=</span><span class="n">string</span>
 </pre></div>
 </div>
 <p>JSON Syntax:</p>
@@ -213,8 +218,8 @@ Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="output">
 <h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
@@ -236,7 +241,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
           <span class="divider">/</span>
           
         </li>
-          <li><a href="../meteringmarketplace/index.html" title="next chapter (use the right arrow)">meteringmarketplace &#8594;</a></li>
+          <li><a href="start-support-data-export.html" title="next chapter (use the right arrow)">start-support-data-export &#8594;</a></li>
       </ul>
     </div>
   
@@ -257,10 +262,10 @@ Prints a sample input JSON to standard output. Note the specified operation is n
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index">index</a></li>
         <li class="right">
-          <a href="../meteringmarketplace/index.html" title="meteringmarketplace">next</a> |</li>
+          <a href="start-support-data-export.html" title="start-support-data-export">next</a> |</li>
         <li class="right">
           <a href="index.html" title="marketplacecommerceanalytics">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">marketplacecommerceanalytics</a> &#187;</li> 
       </ul>
@@ -276,5 +281,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/marketplacecommerceanalytics/generate-data-set.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:22 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/marketplacecommerceanalytics/generate-data-set.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:21 GMT -->
 </html>

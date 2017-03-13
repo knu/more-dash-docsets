@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/sns/set-sms-attributes.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:29 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>set-sms-attributes &#8212; AWS CLI 1.11.61 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.11.61',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="sns" href="index.html" />
+    <link rel="next" title="set-subscription-attributes" href="set-subscription-attributes.html" />
+    <link rel="prev" title="set-platform-application-attributes" href="set-platform-application-attributes.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="set-subscription-attributes.html" title="set-subscription-attributes" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="set-platform-application-attributes.html" title="set-platform-application-attributes" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">sns</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="set-platform-application-attributes.html" title="previous chapter (use the left arrow)">&#8592; set-platform-application-attributes</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="set-subscription-attributes.html" title="next chapter (use the right arrow)">set-subscription-attributes &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">set-sms-attributes</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/sns/set-sms-attributes">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-sns"><em>sns</em></a> ]</p>
+<div class="section" id="set-sms-attributes">
+<span id="cli-aws-sns-set-sms-attributes"></span><h1>set-sms-attributes<a name="//apple_ref/cpp/Command/aws sns set-sms-attributes" class="dashAnchor" id="aws sns set-sms-attributes"></a><a class="headerlink" href="#set-sms-attributes" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Use this request to set the default settings for sending SMS messages and receiving daily SMS usage reports.</p>
+<p>You can override some of these settings for a single message when you use the <tt class="docutils literal"><span class="pre">publish</span></tt> action with the <tt class="docutils literal"><span class="pre">MessageAttributes.entry.N</span></tt> parameter. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending an SMS Message</a> in the <em>Amazon SNS Developer Guide</em> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">AWS API Documentation</a></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  set-sms-attributes
+--attributes &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--attributes" class="dashAnchor" id="attributes"></a><span class="pre">--attributes</span></tt> (map)</p>
+<blockquote>
+<div><p>The default settings for sending SMS messages from your account. You can set values for the following attribute names:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">MonthlySpendLimit</span></tt> &#8211; The maximum amount in USD that you are willing to spend each month to send SMS messages. When Amazon SNS determines that sending an SMS message would incur a cost that exceeds this limit, it stops sending SMS messages within minutes.</div></blockquote>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Amazon SNS stops sending SMS messages within minutes of the limit being crossed. During that interval, if you continue to send SMS messages, you will incur costs that exceed your limit.</p>
+</div>
+<p>By default, the spend limit is set to the maximum allowed by Amazon SNS. If you want to exceed the maximum, contact <a class="reference external" href="https://aws.amazon.com/premiumsupport/">AWS Support</a> or your AWS sales representative for a service limit increase.</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">DeliveryStatusIAMRole</span></tt> &#8211; The ARN of the IAM role that allows Amazon SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS message that you send, Amazon SNS writes a log that includes the message price, the success or failure status, the reason for failure (if the message failed), the message dwell time, and other information.</p>
+<p><tt class="docutils literal"><span class="pre">DeliveryStatusSuccessSamplingRate</span></tt> &#8211; The percentage of successful SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The value can be an integer from 0 - 100. For example, to write logs only for failed deliveries, set this value to <tt class="docutils literal"><span class="pre">0</span></tt> . To write logs for 10% of your successful deliveries, set it to <tt class="docutils literal"><span class="pre">10</span></tt> .</p>
+<p><tt class="docutils literal"><span class="pre">DefaultSenderID</span></tt> &#8211; A string, such as your business brand, that is displayed as the sender on the receiving device. Support for sender IDs varies by country. The sender ID can be 1 - 11 alphanumeric characters, and it must contain at least one letter.</p>
+<p><tt class="docutils literal"><span class="pre">DefaultSMSType</span></tt> &#8211; The type of SMS message that you will send by default. You can assign the following values:</p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Promotional</span></tt> &#8211; (Default) Noncritical messages, such as marketing messages. Amazon SNS optimizes the message delivery to incur the lowest cost.</li>
+<li><tt class="docutils literal"><span class="pre">Transactional</span></tt> &#8211; Critical messages that support customer transactions, such as one-time passcodes for multi-factor authentication. Amazon SNS optimizes the message delivery to achieve the highest reliability.</li>
+</ul>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">UsageReportS3Bucket</span></tt> &#8211; The name of the Amazon S3 bucket to receive daily SMS usage reports from Amazon SNS. Each day, Amazon SNS will deliver a usage report as a CSV file to the bucket. The report includes the following information for each SMS message that was successfully delivered by your account:</div></blockquote>
+<ul class="simple">
+<li>Time that the message was published (in UTC)</li>
+<li>Message ID</li>
+<li>Destination phone number</li>
+<li>Message type</li>
+<li>Delivery status</li>
+<li>Message price (in USD)</li>
+<li>Part number (a message is split into multiple parts if it is too long for a single message)</li>
+<li>Total number of parts</li>
+</ul>
+<p>To receive the report, the bucket must have a policy that allows the Amazon SNS service principle to perform the <tt class="docutils literal"><span class="pre">s3:PutObject</span></tt> and <tt class="docutils literal"><span class="pre">s3:GetBucketLocation</span></tt> actions.</p>
+<p>For an example bucket policy and usage report, see <a class="reference external" href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the <em>Amazon SNS Developer Guide</em> .</p>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">KeyName1</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">KeyName2</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{"string": "string"
+  ...}</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="set-platform-application-attributes.html" title="previous chapter (use the left arrow)">&#8592; set-platform-application-attributes</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="set-subscription-attributes.html" title="next chapter (use the right arrow)">set-subscription-attributes &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="set-subscription-attributes.html" title="set-subscription-attributes">next</a> |</li>
+        <li class="right">
+          <a href="set-platform-application-attributes.html" title="set-platform-application-attributes">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">sns</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/sns/set-sms-attributes.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:29 GMT -->
+</html>

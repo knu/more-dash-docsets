@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/dynamodb/update-table.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:01 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/dynamodb/update-table.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:09:59 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>update-table &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>update-table &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="dynamodb" href="index.html" />
-    <link rel="next" title="wait" href="wait/index.html" />
+    <link rel="next" title="update-time-to-live" href="update-time-to-live.html" />
     <link rel="prev" title="update-item" href="update-item.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
@@ -61,10 +61,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
         <li class="right">
-          <a href="wait/index.html" title="wait" accesskey="N">next</a> |</li>
+          <a href="update-time-to-live.html" title="update-time-to-live" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="update-item.html" title="update-item" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">dynamodb</a> &#187;</li> 
       </ul>
@@ -78,7 +78,7 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="wait/index.html" title="next chapter (use the right arrow)">wait &#8594;</a></li>
+          <li><a href="update-time-to-live.html" title="next chapter (use the right arrow)">update-time-to-live &#8594;</a></li>
       </ul>
     </div>
   
@@ -112,7 +112,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/dynamodb/update-table">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/dynamodb/update-table">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -135,10 +135,11 @@
 <li>Modify the provisioned throughput settings of the table.</li>
 <li>Enable or disable Streams on the table.</li>
 <li>Remove a global secondary index from the table.</li>
-<li>Create a new global secondary index on the table. Once the index begins backfilling, you can use <em>update-table</em> to perform other operations.</li>
+<li>Create a new global secondary index on the table. Once the index begins backfilling, you can use <tt class="docutils literal"><span class="pre">update-table</span></tt> to perform other operations.</li>
 </ul>
 <blockquote>
-<div><em>update-table</em> is an asynchronous operation; while it is executing, the table status changes from <tt class="docutils literal"><span class="pre">ACTIVE</span></tt> to <tt class="docutils literal"><span class="pre">UPDATING</span></tt> . While it is <tt class="docutils literal"><span class="pre">UPDATING</span></tt> , you cannot issue another <em>update-table</em> request. When the table returns to the <tt class="docutils literal"><span class="pre">ACTIVE</span></tt> state, the <em>update-table</em> operation is complete.</div></blockquote>
+<div><tt class="docutils literal"><span class="pre">update-table</span></tt> is an asynchronous operation; while it is executing, the table status changes from <tt class="docutils literal"><span class="pre">ACTIVE</span></tt> to <tt class="docutils literal"><span class="pre">UPDATING</span></tt> . While it is <tt class="docutils literal"><span class="pre">UPDATING</span></tt> , you cannot issue another <tt class="docutils literal"><span class="pre">update-table</span></tt> request. When the table returns to the <tt class="docutils literal"><span class="pre">ACTIVE</span></tt> state, the <tt class="docutils literal"><span class="pre">update-table</span></tt> operation is complete.</div></blockquote>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable">AWS API Documentation</a></p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
@@ -149,14 +150,14 @@
 [--global-secondary-index-updates &lt;value&gt;]
 [--stream-specification &lt;value&gt;]
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
 <h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--attribute-definitions" class="dashAnchor" id="attribute-definitions"></a><span class="pre">--attribute-definitions</span></tt> (list)</p>
 <blockquote>
-<div>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <em>attribute-definitions</em> must include the key element(s) of the new index.</div></blockquote>
+<div>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <tt class="docutils literal"><span class="pre">attribute-definitions</span></tt> must include the key element(s) of the new index.</div></blockquote>
 <p>Shorthand Syntax:</p>
 <div class="highlight-python"><pre>AttributeName=string,AttributeType=string ...</pre>
 </div>
@@ -174,15 +175,13 @@
 <div>The name of the table to be updated.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--provisioned-throughput" class="dashAnchor" id="provisioned-throughput"></a><span class="pre">--provisioned-throughput</span></tt> (structure)</p>
 <blockquote>
-<div><p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <em>update-table</em> operation.</p>
-<p>For current minimum and maximum provisioned throughput values, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
-</div></blockquote>
+<div>The new provisioned throughput settings for the specified table or index.</div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">ReadCapacityUnits</span><span class="o">=</span><span class="nb">long</span><span class="p">,</span><span class="n">WriteCapacityUnits</span><span class="o">=</span><span class="nb">long</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">ReadCapacityUnits</span><span class="o">=</span><span class="nb">long</span><span class="p">,</span><span class="n">WriteCapacityUnits</span><span class="o">=</span><span class="nb">long</span>
 </pre></div>
 </div>
 <p>JSON Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">"ReadCapacityUnits"</span><span class="p">:</span> <span class="nb">long</span><span class="p">,</span>
   <span class="s2">"WriteCapacityUnits"</span><span class="p">:</span> <span class="nb">long</span>
 <span class="p">}</span>
@@ -192,9 +191,9 @@
 <blockquote>
 <div><p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p>
 <ul class="simple">
-<li><em>Create</em> - add a new global secondary index to the table.</li>
-<li><em>Update</em> - modify the provisioned throughput settings of an existing global secondary index.</li>
-<li><em>Delete</em> - remove a global secondary index from the table.</li>
+<li><tt class="docutils literal"><span class="pre">Create</span></tt> - add a new global secondary index to the table.</li>
+<li><tt class="docutils literal"><span class="pre">Update</span></tt> - modify the provisioned throughput settings of an existing global secondary index.</li>
+<li><tt class="docutils literal"><span class="pre">Delete</span></tt> - remove a global secondary index from the table.</li>
 </ul>
 <p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
 </div></blockquote>
@@ -238,15 +237,15 @@
 <div><p>Represents the DynamoDB Streams configuration for the table.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">You will receive a <em>ResourceInUseException</em> if you attempt to enable a stream on a table that already has a stream, or if you attempt to disable a stream on a table which does not have a stream.</p>
+<p class="last">You will receive a <tt class="docutils literal"><span class="pre">ResourceInUseException</span></tt> if you attempt to enable a stream on a table that already has a stream, or if you attempt to disable a stream on a table which does not have a stream.</p>
 </div>
 </div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">StreamEnabled</span><span class="o">=</span><span class="n">boolean</span><span class="p">,</span><span class="n">StreamViewType</span><span class="o">=</span><span class="n">string</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">StreamEnabled</span><span class="o">=</span><span class="n">boolean</span><span class="p">,</span><span class="n">StreamViewType</span><span class="o">=</span><span class="n">string</span>
 </pre></div>
 </div>
 <p>JSON Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">"StreamEnabled"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
   <span class="s2">"StreamViewType"</span><span class="p">:</span> <span class="s2">"NEW_IMAGE"</span><span class="o">|</span><span class="s2">"OLD_IMAGE"</span><span class="o">|</span><span class="s2">"NEW_AND_OLD_IMAGES"</span><span class="o">|</span><span class="s2">"KEYS_ONLY"</span>
 <span class="p">}</span>
@@ -254,8 +253,8 @@
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
@@ -265,7 +264,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div class="highlight-python"><pre>aws dynamodb update-table --table-name MusicCollection --provisioned-throughput ReadCapacityUnits=10,WriteCapacityUnits=10</pre>
 </div>
 <p>Output:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">"TableDescription"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"AttributeDefinitions"</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
@@ -307,14 +306,14 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
 <p>TableDescription -&gt; (structure)</p>
 <blockquote>
-<div><p>Represents the properties of a table.</p>
+<div><p>Represents the properties of the table.</p>
 <p>AttributeDefinitions -&gt; (list)</p>
 <blockquote>
-<div><p>An array of <em>AttributeDefinition</em> objects. Each of these objects describes one attribute in the table and index key schema.</p>
-<p>Each <em>AttributeDefinition</em> object in this array is composed of:</p>
+<div><p>An array of <tt class="docutils literal"><span class="pre">AttributeDefinition</span></tt> objects. Each of these objects describes one attribute in the table and index key schema.</p>
+<p>Each <tt class="docutils literal"><span class="pre">AttributeDefinition</span></tt> object in this array is composed of:</p>
 <ul class="simple">
-<li><em>AttributeName</em> - The name of the attribute.</li>
-<li><em>AttributeType</em> - The data type for the attribute.</li>
+<li><tt class="docutils literal"><span class="pre">AttributeName</span></tt> - The name of the attribute.</li>
+<li><tt class="docutils literal"><span class="pre">AttributeType</span></tt> - The data type for the attribute.</li>
 </ul>
 <p>(structure)</p>
 <blockquote>
@@ -338,10 +337,10 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div>The name of the table.</div></blockquote>
 <p>KeySchema -&gt; (list)</p>
 <blockquote>
-<div><p>The primary key structure for the table. Each <em>KeySchemaElement</em> consists of:</p>
+<div><p>The primary key structure for the table. Each <tt class="docutils literal"><span class="pre">KeySchemaElement</span></tt> consists of:</p>
 <ul class="simple">
-<li><em>AttributeName</em> - The name of the attribute.</li>
-<li><em>KeyType</em> - The role of the attribute:<ul>
+<li><tt class="docutils literal"><span class="pre">AttributeName</span></tt> - The name of the attribute.</li>
+<li><tt class="docutils literal"><span class="pre">KeyType</span></tt> - The role of the attribute:<ul>
 <li><tt class="docutils literal"><span class="pre">HASH</span></tt> - partition key</li>
 <li><tt class="docutils literal"><span class="pre">RANGE</span></tt> - sort key</li>
 </ul>
@@ -356,8 +355,8 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <p>(structure)</p>
 <blockquote>
 <div><p>Represents <em>a single element</em> of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.</p>
-<p>A <em>KeySchemaElement</em> represents exactly one attribute of the primary key. For example, a simple primary key would be represented by one <em>KeySchemaElement</em> (for the partition key). A composite primary key would require one <em>KeySchemaElement</em> for the partition key, and another <em>KeySchemaElement</em> for the sort key.</p>
-<p>A <em>KeySchemaElement</em> must be a scalar, top-level attribute (not a nested attribute). The data type must be one of String, Number, or Binary. The attribute cannot be nested within a List or a Map.</p>
+<p>A <tt class="docutils literal"><span class="pre">KeySchemaElement</span></tt> represents exactly one attribute of the primary key. For example, a simple primary key would be represented by one <tt class="docutils literal"><span class="pre">KeySchemaElement</span></tt> (for the partition key). A composite primary key would require one <tt class="docutils literal"><span class="pre">KeySchemaElement</span></tt> for the partition key, and another <tt class="docutils literal"><span class="pre">KeySchemaElement</span></tt> for the sort key.</p>
+<p>A <tt class="docutils literal"><span class="pre">KeySchemaElement</span></tt> must be a scalar, top-level attribute (not a nested attribute). The data type must be one of String, Number, or Binary. The attribute cannot be nested within a List or a Map.</p>
 <p>AttributeName -&gt; (string)</p>
 <blockquote>
 <div>The name of a key attribute.</div></blockquote>
@@ -380,10 +379,10 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <blockquote>
 <div><p>The current state of the table:</p>
 <ul class="simple">
-<li><em>CREATING</em> - The table is being created.</li>
-<li><em>UPDATING</em> - The table is being updated.</li>
-<li><em>DELETING</em> - The table is being deleted.</li>
-<li><em>ACTIVE</em> - The table is ready for use.</li>
+<li><tt class="docutils literal"><span class="pre">CREATING</span></tt> - The table is being created.</li>
+<li><tt class="docutils literal"><span class="pre">UPDATING</span></tt> - The table is being updated.</li>
+<li><tt class="docutils literal"><span class="pre">DELETING</span></tt> - The table is being deleted.</li>
+<li><tt class="docutils literal"><span class="pre">ACTIVE</span></tt> - The table is ready for use.</li>
 </ul>
 </div></blockquote>
 <p>CreationDateTime -&gt; (timestamp)</p>
@@ -403,10 +402,10 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div>The number of provisioned throughput decreases for this table during this UTC calendar day. For current maximums on provisioned throughput decreases, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <em>Amazon DynamoDB Developer Guide</em> .</div></blockquote>
 <p>ReadCapacityUnits -&gt; (long)</p>
 <blockquote>
-<div>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <em>ThrottlingException</em> . Eventually consistent reads require less effort than strongly consistent reads, so a setting of 50 <em>ReadCapacityUnits</em> per second provides 100 eventually consistent <em>ReadCapacityUnits</em> per second.</div></blockquote>
+<div>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <tt class="docutils literal"><span class="pre">ThrottlingException</span></tt> . Eventually consistent reads require less effort than strongly consistent reads, so a setting of 50 <tt class="docutils literal"><span class="pre">ReadCapacityUnits</span></tt> per second provides 100 eventually consistent <tt class="docutils literal"><span class="pre">ReadCapacityUnits</span></tt> per second.</div></blockquote>
 <p>WriteCapacityUnits -&gt; (long)</p>
 <blockquote>
-<div>The maximum number of writes consumed per second before DynamoDB returns a <em>ThrottlingException</em> .</div></blockquote>
+<div>The maximum number of writes consumed per second before DynamoDB returns a <tt class="docutils literal"><span class="pre">ThrottlingException</span></tt> .</div></blockquote>
 </div></blockquote>
 <p>TableSizeBytes -&gt; (long)</p>
 <blockquote>
@@ -421,20 +420,20 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <blockquote>
 <div><p>Represents one or more local secondary indexes on the table. Each index is scoped to a given partition key value. Tables with one or more local secondary indexes are subject to an item collection size limit, where the amount of data within a given item collection cannot exceed 10 GB. Each element is composed of:</p>
 <ul class="simple">
-<li><em>IndexName</em> - The name of the local secondary index.</li>
-<li><em>KeySchema</em> - Specifies the complete index key schema. The attribute names in the key schema must be between 1 and 255 characters (inclusive). The key schema must begin with the same partition key as the table.</li>
-<li><em>Projection</em> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:<ul>
-<li><em>ProjectionType</em> - One of the following:<ul>
+<li><tt class="docutils literal"><span class="pre">IndexName</span></tt> - The name of the local secondary index.</li>
+<li><tt class="docutils literal"><span class="pre">KeySchema</span></tt> - Specifies the complete index key schema. The attribute names in the key schema must be between 1 and 255 characters (inclusive). The key schema must begin with the same partition key as the table.</li>
+<li><tt class="docutils literal"><span class="pre">Projection</span></tt> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:<ul>
+<li><tt class="docutils literal"><span class="pre">ProjectionType</span></tt> - One of the following:<ul>
 <li><tt class="docutils literal"><span class="pre">KEYS_ONLY</span></tt> - Only the index and primary keys are projected into the index.</li>
-<li><tt class="docutils literal"><span class="pre">INCLUDE</span></tt> - Only the specified table attributes are projected into the index. The list of projected attributes are in <em>NonKeyAttributes</em> .</li>
+<li><tt class="docutils literal"><span class="pre">INCLUDE</span></tt> - Only the specified table attributes are projected into the index. The list of projected attributes are in <tt class="docutils literal"><span class="pre">NonKeyAttributes</span></tt> .</li>
 <li><tt class="docutils literal"><span class="pre">ALL</span></tt> - All of the table attributes are projected into the index.</li>
 </ul>
 </li>
-<li><em>NonKeyAttributes</em> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <em>NonKeyAttributes</em> , summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</li>
+<li><tt class="docutils literal"><span class="pre">NonKeyAttributes</span></tt> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <tt class="docutils literal"><span class="pre">NonKeyAttributes</span></tt> , summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</li>
 </ul>
 </li>
-<li><em>IndexSizeBytes</em> - Represents the total size of the index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</li>
-<li><em>ItemCount</em> - Represents the number of items in the index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</li>
+<li><tt class="docutils literal"><span class="pre">IndexSizeBytes</span></tt> - Represents the total size of the index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</li>
+<li><tt class="docutils literal"><span class="pre">ItemCount</span></tt> - Represents the number of items in the index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</li>
 </ul>
 <p>If the table is in the <tt class="docutils literal"><span class="pre">DELETING</span></tt> state, no information about indexes will be returned.</p>
 <p>(structure)</p>
@@ -458,8 +457,8 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <p>(structure)</p>
 <blockquote>
 <div><p>Represents <em>a single element</em> of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.</p>
-<p>A <em>KeySchemaElement</em> represents exactly one attribute of the primary key. For example, a simple primary key would be represented by one <em>KeySchemaElement</em> (for the partition key). A composite primary key would require one <em>KeySchemaElement</em> for the partition key, and another <em>KeySchemaElement</em> for the sort key.</p>
-<p>A <em>KeySchemaElement</em> must be a scalar, top-level attribute (not a nested attribute). The data type must be one of String, Number, or Binary. The attribute cannot be nested within a List or a Map.</p>
+<p>A <tt class="docutils literal"><span class="pre">KeySchemaElement</span></tt> represents exactly one attribute of the primary key. For example, a simple primary key would be represented by one <tt class="docutils literal"><span class="pre">KeySchemaElement</span></tt> (for the partition key). A composite primary key would require one <tt class="docutils literal"><span class="pre">KeySchemaElement</span></tt> for the partition key, and another <tt class="docutils literal"><span class="pre">KeySchemaElement</span></tt> for the sort key.</p>
+<p>A <tt class="docutils literal"><span class="pre">KeySchemaElement</span></tt> must be a scalar, top-level attribute (not a nested attribute). The data type must be one of String, Number, or Binary. The attribute cannot be nested within a List or a Map.</p>
 <p>AttributeName -&gt; (string)</p>
 <blockquote>
 <div>The name of a key attribute.</div></blockquote>
@@ -480,20 +479,20 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 </div></blockquote>
 <p>Projection -&gt; (structure)</p>
 <blockquote>
-<div><p>Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
+<div><p>Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
 <p>ProjectionType -&gt; (string)</p>
 <blockquote>
 <div><p>The set of attributes that are projected into the index:</p>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">KEYS_ONLY</span></tt> - Only the index and primary keys are projected into the index.</li>
-<li><tt class="docutils literal"><span class="pre">INCLUDE</span></tt> - Only the specified table attributes are projected into the index. The list of projected attributes are in <em>NonKeyAttributes</em> .</li>
+<li><tt class="docutils literal"><span class="pre">INCLUDE</span></tt> - Only the specified table attributes are projected into the index. The list of projected attributes are in <tt class="docutils literal"><span class="pre">NonKeyAttributes</span></tt> .</li>
 <li><tt class="docutils literal"><span class="pre">ALL</span></tt> - All of the table attributes are projected into the index.</li>
 </ul>
 </div></blockquote>
 <p>NonKeyAttributes -&gt; (list)</p>
 <blockquote>
 <div><p>Represents the non-key attribute names which will be projected into the index.</p>
-<p>For local secondary indexes, the total count of <em>NonKeyAttributes</em> summed across all of the local secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
+<p>For local secondary indexes, the total count of <tt class="docutils literal"><span class="pre">NonKeyAttributes</span></tt> summed across all of the local secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
 <p>(string)</p>
 </div></blockquote>
 </div></blockquote>
@@ -512,29 +511,29 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <blockquote>
 <div><p>The global secondary indexes, if any, on the table. Each index is scoped to a given partition key value. Each element is composed of:</p>
 <ul class="simple">
-<li><em>Backfilling</em> - If true, then the index is currently in the backfilling phase. Backfilling occurs only when a new global secondary index is added to the table; it is the process by which DynamoDB populates the new index with data from the table. (This attribute does not appear for indexes that were created during a <em>create-table</em> operation.)</li>
-<li><em>IndexName</em> - The name of the global secondary index.</li>
-<li><em>IndexSizeBytes</em> - The total size of the global secondary index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</li>
-<li><em>IndexStatus</em> - The current status of the global secondary index:<ul>
-<li><em>CREATING</em> - The index is being created.</li>
-<li><em>UPDATING</em> - The index is being updated.</li>
-<li><em>DELETING</em> - The index is being deleted.</li>
-<li><em>ACTIVE</em> - The index is ready for use.</li>
+<li><tt class="docutils literal"><span class="pre">Backfilling</span></tt> - If true, then the index is currently in the backfilling phase. Backfilling occurs only when a new global secondary index is added to the table; it is the process by which DynamoDB populates the new index with data from the table. (This attribute does not appear for indexes that were created during a <tt class="docutils literal"><span class="pre">create-table</span></tt> operation.)</li>
+<li><tt class="docutils literal"><span class="pre">IndexName</span></tt> - The name of the global secondary index.</li>
+<li><tt class="docutils literal"><span class="pre">IndexSizeBytes</span></tt> - The total size of the global secondary index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</li>
+<li><tt class="docutils literal"><span class="pre">IndexStatus</span></tt> - The current status of the global secondary index:<ul>
+<li><tt class="docutils literal"><span class="pre">CREATING</span></tt> - The index is being created.</li>
+<li><tt class="docutils literal"><span class="pre">UPDATING</span></tt> - The index is being updated.</li>
+<li><tt class="docutils literal"><span class="pre">DELETING</span></tt> - The index is being deleted.</li>
+<li><tt class="docutils literal"><span class="pre">ACTIVE</span></tt> - The index is ready for use.</li>
 </ul>
 </li>
-<li><em>ItemCount</em> - The number of items in the global secondary index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</li>
-<li><em>KeySchema</em> - Specifies the complete index key schema. The attribute names in the key schema must be between 1 and 255 characters (inclusive). The key schema must begin with the same partition key as the table.</li>
-<li><em>Projection</em> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:<ul>
-<li><em>ProjectionType</em> - One of the following:<ul>
+<li><tt class="docutils literal"><span class="pre">ItemCount</span></tt> - The number of items in the global secondary index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</li>
+<li><tt class="docutils literal"><span class="pre">KeySchema</span></tt> - Specifies the complete index key schema. The attribute names in the key schema must be between 1 and 255 characters (inclusive). The key schema must begin with the same partition key as the table.</li>
+<li><tt class="docutils literal"><span class="pre">Projection</span></tt> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:<ul>
+<li><tt class="docutils literal"><span class="pre">ProjectionType</span></tt> - One of the following:<ul>
 <li><tt class="docutils literal"><span class="pre">KEYS_ONLY</span></tt> - Only the index and primary keys are projected into the index.</li>
-<li><tt class="docutils literal"><span class="pre">INCLUDE</span></tt> - Only the specified table attributes are projected into the index. The list of projected attributes are in <em>NonKeyAttributes</em> .</li>
+<li><tt class="docutils literal"><span class="pre">INCLUDE</span></tt> - Only the specified table attributes are projected into the index. The list of projected attributes are in <tt class="docutils literal"><span class="pre">NonKeyAttributes</span></tt> .</li>
 <li><tt class="docutils literal"><span class="pre">ALL</span></tt> - All of the table attributes are projected into the index.</li>
 </ul>
 </li>
-<li><em>NonKeyAttributes</em> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <em>NonKeyAttributes</em> , summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</li>
+<li><tt class="docutils literal"><span class="pre">NonKeyAttributes</span></tt> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <tt class="docutils literal"><span class="pre">NonKeyAttributes</span></tt> , summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</li>
 </ul>
 </li>
-<li><em>provisioned-throughput</em> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units, along with data about increases and decreases.</li>
+<li><tt class="docutils literal"><span class="pre">provisioned-throughput</span></tt> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units, along with data about increases and decreases.</li>
 </ul>
 <p>If the table is in the <tt class="docutils literal"><span class="pre">DELETING</span></tt> state, no information about indexes will be returned.</p>
 <p>(structure)</p>
@@ -558,8 +557,8 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <p>(structure)</p>
 <blockquote>
 <div><p>Represents <em>a single element</em> of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.</p>
-<p>A <em>KeySchemaElement</em> represents exactly one attribute of the primary key. For example, a simple primary key would be represented by one <em>KeySchemaElement</em> (for the partition key). A composite primary key would require one <em>KeySchemaElement</em> for the partition key, and another <em>KeySchemaElement</em> for the sort key.</p>
-<p>A <em>KeySchemaElement</em> must be a scalar, top-level attribute (not a nested attribute). The data type must be one of String, Number, or Binary. The attribute cannot be nested within a List or a Map.</p>
+<p>A <tt class="docutils literal"><span class="pre">KeySchemaElement</span></tt> represents exactly one attribute of the primary key. For example, a simple primary key would be represented by one <tt class="docutils literal"><span class="pre">KeySchemaElement</span></tt> (for the partition key). A composite primary key would require one <tt class="docutils literal"><span class="pre">KeySchemaElement</span></tt> for the partition key, and another <tt class="docutils literal"><span class="pre">KeySchemaElement</span></tt> for the sort key.</p>
+<p>A <tt class="docutils literal"><span class="pre">KeySchemaElement</span></tt> must be a scalar, top-level attribute (not a nested attribute). The data type must be one of String, Number, or Binary. The attribute cannot be nested within a List or a Map.</p>
 <p>AttributeName -&gt; (string)</p>
 <blockquote>
 <div>The name of a key attribute.</div></blockquote>
@@ -580,20 +579,20 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 </div></blockquote>
 <p>Projection -&gt; (structure)</p>
 <blockquote>
-<div><p>Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
+<div><p>Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
 <p>ProjectionType -&gt; (string)</p>
 <blockquote>
 <div><p>The set of attributes that are projected into the index:</p>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">KEYS_ONLY</span></tt> - Only the index and primary keys are projected into the index.</li>
-<li><tt class="docutils literal"><span class="pre">INCLUDE</span></tt> - Only the specified table attributes are projected into the index. The list of projected attributes are in <em>NonKeyAttributes</em> .</li>
+<li><tt class="docutils literal"><span class="pre">INCLUDE</span></tt> - Only the specified table attributes are projected into the index. The list of projected attributes are in <tt class="docutils literal"><span class="pre">NonKeyAttributes</span></tt> .</li>
 <li><tt class="docutils literal"><span class="pre">ALL</span></tt> - All of the table attributes are projected into the index.</li>
 </ul>
 </div></blockquote>
 <p>NonKeyAttributes -&gt; (list)</p>
 <blockquote>
 <div><p>Represents the non-key attribute names which will be projected into the index.</p>
-<p>For local secondary indexes, the total count of <em>NonKeyAttributes</em> summed across all of the local secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
+<p>For local secondary indexes, the total count of <tt class="docutils literal"><span class="pre">NonKeyAttributes</span></tt> summed across all of the local secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
 <p>(string)</p>
 </div></blockquote>
 </div></blockquote>
@@ -601,23 +600,24 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <blockquote>
 <div><p>The current state of the global secondary index:</p>
 <ul class="simple">
-<li><em>CREATING</em> - The index is being created.</li>
-<li><em>UPDATING</em> - The index is being updated.</li>
-<li><em>DELETING</em> - The index is being deleted.</li>
-<li><em>ACTIVE</em> - The index is ready for use.</li>
+<li><tt class="docutils literal"><span class="pre">CREATING</span></tt> - The index is being created.</li>
+<li><tt class="docutils literal"><span class="pre">UPDATING</span></tt> - The index is being updated.</li>
+<li><tt class="docutils literal"><span class="pre">DELETING</span></tt> - The index is being deleted.</li>
+<li><tt class="docutils literal"><span class="pre">ACTIVE</span></tt> - The index is ready for use.</li>
 </ul>
 </div></blockquote>
 <p>Backfilling -&gt; (boolean)</p>
 <blockquote>
-<div><p>Indicates whether the index is currently backfilling. <em>Backfilling</em> is the process of reading items from the table and determining whether they can be added to the index. (Not all items will qualify: For example, a partition key cannot have any duplicate values.) If an item can be added to the index, DynamoDB will do so. After all items have been processed, the backfilling operation is complete and <em>Backfilling</em> is false.</p>
+<div><p>Indicates whether the index is currently backfilling. <em>Backfilling</em> is the process of reading items from the table and determining whether they can be added to the index. (Not all items will qualify: For example, a partition key cannot have any duplicate values.) If an item can be added to the index, DynamoDB will do so. After all items have been processed, the backfilling operation is complete and <tt class="docutils literal"><span class="pre">Backfilling</span></tt> is false.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">For indexes that were created during a <em>create-table</em> operation, the <em>Backfilling</em> attribute does not appear in the <em>describe-table</em> output.</p>
+<p class="last">For indexes that were created during a <tt class="docutils literal"><span class="pre">create-table</span></tt> operation, the <tt class="docutils literal"><span class="pre">Backfilling</span></tt> attribute does not appear in the <tt class="docutils literal"><span class="pre">describe-table</span></tt> output.</p>
 </div>
 </div></blockquote>
 <p>ProvisionedThroughput -&gt; (structure)</p>
 <blockquote>
-<div><p>Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases.</p>
+<div><p>Represents the provisioned throughput settings for the specified global secondary index.</p>
+<p>For current minimum and maximum provisioned throughput values, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
 <p>LastIncreaseDateTime -&gt; (timestamp)</p>
 <blockquote>
 <div>The date and time of the last provisioned throughput increase for this table.</div></blockquote>
@@ -629,10 +629,10 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div>The number of provisioned throughput decreases for this table during this UTC calendar day. For current maximums on provisioned throughput decreases, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <em>Amazon DynamoDB Developer Guide</em> .</div></blockquote>
 <p>ReadCapacityUnits -&gt; (long)</p>
 <blockquote>
-<div>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <em>ThrottlingException</em> . Eventually consistent reads require less effort than strongly consistent reads, so a setting of 50 <em>ReadCapacityUnits</em> per second provides 100 eventually consistent <em>ReadCapacityUnits</em> per second.</div></blockquote>
+<div>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <tt class="docutils literal"><span class="pre">ThrottlingException</span></tt> . Eventually consistent reads require less effort than strongly consistent reads, so a setting of 50 <tt class="docutils literal"><span class="pre">ReadCapacityUnits</span></tt> per second provides 100 eventually consistent <tt class="docutils literal"><span class="pre">ReadCapacityUnits</span></tt> per second.</div></blockquote>
 <p>WriteCapacityUnits -&gt; (long)</p>
 <blockquote>
-<div>The maximum number of writes consumed per second before DynamoDB returns a <em>ThrottlingException</em> .</div></blockquote>
+<div>The maximum number of writes consumed per second before DynamoDB returns a <tt class="docutils literal"><span class="pre">ThrottlingException</span></tt> .</div></blockquote>
 </div></blockquote>
 <p>IndexSizeBytes -&gt; (long)</p>
 <blockquote>
@@ -653,27 +653,23 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div>Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on the table.</div></blockquote>
 <p>StreamViewType -&gt; (string)</p>
 <blockquote>
-<div><p>The DynamoDB Streams settings for the table. These settings consist of:</p>
+<div><p>When an item in the table is modified, <tt class="docutils literal"><span class="pre">StreamViewType</span></tt> determines what information is written to the stream for this table. Valid values for <tt class="docutils literal"><span class="pre">StreamViewType</span></tt> are:</p>
 <ul class="simple">
-<li><em>StreamEnabled</em> - Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on the table.</li>
-<li><em>StreamViewType</em> - When an item in the table is modified, <em>StreamViewType</em> determines what information is written to the stream for this table. Valid values for <em>StreamViewType</em> are:<ul>
-<li><em>KEYS_ONLY</em> - Only the key attributes of the modified item are written to the stream.</li>
-<li><em>NEW_IMAGE</em> - The entire item, as it appears after it was modified, is written to the stream.</li>
-<li><em>OLD_IMAGE</em> - The entire item, as it appeared before it was modified, is written to the stream.</li>
-<li><em>NEW_AND_OLD_IMAGES</em> - Both the new and the old item images of the item are written to the stream.</li>
-</ul>
-</li>
+<li><tt class="docutils literal"><span class="pre">KEYS_ONLY</span></tt> - Only the key attributes of the modified item are written to the stream.</li>
+<li><tt class="docutils literal"><span class="pre">NEW_IMAGE</span></tt> - The entire item, as it appears after it was modified, is written to the stream.</li>
+<li><tt class="docutils literal"><span class="pre">OLD_IMAGE</span></tt> - The entire item, as it appeared before it was modified, is written to the stream.</li>
+<li><tt class="docutils literal"><span class="pre">NEW_AND_OLD_IMAGES</span></tt> - Both the new and the old item images of the item are written to the stream.</li>
 </ul>
 </div></blockquote>
 </div></blockquote>
 <p>LatestStreamLabel -&gt; (string)</p>
 <blockquote>
 <div><p>A timestamp, in ISO 8601 format, for this stream.</p>
-<p>Note that <em>LatestStreamLabel</em> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
+<p>Note that <tt class="docutils literal"><span class="pre">LatestStreamLabel</span></tt> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
 <ul class="simple">
 <li>the AWS customer ID.</li>
 <li>the table name.</li>
-<li>the <em>StreamLabel</em> .</li>
+<li>the <tt class="docutils literal"><span class="pre">StreamLabel</span></tt> .</li>
 </ul>
 </div></blockquote>
 <p>LatestStreamArn -&gt; (string)</p>
@@ -695,7 +691,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
           <span class="divider">/</span>
           
         </li>
-          <li><a href="wait/index.html" title="next chapter (use the right arrow)">wait &#8594;</a></li>
+          <li><a href="update-time-to-live.html" title="next chapter (use the right arrow)">update-time-to-live &#8594;</a></li>
       </ul>
     </div>
   
@@ -716,10 +712,10 @@ Prints a sample input JSON to standard output. Note the specified operation is n
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index">index</a></li>
         <li class="right">
-          <a href="wait/index.html" title="wait">next</a> |</li>
+          <a href="update-time-to-live.html" title="update-time-to-live">next</a> |</li>
         <li class="right">
           <a href="update-item.html" title="update-item">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">dynamodb</a> &#187;</li> 
       </ul>
@@ -735,5 +731,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/dynamodb/update-table.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:01 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/dynamodb/update-table.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:09:59 GMT -->
 </html>

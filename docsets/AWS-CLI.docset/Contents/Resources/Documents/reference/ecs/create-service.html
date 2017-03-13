@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ecs/create-service.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:15 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ecs/create-service.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:12 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>create-service &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>create-service &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="ecs" href="index.html" />
-    <link rel="next" title="delete-cluster" href="delete-cluster.html" />
+    <link rel="next" title="delete-attributes" href="delete-attributes.html" />
     <link rel="prev" title="create-cluster" href="create-cluster.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
@@ -61,10 +61,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
         <li class="right">
-          <a href="delete-cluster.html" title="delete-cluster" accesskey="N">next</a> |</li>
+          <a href="delete-attributes.html" title="delete-attributes" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="create-cluster.html" title="create-cluster" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">ecs</a> &#187;</li> 
       </ul>
@@ -78,7 +78,7 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="delete-cluster.html" title="next chapter (use the right arrow)">delete-cluster &#8594;</a></li>
+          <li><a href="delete-attributes.html" title="next chapter (use the right arrow)">delete-attributes &#8594;</a></li>
       </ul>
     </div>
   
@@ -112,7 +112,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ecs/create-service">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/ecs/create-service">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -129,17 +129,21 @@
 <span id="cli-aws-ecs-create-service"></span><h1>create-service<a name="//apple_ref/cpp/Command/aws ecs create-service" class="dashAnchor" id="aws ecs create-service"></a><a class="headerlink" href="#create-service" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Runs and maintains a desired number of tasks from a specified task definition. If the number of tasks running in a service drops below <tt class="docutils literal"><span class="pre">desiredCount</span></tt> , Amazon ECS spawns another instantiation of the task in the specified cluster. To update an existing service, see  update-service .</p>
-<p>In addition to maintaining the desired count of tasks in your service, you can optionally run your service behind a load balancer. The load balancer distributes traffic across the tasks that are associated with the service.</p>
-<p>You can optionally specify a deployment configuration for your service. During a deployment (which is triggered by changing the task definition of a service with an  update-service operation), the service scheduler uses the <tt class="docutils literal"><span class="pre">minimumHealthyPercent</span></tt> and <tt class="docutils literal"><span class="pre">maximumPercent</span></tt> parameters to determine the deployment strategy.</p>
-<p>If the <tt class="docutils literal"><span class="pre">minimumHealthyPercent</span></tt> is below 100%, the scheduler can ignore the <tt class="docutils literal"><span class="pre">desiredCount</span></tt> temporarily during a deployment. For example, if your service has a <tt class="docutils literal"><span class="pre">desiredCount</span></tt> of four tasks, a <tt class="docutils literal"><span class="pre">minimumHealthyPercent</span></tt> of 50% allows the scheduler to stop two existing tasks before starting two new tasks. Tasks for services that <em>do not</em> use a load balancer are considered healthy if they are in the <tt class="docutils literal"><span class="pre">RUNNING</span></tt> state; tasks for services that <em>do</em> use a load balancer are considered healthy if they are in the <tt class="docutils literal"><span class="pre">RUNNING</span></tt> state and the container instance it is hosted on is reported as healthy by the load balancer. The default value for <tt class="docutils literal"><span class="pre">minimumHealthyPercent</span></tt> is 50% in the console and 100% for the AWS CLI, the AWS SDKs, and the APIs.</p>
-<p>The <tt class="docutils literal"><span class="pre">maximumPercent</span></tt> parameter represents an upper limit on the number of running tasks during a deployment, which enables you to define the deployment batch size. For example, if your service has a <tt class="docutils literal"><span class="pre">desiredCount</span></tt> of four tasks, a <tt class="docutils literal"><span class="pre">maximumPercent</span></tt> value of 200% starts four new tasks before stopping the four older tasks (provided that the cluster resources required to do this are available). The default value for <tt class="docutils literal"><span class="pre">maximumPercent</span></tt> is 200%.</p>
-<p>When the service scheduler launches new tasks, it attempts to balance them across the Availability Zones in your cluster with the following logic:</p>
+<p>Runs and maintains a desired number of tasks from a specified task definition. If the number of tasks running in a service drops below <tt class="docutils literal"><span class="pre">desiredCount</span></tt> , Amazon ECS spawns another copy of the task in the specified cluster. To update an existing service, see  update-service .</p>
+<p>In addition to maintaining the desired count of tasks in your service, you can optionally run your service behind a load balancer. The load balancer distributes traffic across the tasks that are associated with the service. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load Balancing</a> in the <em>Amazon EC2 Container Service Developer Guide</em> .</p>
+<p>You can optionally specify a deployment configuration for your service. During a deployment (which is triggered by changing the task definition or the desired count of a service with an  update-service operation), the service scheduler uses the <tt class="docutils literal"><span class="pre">minimumHealthyPercent</span></tt> and <tt class="docutils literal"><span class="pre">maximumPercent</span></tt> parameters to determine the deployment strategy.</p>
+<p>The <tt class="docutils literal"><span class="pre">minimumHealthyPercent</span></tt> represents a lower limit on the number of your service's tasks that must remain in the <tt class="docutils literal"><span class="pre">RUNNING</span></tt> state during a deployment, as a percentage of the <tt class="docutils literal"><span class="pre">desiredCount</span></tt> (rounded up to the nearest integer). This parameter enables you to deploy without using additional cluster capacity. For example, if <tt class="docutils literal"><span class="pre">desiredCount</span></tt> is four tasks and the minimum is 50%, the scheduler can stop two existing tasks to free up cluster capacity before starting two new tasks. Tasks for services that do not use a load balancer are considered healthy if they are in the <tt class="docutils literal"><span class="pre">RUNNING</span></tt> state. Tasks for services that use a load balancer are considered healthy if they are in the <tt class="docutils literal"><span class="pre">RUNNING</span></tt> state and the container instance they are hosted on is reported as healthy by the load balancer. The default value is 50% in the console and 100% for the AWS CLI, the AWS SDKs, and the APIs.</p>
+<p>The <tt class="docutils literal"><span class="pre">maximumPercent</span></tt> parameter represents an upper limit on the number of your service's tasks that are allowed in the <tt class="docutils literal"><span class="pre">RUNNING</span></tt> or <tt class="docutils literal"><span class="pre">PENDING</span></tt> state during a deployment, as a percentage of the <tt class="docutils literal"><span class="pre">desiredCount</span></tt> (rounded down to the nearest integer). This parameter enables you to define the deployment batch size. For example, if <tt class="docutils literal"><span class="pre">desiredCount</span></tt> is four tasks and the maximum is 200%, the scheduler can start four new tasks before stopping the four older tasks (provided that the cluster resources required to do this are available). The default value is 200%.</p>
+<p>When the service scheduler launches new tasks, it determines task placement in your cluster using the following logic:</p>
 <ul class="simple">
 <li>Determine which of the container instances in your cluster can support your service's task definition (for example, they have the required CPU, memory, ports, and container instance attributes).</li>
+<li>By default, the service scheduler attempts to balance tasks across Availability Zones in this manner (although you can choose a different placement strategy):<ul>
 <li>Sort the valid container instances by the fewest number of running tasks for this service in the same Availability Zone as the instance. For example, if zone A has one running service task and zones B and C each have zero, valid container instances in either zone B or C are considered optimal for placement.</li>
 <li>Place the new service task on a valid container instance in an optimal Availability Zone (based on the previous steps), favoring container instances with the fewest number of running tasks for this service.</li>
 </ul>
+</li>
+</ul>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">AWS API Documentation</a></p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
@@ -152,8 +156,10 @@
 [--client-token &lt;value&gt;]
 [--role &lt;value&gt;]
 [--deployment-configuration &lt;value&gt;]
+[--placement-constraints &lt;value&gt;]
+[--placement-strategy &lt;value&gt;]
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
@@ -169,13 +175,17 @@
 <div>The <tt class="docutils literal"><span class="pre">family</span></tt> and <tt class="docutils literal"><span class="pre">revision</span></tt> (<tt class="docutils literal"><span class="pre">family:revision</span></tt> ) or full Amazon Resource Name (ARN) of the task definition to run in your service. If a <tt class="docutils literal"><span class="pre">revision</span></tt> is not specified, the latest <tt class="docutils literal"><span class="pre">ACTIVE</span></tt> revision is used.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--load-balancers" class="dashAnchor" id="load-balancers"></a><span class="pre">--load-balancers</span></tt> (list)</p>
 <blockquote>
-<div>A list of load balancer objects, containing the load balancer name, the container name (as it appears in a container definition), and the container port to access from the load balancer.</div></blockquote>
+<div><p>A load balancer object representing the load balancer to use with your service. Currently, you are limited to one load balancer or target group per service. After you create a service, the load balancer name or target group ARN, container name, and container port specified in the service definition are immutable.</p>
+<p>For Elastic Load Balancing Classic load balancers, this object must contain the load balancer name, the container name (as it appears in a container definition), and the container port to access from the load balancer. When a task from this service is placed on a container instance, the container instance is registered with the load balancer specified here.</p>
+<p>For Elastic Load Balancing Application load balancers, this object must contain the load balancer target group ARN, the container name (as it appears in a container definition), and the container port to access from the load balancer. When a task from this service is placed on a container instance, the container instance and port combination is registered as a target in the target group specified here.</p>
+</div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><pre>loadBalancerName=string,containerName=string,containerPort=integer ...</pre>
+<div class="highlight-python"><pre>targetGroupArn=string,loadBalancerName=string,containerName=string,containerPort=integer ...</pre>
 </div>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><pre>[
   {
+    "targetGroupArn": "string",
     "loadBalancerName": "string",
     "containerName": "string",
     "containerPort": integer
@@ -198,20 +208,50 @@
 <blockquote>
 <div>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">maximumPercent</span><span class="o">=</span><span class="n">integer</span><span class="p">,</span><span class="n">minimumHealthyPercent</span><span class="o">=</span><span class="n">integer</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">maximumPercent</span><span class="o">=</span><span class="n">integer</span><span class="p">,</span><span class="n">minimumHealthyPercent</span><span class="o">=</span><span class="n">integer</span>
 </pre></div>
 </div>
 <p>JSON Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">"maximumPercent"</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
   <span class="s2">"minimumHealthyPercent"</span><span class="p">:</span> <span class="n">integer</span>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--placement-constraints" class="dashAnchor" id="placement-constraints"></a><span class="pre">--placement-constraints</span></tt> (list)</p>
+<blockquote>
+<div>An array of placement constraint objects to use for tasks in your service. You can specify a maximum of 10 constraints per task (this limit includes constraints in the task definition and those specified at run time).</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>type=string,expression=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    "type": "distinctInstance"|"memberOf",
+    "expression": "string"
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--placement-strategy" class="dashAnchor" id="placement-strategy"></a><span class="pre">--placement-strategy</span></tt> (list)</p>
+<blockquote>
+<div>The placement strategy objects to use for tasks in your service. You can specify a maximum of 5 strategy rules per service.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>type=string,field=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    "type": "random"|"spread"|"binpack",
+    "field": "string"
+  }
+  ...
+]</pre>
+</div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
@@ -221,7 +261,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div class="highlight-python"><pre>aws ecs create-service --service-name ecs-simple-service --task-definition ecs-demo --desired-count 10</pre>
 </div>
 <p>Output:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">"service"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"status"</span><span class="p">:</span> <span class="s2">"ACTIVE"</span><span class="p">,</span>
         <span class="s2">"taskDefinition"</span><span class="p">:</span> <span class="s2">"arn:aws:ecs:&lt;region&gt;:&lt;aws_account_id&gt;:task-definition/ecs-demo:1"</span><span class="p">,</span>
@@ -253,7 +293,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <p>This example command creates a service in your default region called <tt class="docutils literal"><span class="pre">ecs-simple-service-elb</span></tt>. The service uses the <tt class="docutils literal"><span class="pre">ecs-demo</span></tt> task definition and it maintains 10 instantiations of that task. You must have a load balancer configured in the same region as your container instances.</p>
 <p>This example uses the <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> option and a JSON input file called <tt class="docutils literal"><span class="pre">ecs-simple-service-elb.json</span></tt> with the below format.</p>
 <p>Input file:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">"serviceName"</span><span class="p">:</span> <span class="s2">"ecs-simple-service-elb"</span><span class="p">,</span>
     <span class="s2">"taskDefinition"</span><span class="p">:</span> <span class="s2">"ecs-demo"</span><span class="p">,</span>
     <span class="s2">"loadBalancers"</span><span class="p">:</span> <span class="p">[</span>
@@ -272,7 +312,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div class="highlight-python"><pre>aws ecs create-service --service-name ecs-simple-service-elb --cli-input-json file://ecs-simple-service-elb.json</pre>
 </div>
 <p>Output:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">"service"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"status"</span><span class="p">:</span> <span class="s2">"ACTIVE"</span><span class="p">,</span>
         <span class="s2">"taskDefinition"</span><span class="p">:</span> <span class="s2">"arn:aws:ecs:&lt;region&gt;:&lt;aws_account_id&gt;:task-definition/ecs-demo:1"</span><span class="p">,</span>
@@ -324,10 +364,13 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div>The Amazon Resource Name (ARN) of the cluster that hosts the service.</div></blockquote>
 <p>loadBalancers -&gt; (list)</p>
 <blockquote>
-<div><p>A list of load balancer objects, containing the load balancer name, the container name (as it appears in a container definition), and the container port to access from the load balancer.</p>
+<div><p>A list of Elastic Load Balancing load balancer objects, containing the load balancer name, the container name (as it appears in a container definition), and the container port to access from the load balancer.</p>
 <p>(structure)</p>
 <blockquote>
 <div><p>Details on a load balancer that is used with a service.</p>
+<p>targetGroupArn -&gt; (string)</p>
+<blockquote>
+<div>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group associated with a service.</div></blockquote>
 <p>loadBalancerName -&gt; (string)</p>
 <blockquote>
 <div>The name of the load balancer.</div></blockquote>
@@ -359,10 +402,10 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div><p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
 <p>maximumPercent -&gt; (integer)</p>
 <blockquote>
-<div>The upper limit (as a percentage of the service's <tt class="docutils literal"><span class="pre">desiredCount</span></tt> ) of the number of running tasks that can be running in a service during a deployment. The maximum number of tasks during a deployment is the <tt class="docutils literal"><span class="pre">desiredCount</span></tt> multiplied by the <tt class="docutils literal"><span class="pre">maximumPercent</span></tt> /100, rounded down to the nearest integer value.</div></blockquote>
+<div>The upper limit (as a percentage of the service's <tt class="docutils literal"><span class="pre">desiredCount</span></tt> ) of the number of tasks that are allowed in the <tt class="docutils literal"><span class="pre">RUNNING</span></tt> or <tt class="docutils literal"><span class="pre">PENDING</span></tt> state in a service during a deployment. The maximum number of tasks during a deployment is the <tt class="docutils literal"><span class="pre">desiredCount</span></tt> multiplied by <tt class="docutils literal"><span class="pre">maximumPercent</span></tt> /100, rounded down to the nearest integer value.</div></blockquote>
 <p>minimumHealthyPercent -&gt; (integer)</p>
 <blockquote>
-<div>The lower limit (as a percentage of the service's <tt class="docutils literal"><span class="pre">desiredCount</span></tt> ) of the number of running tasks that must remain running and healthy in a service during a deployment. The minimum healthy tasks during a deployment is the <tt class="docutils literal"><span class="pre">desiredCount</span></tt> multiplied by the <tt class="docutils literal"><span class="pre">minimumHealthyPercent</span></tt> /100, rounded up to the nearest integer value.</div></blockquote>
+<div>The lower limit (as a percentage of the service's <tt class="docutils literal"><span class="pre">desiredCount</span></tt> ) of the number of running tasks that must remain in the <tt class="docutils literal"><span class="pre">RUNNING</span></tt> state in a service during a deployment. The minimum healthy tasks during a deployment is the <tt class="docutils literal"><span class="pre">desiredCount</span></tt> multiplied by <tt class="docutils literal"><span class="pre">minimumHealthyPercent</span></tt> /100, rounded up to the nearest integer value.</div></blockquote>
 </div></blockquote>
 <p>deployments -&gt; (list)</p>
 <blockquote>
@@ -390,15 +433,15 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div>The number of tasks in the deployment that are in the <tt class="docutils literal"><span class="pre">RUNNING</span></tt> status.</div></blockquote>
 <p>createdAt -&gt; (timestamp)</p>
 <blockquote>
-<div>The Unix time in seconds and milliseconds when the service was created.</div></blockquote>
+<div>The Unix timestamp for when the service was created.</div></blockquote>
 <p>updatedAt -&gt; (timestamp)</p>
 <blockquote>
-<div>The Unix time in seconds and milliseconds when the service was last updated.</div></blockquote>
+<div>The Unix timestamp for when the service was last updated.</div></blockquote>
 </div></blockquote>
 </div></blockquote>
 <p>roleArn -&gt; (string)</p>
 <blockquote>
-<div>The Amazon Resource Name (ARN) of the IAM role associated with the service that allows the Amazon ECS container agent to register container instances with a load balancer.</div></blockquote>
+<div>The Amazon Resource Name (ARN) of the IAM role associated with the service that allows the Amazon ECS container agent to register container instances with an Elastic Load Balancing load balancer.</div></blockquote>
 <p>events -&gt; (list)</p>
 <blockquote>
 <div><p>The event stream for your service. A maximum of 100 of the latest events are displayed.</p>
@@ -410,7 +453,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div>The ID string of the event.</div></blockquote>
 <p>createdAt -&gt; (timestamp)</p>
 <blockquote>
-<div>The Unix time in seconds and milliseconds when the event was triggered.</div></blockquote>
+<div>The Unix timestamp for when the event was triggered.</div></blockquote>
 <p>message -&gt; (string)</p>
 <blockquote>
 <div>The event message.</div></blockquote>
@@ -418,7 +461,35 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 </div></blockquote>
 <p>createdAt -&gt; (timestamp)</p>
 <blockquote>
-<div>The Unix time in seconds and milliseconds when the service was created.</div></blockquote>
+<div>The Unix timestamp for when the service was created.</div></blockquote>
+<p>placementConstraints -&gt; (list)</p>
+<blockquote>
+<div><p>The placement constraints for the tasks in the service.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>An object representing a constraint on task placement. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement Constraints</a> in the <em>Amazon EC2 Container Service Developer Guide</em> .</p>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div>The type of constraint. Use <tt class="docutils literal"><span class="pre">distinctInstance</span></tt> to ensure that each task in a particular group is running on a different container instance. Use <tt class="docutils literal"><span class="pre">memberOf</span></tt> to restrict selection to a group of valid candidates. Note that <tt class="docutils literal"><span class="pre">distinctInstance</span></tt> is not supported in task definitions.</div></blockquote>
+<p>expression -&gt; (string)</p>
+<blockquote>
+<div>A cluster query language expression to apply to the constraint. Note you cannot specify an expression if the constraint type is <tt class="docutils literal"><span class="pre">distinctInstance</span></tt> . For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the <em>Amazon EC2 Container Service Developer Guide</em> .</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>placementStrategy -&gt; (list)</p>
+<blockquote>
+<div><p>The placement strategy that determines how tasks for the service are placed.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The task placement strategy for a task or service. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html">Task Placement Strategies</a> in the <em>Amazon EC2 Container Service Developer Guide</em> .</p>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div>The type of placement strategy. The <tt class="docutils literal"><span class="pre">random</span></tt> placement strategy randomly places tasks on available candidates. The <tt class="docutils literal"><span class="pre">spread</span></tt> placement strategy spreads placement across available candidates evenly based on the <tt class="docutils literal"><span class="pre">field</span></tt> parameter. The <tt class="docutils literal"><span class="pre">binpack</span></tt> strategy places tasks on available candidates that have the least available amount of the resource that is specified with the <tt class="docutils literal"><span class="pre">field</span></tt> parameter. For example, if you binpack on memory, a task is placed on the instance with the least amount of remaining memory (but still enough to run the task).</div></blockquote>
+<p>field -&gt; (string)</p>
+<blockquote>
+<div>The field to apply the placement strategy against. For the <tt class="docutils literal"><span class="pre">spread</span></tt> placement strategy, valid values are <tt class="docutils literal"><span class="pre">instanceId</span></tt> (or <tt class="docutils literal"><span class="pre">host</span></tt> , which has the same effect), or any platform or custom attribute that is applied to a container instance, such as <tt class="docutils literal"><span class="pre">attribute:ecs.availability-zone</span></tt> . For the <tt class="docutils literal"><span class="pre">binpack</span></tt> placement strategy, valid values are <tt class="docutils literal"><span class="pre">cpu</span></tt> and <tt class="docutils literal"><span class="pre">memory</span></tt> . For the <tt class="docutils literal"><span class="pre">random</span></tt> placement strategy, this field is not used.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
 </div></blockquote>
 </div>
 </div>
@@ -435,7 +506,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
           <span class="divider">/</span>
           
         </li>
-          <li><a href="delete-cluster.html" title="next chapter (use the right arrow)">delete-cluster &#8594;</a></li>
+          <li><a href="delete-attributes.html" title="next chapter (use the right arrow)">delete-attributes &#8594;</a></li>
       </ul>
     </div>
   
@@ -456,10 +527,10 @@ Prints a sample input JSON to standard output. Note the specified operation is n
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index">index</a></li>
         <li class="right">
-          <a href="delete-cluster.html" title="delete-cluster">next</a> |</li>
+          <a href="delete-attributes.html" title="delete-attributes">next</a> |</li>
         <li class="right">
           <a href="create-cluster.html" title="create-cluster">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">ecs</a> &#187;</li> 
       </ul>
@@ -475,5 +546,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ecs/create-service.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:15 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ecs/create-service.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:12 GMT -->
 </html>

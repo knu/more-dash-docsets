@@ -1,0 +1,207 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/opsworkscm/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:11:02 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>opsworkscm &mdash; AWS CLI 1.11.61 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.11.61',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    
+      <div class="rel-spacer clearer"></div>
+    
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">opsworkscm</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/opsworkscm/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="opsworkscm">
+<span id="cli-aws-opsworkscm"></span><h1>opsworkscm<a class="headerlink" href="#opsworkscm" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>AWS OpsWorks for Chef Automate is a service that runs and manages configuration management servers.</p>
+<blockquote>
+<div><strong>Glossary of terms</strong></div></blockquote>
+<ul class="simple">
+<li><strong>Server</strong> : A configuration management server that can be highly-available. The configuration manager runs on your instances by using various AWS services, such as Amazon Elastic Compute Cloud (EC2), and potentially Amazon Relational Database Service (RDS). A server is a generic abstraction over the configuration manager that you want to use, much like Amazon RDS. In AWS OpsWorks for Chef Automate, you do not start or stop servers. After you create servers, they continue to run until they are deleted.</li>
+<li><strong>Engine</strong> : The specific configuration manager that you want to use (such as <tt class="docutils literal"><span class="pre">Chef</span></tt> ) is the engine.</li>
+<li><strong>Backup</strong> : This is an application-level backup of the data that the configuration manager stores. A backup creates a .tar.gz file that is stored in an Amazon Simple Storage Service (S3) bucket in your account. AWS OpsWorks for Chef Automate creates the S3 bucket when you launch the first instance. A backup maintains a snapshot of all of a server's important attributes at the time of the backup.</li>
+<li><strong>Events</strong> : Events are always related to a server. Events are written during server creation, when health checks run, when backups are created, etc. When you delete a server, the server's events are also deleted.</li>
+<li><strong>AccountAttributes</strong> : Every account has attributes that are assigned in the AWS OpsWorks for Chef Automate database. These attributes store information about configuration limits (servers, backups, etc.) and your customer account.</li>
+</ul>
+<blockquote>
+<div><strong>Endpoints</strong></div></blockquote>
+<p>AWS OpsWorks for Chef Automate supports the following endpoints, all HTTPS. You must connect to one of the following endpoints. Chef servers can only be accessed or managed within the endpoint in which they are created.</p>
+<ul class="simple">
+<li>opsworks-cm.us-east-1.amazonaws.com</li>
+<li>opsworks-cm.us-west-2.amazonaws.com</li>
+<li>opsworks-cm.eu-west-1.amazonaws.com</li>
+</ul>
+<blockquote>
+<div><strong>Throttling limits</strong></div></blockquote>
+<p>All API operations allow for five requests per second with a burst of 10 requests per second.</p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a class="headerlink" href="#available-commands" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="associate-node.html">associate-node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create-backup.html">create-backup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create-server.html">create-server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="delete-backup.html">delete-backup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="delete-server.html">delete-server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="describe-account-attributes.html">describe-account-attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="describe-backups.html">describe-backups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="describe-events.html">describe-events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="describe-node-association-status.html">describe-node-association-status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="describe-servers.html">describe-servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="disassociate-node.html">disassociate-node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="restore-server.html">restore-server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="start-maintenance.html">start-maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="update-server.html">update-server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="update-server-engine-attributes.html">update-server-engine-attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wait/index.html">wait</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/opsworkscm/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:11:08 GMT -->
+</html>

@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/meteringmarketplace/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:31:20 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/meteringmarketplace/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:02:24 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>meteringmarketplace &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>meteringmarketplace &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,10 +25,10 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="aws" href="../index.html" />
-    <link rel="next" title="meter-usage" href="meter-usage.html" />
-    <link rel="prev" title="generate-data-set" href="../marketplacecommerceanalytics/generate-data-set.html" />
+    <link rel="next" title="batch-meter-usage" href="batch-meter-usage.html" />
+    <link rel="prev" title="start-support-data-export" href="../marketplacecommerceanalytics/start-support-data-export.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
   
@@ -61,10 +61,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
         <li class="right">
-          <a href="meter-usage.html" title="meter-usage" accesskey="N">next</a> |</li>
+          <a href="batch-meter-usage.html" title="batch-meter-usage" accesskey="N">next</a> |</li>
         <li class="right">
-          <a href="../marketplacecommerceanalytics/generate-data-set.html" title="generate-data-set" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <a href="../marketplacecommerceanalytics/start-support-data-export.html" title="start-support-data-export" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html" accesskey="U">aws</a> &#187;</li> 
       </ul>
     </div>
@@ -73,11 +73,11 @@
     <div class="top-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="../marketplacecommerceanalytics/generate-data-set.html" title="previous chapter (use the left arrow)">&#8592; generate-data-set</a>
+          <a href="../marketplacecommerceanalytics/start-support-data-export.html" title="previous chapter (use the left arrow)">&#8592; start-support-data-export</a>
           <span class="divider">/</span>
           
         </li>
-          <li><a href="meter-usage.html" title="next chapter (use the right arrow)">meter-usage &#8594;</a></li>
+          <li><a href="batch-meter-usage.html" title="next chapter (use the right arrow)">batch-meter-usage &#8594;</a></li>
       </ul>
     </div>
   
@@ -110,7 +110,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/meteringmarketplace/index">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/meteringmarketplace/index">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -129,16 +129,25 @@
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
 <p>This reference provides descriptions of the low-level AWS Marketplace Metering Service API.</p>
 <p>AWS Marketplace sellers can use this API to submit usage data for custom usage dimensions.</p>
-<p><strong>Submitting Metering Records</strong></p>
+<blockquote>
+<div><strong>Submitting Metering Records</strong></div></blockquote>
 <ul class="simple">
-<li><em>meter-usage</em> - Submits the metering record for a Marketplace product.</li>
+<li><em>meter-usage</em> - Submits the metering record for a Marketplace product. meter-usage is called from an EC2 instance.</li>
+<li><em>batch-meter-usage</em> - Submits the metering record for a set of customers. batch-meter-usage is called from a software-as-a-service (SaaS) application.</li>
+</ul>
+<blockquote>
+<div><strong>Accepting New Customers</strong></div></blockquote>
+<ul class="simple">
+<li><em>resolve-customer</em> - Called by a SaaS application during the registration process. When a buyer visits your website during the registration process, the buyer submits a Registration Token through the browser. The Registration Token is resolved through this API to obtain a CustomerIdentifier and Product Code.</li>
 </ul>
 </div>
 <div class="section" id="available-commands">
 <h2>Available Commands<a name="//apple_ref/cpp/Section/Available Commands" class="dashAnchor" id="Available Commands"></a><a class="headerlink" href="#available-commands" title="Permalink to this headline">&#182;</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/batch-meter-usage" class="dashAnchor" id="batch-meter-usage"></a><a class="reference internal" href="batch-meter-usage.html">batch-meter-usage</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/meter-usage" class="dashAnchor" id="meter-usage"></a><a class="reference internal" href="meter-usage.html">meter-usage</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/resolve-customer" class="dashAnchor" id="resolve-customer"></a><a class="reference internal" href="resolve-customer.html">resolve-customer</a></li>
 </ul>
 </div>
 </div>
@@ -152,11 +161,11 @@
     <div class="footer-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="../marketplacecommerceanalytics/generate-data-set.html" title="previous chapter (use the left arrow)">&#8592; generate-data-set</a>
+          <a href="../marketplacecommerceanalytics/start-support-data-export.html" title="previous chapter (use the left arrow)">&#8592; start-support-data-export</a>
           <span class="divider">/</span>
           
         </li>
-          <li><a href="meter-usage.html" title="next chapter (use the right arrow)">meter-usage &#8594;</a></li>
+          <li><a href="batch-meter-usage.html" title="next chapter (use the right arrow)">batch-meter-usage &#8594;</a></li>
       </ul>
     </div>
   
@@ -177,10 +186,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index">index</a></li>
         <li class="right">
-          <a href="meter-usage.html" title="meter-usage">next</a> |</li>
+          <a href="batch-meter-usage.html" title="batch-meter-usage">next</a> |</li>
         <li class="right">
-          <a href="../marketplacecommerceanalytics/generate-data-set.html" title="generate-data-set">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <a href="../marketplacecommerceanalytics/start-support-data-export.html" title="start-support-data-export">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li> 
       </ul>
     </div>
@@ -195,5 +204,5 @@
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/meteringmarketplace/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:31:21 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/meteringmarketplace/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:02:25 GMT -->
 </html>

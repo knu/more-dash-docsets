@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/waf-regional/get-sampled-requests.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:30 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-sampled-requests &#8212; AWS CLI 1.11.61 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.11.61',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="waf-regional" href="index.html" />
+    <link rel="next" title="get-size-constraint-set" href="get-size-constraint-set.html" />
+    <link rel="prev" title="get-rule" href="get-rule.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="get-size-constraint-set.html" title="get-size-constraint-set" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="get-rule.html" title="get-rule" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">waf-regional</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-rule.html" title="previous chapter (use the left arrow)">&#8592; get-rule</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="get-size-constraint-set.html" title="next chapter (use the right arrow)">get-size-constraint-set &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-sampled-requests</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/waf-regional/get-sampled-requests">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-waf-regional"><em>waf-regional</em></a> ]</p>
+<div class="section" id="get-sampled-requests">
+<span id="cli-aws-waf-regional-get-sampled-requests"></span><h1>get-sampled-requests<a name="//apple_ref/cpp/Command/aws waf-regional get-sampled-requests" class="dashAnchor" id="aws waf-regional get-sampled-requests"></a><a class="headerlink" href="#get-sampled-requests" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Gets detailed information about a specified number of requests--a sample--that AWS WAF randomly selects from among the first 5,000 requests that your AWS resource received during a time range that you choose. You can specify a sample size of up to 500 requests, and you can specify any time range in the previous three hours.</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">get-sampled-requests</span></tt> returns a time range, which is usually the time range that you specified. However, if your resource (such as a CloudFront distribution) received 5,000 requests before the specified time range elapsed, <tt class="docutils literal"><span class="pre">get-sampled-requests</span></tt> returns an updated time range. This new time range indicates the actual period during which AWS WAF selected the requests in the sample.</div></blockquote>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetSampledRequests">AWS API Documentation</a></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  get-sampled-requests
+--web-acl-id &lt;value&gt;
+--rule-id &lt;value&gt;
+--time-window &lt;value&gt;
+--max-items &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--web-acl-id" class="dashAnchor" id="web-acl-id"></a><span class="pre">--web-acl-id</span></tt> (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">WebACLId</span></tt> of the <tt class="docutils literal"><span class="pre">WebACL</span></tt> for which you want <tt class="docutils literal"><span class="pre">get-sampled-requests</span></tt> to return a sample of requests.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--rule-id" class="dashAnchor" id="rule-id"></a><span class="pre">--rule-id</span></tt> (string)</p>
+<blockquote>
+<div><blockquote>
+<div><tt class="docutils literal"><span class="pre">RuleId</span></tt> is one of two values:</div></blockquote>
+<ul class="simple">
+<li>The <tt class="docutils literal"><span class="pre">RuleId</span></tt> of the <tt class="docutils literal"><span class="pre">Rule</span></tt> for which you want <tt class="docutils literal"><span class="pre">get-sampled-requests</span></tt> to return a sample of requests.</li>
+<li><tt class="docutils literal"><span class="pre">Default_Action</span></tt> , which causes <tt class="docutils literal"><span class="pre">get-sampled-requests</span></tt> to return a sample of the requests that didn't match any of the rules in the specified <tt class="docutils literal"><span class="pre">WebACL</span></tt> .</li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--time-window" class="dashAnchor" id="time-window"></a><span class="pre">--time-window</span></tt> (structure)</p>
+<blockquote>
+<div>The start date and time and the end date and time of the range for which you want <tt class="docutils literal"><span class="pre">get-sampled-requests</span></tt> to return a sample of requests. Specify the date and time in the following format: <tt class="docutils literal"><span class="pre">"2016-09-27T14:50Z"</span></tt> . You can specify any time range in the previous three hours.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">StartTime</span><span class="o">=</span><span class="n">timestamp</span><span class="p">,</span><span class="n">EndTime</span><span class="o">=</span><span class="n">timestamp</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">"StartTime"</span><span class="p">:</span> <span class="n">timestamp</span><span class="p">,</span>
+  <span class="s2">"EndTime"</span><span class="p">:</span> <span class="n">timestamp</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-items" class="dashAnchor" id="max-items"></a><span class="pre">--max-items</span></tt> (long)</p>
+<blockquote>
+<div>The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource received during the time range. If your resource received fewer requests than the value of <tt class="docutils literal"><span class="pre">MaxItems</span></tt> , <tt class="docutils literal"><span class="pre">get-sampled-requests</span></tt> returns information about all of them.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>SampledRequests -&gt; (list)</p>
+<blockquote>
+<div><p>A complex type that contains detailed information about each of the requests in the sample.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The response from a  get-sampled-requests request includes a <tt class="docutils literal"><span class="pre">SampledHTTPRequests</span></tt> complex type that appears as <tt class="docutils literal"><span class="pre">SampledRequests</span></tt> in the response syntax. <tt class="docutils literal"><span class="pre">SampledHTTPRequests</span></tt> contains one <tt class="docutils literal"><span class="pre">SampledHTTPRequest</span></tt> object for each web request that is returned by <tt class="docutils literal"><span class="pre">get-sampled-requests</span></tt> .</p>
+<p>Request -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that contains detailed information about the request.</p>
+<p>ClientIP -&gt; (string)</p>
+<blockquote>
+<div><p>The IP address that the request originated from. If the <tt class="docutils literal"><span class="pre">WebACL</span></tt> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">c-ip</span></tt> , if the viewer did not use an HTTP proxy or a load balancer to send the request</li>
+<li><tt class="docutils literal"><span class="pre">x-forwarded-for</span></tt> , if the viewer did use an HTTP proxy or a load balancer to send the request</li>
+</ul>
+</div></blockquote>
+<p>Country -&gt; (string)</p>
+<blockquote>
+<div>The two-letter country code for the country that the request originated from. For a current list of country codes, see the Wikipedia entry <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a> .</div></blockquote>
+<p>URI -&gt; (string)</p>
+<blockquote>
+<div>The part of a web request that identifies the resource, for example, <tt class="docutils literal"><span class="pre">/images/daily-ad.jpg</span></tt> .</div></blockquote>
+<p>Method -&gt; (string)</p>
+<blockquote>
+<div>The HTTP method specified in the sampled web request. CloudFront supports the following methods: <tt class="docutils literal"><span class="pre">DELETE</span></tt> , <tt class="docutils literal"><span class="pre">GET</span></tt> , <tt class="docutils literal"><span class="pre">HEAD</span></tt> , <tt class="docutils literal"><span class="pre">OPTIONS</span></tt> , <tt class="docutils literal"><span class="pre">PATCH</span></tt> , <tt class="docutils literal"><span class="pre">POST</span></tt> , and <tt class="docutils literal"><span class="pre">PUT</span></tt> .</div></blockquote>
+<p>HTTPVersion -&gt; (string)</p>
+<blockquote>
+<div>The HTTP version specified in the sampled web request, for example, <tt class="docutils literal"><span class="pre">HTTP/1.1</span></tt> .</div></blockquote>
+<p>Headers -&gt; (list)</p>
+<blockquote>
+<div><p>A complex type that contains two values for each header in the sampled web request: the name of the header and the value of the header.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The response from a  get-sampled-requests request includes an <tt class="docutils literal"><span class="pre">HTTPHeader</span></tt> complex type that appears as <tt class="docutils literal"><span class="pre">Headers</span></tt> in the response syntax. <tt class="docutils literal"><span class="pre">HTTPHeader</span></tt> contains the names and values of all of the headers that appear in one of the web requests that were returned by <tt class="docutils literal"><span class="pre">get-sampled-requests</span></tt> .</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of one of the headers in the sampled web request.</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div>The value of one of the headers in the sampled web request.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Weight -&gt; (long)</p>
+<blockquote>
+<div>A value that indicates how one result in the response relates proportionally to other results in the response. A result that has a weight of <tt class="docutils literal"><span class="pre">2</span></tt> represents roughly twice as many CloudFront web requests as a result that has a weight of <tt class="docutils literal"><span class="pre">1</span></tt> .</div></blockquote>
+<p>Timestamp -&gt; (timestamp)</p>
+<blockquote>
+<div>The time at which AWS WAF received the request from your AWS resource, in Unix time format (in seconds).</div></blockquote>
+<p>Action -&gt; (string)</p>
+<blockquote>
+<div>The action for the <tt class="docutils literal"><span class="pre">Rule</span></tt> that the request matched: <tt class="docutils literal"><span class="pre">ALLOW</span></tt> , <tt class="docutils literal"><span class="pre">BLOCK</span></tt> , or <tt class="docutils literal"><span class="pre">COUNT</span></tt> .</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>PopulationSize -&gt; (long)</p>
+<blockquote>
+<div>The total number of requests from which <tt class="docutils literal"><span class="pre">get-sampled-requests</span></tt> got a sample of <tt class="docutils literal"><span class="pre">MaxItems</span></tt> requests. If <tt class="docutils literal"><span class="pre">PopulationSize</span></tt> is less than <tt class="docutils literal"><span class="pre">MaxItems</span></tt> , the sample includes every request that your AWS resource received during the specified time range.</div></blockquote>
+<p>TimeWindow -&gt; (structure)</p>
+<blockquote>
+<div><p>Usually, <tt class="docutils literal"><span class="pre">time-window</span></tt> is the time range that you specified in the <tt class="docutils literal"><span class="pre">get-sampled-requests</span></tt> request. However, if your AWS resource received more than 5,000 requests during the time range that you specified in the request, <tt class="docutils literal"><span class="pre">get-sampled-requests</span></tt> returns the time range for the first 5,000 requests.</p>
+<p>StartTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The beginning of the time range from which you want <tt class="docutils literal"><span class="pre">get-sampled-requests</span></tt> to return a sample of the requests that your AWS resource received. Specify the date and time in the following format: <tt class="docutils literal"><span class="pre">"2016-09-27T14:50Z"</span></tt> . You can specify any time range in the previous three hours.</div></blockquote>
+<p>EndTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The end of the time range from which you want <tt class="docutils literal"><span class="pre">get-sampled-requests</span></tt> to return a sample of the requests that your AWS resource received. Specify the date and time in the following format: <tt class="docutils literal"><span class="pre">"2016-09-27T14:50Z"</span></tt> . You can specify any time range in the previous three hours.</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-rule.html" title="previous chapter (use the left arrow)">&#8592; get-rule</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="get-size-constraint-set.html" title="next chapter (use the right arrow)">get-size-constraint-set &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="get-size-constraint-set.html" title="get-size-constraint-set">next</a> |</li>
+        <li class="right">
+          <a href="get-rule.html" title="get-rule">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">waf-regional</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/waf-regional/get-sampled-requests.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:30 GMT -->
+</html>

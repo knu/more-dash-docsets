@@ -1,0 +1,407 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/xray/get-service-graph.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:30 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-service-graph &#8212; AWS CLI 1.11.61 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.11.61',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="xray" href="index.html" />
+    <link rel="next" title="get-trace-graph" href="get-trace-graph.html" />
+    <link rel="prev" title="batch-get-traces" href="batch-get-traces.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="get-trace-graph.html" title="get-trace-graph" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="batch-get-traces.html" title="batch-get-traces" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">xray</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="batch-get-traces.html" title="previous chapter (use the left arrow)">&#8592; batch-get-traces</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="get-trace-graph.html" title="next chapter (use the right arrow)">get-trace-graph &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-service-graph</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/xray/get-service-graph">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-xray"><em>xray</em></a> ]</p>
+<div class="section" id="get-service-graph">
+<span id="cli-aws-xray-get-service-graph"></span><h1>get-service-graph<a name="//apple_ref/cpp/Command/aws xray get-service-graph" class="dashAnchor" id="aws xray get-service-graph"></a><a class="headerlink" href="#get-service-graph" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Retrieves a document that describes services that process incoming requests, and downstream services that they call as a result. Root services process incoming requests and make calls to downstream services. Root services are applications that use the AWS X-Ray SDK. Downstream services can be other applications, AWS resources, HTTP web APIs, or SQL databases.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetServiceGraph">AWS API Documentation</a></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  get-service-graph
+--start-time &lt;value&gt;
+--end-time &lt;value&gt;
+[--next-token &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--start-time" class="dashAnchor" id="start-time"></a><span class="pre">--start-time</span></tt> (timestamp)</p>
+<blockquote>
+<div>The start of the time frame for which to generate a graph.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--end-time" class="dashAnchor" id="end-time"></a><span class="pre">--end-time</span></tt> (timestamp)</p>
+<blockquote>
+<div>The end of the time frame for which to generate a graph.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--next-token" class="dashAnchor" id="next-token"></a><span class="pre">--next-token</span></tt> (string)</p>
+<blockquote>
+<div>Pagination token. Not used.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>StartTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The start of the time frame for which the graph was generated.</div></blockquote>
+<p>EndTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The end of the time frame for which the graph was generated.</div></blockquote>
+<p>Services -&gt; (list)</p>
+<blockquote>
+<div><p>The services that have processed a traced request during the specified time frame.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Information about an application that processed requests, users that made requests, or downstream services, resources and applications that an application used.</p>
+<p>ReferenceId -&gt; (integer)</p>
+<blockquote>
+<div>Identifier for the service. Unique within the service map.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The canonical name of the service.</div></blockquote>
+<p>Names -&gt; (list)</p>
+<blockquote>
+<div><p>A list of names for the service, including the canonical name.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>Root -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates that the service was the first service to process a request.</div></blockquote>
+<p>AccountId -&gt; (string)</p>
+<blockquote>
+<div>Identifier of the AWS account in which the service runs.</div></blockquote>
+<p>Type -&gt; (string)</p>
+<blockquote>
+<div><p>The type of service.</p>
+<ul class="simple">
+<li>AWS Resource - The type of an AWS resource. For example, <tt class="docutils literal"><span class="pre">AWS::EC2::Instance</span></tt> for a application running on Amazon EC2 or <tt class="docutils literal"><span class="pre">AWS::DynamoDB::Table</span></tt> for an Amazon DynamoDB table that the application used.</li>
+<li>AWS Service - The type of an AWS service. For example, <tt class="docutils literal"><span class="pre">AWS::DynamoDB</span></tt> for downstream calls to Amazon DynamoDB that didn't target a specific table.</li>
+<li><tt class="docutils literal"><span class="pre">client</span></tt> - Represents the clients that sent requests to a root service.</li>
+<li><tt class="docutils literal"><span class="pre">remote</span></tt> - A downstream service of indeterminate type.</li>
+</ul>
+</div></blockquote>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div>The service's state.</div></blockquote>
+<p>StartTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The start time of the first segment that the service generated.</div></blockquote>
+<p>EndTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The end time of the last segment that the service generated.</div></blockquote>
+<p>Edges -&gt; (list)</p>
+<blockquote>
+<div><p>Connections to downstream services.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Information about a connection between two services.</p>
+<p>ReferenceId -&gt; (integer)</p>
+<blockquote>
+<div>Identifier of the edge. Unique within a service map.</div></blockquote>
+<p>StartTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The start time of the first segment on the edge.</div></blockquote>
+<p>EndTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The end time of the last segment on the edge.</div></blockquote>
+<p>SummaryStatistics -&gt; (structure)</p>
+<blockquote>
+<div><p>Response statistics for segments on the edge.</p>
+<p>OkCount -&gt; (long)</p>
+<blockquote>
+<div>The number of requests that completed with a 2xx Success status code.</div></blockquote>
+<p>ErrorStatistics -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about requests that failed with a 4xx Client Error status code.</p>
+<p>ThrottleCount -&gt; (long)</p>
+<blockquote>
+<div>The number of requests that failed with a 419 throttling status code.</div></blockquote>
+<p>OtherCount -&gt; (long)</p>
+<blockquote>
+<div>The number of requests that failed with untracked 4xx Client Error status codes.</div></blockquote>
+<p>TotalCount -&gt; (long)</p>
+<blockquote>
+<div>The total number of requests that failed with a 4xx Client Error status code.</div></blockquote>
+</div></blockquote>
+<p>FaultStatistics -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about requests that failed with a 5xx Server Error status code.</p>
+<p>OtherCount -&gt; (long)</p>
+<blockquote>
+<div>The number of requests that failed with untracked 5xx Server Error status codes.</div></blockquote>
+<p>TotalCount -&gt; (long)</p>
+<blockquote>
+<div>The total number of requests that failed with a 5xx Server Error status code.</div></blockquote>
+</div></blockquote>
+<p>TotalCount -&gt; (long)</p>
+<blockquote>
+<div>The total number of completed requests.</div></blockquote>
+<p>TotalResponseTime -&gt; (double)</p>
+<blockquote>
+<div>The aggregate response time of completed requests.</div></blockquote>
+</div></blockquote>
+<p>ResponseTimeHistogram -&gt; (list)</p>
+<blockquote>
+<div><p>Histogram describing the prominence of response times on the edge.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>An entry in a histogram for a statistic. A histogram maps the range of observed values on the X axis, and the prevalence of each value on the Y axis.</p>
+<p>Value -&gt; (double)</p>
+<blockquote>
+<div>The value of the entry.</div></blockquote>
+<p>Count -&gt; (integer)</p>
+<blockquote>
+<div>The prevalence of the entry.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Aliases -&gt; (list)</p>
+<blockquote>
+<div><p>Aliases for the edge.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>An alias for an edge.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The canonical name of the alias.</div></blockquote>
+<p>Names -&gt; (list)</p>
+<blockquote>
+<div><p>A list of names for the alias, including the canonical name.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>Type -&gt; (string)</p>
+<blockquote>
+<div>The type of the alias.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>SummaryStatistics -&gt; (structure)</p>
+<blockquote>
+<div><p>Aggregated statistics for the service.</p>
+<p>OkCount -&gt; (long)</p>
+<blockquote>
+<div>The number of requests that completed with a 2xx Success status code.</div></blockquote>
+<p>ErrorStatistics -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about requests that failed with a 4xx Client Error status code.</p>
+<p>ThrottleCount -&gt; (long)</p>
+<blockquote>
+<div>The number of requests that failed with a 419 throttling status code.</div></blockquote>
+<p>OtherCount -&gt; (long)</p>
+<blockquote>
+<div>The number of requests that failed with untracked 4xx Client Error status codes.</div></blockquote>
+<p>TotalCount -&gt; (long)</p>
+<blockquote>
+<div>The total number of requests that failed with a 4xx Client Error status code.</div></blockquote>
+</div></blockquote>
+<p>FaultStatistics -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about requests that failed with a 5xx Server Error status code.</p>
+<p>OtherCount -&gt; (long)</p>
+<blockquote>
+<div>The number of requests that failed with untracked 5xx Server Error status codes.</div></blockquote>
+<p>TotalCount -&gt; (long)</p>
+<blockquote>
+<div>The total number of requests that failed with a 5xx Server Error status code.</div></blockquote>
+</div></blockquote>
+<p>TotalCount -&gt; (long)</p>
+<blockquote>
+<div>The total number of completed requests.</div></blockquote>
+<p>TotalResponseTime -&gt; (double)</p>
+<blockquote>
+<div>The aggregate response time of completed requests.</div></blockquote>
+</div></blockquote>
+<p>DurationHistogram -&gt; (list)</p>
+<blockquote>
+<div><p>Histogram mapping the spread of trace durations</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>An entry in a histogram for a statistic. A histogram maps the range of observed values on the X axis, and the prevalence of each value on the Y axis.</p>
+<p>Value -&gt; (double)</p>
+<blockquote>
+<div>The value of the entry.</div></blockquote>
+<p>Count -&gt; (integer)</p>
+<blockquote>
+<div>The prevalence of the entry.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>Pagination token. Not used.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="batch-get-traces.html" title="previous chapter (use the left arrow)">&#8592; batch-get-traces</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="get-trace-graph.html" title="next chapter (use the right arrow)">get-trace-graph &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="get-trace-graph.html" title="get-trace-graph">next</a> |</li>
+        <li class="right">
+          <a href="batch-get-traces.html" title="batch-get-traces">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">xray</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/xray/get-service-graph.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:30 GMT -->
+</html>

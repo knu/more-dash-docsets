@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53/disassociate-vpc-from-hosted-zone.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:27 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53/disassociate-vpc-from-hosted-zone.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:27 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>disassociate-vpc-from-hosted-zone &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>disassociate-vpc-from-hosted-zone &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,10 +25,10 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="route53" href="index.html" />
     <link rel="next" title="get-change" href="get-change.html" />
-    <link rel="prev" title="delete-traffic-policy-instance" href="delete-traffic-policy-instance.html" />
+    <link rel="prev" title="delete-vpc-association-authorization" href="delete-vpc-association-authorization.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
   
@@ -63,8 +63,8 @@
         <li class="right">
           <a href="get-change.html" title="get-change" accesskey="N">next</a> |</li>
         <li class="right">
-          <a href="delete-traffic-policy-instance.html" title="delete-traffic-policy-instance" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <a href="delete-vpc-association-authorization.html" title="delete-vpc-association-authorization" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">route53</a> &#187;</li> 
       </ul>
@@ -74,7 +74,7 @@
     <div class="top-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="delete-traffic-policy-instance.html" title="previous chapter (use the left arrow)">&#8592; delete-traffic-policy-instance</a>
+          <a href="delete-vpc-association-authorization.html" title="previous chapter (use the left arrow)">&#8592; delete-vpc-association-authorization</a>
           <span class="divider">/</span>
           
         </li>
@@ -111,7 +111,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/route53/disassociate-vpc-from-hosted-zone">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/route53/disassociate-vpc-from-hosted-zone">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -128,8 +128,17 @@
 <span id="cli-aws-route53-disassociate-vpc-from-hosted-zone"></span><h1>disassociate-vpc-from-hosted-zone<a name="//apple_ref/cpp/Command/aws route53 disassociate-vpc-from-hosted-zone" class="dashAnchor" id="aws route53 disassociate-vpc-from-hosted-zone"></a><a class="headerlink" href="#disassociate-vpc-from-hosted-zone" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>This action disassociates a vpc from an hosted zone.</p>
-<p>To disassociate a vpc to a hosted zone, send a <tt class="docutils literal"><span class="pre">POST</span></tt> request to the <tt class="docutils literal"><span class="pre">/*Route</span> <span class="pre">53</span> <span class="pre">API</span> <span class="pre">version*</span> <span class="pre">/hostedzone/*hosted</span> <span class="pre">zone</span> <span class="pre">ID*</span> <span class="pre">/disassociatevpc</span></tt> resource. The request body must include a document with a <tt class="docutils literal"><span class="pre">DisassociateVPCFromHostedZoneRequest</span></tt> element. The response returns the <tt class="docutils literal"><span class="pre">DisassociateVPCFromHostedZoneResponse</span></tt> element that contains <tt class="docutils literal"><span class="pre">ChangeInfo</span></tt> for you to track the progress of the <tt class="docutils literal"><span class="pre">DisassociateVPCFromHostedZoneRequest</span></tt> you made. See <tt class="docutils literal"><span class="pre">get-change</span></tt> operation for how to track the progress of your change.</p>
+<p>Disassociates a vpc from a Amazon Route 53 private hosted zone.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can't disassociate the last vpc from a private hosted zone.</p>
+</div>
+<p>Send a <tt class="docutils literal"><span class="pre">POST</span></tt> request to the <tt class="docutils literal"><span class="pre">/2013-04-01/hostedzone/*hosted</span> <span class="pre">zone</span> <span class="pre">ID*</span> <span class="pre">/disassociatevpc</span></tt> resource. The request body must include a document with a <tt class="docutils literal"><span class="pre">DisassociateVPCFromHostedZoneRequest</span></tt> element. The response includes a <tt class="docutils literal"><span class="pre">DisassociateVPCFromHostedZoneResponse</span></tt> element.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">You can't disassociate a vpc from a private hosted zone when only one vpc is associated with the hosted zone. You also can't convert a private hosted zone into a public hosted zone.</p>
+</div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZone">AWS API Documentation</a></p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
@@ -138,54 +147,50 @@
 --vpc &lt;value&gt;
 [--comment &lt;value&gt;]
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
 <h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--hosted-zone-id" class="dashAnchor" id="hosted-zone-id"></a><span class="pre">--hosted-zone-id</span></tt> (string)</p>
 <blockquote>
-<div><p>The ID of the hosted zone you want to disassociate your vpc from.</p>
-<p>Note that you cannot disassociate the last vpc from a hosted zone.</p>
-</div></blockquote>
+<div>The ID of the private hosted zone that you want to disassociate a vpc from.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--vpc" class="dashAnchor" id="vpc"></a><span class="pre">--vpc</span></tt> (structure)</p>
 <blockquote>
-<div>The vpc that you want your hosted zone to be disassociated from.</div></blockquote>
+<div>A complex type that contains information about the vpc that you're disassociating from the specified hosted zone.</div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">VPCRegion</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">VPCId</span><span class="o">=</span><span class="n">string</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">VPCRegion</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">VPCId</span><span class="o">=</span><span class="n">string</span>
 </pre></div>
 </div>
 <p>JSON Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-  <span class="s2">"VPCRegion"</span><span class="p">:</span> <span class="s2">"us-east-1"</span><span class="o">|</span><span class="s2">"us-west-1"</span><span class="o">|</span><span class="s2">"us-west-2"</span><span class="o">|</span><span class="s2">"eu-west-1"</span><span class="o">|</span><span class="s2">"eu-central-1"</span><span class="o">|</span><span class="s2">"ap-southeast-1"</span><span class="o">|</span><span class="s2">"ap-southeast-2"</span><span class="o">|</span><span class="s2">"ap-northeast-1"</span><span class="o">|</span><span class="s2">"ap-northeast-2"</span><span class="o">|</span><span class="s2">"sa-east-1"</span><span class="o">|</span><span class="s2">"cn-north-1"</span><span class="p">,</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">"VPCRegion"</span><span class="p">:</span> <span class="s2">"us-east-1"</span><span class="o">|</span><span class="s2">"us-east-2"</span><span class="o">|</span><span class="s2">"us-west-1"</span><span class="o">|</span><span class="s2">"us-west-2"</span><span class="o">|</span><span class="s2">"eu-west-1"</span><span class="o">|</span><span class="s2">"eu-west-2"</span><span class="o">|</span><span class="s2">"eu-central-1"</span><span class="o">|</span><span class="s2">"ap-southeast-1"</span><span class="o">|</span><span class="s2">"ap-southeast-2"</span><span class="o">|</span><span class="s2">"ap-south-1"</span><span class="o">|</span><span class="s2">"ap-northeast-1"</span><span class="o">|</span><span class="s2">"ap-northeast-2"</span><span class="o">|</span><span class="s2">"sa-east-1"</span><span class="o">|</span><span class="s2">"ca-central-1"</span><span class="o">|</span><span class="s2">"cn-north-1"</span><span class="p">,</span>
   <span class="s2">"VPCId"</span><span class="p">:</span> <span class="s2">"string"</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--comment" class="dashAnchor" id="comment"></a><span class="pre">--comment</span></tt> (string)</p>
 <blockquote>
-<div><em>Optional:</em> Any comments you want to include about a <tt class="docutils literal"><span class="pre">DisassociateVPCFromHostedZoneRequest</span></tt> .</div></blockquote>
+<div><em>Optional:</em> A comment about the disassociation request.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="output">
 <h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
 <p>ChangeInfo -&gt; (structure)</p>
 <blockquote>
-<div><p>A complex type that contains the ID, the status, and the date and time of your <tt class="docutils literal"><span class="pre">DisassociateVPCFromHostedZoneRequest</span></tt> .</p>
+<div><p>A complex type that describes the changes made to the specified private hosted zone.</p>
 <p>Id -&gt; (string)</p>
 <blockquote>
-<div>The ID of the request. Use this ID to track when the change has completed across all Amazon Route 53 DNS servers.</div></blockquote>
+<div>The ID of the request.</div></blockquote>
 <p>Status -&gt; (string)</p>
 <blockquote>
-<div><p>The current state of the request. <tt class="docutils literal"><span class="pre">PENDING</span></tt> indicates that this request has not yet been applied to all Amazon Route 53 DNS servers.</p>
-<p>Valid Values: <tt class="docutils literal"><span class="pre">PENDING</span></tt> | <tt class="docutils literal"><span class="pre">INSYNC</span></tt></p>
-</div></blockquote>
+<div>The current state of the request. <tt class="docutils literal"><span class="pre">PENDING</span></tt> indicates that this request has not yet been applied to all Amazon Route 53 DNS servers.</div></blockquote>
 <p>SubmittedAt -&gt; (timestamp)</p>
 <blockquote>
-<div>The date and time the change was submitted, in the format <tt class="docutils literal"><span class="pre">YYYY-MM-DDThh:mm:ssZ</span></tt> , as specified in the ISO 8601 standard (for example, 2009-11-19T19:37:58Z). The <tt class="docutils literal"><span class="pre">Z</span></tt> after the time indicates that the time is listed in Coordinated Universal Time (UTC).</div></blockquote>
+<div>The date and time the change request was submitted, in Coordinated Universal Time (UTC) format: <tt class="docutils literal"><span class="pre">YYYY-MM-DDThh:mm:ssZ</span></tt> . For more information, see the Wikipedia entry <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> .</div></blockquote>
 <p>Comment -&gt; (string)</p>
 <blockquote>
 <div><p>A complex type that describes change information about changes made to your hosted zone.</p>
@@ -203,7 +208,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
     <div class="footer-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="delete-traffic-policy-instance.html" title="previous chapter (use the left arrow)">&#8592; delete-traffic-policy-instance</a>
+          <a href="delete-vpc-association-authorization.html" title="previous chapter (use the left arrow)">&#8592; delete-vpc-association-authorization</a>
           <span class="divider">/</span>
           
         </li>
@@ -230,8 +235,8 @@ Prints a sample input JSON to standard output. Note the specified operation is n
         <li class="right">
           <a href="get-change.html" title="get-change">next</a> |</li>
         <li class="right">
-          <a href="delete-traffic-policy-instance.html" title="delete-traffic-policy-instance">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <a href="delete-vpc-association-authorization.html" title="delete-vpc-association-authorization">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">route53</a> &#187;</li> 
       </ul>
@@ -247,5 +252,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53/disassociate-vpc-from-hosted-zone.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:27 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53/disassociate-vpc-from-hosted-zone.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:27 GMT -->
 </html>

@@ -1,40 +1,213 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/userguide/cli-dynamodb.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:42 GMT -->
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/userguide/cli-dynamodb.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:46 GMT -->
 <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-   <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Use AWS CLI commands to access Amazon DynamoDB."><title>Using Amazon DynamoDB with the AWS Command Line Interface - AWS Command Line Interface</title><link rel="home" href="#aws-unified-cli" title="AWS Command Line Interface"><link rel="up" href="chap-working-with-services.html" title="Working with Amazon Web Services"><link rel="prev" href="chap-working-with-services.html" title="Working with Amazon Web Services"><link rel="next" href="cli-using-ec2.html" title="Using Amazon EC2 through the AWS Command Line Interface"><meta name="keywords" content=""><meta name="deployment_region" content="IAD"><meta name="product" content="AWS Command Line Interface"><meta name="guide" content="User Guide"><meta name="guide-locale" content="en_us"><link rel="icon" type="image/ico" href="http://media.amazonwebservices.com/favicon.ico"><link rel="shortcut icon" type="image/ico" href="http://media.amazonwebservices.com/favicon.ico"><link rel="canonical" href="cli-dynamodb.html"><link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/jquery-ui.min.css"><link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/font/css/font-awesome.min.css"><link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/google-font.css"><link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/highlight-default.css"><link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/jquery-ui.theme.css"><link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/colorbox.css"><link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/awsdocs.css"><script type="text/javascript" src="http://docs.aws.amazon.com/js/highlight.pack.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/jquery.min.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/jquery-ui.min.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/handlebars.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/jquery.colorbox.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/awsdocs.min.js"></script></head><body id="top"><div id="aws-nav" class="aws-nav-header"><div class="aws-nav-header-left"><div id="aws-nav-flyout-trigger" class="aws-nav-flyout-trigger"><i class="fa fa-bars fa-2x"></i>Menu</div><div class="aws-nav-logo"><a href="https://aws.amazon.com/"><span>Amazon Web Services</span></a></div></div><div id="aws-nav-header-right" class="aws-nav-header-right"><div class="aws-nav-cta-button-outer"><a id="aws-nav-cta-button" class="aws-nav-button" href="https://console.aws.amazon.com/console/home">Sign In to the Console</a></div><div class="aws-nav-popover-trigger" data-dropdown="aws-nav-dropdown-lang"><select id="languageSelection" onchange="SelectLanguage()"><option value="http://docs.aws.amazon.com/de_de/cli/latest/userguide/cli-dynamodb.html">Deutsch</option><option value="/en_us/cli/latest/userguide/cli-dynamodb.html" selected>English</option><option value="http://docs.aws.amazon.com/es_es/cli/latest/userguide/cli-dynamodb.html">Espa&ntilde;ol</option><option value="http://docs.aws.amazon.com/fr_fr/cli/latest/userguide/cli-dynamodb.html">Fran&ccedil;ais</option><option value="http://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-dynamodb.html">&#26085;&#26412;&#35486;</option><option value="http://docs.aws.amazon.com/pt_br/cli/latest/userguide/cli-dynamodb.html">Portugu&ecirc;s</option><option value="http://docs.aws.amazon.com/ko_kr/cli/latest/userguide/cli-dynamodb.html">&#54620;&#44397;&#50612;</option><option value="http://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-dynamodb.html">&#20013;&#25991; (&#31616;&#20307;)</option></select></div><div id="aws-nav-quicklinks-separator" class="aws-nav-quicklinks-separator"><div class="aws-nav-left"></div><div class="aws-nav-right"></div></div></div><div id="topnav-flyout-menu-container"><ul id="topnav-flyout-menu"><script id="flyout-item-template" type="text/x-handlebars-template">           
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Using Amazon DynamoDB with the AWS Command Line Interface - AWS Command Line Interface</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="home" href="#top" />
+      <link rel="up" href="chap-working-with-services.html"
+            title="Working with Amazon Web Services" />
+      <link rel="prev" href="chap-working-with-services.html" title="" />
+      <link rel="next" href="cli-using-ec2.html"
+            title="Using Amazon EC2 through the AWS Command Line Interface" />
+      <meta name="description" content="Use AWS CLI commands to access Amazon DynamoDB." />
+      <meta name="deployment_region" content="IAD" />
+      <meta name="product" content="AWS Command Line Interface" />
+      <meta name="guide" content="User Guide" />
+      <meta name="guide-locale" content="en_us" />
+      <link rel="icon" type="image/ico" href="http://media.amazonwebservices.com/favicon.ico" />
+      <link rel="shortcut icon" type="image/ico"
+            href="http://media.amazonwebservices.com/favicon.ico" />
+      <link rel="canonical"
+            href="cli-dynamodb.html" />
+      <link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/jquery-ui.min.css" />
+      <link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/font/css/font-awesome.min.css" />
+      <link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/google-font.css" />
+      <link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/highlight-default.css" />
+      <link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/jquery-ui.theme.css" />
+      <link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/colorbox.css" />
+      <link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/awsdocs.css" /><script type="text/javascript" src="http://docs.aws.amazon.com/js/highlight.pack.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/jquery.min.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/jquery-ui.min.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/handlebars.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/jquery.colorbox.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/awsdocs.min.js"></script></head>
+   <body id="top">
+      <div xmlns:db="http://docbook.org/ns/docbook" id="aws-nav" class="aws-nav-header">
+         <div class="aws-nav-header-left">
+            <div id="aws-nav-flyout-trigger" class="aws-nav-flyout-trigger"><i class="fa fa-bars fa-2x"></i>Menu
+            </div>
+            <div class="aws-nav-logo"><a href="https://aws.amazon.com/"><span>Amazon Web Services</span></a></div>
+         </div>
+         <div id="aws-nav-header-right" class="aws-nav-header-right">
+            <div class="aws-nav-cta-button-outer">
+               <div class="js-mbox" data-mbox="en_h_nav_cta"><span class="aws-nav-cta-default" id="span-conosole-signin"><a id="aws-nav-cta-button" class="aws-nav-button"
+                        href="https://console.aws.amazon.com/console/home">Sign In to the Console</a></span><span class="aws-nav-cta-default" id="span-conosole-signup" style="display:none"><a id="aws-nav-cta-button" class="aws-nav-button"
+                        href="https://portal.aws.amazon.com/gp/aws/developer/registration/index.html">Try AWS for Free</a></span></div>
+            </div>
+            <div class="aws-nav-popover-trigger" data-dropdown="aws-nav-dropdown-lang"><select id="languageSelection" onchange="SelectLanguage()">
+                  <option value="http://docs.aws.amazon.com/de_de/cli/latest/userguide/cli-dynamodb.html">Deutsch</option>
+                  <option value="/en_us/cli/latest/userguide/cli-dynamodb.html" selected="selected">English</option>
+                  <option value="http://docs.aws.amazon.com/es_es/cli/latest/userguide/cli-dynamodb.html">Español</option>
+                  <option value="http://docs.aws.amazon.com/fr_fr/cli/latest/userguide/cli-dynamodb.html">Français</option>
+                  <option value="http://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-dynamodb.html">日本語</option>
+                  <option value="http://docs.aws.amazon.com/ko_kr/cli/latest/userguide/cli-dynamodb.html">한국어</option>
+                  <option value="http://docs.aws.amazon.com/pt_br/cli/latest/userguide/cli-dynamodb.html">Português</option>
+                  <option value="http://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-dynamodb.html">中文 (简体)</option></select></div>
+            <div id="aws-nav-quicklinks-separator" class="aws-nav-quicklinks-separator">
+               <div class="aws-nav-left"></div>
+               <div class="aws-nav-right"></div>
+            </div>
+         </div>
+         <div xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0"
+              id="topnav-flyout-menu-container">
+            <ul id="topnav-flyout-menu"><script id="flyout-item-template" type="text/x-handlebars-template">           
                     {{#flyoutList}}
                     
                     <li>{{listItem}}
                         {{#if subList}}
                         <ul>
                             {{#subList}}
-                            <li class="awsdocs-flyout-link-wrapper"><a href="{{target}}">{{text}}</a></li>
+                            <li class="awsdocs-flyout-link-wrapper">&lt;a href="{{target}}"&gt;{{text}}&lt;/a&gt;</li>
                             {{/subList}}
                         </ul>
                         {{/if}}
                     </li>
                     
                     {{/flyoutList}}
-                </script></ul><div id="topnav-flyout-menu-spacer"></div></div></div><script type="text/javascript"><!--
-						var thispage = "cli-dynamodb.html";
-						var tocroot = location.protocol + '//' + location.hostname + location.pathname;
-						--></script><div id="content-container"><div id="left-column" class="ui-resizable"><div id="left-col-header"><div id="left-col-top-content"><div id="service-name">AWS Command Line Interface </div><div id="search"><i id="search-icon" class="fa fa-search fa-2x"></i></div><div id="guide-info">User Guide<div id="content-button"><i id="toggle-contents" class="fa fa-bars"></i></div></div></div><form id="finegrainedSearch" method="get" onsubmit="return searchFormSubmit(this);" action="http://docs.aws.amazon.com/search/doc-search.html"><div id="search-form"><select id="search-select" name="searchPath"><option value="all">Entire Site</option><option value="AWSMarketplace">AMIs from AWS Marketplace</option><option value="amis">AMIs from All Sources</option><option value="articles">Articles &amp; Tutorials</option><option value="products_and_info">AWS Product Information</option><option value="case_studies">Case Studies</option><option value="customerapps">Customer Apps</option><option value="documentation">Documentation</option><option value="documentation-product">Documentation - This Product</option><option value="documentation-guide" selected>Documentation - This Guide</option><option value="datasets">Public Data Sets</option><option value="releasenotes">Release Notes</option><option value="solution_providers">Partners</option><option value="code">Sample Code &amp; Libraries</option></select><br><input id="search-query" name="searchQuery" type="text" placholder="$loc-search-search"><input id="search-button" src="images/search-button.png" alt="Go" type="image"></div><input type="hidden" name="this_doc_product" id="this_doc_product" value="AWS Command Line Interface"><input type="hidden" name="this_doc_guide" id="this_doc_guide" value="User Guide"><input type="hidden" name="doc_locale" value="en_us"></form></div><div id="toc"><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc" href="cli-chap-welcome.html">What Is the AWS CLI?</a></li><li class="awstoc closed"><a class="awstoc" href="cli-chap-getting-set-up.html">Getting Set Up</a><ul class="awstoc"><li class="awstoc closed"><a class="awstoc" href="installing.html">Installing the AWS CLI</a><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc" href="cli-uninstall.html">Uninstalling the AWS CLI</a></li></ul></li><li class="awstoc closed"><a class="awstoc" href="cli-chap-getting-started.html">Configuring the AWS CLI</a><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc" href="cli-http-proxy.html">Using an HTTP Proxy</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-roles.html">Assuming a Role</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-command-completion.html">Command Completion</a></li></ul></li></ul></li><li class="awstoc leaf"><a class="awstoc" href="tutorial-ec2-ubuntu.html">Tutorial: Using Amazon EC2</a></li><li class="awstoc closed"><a class="awstoc" href="cli-chap-using.html">Using the AWS CLI</a><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc" href="getting-help.html">Getting Help</a></li><li class="awstoc leaf"><a class="awstoc" href="command-structure.html">Command Structure</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-using-param.html">Specifying Parameter Values</a></li><li class="awstoc leaf"><a class="awstoc" href="generate-cli-skeleton.html">Generate CLI Skeleton</a></li><li class="awstoc leaf"><a class="awstoc" href="controlling-output.html">Controlling Command Output</a></li><li class="awstoc leaf"><a class="awstoc" href="shorthand-syntax.html">Shorthand Syntax</a></li><li class="awstoc leaf"><a class="awstoc" href="pagination.html">Pagination</a></li></ul></li><li class="awstoc opened"><a class="awstoc" href="chap-working-with-services.html">Working with Services</a><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc selected" href="cli-dynamodb.html">DynamoDB</a></li><li class="awstoc closed"><a class="awstoc" href="cli-using-ec2.html">Amazon EC2</a><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc" href="cli-ec2-keypairs.html">Using Key Pairs</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-ec2-sg.html">Using Security Groups</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-ec2-launch.html">Using Instances</a></li></ul></li><li class="awstoc leaf"><a class="awstoc" href="cli-using-glacier.html">Amazon Glacier</a></li><li class="awstoc closed"><a class="awstoc" href="cli-iam.html">AWS Identity and Access Management</a><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc" href="cli-iam-new-user-group.html">Create New IAM Users and Groups</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-iam-policy.html">Set an IAM Policy for an IAM User</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-iam-set-pw.html">Set an Initial Password for an IAM User</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-iam-create-creds.html">Create Security Credentials for an IAM User</a></li></ul></li><li class="awstoc closed"><a class="awstoc" href="cli-s3.html">Amazon S3</a><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc" href="using-s3-commands.html">Using High-Level Amazon S3 Commands</a></li><li class="awstoc leaf"><a class="awstoc" href="using-s3api-commands.html">Using API Level (s3api) Commands</a></li></ul></li><li class="awstoc leaf"><a class="awstoc" href="cli-sqs-queue-sns-topic.html">Amazon SNS</a></li><li class="awstoc closed"><a class="awstoc" href="cli-using-swf.html">Amazon SWF</a><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc" href="swf-commands-by-category.html">List of Amazon SWF Commands</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-using-swf-domains.html">Working with Amazon SWF Domains</a></li></ul></li></ul></li></ul></div></div><div id="main-column"><div id="main"><div id="main-content"><div id="breadcrumbs"><table summary="Breadcrumbs"><tr><td><div class="navheader"><div class="breadcrumb"><a href="http://aws.amazon.com/documentation/">AWS Documentation</a> &raquo; <a href="http://aws.amazon.com/documentation/cli">AWS Command Line Interface</a> &raquo; <a href="index.html">AWS Command Line Interface</a> &raquo; <a href="chap-working-with-services.html">Working with Amazon Web Services</a> &raquo; <span class="breadcrumb">Using Amazon DynamoDB with the AWS Command Line Interface</span></div></div></td></tr></table></div><div id="main-col-body"><div></div><div class="section"><div class="titlepage"><div><div><h1 class="topictitle">Using Amazon DynamoDB with the AWS Command Line Interface</h1></div></div></div><p>The AWS Command Line Interface (AWS CLI) provides support for Amazon DynamoDB. You can use the AWS CLI for ad hoc
-    operations, such as creating a table. You can also use it to embed DynamoDB operations within
-    utility scripts.</p><p>The command line format consists of an Amazon DynamoDB API name, followed by the parameters for
-    that API. The AWS CLI supports a shorthand syntax for the parameter values, as well as
-    JSON.</p><p>For example, the following command will create a table named <code class="code">MusicCollection</code>. </p><div class="aws-note"><p class="aws-note">Note</p><p>For readability, long commands in this section are broken into separate lines. The
-      backslash character lets you copy and paste (or type) multiple lines into a Linux terminal. If
-      you are using a shell that does not use backslash to escape characters, replace the backslash
-      with another escape character, or remove the backslashes and put the entire command on a
-      single line.</p></div><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws dynamodb create-table \
+                </script></ul>
+            <div id="topnav-flyout-menu-spacer"></div>
+         </div>
+      </div>
+      <div id="content-container">
+         <div id="left-column">
+            <div id="left-col-header">
+               <div id="left-col-top-content">
+                  <div id="service-name">AWS Command Line Interface </div>
+                  <div id="search"><i id="search-icon" class="fa fa-search fa-2x"></i></div>
+                  <div id="guide-info">User Guide
+                     <div id="content-button"><i id="toggle-contents" class="fa fa-bars"></i></div>
+                  </div>
+               </div>
+               <form id="finegrainedSearch" method="get" onsubmit="return searchFormSubmit(this);"
+                     action="http://docs.aws.amazon.com/search/doc-search.html">
+                  <div id="search-form"><select id="search-select" name="searchPath">
+                        <option value="all">Entire Site</option>
+                        <option value="AWSMarketplace">AMIs from AWS Marketplace</option>
+                        <option value="amis">AMIs from All Sources</option>
+                        <option value="articles">Articles &amp; Tutorials</option>
+                        <option value="products_and_info">AWS Product Information</option>
+                        <option value="case_studies">Case Studies</option>
+                        <option value="customerapps">Customer Apps</option>
+                        <option value="documentation">Documentation</option>
+                        <option value="documentation-product">Documentation - This Product</option>
+                        <option value="documentation-guide" selected="selected">Documentation - This Guide</option>
+                        <option value="datasets">Public Data Sets</option>
+                        <option value="releasenotes">Release Notes</option>
+                        <option value="solution_providers">Partners</option>
+                        <option value="code">Sample Code &amp; Libraries</option></select><br /><input id="search-query" name="searchQuery" type="text" placeholder="Search" /><input id="search-button" src="http://docs.aws.amazon.com/images/search-button.png" alt="Go" type="image" /></div><input type="hidden" name="this_doc_product" id="this_doc_product"
+                         value="AWS Command Line Interface" /><input type="hidden" name="this_doc_guide" id="this_doc_guide" value="User Guide" /><input type="hidden" name="doc_locale" value="en_us" /></form>
+            </div>
+            <div id="toc">
+               <ul class="awstoc">
+                  <li class="awstoc leaf"><a class="awstoc" href="cli-chap-welcome.html">What Is the AWS CLI?</a></li>
+                  <li class="awstoc closed"><a class="awstoc" href="cli-chap-getting-set-up.html">Getting Set Up</a><ul class="awstoc">
+                        <li class="awstoc closed"><a class="awstoc" href="installing.html">Installing the AWS CLI</a><ul class="awstoc">
+                              <li class="awstoc leaf"><a class="awstoc" href="awscli-install-linux.html">Linux</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="awscli-install-windows.html">Windows</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-install-macos.html">macOS</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="awscli-install-virtualenv.html">Virtualenv</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="awscli-install-bundle.html">Bundled Installer</a></li>
+                           </ul>
+                        </li>
+                        <li class="awstoc closed"><a class="awstoc" href="cli-chap-getting-started.html">Configuring the AWS CLI</a><ul class="awstoc">
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-http-proxy.html">Using an HTTP Proxy</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-roles.html">Assuming a Role</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-command-completion.html">Command Completion</a></li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="awstoc leaf"><a class="awstoc" href="tutorial-ec2-ubuntu.html">Tutorial: Using Amazon EC2</a></li>
+                  <li class="awstoc closed"><a class="awstoc" href="cli-chap-using.html">Using the AWS CLI</a><ul class="awstoc">
+                        <li class="awstoc leaf"><a class="awstoc" href="getting-help.html">Getting Help</a></li>
+                        <li class="awstoc leaf"><a class="awstoc" href="command-structure.html">Command Structure</a></li>
+                        <li class="awstoc leaf"><a class="awstoc" href="cli-using-param.html">Specifying Parameter Values</a></li>
+                        <li class="awstoc leaf"><a class="awstoc" href="generate-cli-skeleton.html">Generate CLI Skeleton</a></li>
+                        <li class="awstoc leaf"><a class="awstoc" href="controlling-output.html">Controlling Command Output</a></li>
+                        <li class="awstoc leaf"><a class="awstoc" href="shorthand-syntax.html">Shorthand Syntax</a></li>
+                        <li class="awstoc leaf"><a class="awstoc" href="pagination.html">Pagination</a></li>
+                     </ul>
+                  </li>
+                  <li class="awstoc opened"><a class="awstoc" href="chap-working-with-services.html">Working with Services</a><ul class="awstoc">
+                        <li class="awstoc leaf"><a class="awstoc selected" href="cli-dynamodb.html">DynamoDB</a></li>
+                        <li class="awstoc closed"><a class="awstoc" href="cli-using-ec2.html">Amazon EC2</a><ul class="awstoc">
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-ec2-keypairs.html">Using Key Pairs</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-ec2-sg.html">Using Security Groups</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-ec2-launch.html">Using Instances</a></li>
+                           </ul>
+                        </li>
+                        <li class="awstoc leaf"><a class="awstoc" href="cli-using-glacier.html">Amazon Glacier</a></li>
+                        <li class="awstoc closed"><a class="awstoc" href="cli-iam.html">AWS Identity and Access Management</a><ul class="awstoc">
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-iam-new-user-group.html">Create New IAM Users and Groups</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-iam-policy.html">Set an IAM Policy for an IAM User</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-iam-set-pw.html">Set an Initial Password for an IAM User</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-iam-create-creds.html">Create Security Credentials for an IAM User</a></li>
+                           </ul>
+                        </li>
+                        <li class="awstoc closed"><a class="awstoc" href="cli-s3.html">Amazon S3</a><ul class="awstoc">
+                              <li class="awstoc leaf"><a class="awstoc" href="using-s3-commands.html">Using High-Level Amazon S3 Commands</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="using-s3api-commands.html">Using API Level (s3api) Commands</a></li>
+                           </ul>
+                        </li>
+                        <li class="awstoc leaf"><a class="awstoc" href="cli-sqs-queue-sns-topic.html">Amazon SNS</a></li>
+                        <li class="awstoc closed"><a class="awstoc" href="cli-using-swf.html">Amazon SWF</a><ul class="awstoc">
+                              <li class="awstoc leaf"><a class="awstoc" href="swf-commands-by-category.html">List of Amazon SWF Commands</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-using-swf-domains.html">Working with Amazon SWF Domains</a></li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div id="main-column">
+            <div id="main">
+               <div id="main-content">
+                  <table summary="Breadcrumbs">
+                     <tr>
+                        <td>
+                           <div class="breadcrumb"><a href="http://aws.amazon.com/documentation">AWS Documentation</a> » <a href="http://aws.amazon.com/documentation/cli">AWS Command Line Interface</a> » <a href="index-2.html">User Guide</a> » <a href="chap-working-with-services.html">Working with Amazon Web Services</a> » <span class="breadcrumb">Using Amazon DynamoDB with the AWS Command Line Interface</span></div>
+                        </td>
+                     </tr>
+                  </table>
+                  <div id="main-col-body">
+                     <div></div>
+                     <h1 class="topictitle" id="cli-dynamodb">Using Amazon DynamoDB with the AWS Command Line Interface</h1>
+                     <p>The AWS Command Line Interface (AWS CLI) provides support for Amazon DynamoDB. You can use the AWS CLI for ad hoc
+                        operations, such as creating a table. You can also use it to embed DynamoDB operations within
+                        utility scripts.
+                     </p>
+                     <p>The command line format consists of an Amazon DynamoDB API name, followed by the parameters for
+                        that API. The AWS CLI supports a shorthand syntax for the parameter values, as well as
+                        JSON.
+                     </p>
+                     <p>For example, the following command will create a table named <code class="code">MusicCollection</code>. 
+                     </p>
+                     <div class="aws-note">
+                        <p class="aws-note">Note</p>
+                        <p>For readability, long commands in this section are broken into separate lines. The
+                           backslash character lets you copy and paste (or type) multiple lines into a Linux terminal. If
+                           you are using a shell that does not use backslash to escape characters, replace the backslash
+                           with another escape character, or remove the backslashes and put the entire command on a
+                           single line.
+                        </p>
+                     </div><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws dynamodb create-table \
     --table-name MusicCollection \
     --attribute-definitions \
         AttributeName=Artist,AttributeType=S AttributeName=SongTitle,AttributeType=S \
     --key-schema AttributeName=Artist,KeyType=HASH AttributeName=SongTitle,KeyType=RANGE \
     --provisioned-throughput ReadCapacityUnits=1,WriteCapacityUnits=1</code></strong></code></pre><p>The following commands will add new items to the table. These example use a combination of
-    shorthand syntax and JSON.</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws dynamodb put-item \
+                        shorthand syntax and JSON.
+                     </p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws dynamodb put-item \
     --table-name MusicCollection \
     --item '{
         "Artist": {"S": "No One You Know"},
@@ -60,13 +233,20 @@ $ <strong class="userinput"><code>aws dynamodb put-item \
         "TableName": "MusicCollection"
     }
 }</code></pre><p>On the command line, it can be difficult to compose valid JSON; however, the AWS CLI can read
-    JSON files. For example, consider the following JSON snippet, which is stored in a file named
-      <code class="filename">expression-attributes.json</code>:</p><div class="example"><a name="d0e3818"></a><p class="title"><b>Example expression-attributes.json</b></p><div class="example-contents"><pre class="programlisting"><code class="nohighlight">{
+                        JSON files. For example, consider the following JSON snippet, which is stored in a file named
+                        <code>expression-attributes.json</code>:
+                     </p>
+                     <div class="example">
+                        <p class="title"><b>expression-attributes.json</b></p>
+                        <div class="example-contents"><pre class="programlisting"><code class="nohighlight ">{
   ":v1": {"S": "No One You Know"},
   ":v2": {"S": "Call Me Today"}
-}</code></pre></div></div><br class="example-break"><p>You can now issue a <code class="code">Query</code> request using the AWS CLI. In this example, the
-    contents of the <code class="filename">expression-attributes.json</code> file are used for the
-      <code class="code">--expression-attribute-values</code> parameter:</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws dynamodb query --table-name MusicCollection \
+}</code></pre></div>
+                     </div>
+                     <p>You can now issue a <code class="code">Query</code> request using the AWS CLI. In this example, the
+                        contents of the <code>expression-attributes.json</code> file are used for the
+                        <code class="code">--expression-attribute-values</code> parameter:
+                     </p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws dynamodb query --table-name MusicCollection \
     --key-condition-expression "Artist = :v1 AND SongTitle = :v2" \
     --expression-attribute-values file://expression-attributes.json</code></strong>
 {
@@ -86,16 +266,86 @@ $ <strong class="userinput"><code>aws dynamodb put-item \
     ],
     "ScannedCount": 1,
     "ConsumedCapacity": null
-}</code></pre><p>For more documentation on using the AWS CLI with DynamoDB, go to <a class="ulink" href="../reference/dynamodb/index.html" target="_blank">http://docs.aws.amazon.com/cli/latest/reference/dynamodb/index.html</a>.</p><p>In addition to DynamoDB, you can use the AWS CLI with DynamoDB Local. DynamoDB Local is a small
-    client-side database and server that mimics the DynamoDB service. DynamoDB Local enables you to
-    write applications that use the DynamoDB API, without actually manipulating any tables or data in
-    DynamoDB. Instead, all of the API actions are rerouted to DynamoDB Local. When your application
-    creates a table or modifies data, those changes are written to a local database. This lets you
-    save on provisioned throughput, data storage, and data transfer fees.</p><p>For more information about DynamoDB Local and how to use it with the AWS CLI, see the
-    following sections of the <a class="ulink" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/" target="_blank">Amazon DynamoDB Developer Guide</a>:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p><a class="ulink" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tools.DynamoDBLocal.html" target="_blank">DynamoDB Local</a></p></li><li class="listitem"><p><a class="ulink" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tools.CLI.html#UsingWithDDBLocal" target="_blank">Using the AWS CLI with
-          DynamoDB Local</a></p></li></ul></div></div></div><img src="images/expanderarrow.png" style="display:none;height:0;width:0"><div id="main-col-footer"><div id="doc-conventions"><a target="_top" href="http://docs.aws.amazon.com/general/latest/gr/docconventions.html">Document Conventions</a></div><div id="next"><a class="awstoc" accesskey="p" href="chap-working-with-services.html">&laquo; Previous </a><a class="awstoc" accesskey="n" href="cli-using-ec2.html">Next &raquo;</a></div><div id="copyright-main-footer">&copy; 2016, Amazon Web Services, Inc. or its affiliates. All rights reserved.</div></div></div></div><div id="right-expanded"><div id="right-content-wrapper"><div id="right-col-header"><a id="pdf_link" href="aws-cli.pdf"> PDF </a><text> | </text><a target="_blank" href="http://www.amazon.com/dp/B00Q7K4HFG">Kindle </a></div></div></div></div></div><div id="footer"><div id="footer_short_fb" class="hide" title="Feedback"><a target="_blank" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=User%20Guide&amp;hidden_api_version=&amp;hidden_file_name=cli-dynamodb"><i class="fa fa-envelope-o"></i></a></div><div id="footer_toggle" class="mediaobject"><img id="footer_toggle_img" src="images/expanderarrow.png"><img id="footer_toggle_img_collapse" class="hide" src="images/expanderarrowright.png"></div><div id="footer-left"><a target="_top" href="http://aws.amazon.com/terms">Terms of Use</a> | &copy; 2016, Amazon Web Services, Inc. or its affiliates. All rights reserved.</div><div id="footer-right"><div id="feedback"><div id="forums"><a id="forum_link" target="_blank" href="http://forums.aws.amazon.com/forum.jspa?forumID=150">Have a question? Try the Forums.</a></div><div id="feedback-message">Did this page help you?</div><div id="feedback-yesno-buttons"><a class="awstoc btn btn-default" target="_blank" href="feedbackyes12b7.html?topic_id=cli-dynamodb">Yes</a><a class="awstoc btn btn-default" target="_blank" href="feedbackno12b7.html?topic_id=cli-dynamodb">No</a></div><div id="feedback-feedback-button"><a class="awstoc btn btn-default" target="_blank" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=User%20Guide&amp;hidden_api_version=&amp;hidden_file_name=cli-dynamodb">Feedback</a></div></div></div></div><noscript><div><div><div><div id="error_messages"><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" style="float: left;" alt="Warning"><div id="js_error_message"><strong>Javascript is disabled or is unavailable in your browser.</strong><br> To use the AWS Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions. </div></div></div></div></div></noscript><!-- SiteCatalyst code version: H.25.2.
+}</code></pre><p>For more documentation on using the AWS CLI with DynamoDB, go to <a href="../reference/dynamodb/index.html"
+                           target="_blank">http://docs.aws.amazon.com/cli/latest/reference/dynamodb/index.html</a>.
+                     </p>
+                     <p>In addition to DynamoDB, you can use the AWS CLI with DynamoDB Local. DynamoDB Local is a small
+                        client-side database and server that mimics the DynamoDB service. DynamoDB Local enables you to
+                        write applications that use the DynamoDB API, without actually manipulating any tables or data in
+                        DynamoDB. Instead, all of the API actions are rerouted to DynamoDB Local. When your application
+                        creates a table or modifies data, those changes are written to a local database. This lets you
+                        save on provisioned throughput, data storage, and data transfer fees.
+                     </p>
+                     <p>For more information about DynamoDB Local and how to use it with the AWS CLI, see the
+                        following sections of the <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/"
+                           target="_blank">Amazon DynamoDB Developer Guide</a>:
+                     </p>
+                     <div class="itemizedlist">
+                        <ul class="itemizedlist" type="disc">
+                           <li class="listitem">
+                              <p><a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tools.DynamoDBLocal.html"
+                                    target="_blank">DynamoDB Local</a></p>
+                           </li>
+                           <li class="listitem">
+                              <p><a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tools.CLI.html#UsingWithDDBLocal"
+                                    target="_blank">Using the AWS CLI with
+                                    DynamoDB Local</a></p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div id="main-col-footer">
+                     <div id="doc-conventions"><a target="_top" href="http://docs.aws.amazon.com/general/latest/gr/docconventions.html">Document Conventions</a></div>
+                     <div id="next"><a class="awstoc" accesskey="p" href="chap-working-with-services.html">« Previous </a><a class="awstoc" accesskey="n" href="cli-using-ec2.html">Next »</a></div>
+                     <div id="copyright-main-footer">© 2017, Amazon Web Services, Inc. or its affiliates. All rights reserved.</div>
+                  </div>
+               </div>
+            </div>
+            <div id="right-expanded">
+               <div id="right-content-wrapper">
+                  <div id="right-col-header"><a id="pdf_link" href="aws-cli.pdf" target="_blank"> PDF </a> | <a target="_blank" href="http://www.amazon.com/dp/B00Q7K4HFG">Kindle </a></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="footer">
+         <div id="footer_short_fb" class="hide" title="Feedback"><a target="_blank"
+               href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=User%20Guide&amp;hidden_api_version=&amp;hidden_file_name=cli-dynamodb"><i class="fa fa-envelope-o"></i></a></div>
+         <div id="footer_toggle" class="mediaobject"><img id="footer_toggle_img" src="http://docs.aws.amazon.com/images/expanderarrow.png" /><img id="footer_toggle_img_collapse" class="hide"
+                 src="http://docs.aws.amazon.com/images/expanderarrowright.png" /></div>
+         <div id="footer-left"><a target="_top" href="http://aws.amazon.com/terms">Terms of Use</a> | © 2017, Amazon Web Services, Inc. or its affiliates. All rights reserved.
+         </div>
+         <div id="footer-right">
+            <div id="feedback">
+               <div id="forums"><a id="forum_link" target="_blank"
+                     href="http://forums.aws.amazon.com/forum.jspa?forumID=150">Have a question? Try the Forums.</a></div>
+               <div id="feedback-message">Did this page help you?</div>
+               <div id="feedback-yesno-buttons"><a class="awstoc btn btn-default" target="_blank"
+                     href="feedbackyes3770.html?topic_url=http://docs.aws.amazon.com/cli/latest/userguide/cli-dynamodb.html">Yes</a><a class="awstoc btn btn-default" target="_blank"
+                     href="feedbackno3770.html?topic_url=http://docs.aws.amazon.com/cli/latest/userguide/cli-dynamodb.html">No</a></div>
+               <div id="feedback-feedback-button"><a class="awstoc btn btn-default" target="_blank"
+                     href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;topic_url=http://docs.aws.amazon.com/cli/latest/userguide/cli-dynamodb.html&amp;hidden_guide_name=User%20Guide&amp;hidden_api_version=&amp;hidden_file_name=cli-dynamodb">Feedback</a></div>
+            </div>
+         </div>
+      </div>
+      <noscript>
+         <div>
+            <div>
+               <div>
+                  <div id="error_messages"><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png"
+                          style="float: left;"
+                          alt="Warning" /><div id="js_error_message"><strong>Javascript is disabled or is unavailable in your browser.</strong><br /> To use the AWS Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions. 
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </noscript>
+      <!-- SiteCatalyst code version: H.25.2.
             Copyright 1996-2012 Adobe, Inc. All Rights Reserved
-            More info available at http://www.omniture.com --><script language="JavaScript" type="text/javascript" src="https://a0.awsstatic.com/s_code/js/1.0/awshome_s_code.js"></script><script language="JavaScript" type="text/javascript"><!--
+            More info available at http://www.omniture.com --><script language="JavaScript" type="text/javascript"
+              src="https://a0.awsstatic.com/s_code/js/1.0/awshome_s_code.js"></script><script language="JavaScript" type="text/javascript">
+         <!--
 
             // Documentation Service Name
             s.prop66='AWS Command Line Interface';
@@ -105,8 +355,17 @@ $ <strong class="userinput"><code>aws dynamodb put-item \
             s.prop65='User Guide';
             s.eVar65='D=c65';
 
-            var s_code=s.t();if(s_code)document.write(s_code)//--></script><script language="JavaScript" type="text/javascript"><!--
+            var s_code=s.t();if(s_code)document.write(s_code)//--></script><script language="JavaScript" type="text/javascript">
+         <!--
                 if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
-                //--></script><noscript><img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt=""></noscript><!--/DO NOT REMOVE/--><!-- End SiteCatalyst code version: H.25.2. --></body>
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/userguide/cli-dynamodb.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:43 GMT -->
+                //--></script><noscript><img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0"
+              height="1"
+              width="1"
+              border="0"
+              alt="" /></noscript>
+      <!--/DO NOT REMOVE/-->
+      <!-- End SiteCatalyst code version: H.25.2. -->
+   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/userguide/cli-dynamodb.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:47 GMT -->
 </html>

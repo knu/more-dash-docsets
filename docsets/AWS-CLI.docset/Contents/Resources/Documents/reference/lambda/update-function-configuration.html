@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/lambda/update-function-configuration.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:21 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/lambda/update-function-configuration.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:20 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>update-function-configuration &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>update-function-configuration &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="lambda" href="index.html" />
-    <link rel="next" title="logs" href="../logs/index.html" />
+    <link rel="next" title="lex-runtime" href="../lex-runtime/index.html" />
     <link rel="prev" title="update-function-code" href="update-function-code.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
@@ -61,10 +61,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
         <li class="right">
-          <a href="../logs/index.html" title="logs" accesskey="N">next</a> |</li>
+          <a href="../lex-runtime/index.html" title="lex-runtime" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="update-function-code.html" title="update-function-code" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">lambda</a> &#187;</li> 
       </ul>
@@ -78,7 +78,7 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="../logs/index.html" title="next chapter (use the right arrow)">logs &#8594;</a></li>
+          <li><a href="../lex-runtime/index.html" title="next chapter (use the right arrow)">lex-runtime &#8594;</a></li>
       </ul>
     </div>
   
@@ -111,7 +111,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/lambda/update-function-configuration">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/lambda/update-function-configuration">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -131,6 +131,7 @@
 <p>Updates the configuration parameters for the specified Lambda function by using the values provided in the request. You provide only the parameters you want to change. This operation must only be used on an existing Lambda function and cannot be used to update the function's code.</p>
 <p>If you are using the versioning feature, note this API will always update the $LATEST version of your Lambda function. For information about the versioning feature, see <a class="reference external" href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda Function Versioning and Aliases</a> .</p>
 <p>This operation requires permission for the <tt class="docutils literal"><span class="pre">lambda:UpdateFunctionConfiguration</span></tt> action.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">AWS API Documentation</a></p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
@@ -142,9 +143,12 @@
 [--timeout &lt;value&gt;]
 [--memory-size &lt;value&gt;]
 [--vpc-config &lt;value&gt;]
+[--environment &lt;value&gt;]
 [--runtime &lt;value&gt;]
+[--dead-letter-config &lt;value&gt;]
+[--kms-key-arn &lt;value&gt;]
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
@@ -173,30 +177,66 @@
 <blockquote>
 <div>If your Lambda function accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and one subnet ID.</div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">SubnetIds</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="n">SecurityGroupIds</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">SubnetIds</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="n">SecurityGroupIds</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span>
 </pre></div>
 </div>
 <p>JSON Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">"SubnetIds"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"string"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
   <span class="s2">"SecurityGroupIds"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"string"</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--environment" class="dashAnchor" id="environment"></a><span class="pre">--environment</span></tt> (structure)</p>
+<blockquote>
+<div>The parent object that contains your environment's configuration settings.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Variables={KeyName1=string,KeyName2=string}</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{
+  "Variables": {"string": "string"
+    ...}
+}</pre>
+</div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--runtime" class="dashAnchor" id="runtime"></a><span class="pre">--runtime</span></tt> (string)</p>
 <blockquote>
-<div><p>Possible values:</p>
+<div><p>The runtime environment for the Lambda function.</p>
+<p>To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value to "nodejs".</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early 2017.</p>
+</div>
+<p>Possible values:</p>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">nodejs</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">nodejs4.3</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">java8</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">python2.7</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">dotnetcore1.0</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">nodejs4.3-edge</span></tt></li>
 </ul>
 </div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dead-letter-config" class="dashAnchor" id="dead-letter-config"></a><span class="pre">--dead-letter-config</span></tt> (structure)</p>
+<blockquote>
+<div>The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">TargetArn</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">"TargetArn"</span><span class="p">:</span> <span class="s2">"string"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--kms-key-arn" class="dashAnchor" id="kms-key-arn"></a><span class="pre">--kms-key-arn</span></tt> (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If you elect to use the AWS Lambda default service key, pass in an empty string ("") for this parameter.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="output">
 <h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
@@ -208,7 +248,9 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div>The Amazon Resource Name (ARN) assigned to the function.</div></blockquote>
 <p>Runtime -&gt; (string)</p>
 <blockquote>
-<div>The runtime environment for the Lambda function.</div></blockquote>
+<div><p>The runtime environment for the Lambda function.</p>
+<p>To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value to "nodejs".</p>
+</div></blockquote>
 <p>Role -&gt; (string)</p>
 <blockquote>
 <div>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any other Amazon Web Services (AWS) resources.</div></blockquote>
@@ -253,6 +295,36 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <blockquote>
 <div>The VPC ID associated with you Lambda function.</div></blockquote>
 </div></blockquote>
+<p>DeadLetterConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.</p>
+<p>TargetArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue (DLQ).</div></blockquote>
+</div></blockquote>
+<p>Environment -&gt; (structure)</p>
+<blockquote>
+<div><p>The parent object that contains your environment's configuration settings.</p>
+<p>Variables -&gt; (map)</p>
+<blockquote>
+<div><p>The key-value pairs returned that represent your environment's configuration settings or error information.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+<p>Error -&gt; (structure)</p>
+<blockquote>
+<div><p>The parent object that contains error information associated with your configuration settings.</p>
+<p>ErrorCode -&gt; (string)</p>
+<blockquote>
+<div>The error code returned by the environment error object.</div></blockquote>
+<p>Message -&gt; (string)</p>
+<blockquote>
+<div>The message returned by the environment error object.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>KMSKeyArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If empty, it means you are using the AWS Lambda default service key.</div></blockquote>
 </div>
 </div>
 
@@ -268,7 +340,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
           <span class="divider">/</span>
           
         </li>
-          <li><a href="../logs/index.html" title="next chapter (use the right arrow)">logs &#8594;</a></li>
+          <li><a href="../lex-runtime/index.html" title="next chapter (use the right arrow)">lex-runtime &#8594;</a></li>
       </ul>
     </div>
   
@@ -289,10 +361,10 @@ Prints a sample input JSON to standard output. Note the specified operation is n
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index">index</a></li>
         <li class="right">
-          <a href="../logs/index.html" title="logs">next</a> |</li>
+          <a href="../lex-runtime/index.html" title="lex-runtime">next</a> |</li>
         <li class="right">
           <a href="update-function-code.html" title="update-function-code">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">lambda</a> &#187;</li> 
       </ul>
@@ -308,5 +380,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/lambda/update-function-configuration.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:21 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/lambda/update-function-configuration.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:20 GMT -->
 </html>

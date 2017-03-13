@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/wait/network-interface-available.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:37:00 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/wait/network-interface-available.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:11:02 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>network-interface-available &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>network-interface-available &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../../index-2.html" />
     <link rel="up" title="wait" href="index.html" />
     <link rel="next" title="password-data-available" href="password-data-available.html" />
     <link rel="prev" title="nat-gateway-available" href="nat-gateway-available.html" />
@@ -64,7 +64,7 @@
           <a href="password-data-available.html" title="password-data-available" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="nat-gateway-available.html" title="nat-gateway-available" accesskey="P">previous</a> |</li>
-        <li><a href="../../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../../index.html">aws</a> &#187;</li>
           <li><a href="../index.html">ec2</a> &#187;</li>
           <li><a href="index.html" accesskey="U">wait</a> &#187;</li> 
@@ -112,7 +112,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ec2/wait/network-interface-available">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/ec2/wait/network-interface-available">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -130,6 +130,7 @@
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
 <p>Wait until JMESPath query NetworkInterfaces[].Status returns available for all elements when polling with <tt class="docutils literal"><span class="pre">describe-network-interfaces</span></tt>. It will poll every 20 seconds until a successful state has been reached. This will exit with a return code of 255 after 10 failed checks.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaces">AWS API Documentation</a></p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
@@ -138,7 +139,7 @@
 [--network-interface-ids &lt;value&gt;]
 [--filters &lt;value&gt;]
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
@@ -158,15 +159,15 @@
 <blockquote>
 <div><p>One or more filters.</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">addresses.private-ip-address</span></tt> - The private IP addresses associated with the network interface.</li>
-<li><tt class="docutils literal"><span class="pre">addresses.primary</span></tt> - Whether the private IP address is the primary IP address associated with the network interface.</li>
-<li><tt class="docutils literal"><span class="pre">addresses.association.public-ip</span></tt> - The association ID returned when the network interface was associated with the Elastic IP address.</li>
+<li><tt class="docutils literal"><span class="pre">addresses.private-ip-address</span></tt> - The private IPv4 addresses associated with the network interface.</li>
+<li><tt class="docutils literal"><span class="pre">addresses.primary</span></tt> - Whether the private IPv4 address is the primary IP address associated with the network interface.</li>
+<li><tt class="docutils literal"><span class="pre">addresses.association.public-ip</span></tt> - The association ID returned when the network interface was associated with the Elastic IP address (IPv4).</li>
 <li><tt class="docutils literal"><span class="pre">addresses.association.owner-id</span></tt> - The owner ID of the addresses associated with the network interface.</li>
-<li><tt class="docutils literal"><span class="pre">association.association-id</span></tt> - The association ID returned when the network interface was associated with an IP address.</li>
-<li><tt class="docutils literal"><span class="pre">association.allocation-id</span></tt> - The allocation ID returned when you allocated the Elastic IP address for your network interface.</li>
-<li><tt class="docutils literal"><span class="pre">association.ip-owner-id</span></tt> - The owner of the Elastic IP address associated with the network interface.</li>
-<li><tt class="docutils literal"><span class="pre">association.public-ip</span></tt> - The address of the Elastic IP address bound to the network interface.</li>
-<li><tt class="docutils literal"><span class="pre">association.public-dns-name</span></tt> - The public DNS name for the network interface.</li>
+<li><tt class="docutils literal"><span class="pre">association.association-id</span></tt> - The association ID returned when the network interface was associated with an IPv4 address.</li>
+<li><tt class="docutils literal"><span class="pre">association.allocation-id</span></tt> - The allocation ID returned when you allocated the Elastic IP address (IPv4) for your network interface.</li>
+<li><tt class="docutils literal"><span class="pre">association.ip-owner-id</span></tt> - The owner of the Elastic IP address (IPv4) associated with the network interface.</li>
+<li><tt class="docutils literal"><span class="pre">association.public-ip</span></tt> - The address of the Elastic IP address (IPv4) bound to the network interface.</li>
+<li><tt class="docutils literal"><span class="pre">association.public-dns-name</span></tt> - The public DNS name for the network interface (IPv4).</li>
 <li><tt class="docutils literal"><span class="pre">attachment.attachment-id</span></tt> - The ID of the interface attachment.</li>
 <li><tt class="docutils literal"><span class="pre">attachment.attach.time</span></tt> - The time that the network interface was attached to an instance.</li>
 <li><tt class="docutils literal"><span class="pre">attachment.delete-on-termination</span></tt> - Indicates whether the attachment is deleted when an instance is terminated.</li>
@@ -179,17 +180,18 @@
 <li><tt class="docutils literal"><span class="pre">description</span></tt> - The description of the network interface.</li>
 <li><tt class="docutils literal"><span class="pre">group-id</span></tt> - The ID of a security group associated with the network interface.</li>
 <li><tt class="docutils literal"><span class="pre">group-name</span></tt> - The name of a security group associated with the network interface.</li>
+<li><tt class="docutils literal"><span class="pre">ipv6-addresses.ipv6-address</span></tt> - An IPv6 address associated with the network interface.</li>
 <li><tt class="docutils literal"><span class="pre">mac-address</span></tt> - The MAC address of the network interface.</li>
 <li><tt class="docutils literal"><span class="pre">network-interface-id</span></tt> - The ID of the network interface.</li>
 <li><tt class="docutils literal"><span class="pre">owner-id</span></tt> - The AWS account ID of the network interface owner.</li>
-<li><tt class="docutils literal"><span class="pre">private-ip-address</span></tt> - The private IP address or addresses of the network interface.</li>
-<li><tt class="docutils literal"><span class="pre">private-dns-name</span></tt> - The private DNS name of the network interface.</li>
+<li><tt class="docutils literal"><span class="pre">private-ip-address</span></tt> - The private IPv4 address or addresses of the network interface.</li>
+<li><tt class="docutils literal"><span class="pre">private-dns-name</span></tt> - The private DNS name of the network interface (IPv4).</li>
 <li><tt class="docutils literal"><span class="pre">requester-id</span></tt> - The ID of the entity that launched the instance on your behalf (for example, AWS Management Console, Auto Scaling, and so on).</li>
 <li><tt class="docutils literal"><span class="pre">requester-managed</span></tt> - Indicates whether the network interface is being managed by an AWS service (for example, AWS Management Console, Auto Scaling, and so on).</li>
 <li><tt class="docutils literal"><span class="pre">source-desk-check</span></tt> - Indicates whether the network interface performs source/destination checking. A value of <tt class="docutils literal"><span class="pre">true</span></tt> means checking is enabled, and <tt class="docutils literal"><span class="pre">false</span></tt> means checking is disabled. The value must be <tt class="docutils literal"><span class="pre">false</span></tt> for the network interface to perform network address translation (NAT) in your VPC.</li>
 <li><tt class="docutils literal"><span class="pre">status</span></tt> - The status of the network interface. If the network interface is not attached to an instance, the status is <tt class="docutils literal"><span class="pre">available</span></tt> ; if a network interface is attached to an instance the status is <tt class="docutils literal"><span class="pre">in-use</span></tt> .</li>
 <li><tt class="docutils literal"><span class="pre">subnet-id</span></tt> - The ID of the subnet for the network interface.</li>
-<li><tt class="docutils literal"><span class="pre">tag</span></tt> :<em>key</em> =*value* - The key/value combination of a tag assigned to the resource.</li>
+<li><tt class="docutils literal"><span class="pre">tag</span></tt> :<em>key</em> =*value* - The key/value combination of a tag assigned to the resource. Specify the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag Purpose=X, specify <tt class="docutils literal"><span class="pre">tag:Purpose</span></tt> for the filter name and <tt class="docutils literal"><span class="pre">X</span></tt> for the filter value.</li>
 <li><tt class="docutils literal"><span class="pre">tag-key</span></tt> - The key of a tag assigned to the resource. This filter is independent of the <tt class="docutils literal"><span class="pre">tag-value</span></tt> filter. For example, if you use both the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X, see the <tt class="docutils literal"><span class="pre">tag</span></tt> :<em>key</em> =*value* filter.</li>
 <li><tt class="docutils literal"><span class="pre">tag-value</span></tt> - The value of a tag assigned to the resource. This filter is independent of the <tt class="docutils literal"><span class="pre">tag-key</span></tt> filter.</li>
 <li><tt class="docutils literal"><span class="pre">vpc-id</span></tt> - The ID of the VPC for the network interface.</li>
@@ -209,8 +211,8 @@
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="output">
 <h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
@@ -254,7 +256,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
           <a href="password-data-available.html" title="password-data-available">next</a> |</li>
         <li class="right">
           <a href="nat-gateway-available.html" title="nat-gateway-available">previous</a> |</li>
-        <li><a href="../../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../../index.html">aws</a> &#187;</li>
           <li><a href="../index.html">ec2</a> &#187;</li>
           <li><a href="index.html">wait</a> &#187;</li> 
@@ -271,5 +273,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/wait/network-interface-available.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:37:00 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/wait/network-interface-available.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:11:02 GMT -->
 </html>

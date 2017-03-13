@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/emr/put-auto-scaling-policy.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:17 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>put-auto-scaling-policy &#8212; AWS CLI 1.11.61 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.11.61',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="emr" href="index.html" />
+    <link rel="next" title="remove-auto-scaling-policy" href="remove-auto-scaling-policy.html" />
+    <link rel="prev" title="put" href="put.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="remove-auto-scaling-policy.html" title="remove-auto-scaling-policy" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="put.html" title="put" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">emr</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="put.html" title="previous chapter (use the left arrow)">&#8592; put</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="remove-auto-scaling-policy.html" title="next chapter (use the right arrow)">remove-auto-scaling-policy &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">put-auto-scaling-policy</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/emr/put-auto-scaling-policy">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-emr"><em>emr</em></a> ]</p>
+<div class="section" id="put-auto-scaling-policy">
+<span id="cli-aws-emr-put-auto-scaling-policy"></span><h1>put-auto-scaling-policy<a name="//apple_ref/cpp/Command/aws emr put-auto-scaling-policy" class="dashAnchor" id="aws emr put-auto-scaling-policy"></a><a class="headerlink" href="#put-auto-scaling-policy" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Creates or updates an automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutAutoScalingPolicy">AWS API Documentation</a></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  put-auto-scaling-policy
+--cluster-id &lt;value&gt;
+--instance-group-id &lt;value&gt;
+--auto-scaling-policy &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cluster-id" class="dashAnchor" id="cluster-id"></a><span class="pre">--cluster-id</span></tt> (string)</p>
+<blockquote>
+<div>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--instance-group-id" class="dashAnchor" id="instance-group-id"></a><span class="pre">--instance-group-id</span></tt> (string)</p>
+<blockquote>
+<div>Specifies the ID of the instance group to which the automatic scaling policy is applied.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--auto-scaling-policy" class="dashAnchor" id="auto-scaling-policy"></a><span class="pre">--auto-scaling-policy</span></tt> (structure)</p>
+<blockquote>
+<div>Specifies the definition of the automatic scaling policy.</div></blockquote>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{
+  "Constraints": {
+    "MinCapacity": integer,
+    "MaxCapacity": integer
+  },
+  "Rules": [
+    {
+      "Name": "string",
+      "Description": "string",
+      "Action": {
+        "Market": "ON_DEMAND"|"SPOT",
+        "SimpleScalingPolicyConfiguration": {
+          "AdjustmentType": "CHANGE_IN_CAPACITY"|"PERCENT_CHANGE_IN_CAPACITY"|"EXACT_CAPACITY",
+          "ScalingAdjustment": integer,
+          "CoolDown": integer
+        }
+      },
+      "Trigger": {
+        "CloudWatchAlarmDefinition": {
+          "ComparisonOperator": "GREATER_THAN_OR_EQUAL"|"GREATER_THAN"|"LESS_THAN"|"LESS_THAN_OR_EQUAL",
+          "EvaluationPeriods": integer,
+          "MetricName": "string",
+          "Namespace": "string",
+          "Period": integer,
+          "Statistic": "SAMPLE_COUNT"|"AVERAGE"|"SUM"|"MINIMUM"|"MAXIMUM",
+          "Threshold": double,
+          "Unit": "NONE"|"SECONDS"|"MICRO_SECONDS"|"MILLI_SECONDS"|"BYTES"|"KILO_BYTES"|"MEGA_BYTES"|"GIGA_BYTES"|"TERA_BYTES"|"BITS"|"KILO_BITS"|"MEGA_BITS"|"GIGA_BITS"|"TERA_BITS"|"PERCENT"|"COUNT"|"BYTES_PER_SECOND"|"KILO_BYTES_PER_SECOND"|"MEGA_BYTES_PER_SECOND"|"GIGA_BYTES_PER_SECOND"|"TERA_BYTES_PER_SECOND"|"BITS_PER_SECOND"|"KILO_BITS_PER_SECOND"|"MEGA_BITS_PER_SECOND"|"GIGA_BITS_PER_SECOND"|"TERA_BITS_PER_SECOND"|"COUNT_PER_SECOND",
+          "Dimensions": [
+            {
+              "Key": "string",
+              "Value": "string"
+            }
+            ...
+          ]
+        }
+      }
+    }
+    ...
+  ]
+}</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>ClusterId -&gt; (string)</p>
+<blockquote>
+<div>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</div></blockquote>
+<p>InstanceGroupId -&gt; (string)</p>
+<blockquote>
+<div>Specifies the ID of the instance group to which the scaling policy is applied.</div></blockquote>
+<p>AutoScalingPolicy -&gt; (structure)</p>
+<blockquote>
+<div><p>The automatic scaling policy definition.</p>
+<p>Status -&gt; (structure)</p>
+<blockquote>
+<div><p>The status of an automatic scaling policy.</p>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div>Indicates the status of the automatic scaling policy.</div></blockquote>
+<p>StateChangeReason -&gt; (structure)</p>
+<blockquote>
+<div><p>The reason for a change in status.</p>
+<p>Code -&gt; (string)</p>
+<blockquote>
+<div>The code indicating the reason for the change in status.``USER_REQUEST`` indicates that the scaling policy status was changed by a user. <tt class="docutils literal"><span class="pre">PROVISION_FAILURE</span></tt> indicates that the status change was because the policy failed to provision. <tt class="docutils literal"><span class="pre">CLEANUP_FAILURE</span></tt> indicates an error.</div></blockquote>
+<p>Message -&gt; (string)</p>
+<blockquote>
+<div>A friendly, more verbose message that accompanies an automatic scaling policy state change.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Constraints -&gt; (structure)</p>
+<blockquote>
+<div><p>The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activity will not cause an instance group to grow above or below these limits.</p>
+<p>MinCapacity -&gt; (integer)</p>
+<blockquote>
+<div>The lower boundary of EC2 instances in an instance group below which scaling activities are not allowed to shrink. Scale-in activities will not terminate instances below this boundary.</div></blockquote>
+<p>MaxCapacity -&gt; (integer)</p>
+<blockquote>
+<div>The upper boundary of EC2 instances in an instance group beyond which scaling activities are not allowed to grow. Scale-out activities will not add instances beyond this boundary.</div></blockquote>
+</div></blockquote>
+<p>Rules -&gt; (list)</p>
+<blockquote>
+<div><p>The scale-in and scale-out rules that comprise the automatic scaling policy.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A scale-in or scale-out rule that defines scaling activity, including the CloudWatch metric alarm that triggers activity, how EC2 instances are added or removed, and the periodicity of adjustments. The automatic scaling policy for an instance group can comprise one or more automatic scaling rules.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name used to identify an automatic scaling rule. Rule names must be unique within a scaling policy.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>A friendly, more verbose description of the automatic scaling rule.</div></blockquote>
+<p>Action -&gt; (structure)</p>
+<blockquote>
+<div><p>The conditions that trigger an automatic scaling activity.</p>
+<p>Market -&gt; (string)</p>
+<blockquote>
+<div>Not available for instance groups. Instance groups use the market type specified for the group.</div></blockquote>
+<p>SimpleScalingPolicyConfiguration -&gt; (structure)</p>
+<blockquote>
+<div><p>The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.</p>
+<p>AdjustmentType -&gt; (string)</p>
+<blockquote>
+<div>The way in which EC2 instances are added (if <tt class="docutils literal"><span class="pre">ScalingAdjustment</span></tt> is a positive number) or terminated (if <tt class="docutils literal"><span class="pre">ScalingAdjustment</span></tt> is a negative number) each time the scaling activity is triggered. <tt class="docutils literal"><span class="pre">CHANGE_IN_CAPACITY</span></tt> is the default. <tt class="docutils literal"><span class="pre">CHANGE_IN_CAPACITY</span></tt> indicates that the EC2 instance count increments or decrements by <tt class="docutils literal"><span class="pre">ScalingAdjustment</span></tt> , which should be expressed as an integer. <tt class="docutils literal"><span class="pre">PERCENT_CHANGE_IN_CAPACITY</span></tt> indicates the instance count increments or decrements by the percentage specified by <tt class="docutils literal"><span class="pre">ScalingAdjustment</span></tt> , which should be expressed as a decimal. For example, 0.20 indicates an increase in 20% increments of cluster capacity. <tt class="docutils literal"><span class="pre">EXACT_CAPACITY</span></tt> indicates the scaling activity results in an instance group with the number of EC2 instances specified by <tt class="docutils literal"><span class="pre">ScalingAdjustment</span></tt> , which should be expressed as a positive integer.</div></blockquote>
+<p>ScalingAdjustment -&gt; (integer)</p>
+<blockquote>
+<div>The amount by which to scale in or scale out, based on the specified <tt class="docutils literal"><span class="pre">AdjustmentType</span></tt> . A positive value adds to the instance group's EC2 instance count while a negative number removes instances. If <tt class="docutils literal"><span class="pre">AdjustmentType</span></tt> is set to <tt class="docutils literal"><span class="pre">EXACT_CAPACITY</span></tt> , the number should only be a positive integer. If <tt class="docutils literal"><span class="pre">AdjustmentType</span></tt> is set to <tt class="docutils literal"><span class="pre">PERCENT_CHANGE_IN_CAPACITY</span></tt> , the value should express the percentage as a decimal. For example, -0.20 indicates a decrease in 20% increments of cluster capacity.</div></blockquote>
+<p>CoolDown -&gt; (integer)</p>
+<blockquote>
+<div>The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling activities can start. The default value is 0.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Trigger -&gt; (structure)</p>
+<blockquote>
+<div><p>The CloudWatch alarm definition that determines when automatic scaling activity is triggered.</p>
+<p>CloudWatchAlarmDefinition -&gt; (structure)</p>
+<blockquote>
+<div><p>The definition of a CloudWatch metric alarm. When the defined alarm conditions are met along with other trigger parameters, scaling activity begins.</p>
+<p>ComparisonOperator -&gt; (string)</p>
+<blockquote>
+<div>Determines how the metric specified by <tt class="docutils literal"><span class="pre">MetricName</span></tt> is compared to the value specified by <tt class="docutils literal"><span class="pre">Threshold</span></tt> .</div></blockquote>
+<p>EvaluationPeriods -&gt; (integer)</p>
+<blockquote>
+<div>The number of periods, expressed in seconds using <tt class="docutils literal"><span class="pre">Period</span></tt> , during which the alarm condition must exist before the alarm triggers automatic scaling activity. The default value is <tt class="docutils literal"><span class="pre">1</span></tt> .</div></blockquote>
+<p>MetricName -&gt; (string)</p>
+<blockquote>
+<div>The name of the CloudWatch metric that is watched to determine an alarm condition.</div></blockquote>
+<p>Namespace -&gt; (string)</p>
+<blockquote>
+<div>The namespace for the CloudWatch metric. The default is <tt class="docutils literal"><span class="pre">AWS/ElasticMapReduce</span></tt> .</div></blockquote>
+<p>Period -&gt; (integer)</p>
+<blockquote>
+<div>The period, in seconds, over which the statistic is applied. EMR CloudWatch metrics are emitted every five minutes (300 seconds), so if an EMR CloudWatch metric is specified, specify <tt class="docutils literal"><span class="pre">300</span></tt> .</div></blockquote>
+<p>Statistic -&gt; (string)</p>
+<blockquote>
+<div>The statistic to apply to the metric associated with the alarm. The default is <tt class="docutils literal"><span class="pre">AVERAGE</span></tt> .</div></blockquote>
+<p>Threshold -&gt; (double)</p>
+<blockquote>
+<div>The value against which the specified statistic is compared.</div></blockquote>
+<p>Unit -&gt; (string)</p>
+<blockquote>
+<div>The unit of measure associated with the CloudWatch metric being watched. The value specified for <tt class="docutils literal"><span class="pre">Unit</span></tt> must correspond to the units specified in the CloudWatch metric.</div></blockquote>
+<p>Dimensions -&gt; (list)</p>
+<blockquote>
+<div><p>A CloudWatch metric dimension.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A CloudWatch dimension, which is specified using a <tt class="docutils literal"><span class="pre">Key</span></tt> (known as a <tt class="docutils literal"><span class="pre">Name</span></tt> in CloudWatch), <tt class="docutils literal"><span class="pre">Value</span></tt> pair. By default, Amazon EMR uses one dimension whose <tt class="docutils literal"><span class="pre">Key</span></tt> is <tt class="docutils literal"><span class="pre">JobFlowID</span></tt> and <tt class="docutils literal"><span class="pre">Value</span></tt> is a variable representing the cluster ID, which is <tt class="docutils literal"><span class="pre">${emr.clusterId}</span></tt> . This enables the rule to bootstrap when the cluster ID becomes available.</p>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div>The dimension name.</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div>The dimension value.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="put.html" title="previous chapter (use the left arrow)">&#8592; put</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="remove-auto-scaling-policy.html" title="next chapter (use the right arrow)">remove-auto-scaling-policy &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="remove-auto-scaling-policy.html" title="remove-auto-scaling-policy">next</a> |</li>
+        <li class="right">
+          <a href="put.html" title="put">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">emr</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/emr/put-auto-scaling-policy.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:17 GMT -->
+</html>

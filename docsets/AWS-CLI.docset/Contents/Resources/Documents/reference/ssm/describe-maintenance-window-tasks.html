@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ssm/describe-maintenance-window-tasks.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:29 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-maintenance-window-tasks &#8212; AWS CLI 1.11.61 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.11.61',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="ssm" href="index.html" />
+    <link rel="next" title="describe-maintenance-windows" href="describe-maintenance-windows.html" />
+    <link rel="prev" title="describe-maintenance-window-targets" href="describe-maintenance-window-targets.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="describe-maintenance-windows.html" title="describe-maintenance-windows" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="describe-maintenance-window-targets.html" title="describe-maintenance-window-targets" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">ssm</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="describe-maintenance-window-targets.html" title="previous chapter (use the left arrow)">&#8592; describe-maintenance-window-targets</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="describe-maintenance-windows.html" title="next chapter (use the right arrow)">describe-maintenance-windows &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-maintenance-window-tasks</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/ssm/describe-maintenance-window-tasks">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-ssm"><em>ssm</em></a> ]</p>
+<div class="section" id="describe-maintenance-window-tasks">
+<span id="cli-aws-ssm-describe-maintenance-window-tasks"></span><h1>describe-maintenance-window-tasks<a name="//apple_ref/cpp/Command/aws ssm describe-maintenance-window-tasks" class="dashAnchor" id="aws ssm describe-maintenance-window-tasks"></a><a class="headerlink" href="#describe-maintenance-window-tasks" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Lists the tasks in a Maintenance Window.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks">AWS API Documentation</a></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  describe-maintenance-window-tasks
+--window-id &lt;value&gt;
+[--filters &lt;value&gt;]
+[--max-results &lt;value&gt;]
+[--next-token &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--window-id" class="dashAnchor" id="window-id"></a><span class="pre">--window-id</span></tt> (string)</p>
+<blockquote>
+<div>The ID of the Maintenance Window whose tasks should be retrieved.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--filters" class="dashAnchor" id="filters"></a><span class="pre">--filters</span></tt> (list)</p>
+<blockquote>
+<div>Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are <tt class="docutils literal"><span class="pre">WindowTaskId</span></tt> , <tt class="docutils literal"><span class="pre">TaskArn</span></tt> , <tt class="docutils literal"><span class="pre">Priority</span></tt> , and <tt class="docutils literal"><span class="pre">TaskType</span></tt> .</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Key=string,Values=string,string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    "Key": "string",
+    "Values": ["string", ...]
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-results" class="dashAnchor" id="max-results"></a><span class="pre">--max-results</span></tt> (integer)</p>
+<blockquote>
+<div>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--next-token" class="dashAnchor" id="next-token"></a><span class="pre">--next-token</span></tt> (string)</p>
+<blockquote>
+<div>The token for the next set of items to return. (You received this token from a previous call.)</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To list all tasks for a Maintenance Window</strong></p>
+<p>This example lists all of the tasks for Maintenance Window ID <tt class="docutils literal"><span class="pre">mw-06cf17cbefcb4bf4f</span></tt>.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ssm describe-maintenance-window-tasks --window-id "mw-06cf17cbefcb4bf4f"</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">"Tasks"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">"ServiceRoleArn"</span><span class="p">:</span> <span class="s2">"arn:aws:iam::&lt;aws_account_id&gt;:role/MaintenanceWindowsRole"</span><span class="p">,</span>
+          <span class="s2">"MaxErrors"</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
+          <span class="s2">"TaskArn"</span><span class="p">:</span> <span class="s2">"AWS-RunShellScript"</span><span class="p">,</span>
+          <span class="s2">"MaxConcurrency"</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
+          <span class="s2">"WindowTaskId"</span><span class="p">:</span> <span class="s2">"a23e338d-ff30-4398-8aa3-09cd052ebf17"</span><span class="p">,</span>
+          <span class="s2">"TaskParameters"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">"commands"</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="s2">"Values"</span><span class="p">:</span> <span class="p">[</span>
+                      <span class="s2">"df"</span>
+                  <span class="p">]</span>
+              <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="s2">"Priority"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+          <span class="s2">"WindowId"</span><span class="p">:</span> <span class="s2">"mw-06cf17cbefcb4bf4f"</span><span class="p">,</span>
+          <span class="s2">"Type"</span><span class="p">:</span> <span class="s2">"RUN_COMMAND"</span><span class="p">,</span>
+          <span class="s2">"Targets"</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                  <span class="s2">"Values"</span><span class="p">:</span> <span class="p">[</span>
+                      <span class="s2">"i-0000293ffd8c57862"</span>
+                  <span class="p">],</span>
+                  <span class="s2">"Key"</span><span class="p">:</span> <span class="s2">"InstanceIds"</span>
+              <span class="p">}</span>
+          <span class="p">]</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>To list all tasks for a Maintenance Window that invoke the AWS-RunPowerShellScript Run Command</strong></p>
+<p>This example lists all of the tasks for Maintenance Window <tt class="docutils literal"><span class="pre">mw-ab12cd34ef56gh78</span></tt> that invoke the <tt class="docutils literal"><span class="pre">AWS-RunPowerShellScript</span></tt> Run Command.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ssm describe-maintenance-window-tasks --window-id "mw-ab12cd34ef56gh78" --filters "Key=TaskArn,Values=AWS-RunPowerShellScript"</pre>
+</div>
+<p><strong>To list all tasks for a Maintenance Window that have a Priority of 3</strong></p>
+<p>This example lists all of the tasks for Maintenance Window <tt class="docutils literal"><span class="pre">mw-ab12cd34ef56gh78</span></tt> that have a <tt class="docutils literal"><span class="pre">Priority</span></tt> of <tt class="docutils literal"><span class="pre">3</span></tt>.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ssm describe-maintenance-window-tasks --window-id "mw-ab12cd34ef56gh78" --filters "Key=Priority,Values=3"</pre>
+</div>
+<p><strong>To list all tasks for a Maintenance Window that have a Priority of 1 and use Run Command</strong></p>
+<p>This example lists all of the tasks for Maintenance Window <tt class="docutils literal"><span class="pre">mw-ab12cd34ef56gh78</span></tt> that have a <tt class="docutils literal"><span class="pre">Priority</span></tt> of <tt class="docutils literal"><span class="pre">1</span></tt> and use <tt class="docutils literal"><span class="pre">Run</span> <span class="pre">Command</span></tt>.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ssm describe-maintenance-window-tasks --window-id "mw-ab12cd34ef56gh78" --filters "Key=Priority,Values=1" "Key=TaskType,Values=RUN_COMMAND"</pre>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Tasks -&gt; (list)</p>
+<blockquote>
+<div><p>Information about the tasks in the Maintenance Window.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Information about a task defined for a Maintenance Window.</p>
+<p>WindowId -&gt; (string)</p>
+<blockquote>
+<div>The Maintenance Window ID where the task is registered.</div></blockquote>
+<p>WindowTaskId -&gt; (string)</p>
+<blockquote>
+<div>The task ID.</div></blockquote>
+<p>TaskArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the task to execute.</div></blockquote>
+<p>Type -&gt; (string)</p>
+<blockquote>
+<div>The type of task.</div></blockquote>
+<p>Targets -&gt; (list)</p>
+<blockquote>
+<div><p>The targets (either instances or tags). Instances are specified using Key=instanceids,Values=instanceid1,instanceid2. Tags are specified using Key=tag name,Values=tag value.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>An array of search criteria that targets instances using a <tt class="docutils literal"><span class="pre">Key</span></tt> ;``Value`` combination that you specify. <tt class="docutils literal"><span class="pre">Targets</span></tt> is required if you don't provide one or more instance IDs in the call.</p>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div>User-defined criteria for sending commands that target instances that meet the criteria. <tt class="docutils literal"><span class="pre">Key</span></tt> can be <tt class="docutils literal"><span class="pre">tag:Amazon</span> <span class="pre">EC2</span> <span class="pre">tag</span></tt> or <tt class="docutils literal"><span class="pre">name:Amazon</span> <span class="pre">EC2</span> <span class="pre">instance</span> <span class="pre">ID</span></tt> . For example, <tt class="docutils literal"><span class="pre">tag:ServerRole</span></tt> or <tt class="docutils literal"><span class="pre">name:0123456789012345</span></tt> . For more information about how to send commands that target instances using <tt class="docutils literal"><span class="pre">Key</span></tt> ;``Value`` parameters, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon EC2 Run Command</a> (Linux) or <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon EC2 Run Command</a> (Windows).</div></blockquote>
+<p>Values -&gt; (list)</p>
+<blockquote>
+<div><p>User-defined criteria that maps to <tt class="docutils literal"><span class="pre">Key</span></tt> . For example, if you specified <tt class="docutils literal"><span class="pre">tag:ServerRole</span></tt> , you could specify <tt class="docutils literal"><span class="pre">value:WebServer</span></tt> to execute a command on instances that include Amazon EC2 tags of ServerRole;WebServer. For more information about how to send commands that target instances using <tt class="docutils literal"><span class="pre">Key</span></tt> ;``Value`` parameters, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon EC2 Run Command</a> (Linux) or <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon EC2 Run Command</a> (Windows).</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>TaskParameters -&gt; (map)</p>
+<blockquote>
+<div><p>The parameters that should be passed to the task when it is executed.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>Defines the values for a task parameter.</p>
+<p>Values -&gt; (list)</p>
+<blockquote>
+<div><p>This field contains an array of 0 or more strings, each 1 to 255 characters in length.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Priority -&gt; (integer)</p>
+<blockquote>
+<div>The priority of the task in the Maintenance Window, the lower the number the higher the priority. Tasks in a Maintenance Window are scheduled in priority order with tasks that have the same priority scheduled in parallel.</div></blockquote>
+<p>LoggingInfo -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about an Amazon S3 bucket to write task-level logs to.</p>
+<p>S3BucketName -&gt; (string)</p>
+<blockquote>
+<div>The name of an Amazon S3 bucket where execution logs are stored .</div></blockquote>
+<p>S3KeyPrefix -&gt; (string)</p>
+<blockquote>
+<div>(Optional) The Amazon S3 bucket subfolder.</div></blockquote>
+<p>S3Region -&gt; (string)</p>
+<blockquote>
+<div>The region where the Amazon S3 bucket is located.</div></blockquote>
+</div></blockquote>
+<p>ServiceRoleArn -&gt; (string)</p>
+<blockquote>
+<div>The role that should be assumed when executing the task</div></blockquote>
+<p>MaxConcurrency -&gt; (string)</p>
+<blockquote>
+<div>The maximum number of targets this task can be run for in parallel.</div></blockquote>
+<p>MaxErrors -&gt; (string)</p>
+<blockquote>
+<div>The maximum number of errors allowed before this task stops being scheduled.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="describe-maintenance-window-targets.html" title="previous chapter (use the left arrow)">&#8592; describe-maintenance-window-targets</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="describe-maintenance-windows.html" title="next chapter (use the right arrow)">describe-maintenance-windows &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="describe-maintenance-windows.html" title="describe-maintenance-windows">next</a> |</li>
+        <li class="right">
+          <a href="describe-maintenance-window-targets.html" title="describe-maintenance-window-targets">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">ssm</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ssm/describe-maintenance-window-tasks.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:29 GMT -->
+</html>

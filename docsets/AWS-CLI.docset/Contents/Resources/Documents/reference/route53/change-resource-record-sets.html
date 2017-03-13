@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53/change-resource-record-sets.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:27 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53/change-resource-record-sets.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:27 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>change-resource-record-sets &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>change-resource-record-sets &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="route53" href="index.html" />
     <link rel="next" title="change-tags-for-resource" href="change-tags-for-resource.html" />
     <link rel="prev" title="associate-vpc-with-hosted-zone" href="associate-vpc-with-hosted-zone.html" />
@@ -64,7 +64,7 @@
           <a href="change-tags-for-resource.html" title="change-tags-for-resource" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="associate-vpc-with-hosted-zone.html" title="associate-vpc-with-hosted-zone" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">route53</a> &#187;</li> 
       </ul>
@@ -112,7 +112,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/route53/change-resource-record-sets">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/route53/change-resource-record-sets">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -129,19 +129,40 @@
 <span id="cli-aws-route53-change-resource-record-sets"></span><h1>change-resource-record-sets<a name="//apple_ref/cpp/Command/aws route53 change-resource-record-sets" class="dashAnchor" id="aws route53 change-resource-record-sets"></a><a class="headerlink" href="#change-resource-record-sets" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Use this action to create or change your authoritative DNS information. To use this action, send a <tt class="docutils literal"><span class="pre">POST</span></tt> request to the <tt class="docutils literal"><span class="pre">/*Route</span> <span class="pre">53</span> <span class="pre">API</span> <span class="pre">version*</span> <span class="pre">/hostedzone/*hosted</span> <span class="pre">Zone</span> <span class="pre">ID*</span> <span class="pre">/rrset</span></tt> resource. The request body must include a document with a <tt class="docutils literal"><span class="pre">ChangeResourceRecordSetsRequest</span></tt> element.</p>
-<p>Changes are a list of change items and are considered transactional. For more information on transactional changes, also known as change batches, see <a class="reference external" href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">POST change-resource-record-sets</a> in the <em>Amazon Route 53 API Reference</em> .</p>
+<p>Create, change, update, or delete authoritative DNS information on all Amazon Route 53 servers. Send a <tt class="docutils literal"><span class="pre">POST</span></tt> request to:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">/2013-04-01/hostedzone/*Amazon</span> <span class="pre">Route</span> <span class="pre">53</span> <span class="pre">hosted</span> <span class="pre">Zone</span> <span class="pre">ID*</span> <span class="pre">/rrset</span></tt> resource.</p>
+<p><strong>Change Batches and Transactional Changes</strong></p>
+</div></blockquote>
+<p>The request body must include a document with a <tt class="docutils literal"><span class="pre">ChangeResourceRecordSetsRequest</span></tt> element. The request body contains a list of change items, known as a change batch. Change batches are considered transactional changes. When using the Amazon Route 53 API to change resource record sets, Amazon Route 53 either makes all or none of the changes in a change batch request. This ensures that Amazon Route 53 never partially implements the intended changes to the resource record sets in a hosted zone.</p>
+<p>For example, a change batch request that deletes the <tt class="docutils literal"><span class="pre">CNAME</span></tt> record for www.example.com and creates an alias resource record set for www.example.com. Amazon Route 53 deletes the first resource record set and creates the second resource record set in a single operation. If either the <tt class="docutils literal"><span class="pre">DELETE</span></tt> or the <tt class="docutils literal"><span class="pre">CREATE</span></tt> action fails, then both changes (plus any other changes in the batch) fail, and the original <tt class="docutils literal"><span class="pre">CNAME</span></tt> record continues to exist.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">Due to the nature of transactional changes, you cannot delete the same resource record set more than once in a single change batch. If you attempt to delete the same change batch more than once, Amazon Route 53 returns an <tt class="docutils literal"><span class="pre">InvalidChangeBatch</span></tt> error.</p>
+<blockquote>
+<div>Due to the nature of transactional changes, you can't delete the same resource record set more than once in a single change batch. If you attempt to delete the same change batch more than once, Amazon Route 53 returns an <tt class="docutils literal"><span class="pre">InvalidChangeBatch</span></tt> error.</div></blockquote>
+<p class="last"><strong>Traffic Flow</strong></p>
 </div>
-<p>In response to a <tt class="docutils literal"><span class="pre">change-resource-record-sets</span></tt> request, your DNS data is changed on all Amazon Route 53 DNS servers. Initially, the status of a change is <tt class="docutils literal"><span class="pre">PENDING</span></tt> . This means the change has not yet propagated to all the authoritative Amazon Route 53 DNS servers. When the change is propagated to all hosts, the change returns a status of <tt class="docutils literal"><span class="pre">INSYNC</span></tt> .</p>
-<p>Note the following limitations on a <tt class="docutils literal"><span class="pre">change-resource-record-sets</span></tt> request:</p>
+<p>To create resource record sets for complex routing configurations, use either the traffic flow visual editor in the Amazon Route 53 console or the API actions for traffic policies and traffic policy instances. Save the configuration as a traffic policy, then associate the traffic policy with one or more domain names (such as example.com) or subdomain names (such as www.example.com), in the same hosted zone or in multiple hosted zones. You can roll back the updates if the new configuration isn't performing as expected. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-flow.html">Using Traffic Flow to Route DNS Traffic</a> in the <em>Amazon Route 53 Developer Guide</em> .</p>
+<blockquote>
+<div><strong>Create, Delete, and Upsert</strong></div></blockquote>
+<p>Use <tt class="docutils literal"><span class="pre">ChangeResourceRecordsSetsRequest</span></tt> to perform the following actions:</p>
 <ul class="simple">
-<li>A request cannot contain more than 100 Change elements.</li>
-<li>A request cannot contain more than 1000 ResourceRecord elements.</li>
-<li>The sum of the number of characters (including spaces) in all <tt class="docutils literal"><span class="pre">Value</span></tt> elements in a request cannot exceed 32,000 characters.</li>
+<li><tt class="docutils literal"><span class="pre">CREATE</span></tt> : Creates a resource record set that has the specified values.</li>
+<li><tt class="docutils literal"><span class="pre">DELETE</span></tt> : Deletes an existing resource record set that has the specified values.</li>
+<li><tt class="docutils literal"><span class="pre">UPSERT</span></tt> : If a resource record set does not already exist, AWS creates it. If a resource set does exist, Amazon Route 53 updates it with the values in the request.</li>
 </ul>
+<blockquote>
+<div><strong>Syntaxes for Creating, Updating, and Deleting Resource Record Sets</strong></div></blockquote>
+<p>The syntax for a request depends on the type of resource record set that you want to create, delete, or update, such as weighted, alias, or failover. The XML elements in your request must appear in the order listed in the syntax.</p>
+<p>For an example for each type of resource record set, see "Examples."</p>
+<p>Don't refer to the syntax in the "Parameter Syntax" section, which includes all of the elements for every kind of resource record set that you can create, delete, or update by using <tt class="docutils literal"><span class="pre">change-resource-record-sets</span></tt> .</p>
+<blockquote>
+<div><strong>Change Propagation to Amazon Route 53 DNS Servers</strong></div></blockquote>
+<p>When you submit a <tt class="docutils literal"><span class="pre">change-resource-record-sets</span></tt> request, Amazon Route 53 propagates your changes to all of the Amazon Route 53 authoritative DNS servers. While your changes are propagating, <tt class="docutils literal"><span class="pre">get-change</span></tt> returns a status of <tt class="docutils literal"><span class="pre">PENDING</span></tt> . When propagation is complete, <tt class="docutils literal"><span class="pre">get-change</span></tt> returns a status of <tt class="docutils literal"><span class="pre">INSYNC</span></tt> . Changes generally propagate to all Amazon Route 53 name servers in a few minutes. In rare circumstances, propagation can take up to 30 minutes. For more information, see  get-change .</p>
+<blockquote>
+<div><strong>Limits on change-resource-record-sets Requests</strong></div></blockquote>
+<p>For information about the limits on a <tt class="docutils literal"><span class="pre">change-resource-record-sets</span></tt> request, see <a class="reference external" href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <em>Amazon Route 53 Developer Guide</em> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeResourceRecordSets">AWS API Documentation</a></p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
@@ -149,7 +170,7 @@
 --hosted-zone-id &lt;value&gt;
 --change-batch &lt;value&gt;
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
@@ -168,10 +189,10 @@
       "Action": "CREATE"|"DELETE"|"UPSERT",
       "ResourceRecordSet": {
         "Name": "string",
-        "Type": "SOA"|"A"|"TXT"|"NS"|"CNAME"|"MX"|"PTR"|"SRV"|"SPF"|"AAAA",
+        "Type": "SOA"|"A"|"TXT"|"NS"|"CNAME"|"MX"|"NAPTR"|"PTR"|"SRV"|"SPF"|"AAAA",
         "SetIdentifier": "string",
         "Weight": long,
-        "Region": "us-east-1"|"us-west-1"|"us-west-2"|"eu-west-1"|"eu-central-1"|"ap-southeast-1"|"ap-southeast-2"|"ap-northeast-1"|"ap-northeast-2"|"sa-east-1"|"cn-north-1",
+        "Region": "us-east-1"|"us-east-2"|"us-west-1"|"us-west-2"|"ca-central-1"|"eu-west-1"|"eu-west-2"|"eu-central-1"|"ap-southeast-1"|"ap-southeast-2"|"ap-northeast-1"|"ap-northeast-2"|"sa-east-1"|"cn-north-1"|"ap-south-1",
         "GeoLocation": {
           "ContinentCode": "string",
           "CountryCode": "string",
@@ -200,8 +221,8 @@
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
@@ -269,7 +290,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 }</pre>
 </div>
 <p><strong>Alias Syntax</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">"Comment"</span><span class="p">:</span> <span class="s2">"optional comment about the changes in this change batch request"</span><span class="p">,</span>
   <span class="s2">"Changes"</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -339,7 +360,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 }</pre>
 </div>
 <p><strong>Latency Alias Syntax</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">"Comment"</span><span class="p">:</span> <span class="s2">"optional comment about the changes in this change batch request"</span><span class="p">,</span>
   <span class="s2">"Changes"</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -388,7 +409,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 }</pre>
 </div>
 <p><strong>Failover Alias Syntax</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">"Comment"</span><span class="p">:</span> <span class="s2">"optional comment about the changes in this change batch request"</span><span class="p">,</span>
   <span class="s2">"Changes"</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -420,15 +441,13 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <p>This element contains an ID that you use when performing a  get-change action to get detailed information about the change.</p>
 <p>Id -&gt; (string)</p>
 <blockquote>
-<div>The ID of the request. Use this ID to track when the change has completed across all Amazon Route 53 DNS servers.</div></blockquote>
+<div>The ID of the request.</div></blockquote>
 <p>Status -&gt; (string)</p>
 <blockquote>
-<div><p>The current state of the request. <tt class="docutils literal"><span class="pre">PENDING</span></tt> indicates that this request has not yet been applied to all Amazon Route 53 DNS servers.</p>
-<p>Valid Values: <tt class="docutils literal"><span class="pre">PENDING</span></tt> | <tt class="docutils literal"><span class="pre">INSYNC</span></tt></p>
-</div></blockquote>
+<div>The current state of the request. <tt class="docutils literal"><span class="pre">PENDING</span></tt> indicates that this request has not yet been applied to all Amazon Route 53 DNS servers.</div></blockquote>
 <p>SubmittedAt -&gt; (timestamp)</p>
 <blockquote>
-<div>The date and time the change was submitted, in the format <tt class="docutils literal"><span class="pre">YYYY-MM-DDThh:mm:ssZ</span></tt> , as specified in the ISO 8601 standard (for example, 2009-11-19T19:37:58Z). The <tt class="docutils literal"><span class="pre">Z</span></tt> after the time indicates that the time is listed in Coordinated Universal Time (UTC).</div></blockquote>
+<div>The date and time the change request was submitted, in Coordinated Universal Time (UTC) format: <tt class="docutils literal"><span class="pre">YYYY-MM-DDThh:mm:ssZ</span></tt> . For more information, see the Wikipedia entry <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> .</div></blockquote>
 <p>Comment -&gt; (string)</p>
 <blockquote>
 <div><p>A complex type that describes change information about changes made to your hosted zone.</p>
@@ -474,7 +493,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
           <a href="change-tags-for-resource.html" title="change-tags-for-resource">next</a> |</li>
         <li class="right">
           <a href="associate-vpc-with-hosted-zone.html" title="associate-vpc-with-hosted-zone">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">route53</a> &#187;</li> 
       </ul>
@@ -490,5 +509,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53/change-resource-record-sets.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:27 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53/change-resource-record-sets.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:27 GMT -->
 </html>

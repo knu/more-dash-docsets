@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ecs/update-container-agent.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:15 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ecs/update-container-agent.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:12 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>update-container-agent &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>update-container-agent &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="ecs" href="index.html" />
-    <link rel="next" title="update-service" href="update-service.html" />
+    <link rel="next" title="update-container-instances-state" href="update-container-instances-state.html" />
     <link rel="prev" title="submit-task-state-change" href="submit-task-state-change.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
@@ -61,10 +61,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
         <li class="right">
-          <a href="update-service.html" title="update-service" accesskey="N">next</a> |</li>
+          <a href="update-container-instances-state.html" title="update-container-instances-state" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="submit-task-state-change.html" title="submit-task-state-change" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">ecs</a> &#187;</li> 
       </ul>
@@ -78,7 +78,7 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="update-service.html" title="next chapter (use the right arrow)">update-service &#8594;</a></li>
+          <li><a href="update-container-instances-state.html" title="next chapter (use the right arrow)">update-container-instances-state &#8594;</a></li>
       </ul>
     </div>
   
@@ -112,7 +112,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ecs/update-container-agent">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/ecs/update-container-agent">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -132,6 +132,7 @@
 <p>Updates the Amazon ECS container agent on a specified container instance. Updating the Amazon ECS container agent does not interrupt running tasks or services on the container instance. The process for updating the agent differs depending on whether your container instance was launched with the Amazon ECS-optimized AMI or another operating system.</p>
 <blockquote>
 <div><tt class="docutils literal"><span class="pre">update-container-agent</span></tt> requires the Amazon ECS-optimized AMI or Amazon Linux with the <tt class="docutils literal"><span class="pre">ecs-init</span></tt> service installed and running. For help updating the Amazon ECS container agent on other operating systems, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually Updating the Amazon ECS Container Agent</a> in the <em>Amazon EC2 Container Service Developer Guide</em> .</div></blockquote>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">AWS API Documentation</a></p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
@@ -139,7 +140,7 @@
 [--cluster &lt;value&gt;]
 --container-instance &lt;value&gt;
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
@@ -152,8 +153,8 @@
 <div>The container instance ID or full Amazon Resource Name (ARN) entries for the container instance on which you would like to update the Amazon ECS container agent.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
@@ -181,13 +182,16 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
 <p>containerInstance -&gt; (structure)</p>
 <blockquote>
-<div><p>An EC2 instance that is running the Amazon ECS agent and has been registered with a cluster.</p>
+<div><p>The container instance for which the container agent was updated.</p>
 <p>containerInstanceArn -&gt; (string)</p>
 <blockquote>
 <div>The Amazon Resource Name (ARN) of the container instance. The ARN contains the <tt class="docutils literal"><span class="pre">arn:aws:ecs</span></tt> namespace, followed by the region of the container instance, the AWS account ID of the container instance owner, the <tt class="docutils literal"><span class="pre">container-instance</span></tt> namespace, and then the container instance ID. For example, <a href="#id1"><span class="problematic" id="id2">``</span></a>arn:aws:ecs:<em>region</em> :<em>aws_account_id</em> :container-instance/<em>container_instance_ID</em> `` .</div></blockquote>
 <p>ec2InstanceId -&gt; (string)</p>
 <blockquote>
 <div>The EC2 instance ID of the container instance.</div></blockquote>
+<p>version -&gt; (long)</p>
+<blockquote>
+<div>The version counter for the container instance. Every time a container instance experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container instance state with CloudWatch events, you can compare the version of a container instance reported by the Amazon ECS APIs with the version reported in CloudWatch events for the container instance (inside the <tt class="docutils literal"><span class="pre">detail</span></tt> object) to verify that the version in your event stream is current.</div></blockquote>
 <p>versionInfo -&gt; (structure)</p>
 <blockquote>
 <div><p>The version information for the Amazon ECS container agent and Docker daemon running on the container instance.</p>
@@ -203,13 +207,13 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 </div></blockquote>
 <p>remainingResources -&gt; (list)</p>
 <blockquote>
-<div><p>The remaining resources of the container instance that are available for new tasks.</p>
+<div><p>For most resource types, this parameter describes the remaining resources of the container instance that are available for new tasks. For port resource types, this parameter describes the ports that are reserved by the Amazon ECS container agent and any containers that have reserved port mappings; any port that is not specified here is available for new tasks.</p>
 <p>(structure)</p>
 <blockquote>
 <div><p>Describes the resources available for a container instance.</p>
 <p>name -&gt; (string)</p>
 <blockquote>
-<div>The name of the resource, such as <tt class="docutils literal"><span class="pre">CPU</span></tt> , <tt class="docutils literal"><span class="pre">MEMORY</span></tt> , <tt class="docutils literal"><span class="pre">PORTS</span></tt> , or a user-defined resource.</div></blockquote>
+<div>The name of the resource, such as <tt class="docutils literal"><span class="pre">cpu</span></tt> , <tt class="docutils literal"><span class="pre">memory</span></tt> , <tt class="docutils literal"><span class="pre">ports</span></tt> , or a user-defined resource.</div></blockquote>
 <p>type -&gt; (string)</p>
 <blockquote>
 <div>The type of the resource, such as <tt class="docutils literal"><span class="pre">INTEGER</span></tt> , <tt class="docutils literal"><span class="pre">DOUBLE</span></tt> , <tt class="docutils literal"><span class="pre">LONG</span></tt> , or <tt class="docutils literal"><span class="pre">STRINGSET</span></tt> .</div></blockquote>
@@ -231,13 +235,13 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 </div></blockquote>
 <p>registeredResources -&gt; (list)</p>
 <blockquote>
-<div><p>The registered resources on the container instance that are in use by current tasks.</p>
+<div><p>For most resource types, this parameter describes the registered resources on the container instance that are in use by current tasks. For port resource types, this parameter describes the ports that were reserved by the Amazon ECS container agent when it registered the container instance with Amazon ECS.</p>
 <p>(structure)</p>
 <blockquote>
 <div><p>Describes the resources available for a container instance.</p>
 <p>name -&gt; (string)</p>
 <blockquote>
-<div>The name of the resource, such as <tt class="docutils literal"><span class="pre">CPU</span></tt> , <tt class="docutils literal"><span class="pre">MEMORY</span></tt> , <tt class="docutils literal"><span class="pre">PORTS</span></tt> , or a user-defined resource.</div></blockquote>
+<div>The name of the resource, such as <tt class="docutils literal"><span class="pre">cpu</span></tt> , <tt class="docutils literal"><span class="pre">memory</span></tt> , <tt class="docutils literal"><span class="pre">ports</span></tt> , or a user-defined resource.</div></blockquote>
 <p>type -&gt; (string)</p>
 <blockquote>
 <div>The type of the resource, such as <tt class="docutils literal"><span class="pre">INTEGER</span></tt> , <tt class="docutils literal"><span class="pre">DOUBLE</span></tt> , <tt class="docutils literal"><span class="pre">LONG</span></tt> , or <tt class="docutils literal"><span class="pre">STRINGSET</span></tt> .</div></blockquote>
@@ -274,16 +278,22 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div>The status of the most recent agent update. If an update has never been requested, this value is <tt class="docutils literal"><span class="pre">NULL</span></tt> .</div></blockquote>
 <p>attributes -&gt; (list)</p>
 <blockquote>
-<div><p>The attributes set for the container instance by the Amazon ECS container agent at instance registration.</p>
+<div><p>The attributes set for the container instance, either by the Amazon ECS container agent at instance registration or manually with the  put-attributes operation.</p>
 <p>(structure)</p>
 <blockquote>
-<div><p>The attributes applicable to a container instance when it is registered.</p>
+<div><p>An attribute is a name-value pair associated with an Amazon ECS object. Attributes enable you to extend the Amazon ECS data model by adding custom metadata to your resources. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a> in the <em>Amazon EC2 Container Service Developer Guide</em> .</p>
 <p>name -&gt; (string)</p>
 <blockquote>
-<div>The name of the container instance attribute.</div></blockquote>
+<div>The name of the attribute. Up to 128 letters (uppercase and lowercase), numbers, hyphens, underscores, and periods are allowed.</div></blockquote>
 <p>value -&gt; (string)</p>
 <blockquote>
-<div>The value of the container instance attribute (at this time, the value here is <tt class="docutils literal"><span class="pre">Null</span></tt> , but this could change in future revisions for expandability).</div></blockquote>
+<div>The value of the attribute. Up to 128 letters (uppercase and lowercase), numbers, hyphens, underscores, periods, at signs (@), forward slashes, colons, and spaces are allowed.</div></blockquote>
+<p>targetType -&gt; (string)</p>
+<blockquote>
+<div>The type of the target with which to attach the attribute. This parameter is required if you use the short form ID for a resource instead of the full Amazon Resource Name (ARN).</div></blockquote>
+<p>targetId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the target. You can specify the short form ID for a resource or the full Amazon Resource Name (ARN).</div></blockquote>
 </div></blockquote>
 </div></blockquote>
 </div></blockquote>
@@ -302,7 +312,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
           <span class="divider">/</span>
           
         </li>
-          <li><a href="update-service.html" title="next chapter (use the right arrow)">update-service &#8594;</a></li>
+          <li><a href="update-container-instances-state.html" title="next chapter (use the right arrow)">update-container-instances-state &#8594;</a></li>
       </ul>
     </div>
   
@@ -323,10 +333,10 @@ Prints a sample input JSON to standard output. Note the specified operation is n
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index">index</a></li>
         <li class="right">
-          <a href="update-service.html" title="update-service">next</a> |</li>
+          <a href="update-container-instances-state.html" title="update-container-instances-state">next</a> |</li>
         <li class="right">
           <a href="submit-task-state-change.html" title="submit-task-state-change">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">ecs</a> &#187;</li> 
       </ul>
@@ -342,5 +352,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ecs/update-container-agent.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:15 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ecs/update-container-agent.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:12 GMT -->
 </html>

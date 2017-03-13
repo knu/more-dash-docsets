@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/kms/generate-data-key.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:21 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/kms/generate-data-key.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:19 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>generate-data-key &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>generate-data-key &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="kms" href="index.html" />
     <link rel="next" title="generate-data-key-without-plaintext" href="generate-data-key-without-plaintext.html" />
     <link rel="prev" title="encrypt" href="encrypt.html" />
@@ -64,7 +64,7 @@
           <a href="generate-data-key-without-plaintext.html" title="generate-data-key-without-plaintext" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="encrypt.html" title="encrypt" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">kms</a> &#187;</li> 
       </ul>
@@ -111,7 +111,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/kms/generate-data-key">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/kms/generate-data-key">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -128,14 +128,23 @@
 <span id="cli-aws-kms-generate-data-key"></span><h1>generate-data-key<a name="//apple_ref/cpp/Command/aws kms generate-data-key" class="dashAnchor" id="aws kms generate-data-key"></a><a class="headerlink" href="#generate-data-key" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Generates a data key that you can use in your application to locally encrypt data. This call returns a plaintext version of the key in the <tt class="docutils literal"><span class="pre">Plaintext</span></tt> field of the response object and an encrypted copy of the key in the <tt class="docutils literal"><span class="pre">CiphertextBlob</span></tt> field. The key is encrypted by using the master key specified by the <tt class="docutils literal"><span class="pre">KeyId</span></tt> field. To decrypt the encrypted key, pass it to the <tt class="docutils literal"><span class="pre">decrypt</span></tt> API.</p>
-<p>We recommend that you use the following pattern to locally encrypt data: call the <tt class="docutils literal"><span class="pre">generate-data-key</span></tt> API, use the key returned in the <tt class="docutils literal"><span class="pre">Plaintext</span></tt> response field to locally encrypt data, and then erase the plaintext data key from memory. Store the encrypted data key (contained in the <tt class="docutils literal"><span class="pre">CiphertextBlob</span></tt> field) alongside of the locally encrypted data.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">You should not call the <tt class="docutils literal"><span class="pre">encrypt</span></tt> function to re-encrypt your data keys within a region. <tt class="docutils literal"><span class="pre">generate-data-key</span></tt> always returns the data key encrypted and tied to the customer master key that will be used to decrypt it. There is no need to decrypt it twice.</p>
-</div>
-<p>If you decide to use the optional <tt class="docutils literal"><span class="pre">EncryptionContext</span></tt> parameter, you must also store the context in full or at least store enough information along with the encrypted data to be able to reconstruct the context when submitting the ciphertext to the <tt class="docutils literal"><span class="pre">decrypt</span></tt> API. It is a good practice to choose a context that you can reconstruct on the fly to better secure the ciphertext. For more information about how this parameter is used, see <a class="reference external" href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption Context</a> .</p>
-<p>To decrypt data, pass the encrypted data key to the <tt class="docutils literal"><span class="pre">decrypt</span></tt> API. <tt class="docutils literal"><span class="pre">decrypt</span></tt> uses the associated master key to decrypt the encrypted data key and returns it as plaintext. Use the plaintext data key to locally decrypt your data and then erase the key from memory. You must specify the encryption context, if any, that you specified when you generated the key. The encryption context is logged by CloudTrail, and you can use this log to help track the use of particular data.</p>
+<p>Returns a data encryption key that you can use in your application to encrypt data locally.</p>
+<p>You must specify the customer master key (CMK) under which to generate the data key. You must also specify the length of the data key using either the <tt class="docutils literal"><span class="pre">KeySpec</span></tt> or <tt class="docutils literal"><span class="pre">NumberOfBytes</span></tt> field. You must specify one field or the other, but not both. For common key lengths (128-bit and 256-bit symmetric keys), we recommend that you use <tt class="docutils literal"><span class="pre">KeySpec</span></tt> .</p>
+<p>This operation returns a plaintext copy of the data key in the <tt class="docutils literal"><span class="pre">Plaintext</span></tt> field of the response, and an encrypted copy of the data key in the <tt class="docutils literal"><span class="pre">CiphertextBlob</span></tt> field. The data key is encrypted under the CMK specified in the <tt class="docutils literal"><span class="pre">KeyId</span></tt> field of the request.</p>
+<p>We recommend that you use the following pattern to encrypt data locally in your application:</p>
+<ul class="simple">
+<li>Use this operation (<tt class="docutils literal"><span class="pre">generate-data-key</span></tt> ) to retrieve a data encryption key.</li>
+<li>Use the plaintext data encryption key (returned in the <tt class="docutils literal"><span class="pre">Plaintext</span></tt> field of the response) to encrypt data locally, then erase the plaintext data key from memory.</li>
+<li>Store the encrypted data key (returned in the <tt class="docutils literal"><span class="pre">CiphertextBlob</span></tt> field of the response) alongside the locally encrypted data.</li>
+</ul>
+<p>To decrypt data locally:</p>
+<ul class="simple">
+<li>Use the  decrypt operation to decrypt the encrypted data key into a plaintext copy of the data key.</li>
+<li>Use the plaintext data key to decrypt data locally, then erase the plaintext data key from memory.</li>
+</ul>
+<p>To return only an encrypted copy of the data key, use  generate-data-key-without-plaintext . To return an arbitrary unpredictable byte string, use  generate-random .</p>
+<p>If you use the optional <tt class="docutils literal"><span class="pre">EncryptionContext</span></tt> field, you must store at least enough information to be able to reconstruct the full encryption context when you later send the ciphertext to the  decrypt operation. It is a good practice to choose an encryption context that you can reconstruct on the fly to better secure the ciphertext. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a> in the <em>AWS Key Management Service Developer Guide</em> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKey">AWS API Documentation</a></p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
@@ -146,26 +155,29 @@
 [--key-spec &lt;value&gt;]
 [--grant-tokens &lt;value&gt;]
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
 <h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--key-id" class="dashAnchor" id="key-id"></a><span class="pre">--key-id</span></tt> (string)</p>
 <blockquote>
-<div><p>A unique identifier for the customer master key. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".</p>
+<div><p>The identifier of the CMK under which to generate and encrypt the data encryption key.</p>
+<p>A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK, or the alias name or ARN of an alias that refers to the CMK. Examples:</p>
 <ul class="simple">
-<li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-<li>Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-<li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
-<li>Alias Name Example - alias/MyAliasName</li>
+<li>Unique key ID: <tt class="docutils literal"><span class="pre">1234abcd-12ab-34cd-56ef-1234567890ab</span></tt></li>
+<li>CMK ARN: <tt class="docutils literal"><span class="pre">arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</span></tt></li>
+<li>Alias name: <tt class="docutils literal"><span class="pre">alias/ExampleAlias</span></tt></li>
+<li>Alias ARN: <tt class="docutils literal"><span class="pre">arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</span></tt></li>
 </ul>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--encryption-context" class="dashAnchor" id="encryption-context"></a><span class="pre">--encryption-context</span></tt> (map)</p>
 <blockquote>
-<div>Name/value pair that contains additional data to be authenticated during the encryption and decryption processes that use the key. This value is logged by AWS CloudTrail to provide context around the data encrypted by the key.</div></blockquote>
+<div><p>A set of key-value pairs that represents additional authenticated data.</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a> in the <em>AWS Key Management Service Developer Guide</em> .</p>
+</div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">KeyName1</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">KeyName2</span><span class="o">=</span><span class="n">string</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">KeyName1</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">KeyName2</span><span class="o">=</span><span class="n">string</span>
 </pre></div>
 </div>
 <p>JSON Syntax:</p>
@@ -174,10 +186,10 @@
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--number-of-bytes" class="dashAnchor" id="number-of-bytes"></a><span class="pre">--number-of-bytes</span></tt> (integer)</p>
 <blockquote>
-<div>Integer that contains the number of bytes to generate. Common values are 128, 256, 512, and 1024. 1024 is the current limit. We recommend that you use the <tt class="docutils literal"><span class="pre">KeySpec</span></tt> parameter instead.</div></blockquote>
+<div>The length of the data encryption key in bytes. For example, use the value 64 to generate a 512-bit data key (64 bytes is 512 bits). For common key lengths (128-bit and 256-bit symmetric keys), we recommend that you use the <tt class="docutils literal"><span class="pre">KeySpec</span></tt> field instead of this one.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--key-spec" class="dashAnchor" id="key-spec"></a><span class="pre">--key-spec</span></tt> (string)</p>
 <blockquote>
-<div><p>Value that identifies the encryption algorithm and key size to generate a data key for. Currently this can be AES_128 or AES_256.</p>
+<div><p>The length of the data encryption key. Use <tt class="docutils literal"><span class="pre">AES_128</span></tt> to generate a 128-bit symmetric key, or <tt class="docutils literal"><span class="pre">AES_256</span></tt> to generate a 256-bit symmetric key.</p>
 <p>Possible values:</p>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">AES_256</span></tt></li>
@@ -194,22 +206,20 @@
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="output">
 <h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
 <p>CiphertextBlob -&gt; (blob)</p>
 <blockquote>
-<div><p>Ciphertext that contains the encrypted data key. You must store the blob and enough information to reconstruct the encryption context so that the data encrypted by using the key can later be decrypted. You must provide both the ciphertext blob and the encryption context to the  decrypt API to recover the plaintext data key and decrypt the object.</p>
-<p>If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.</p>
-</div></blockquote>
+<div>The encrypted data encryption key.</div></blockquote>
 <p>Plaintext -&gt; (blob)</p>
 <blockquote>
-<div>Plaintext that contains the data key. Use this for encryption and decryption and then remove it from memory as soon as possible.</div></blockquote>
+<div>The data encryption key. Use this data key for local encryption and decryption, then remove it from memory as soon as possible.</div></blockquote>
 <p>KeyId -&gt; (string)</p>
 <blockquote>
-<div>System generated unique identifier of the key to be used to decrypt the encrypted copy of the data key.</div></blockquote>
+<div>The identifier of the CMK under which the data encryption key was generated and encrypted.</div></blockquote>
 </div>
 </div>
 
@@ -249,7 +259,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
           <a href="generate-data-key-without-plaintext.html" title="generate-data-key-without-plaintext">next</a> |</li>
         <li class="right">
           <a href="encrypt.html" title="encrypt">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">kms</a> &#187;</li> 
       </ul>
@@ -265,5 +275,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/kms/generate-data-key.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:21 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/kms/generate-data-key.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:19 GMT -->
 </html>

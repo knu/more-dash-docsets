@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/pinpoint/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:03:33 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>pinpoint &#8212; AWS CLI 1.11.61 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.11.61',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="create-campaign" href="create-campaign.html" />
+    <link rel="prev" title="update-policy" href="../organizations/update-policy.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="create-campaign.html" title="create-campaign" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="../organizations/update-policy.html" title="update-policy" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../organizations/update-policy.html" title="previous chapter (use the left arrow)">&#8592; update-policy</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-campaign.html" title="next chapter (use the right arrow)">create-campaign &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pinpoint</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/pinpoint/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="pinpoint">
+<span id="cli-aws-pinpoint"></span><h1>pinpoint<a name="//apple_ref/cpp/Command/aws pinpoint" class="dashAnchor" id="aws pinpoint"></a><a class="headerlink" href="#pinpoint" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a name="//apple_ref/cpp/Section/Available Commands" class="dashAnchor" id="Available Commands"></a><a class="headerlink" href="#available-commands" title="Permalink to this headline">&#182;</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-campaign" class="dashAnchor" id="create-campaign"></a><a class="reference internal" href="create-campaign.html">create-campaign</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-import-job" class="dashAnchor" id="create-import-job"></a><a class="reference internal" href="create-import-job.html">create-import-job</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-segment" class="dashAnchor" id="create-segment"></a><a class="reference internal" href="create-segment.html">create-segment</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-apns-channel" class="dashAnchor" id="delete-apns-channel"></a><a class="reference internal" href="delete-apns-channel.html">delete-apns-channel</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-campaign" class="dashAnchor" id="delete-campaign"></a><a class="reference internal" href="delete-campaign.html">delete-campaign</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-gcm-channel" class="dashAnchor" id="delete-gcm-channel"></a><a class="reference internal" href="delete-gcm-channel.html">delete-gcm-channel</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-segment" class="dashAnchor" id="delete-segment"></a><a class="reference internal" href="delete-segment.html">delete-segment</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-apns-channel" class="dashAnchor" id="get-apns-channel"></a><a class="reference internal" href="get-apns-channel.html">get-apns-channel</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-application-settings" class="dashAnchor" id="get-application-settings"></a><a class="reference internal" href="get-application-settings.html">get-application-settings</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-campaign" class="dashAnchor" id="get-campaign"></a><a class="reference internal" href="get-campaign.html">get-campaign</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-campaign-activities" class="dashAnchor" id="get-campaign-activities"></a><a class="reference internal" href="get-campaign-activities.html">get-campaign-activities</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-campaign-version" class="dashAnchor" id="get-campaign-version"></a><a class="reference internal" href="get-campaign-version.html">get-campaign-version</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-campaign-versions" class="dashAnchor" id="get-campaign-versions"></a><a class="reference internal" href="get-campaign-versions.html">get-campaign-versions</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-campaigns" class="dashAnchor" id="get-campaigns"></a><a class="reference internal" href="get-campaigns.html">get-campaigns</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-endpoint" class="dashAnchor" id="get-endpoint"></a><a class="reference internal" href="get-endpoint.html">get-endpoint</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-gcm-channel" class="dashAnchor" id="get-gcm-channel"></a><a class="reference internal" href="get-gcm-channel.html">get-gcm-channel</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-import-job" class="dashAnchor" id="get-import-job"></a><a class="reference internal" href="get-import-job.html">get-import-job</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-import-jobs" class="dashAnchor" id="get-import-jobs"></a><a class="reference internal" href="get-import-jobs.html">get-import-jobs</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-segment" class="dashAnchor" id="get-segment"></a><a class="reference internal" href="get-segment.html">get-segment</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-segment-import-jobs" class="dashAnchor" id="get-segment-import-jobs"></a><a class="reference internal" href="get-segment-import-jobs.html">get-segment-import-jobs</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-segment-version" class="dashAnchor" id="get-segment-version"></a><a class="reference internal" href="get-segment-version.html">get-segment-version</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-segment-versions" class="dashAnchor" id="get-segment-versions"></a><a class="reference internal" href="get-segment-versions.html">get-segment-versions</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-segments" class="dashAnchor" id="get-segments"></a><a class="reference internal" href="get-segments.html">get-segments</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-apns-channel" class="dashAnchor" id="update-apns-channel"></a><a class="reference internal" href="update-apns-channel.html">update-apns-channel</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-application-settings" class="dashAnchor" id="update-application-settings"></a><a class="reference internal" href="update-application-settings.html">update-application-settings</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-campaign" class="dashAnchor" id="update-campaign"></a><a class="reference internal" href="update-campaign.html">update-campaign</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-endpoint" class="dashAnchor" id="update-endpoint"></a><a class="reference internal" href="update-endpoint.html">update-endpoint</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-endpoints-batch" class="dashAnchor" id="update-endpoints-batch"></a><a class="reference internal" href="update-endpoints-batch.html">update-endpoints-batch</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-gcm-channel" class="dashAnchor" id="update-gcm-channel"></a><a class="reference internal" href="update-gcm-channel.html">update-gcm-channel</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-segment" class="dashAnchor" id="update-segment"></a><a class="reference internal" href="update-segment.html">update-segment</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../organizations/update-policy.html" title="previous chapter (use the left arrow)">&#8592; update-policy</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-campaign.html" title="next chapter (use the right arrow)">create-campaign &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="create-campaign.html" title="create-campaign">next</a> |</li>
+        <li class="right">
+          <a href="../organizations/update-policy.html" title="update-policy">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/pinpoint/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:03:45 GMT -->
+</html>

@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudformation/get-template.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:57 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudformation/get-template.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:09:52 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>get-template &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>get-template &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="cloudformation" href="index.html" />
     <link rel="next" title="get-template-summary" href="get-template-summary.html" />
     <link rel="prev" title="get-stack-policy" href="get-stack-policy.html" />
@@ -64,7 +64,7 @@
           <a href="get-template-summary.html" title="get-template-summary" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="get-stack-policy.html" title="get-stack-policy" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">cloudformation</a> &#187;</li> 
       </ul>
@@ -112,7 +112,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/cloudformation/get-template">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/cloudformation/get-template">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -135,13 +135,16 @@
 <p class="first admonition-title">Note</p>
 <p class="last">If the template does not exist, a <tt class="docutils literal"><span class="pre">ValidationError</span></tt> is returned.</p>
 </div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplate">AWS API Documentation</a></p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  get-template
---stack-name &lt;value&gt;
+[--stack-name &lt;value&gt;]
+[--change-set-name &lt;value&gt;]
+[--template-stage &lt;value&gt;]
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
@@ -155,10 +158,23 @@
 </ul>
 <p>Default: There is no default value.</p>
 </div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--change-set-name" class="dashAnchor" id="change-set-name"></a><span class="pre">--change-set-name</span></tt> (string)</p>
+<blockquote>
+<div>The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated template. If you specify a name, you must also specify the <tt class="docutils literal"><span class="pre">stack-name</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--template-stage" class="dashAnchor" id="template-stage"></a><span class="pre">--template-stage</span></tt> (string)</p>
+<blockquote>
+<div><p>For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the user-submitted template, specify <tt class="docutils literal"><span class="pre">Original</span></tt> . To get the template after AWS CloudFormation has processed all transforms, specify <tt class="docutils literal"><span class="pre">Processed</span></tt> .</p>
+<p>If the template doesn't include transforms, <tt class="docutils literal"><span class="pre">Original</span></tt> and <tt class="docutils literal"><span class="pre">Processed</span></tt> return the same template. By default, AWS CloudFormation specifies <tt class="docutils literal"><span class="pre">Original</span></tt> .</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Original</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Processed</span></tt></li>
+</ul>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
@@ -167,7 +183,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div class="highlight-python"><pre>aws cloudformation get-template --stack-name myteststack</pre>
 </div>
 <p>Output:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">"TemplateBody"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"AWSTemplateFormatVersion"</span><span class="p">:</span> <span class="s2">"2010-09-09"</span><span class="p">,</span>
         <span class="s2">"Outputs"</span><span class="p">:</span> <span class="p">{</span>
@@ -196,7 +212,14 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
 <p>TemplateBody -&gt; (string)</p>
 <blockquote>
-<div>Structure containing the template body. (For more information, go to <a class="reference external" href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.)</div></blockquote>
+<div><p>Structure containing the template body. (For more information, go to <a class="reference external" href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.)</p>
+<p>AWS CloudFormation returns the same template that was used when the stack was created.</p>
+</div></blockquote>
+<p>StagesAvailable -&gt; (list)</p>
+<blockquote>
+<div><p>The stage of the template that you can retrieve. For stacks, the <tt class="docutils literal"><span class="pre">Original</span></tt> and <tt class="docutils literal"><span class="pre">Processed</span></tt> templates are always available. For change sets, the <tt class="docutils literal"><span class="pre">Original</span></tt> template is always available. After AWS CloudFormation finishes creating the change set, the <tt class="docutils literal"><span class="pre">Processed</span></tt> template becomes available.</p>
+<p>(string)</p>
+</div></blockquote>
 </div>
 </div>
 
@@ -236,7 +259,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
           <a href="get-template-summary.html" title="get-template-summary">next</a> |</li>
         <li class="right">
           <a href="get-stack-policy.html" title="get-stack-policy">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">cloudformation</a> &#187;</li> 
       </ul>
@@ -252,5 +275,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudformation/get-template.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:57 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudformation/get-template.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:09:52 GMT -->
 </html>

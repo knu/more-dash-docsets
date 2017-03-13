@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudformation/package.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:09:52 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>package &#8212; AWS CLI 1.11.61 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.11.61',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="cloudformation" href="index.html" />
+    <link rel="next" title="set-stack-policy" href="set-stack-policy.html" />
+    <link rel="prev" title="list-stacks" href="list-stacks.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="set-stack-policy.html" title="set-stack-policy" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="list-stacks.html" title="list-stacks" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">cloudformation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="list-stacks.html" title="previous chapter (use the left arrow)">&#8592; list-stacks</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="set-stack-policy.html" title="next chapter (use the right arrow)">set-stack-policy &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">package</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/cloudformation/package">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-cloudformation"><em>cloudformation</em></a> ]</p>
+<div class="section" id="package">
+<span id="cli-aws-cloudformation-package"></span><h1>package<a name="//apple_ref/cpp/Command/aws cloudformation package" class="dashAnchor" id="aws cloudformation package"></a><a class="headerlink" href="#package" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Packages the local artifacts (local paths) that your AWS CloudFormation template
+references. The command uploads local artifacts, such as source code for an AWS
+Lambda function or a Swagger file for an AWS API Gateway REST API, to an S3
+bucket. The command returns a copy of your template, replacing references to
+local artifacts with the S3 location where the command uploaded the artifacts.</p>
+<p>Use this command to quickly upload local artifacts that might be required by
+your template. After you package your template's artifacts, run the deploy
+command to <tt class="docutils literal"><span class="pre">deploy</span></tt> the returned template.</p>
+<p>This command can upload local artifacts specified by following properties of a resource:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">BodyS3Location</span></tt> property for the <tt class="docutils literal"><span class="pre">AWS::ApiGateway::RestApi</span></tt> resource</li>
+<li><tt class="docutils literal"><span class="pre">Code</span></tt> property for the <tt class="docutils literal"><span class="pre">AWS::Lambda::Function</span></tt> resource</li>
+<li><tt class="docutils literal"><span class="pre">CodeUri</span></tt> property for the <tt class="docutils literal"><span class="pre">AWS::Serverless::Function</span></tt> resource</li>
+<li><tt class="docutils literal"><span class="pre">DefinitionUri</span></tt> property for the <tt class="docutils literal"><span class="pre">AWS::Serverless::Api</span></tt> resource</li>
+<li><tt class="docutils literal"><span class="pre">SourceBundle</span></tt> property for the <tt class="docutils literal"><span class="pre">AWS::ElasticBeanstalk::ApplicationVersion</span></tt> resource</li>
+<li><tt class="docutils literal"><span class="pre">TemplateURL</span></tt> property for the <tt class="docutils literal"><span class="pre">AWS::CloudFormation::Stack</span></tt> resource</li>
+</ul>
+</div></blockquote>
+<p>To specify a local artifact in your template, specify a path to a local file or folder,
+as either an absolute or relative path. The relative path is a location
+that is relative to your template's location.</p>
+<p>For example, if your AWS Lambda function source code is in the
+<tt class="docutils literal"><span class="pre">/home/user/code/lambdafunction/</span></tt> folder, specify
+`` CodeUri: /home/user/code/lambdafunction`` for the
+<tt class="docutils literal"><span class="pre">AWS::Serverless::Function</span></tt> resource. The command returns a template and replaces
+the local path with the S3 location: <tt class="docutils literal"><span class="pre">CodeUri:</span> <span class="pre">s3://mybucket/lambdafunction.zip</span></tt>.</p>
+<p>If you specify a file, the command directly uploads it to the S3 bucket. If you
+specify a folder, the command zips the folder and then uploads the .zip file.
+For most resources, if you don't specify a path, the command zips and uploads the
+current working directory. The exception is <tt class="docutils literal"><span class="pre">AWS::ApiGateway::RestApi</span></tt>;
+if you don't specify a <tt class="docutils literal"><span class="pre">BodyS3Location</span></tt>, this command will not upload an artifact to S3.</p>
+<p>Before the command uploads artifacts, it checks if the artifacts are already
+present in the S3 bucket to prevent unnecessary uploads. The command uses MD5
+checksums to compare files. If the values match, the command doesn't upload the
+artifacts. Use the <tt class="docutils literal"><span class="pre">--force</span> <span class="pre">flag</span></tt> to skip this check and always upload the
+artifacts.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  package
+--template-file &lt;value&gt;
+--s3-bucket &lt;value&gt;
+[--s3-prefix &lt;value&gt;]
+[--kms-key-id &lt;value&gt;]
+[--output-template-file &lt;value&gt;]
+[--force-upload]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--template-file" class="dashAnchor" id="template-file"></a><span class="pre">--template-file</span></tt> (string)
+The path where your AWS CloudFormation template is located.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--s3-bucket" class="dashAnchor" id="s3-bucket"></a><span class="pre">--s3-bucket</span></tt> (string)
+The name of the S3 bucket where this command uploads the artifacts that are referenced in your template.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--s3-prefix" class="dashAnchor" id="s3-prefix"></a><span class="pre">--s3-prefix</span></tt> (string)
+A prefix name that the command adds to the artifacts' name when it uploads them to the S3 bucket. The prefix name is a path name (folder name) for the S3 bucket.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--kms-key-id" class="dashAnchor" id="kms-key-id"></a><span class="pre">--kms-key-id</span></tt> (string)
+The ID of an AWS KMS key that the command uses to encrypt artifacts that are at rest in the S3 bucket.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--output-template-file" class="dashAnchor" id="output-template-file"></a><span class="pre">--output-template-file</span></tt> (string)
+The path to the file where the command writes the output AWS CloudFormation template. If you don't specify a path, the command writes the template to the standard output.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--force-upload" class="dashAnchor" id="force-upload"></a><span class="pre">--force-upload</span></tt> (boolean)
+Indicates whether to override existing files in the S3 bucket. Specify this flag to upload artifacts even if they match existing artifacts in the S3 bucket.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p>Following command exports a template named <tt class="docutils literal"><span class="pre">template.json</span></tt> by uploading local
+artifacts to S3 bucket <tt class="docutils literal"><span class="pre">bucket-name</span></tt> and writes the exported template to
+<tt class="docutils literal"><span class="pre">packaged-template.json</span></tt>:</p>
+<div class="highlight-python"><pre>aws cloudformation package --template-file /path_to_template/template.json --s3-bucket bucket-name --output-template-file packaged-template.json</pre>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="list-stacks.html" title="previous chapter (use the left arrow)">&#8592; list-stacks</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="set-stack-policy.html" title="next chapter (use the right arrow)">set-stack-policy &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="set-stack-policy.html" title="set-stack-policy">next</a> |</li>
+        <li class="right">
+          <a href="list-stacks.html" title="list-stacks">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">cloudformation</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudformation/package.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:09:52 GMT -->
+</html>

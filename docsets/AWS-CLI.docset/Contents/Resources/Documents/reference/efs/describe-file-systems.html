@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/efs/describe-file-systems.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:16 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/efs/describe-file-systems.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:14 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>describe-file-systems &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>describe-file-systems &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="efs" href="index.html" />
     <link rel="next" title="describe-mount-target-security-groups" href="describe-mount-target-security-groups.html" />
     <link rel="prev" title="delete-tags" href="delete-tags.html" />
@@ -64,7 +64,7 @@
           <a href="describe-mount-target-security-groups.html" title="describe-mount-target-security-groups" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="delete-tags.html" title="delete-tags" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">efs</a> &#187;</li> 
       </ul>
@@ -111,7 +111,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/efs/describe-file-systems">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/efs/describe-file-systems">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -128,94 +128,100 @@
 <span id="cli-aws-efs-describe-file-systems"></span><h1>describe-file-systems<a name="//apple_ref/cpp/Command/aws efs describe-file-systems" class="dashAnchor" id="aws efs describe-file-systems"></a><a class="headerlink" href="#describe-file-systems" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Returns the description of a specific Amazon EFS file system if either the file system <tt class="docutils literal"><span class="pre">creation-token</span></tt> or the <tt class="docutils literal"><span class="pre">file-system-id</span></tt> is provided; otherwise, returns descriptions of all file systems owned by the caller's AWS account in the AWS region of the endpoint that you're calling.</p>
-<p>When retrieving all file system descriptions, you can optionally specify the <tt class="docutils literal"><span class="pre">max-items</span></tt> parameter to limit the number of descriptions in a response. If more file system descriptions remain, Amazon EFS returns a <tt class="docutils literal"><span class="pre">NextMarker</span></tt> , an opaque token, in the response. In this case, you should send a subsequent request with the <tt class="docutils literal"><span class="pre">marker</span></tt> request parameter set to the value of <tt class="docutils literal"><span class="pre">NextMarker</span></tt> .</p>
-<p>So to retrieve a list of your file system descriptions, the expected usage of this API is an iterative process of first calling <tt class="docutils literal"><span class="pre">describe-file-systems</span></tt> without the <tt class="docutils literal"><span class="pre">marker</span></tt> and then continuing to call it with the <tt class="docutils literal"><span class="pre">marker</span></tt> parameter set to the value of the <tt class="docutils literal"><span class="pre">NextMarker</span></tt> from the previous response until the response has no <tt class="docutils literal"><span class="pre">NextMarker</span></tt> .</p>
-<p>Note that the implementation may return fewer than <tt class="docutils literal"><span class="pre">max-items</span></tt> file system descriptions while still including a <tt class="docutils literal"><span class="pre">NextMarker</span></tt> value.</p>
-<p>The order of file systems returned in the response of one <tt class="docutils literal"><span class="pre">describe-file-systems</span></tt> call, and the order of file systems returned across the responses of a multi-call iteration, is unspecified.</p>
-<p>This operation requires permission for the <tt class="docutils literal"><span class="pre">elasticfilesystem:DescribeFileSystems</span></tt> action.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><strong>AWS CLI support for this service is only available in a preview stage.</strong> You can enable this service by running: <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">configure</span> <span class="pre">set</span> <span class="pre">preview.efs</span> <span class="pre">true</span></tt></p>
-</div>
+<p>Returns the description of a specific Amazon EFS file system if either the file system <tt class="docutils literal"><span class="pre">creation-token</span></tt> or the <tt class="docutils literal"><span class="pre">file-system-id</span></tt> is provided. Otherwise, it returns descriptions of all file systems owned by the caller's AWS account in the AWS Region of the endpoint that you're calling.</p>
+<p>When retrieving all file system descriptions, you can optionally specify the <tt class="docutils literal"><span class="pre">MaxItems</span></tt> parameter to limit the number of descriptions in a response. If more file system descriptions remain, Amazon EFS returns a <tt class="docutils literal"><span class="pre">NextMarker</span></tt> , an opaque token, in the response. In this case, you should send a subsequent request with the <tt class="docutils literal"><span class="pre">marker</span></tt> request parameter set to the value of <tt class="docutils literal"><span class="pre">NextMarker</span></tt> .</p>
+<p>To retrieve a list of your file system descriptions, this operation is used in an iterative process, where <tt class="docutils literal"><span class="pre">describe-file-systems</span></tt> is called first without the <tt class="docutils literal"><span class="pre">marker</span></tt> and then the operation continues to call it with the <tt class="docutils literal"><span class="pre">marker</span></tt> parameter set to the value of the <tt class="docutils literal"><span class="pre">NextMarker</span></tt> from the previous response until the response has no <tt class="docutils literal"><span class="pre">NextMarker</span></tt> .</p>
+<p>The implementation may return fewer than <tt class="docutils literal"><span class="pre">MaxItems</span></tt> file system descriptions while still including a <tt class="docutils literal"><span class="pre">NextMarker</span></tt> value.</p>
+<p>The order of file systems returned in the response of one <tt class="docutils literal"><span class="pre">describe-file-systems</span></tt> call and the order of file systems returned across the responses of a multi-call iteration is unspecified.</p>
+<p>This operation requires permissions for the <tt class="docutils literal"><span class="pre">elasticfilesystem:DescribeFileSystems</span></tt> action.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystems">AWS API Documentation</a></p>
+<p><tt class="docutils literal"><span class="pre">describe-file-systems</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">FileSystems</span></tt></p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  describe-file-systems
 [--max-items &lt;value&gt;]
-[--marker &lt;value&gt;]
 [--creation-token &lt;value&gt;]
 [--file-system-id &lt;value&gt;]
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--starting-token &lt;value&gt;]
+[--page-size &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
 <h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-items" class="dashAnchor" id="max-items"></a><span class="pre">--max-items</span></tt> (integer)</p>
 <blockquote>
-<div>Optional integer. Specifies the maximum number of file systems to return in the response. This parameter value must be greater than 0. The number of items Amazon EFS returns will be the minimum of the <tt class="docutils literal"><span class="pre">max-items</span></tt> parameter specified in the request and the service's internal maximum number of items per page.</div></blockquote>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--marker" class="dashAnchor" id="marker"></a><span class="pre">--marker</span></tt> (string)</p>
-<blockquote>
-<div>Optional string. Opaque pagination token returned from a previous <tt class="docutils literal"><span class="pre">describe-file-systems</span></tt> operation. If present, specifies to continue the list from where the returning call had left off.</div></blockquote>
+<div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">NextToken</span></tt> will be provided in the output that you can use to resume pagination. This <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element should <strong>not</strong> be used directly outside of the AWS CLI.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--creation-token" class="dashAnchor" id="creation-token"></a><span class="pre">--creation-token</span></tt> (string)</p>
 <blockquote>
-<div>Optional string. Restricts the list to the file system with this creation token (you specify a creation token at the time of creating an Amazon EFS file system).</div></blockquote>
+<div>(Optional) Restricts the list to the file system with this creation token (String). You specify a creation token when you create an Amazon EFS file system.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--file-system-id" class="dashAnchor" id="file-system-id"></a><span class="pre">--file-system-id</span></tt> (string)</p>
 <blockquote>
-<div>Optional string. File system ID whose description you want to retrieve.</div></blockquote>
+<div>(Optional) ID of the file system whose description you want to retrieve (String).</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--starting-token" class="dashAnchor" id="starting-token"></a><span class="pre">--starting-token</span></tt> (string)</p>
+<blockquote>
+<div>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--page-size" class="dashAnchor" id="page-size"></a><span class="pre">--page-size</span></tt> (integer)</p>
+<blockquote>
+<div>The size of each page.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="output">
 <h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
 <p>Marker -&gt; (string)</p>
 <blockquote>
-<div>A string, present if provided by caller in the request.</div></blockquote>
+<div>Present if provided by caller in the request (String).</div></blockquote>
 <p>FileSystems -&gt; (list)</p>
 <blockquote>
-<div><p>An array of file system descriptions.</p>
+<div><p>Array of file system descriptions.</p>
 <p>(structure)</p>
 <blockquote>
-<div><p>This object provides description of a file system.</p>
+<div><p>Description of the file system.</p>
 <p>OwnerId -&gt; (string)</p>
 <blockquote>
-<div>The AWS account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</div></blockquote>
+<div>AWS account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</div></blockquote>
 <p>CreationToken -&gt; (string)</p>
 <blockquote>
 <div>Opaque string specified in the request.</div></blockquote>
 <p>FileSystemId -&gt; (string)</p>
 <blockquote>
-<div>The file system ID assigned by Amazon EFS.</div></blockquote>
+<div>ID of the file system, assigned by Amazon EFS.</div></blockquote>
 <p>CreationTime -&gt; (timestamp)</p>
 <blockquote>
-<div>The time at which the file system was created, in seconds, since 1970-01-01T00:00:00Z.</div></blockquote>
+<div>Time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).</div></blockquote>
 <p>LifeCycleState -&gt; (string)</p>
 <blockquote>
-<div>A predefined string value that indicates the lifecycle phase of the file system.</div></blockquote>
+<div>Lifecycle phase of the file system.</div></blockquote>
 <p>Name -&gt; (string)</p>
 <blockquote>
-<div>You can add tags to a file system (see  create-tags ) including a "Name" tag. If the file system has a "Name" tag, Amazon EFS returns the value in this field.</div></blockquote>
+<div>You can add tags to a file system, including a <tt class="docutils literal"><span class="pre">Name</span></tt> tag. For more information, see  create-tags . If the file system has a <tt class="docutils literal"><span class="pre">Name</span></tt> tag, Amazon EFS returns the value in this field.</div></blockquote>
 <p>NumberOfMountTargets -&gt; (integer)</p>
 <blockquote>
-<div>The current number of mount targets (see  create-mount-target ) the file system has.</div></blockquote>
+<div>Current number of mount targets that the file system has. For more information, see  create-mount-target .</div></blockquote>
 <p>SizeInBytes -&gt; (structure)</p>
 <blockquote>
-<div><p>This object provides the latest known metered size of data stored in the file system, in bytes, in its <tt class="docutils literal"><span class="pre">Value</span></tt> field, and the time at which that size was determined in its <tt class="docutils literal"><span class="pre">Timestamp</span></tt> field. The <tt class="docutils literal"><span class="pre">Timestamp</span></tt> value is the integer number of seconds since 1970-01-01T00:00:00Z. Note that the value does not represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value will represent actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size the file system was at any instant in time.</p>
+<div><p>Latest known metered size (in bytes) of data stored in the file system, in bytes, in its <tt class="docutils literal"><span class="pre">Value</span></tt> field, and the time at which that size was determined in its <tt class="docutils literal"><span class="pre">Timestamp</span></tt> field. The <tt class="docutils literal"><span class="pre">Timestamp</span></tt> value is the integer number of seconds since 1970-01-01T00:00:00Z. Note that the value does not represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value will represent actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size the file system was at any instant in time.</p>
 <p>Value -&gt; (long)</p>
 <blockquote>
-<div>The latest known metered size, in bytes, of data stored in the file system.</div></blockquote>
+<div>Latest known metered size (in bytes) of data stored in the file system.</div></blockquote>
 <p>Timestamp -&gt; (timestamp)</p>
 <blockquote>
-<div>The time at which the size of data, returned in the <tt class="docutils literal"><span class="pre">Value</span></tt> field, was determined. The value is the integer number of seconds since 1970-01-01T00:00:00Z.</div></blockquote>
+<div>Time at which the size of data, returned in the <tt class="docutils literal"><span class="pre">Value</span></tt> field, was determined. The value is the integer number of seconds since 1970-01-01T00:00:00Z.</div></blockquote>
 </div></blockquote>
+<p>PerformanceMode -&gt; (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">PerformanceMode</span></tt> of the file system.</div></blockquote>
 </div></blockquote>
 </div></blockquote>
 <p>NextMarker -&gt; (string)</p>
 <blockquote>
-<div>A string, present if there are more file systems than returned in the response. You can use the <tt class="docutils literal"><span class="pre">NextMarker</span></tt> in the subsequent request to fetch the descriptions.</div></blockquote>
+<div>Present if there are more file systems than returned in the response (String). You can use the <tt class="docutils literal"><span class="pre">NextMarker</span></tt> in the subsequent request to fetch the descriptions.</div></blockquote>
 </div>
 </div>
 
@@ -255,7 +261,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
           <a href="describe-mount-target-security-groups.html" title="describe-mount-target-security-groups">next</a> |</li>
         <li class="right">
           <a href="delete-tags.html" title="delete-tags">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">efs</a> &#187;</li> 
       </ul>
@@ -271,5 +277,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/efs/describe-file-systems.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:16 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/efs/describe-file-systems.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:14 GMT -->
 </html>

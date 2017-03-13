@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/gamelift/put-scaling-policy.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:19 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/gamelift/put-scaling-policy.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:18 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>put-scaling-policy &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>put-scaling-policy &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="gamelift" href="index.html" />
     <link rel="next" title="request-upload-credentials" href="request-upload-credentials.html" />
     <link rel="prev" title="list-fleets" href="list-fleets.html" />
@@ -64,7 +64,7 @@
           <a href="request-upload-credentials.html" title="request-upload-credentials" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="list-fleets.html" title="list-fleets" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">gamelift</a> &#187;</li> 
       </ul>
@@ -111,7 +111,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/gamelift/put-scaling-policy">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/gamelift/put-scaling-policy">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -128,12 +128,13 @@
 <span id="cli-aws-gamelift-put-scaling-policy"></span><h1>put-scaling-policy<a name="//apple_ref/cpp/Command/aws gamelift put-scaling-policy" class="dashAnchor" id="aws gamelift put-scaling-policy"></a><a class="headerlink" href="#put-scaling-policy" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Creates or updates a scaling policy for a fleet. An active scaling policy prompts GameLift to track a certain metric for a fleet and automatically change the fleet's capacity in specific circumstances. Each scaling policy contains one rule statement. Fleets can have multiple scaling policies in force simultaneously.</p>
+<p>Creates or updates a scaling policy for a fleet. An active scaling policy prompts Amazon GameLift to track a certain metric for a fleet and automatically change the fleet's capacity in specific circumstances. Each scaling policy contains one rule statement. Fleets can have multiple scaling policies in force simultaneously.</p>
 <p>A scaling policy rule statement has the following structure:</p>
-<p>If <em>[MetricName]</em> is <em>[ComparisonOperator]</em>  <em>[Threshold]</em> for <em>[EvaluationPeriods]</em> minutes, then <em>[ScalingAdjustmentType]</em> to/by <em>[ScalingAdjustment]</em> .</p>
+<p>If <tt class="docutils literal"><span class="pre">[MetricName]</span></tt> is <tt class="docutils literal"><span class="pre">[ComparisonOperator]</span></tt>  <tt class="docutils literal"><span class="pre">[Threshold]</span></tt> for <tt class="docutils literal"><span class="pre">[EvaluationPeriods]</span></tt> minutes, then <tt class="docutils literal"><span class="pre">[ScalingAdjustmentType]</span></tt> to/by <tt class="docutils literal"><span class="pre">[ScalingAdjustment]</span></tt> .</p>
 <p>For example, this policy: "If the number of idle instances exceeds 20 for more than 15 minutes, then reduce the fleet capacity by 10 instances" could be implemented as the following rule statement:</p>
 <p>If [IdleInstances] is [GreaterThanOrEqualToThreshold] [20] for [15] minutes, then [ChangeInCapacity] by [-10].</p>
 <p>To create or update a scaling policy, specify a unique combination of name and fleet ID, and set the rule values. All parameters for this action are required. If successful, the policy name is returned. Scaling policies cannot be suspended or made inactive. To stop enforcing a scaling policy, call  delete-scaling-policy .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy">AWS API Documentation</a></p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
@@ -147,17 +148,17 @@
 --evaluation-periods &lt;value&gt;
 --metric-name &lt;value&gt;
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
 <h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--name" class="dashAnchor" id="name"></a><span class="pre">--name</span></tt> (string)</p>
 <blockquote>
-<div>Descriptive label associated with this scaling policy. Policy names do not need to be unique. A fleet can have only one scaling policy with the same name.</div></blockquote>
+<div>Descriptive label that is associated with a scaling policy. Policy names do not need to be unique. A fleet can have only one scaling policy with the same name.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--fleet-id" class="dashAnchor" id="fleet-id"></a><span class="pre">--fleet-id</span></tt> (string)</p>
 <blockquote>
-<div>Unique identity for the fleet to scale with this policy.</div></blockquote>
+<div>Unique identifier for a fleet to apply this policy to.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--scaling-adjustment" class="dashAnchor" id="scaling-adjustment"></a><span class="pre">--scaling-adjustment</span></tt> (integer)</p>
 <blockquote>
 <div>Amount of adjustment to make, based on the scaling adjustment type.</div></blockquote>
@@ -165,9 +166,9 @@
 <blockquote>
 <div><p>Type of adjustment to make to a fleet's instance count (see  FleetCapacity ):</p>
 <ul class="simple">
-<li>ChangeInCapacity: add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</li>
-<li>ExactCapacity: set the instance count to the scaling adjustment value.</li>
-<li>PercentChangeInCapacity: increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down; for example, a value of "-10" scales the fleet down by 10%.</li>
+<li><strong>ChangeInCapacity</strong> &#8211; add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</li>
+<li><strong>ExactCapacity</strong> &#8211; set the instance count to the scaling adjustment value.</li>
+<li><strong>PercentChangeInCapacity</strong> &#8211; increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down; for example, a value of "-10" scales the fleet down by 10%.</li>
 </ul>
 <p>Possible values:</p>
 <ul class="simple">
@@ -195,14 +196,14 @@
 <div>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--metric-name" class="dashAnchor" id="metric-name"></a><span class="pre">--metric-name</span></tt> (string)</p>
 <blockquote>
-<div><p>Name of the Service-defined metric that is used to trigger an adjustment.</p>
+<div><p>Name of the Amazon GameLift-defined metric that is used to trigger an adjustment.</p>
 <ul class="simple">
-<li>ActivatingGameSessions: number of game sessions in the process of being created (game session status = ACTIVATING).</li>
-<li>ActiveGameSessions: number of game sessions currently running (game session status = ACTIVE).</li>
-<li>CurrentPlayerSessions: number of active or reserved player sessions (player session status = ACTIVE or RESERVED).</li>
-<li>AvailablePlayerSessions: number of player session slots currently available in active game sessions across the fleet, calculated by subtracting a game session's current player session count from its maximum player session count. This number includes game sessions that are not currently accepting players (game session PlayerSessionCreationPolicy = DENY_ALL).</li>
-<li>ActiveInstances: number of instances currently running a game session.</li>
-<li>IdleInstances: number of instances not currently running a game session.</li>
+<li><strong>ActivatingGameSessions</strong> &#8211; number of game sessions in the process of being created (game session status = <tt class="docutils literal"><span class="pre">ACTIVATING</span></tt> ).</li>
+<li><strong>ActiveGameSessions</strong> &#8211; number of game sessions currently running (game session status = <tt class="docutils literal"><span class="pre">ACTIVE</span></tt> ).</li>
+<li><strong>CurrentPlayerSessions</strong> &#8211; number of active or reserved player sessions (player session status = <tt class="docutils literal"><span class="pre">ACTIVE</span></tt> or <tt class="docutils literal"><span class="pre">RESERVED</span></tt> ).</li>
+<li><strong>AvailablePlayerSessions</strong> &#8211; number of player session slots currently available in active game sessions across the fleet, calculated by subtracting a game session's current player session count from its maximum player session count. This number includes game sessions that are not currently accepting players (game session <tt class="docutils literal"><span class="pre">PlayerSessionCreationPolicy</span></tt> = <tt class="docutils literal"><span class="pre">DENY_ALL</span></tt> ).</li>
+<li><strong>ActiveInstances</strong> &#8211; number of instances currently running a game session.</li>
+<li><strong>IdleInstances</strong> &#8211; number of instances not currently running a game session.</li>
 </ul>
 <p>Possible values:</p>
 <ul class="simple">
@@ -212,18 +213,20 @@
 <li><tt class="docutils literal"><span class="pre">AvailablePlayerSessions</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">CurrentPlayerSessions</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">IdleInstances</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">QueueDepth</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">WaitTime</span></tt></li>
 </ul>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="output">
 <h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
 <p>Name -&gt; (string)</p>
 <blockquote>
-<div>Descriptive label associated with this scaling policy. Policy names do not need to be unique.</div></blockquote>
+<div>Descriptive label that is associated with a scaling policy. Policy names do not need to be unique.</div></blockquote>
 </div>
 </div>
 
@@ -263,7 +266,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
           <a href="request-upload-credentials.html" title="request-upload-credentials">next</a> |</li>
         <li class="right">
           <a href="list-fleets.html" title="list-fleets">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">gamelift</a> &#187;</li> 
       </ul>
@@ -279,5 +282,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/gamelift/put-scaling-policy.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:19 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/gamelift/put-scaling-policy.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:18 GMT -->
 </html>

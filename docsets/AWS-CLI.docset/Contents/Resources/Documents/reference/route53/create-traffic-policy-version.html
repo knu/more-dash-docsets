@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53/create-traffic-policy-version.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:27 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53/create-traffic-policy-version.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:27 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>create-traffic-policy-version &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>create-traffic-policy-version &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="route53" href="index.html" />
-    <link rel="next" title="delete-health-check" href="delete-health-check.html" />
+    <link rel="next" title="create-vpc-association-authorization" href="create-vpc-association-authorization.html" />
     <link rel="prev" title="create-traffic-policy-instance" href="create-traffic-policy-instance.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
@@ -61,10 +61,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
         <li class="right">
-          <a href="delete-health-check.html" title="delete-health-check" accesskey="N">next</a> |</li>
+          <a href="create-vpc-association-authorization.html" title="create-vpc-association-authorization" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="create-traffic-policy-instance.html" title="create-traffic-policy-instance" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">route53</a> &#187;</li> 
       </ul>
@@ -78,7 +78,7 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="delete-health-check.html" title="next chapter (use the right arrow)">delete-health-check &#8594;</a></li>
+          <li><a href="create-vpc-association-authorization.html" title="next chapter (use the right arrow)">create-vpc-association-authorization &#8594;</a></li>
       </ul>
     </div>
   
@@ -111,7 +111,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/route53/create-traffic-policy-version">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/route53/create-traffic-policy-version">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -128,9 +128,9 @@
 <span id="cli-aws-route53-create-traffic-policy-version"></span><h1>create-traffic-policy-version<a name="//apple_ref/cpp/Command/aws route53 create-traffic-policy-version" class="dashAnchor" id="aws route53 create-traffic-policy-version"></a><a class="headerlink" href="#create-traffic-policy-version" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Creates a new version of an existing traffic policy. When you create a new version of a traffic policy, you specify the ID of the traffic policy that you want to update and a JSON-formatted document that describes the new version.</p>
-<p>You use traffic policies to create multiple DNS resource record sets for one domain name (such as example.com) or one subdomain name (such as www.example.com).</p>
-<p>To create a new version, send a <tt class="docutils literal"><span class="pre">POST</span></tt> request to the <tt class="docutils literal"><span class="pre">/*Route</span> <span class="pre">53</span> <span class="pre">API</span> <span class="pre">version*</span> <span class="pre">/trafficpolicy/</span></tt> resource. The request body includes a document with a <tt class="docutils literal"><span class="pre">CreateTrafficPolicyVersionRequest</span></tt> element. The response returns the <tt class="docutils literal"><span class="pre">CreateTrafficPolicyVersionResponse</span></tt> element, which contains information about the new version of the traffic policy.</p>
+<p>Creates a new version of an existing traffic policy. When you create a new version of a traffic policy, you specify the ID of the traffic policy that you want to update and a JSON-formatted document that describes the new version. You use traffic policies to create multiple DNS resource record sets for one domain name (such as example.com) or one subdomain name (such as www.example.com). You can create a maximum of 1000 versions of a traffic policy. If you reach the limit and need to create another version, you'll need to start a new traffic policy.</p>
+<p>Send a <tt class="docutils literal"><span class="pre">POST</span></tt> request to the <tt class="docutils literal"><span class="pre">/2013-04-01/trafficpolicy/</span></tt> resource. The request body includes a document with a <tt class="docutils literal"><span class="pre">CreateTrafficPolicyVersionRequest</span></tt> element. The response returns the <tt class="docutils literal"><span class="pre">CreateTrafficPolicyVersionResponse</span></tt> element, which contains information about the new version of the traffic policy.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyVersion">AWS API Documentation</a></p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
@@ -139,7 +139,7 @@
 --document &lt;value&gt;
 [--comment &lt;value&gt;]
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
@@ -149,14 +149,14 @@
 <div>The ID of the traffic policy for which you want to create a new version.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--document" class="dashAnchor" id="document"></a><span class="pre">--document</span></tt> (string)</p>
 <blockquote>
-<div>The definition of a new traffic policy version, in JSON format. You must specify the full definition of the new traffic policy. You cannot specify just the differences between the new version and a previous version.</div></blockquote>
+<div>The definition of this version of the traffic policy, in JSON format. You specified the JSON in the <tt class="docutils literal"><span class="pre">create-traffic-policy-version</span></tt> request. For more information about the JSON format, see  create-traffic-policy .</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--comment" class="dashAnchor" id="comment"></a><span class="pre">--comment</span></tt> (string)</p>
 <blockquote>
-<div>Any comments that you want to include about the new traffic policy version.</div></blockquote>
+<div>The comment that you specified in the <tt class="docutils literal"><span class="pre">create-traffic-policy-version</span></tt> request, if any.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="output">
 <h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
@@ -164,13 +164,27 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <blockquote>
 <div><p>A complex type that contains settings for the new version of the traffic policy.</p>
 <p>Id -&gt; (string)</p>
+<blockquote>
+<div>The ID that Amazon Route 53 assigned to a traffic policy when you created it.</div></blockquote>
 <p>Version -&gt; (integer)</p>
+<blockquote>
+<div>The version number that Amazon Route 53 assigns to a traffic policy. For a new traffic policy, the value of <tt class="docutils literal"><span class="pre">Version</span></tt> is always 1.</div></blockquote>
 <p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name that you specified when you created the traffic policy.</div></blockquote>
 <p>Type -&gt; (string)</p>
+<blockquote>
+<div>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a traffic policy instance.</div></blockquote>
 <p>Document -&gt; (string)</p>
+<blockquote>
+<div>The definition of a traffic policy in JSON format. You specify the JSON document to use for a new traffic policy in the <tt class="docutils literal"><span class="pre">create-traffic-policy</span></tt> request. For more information about the JSON format, see <a class="reference external" href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a> .</div></blockquote>
 <p>Comment -&gt; (string)</p>
+<blockquote>
+<div>The comment that you specify in the <tt class="docutils literal"><span class="pre">create-traffic-policy</span></tt> request, if any.</div></blockquote>
 </div></blockquote>
 <p>Location -&gt; (string)</p>
+<blockquote>
+<div>A unique URL that represents a new traffic policy version.</div></blockquote>
 </div>
 </div>
 
@@ -186,7 +200,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
           <span class="divider">/</span>
           
         </li>
-          <li><a href="delete-health-check.html" title="next chapter (use the right arrow)">delete-health-check &#8594;</a></li>
+          <li><a href="create-vpc-association-authorization.html" title="next chapter (use the right arrow)">create-vpc-association-authorization &#8594;</a></li>
       </ul>
     </div>
   
@@ -207,10 +221,10 @@ Prints a sample input JSON to standard output. Note the specified operation is n
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index">index</a></li>
         <li class="right">
-          <a href="delete-health-check.html" title="delete-health-check">next</a> |</li>
+          <a href="create-vpc-association-authorization.html" title="create-vpc-association-authorization">next</a> |</li>
         <li class="right">
           <a href="create-traffic-policy-instance.html" title="create-traffic-policy-instance">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">route53</a> &#187;</li> 
       </ul>
@@ -226,5 +240,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53/create-traffic-policy-version.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:27 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53/create-traffic-policy-version.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:27 GMT -->
 </html>

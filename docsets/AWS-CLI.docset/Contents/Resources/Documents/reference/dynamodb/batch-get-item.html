@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/dynamodb/batch-get-item.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:01 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/dynamodb/batch-get-item.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:09:59 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>batch-get-item &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>batch-get-item &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="dynamodb" href="index.html" />
     <link rel="next" title="batch-write-item" href="batch-write-item.html" />
     <link rel="prev" title="dynamodb" href="index.html" />
@@ -64,7 +64,7 @@
           <a href="batch-write-item.html" title="batch-write-item" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="index.html" title="dynamodb" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">dynamodb</a> &#187;</li> 
       </ul>
@@ -112,7 +112,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/dynamodb/batch-get-item">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/dynamodb/batch-get-item">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -129,23 +129,24 @@
 <span id="cli-aws-dynamodb-batch-get-item"></span><h1>batch-get-item<a name="//apple_ref/cpp/Command/aws dynamodb batch-get-item" class="dashAnchor" id="aws dynamodb batch-get-item"></a><a class="headerlink" href="#batch-get-item" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>The <em>batch-get-item</em> operation returns the attributes of one or more items from one or more tables. You identify requested items by primary key.</p>
-<p>A single operation can retrieve up to 16 MB of data, which can contain as many as 100 items. <em>batch-get-item</em> will return a partial result if the response size limit is exceeded, the table's provisioned throughput is exceeded, or an internal processing failure occurs. If a partial result is returned, the operation returns a value for <em>UnprocessedKeys</em> . You can use this value to retry the operation starting with the next item to get.</p>
+<p>The <tt class="docutils literal"><span class="pre">batch-get-item</span></tt> operation returns the attributes of one or more items from one or more tables. You identify requested items by primary key.</p>
+<p>A single operation can retrieve up to 16 MB of data, which can contain as many as 100 items. <tt class="docutils literal"><span class="pre">batch-get-item</span></tt> will return a partial result if the response size limit is exceeded, the table's provisioned throughput is exceeded, or an internal processing failure occurs. If a partial result is returned, the operation returns a value for <tt class="docutils literal"><span class="pre">UnprocessedKeys</span></tt> . You can use this value to retry the operation starting with the next item to get.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">If you request more than 100 items <em>batch-get-item</em> will return a <em>ValidationException</em> with the message "Too many items requested for the batch-get-item call".</p>
+<p class="last">If you request more than 100 items <tt class="docutils literal"><span class="pre">batch-get-item</span></tt> will return a <tt class="docutils literal"><span class="pre">ValidationException</span></tt> with the message "Too many items requested for the batch-get-item call".</p>
 </div>
-<p>For example, if you ask to retrieve 100 items, but each individual item is 300 KB in size, the system returns 52 items (so as not to exceed the 16 MB limit). It also returns an appropriate <em>UnprocessedKeys</em> value so you can get the next page of results. If desired, your application can include its own logic to assemble the pages of results into one data set.</p>
-<p>If <em>none</em> of the items can be processed due to insufficient provisioned throughput on all of the tables in the request, then <em>batch-get-item</em> will return a <em>ProvisionedThroughputExceededException</em> . If <em>at least one</em> of the items is successfully processed, then <em>batch-get-item</em> completes successfully, while returning the keys of the unread items in <em>UnprocessedKeys</em> .</p>
+<p>For example, if you ask to retrieve 100 items, but each individual item is 300 KB in size, the system returns 52 items (so as not to exceed the 16 MB limit). It also returns an appropriate <tt class="docutils literal"><span class="pre">UnprocessedKeys</span></tt> value so you can get the next page of results. If desired, your application can include its own logic to assemble the pages of results into one data set.</p>
+<p>If <em>none</em> of the items can be processed due to insufficient provisioned throughput on all of the tables in the request, then <tt class="docutils literal"><span class="pre">batch-get-item</span></tt> will return a <tt class="docutils literal"><span class="pre">ProvisionedThroughputExceededException</span></tt> . If <em>at least one</em> of the items is successfully processed, then <tt class="docutils literal"><span class="pre">batch-get-item</span></tt> completes successfully, while returning the keys of the unread items in <tt class="docutils literal"><span class="pre">UnprocessedKeys</span></tt> .</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p>If DynamoDB returns any unprocessed items, you should retry the batch operation on those items. However, <em>we strongly recommend that you use an exponential backoff algorithm</em> . If you retry the batch operation immediately, the underlying read or write requests can still fail due to throttling on the individual tables. If you delay the batch operation using exponential backoff, the individual requests in the batch are much more likely to succeed.</p>
 <p class="last">For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#BatchOperations">Batch Operations and Error Handling</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
 </div>
-<p>By default, <em>batch-get-item</em> performs eventually consistent reads on every table in the request. If you want strongly consistent reads instead, you can set <em>ConsistentRead</em> to <tt class="docutils literal"><span class="pre">true</span></tt> for any or all tables.</p>
-<p>In order to minimize response latency, <em>batch-get-item</em> retrieves items in parallel.</p>
-<p>When designing your application, keep in mind that DynamoDB does not return items in any particular order. To help parse the response by item, include the primary key values for the items in your request in the <em>AttributesToGet</em> parameter.</p>
+<p>By default, <tt class="docutils literal"><span class="pre">batch-get-item</span></tt> performs eventually consistent reads on every table in the request. If you want strongly consistent reads instead, you can set <tt class="docutils literal"><span class="pre">ConsistentRead</span></tt> to <tt class="docutils literal"><span class="pre">true</span></tt> for any or all tables.</p>
+<p>In order to minimize response latency, <tt class="docutils literal"><span class="pre">batch-get-item</span></tt> retrieves items in parallel.</p>
+<p>When designing your application, keep in mind that DynamoDB does not return items in any particular order. To help parse the response by item, include the primary key values for the items in your request in the <tt class="docutils literal"><span class="pre">ProjectionExpression</span></tt> parameter.</p>
 <p>If a requested item does not exist, it is not returned in the result. Requests for nonexistent items consume the minimum read capacity units according to the type of read. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations">Capacity Units Calculations</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem">AWS API Documentation</a></p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
@@ -153,18 +154,18 @@
 --request-items &lt;value&gt;
 [--return-consumed-capacity &lt;value&gt;]
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
 <h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--request-items" class="dashAnchor" id="request-items"></a><span class="pre">--request-items</span></tt> (map)</p>
 <blockquote>
-<div><p>A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <em>batch-get-item</em> request.</p>
+<div><p>A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <tt class="docutils literal"><span class="pre">batch-get-item</span></tt> request.</p>
 <p>Each element in the map of items to retrieve consists of the following:</p>
 <ul class="simple">
-<li><em>ConsistentRead</em> - If <tt class="docutils literal"><span class="pre">true</span></tt> , a strongly consistent read is used; if <tt class="docutils literal"><span class="pre">false</span></tt> (the default), an eventually consistent read is used.</li>
-<li><em>ExpressionAttributeNames</em> - One or more substitution tokens for attribute names in the <em>ProjectionExpression</em> parameter. The following are some use cases for using <em>ExpressionAttributeNames</em> :<ul>
+<li><tt class="docutils literal"><span class="pre">ConsistentRead</span></tt> - If <tt class="docutils literal"><span class="pre">true</span></tt> , a strongly consistent read is used; if <tt class="docutils literal"><span class="pre">false</span></tt> (the default), an eventually consistent read is used.</li>
+<li><tt class="docutils literal"><span class="pre">ExpressionAttributeNames</span></tt> - One or more substitution tokens for attribute names in the <tt class="docutils literal"><span class="pre">ProjectionExpression</span></tt> parameter. The following are some use cases for using <tt class="docutils literal"><span class="pre">ExpressionAttributeNames</span></tt> :<ul>
 <li>To access an attribute whose name conflicts with a DynamoDB reserved word.</li>
 <li>To create a placeholder for repeating occurrences of an attribute name in an expression.</li>
 <li>To prevent special characters in an attribute name from being misinterpreted in an expression.</li>
@@ -177,7 +178,7 @@
 <li><tt class="docutils literal"><span class="pre">Percentile</span></tt></li>
 </ul>
 </div></blockquote>
-<p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <em>Amazon DynamoDB Developer Guide</em> ). To work around this, you could specify the following for <em>ExpressionAttributeNames</em> :</p>
+<p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <em>Amazon DynamoDB Developer Guide</em> ). To work around this, you could specify the following for <tt class="docutils literal"><span class="pre">ExpressionAttributeNames</span></tt> :</p>
 <blockquote>
 <div><ul class="simple">
 <li><tt class="docutils literal"><span class="pre">{"#P":"Percentile"}</span></tt></li>
@@ -195,16 +196,10 @@
 </div>
 <p>For more information on expression attribute names, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
 <ul class="simple">
-<li><em>Keys</em> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <em>all</em> of the key attributes. For example, with a simple primary key, you only need to provide the partition key value. For a composite key, you must provide <em>both</em> the partition key value and the sort key value.</li>
-<li><em>ProjectionExpression</em> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <em>Amazon DynamoDB Developer Guide</em> .</li>
-<li><em>AttributesToGet</em> -</li>
+<li><tt class="docutils literal"><span class="pre">Keys</span></tt> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <em>all</em> of the key attributes. For example, with a simple primary key, you only need to provide the partition key value. For a composite key, you must provide <em>both</em> the partition key value and the sort key value.</li>
+<li><tt class="docutils literal"><span class="pre">ProjectionExpression</span></tt> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <em>Amazon DynamoDB Developer Guide</em> .</li>
+<li><tt class="docutils literal"><span class="pre">AttributesToGet</span></tt> - This is a legacy parameter. Use <tt class="docutils literal"><span class="pre">ProjectionExpression</span></tt> instead. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <em>Amazon DynamoDB Developer Guide</em> .</li>
 </ul>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<blockquote>
-<div>This is a legacy parameter, for backward compatibility. New applications should use <em>ProjectionExpression</em> instead. Do not combine legacy parameters and expression parameters in a single API call; otherwise, DynamoDB will return a <em>ValidationException</em> exception. This parameter allows you to retrieve attributes of type List or Map; however, it cannot retrieve individual elements within a List or a Map.</div></blockquote>
-<p class="last">The names of one or more attributes to retrieve. If no attribute names are provided, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result. Note that <em>AttributesToGet</em> has no effect on provisioned throughput consumption. DynamoDB determines capacity units consumed based on item size, not on the amount of data that is returned to an application.</p>
-</div>
 </div></blockquote>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><pre>{"string": {
@@ -270,9 +265,9 @@
 <blockquote>
 <div><p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
 <ul class="simple">
-<li><em>INDEXES</em> - The response includes the aggregate <em>ConsumedCapacity</em> for the operation, together with <em>ConsumedCapacity</em> for each table and secondary index that was accessed. Note that some operations, such as <em>get-item</em> and <em>batch-get-item</em> , do not access any indexes at all. In these cases, specifying <em>INDEXES</em> will only return <em>ConsumedCapacity</em> information for table(s).</li>
-<li><em>TOTAL</em> - The response includes only the aggregate <em>ConsumedCapacity</em> for the operation.</li>
-<li><em>NONE</em> - No <em>ConsumedCapacity</em> details are included in the response.</li>
+<li><tt class="docutils literal"><span class="pre">INDEXES</span></tt> - The response includes the aggregate <tt class="docutils literal"><span class="pre">ConsumedCapacity</span></tt> for the operation, together with <tt class="docutils literal"><span class="pre">ConsumedCapacity</span></tt> for each table and secondary index that was accessed. Note that some operations, such as <tt class="docutils literal"><span class="pre">get-item</span></tt> and <tt class="docutils literal"><span class="pre">batch-get-item</span></tt> , do not access any indexes at all. In these cases, specifying <tt class="docutils literal"><span class="pre">INDEXES</span></tt> will only return <tt class="docutils literal"><span class="pre">ConsumedCapacity</span></tt> information for table(s).</li>
+<li><tt class="docutils literal"><span class="pre">TOTAL</span></tt> - The response includes only the aggregate <tt class="docutils literal"><span class="pre">ConsumedCapacity</span></tt> for the operation.</li>
+<li><tt class="docutils literal"><span class="pre">NONE</span></tt> - No <tt class="docutils literal"><span class="pre">ConsumedCapacity</span></tt> details are included in the response.</li>
 </ul>
 <p>Possible values:</p>
 <ul class="simple">
@@ -283,8 +278,8 @@
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
@@ -294,7 +289,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div class="highlight-python"><pre>aws dynamodb batch-get-item --request-items file://request-items.json</pre>
 </div>
 <p>The arguments for <tt class="docutils literal"><span class="pre">--request-items</span></tt> are stored in a JSON file, <tt class="docutils literal"><span class="pre">request-items.json</span></tt>.  Here are the contents of that file:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">"MusicCollection"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"Keys"</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
@@ -316,7 +311,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 </pre></div>
 </div>
 <p>Output:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">"UnprocessedKeys"</span><span class="p">:</span> <span class="p">{},</span>
     <span class="s2">"Responses"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"MusicCollection"</span><span class="p">:</span> <span class="p">[</span>
@@ -345,7 +340,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
 <p>Responses -&gt; (map)</p>
 <blockquote>
-<div><p>A map of table name to a list of items. Each object in <em>Responses</em> consists of a table name, along with a map of attribute data consisting of the data type and attribute value.</p>
+<div><p>A map of table name to a list of items. Each object in <tt class="docutils literal"><span class="pre">Responses</span></tt> consists of a table name, along with a map of attribute data consisting of the data type and attribute value.</p>
 <p>key -&gt; (string)</p>
 <p>value -&gt; (list)</p>
 <blockquote>
@@ -354,153 +349,237 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div><p>key -&gt; (string)</p>
 <p>value -&gt; (structure)</p>
 <blockquote>
-<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
-<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<div><p>Represents the data for an attribute.</p>
+<p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
 <p>S -&gt; (string)</p>
 <blockquote>
-<div>A String data type.</div></blockquote>
+<div><p>An attribute of type String. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"S":</span> <span class="pre">"Hello"</span></tt></div></blockquote>
+</div></blockquote>
 <p>N -&gt; (string)</p>
 <blockquote>
-<div>A Number data type.</div></blockquote>
+<div><p>An attribute of type Number. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"N":</span> <span class="pre">"123.45"</span></tt></div></blockquote>
+<p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.</p>
+</div></blockquote>
 <p>B -&gt; (blob)</p>
 <blockquote>
-<div>A Binary data type.</div></blockquote>
+<div><p>An attribute of type Binary. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"B":</span> <span class="pre">"dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk"</span></tt></div></blockquote>
+</div></blockquote>
 <p>SS -&gt; (list)</p>
 <blockquote>
-<div><p>A String Set data type.</p>
+<div><p>An attribute of type String Set. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"SS":</span> <span class="pre">["Giraffe",</span> <span class="pre">"Hippo"</span> <span class="pre">,"Zebra"]</span></tt></div></blockquote>
 <p>(string)</p>
 </div></blockquote>
 <p>NS -&gt; (list)</p>
 <blockquote>
-<div><p>A Number Set data type.</p>
+<div><p>An attribute of type Number Set. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"NS":</span> <span class="pre">["42.2",</span> <span class="pre">"-19",</span> <span class="pre">"7.5",</span> <span class="pre">"3.14"]</span></tt></div></blockquote>
+<p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.</p>
 <p>(string)</p>
 </div></blockquote>
 <p>BS -&gt; (list)</p>
 <blockquote>
-<div><p>A Binary Set data type.</p>
+<div><p>An attribute of type Binary Set. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"BS":</span> <span class="pre">["U3Vubnk=",</span> <span class="pre">"UmFpbnk=",</span> <span class="pre">"U25vd3k="]</span></tt></div></blockquote>
 <p>(blob)</p>
 </div></blockquote>
 <p>M -&gt; (map)</p>
 <blockquote>
-<div><p>A Map of attribute values.</p>
+<div><p>An attribute of type Map. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"M":</span> <span class="pre">{"Name":</span> <span class="pre">{"S":</span> <span class="pre">"Joe"},</span> <span class="pre">"Age":</span> <span class="pre">{"N":</span> <span class="pre">"35"}}</span></tt></div></blockquote>
 <p>key -&gt; (string)</p>
 <p>value -&gt; (structure)</p>
 <blockquote>
-<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
-<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<div><p>Represents the data for an attribute.</p>
+<p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
 <p>S -&gt; (string)</p>
 <blockquote>
-<div>A String data type.</div></blockquote>
+<div><p>An attribute of type String. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"S":</span> <span class="pre">"Hello"</span></tt></div></blockquote>
+</div></blockquote>
 <p>N -&gt; (string)</p>
 <blockquote>
-<div>A Number data type.</div></blockquote>
+<div><p>An attribute of type Number. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"N":</span> <span class="pre">"123.45"</span></tt></div></blockquote>
+<p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.</p>
+</div></blockquote>
 <p>B -&gt; (blob)</p>
 <blockquote>
-<div>A Binary data type.</div></blockquote>
+<div><p>An attribute of type Binary. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"B":</span> <span class="pre">"dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk"</span></tt></div></blockquote>
+</div></blockquote>
 <p>SS -&gt; (list)</p>
 <blockquote>
-<div><p>A String Set data type.</p>
+<div><p>An attribute of type String Set. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"SS":</span> <span class="pre">["Giraffe",</span> <span class="pre">"Hippo"</span> <span class="pre">,"Zebra"]</span></tt></div></blockquote>
 <p>(string)</p>
 </div></blockquote>
 <p>NS -&gt; (list)</p>
 <blockquote>
-<div><p>A Number Set data type.</p>
+<div><p>An attribute of type Number Set. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"NS":</span> <span class="pre">["42.2",</span> <span class="pre">"-19",</span> <span class="pre">"7.5",</span> <span class="pre">"3.14"]</span></tt></div></blockquote>
+<p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.</p>
 <p>(string)</p>
 </div></blockquote>
 <p>BS -&gt; (list)</p>
 <blockquote>
-<div><p>A Binary Set data type.</p>
+<div><p>An attribute of type Binary Set. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"BS":</span> <span class="pre">["U3Vubnk=",</span> <span class="pre">"UmFpbnk=",</span> <span class="pre">"U25vd3k="]</span></tt></div></blockquote>
 <p>(blob)</p>
 </div></blockquote>
 <p>M -&gt; (map)</p>
 <blockquote>
-<div><p>A Map of attribute values.</p>
+<div><p>An attribute of type Map. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"M":</span> <span class="pre">{"Name":</span> <span class="pre">{"S":</span> <span class="pre">"Joe"},</span> <span class="pre">"Age":</span> <span class="pre">{"N":</span> <span class="pre">"35"}}</span></tt></div></blockquote>
 <p>key -&gt; (string)</p>
 <p>( ... recursive ... )</p>
 </div></blockquote>
 <p>L -&gt; (list)</p>
 <blockquote>
-<div><p>A List of attribute values.</p>
+<div><p>An attribute of type List. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"L":</span> <span class="pre">["Cookies",</span> <span class="pre">"Coffee",</span> <span class="pre">3.14159]</span></tt></div></blockquote>
 <p>( ... recursive ... )</p>
 </div></blockquote>
 <p>NULL -&gt; (boolean)</p>
 <blockquote>
-<div>A Null data type.</div></blockquote>
+<div><p>An attribute of type Null. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"NULL":</span> <span class="pre">true</span></tt></div></blockquote>
+</div></blockquote>
 <p>BOOL -&gt; (boolean)</p>
 <blockquote>
-<div>A Boolean data type.</div></blockquote>
+<div><p>An attribute of type Boolean. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"BOOL":</span> <span class="pre">true</span></tt></div></blockquote>
+</div></blockquote>
 </div></blockquote>
 </div></blockquote>
 <p>L -&gt; (list)</p>
 <blockquote>
-<div><p>A List of attribute values.</p>
+<div><p>An attribute of type List. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"L":</span> <span class="pre">["Cookies",</span> <span class="pre">"Coffee",</span> <span class="pre">3.14159]</span></tt></div></blockquote>
 <p>(structure)</p>
 <blockquote>
-<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
-<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<div><p>Represents the data for an attribute.</p>
+<p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
 <p>S -&gt; (string)</p>
 <blockquote>
-<div>A String data type.</div></blockquote>
+<div><p>An attribute of type String. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"S":</span> <span class="pre">"Hello"</span></tt></div></blockquote>
+</div></blockquote>
 <p>N -&gt; (string)</p>
 <blockquote>
-<div>A Number data type.</div></blockquote>
+<div><p>An attribute of type Number. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"N":</span> <span class="pre">"123.45"</span></tt></div></blockquote>
+<p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.</p>
+</div></blockquote>
 <p>B -&gt; (blob)</p>
 <blockquote>
-<div>A Binary data type.</div></blockquote>
+<div><p>An attribute of type Binary. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"B":</span> <span class="pre">"dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk"</span></tt></div></blockquote>
+</div></blockquote>
 <p>SS -&gt; (list)</p>
 <blockquote>
-<div><p>A String Set data type.</p>
+<div><p>An attribute of type String Set. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"SS":</span> <span class="pre">["Giraffe",</span> <span class="pre">"Hippo"</span> <span class="pre">,"Zebra"]</span></tt></div></blockquote>
 <p>(string)</p>
 </div></blockquote>
 <p>NS -&gt; (list)</p>
 <blockquote>
-<div><p>A Number Set data type.</p>
+<div><p>An attribute of type Number Set. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"NS":</span> <span class="pre">["42.2",</span> <span class="pre">"-19",</span> <span class="pre">"7.5",</span> <span class="pre">"3.14"]</span></tt></div></blockquote>
+<p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.</p>
 <p>(string)</p>
 </div></blockquote>
 <p>BS -&gt; (list)</p>
 <blockquote>
-<div><p>A Binary Set data type.</p>
+<div><p>An attribute of type Binary Set. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"BS":</span> <span class="pre">["U3Vubnk=",</span> <span class="pre">"UmFpbnk=",</span> <span class="pre">"U25vd3k="]</span></tt></div></blockquote>
 <p>(blob)</p>
 </div></blockquote>
 <p>M -&gt; (map)</p>
 <blockquote>
-<div><p>A Map of attribute values.</p>
+<div><p>An attribute of type Map. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"M":</span> <span class="pre">{"Name":</span> <span class="pre">{"S":</span> <span class="pre">"Joe"},</span> <span class="pre">"Age":</span> <span class="pre">{"N":</span> <span class="pre">"35"}}</span></tt></div></blockquote>
 <p>key -&gt; (string)</p>
 <p>( ... recursive ... )</p>
 </div></blockquote>
 <p>L -&gt; (list)</p>
 <blockquote>
-<div><p>A List of attribute values.</p>
+<div><p>An attribute of type List. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"L":</span> <span class="pre">["Cookies",</span> <span class="pre">"Coffee",</span> <span class="pre">3.14159]</span></tt></div></blockquote>
 <p>( ... recursive ... )</p>
 </div></blockquote>
 <p>NULL -&gt; (boolean)</p>
 <blockquote>
-<div>A Null data type.</div></blockquote>
+<div><p>An attribute of type Null. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"NULL":</span> <span class="pre">true</span></tt></div></blockquote>
+</div></blockquote>
 <p>BOOL -&gt; (boolean)</p>
 <blockquote>
-<div>A Boolean data type.</div></blockquote>
+<div><p>An attribute of type Boolean. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"BOOL":</span> <span class="pre">true</span></tt></div></blockquote>
+</div></blockquote>
 </div></blockquote>
 </div></blockquote>
 <p>NULL -&gt; (boolean)</p>
 <blockquote>
-<div>A Null data type.</div></blockquote>
+<div><p>An attribute of type Null. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"NULL":</span> <span class="pre">true</span></tt></div></blockquote>
+</div></blockquote>
 <p>BOOL -&gt; (boolean)</p>
 <blockquote>
-<div>A Boolean data type.</div></blockquote>
+<div><p>An attribute of type Boolean. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"BOOL":</span> <span class="pre">true</span></tt></div></blockquote>
+</div></blockquote>
 </div></blockquote>
 </div></blockquote>
 </div></blockquote>
 </div></blockquote>
 <p>UnprocessedKeys -&gt; (map)</p>
 <blockquote>
-<div><p>A map of tables and their respective keys that were not processed with the current response. The <em>UnprocessedKeys</em> value is in the same form as <em>RequestItems</em> , so the value can be provided directly to a subsequent <em>batch-get-item</em> operation. For more information, see <em>RequestItems</em> in the Request Parameters section.</p>
+<div><p>A map of tables and their respective keys that were not processed with the current response. The <tt class="docutils literal"><span class="pre">UnprocessedKeys</span></tt> value is in the same form as <tt class="docutils literal"><span class="pre">RequestItems</span></tt> , so the value can be provided directly to a subsequent <tt class="docutils literal"><span class="pre">batch-get-item</span></tt> operation. For more information, see <tt class="docutils literal"><span class="pre">RequestItems</span></tt> in the Request Parameters section.</p>
 <p>Each element consists of:</p>
 <ul class="simple">
-<li><em>Keys</em> - An array of primary key attribute values that define specific items in the table.</li>
-<li><em>AttributesToGet</em> - One or more attributes to be retrieved from the table or index. By default, all attributes are returned. If a requested attribute is not found, it does not appear in the result.</li>
-<li><em>ConsistentRead</em> - The consistency of a read operation. If set to <tt class="docutils literal"><span class="pre">true</span></tt> , then a strongly consistent read is used; otherwise, an eventually consistent read is used.</li>
+<li><tt class="docutils literal"><span class="pre">Keys</span></tt> - An array of primary key attribute values that define specific items in the table.</li>
+<li><tt class="docutils literal"><span class="pre">ProjectionExpression</span></tt> - One or more attributes to be retrieved from the table or index. By default, all attributes are returned. If a requested attribute is not found, it does not appear in the result.</li>
+<li><tt class="docutils literal"><span class="pre">ConsistentRead</span></tt> - The consistency of a read operation. If set to <tt class="docutils literal"><span class="pre">true</span></tt> , then a strongly consistent read is used; otherwise, an eventually consistent read is used.</li>
 </ul>
-<p>If there are no unprocessed keys remaining, the response contains an empty <em>UnprocessedKeys</em> map.</p>
+<p>If there are no unprocessed keys remaining, the response contains an empty <tt class="docutils literal"><span class="pre">UnprocessedKeys</span></tt> map.</p>
 <p>key -&gt; (string)</p>
 <p>value -&gt; (structure)</p>
 <blockquote>
@@ -514,145 +593,229 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div><p>key -&gt; (string)</p>
 <p>value -&gt; (structure)</p>
 <blockquote>
-<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
-<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<div><p>Represents the data for an attribute.</p>
+<p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
 <p>S -&gt; (string)</p>
 <blockquote>
-<div>A String data type.</div></blockquote>
+<div><p>An attribute of type String. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"S":</span> <span class="pre">"Hello"</span></tt></div></blockquote>
+</div></blockquote>
 <p>N -&gt; (string)</p>
 <blockquote>
-<div>A Number data type.</div></blockquote>
+<div><p>An attribute of type Number. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"N":</span> <span class="pre">"123.45"</span></tt></div></blockquote>
+<p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.</p>
+</div></blockquote>
 <p>B -&gt; (blob)</p>
 <blockquote>
-<div>A Binary data type.</div></blockquote>
+<div><p>An attribute of type Binary. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"B":</span> <span class="pre">"dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk"</span></tt></div></blockquote>
+</div></blockquote>
 <p>SS -&gt; (list)</p>
 <blockquote>
-<div><p>A String Set data type.</p>
+<div><p>An attribute of type String Set. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"SS":</span> <span class="pre">["Giraffe",</span> <span class="pre">"Hippo"</span> <span class="pre">,"Zebra"]</span></tt></div></blockquote>
 <p>(string)</p>
 </div></blockquote>
 <p>NS -&gt; (list)</p>
 <blockquote>
-<div><p>A Number Set data type.</p>
+<div><p>An attribute of type Number Set. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"NS":</span> <span class="pre">["42.2",</span> <span class="pre">"-19",</span> <span class="pre">"7.5",</span> <span class="pre">"3.14"]</span></tt></div></blockquote>
+<p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.</p>
 <p>(string)</p>
 </div></blockquote>
 <p>BS -&gt; (list)</p>
 <blockquote>
-<div><p>A Binary Set data type.</p>
+<div><p>An attribute of type Binary Set. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"BS":</span> <span class="pre">["U3Vubnk=",</span> <span class="pre">"UmFpbnk=",</span> <span class="pre">"U25vd3k="]</span></tt></div></blockquote>
 <p>(blob)</p>
 </div></blockquote>
 <p>M -&gt; (map)</p>
 <blockquote>
-<div><p>A Map of attribute values.</p>
+<div><p>An attribute of type Map. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"M":</span> <span class="pre">{"Name":</span> <span class="pre">{"S":</span> <span class="pre">"Joe"},</span> <span class="pre">"Age":</span> <span class="pre">{"N":</span> <span class="pre">"35"}}</span></tt></div></blockquote>
 <p>key -&gt; (string)</p>
 <p>value -&gt; (structure)</p>
 <blockquote>
-<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
-<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<div><p>Represents the data for an attribute.</p>
+<p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
 <p>S -&gt; (string)</p>
 <blockquote>
-<div>A String data type.</div></blockquote>
+<div><p>An attribute of type String. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"S":</span> <span class="pre">"Hello"</span></tt></div></blockquote>
+</div></blockquote>
 <p>N -&gt; (string)</p>
 <blockquote>
-<div>A Number data type.</div></blockquote>
+<div><p>An attribute of type Number. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"N":</span> <span class="pre">"123.45"</span></tt></div></blockquote>
+<p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.</p>
+</div></blockquote>
 <p>B -&gt; (blob)</p>
 <blockquote>
-<div>A Binary data type.</div></blockquote>
+<div><p>An attribute of type Binary. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"B":</span> <span class="pre">"dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk"</span></tt></div></blockquote>
+</div></blockquote>
 <p>SS -&gt; (list)</p>
 <blockquote>
-<div><p>A String Set data type.</p>
+<div><p>An attribute of type String Set. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"SS":</span> <span class="pre">["Giraffe",</span> <span class="pre">"Hippo"</span> <span class="pre">,"Zebra"]</span></tt></div></blockquote>
 <p>(string)</p>
 </div></blockquote>
 <p>NS -&gt; (list)</p>
 <blockquote>
-<div><p>A Number Set data type.</p>
+<div><p>An attribute of type Number Set. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"NS":</span> <span class="pre">["42.2",</span> <span class="pre">"-19",</span> <span class="pre">"7.5",</span> <span class="pre">"3.14"]</span></tt></div></blockquote>
+<p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.</p>
 <p>(string)</p>
 </div></blockquote>
 <p>BS -&gt; (list)</p>
 <blockquote>
-<div><p>A Binary Set data type.</p>
+<div><p>An attribute of type Binary Set. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"BS":</span> <span class="pre">["U3Vubnk=",</span> <span class="pre">"UmFpbnk=",</span> <span class="pre">"U25vd3k="]</span></tt></div></blockquote>
 <p>(blob)</p>
 </div></blockquote>
 <p>M -&gt; (map)</p>
 <blockquote>
-<div><p>A Map of attribute values.</p>
+<div><p>An attribute of type Map. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"M":</span> <span class="pre">{"Name":</span> <span class="pre">{"S":</span> <span class="pre">"Joe"},</span> <span class="pre">"Age":</span> <span class="pre">{"N":</span> <span class="pre">"35"}}</span></tt></div></blockquote>
 <p>key -&gt; (string)</p>
 <p>( ... recursive ... )</p>
 </div></blockquote>
 <p>L -&gt; (list)</p>
 <blockquote>
-<div><p>A List of attribute values.</p>
+<div><p>An attribute of type List. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"L":</span> <span class="pre">["Cookies",</span> <span class="pre">"Coffee",</span> <span class="pre">3.14159]</span></tt></div></blockquote>
 <p>( ... recursive ... )</p>
 </div></blockquote>
 <p>NULL -&gt; (boolean)</p>
 <blockquote>
-<div>A Null data type.</div></blockquote>
+<div><p>An attribute of type Null. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"NULL":</span> <span class="pre">true</span></tt></div></blockquote>
+</div></blockquote>
 <p>BOOL -&gt; (boolean)</p>
 <blockquote>
-<div>A Boolean data type.</div></blockquote>
+<div><p>An attribute of type Boolean. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"BOOL":</span> <span class="pre">true</span></tt></div></blockquote>
+</div></blockquote>
 </div></blockquote>
 </div></blockquote>
 <p>L -&gt; (list)</p>
 <blockquote>
-<div><p>A List of attribute values.</p>
+<div><p>An attribute of type List. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"L":</span> <span class="pre">["Cookies",</span> <span class="pre">"Coffee",</span> <span class="pre">3.14159]</span></tt></div></blockquote>
 <p>(structure)</p>
 <blockquote>
-<div><p>Represents the data for an attribute. You can set one, and only one, of the elements.</p>
-<p>Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.</p>
+<div><p>Represents the data for an attribute.</p>
+<p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
 <p>S -&gt; (string)</p>
 <blockquote>
-<div>A String data type.</div></blockquote>
+<div><p>An attribute of type String. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"S":</span> <span class="pre">"Hello"</span></tt></div></blockquote>
+</div></blockquote>
 <p>N -&gt; (string)</p>
 <blockquote>
-<div>A Number data type.</div></blockquote>
+<div><p>An attribute of type Number. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"N":</span> <span class="pre">"123.45"</span></tt></div></blockquote>
+<p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.</p>
+</div></blockquote>
 <p>B -&gt; (blob)</p>
 <blockquote>
-<div>A Binary data type.</div></blockquote>
+<div><p>An attribute of type Binary. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"B":</span> <span class="pre">"dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk"</span></tt></div></blockquote>
+</div></blockquote>
 <p>SS -&gt; (list)</p>
 <blockquote>
-<div><p>A String Set data type.</p>
+<div><p>An attribute of type String Set. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"SS":</span> <span class="pre">["Giraffe",</span> <span class="pre">"Hippo"</span> <span class="pre">,"Zebra"]</span></tt></div></blockquote>
 <p>(string)</p>
 </div></blockquote>
 <p>NS -&gt; (list)</p>
 <blockquote>
-<div><p>A Number Set data type.</p>
+<div><p>An attribute of type Number Set. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"NS":</span> <span class="pre">["42.2",</span> <span class="pre">"-19",</span> <span class="pre">"7.5",</span> <span class="pre">"3.14"]</span></tt></div></blockquote>
+<p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.</p>
 <p>(string)</p>
 </div></blockquote>
 <p>BS -&gt; (list)</p>
 <blockquote>
-<div><p>A Binary Set data type.</p>
+<div><p>An attribute of type Binary Set. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"BS":</span> <span class="pre">["U3Vubnk=",</span> <span class="pre">"UmFpbnk=",</span> <span class="pre">"U25vd3k="]</span></tt></div></blockquote>
 <p>(blob)</p>
 </div></blockquote>
 <p>M -&gt; (map)</p>
 <blockquote>
-<div><p>A Map of attribute values.</p>
+<div><p>An attribute of type Map. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"M":</span> <span class="pre">{"Name":</span> <span class="pre">{"S":</span> <span class="pre">"Joe"},</span> <span class="pre">"Age":</span> <span class="pre">{"N":</span> <span class="pre">"35"}}</span></tt></div></blockquote>
 <p>key -&gt; (string)</p>
 <p>( ... recursive ... )</p>
 </div></blockquote>
 <p>L -&gt; (list)</p>
 <blockquote>
-<div><p>A List of attribute values.</p>
+<div><p>An attribute of type List. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"L":</span> <span class="pre">["Cookies",</span> <span class="pre">"Coffee",</span> <span class="pre">3.14159]</span></tt></div></blockquote>
 <p>( ... recursive ... )</p>
 </div></blockquote>
 <p>NULL -&gt; (boolean)</p>
 <blockquote>
-<div>A Null data type.</div></blockquote>
+<div><p>An attribute of type Null. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"NULL":</span> <span class="pre">true</span></tt></div></blockquote>
+</div></blockquote>
 <p>BOOL -&gt; (boolean)</p>
 <blockquote>
-<div>A Boolean data type.</div></blockquote>
+<div><p>An attribute of type Boolean. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"BOOL":</span> <span class="pre">true</span></tt></div></blockquote>
+</div></blockquote>
 </div></blockquote>
 </div></blockquote>
 <p>NULL -&gt; (boolean)</p>
 <blockquote>
-<div>A Null data type.</div></blockquote>
+<div><p>An attribute of type Null. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"NULL":</span> <span class="pre">true</span></tt></div></blockquote>
+</div></blockquote>
 <p>BOOL -&gt; (boolean)</p>
 <blockquote>
-<div>A Boolean data type.</div></blockquote>
+<div><p>An attribute of type Boolean. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">"BOOL":</span> <span class="pre">true</span></tt></div></blockquote>
+</div></blockquote>
 </div></blockquote>
 </div></blockquote>
 </div></blockquote>
 <p>AttributesToGet -&gt; (list)</p>
 <blockquote>
-<div><p>One or more attributes to retrieve from the table or index. If no attribute names are specified then all attributes will be returned. If any of the specified attributes are not found, they will not appear in the result.</p>
+<div><p>This is a legacy parameter. Use <tt class="docutils literal"><span class="pre">ProjectionExpression</span></tt> instead. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
 <p>(string)</p>
 </div></blockquote>
 <p>ConsistentRead -&gt; (boolean)</p>
@@ -660,17 +823,13 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div>The consistency of a read operation. If set to <tt class="docutils literal"><span class="pre">true</span></tt> , then a strongly consistent read is used; otherwise, an eventually consistent read is used.</div></blockquote>
 <p>ProjectionExpression -&gt; (string)</p>
 <blockquote>
-<div><p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the <em>ProjectionExpression</em> must be separated by commas.</p>
+<div><p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the <tt class="docutils literal"><span class="pre">ProjectionExpression</span></tt> must be separated by commas.</p>
 <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
 <p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><em>ProjectionExpression</em> replaces the legacy <em>AttributesToGet</em> parameter.</p>
-</div>
 </div></blockquote>
 <p>ExpressionAttributeNames -&gt; (map)</p>
 <blockquote>
-<div><p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <em>ExpressionAttributeNames</em> :</p>
+<div><p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <tt class="docutils literal"><span class="pre">ExpressionAttributeNames</span></tt> :</p>
 <ul class="simple">
 <li>To access an attribute whose name conflicts with a DynamoDB reserved word.</li>
 <li>To create a placeholder for repeating occurrences of an attribute name in an expression.</li>
@@ -680,7 +839,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">Percentile</span></tt></li>
 </ul>
-<p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <em>Amazon DynamoDB Developer Guide</em> ). To work around this, you could specify the following for <em>ExpressionAttributeNames</em> :</p>
+<p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <em>Amazon DynamoDB Developer Guide</em> ). To work around this, you could specify the following for <tt class="docutils literal"><span class="pre">ExpressionAttributeNames</span></tt> :</p>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">{"#P":"Percentile"}</span></tt></li>
 </ul>
@@ -700,15 +859,15 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 </div></blockquote>
 <p>ConsumedCapacity -&gt; (list)</p>
 <blockquote>
-<div><p>The read capacity units consumed by the operation.</p>
+<div><p>The read capacity units consumed by the entire <tt class="docutils literal"><span class="pre">batch-get-item</span></tt> operation.</p>
 <p>Each element consists of:</p>
 <ul class="simple">
-<li><em>TableName</em> - The table that consumed the provisioned throughput.</li>
-<li><em>CapacityUnits</em> - The total number of capacity units consumed.</li>
+<li><tt class="docutils literal"><span class="pre">TableName</span></tt> - The table that consumed the provisioned throughput.</li>
+<li><tt class="docutils literal"><span class="pre">CapacityUnits</span></tt> - The total number of capacity units consumed.</li>
 </ul>
 <p>(structure)</p>
 <blockquote>
-<div><p>The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <em>ConsumedCapacity</em> is only returned if the request asked for it. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
+<div><p>The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <tt class="docutils literal"><span class="pre">ConsumedCapacity</span></tt> is only returned if the request asked for it. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <em>Amazon DynamoDB Developer Guide</em> .</p>
 <p>TableName -&gt; (string)</p>
 <blockquote>
 <div>The name of the table that was affected by the operation.</div></blockquote>
@@ -787,7 +946,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
           <a href="batch-write-item.html" title="batch-write-item">next</a> |</li>
         <li class="right">
           <a href="index.html" title="dynamodb">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">dynamodb</a> &#187;</li> 
       </ul>
@@ -803,5 +962,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/dynamodb/batch-get-item.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:01 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/dynamodb/batch-get-item.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:09:59 GMT -->
 </html>

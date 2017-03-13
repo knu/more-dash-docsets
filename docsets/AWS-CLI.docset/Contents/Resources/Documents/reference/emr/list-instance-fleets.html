@@ -1,0 +1,480 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/emr/list-instance-fleets.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:17 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>list-instance-fleets &#8212; AWS CLI 1.11.61 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.11.61',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="emr" href="index.html" />
+    <link rel="next" title="list-instances" href="list-instances.html" />
+    <link rel="prev" title="list-clusters" href="list-clusters.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="list-instances.html" title="list-instances" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="list-clusters.html" title="list-clusters" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">emr</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="list-clusters.html" title="previous chapter (use the left arrow)">&#8592; list-clusters</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="list-instances.html" title="next chapter (use the right arrow)">list-instances &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">list-instance-fleets</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/emr/list-instance-fleets">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-emr"><em>emr</em></a> ]</p>
+<div class="section" id="list-instance-fleets">
+<span id="cli-aws-emr-list-instance-fleets"></span><h1>list-instance-fleets<a name="//apple_ref/cpp/Command/aws emr list-instance-fleets" class="dashAnchor" id="aws emr list-instance-fleets"></a><a class="headerlink" href="#list-instance-fleets" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Lists all available details about the instance fleets in a cluster.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
+</div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceFleets">AWS API Documentation</a></p>
+<p><tt class="docutils literal"><span class="pre">list-instance-fleets</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">InstanceFleets</span></tt></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  list-instance-fleets
+--cluster-id &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--starting-token &lt;value&gt;]
+[--max-items &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cluster-id" class="dashAnchor" id="cluster-id"></a><span class="pre">--cluster-id</span></tt> (string)</p>
+<blockquote>
+<div>The unique identifier of the cluster.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--starting-token" class="dashAnchor" id="starting-token"></a><span class="pre">--starting-token</span></tt> (string)</p>
+<blockquote>
+<div>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-items" class="dashAnchor" id="max-items"></a><span class="pre">--max-items</span></tt> (integer)</p>
+<blockquote>
+<div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">NextToken</span></tt> will be provided in the output that you can use to resume pagination. This <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element should <strong>not</strong> be used directly outside of the AWS CLI.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To get configuration details of instance fleets in a cluster</strong></p>
+<p>This example lists the details of instance fleets in the cluster specified.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>list-instance-fleets --cluster-id 'j-12ABCDEFGHI34JK'</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">"InstanceFleets"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">"Status"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">"Timeline"</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="s2">"ReadyDateTime"</span><span class="p">:</span> <span class="mf">1488759094.637</span><span class="p">,</span>
+                  <span class="s2">"CreationDateTime"</span><span class="p">:</span> <span class="mf">1488758719.817</span>
+              <span class="p">},</span>
+              <span class="s2">"State"</span><span class="p">:</span> <span class="s2">"RUNNING"</span><span class="p">,</span>
+              <span class="s2">"StateChangeReason"</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="s2">"Message"</span><span class="p">:</span> <span class="s2">""</span>
+              <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="s2">"ProvisionedSpotCapacity"</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+          <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"CORE"</span><span class="p">,</span>
+          <span class="s2">"InstanceFleetType"</span><span class="p">:</span> <span class="s2">"CORE"</span><span class="p">,</span>
+          <span class="s2">"LaunchSpecifications"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">"SpotSpecification"</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="s2">"TimeoutDurationMinutes"</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
+                  <span class="s2">"TimeoutAction"</span><span class="p">:</span> <span class="s2">"TERMINATE_CLUSTER"</span>
+              <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="s2">"ProvisionedOnDemandCapacity"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+          <span class="s2">"InstanceTypeSpecifications"</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                  <span class="s2">"BidPrice"</span><span class="p">:</span> <span class="s2">"0.5"</span><span class="p">,</span>
+                  <span class="s2">"InstanceType"</span><span class="p">:</span> <span class="s2">"m3.xlarge"</span><span class="p">,</span>
+                  <span class="s2">"WeightedCapacity"</span><span class="p">:</span> <span class="mi">2</span>
+              <span class="p">}</span>
+          <span class="p">],</span>
+          <span class="s2">"Id"</span><span class="p">:</span> <span class="s2">"if-1ABC2DEFGHIJ3"</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="s2">"Status"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">"Timeline"</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="s2">"ReadyDateTime"</span><span class="p">:</span> <span class="mf">1488759058.598</span><span class="p">,</span>
+                  <span class="s2">"CreationDateTime"</span><span class="p">:</span> <span class="mf">1488758719.811</span>
+              <span class="p">},</span>
+              <span class="s2">"State"</span><span class="p">:</span> <span class="s2">"RUNNING"</span><span class="p">,</span>
+              <span class="s2">"StateChangeReason"</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="s2">"Message"</span><span class="p">:</span> <span class="s2">""</span>
+              <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="s2">"ProvisionedSpotCapacity"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"MASTER"</span><span class="p">,</span>
+          <span class="s2">"InstanceFleetType"</span><span class="p">:</span> <span class="s2">"MASTER"</span><span class="p">,</span>
+          <span class="s2">"ProvisionedOnDemandCapacity"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"InstanceTypeSpecifications"</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                  <span class="s2">"BidPriceAsPercentageOfOnDemandPrice"</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">,</span>
+                  <span class="s2">"InstanceType"</span><span class="p">:</span> <span class="s2">"m3.xlarge"</span><span class="p">,</span>
+                  <span class="s2">"WeightedCapacity"</span><span class="p">:</span> <span class="mi">1</span>
+              <span class="p">}</span>
+          <span class="p">],</span>
+         <span class="s2">"Id"</span><span class="p">:</span> <span class="s2">"if-2ABC4DEFGHIJ4"</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>InstanceFleets -&gt; (list)</p>
+<blockquote>
+<div><p>The list of instance fleets for the cluster and given filters.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes an instance fleet, which is a group of EC2 instances that host a particular node type (master, core, or task) in an Amazon EMR cluster. Instance fleets can consist of a mix of instance types and On-Demand and Spot instances, which are provisioned to meet a defined target capacity.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
+</div>
+<p>Id -&gt; (string)</p>
+<blockquote>
+<div>The unique identifier of the instance fleet.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>A friendly name for the instance fleet.</div></blockquote>
+<p>Status -&gt; (structure)</p>
+<blockquote>
+<div><p>The current status of the instance fleet.</p>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div>A code representing the instance fleet status.</div></blockquote>
+<p>StateChangeReason -&gt; (structure)</p>
+<blockquote>
+<div><p>Provides status change reason details for the instance fleet.</p>
+<p>Code -&gt; (string)</p>
+<blockquote>
+<div>A code corresponding to the reason the state change occurred.</div></blockquote>
+<p>Message -&gt; (string)</p>
+<blockquote>
+<div>An explanatory message.</div></blockquote>
+</div></blockquote>
+<p>Timeline -&gt; (structure)</p>
+<blockquote>
+<div><p>Provides historical timestamps for the instance fleet, including the time of creation, the time it became ready to run jobs, and the time of termination.</p>
+<p>CreationDateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The time and date the instance fleet was created.</div></blockquote>
+<p>ReadyDateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The time and date the instance fleet was ready to run jobs.</div></blockquote>
+<p>EndDateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The time and date the instance fleet terminated.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>InstanceFleetType -&gt; (string)</p>
+<blockquote>
+<div>The node type that the instance fleet hosts. Valid values are MASTER, CORE, or TASK.</div></blockquote>
+<p>TargetOnDemandCapacity -&gt; (integer)</p>
+<blockquote>
+<div><p>The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand instances to provision. When the instance fleet launches, Amazon EMR tries to provision On-Demand instances as specified by  InstanceTypeConfig . Each instance configuration has a specified <tt class="docutils literal"><span class="pre">WeightedCapacity</span></tt> . When an On-Demand instance is provisioned, the <tt class="docutils literal"><span class="pre">WeightedCapacity</span></tt> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <tt class="docutils literal"><span class="pre">WeightedCapacity</span></tt> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use  InstanceFleet$ProvisionedOnDemandCapacity to determine the Spot capacity units that have been provisioned for the instance fleet.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If not specified or set to 0, only Spot instances are provisioned for the instance fleet using <tt class="docutils literal"><span class="pre">TargetSpotCapacity</span></tt> . At least one of <tt class="docutils literal"><span class="pre">TargetSpotCapacity</span></tt> and <tt class="docutils literal"><span class="pre">TargetOnDemandCapacity</span></tt> should be greater than 0. For a master instance fleet, only one of <tt class="docutils literal"><span class="pre">TargetSpotCapacity</span></tt> and <tt class="docutils literal"><span class="pre">TargetOnDemandCapacity</span></tt> can be specified, and its value must be 1.</p>
+</div>
+</div></blockquote>
+<p>TargetSpotCapacity -&gt; (integer)</p>
+<blockquote>
+<div><p>The target capacity of Spot units for the instance fleet, which determines how many Spot instances to provision. When the instance fleet launches, Amazon EMR tries to provision Spot instances as specified by  InstanceTypeConfig . Each instance configuration has a specified <tt class="docutils literal"><span class="pre">WeightedCapacity</span></tt> . When a Spot instance is provisioned, the <tt class="docutils literal"><span class="pre">WeightedCapacity</span></tt> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <tt class="docutils literal"><span class="pre">WeightedCapacity</span></tt> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use  InstanceFleet$ProvisionedSpotCapacity to determine the Spot capacity units that have been provisioned for the instance fleet.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If not specified or set to 0, only On-Demand instances are provisioned for the instance fleet. At least one of <tt class="docutils literal"><span class="pre">TargetSpotCapacity</span></tt> and <tt class="docutils literal"><span class="pre">TargetOnDemandCapacity</span></tt> should be greater than 0. For a master instance fleet, only one of <tt class="docutils literal"><span class="pre">TargetSpotCapacity</span></tt> and <tt class="docutils literal"><span class="pre">TargetOnDemandCapacity</span></tt> can be specified, and its value must be 1.</p>
+</div>
+</div></blockquote>
+<p>ProvisionedOnDemandCapacity -&gt; (integer)</p>
+<blockquote>
+<div>The number of On-Demand units that have been provisioned for the instance fleet to fulfill <tt class="docutils literal"><span class="pre">TargetOnDemandCapacity</span></tt> . This provisioned capacity might be less than or greater than <tt class="docutils literal"><span class="pre">TargetOnDemandCapacity</span></tt> .</div></blockquote>
+<p>ProvisionedSpotCapacity -&gt; (integer)</p>
+<blockquote>
+<div>The number of Spot units that have been provisioned for this instance fleet to fulfill <tt class="docutils literal"><span class="pre">TargetSpotCapacity</span></tt> . This provisioned capacity might be less than or greater than <tt class="docutils literal"><span class="pre">TargetSpotCapacity</span></tt> .</div></blockquote>
+<p>InstanceTypeSpecifications -&gt; (list)</p>
+<blockquote>
+<div><p>The specification for the instance types that comprise an instance fleet. Up to five unique instance specifications may be defined for each instance fleet.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The configuration specification for each instance type in an instance fleet.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
+</div>
+<p>InstanceType -&gt; (string)</p>
+<blockquote>
+<div>The EC2 instance type, for example <tt class="docutils literal"><span class="pre">m3.xlarge</span></tt> .</div></blockquote>
+<p>WeightedCapacity -&gt; (integer)</p>
+<blockquote>
+<div>The number of units that a provisioned instance of this type provides toward fulfilling the target capacities defined in  InstanceFleetConfig . Capacity values represent performance characteristics such as vCPUs, memory, or I/O. If not specified, the default value is 1.</div></blockquote>
+<p>BidPrice -&gt; (string)</p>
+<blockquote>
+<div>The bid price for each EC2 Spot instance type as defined by <tt class="docutils literal"><span class="pre">InstanceType</span></tt> . Expressed in USD.</div></blockquote>
+<p>BidPriceAsPercentageOfOnDemandPrice -&gt; (double)</p>
+<blockquote>
+<div>The bid price, as a percentage of On-Demand price, for each EC2 Spot instance as defined by <tt class="docutils literal"><span class="pre">InstanceType</span></tt> . Expressed as a number (for example, 20 specifies 20%).</div></blockquote>
+<p>Configurations -&gt; (list)</p>
+<blockquote>
+<div><p>A configuration classification that applies when provisioning cluster instances, which can include configurations for applications and software bundled with Amazon EMR.</p>
+<p>(structure)</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Amazon EMR releases 4.x or later.</p>
+</div>
+<p>An optional configuration specification to be used when provisioning cluster instances, which can include configurations for applications and software bundled with Amazon EMR. A configuration consists of a classification, properties, and optional nested configurations. A classification refers to an application-specific configuration file. Properties are the settings you want to change in that file. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html">Configuring Applications</a> .</p>
+<p>Classification -&gt; (string)</p>
+<blockquote>
+<div>The classification within a configuration.</div></blockquote>
+<p>Configurations -&gt; (list)</p>
+<blockquote>
+<div><p>A list of additional configurations to apply within a configuration object.</p>
+<p>(structure)</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Amazon EMR releases 4.x or later.</p>
+</div>
+<p>An optional configuration specification to be used when provisioning cluster instances, which can include configurations for applications and software bundled with Amazon EMR. A configuration consists of a classification, properties, and optional nested configurations. A classification refers to an application-specific configuration file. Properties are the settings you want to change in that file. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html">Configuring Applications</a> .</p>
+<p>Classification -&gt; (string)</p>
+<blockquote>
+<div>The classification within a configuration.</div></blockquote>
+<p>Properties -&gt; (map)</p>
+<blockquote>
+<div><p>A set of properties specified within a configuration classification.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Properties -&gt; (map)</p>
+<blockquote>
+<div><p>A set of properties specified within a configuration classification.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>EbsBlockDevices -&gt; (list)</p>
+<blockquote>
+<div><p>The configuration of Amazon Elastic Block Storage (EBS) attached to each instance as defined by <tt class="docutils literal"><span class="pre">InstanceType</span></tt> .</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Configuration of requested EBS block device associated with the instance group.</p>
+<p>VolumeSpecification -&gt; (structure)</p>
+<blockquote>
+<div><p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
+<p>VolumeType -&gt; (string)</p>
+<blockquote>
+<div>The volume type. Volume types supported are gp2, io1, standard.</div></blockquote>
+<p>Iops -&gt; (integer)</p>
+<blockquote>
+<div>The number of I/O operations per second (IOPS) that the volume supports.</div></blockquote>
+<p>SizeInGB -&gt; (integer)</p>
+<blockquote>
+<div>The volume size, in gibibytes (GiB). This can be a number from 1 - 1024. If the volume type is EBS-optimized, the minimum value is 10.</div></blockquote>
+</div></blockquote>
+<p>Device -&gt; (string)</p>
+<blockquote>
+<div>The device name that is exposed to the instance, such as /dev/sdh.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>EbsOptimized -&gt; (boolean)</p>
+<blockquote>
+<div>Evaluates to <tt class="docutils literal"><span class="pre">TRUE</span></tt> when the specified <tt class="docutils literal"><span class="pre">InstanceType</span></tt> is EBS-optimized.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>LaunchSpecifications -&gt; (structure)</p>
+<blockquote>
+<div><p>Describes the launch specification for an instance fleet.</p>
+<p>SpotSpecification -&gt; (structure)</p>
+<blockquote>
+<div><p>The launch specification for Spot instances in the fleet, which determines the defined duration and provisioning timeout behavior.</p>
+<p>TimeoutDurationMinutes -&gt; (integer)</p>
+<blockquote>
+<div>The spot provisioning timeout period in minutes. If Spot instances are not provisioned within this time period, the <tt class="docutils literal"><span class="pre">TimeOutAction</span></tt> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only during initial provisioning, when the cluster is first created.</div></blockquote>
+<p>TimeoutAction -&gt; (string)</p>
+<blockquote>
+<div>The action to take when <tt class="docutils literal"><span class="pre">TargetSpotCapacity</span></tt> has not been fulfilled when the <tt class="docutils literal"><span class="pre">TimeoutDurationMinutes</span></tt> has expired. Spot instances are not uprovisioned within the Spot provisioining timeout. Valid values are <tt class="docutils literal"><span class="pre">TERMINATE_CLUSTER</span></tt> and <tt class="docutils literal"><span class="pre">SWITCH_TO_ON_DEMAND</span></tt> to fulfill the remaining capacity.</div></blockquote>
+<p>BlockDurationMinutes -&gt; (integer)</p>
+<blockquote>
+<div>The defined duration for Spot instances (also known as Spot blocks) in minutes. When specified, the Spot instance does not terminate before the defined duration expires, and defined duration pricing for Spot instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot instance for termination and provides a Spot instance termination notice, which gives the instance a two-minute warning before it terminates.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Marker -&gt; (string)</p>
+<blockquote>
+<div>The pagination token that indicates the next set of results to retrieve.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="list-clusters.html" title="previous chapter (use the left arrow)">&#8592; list-clusters</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="list-instances.html" title="next chapter (use the right arrow)">list-instances &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="list-instances.html" title="list-instances">next</a> |</li>
+        <li class="right">
+          <a href="list-clusters.html" title="list-clusters">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">emr</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/emr/list-instance-fleets.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:17 GMT -->
+</html>

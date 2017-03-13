@@ -1,57 +1,258 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/userguide/cli-using-glacier.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:47 GMT -->
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/userguide/cli-using-glacier.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:50 GMT -->
 <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-   <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Use the AWS CLI to manage Amazon Glacier resources."><title>Using Amazon Glacier with the AWS Command Line Interface - AWS Command Line Interface</title><link rel="home" href="#aws-unified-cli" title="AWS Command Line Interface"><link rel="up" href="chap-working-with-services.html" title="Working with Amazon Web Services"><link rel="prev" href="cli-ec2-launch.html" title="Using Amazon EC2 Instances"><link rel="next" href="cli-iam.html" title="AWS Identity and Access Management from the AWS Command Line Interface"><meta name="keywords" content=""><meta name="deployment_region" content="IAD"><meta name="product" content="AWS Command Line Interface"><meta name="guide" content="User Guide"><meta name="guide-locale" content="en_us"><link rel="icon" type="image/ico" href="http://media.amazonwebservices.com/favicon.ico"><link rel="shortcut icon" type="image/ico" href="http://media.amazonwebservices.com/favicon.ico"><link rel="canonical" href="cli-using-glacier.html"><link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/jquery-ui.min.css"><link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/font/css/font-awesome.min.css"><link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/google-font.css"><link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/highlight-default.css"><link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/jquery-ui.theme.css"><link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/colorbox.css"><link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/awsdocs.css"><script type="text/javascript" src="http://docs.aws.amazon.com/js/highlight.pack.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/jquery.min.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/jquery-ui.min.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/handlebars.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/jquery.colorbox.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/awsdocs.min.js"></script></head><body id="top"><div id="aws-nav" class="aws-nav-header"><div class="aws-nav-header-left"><div id="aws-nav-flyout-trigger" class="aws-nav-flyout-trigger"><i class="fa fa-bars fa-2x"></i>Menu</div><div class="aws-nav-logo"><a href="https://aws.amazon.com/"><span>Amazon Web Services</span></a></div></div><div id="aws-nav-header-right" class="aws-nav-header-right"><div class="aws-nav-cta-button-outer"><a id="aws-nav-cta-button" class="aws-nav-button" href="https://console.aws.amazon.com/console/home">Sign In to the Console</a></div><div class="aws-nav-popover-trigger" data-dropdown="aws-nav-dropdown-lang"><select id="languageSelection" onchange="SelectLanguage()"><option value="http://docs.aws.amazon.com/de_de/cli/latest/userguide/cli-using-glacier.html">Deutsch</option><option value="/en_us/cli/latest/userguide/cli-using-glacier.html" selected>English</option><option value="http://docs.aws.amazon.com/es_es/cli/latest/userguide/cli-using-glacier.html">Espa&ntilde;ol</option><option value="http://docs.aws.amazon.com/fr_fr/cli/latest/userguide/cli-using-glacier.html">Fran&ccedil;ais</option><option value="http://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-using-glacier.html">&#26085;&#26412;&#35486;</option><option value="http://docs.aws.amazon.com/pt_br/cli/latest/userguide/cli-using-glacier.html">Portugu&ecirc;s</option><option value="http://docs.aws.amazon.com/ko_kr/cli/latest/userguide/cli-using-glacier.html">&#54620;&#44397;&#50612;</option><option value="http://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-using-glacier.html">&#20013;&#25991; (&#31616;&#20307;)</option></select></div><div id="aws-nav-quicklinks-separator" class="aws-nav-quicklinks-separator"><div class="aws-nav-left"></div><div class="aws-nav-right"></div></div></div><div id="topnav-flyout-menu-container"><ul id="topnav-flyout-menu"><script id="flyout-item-template" type="text/x-handlebars-template">           
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Using Amazon Glacier with the AWS Command Line Interface - AWS Command Line Interface</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="home" href="#top" />
+      <link rel="up" href="chap-working-with-services.html"
+            title="Working with Amazon Web Services" />
+      <link rel="prev" href="cli-ec2-launch.html" title="Using Amazon EC2 Instances" />
+      <link rel="next" href="cli-iam.html"
+            title="AWS Identity and Access Management from the AWS Command Line Interface" />
+      <meta name="description"
+            content="Use the AWS CLI to manage Amazon Glacier resources." />
+      <meta name="deployment_region" content="IAD" />
+      <meta name="product" content="AWS Command Line Interface" />
+      <meta name="guide" content="User Guide" />
+      <meta name="guide-locale" content="en_us" />
+      <link rel="icon" type="image/ico" href="http://media.amazonwebservices.com/favicon.ico" />
+      <link rel="shortcut icon" type="image/ico"
+            href="http://media.amazonwebservices.com/favicon.ico" />
+      <link rel="canonical"
+            href="cli-using-glacier.html" />
+      <link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/jquery-ui.min.css" />
+      <link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/font/css/font-awesome.min.css" />
+      <link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/google-font.css" />
+      <link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/highlight-default.css" />
+      <link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/jquery-ui.theme.css" />
+      <link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/colorbox.css" />
+      <link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/awsdocs.css" /><script type="text/javascript" src="http://docs.aws.amazon.com/js/highlight.pack.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/jquery.min.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/jquery-ui.min.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/handlebars.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/jquery.colorbox.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/awsdocs.min.js"></script></head>
+   <body id="top">
+      <div xmlns:db="http://docbook.org/ns/docbook" id="aws-nav" class="aws-nav-header">
+         <div class="aws-nav-header-left">
+            <div id="aws-nav-flyout-trigger" class="aws-nav-flyout-trigger"><i class="fa fa-bars fa-2x"></i>Menu
+            </div>
+            <div class="aws-nav-logo"><a href="https://aws.amazon.com/"><span>Amazon Web Services</span></a></div>
+         </div>
+         <div id="aws-nav-header-right" class="aws-nav-header-right">
+            <div class="aws-nav-cta-button-outer">
+               <div class="js-mbox" data-mbox="en_h_nav_cta"><span class="aws-nav-cta-default" id="span-conosole-signin"><a id="aws-nav-cta-button" class="aws-nav-button"
+                        href="https://console.aws.amazon.com/console/home">Sign In to the Console</a></span><span class="aws-nav-cta-default" id="span-conosole-signup" style="display:none"><a id="aws-nav-cta-button" class="aws-nav-button"
+                        href="https://portal.aws.amazon.com/gp/aws/developer/registration/index.html">Try AWS for Free</a></span></div>
+            </div>
+            <div class="aws-nav-popover-trigger" data-dropdown="aws-nav-dropdown-lang"><select id="languageSelection" onchange="SelectLanguage()">
+                  <option value="http://docs.aws.amazon.com/de_de/cli/latest/userguide/cli-using-glacier.html">Deutsch</option>
+                  <option value="/en_us/cli/latest/userguide/cli-using-glacier.html" selected="selected">English</option>
+                  <option value="http://docs.aws.amazon.com/es_es/cli/latest/userguide/cli-using-glacier.html">Español</option>
+                  <option value="http://docs.aws.amazon.com/fr_fr/cli/latest/userguide/cli-using-glacier.html">Français</option>
+                  <option value="http://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-using-glacier.html">日本語</option>
+                  <option value="http://docs.aws.amazon.com/ko_kr/cli/latest/userguide/cli-using-glacier.html">한국어</option>
+                  <option value="http://docs.aws.amazon.com/pt_br/cli/latest/userguide/cli-using-glacier.html">Português</option>
+                  <option value="http://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-using-glacier.html">中文 (简体)</option></select></div>
+            <div id="aws-nav-quicklinks-separator" class="aws-nav-quicklinks-separator">
+               <div class="aws-nav-left"></div>
+               <div class="aws-nav-right"></div>
+            </div>
+         </div>
+         <div xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0"
+              id="topnav-flyout-menu-container">
+            <ul id="topnav-flyout-menu"><script id="flyout-item-template" type="text/x-handlebars-template">           
                     {{#flyoutList}}
                     
                     <li>{{listItem}}
                         {{#if subList}}
                         <ul>
                             {{#subList}}
-                            <li class="awsdocs-flyout-link-wrapper"><a href="{{target}}">{{text}}</a></li>
+                            <li class="awsdocs-flyout-link-wrapper">&lt;a href="{{target}}"&gt;{{text}}&lt;/a&gt;</li>
                             {{/subList}}
                         </ul>
                         {{/if}}
                     </li>
                     
                     {{/flyoutList}}
-                </script></ul><div id="topnav-flyout-menu-spacer"></div></div></div><script type="text/javascript"><!--
-						var thispage = "cli-using-glacier.html";
-						var tocroot = location.protocol + '//' + location.hostname + location.pathname;
-						--></script><div id="content-container"><div id="left-column" class="ui-resizable"><div id="left-col-header"><div id="left-col-top-content"><div id="service-name">AWS Command Line Interface </div><div id="search"><i id="search-icon" class="fa fa-search fa-2x"></i></div><div id="guide-info">User Guide<div id="content-button"><i id="toggle-contents" class="fa fa-bars"></i></div></div></div><form id="finegrainedSearch" method="get" onsubmit="return searchFormSubmit(this);" action="http://docs.aws.amazon.com/search/doc-search.html"><div id="search-form"><select id="search-select" name="searchPath"><option value="all">Entire Site</option><option value="AWSMarketplace">AMIs from AWS Marketplace</option><option value="amis">AMIs from All Sources</option><option value="articles">Articles &amp; Tutorials</option><option value="products_and_info">AWS Product Information</option><option value="case_studies">Case Studies</option><option value="customerapps">Customer Apps</option><option value="documentation">Documentation</option><option value="documentation-product">Documentation - This Product</option><option value="documentation-guide" selected>Documentation - This Guide</option><option value="datasets">Public Data Sets</option><option value="releasenotes">Release Notes</option><option value="solution_providers">Partners</option><option value="code">Sample Code &amp; Libraries</option></select><br><input id="search-query" name="searchQuery" type="text" placholder="$loc-search-search"><input id="search-button" src="images/search-button.png" alt="Go" type="image"></div><input type="hidden" name="this_doc_product" id="this_doc_product" value="AWS Command Line Interface"><input type="hidden" name="this_doc_guide" id="this_doc_guide" value="User Guide"><input type="hidden" name="doc_locale" value="en_us"></form></div><div id="toc"><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc" href="cli-chap-welcome.html">What Is the AWS CLI?</a></li><li class="awstoc closed"><a class="awstoc" href="cli-chap-getting-set-up.html">Getting Set Up</a><ul class="awstoc"><li class="awstoc closed"><a class="awstoc" href="installing.html">Installing the AWS CLI</a><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc" href="cli-uninstall.html">Uninstalling the AWS CLI</a></li></ul></li><li class="awstoc closed"><a class="awstoc" href="cli-chap-getting-started.html">Configuring the AWS CLI</a><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc" href="cli-http-proxy.html">Using an HTTP Proxy</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-roles.html">Assuming a Role</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-command-completion.html">Command Completion</a></li></ul></li></ul></li><li class="awstoc leaf"><a class="awstoc" href="tutorial-ec2-ubuntu.html">Tutorial: Using Amazon EC2</a></li><li class="awstoc closed"><a class="awstoc" href="cli-chap-using.html">Using the AWS CLI</a><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc" href="getting-help.html">Getting Help</a></li><li class="awstoc leaf"><a class="awstoc" href="command-structure.html">Command Structure</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-using-param.html">Specifying Parameter Values</a></li><li class="awstoc leaf"><a class="awstoc" href="generate-cli-skeleton.html">Generate CLI Skeleton</a></li><li class="awstoc leaf"><a class="awstoc" href="controlling-output.html">Controlling Command Output</a></li><li class="awstoc leaf"><a class="awstoc" href="shorthand-syntax.html">Shorthand Syntax</a></li><li class="awstoc leaf"><a class="awstoc" href="pagination.html">Pagination</a></li></ul></li><li class="awstoc opened"><a class="awstoc" href="chap-working-with-services.html">Working with Services</a><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc" href="cli-dynamodb.html">DynamoDB</a></li><li class="awstoc closed"><a class="awstoc" href="cli-using-ec2.html">Amazon EC2</a><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc" href="cli-ec2-keypairs.html">Using Key Pairs</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-ec2-sg.html">Using Security Groups</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-ec2-launch.html">Using Instances</a></li></ul></li><li class="awstoc leaf"><a class="awstoc selected" href="cli-using-glacier.html">Amazon Glacier</a></li><li class="awstoc closed"><a class="awstoc" href="cli-iam.html">AWS Identity and Access Management</a><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc" href="cli-iam-new-user-group.html">Create New IAM Users and Groups</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-iam-policy.html">Set an IAM Policy for an IAM User</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-iam-set-pw.html">Set an Initial Password for an IAM User</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-iam-create-creds.html">Create Security Credentials for an IAM User</a></li></ul></li><li class="awstoc closed"><a class="awstoc" href="cli-s3.html">Amazon S3</a><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc" href="using-s3-commands.html">Using High-Level Amazon S3 Commands</a></li><li class="awstoc leaf"><a class="awstoc" href="using-s3api-commands.html">Using API Level (s3api) Commands</a></li></ul></li><li class="awstoc leaf"><a class="awstoc" href="cli-sqs-queue-sns-topic.html">Amazon SNS</a></li><li class="awstoc closed"><a class="awstoc" href="cli-using-swf.html">Amazon SWF</a><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc" href="swf-commands-by-category.html">List of Amazon SWF Commands</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-using-swf-domains.html">Working with Amazon SWF Domains</a></li></ul></li></ul></li></ul></div></div><div id="main-column"><div id="main"><div id="main-content"><div id="breadcrumbs"><table summary="Breadcrumbs"><tr><td><div class="navheader"><div class="breadcrumb"><a href="http://aws.amazon.com/documentation/">AWS Documentation</a> &raquo; <a href="http://aws.amazon.com/documentation/cli">AWS Command Line Interface</a> &raquo; <a href="index.html">AWS Command Line Interface</a> &raquo; <a href="chap-working-with-services.html">Working with Amazon Web Services</a> &raquo; <span class="breadcrumb">Using Amazon Glacier with the AWS Command Line Interface</span></div></div></td></tr></table></div><div id="main-col-body"><div></div><div class="section"><div class="titlepage"><div><div><h1 class="topictitle">Using Amazon Glacier with the AWS Command Line Interface</h1></div></div></div><p>
-    You can upload a large file to Amazon Glacier by splitting it into smaller parts and uploading them from
-    the command line. This topic describes the process of creating a vault, splitting a file, and
-    configuring and executing a multipart upload to Amazon Glacier with the AWS CLI.
-  </p><div class="aws-note"><p class="aws-note">Note</p><p>This tutorial uses several command line tools that typically come pre-installed on
-    Unix-like operating systems including Linux and OS X. Windows users can use the same tools by
-    installing <a class="ulink" href="https://www.cygwin.com/" target="_blank">Cygwin</a> and running the commands from the
-    Cygwin terminal. Windows native commands and utilities that perform the same functions are noted
-    where available.</p></div><div class="highlights"><p><strong>Topics</strong></p><ul><li><a href="cli-using-glacier.html#cli-using-glacier-vault">Create an Amazon Glacier Vault</a></li><li><a href="cli-using-glacier.html#cli-using-glacier-prep">Prepare a File for Uploading</a></li><li><a href="cli-using-glacier.html#cli-using-glacier-initiate">Initiate a Multipart Upload and Upload Files</a></li><li><a href="cli-using-glacier.html#cli-using-glacier-complete">Complete the Upload</a></li></ul></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="cli-using-glacier-vault">Create an Amazon Glacier Vault</h2></div></div></div><p>Create a vault with the <code class="code">aws glacier create-vault</code> command. The following
-      command creates a vault named <code class="filename">myvault</code>.</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws glacier create-vault --account-id - --vault-name myvault</code></strong>
+                </script></ul>
+            <div id="topnav-flyout-menu-spacer"></div>
+         </div>
+      </div>
+      <div id="content-container">
+         <div id="left-column">
+            <div id="left-col-header">
+               <div id="left-col-top-content">
+                  <div id="service-name">AWS Command Line Interface </div>
+                  <div id="search"><i id="search-icon" class="fa fa-search fa-2x"></i></div>
+                  <div id="guide-info">User Guide
+                     <div id="content-button"><i id="toggle-contents" class="fa fa-bars"></i></div>
+                  </div>
+               </div>
+               <form id="finegrainedSearch" method="get" onsubmit="return searchFormSubmit(this);"
+                     action="http://docs.aws.amazon.com/search/doc-search.html">
+                  <div id="search-form"><select id="search-select" name="searchPath">
+                        <option value="all">Entire Site</option>
+                        <option value="AWSMarketplace">AMIs from AWS Marketplace</option>
+                        <option value="amis">AMIs from All Sources</option>
+                        <option value="articles">Articles &amp; Tutorials</option>
+                        <option value="products_and_info">AWS Product Information</option>
+                        <option value="case_studies">Case Studies</option>
+                        <option value="customerapps">Customer Apps</option>
+                        <option value="documentation">Documentation</option>
+                        <option value="documentation-product">Documentation - This Product</option>
+                        <option value="documentation-guide" selected="selected">Documentation - This Guide</option>
+                        <option value="datasets">Public Data Sets</option>
+                        <option value="releasenotes">Release Notes</option>
+                        <option value="solution_providers">Partners</option>
+                        <option value="code">Sample Code &amp; Libraries</option></select><br /><input id="search-query" name="searchQuery" type="text" placeholder="Search" /><input id="search-button" src="http://docs.aws.amazon.com/images/search-button.png" alt="Go" type="image" /></div><input type="hidden" name="this_doc_product" id="this_doc_product"
+                         value="AWS Command Line Interface" /><input type="hidden" name="this_doc_guide" id="this_doc_guide" value="User Guide" /><input type="hidden" name="doc_locale" value="en_us" /></form>
+            </div>
+            <div id="toc">
+               <ul class="awstoc">
+                  <li class="awstoc leaf"><a class="awstoc" href="cli-chap-welcome.html">What Is the AWS CLI?</a></li>
+                  <li class="awstoc closed"><a class="awstoc" href="cli-chap-getting-set-up.html">Getting Set Up</a><ul class="awstoc">
+                        <li class="awstoc closed"><a class="awstoc" href="installing.html">Installing the AWS CLI</a><ul class="awstoc">
+                              <li class="awstoc leaf"><a class="awstoc" href="awscli-install-linux.html">Linux</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="awscli-install-windows.html">Windows</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-install-macos.html">macOS</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="awscli-install-virtualenv.html">Virtualenv</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="awscli-install-bundle.html">Bundled Installer</a></li>
+                           </ul>
+                        </li>
+                        <li class="awstoc closed"><a class="awstoc" href="cli-chap-getting-started.html">Configuring the AWS CLI</a><ul class="awstoc">
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-http-proxy.html">Using an HTTP Proxy</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-roles.html">Assuming a Role</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-command-completion.html">Command Completion</a></li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="awstoc leaf"><a class="awstoc" href="tutorial-ec2-ubuntu.html">Tutorial: Using Amazon EC2</a></li>
+                  <li class="awstoc closed"><a class="awstoc" href="cli-chap-using.html">Using the AWS CLI</a><ul class="awstoc">
+                        <li class="awstoc leaf"><a class="awstoc" href="getting-help.html">Getting Help</a></li>
+                        <li class="awstoc leaf"><a class="awstoc" href="command-structure.html">Command Structure</a></li>
+                        <li class="awstoc leaf"><a class="awstoc" href="cli-using-param.html">Specifying Parameter Values</a></li>
+                        <li class="awstoc leaf"><a class="awstoc" href="generate-cli-skeleton.html">Generate CLI Skeleton</a></li>
+                        <li class="awstoc leaf"><a class="awstoc" href="controlling-output.html">Controlling Command Output</a></li>
+                        <li class="awstoc leaf"><a class="awstoc" href="shorthand-syntax.html">Shorthand Syntax</a></li>
+                        <li class="awstoc leaf"><a class="awstoc" href="pagination.html">Pagination</a></li>
+                     </ul>
+                  </li>
+                  <li class="awstoc opened"><a class="awstoc" href="chap-working-with-services.html">Working with Services</a><ul class="awstoc">
+                        <li class="awstoc leaf"><a class="awstoc" href="cli-dynamodb.html">DynamoDB</a></li>
+                        <li class="awstoc closed"><a class="awstoc" href="cli-using-ec2.html">Amazon EC2</a><ul class="awstoc">
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-ec2-keypairs.html">Using Key Pairs</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-ec2-sg.html">Using Security Groups</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-ec2-launch.html">Using Instances</a></li>
+                           </ul>
+                        </li>
+                        <li class="awstoc leaf"><a class="awstoc selected" href="cli-using-glacier.html">Amazon Glacier</a></li>
+                        <li class="awstoc closed"><a class="awstoc" href="cli-iam.html">AWS Identity and Access Management</a><ul class="awstoc">
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-iam-new-user-group.html">Create New IAM Users and Groups</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-iam-policy.html">Set an IAM Policy for an IAM User</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-iam-set-pw.html">Set an Initial Password for an IAM User</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-iam-create-creds.html">Create Security Credentials for an IAM User</a></li>
+                           </ul>
+                        </li>
+                        <li class="awstoc closed"><a class="awstoc" href="cli-s3.html">Amazon S3</a><ul class="awstoc">
+                              <li class="awstoc leaf"><a class="awstoc" href="using-s3-commands.html">Using High-Level Amazon S3 Commands</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="using-s3api-commands.html">Using API Level (s3api) Commands</a></li>
+                           </ul>
+                        </li>
+                        <li class="awstoc leaf"><a class="awstoc" href="cli-sqs-queue-sns-topic.html">Amazon SNS</a></li>
+                        <li class="awstoc closed"><a class="awstoc" href="cli-using-swf.html">Amazon SWF</a><ul class="awstoc">
+                              <li class="awstoc leaf"><a class="awstoc" href="swf-commands-by-category.html">List of Amazon SWF Commands</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-using-swf-domains.html">Working with Amazon SWF Domains</a></li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div id="main-column">
+            <div id="main">
+               <div id="main-content">
+                  <table summary="Breadcrumbs">
+                     <tr>
+                        <td>
+                           <div class="breadcrumb"><a href="http://aws.amazon.com/documentation">AWS Documentation</a> » <a href="http://aws.amazon.com/documentation/cli">AWS Command Line Interface</a> » <a href="index-2.html">User Guide</a> » <a href="chap-working-with-services.html">Working with Amazon Web Services</a> » <span class="breadcrumb">Using Amazon Glacier with the AWS Command Line Interface</span></div>
+                        </td>
+                     </tr>
+                  </table>
+                  <div id="main-col-body">
+                     <div></div>
+                     <h1 class="topictitle" id="cli-using-glacier">Using Amazon Glacier with the AWS Command Line Interface</h1>
+                     <p>
+                        You can upload a large file to Amazon Glacier by splitting it into smaller parts and uploading them from
+                        the command line. This topic describes the process of creating a vault, splitting a file, and
+                        configuring and executing a multipart upload to Amazon Glacier with the AWS CLI.
+                        
+                     </p>
+                     <div class="aws-note">
+                        <p class="aws-note">Note</p>
+                        <p>This tutorial uses several command line tools that typically come pre-installed on
+                           Unix-like operating systems including Linux and OS X. Windows users can use the same tools by
+                           installing <a href="https://www.cygwin.com/" target="_blank">Cygwin</a> and running the commands from the
+                           Cygwin terminal. Windows native commands and utilities that perform the same functions are noted
+                           where available.
+                        </p>
+                     </div>
+                     <div class="highlights">
+                        <p><strong>Topics</strong></p>
+                        <ul>
+                           <li><a href="#cli-using-glacier-vault">Create an Amazon Glacier Vault</a></li>
+                           <li><a href="#cli-using-glacier-prep">Prepare a File for Uploading</a></li>
+                           <li><a href="#cli-using-glacier-initiate">Initiate a Multipart Upload and Upload Files</a></li>
+                           <li><a href="#cli-using-glacier-complete">Complete the Upload</a></li>
+                        </ul>
+                     </div>
+                     <h2 id="cli-using-glacier-vault">Create an Amazon Glacier Vault</h2>
+                     <p>Create a vault with the <code class="code">aws glacier create-vault</code> command. The following
+                        command creates a vault named <code>myvault</code>.
+                     </p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws glacier create-vault --account-id - --vault-name myvault</code></strong>
 {
     "location": "/123456789012/vaults/myvault"
-}</code></pre><div class="aws-note"><p class="aws-note">Note</p><p>All glacier commands require an account ID parameter. Use a hyphen to specify the current
-      account.</p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="cli-using-glacier-prep">Prepare a File for Uploading</h2></div></div></div><p>Create a file for the test upload. The following commands create a file that contains
-      exactly 3 MiB (3 x 1024 x 1024 bytes) of random data.</p><p><span class="bold"><strong>Linux, OS X, or Unix</strong></span></p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>dd if=/dev/urandom of=largefile bs=3145728 count=1</code></strong>
+}</code></pre><div class="aws-note">
+                        <p class="aws-note">Note</p>
+                        <p>All glacier commands require an account ID parameter. Use a hyphen to specify the current
+                           account.
+                        </p>
+                     </div>
+                     <h2 id="cli-using-glacier-prep">Prepare a File for Uploading</h2>
+                     <p>Create a file for the test upload. The following commands create a file that contains
+                        exactly 3 MiB (3 x 1024 x 1024 bytes) of random data.
+                     </p>
+                     <p><b>Linux, macOS, or Unix</b></p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>dd if=/dev/urandom of=largefile bs=3145728 count=1</code></strong>
 1+0 records in
 1+0 records out
 3145728 bytes (3.1 MB) copied, 0.205813 s, 15.3 MB/s</code></pre><p><code class="code">dd</code> is a utility that copies a number of bytes from an input file to an output
-      file. The above example uses the device file <code class="filename">/dev/urandom</code> as a source of
-      random data. <code class="filename">fsutil</code> performs a similar function in Windows:</p><p><span class="bold"><strong>Windows</strong></span></p><pre class="programlisting"><code class="nohighlight">C:\temp&gt;<strong class="userinput"><code>fsutil file createnew largefile 3145728</code></strong>
+                        file. The above example uses the device file <code>/dev/urandom</code> as a source of
+                        random data. <code>fsutil</code> performs a similar function in Windows:
+                     </p>
+                     <p><b>Windows</b></p><pre class="programlisting"><code class="nohighlight">C:\temp&gt;<strong class="userinput"><code>fsutil file createnew largefile 3145728</code></strong>
 File C:\temp\largefile is created</code></pre><p>Next, split the file into 1 MiB (1048576 byte) chunks.</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>split --bytes=1048576 --verbose largefile chunk</code></strong>
 creating file `chunkaa'
 creating file `chunkab'
-creating file `chunkac'</code></pre><div class="aws-note"><p class="aws-note">Note</p><p><a class="ulink" href="http://www.hjsplit.org/" target="_blank">HJ-Split</a> is a free file splitter for
-      Windows and many other platforms.</p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="cli-using-glacier-initiate">Initiate a Multipart Upload and Upload Files</h2></div></div></div><p>Create a multipart upload in Amazon Glacier by using the <code class="code">aws glacier
-      initiate-multipart-upload</code> command.</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws glacier initiate-multipart-upload --account-id - --archive-description "multipart upload test" --part-size 1048576 --vault-name myvault</code></strong>
+creating file `chunkac'</code></pre><div class="aws-note">
+                        <p class="aws-note">Note</p>
+                        <p><a href="http://www.hjsplit.org/" target="_blank">HJ-Split</a> is a free file splitter for
+                           Windows and many other platforms.
+                        </p>
+                     </div>
+                     <h2 id="cli-using-glacier-initiate">Initiate a Multipart Upload and Upload Files</h2>
+                     <p>Create a multipart upload in Amazon Glacier by using the <code class="code">aws glacier
+                           initiate-multipart-upload</code> command.
+                     </p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws glacier initiate-multipart-upload --account-id - --archive-description "multipart upload test" --part-size 1048576 --vault-name myvault</code></strong>
 {
     "uploadId": "19gaRezEXAMPLES6Ry5YYdqthHOC_kGRCT03L9yetr220UmPtBYKk-OssZtLqyFu7sY1_lR7vgFuJV6NtcV5zpsJ",
     "location": "/123456789012/vaults/myvault/multipart-uploads/19gaRezEXAMPLES6Ry5YYdqthHOC_kGRCT03L9yetr220UmPtBYKk-OssZtLqyFu7sY1_lR7vgFuJV6NtcV5zpsJ"
 }</code></pre><p>Amazon Glacier requires the size of each part in bytes (1 MiB in this example), your vault name, and
-      an account ID in order to configure the multipart upload. The AWS CLI outputs an upload ID when
-      the operation is complete. Save the upload ID to a shell variable for later use.</p><p><span class="bold"><strong>Linux, OS X, or Unix</strong></span></p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>UPLOADID="<em class="replaceable"><code>19gaRezEXAMPLES6Ry5YYdqthHOC_kGRCT03L9yetr220UmPtBYKk-OssZtLqyFu7sY1_lR7vgFuJV6NtcV5zpsJ</code></em>"</code></strong></code></pre><p><span class="bold"><strong>Windows</strong></span></p><pre class="programlisting"><code class="nohighlight">C:\temp&gt; <strong class="userinput"><code>set UPLOADID="<em class="replaceable"><code>19gaRezEXAMPLES6Ry5YYdqthHOC_kGRCT03L9yetr220UmPtBYKk-OssZtLqyFu7sY1_lR7vgFuJV6NtcV5zpsJ</code></em>"</code></strong></code></pre><p>Next, use the <code class="code">aws glacier upload-multipart-part</code> command to upload each part.</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws glacier upload-multipart-part --upload-id $UPLOADID --body chunkaa --range 'bytes 0-1048575/*' --account-id - --vault-name myvault</code></strong>
+                        an account ID in order to configure the multipart upload. The AWS CLI outputs an upload ID when
+                        the operation is complete. Save the upload ID to a shell variable for later use.
+                     </p>
+                     <p><b>Linux, macOS, or Unix</b></p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>UPLOADID="<em class="replaceable"><code>19gaRezEXAMPLES6Ry5YYdqthHOC_kGRCT03L9yetr220UmPtBYKk-OssZtLqyFu7sY1_lR7vgFuJV6NtcV5zpsJ</code></em>"</code></strong></code></pre><p><b>Windows</b></p><pre class="programlisting"><code class="nohighlight">C:\temp&gt; <strong class="userinput"><code>set UPLOADID="<em class="replaceable"><code>19gaRezEXAMPLES6Ry5YYdqthHOC_kGRCT03L9yetr220UmPtBYKk-OssZtLqyFu7sY1_lR7vgFuJV6NtcV5zpsJ</code></em>"</code></strong></code></pre><p>Next, use the <code class="code">aws glacier upload-multipart-part</code> command to upload each part.
+                     </p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws glacier upload-multipart-part --upload-id $UPLOADID --body chunkaa --range 'bytes 0-1048575/*' --account-id - --vault-name myvault</code></strong>
 {
     "checksum": "e1f2a7cd6e047fa606fe2f0280350f69b9f8cfa602097a9a026360a7edc1f553"
 }
@@ -62,36 +263,67 @@ $ <strong class="userinput"><code>aws glacier upload-multipart-part --upload-id 
 $ <strong class="userinput"><code>aws glacier upload-multipart-part --upload-id $UPLOADID --body chunkac --range 'bytes 2097152-3145727/*' --account-id - --vault-name myvault</code></strong>
 {
     "checksum": "e1f2a7cd6e047fa606fe2f0280350f69b9f8cfa602097a9a026360a7edc1f553"
-}</code></pre><div class="aws-note"><p class="aws-note">Note</p><p>The above example uses the dollar sign ("$") to dereference the
-      <code class="code">UPLOADID</code> shell variable. On the Windows command line, use two percent signs
-      (i.e. <code class="code">%UPLOADID%</code>).</p></div><p>You must specify the byte range of each part when you upload it so it can be reassembled
-      in the proper order by Amazon Glacier. Each piece is 1048576 bytes, so the first piece occupies bytes
-      0-1048575, the second 1048576-2097151, and the third 2097152-3145727.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="cli-using-glacier-complete">Complete the Upload</h2></div></div></div><p>Amazon Glacier requires a tree hash of the original file in order to confirm that all of the
-      uploaded pieces reached AWS intact. To calculate a tree hash, you split the file into 1 MiB
-      parts and calculate a binary SHA-256 hash of each piece. Then you split the list of hashes into
-      pairs, combine the two binary hashes in each pair, and take hashes of the results. Repeat this
-      process until there is only one hash left. If there is an odd number of hashes at any level,
-      promote it to the next level without modifying it.</p><p>The key to calculating a tree hash correctly when using command line utilities is to store
-      each hash in binary format and only convert to hexadecimal at the last step. Combining or
-      hashing the hexadecimal version of any hash in the tree will cause an incorrect result.</p><div class="aws-note"><p class="aws-note">Note</p><p>Windows users can use the <code class="code">type</code> command in place of <code class="code">cat</code>.
-      OpenSSL is available for Windows at <a class="ulink" href="https://www.openssl.org/related/binaries.html" target="_blank">OpenSSL.org</a>.</p></div><div class="procedure"><a name="d0e4592"></a><p class="title"><b>To calculate a tree hash</b></p><ol class="procedure" type="1"><li class="step"><p>Split the original file into 1 MiB parts if you haven't already.</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>split --bytes=1048576 --verbose largefile chunk</code></strong>
+}</code></pre><div class="aws-note">
+                        <p class="aws-note">Note</p>
+                        <p>The above example uses the dollar sign ("$") to dereference the
+                           <code class="code">UPLOADID</code> shell variable. On the Windows command line, use two percent signs
+                           (i.e. <code class="code">%UPLOADID%</code>).
+                        </p>
+                     </div>
+                     <p>You must specify the byte range of each part when you upload it so it can be reassembled
+                        in the proper order by Amazon Glacier. Each piece is 1048576 bytes, so the first piece occupies bytes
+                        0-1048575, the second 1048576-2097151, and the third 2097152-3145727.
+                     </p>
+                     <h2 id="cli-using-glacier-complete">Complete the Upload</h2>
+                     <p>Amazon Glacier requires a tree hash of the original file in order to confirm that all of the
+                        uploaded pieces reached AWS intact. To calculate a tree hash, you split the file into 1 MiB
+                        parts and calculate a binary SHA-256 hash of each piece. Then you split the list of hashes into
+                        pairs, combine the two binary hashes in each pair, and take hashes of the results. Repeat this
+                        process until there is only one hash left. If there is an odd number of hashes at any level,
+                        promote it to the next level without modifying it.
+                     </p>
+                     <p>The key to calculating a tree hash correctly when using command line utilities is to store
+                        each hash in binary format and only convert to hexadecimal at the last step. Combining or
+                        hashing the hexadecimal version of any hash in the tree will cause an incorrect result.
+                     </p>
+                     <div class="aws-note">
+                        <p class="aws-note">Note</p>
+                        <p>Windows users can use the <code class="code">type</code> command in place of <code class="code">cat</code>.
+                           OpenSSL is available for Windows at <a href="https://www.openssl.org/related/binaries.html" target="_blank">OpenSSL.org</a>.
+                        </p>
+                     </div>
+                     <p class="title"><b>To calculate a tree hash</b></p>
+                     <ol>
+                        <li>
+                           <p>Split the original file into 1 MiB parts if you haven't already.</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>split --bytes=1048576 --verbose largefile chunk</code></strong>
 creating file `chunkaa'
 creating file `chunkab'
-creating file `chunkac'</code></pre></li><li class="step"><p>Calculate and store the binary SHA-256 hash of each chunk.</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>openssl dgst -sha256 -binary chunkaa &gt; hash1</code></strong>
+creating file `chunkac'</code></pre></li>
+                        <li>
+                           <p>Calculate and store the binary SHA-256 hash of each chunk.</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>openssl dgst -sha256 -binary chunkaa &gt; hash1</code></strong>
 $ <strong class="userinput"><code>openssl dgst -sha256 -binary chunkab &gt; hash2</code></strong>
-$ <strong class="userinput"><code>openssl dgst -sha256 -binary chunkac &gt; hash3</code></strong></code></pre></li><li class="step"><p>Combine the first two hashes and take the binary hash of the result.</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>cat hash1 hash2 &gt; hash12</code></strong>
-$ <strong class="userinput"><code>openssl dgst -sha256 -binary hash12 &gt; hash12hash</code></strong></code></pre></li><li class="step"><p>Combine the parent hash of chunks aa and ab with the hash of chunk ac and hash the
-        result, this time outputing hexadecimal. Store the result in a shell variable.</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>cat hash12hash hash3 &gt; hash123</code></strong>
+$ <strong class="userinput"><code>openssl dgst -sha256 -binary chunkac &gt; hash3</code></strong></code></pre></li>
+                        <li>
+                           <p>Combine the first two hashes and take the binary hash of the result.</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>cat hash1 hash2 &gt; hash12</code></strong>
+$ <strong class="userinput"><code>openssl dgst -sha256 -binary hash12 &gt; hash12hash</code></strong></code></pre></li>
+                        <li>
+                           <p>Combine the parent hash of chunks aa and ab with the hash of chunk ac and hash the
+                              result, this time outputing hexadecimal. Store the result in a shell variable.
+                           </p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>cat hash12hash hash3 &gt; hash123</code></strong>
 $ <strong class="userinput"><code>openssl dgst -sha256 hash123</code></strong>
 SHA256(hash123)= 9628195fcdbcbbe76cdde932d4646fa7de5f219fb39823836d81f0cc0e18aa67
-$ <strong class="userinput"><code>TREEHASH=<em class="replaceable"><code>9628195fcdbcbbe76cdde932d4646fa7de5f219fb39823836d81f0cc0e18aa67</code></em></code></strong></code></pre></li></ol></div><p>Finally, complete the upload with the <code class="code">aws glacier complete-multipart-upload</code>
-      command. This command takes the original file's size in bytes, the final tree hash value in
-      hexadecimal, and your account ID and vault name.</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws glacier complete-multipart-upload --checksum $TREEHASH --archive-size 3145728 --upload-id $UPLOADID --account-id - --vault-name myvault</code></strong>
+$ <strong class="userinput"><code>TREEHASH=<em class="replaceable"><code>9628195fcdbcbbe76cdde932d4646fa7de5f219fb39823836d81f0cc0e18aa67</code></em></code></strong></code></pre></li>
+                     </ol>
+                     <p>Finally, complete the upload with the <code class="code">aws glacier complete-multipart-upload</code>
+                        command. This command takes the original file's size in bytes, the final tree hash value in
+                        hexadecimal, and your account ID and vault name.
+                     </p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws glacier complete-multipart-upload --checksum $TREEHASH --archive-size 3145728 --upload-id $UPLOADID --account-id - --vault-name myvault</code></strong>
 {
     "archiveId": "d3AbWhE0YE1m6f_fI1jPG82F8xzbMEEZmrAlLGAAONJAzo5QdP-N83MKqd96Unspoa5H5lItWX-sK8-QS0ZhwsyGiu9-R-kwWUyS1dSBlmgPPWkEbeFfqDSav053rU7FvVLHfRc6hg",
     "checksum": "9628195fcdbcbbe76cdde932d4646fa7de5f219fb39823836d81f0cc0e18aa67",
     "location": "/123456789012/vaults/myvault/archives/d3AbWhE0YE1m6f_fI1jPG82F8xzbMEEZmrAlLGAAONJAzo5QdP-N83MKqd96Unspoa5H5lItWX-sK8-QS0ZhwsyGiu9-R-kwWUyS1dSBlmgPPWkEbeFfqDSav053rU7FvVLHfRc6hg"
-}</code></pre><p>You can also check the status of the vault using <code class="code">aws glacier describe-vault</code>:</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws glacier describe-vault --account-id - --vault-name myvault</code></strong>
+}</code></pre><p>You can also check the status of the vault using <code class="code">aws glacier describe-vault</code>:
+                     </p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws glacier describe-vault --account-id - --vault-name myvault</code></strong>
 {
     "SizeInBytes": 3178496,
     "VaultARN": "arn:aws:glacier:us-west-2:123456789012:vaults/myvault",
@@ -100,13 +332,76 @@ $ <strong class="userinput"><code>TREEHASH=<em class="replaceable"><code>9628195
     "CreationDate": "2015-04-06T21:23:45.708Z",
     "VaultName": "myvault"
 }</code></pre><p>It is now safe to remove the part and hash files you created:</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>rm chunk* hash*</code></strong></code></pre><p>For more information on multipart uploads, see 
-      <a class="ulink" href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html" target="_blank">Uploading
-      Large Archives in Parts</a> and 
-      <a class="ulink" href="http://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html" target="_blank">Computing Checksums</a>
-      in the Amazon Glacier Developer Guide.
-    </p></div></div></div><img src="images/expanderarrow.png" style="display:none;height:0;width:0"><div id="main-col-footer"><div id="doc-conventions"><a target="_top" href="http://docs.aws.amazon.com/general/latest/gr/docconventions.html">Document Conventions</a></div><div id="next"><a class="awstoc" accesskey="p" href="cli-ec2-launch.html">&laquo; Previous </a><a class="awstoc" accesskey="n" href="cli-iam.html">Next &raquo;</a></div><div id="copyright-main-footer">&copy; 2016, Amazon Web Services, Inc. or its affiliates. All rights reserved.</div></div></div></div><div id="right-expanded"><div id="right-content-wrapper"><div id="right-col-header"><a id="pdf_link" href="aws-cli.pdf"> PDF </a><text> | </text><a target="_blank" href="http://www.amazon.com/dp/B00Q7K4HFG">Kindle </a></div><div id="pagetoc"><p>On this page:</p><ul class="pagetoc"><li class="pagetoc" name="Create an Amazon Glacier Vault"><a class="pagetoc" href="#cli-using-glacier-vault">Create an Amazon Glacier Vault</a></li><li class="pagetoc" name="Prepare a File for Uploading"><a class="pagetoc" href="#cli-using-glacier-prep">Prepare a File for Uploading</a></li><li class="pagetoc" name="Initiate a Multipart Upload and Upload Files"><a class="pagetoc" href="#cli-using-glacier-initiate">Initiate a Multipart Upload and Upload Files</a></li><li class="pagetoc" name="Complete the Upload"><a class="pagetoc" href="#cli-using-glacier-complete">Complete the Upload</a></li></ul></div></div></div></div></div><div id="footer"><div id="footer_short_fb" class="hide" title="Feedback"><a target="_blank" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=User%20Guide&amp;hidden_api_version=&amp;hidden_file_name=cli-using-glacier"><i class="fa fa-envelope-o"></i></a></div><div id="footer_toggle" class="mediaobject"><img id="footer_toggle_img" src="images/expanderarrow.png"><img id="footer_toggle_img_collapse" class="hide" src="images/expanderarrowright.png"></div><div id="footer-left"><a target="_top" href="http://aws.amazon.com/terms">Terms of Use</a> | &copy; 2016, Amazon Web Services, Inc. or its affiliates. All rights reserved.</div><div id="footer-right"><div id="feedback"><div id="forums"><a id="forum_link" target="_blank" href="http://forums.aws.amazon.com/forum.jspa?forumID=150">Have a question? Try the Forums.</a></div><div id="feedback-message">Did this page help you?</div><div id="feedback-yesno-buttons"><a class="awstoc btn btn-default" target="_blank" href="feedbackyes3101.html?topic_id=cli-using-glacier">Yes</a><a class="awstoc btn btn-default" target="_blank" href="feedbackno3101.html?topic_id=cli-using-glacier">No</a></div><div id="feedback-feedback-button"><a class="awstoc btn btn-default" target="_blank" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=User%20Guide&amp;hidden_api_version=&amp;hidden_file_name=cli-using-glacier">Feedback</a></div></div></div></div><noscript><div><div><div><div id="error_messages"><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" style="float: left;" alt="Warning"><div id="js_error_message"><strong>Javascript is disabled or is unavailable in your browser.</strong><br> To use the AWS Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions. </div></div></div></div></div></noscript><!-- SiteCatalyst code version: H.25.2.
+                        <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html"
+                           target="_blank">Uploading
+                           Large Archives in Parts</a> and 
+                        <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html"
+                           target="_blank">Computing Checksums</a>
+                        in the Amazon Glacier Developer Guide.
+                        
+                     </p>
+                  </div>
+                  <div id="main-col-footer">
+                     <div id="doc-conventions"><a target="_top" href="http://docs.aws.amazon.com/general/latest/gr/docconventions.html">Document Conventions</a></div>
+                     <div id="next"><a class="awstoc" accesskey="p" href="cli-ec2-launch.html">« Previous </a><a class="awstoc" accesskey="n" href="cli-iam.html">Next »</a></div>
+                     <div id="copyright-main-footer">© 2017, Amazon Web Services, Inc. or its affiliates. All rights reserved.</div>
+                  </div>
+               </div>
+            </div>
+            <div id="right-expanded">
+               <div id="right-content-wrapper">
+                  <div id="right-col-header"><a id="pdf_link" href="aws-cli.pdf" target="_blank"> PDF </a> | <a target="_blank" href="http://www.amazon.com/dp/B00Q7K4HFG">Kindle </a></div>
+                  <div id="pagetoc">
+                     <p>On this page:</p>
+                     <ul class="pagetoc">
+                        <li class="pagetoc" name="Create an Amazon Glacier Vault"><a class="pagetoc" href="#cli-using-glacier-vault">Create an Amazon Glacier Vault</a></li>
+                        <li class="pagetoc" name="Prepare a File for Uploading"><a class="pagetoc" href="#cli-using-glacier-prep">Prepare a File for Uploading</a></li>
+                        <li class="pagetoc" name="Initiate a Multipart Upload and Upload Files"><a class="pagetoc" href="#cli-using-glacier-initiate">Initiate a Multipart Upload and Upload Files</a></li>
+                        <li class="pagetoc" name="Complete the Upload"><a class="pagetoc" href="#cli-using-glacier-complete">Complete the Upload</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="footer">
+         <div id="footer_short_fb" class="hide" title="Feedback"><a target="_blank"
+               href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=User%20Guide&amp;hidden_api_version=&amp;hidden_file_name=cli-using-glacier"><i class="fa fa-envelope-o"></i></a></div>
+         <div id="footer_toggle" class="mediaobject"><img id="footer_toggle_img" src="http://docs.aws.amazon.com/images/expanderarrow.png" /><img id="footer_toggle_img_collapse" class="hide"
+                 src="http://docs.aws.amazon.com/images/expanderarrowright.png" /></div>
+         <div id="footer-left"><a target="_top" href="http://aws.amazon.com/terms">Terms of Use</a> | © 2017, Amazon Web Services, Inc. or its affiliates. All rights reserved.
+         </div>
+         <div id="footer-right">
+            <div id="feedback">
+               <div id="forums"><a id="forum_link" target="_blank"
+                     href="http://forums.aws.amazon.com/forum.jspa?forumID=150">Have a question? Try the Forums.</a></div>
+               <div id="feedback-message">Did this page help you?</div>
+               <div id="feedback-yesno-buttons"><a class="awstoc btn btn-default" target="_blank"
+                     href="feedbackyes5a52.html?topic_url=http://docs.aws.amazon.com/cli/latest/userguide/cli-using-glacier.html">Yes</a><a class="awstoc btn btn-default" target="_blank"
+                     href="feedbackno5a52.html?topic_url=http://docs.aws.amazon.com/cli/latest/userguide/cli-using-glacier.html">No</a></div>
+               <div id="feedback-feedback-button"><a class="awstoc btn btn-default" target="_blank"
+                     href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;topic_url=http://docs.aws.amazon.com/cli/latest/userguide/cli-using-glacier.html&amp;hidden_guide_name=User%20Guide&amp;hidden_api_version=&amp;hidden_file_name=cli-using-glacier">Feedback</a></div>
+            </div>
+         </div>
+      </div>
+      <noscript>
+         <div>
+            <div>
+               <div>
+                  <div id="error_messages"><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png"
+                          style="float: left;"
+                          alt="Warning" /><div id="js_error_message"><strong>Javascript is disabled or is unavailable in your browser.</strong><br /> To use the AWS Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions. 
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </noscript>
+      <!-- SiteCatalyst code version: H.25.2.
             Copyright 1996-2012 Adobe, Inc. All Rights Reserved
-            More info available at http://www.omniture.com --><script language="JavaScript" type="text/javascript" src="https://a0.awsstatic.com/s_code/js/1.0/awshome_s_code.js"></script><script language="JavaScript" type="text/javascript"><!--
+            More info available at http://www.omniture.com --><script language="JavaScript" type="text/javascript"
+              src="https://a0.awsstatic.com/s_code/js/1.0/awshome_s_code.js"></script><script language="JavaScript" type="text/javascript">
+         <!--
 
             // Documentation Service Name
             s.prop66='AWS Command Line Interface';
@@ -116,8 +411,17 @@ $ <strong class="userinput"><code>TREEHASH=<em class="replaceable"><code>9628195
             s.prop65='User Guide';
             s.eVar65='D=c65';
 
-            var s_code=s.t();if(s_code)document.write(s_code)//--></script><script language="JavaScript" type="text/javascript"><!--
+            var s_code=s.t();if(s_code)document.write(s_code)//--></script><script language="JavaScript" type="text/javascript">
+         <!--
                 if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
-                //--></script><noscript><img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt=""></noscript><!--/DO NOT REMOVE/--><!-- End SiteCatalyst code version: H.25.2. --></body>
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/userguide/cli-using-glacier.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:48 GMT -->
+                //--></script><noscript><img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0"
+              height="1"
+              width="1"
+              border="0"
+              alt="" /></noscript>
+      <!--/DO NOT REMOVE/-->
+      <!-- End SiteCatalyst code version: H.25.2. -->
+   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/userguide/cli-using-glacier.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:51 GMT -->
 </html>

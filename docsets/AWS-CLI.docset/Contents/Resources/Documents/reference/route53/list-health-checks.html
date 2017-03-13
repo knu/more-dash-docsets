@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53/list-health-checks.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:28 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53/list-health-checks.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:28 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>list-health-checks &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>list-health-checks &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="route53" href="index.html" />
     <link rel="next" title="list-hosted-zones" href="list-hosted-zones.html" />
     <link rel="prev" title="list-geo-locations" href="list-geo-locations.html" />
@@ -64,7 +64,7 @@
           <a href="list-hosted-zones.html" title="list-hosted-zones" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="list-geo-locations.html" title="list-geo-locations" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">route53</a> &#187;</li> 
       </ul>
@@ -112,7 +112,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/route53/list-health-checks">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/route53/list-health-checks">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -129,11 +129,9 @@
 <span id="cli-aws-route53-list-health-checks"></span><h1>list-health-checks<a name="//apple_ref/cpp/Command/aws route53 list-health-checks" class="dashAnchor" id="aws route53 list-health-checks"></a><a class="headerlink" href="#list-health-checks" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>To retrieve a list of your health checks, send a <tt class="docutils literal"><span class="pre">GET</span></tt> request to the <tt class="docutils literal"><span class="pre">/*Route</span> <span class="pre">53</span> <span class="pre">API</span> <span class="pre">version*</span> <span class="pre">/healthcheck</span></tt> resource. The response to this request includes a <tt class="docutils literal"><span class="pre">HealthChecks</span></tt> element with zero, one, or multiple <tt class="docutils literal"><span class="pre">HealthCheck</span></tt> child elements. By default, the list of health checks is displayed on a single page. You can control the length of the page that is displayed by using the <tt class="docutils literal"><span class="pre">MaxItems</span></tt> parameter. You can use the <tt class="docutils literal"><span class="pre">Marker</span></tt> parameter to control the health check that the list begins with.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value greater than 100, Amazon Route 53 returns only the first 100.</p>
-</div>
+<p>Retrieve a list of your health checks. Send a <tt class="docutils literal"><span class="pre">GET</span></tt> request to the <tt class="docutils literal"><span class="pre">/2013-04-01/healthcheck</span></tt> resource. The response to this request includes a <tt class="docutils literal"><span class="pre">HealthChecks</span></tt> element with zero or more <tt class="docutils literal"><span class="pre">HealthCheck</span></tt> child elements. By default, the list of health checks is displayed on a single page. You can control the length of the page that is displayed by using the <tt class="docutils literal"><span class="pre">MaxItems</span></tt> parameter. You can use the <tt class="docutils literal"><span class="pre">Marker</span></tt> parameter to control the health check that the list begins with.</p>
+<p>For information about listing health checks using the Amazon Route 53 console, see <a class="reference external" href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks and DNS Failover</a> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthChecks">AWS API Documentation</a></p>
 <p><tt class="docutils literal"><span class="pre">list-health-checks</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
 When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">HealthChecks</span></tt></p>
 </div>
@@ -144,7 +142,7 @@ When using <tt class="docutils literal"><span class="pre">--output</span> <span 
 [--cli-input-json &lt;value&gt;]
 [--starting-token &lt;value&gt;]
 [--page-size &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
@@ -160,8 +158,8 @@ Performs service operation based on the JSON string provided. The JSON string fo
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--page-size" class="dashAnchor" id="page-size"></a><span class="pre">--page-size</span></tt> (string)</p>
 <blockquote>
 <div>The size of each page.</div></blockquote>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
@@ -180,128 +178,213 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
 <p>HealthChecks -&gt; (list)</p>
 <blockquote>
-<div><p>A complex type that contains information about the health checks associated with the current AWS account.</p>
+<div><p>A complex type that contains one <tt class="docutils literal"><span class="pre">HealthCheck</span></tt> element for each health check that is associated with the current AWS account.</p>
 <p>(structure)</p>
 <blockquote>
-<div><p>A complex type that contains identifying information about the health check.</p>
+<div><p>A complex type that contains information about one health check that is associated with the current AWS account.</p>
 <p>Id -&gt; (string)</p>
 <blockquote>
-<div>The ID of the specified health check.</div></blockquote>
+<div>The identifier that Amazon Route 53assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long.</div></blockquote>
 <p>CallerReference -&gt; (string)</p>
 <blockquote>
-<div>A unique string that identifies the request to create the health check.</div></blockquote>
+<div>A unique string that you specified when you created the health check.</div></blockquote>
 <p>HealthCheckConfig -&gt; (structure)</p>
 <blockquote>
-<div><p>A complex type that contains the health check configuration.</p>
+<div><p>A complex type that contains detailed information about one health check.</p>
 <p>IPAddress -&gt; (string)</p>
 <blockquote>
-<div>IP Address of the instance being checked.</div></blockquote>
+<div><p>The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to perform health checks on. If you don't specify a value for <tt class="docutils literal"><span class="pre">IPAddress</span></tt> , Amazon Route 53 sends a DNS request to resolve the domain name that you specify in <tt class="docutils literal"><span class="pre">FullyQualifiedDomainName</span></tt> at the interval that you specify in <tt class="docutils literal"><span class="pre">RequestInterval</span></tt> . Using an IP address returned by DNS, Amazon Route 53 then checks the health of the endpoint.</p>
+<p>Use one of the following formats for the value of <tt class="docutils literal"><span class="pre">IPAddress</span></tt> :</p>
+<ul class="simple">
+<li><strong>IPv4 address</strong> : four values between 0 and 255, separated by periods (.), for example, <tt class="docutils literal"><span class="pre">192.0.2.44</span></tt> .</li>
+<li><strong>IPv6 address</strong> : eight groups of four hexadecimal values, separated by colons (:), for example, <tt class="docutils literal"><span class="pre">2001:0db8:85a3:0000:0000:abcd:0001:2345</span></tt> . You can also shorten IPv6 addresses as described in RFC 5952, for example, <tt class="docutils literal"><span class="pre">2001:db8:85a3::abcd:1:2345</span></tt> .</li>
+</ul>
+<p>If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your EC2 instance, and specify the Elastic IP address for <tt class="docutils literal"><span class="pre">IPAddress</span></tt> . This ensures that the IP address of your instance will never change.</p>
+<p>For more information, see  HealthCheckConfig$FullyQualifiedDomainName .</p>
+<p>Constraints: Amazon Route 53 can't check the health of endpoints for which the IP address is in local, private, non-routable, or multicast ranges. For more information about IP addresses for which you can't create health checks, see the following documents:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a></li>
+<li><a class="reference external" href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for Shared Address Space</a></li>
+<li><a class="reference external" href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a></li>
+</ul>
+<p>When the value of <tt class="docutils literal"><span class="pre">Type</span></tt> is <tt class="docutils literal"><span class="pre">CALCULATED</span></tt> or <tt class="docutils literal"><span class="pre">CLOUDWATCH_METRIC</span></tt> , omit <tt class="docutils literal"><span class="pre">IPAddress</span></tt> .</p>
+</div></blockquote>
 <p>Port -&gt; (integer)</p>
 <blockquote>
-<div>Port on which connection will be opened to the instance to health check. For HTTP and HTTP_STR_MATCH this defaults to 80 if the port is not specified. For HTTPS and HTTPS_STR_MATCH this defaults to 443 if the port is not specified.</div></blockquote>
+<div>The port on the endpoint on which you want Amazon Route 53 to perform health checks. Specify a value for Port only when you specify a value for <tt class="docutils literal"><span class="pre">IPAddress</span></tt> .</div></blockquote>
 <p>Type -&gt; (string)</p>
 <blockquote>
-<div>The type of health check to be performed. Currently supported types are TCP, HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, CALCULATED and CLOUDWATCH_METRIC.</div></blockquote>
+<div><p>The type of health check that you want to create, which indicates how Amazon Route 53 determines whether an endpoint is healthy.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">You can't change the value of <tt class="docutils literal"><span class="pre">Type</span></tt> after you create a health check.</p>
+</div>
+<p>You can create the following types of health checks:</p>
+<ul class="simple">
+<li><strong>HTTP</strong> : Amazon Route 53 tries to establish a TCP connection. If successful, Amazon Route 53 submits an HTTP request and waits for an HTTP status code of 200 or greater and less than 400.</li>
+<li><strong>HTTPS</strong> : Amazon Route 53 tries to establish a TCP connection. If successful, Amazon Route 53 submits an HTTPS request and waits for an HTTP status code of 200 or greater and less than 400.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If you specify <tt class="docutils literal"><span class="pre">HTTPS</span></tt> for the value of <tt class="docutils literal"><span class="pre">Type</span></tt> , the endpoint must support TLS v1.0 or later.</p>
+</div>
+<ul class="simple">
+<li><strong>HTTP_STR_MATCH</strong> : Amazon Route 53 tries to establish a TCP connection. If successful, Amazon Route 53 submits an HTTP request and searches the first 5,120 bytes of the response body for the string that you specify in <tt class="docutils literal"><span class="pre">SearchString</span></tt> .</li>
+<li><strong>HTTPS_STR_MATCH</strong> : Amazon Route 53 tries to establish a TCP connection. If successful, Amazon Route 53 submits an <tt class="docutils literal"><span class="pre">HTTPS</span></tt> request and searches the first 5,120 bytes of the response body for the string that you specify in <tt class="docutils literal"><span class="pre">SearchString</span></tt> .</li>
+<li><strong>TCP</strong> : Amazon Route 53 tries to establish a TCP connection.</li>
+<li><strong>CLOUDWATCH_METRIC</strong> : The health check is associated with a CloudWatch alarm. If the state of the alarm is <tt class="docutils literal"><span class="pre">OK</span></tt> , the health check is considered healthy. If the state is <tt class="docutils literal"><span class="pre">ALARM</span></tt> , the health check is considered unhealthy. If CloudWatch doesn't have sufficient data to determine whether the state is <tt class="docutils literal"><span class="pre">OK</span></tt> or <tt class="docutils literal"><span class="pre">ALARM</span></tt> , the health check status depends on the setting for <tt class="docutils literal"><span class="pre">InsufficientDataHealthStatus</span></tt> : <tt class="docutils literal"><span class="pre">Healthy</span></tt> , <tt class="docutils literal"><span class="pre">Unhealthy</span></tt> , or <tt class="docutils literal"><span class="pre">LastKnownStatus</span></tt> .</li>
+<li><strong>CALCULATED</strong> : For health checks that monitor the status of other health checks, Amazon Route 53 adds up the number of health checks that Amazon Route 53 health checkers consider to be healthy and compares that number with the value of <tt class="docutils literal"><span class="pre">HealthThreshold</span></tt> .</li>
+</ul>
+<p>For more information about how Amazon Route 53 determines whether an endpoint is healthy, see the introduction to this topic.</p>
+</div></blockquote>
 <p>ResourcePath -&gt; (string)</p>
 <blockquote>
-<div>Path to ping on the instance to check the health. Required for HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH health checks. The HTTP request is issued to the instance on the given port and path.</div></blockquote>
+<div>The path, if any, that you want Amazon Route 53 to request when performing health checks. The path can be any value for which your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, for example, the file /docs/route53-health-check.html.</div></blockquote>
 <p>FullyQualifiedDomainName -&gt; (string)</p>
 <blockquote>
-<div>Fully qualified domain name of the instance to be health checked.</div></blockquote>
+<div><p>Amazon Route 53 behavior depends on whether you specify a value for <tt class="docutils literal"><span class="pre">IPAddress</span></tt> .</p>
+<blockquote>
+<div><strong>If you specify a value for</strong>  <tt class="docutils literal"><span class="pre">IPAddress</span></tt> :</div></blockquote>
+<p>Amazon Route 53 sends health check requests to the specified IPv4 or IPv6 address and passes the value of <tt class="docutils literal"><span class="pre">FullyQualifiedDomainName</span></tt> in the <tt class="docutils literal"><span class="pre">Host</span></tt> header for all health checks except TCP health checks. This is typically the fully qualified DNS name of the endpoint on which you want Amazon Route 53 to perform health checks.</p>
+<p>When Amazon Route 53 checks the health of an endpoint, here is how it constructs the <tt class="docutils literal"><span class="pre">Host</span></tt> header:</p>
+<ul class="simple">
+<li>If you specify a value of <tt class="docutils literal"><span class="pre">80</span></tt> for <tt class="docutils literal"><span class="pre">Port</span></tt> and <tt class="docutils literal"><span class="pre">HTTP</span></tt> or <tt class="docutils literal"><span class="pre">HTTP_STR_MATCH</span></tt> for <tt class="docutils literal"><span class="pre">Type</span></tt> , Amazon Route 53 passes the value of <tt class="docutils literal"><span class="pre">FullyQualifiedDomainName</span></tt> to the endpoint in the Host header.</li>
+<li>If you specify a value of <tt class="docutils literal"><span class="pre">443</span></tt> for <tt class="docutils literal"><span class="pre">Port</span></tt> and <tt class="docutils literal"><span class="pre">HTTPS</span></tt> or <tt class="docutils literal"><span class="pre">HTTPS_STR_MATCH</span></tt> for <tt class="docutils literal"><span class="pre">Type</span></tt> , Amazon Route 53 passes the value of <tt class="docutils literal"><span class="pre">FullyQualifiedDomainName</span></tt> to the endpoint in the <tt class="docutils literal"><span class="pre">Host</span></tt> header.</li>
+<li>If you specify another value for <tt class="docutils literal"><span class="pre">Port</span></tt> and any value except <tt class="docutils literal"><span class="pre">TCP</span></tt> for <tt class="docutils literal"><span class="pre">Type</span></tt> , Amazon Route 53 passes <tt class="docutils literal"><span class="pre">FullyQualifiedDomainName:Port</span></tt> to the endpoint in the <tt class="docutils literal"><span class="pre">Host</span></tt> header.</li>
+</ul>
+<p>If you don't specify a value for <tt class="docutils literal"><span class="pre">FullyQualifiedDomainName</span></tt> , Amazon Route 53 substitutes the value of <tt class="docutils literal"><span class="pre">IPAddress</span></tt> in the <tt class="docutils literal"><span class="pre">Host</span></tt> header in each of the preceding cases.</p>
+<blockquote>
+<div><a href="#id1"><span class="problematic" id="id2">**</span></a>If you don't specify a value for <tt class="docutils literal"><span class="pre">IPAddress</span></tt> ** :</div></blockquote>
+<p>Amazon Route 53 sends a DNS request to the domain that you specify for <tt class="docutils literal"><span class="pre">FullyQualifiedDomainName</span></tt> at the interval that you specify for <tt class="docutils literal"><span class="pre">RequestInterval</span></tt> . Using an IPv4 address that DNS returns, Amazon Route 53 then checks the health of the endpoint.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you don't specify a value for <tt class="docutils literal"><span class="pre">IPAddress</span></tt> , Amazon Route 53 uses only IPv4 to send health checks to the endpoint. If there's no resource record set with a type of A for the name that you specify for <tt class="docutils literal"><span class="pre">FullyQualifiedDomainName</span></tt> , the health check fails with a "DNS resolution failed" error.</p>
+</div>
+<p>If you want to check the health of weighted, latency, or failover resource record sets and you choose to specify the endpoint only by <tt class="docutils literal"><span class="pre">FullyQualifiedDomainName</span></tt> , we recommend that you create a separate health check for each endpoint. For example, create a health check for each HTTP server that is serving content for www.example.com. For the value of <tt class="docutils literal"><span class="pre">FullyQualifiedDomainName</span></tt> , specify the domain name of the server (such as us-east-2-www.example.com), not the name of the resource record sets (www.example.com).</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">In this configuration, if you create a health check for which the value of <tt class="docutils literal"><span class="pre">FullyQualifiedDomainName</span></tt> matches the name of the resource record sets and you then associate the health check with those resource record sets, health check results will be unpredictable.</p>
+</div>
+<p>In addition, if the value that you specify for <tt class="docutils literal"><span class="pre">Type</span></tt> is <tt class="docutils literal"><span class="pre">HTTP</span></tt> , <tt class="docutils literal"><span class="pre">HTTPS</span></tt> , <tt class="docutils literal"><span class="pre">HTTP_STR_MATCH</span></tt> , or <tt class="docutils literal"><span class="pre">HTTPS_STR_MATCH</span></tt> , Amazon Route 53 passes the value of <tt class="docutils literal"><span class="pre">FullyQualifiedDomainName</span></tt> in the <tt class="docutils literal"><span class="pre">Host</span></tt> header, as it does when you specify a value for <tt class="docutils literal"><span class="pre">IPAddress</span></tt> . If the value of <tt class="docutils literal"><span class="pre">Type</span></tt> is <tt class="docutils literal"><span class="pre">TCP</span></tt> , Amazon Route 53 doesn't pass a <tt class="docutils literal"><span class="pre">Host</span></tt> header.</p>
+</div></blockquote>
 <p>SearchString -&gt; (string)</p>
 <blockquote>
-<div>A string to search for in the body of a health check response. Required for HTTP_STR_MATCH and HTTPS_STR_MATCH health checks. Amazon Route 53 considers case when searching for <tt class="docutils literal"><span class="pre">SearchString</span></tt> in the response body.</div></blockquote>
+<div><p>If the value of Type is <tt class="docutils literal"><span class="pre">HTTP_STR_MATCH</span></tt> or <tt class="docutils literal"><span class="pre">HTTP_STR_MATCH</span></tt> , the string that you want Amazon Route 53 to search for in the response body from the specified resource. If the string appears in the response body, Amazon Route 53 considers the resource healthy.</p>
+<p>Amazon Route 53 considers case when searching for <tt class="docutils literal"><span class="pre">SearchString</span></tt> in the response body.</p>
+</div></blockquote>
 <p>RequestInterval -&gt; (integer)</p>
 <blockquote>
-<div><p>The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next health-check request.</p>
-<p>Each Amazon Route 53 health checker makes requests at this interval. Valid values are 10 and 30. The default value is 30.</p>
+<div><p>The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next health check request. Each Amazon Route 53 health checker makes requests at this interval.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">You can't change the value of <tt class="docutils literal"><span class="pre">RequestInterval</span></tt> after you create a health check.</p>
+</div>
+<p>If you don't specify a value for <tt class="docutils literal"><span class="pre">RequestInterval</span></tt> , the default value is <tt class="docutils literal"><span class="pre">30</span></tt> seconds.</p>
 </div></blockquote>
 <p>FailureThreshold -&gt; (integer)</p>
 <blockquote>
-<div><p>The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint from unhealthy to healthy or vice versa.</p>
-<p>Valid values are integers between 1 and 10. For more information, see "How Amazon Route 53 Determines Whether an Endpoint Is Healthy" in the Amazon Route 53 Developer Guide.</p>
+<div><p>The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <em>Amazon Route 53 Developer Guide</em> .</p>
+<p>If you don't specify a value for <tt class="docutils literal"><span class="pre">FailureThreshold</span></tt> , the default value is three health checks.</p>
 </div></blockquote>
 <p>MeasureLatency -&gt; (boolean)</p>
 <blockquote>
-<div>A Boolean value that indicates whether you want Amazon Route 53 to measure the latency between health checkers in multiple AWS regions and your endpoint and to display CloudWatch latency graphs in the Amazon Route 53 console.</div></blockquote>
+<div><p>Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple AWS regions and your endpoint, and to display CloudWatch latency graphs on the <strong>Health Checks</strong> page in the Amazon Route 53 console.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">You can't change the value of <tt class="docutils literal"><span class="pre">MeasureLatency</span></tt> after you create a health check.</p>
+</div>
+</div></blockquote>
 <p>Inverted -&gt; (boolean)</p>
 <blockquote>
-<div>A boolean value that indicates whether the status of health check should be inverted. For example, if a health check is healthy but <tt class="docutils literal"><span class="pre">Inverted</span></tt> is <tt class="docutils literal"><span class="pre">True</span></tt> , then Amazon Route 53 considers the health check to be unhealthy.</div></blockquote>
+<div>Specify whether you want Amazon Route 53 to invert the status of a health check, for example, to consider a health check unhealthy when it otherwise would be considered healthy.</div></blockquote>
 <p>HealthThreshold -&gt; (integer)</p>
 <blockquote>
-<div>The minimum number of child health checks that must be healthy for Amazon Route 53 to consider the parent health check to be healthy. Valid values are integers between 0 and 256, inclusive.</div></blockquote>
+<div><p>The number of child health checks that are associated with a <tt class="docutils literal"><span class="pre">CALCULATED</span></tt> health that Amazon Route 53 must consider healthy for the <tt class="docutils literal"><span class="pre">CALCULATED</span></tt> health check to be considered healthy. To specify the child health checks that you want to associate with a <tt class="docutils literal"><span class="pre">CALCULATED</span></tt> health check, use the  HealthCheckConfig$ChildHealthChecks and  HealthCheckConfig$ChildHealthChecks elements.</p>
+<p>Note the following:</p>
+<ul class="simple">
+<li>If you specify a number greater than the number of child health checks, Amazon Route 53 always considers this health check to be unhealthy.</li>
+<li>If you specify <tt class="docutils literal"><span class="pre">0</span></tt> , Amazon Route 53 always considers this health check to be healthy.</li>
+</ul>
+</div></blockquote>
 <p>ChildHealthChecks -&gt; (list)</p>
 <blockquote>
-<div><p>For a specified parent health check, a list of <tt class="docutils literal"><span class="pre">HealthCheckId</span></tt> values for the associated child health checks.</p>
+<div><p>(CALCULATED Health Checks Only) A complex type that contains one <tt class="docutils literal"><span class="pre">ChildHealthCheck</span></tt> element for each health check that you want to associate with a <tt class="docutils literal"><span class="pre">CALCULATED</span></tt> health check.</p>
 <p>(string)</p>
 </div></blockquote>
 <p>EnableSNI -&gt; (boolean)</p>
 <blockquote>
-<div>Specify whether you want Amazon Route 53 to send the value of <tt class="docutils literal"><span class="pre">FullyQualifiedDomainName</span></tt> to the endpoint in the <tt class="docutils literal"><span class="pre">client_hello</span></tt> message during TLS negotiation. If you don't specify a value for <tt class="docutils literal"><span class="pre">EnableSNI</span></tt> , Amazon Route 53 defaults to <tt class="docutils literal"><span class="pre">true</span></tt> when <tt class="docutils literal"><span class="pre">Type</span></tt> is <tt class="docutils literal"><span class="pre">HTTPS</span></tt> or <tt class="docutils literal"><span class="pre">HTTPS_STR_MATCH</span></tt> and defaults to <tt class="docutils literal"><span class="pre">false</span></tt> when <tt class="docutils literal"><span class="pre">Type</span></tt> is any other value.</div></blockquote>
+<div><p>Specify whether you want Amazon Route 53 to send the value of <tt class="docutils literal"><span class="pre">FullyQualifiedDomainName</span></tt> to the endpoint in the <tt class="docutils literal"><span class="pre">client_hello</span></tt> message during TLS negotiation. This allows the endpoint to respond to <tt class="docutils literal"><span class="pre">HTTPS</span></tt> health check requests with the applicable SSL/TLS certificate.</p>
+<p>Some endpoints require that <tt class="docutils literal"><span class="pre">HTTPS</span></tt> requests include the host name in the <tt class="docutils literal"><span class="pre">client_hello</span></tt> message. If you don't enable SNI, the status of the health check will be <tt class="docutils literal"><span class="pre">SSL</span> <span class="pre">alert</span> <span class="pre">handshake_failure</span></tt> . A health check can also have that status for other reasons. If SNI is enabled and you're still getting the error, check the SSL/TLS configuration on your endpoint and confirm that your certificate is valid.</p>
+<p>The SSL/TLS certificate on your endpoint includes a domain name in the <tt class="docutils literal"><span class="pre">Common</span> <span class="pre">Name</span></tt> field and possibly several more in the <tt class="docutils literal"><span class="pre">Subject</span> <span class="pre">Alternative</span> <span class="pre">Names</span></tt> field. One of the domain names in the certificate should match the value that you specify for <tt class="docutils literal"><span class="pre">FullyQualifiedDomainName</span></tt> . If the endpoint responds to the <tt class="docutils literal"><span class="pre">client_hello</span></tt> message with a certificate that does not include the domain name that you specified in <tt class="docutils literal"><span class="pre">FullyQualifiedDomainName</span></tt> , a health checker will retry the handshake. In the second attempt, the health checker will omit <tt class="docutils literal"><span class="pre">FullyQualifiedDomainName</span></tt> from the <tt class="docutils literal"><span class="pre">client_hello</span></tt> message.</p>
+</div></blockquote>
 <p>Regions -&gt; (list)</p>
 <blockquote>
-<div><p>A list of <tt class="docutils literal"><span class="pre">HealthCheckRegion</span></tt> values that you want Amazon Route 53 to use to perform health checks for the specified endpoint. You must specify at least three regions.</p>
+<div><p>A complex type that contains one <tt class="docutils literal"><span class="pre">Region</span></tt> element for each region from which you want Amazon Route 53 health checkers to check the specified endpoint.</p>
+<p>If you don't specify any regions, Amazon Route 53 health checkers automatically performs checks from all of the regions that are listed under <strong>Valid Values</strong> .</p>
+<p>If you update a health check to remove a region that has been performing health checks, Amazon Route 53 will briefly continue to perform checks from that region to ensure that some health checkers are always checking the endpoint (for example, if you replace three regions with four different regions).</p>
 <p>(string)</p>
-<blockquote>
-<div>An Amazon EC2 region that you want Amazon Route 53 to use to perform health checks.</div></blockquote>
 </div></blockquote>
 <p>AlarmIdentifier -&gt; (structure)</p>
 <blockquote>
-<div><p>A complex type that contains information to uniquely identify the CloudWatch alarm that you're associating with a Route 53 health check.</p>
+<div><p>A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether this health check is healthy.</p>
 <p>Region -&gt; (string)</p>
 <blockquote>
-<div>The <tt class="docutils literal"><span class="pre">CloudWatchRegion</span></tt> that the CloudWatch alarm was created in.</div></blockquote>
+<div><p>A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether this health check is healthy.</p>
+<p>For the current list of CloudWatch regions, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon CloudWatch</a> in the <em>AWS Regions and Endpoints</em> chapter of the <em>Amazon Web Services General Reference</em> .</p>
+</div></blockquote>
 <p>Name -&gt; (string)</p>
 <blockquote>
-<div>The name of the CloudWatch alarm.</div></blockquote>
+<div>The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether this health check is healthy.</div></blockquote>
 </div></blockquote>
 <p>InsufficientDataHealthStatus -&gt; (string)</p>
 <blockquote>
-<div>The status of the health check when CloudWatch has insufficient data about the state of associated alarm. Valid values are <tt class="docutils literal"><span class="pre">Healthy</span></tt> , <tt class="docutils literal"><span class="pre">Unhealthy</span></tt> and <tt class="docutils literal"><span class="pre">LastKnownStatus</span></tt> .</div></blockquote>
+<div><p>When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you want Amazon Route 53 to assign to the health check:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Healthy</span></tt> : Amazon Route 53 considers the health check to be healthy.</li>
+<li><tt class="docutils literal"><span class="pre">Unhealthy</span></tt> : Amazon Route 53 considers the health check to be unhealthy.</li>
+<li><tt class="docutils literal"><span class="pre">LastKnownStatus</span></tt> : Amazon Route 53uses the status of the health check from the last time CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known status, the default status for the health check is healthy.</li>
+</ul>
+</div></blockquote>
 </div></blockquote>
 <p>HealthCheckVersion -&gt; (long)</p>
 <blockquote>
 <div>The version of the health check. You can optionally pass this value in a call to <tt class="docutils literal"><span class="pre">update-health-check</span></tt> to prevent overwriting another change to the health check.</div></blockquote>
 <p>CloudWatchAlarmConfiguration -&gt; (structure)</p>
 <blockquote>
-<div><p>For CLOUDWATCH_METRIC health checks, a complex type that contains information about the CloudWatch alarm that you're associating with the health check.</p>
+<div><p>A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check.</p>
 <p>EvaluationPeriods -&gt; (integer)</p>
 <blockquote>
-<div>The number of periods over which data is compared to the specified threshold.</div></blockquote>
+<div>For the metric that the CloudWatch alarm is associated with, the number of periods that the metric is compared to the threshold.</div></blockquote>
 <p>Threshold -&gt; (double)</p>
 <blockquote>
-<div>The value that the metric is compared with to determine the state of the alarm. For example, if you want the health check to fail if the average TCP connection time is greater than 500 milliseconds for more than 60 seconds, the threshold is 500.</div></blockquote>
+<div>For the metric that the CloudWatch alarm is associated with, the value the metric is compared with.</div></blockquote>
 <p>ComparisonOperator -&gt; (string)</p>
 <blockquote>
-<div><p>The arithmetic operation to use when comparing the specified Statistic and Threshold.</p>
-<p>Valid Values are <tt class="docutils literal"><span class="pre">GreaterThanOrEqualToThreshold</span></tt> , <tt class="docutils literal"><span class="pre">GreaterThanThreshold</span></tt> , <tt class="docutils literal"><span class="pre">LessThanThreshold</span></tt> and <tt class="docutils literal"><span class="pre">LessThanOrEqualToThreshold</span></tt></p>
-</div></blockquote>
+<div>For the metric that the CloudWatch alarm is associated with, the arithmetic operation that is used for the comparison.</div></blockquote>
 <p>Period -&gt; (integer)</p>
 <blockquote>
-<div>An integer that represents the period in seconds over which the statistic is applied.</div></blockquote>
+<div>For the metric that the CloudWatch alarm is associated with, the duration of one evaluation period in seconds.</div></blockquote>
 <p>MetricName -&gt; (string)</p>
 <blockquote>
-<div>The name of the CloudWatch metric that is associated with the CloudWatch alarm.</div></blockquote>
+<div>The name of the CloudWatch metric that the alarm is associated with.</div></blockquote>
 <p>Namespace -&gt; (string)</p>
 <blockquote>
-<div>The namespace of the CloudWatch metric that is associated with the CloudWatch alarm.</div></blockquote>
+<div>The namespace of the metric that the alarm is associated with. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <em>Amazon CloudWatch User Guide</em> .</div></blockquote>
 <p>Statistic -&gt; (string)</p>
 <blockquote>
-<div><p>The statistic to apply to the CloudWatch metric that is associated with the CloudWatch alarm.</p>
-<p>Valid Values are <tt class="docutils literal"><span class="pre">SampleCount</span></tt> , <tt class="docutils literal"><span class="pre">Average</span></tt> , <tt class="docutils literal"><span class="pre">Sum</span></tt> , <tt class="docutils literal"><span class="pre">Minimum</span></tt> and <tt class="docutils literal"><span class="pre">Maximum</span></tt></p>
-</div></blockquote>
+<div>For the metric that the CloudWatch alarm is associated with, the statistic that is applied to the metric.</div></blockquote>
 <p>Dimensions -&gt; (list)</p>
 <blockquote>
-<div><p>A list of <tt class="docutils literal"><span class="pre">Dimension</span></tt> elements for the CloudWatch metric that is associated with the CloudWatch alarm. For information about the metrics and dimensions that CloudWatch supports, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> .</p>
+<div><p>For the metric that the CloudWatch alarm is associated with, a complex type that contains information about the dimensions for the metric.For information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <em>Amazon CloudWatch User Guide</em> .</p>
 <p>(structure)</p>
 <blockquote>
-<div><p>The name and value of a dimension for a CloudWatch metric.</p>
+<div><p>For the metric that the CloudWatch alarm is associated with, a complex type that contains information about one dimension.</p>
 <p>Name -&gt; (string)</p>
 <blockquote>
-<div>The name of the dimension.</div></blockquote>
+<div>For the metric that the CloudWatch alarm is associated with, the name of one dimension.</div></blockquote>
 <p>Value -&gt; (string)</p>
 <blockquote>
-<div>The value of the dimension.</div></blockquote>
+<div>For the metric that the CloudWatch alarm is associated with, the value of one dimension.</div></blockquote>
 </div></blockquote>
 </div></blockquote>
 </div></blockquote>
@@ -309,18 +392,18 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 </div></blockquote>
 <p>Marker -&gt; (string)</p>
 <blockquote>
-<div>If the request returned more than one page of results, submit another request and specify the value of <tt class="docutils literal"><span class="pre">NextMarker</span></tt> from the last response in the <tt class="docutils literal"><span class="pre">marker</span></tt> parameter to get the next page of results.</div></blockquote>
+<div>For the second and subsequent calls to <tt class="docutils literal"><span class="pre">list-health-checks</span></tt> , <tt class="docutils literal"><span class="pre">Marker</span></tt> is the value that you specified for the marker parameter in the previous request.</div></blockquote>
 <p>IsTruncated -&gt; (boolean)</p>
 <blockquote>
-<div><p>A flag indicating whether there are more health checks to be listed. If your results were truncated, you can make a follow-up request for the next page of results by using the <tt class="docutils literal"><span class="pre">Marker</span></tt> element.</p>
+<div><p>A flag that indicates whether there are more health checks to be listed. If the response was truncated, you can get the next group of <tt class="docutils literal"><span class="pre">maxitems</span></tt> health checks by calling <tt class="docutils literal"><span class="pre">list-health-checks</span></tt> again and specifying the value of the <tt class="docutils literal"><span class="pre">NextMarker</span></tt> element in the marker parameter.</p>
 <p>Valid Values: <tt class="docutils literal"><span class="pre">true</span></tt> | <tt class="docutils literal"><span class="pre">false</span></tt></p>
 </div></blockquote>
 <p>NextMarker -&gt; (string)</p>
 <blockquote>
-<div>Indicates where to continue listing health checks. If  ListHealthChecksResponse$IsTruncated is <tt class="docutils literal"><span class="pre">true</span></tt> , make another request to <tt class="docutils literal"><span class="pre">list-health-checks</span></tt> and include the value of the <tt class="docutils literal"><span class="pre">NextMarker</span></tt> element in the <tt class="docutils literal"><span class="pre">Marker</span></tt> element to get the next page of results.</div></blockquote>
+<div>If <tt class="docutils literal"><span class="pre">IsTruncated</span></tt> is <tt class="docutils literal"><span class="pre">true</span></tt> , the value of <tt class="docutils literal"><span class="pre">NextMarker</span></tt> identifies the first health check in the next group of <tt class="docutils literal"><span class="pre">maxitems</span></tt> health checks. Call <tt class="docutils literal"><span class="pre">list-health-checks</span></tt> again and specify the value of <tt class="docutils literal"><span class="pre">NextMarker</span></tt> in the marker parameter.</div></blockquote>
 <p>MaxItems -&gt; (string)</p>
 <blockquote>
-<div>The maximum number of health checks to be included in the response body. If the number of health checks associated with this AWS account exceeds <tt class="docutils literal"><span class="pre">MaxItems</span></tt> , the value of  ListHealthChecksResponse$IsTruncated in the response is <tt class="docutils literal"><span class="pre">true</span></tt> . Call <tt class="docutils literal"><span class="pre">list-health-checks</span></tt> again and specify the value of  ListHealthChecksResponse$NextMarker in the  ListHostedZonesRequest$Marker element to get the next page of results.</div></blockquote>
+<div>The value that you specified for the <tt class="docutils literal"><span class="pre">maxitems</span></tt> parameter in the call to <tt class="docutils literal"><span class="pre">list-health-checks</span></tt> that produced the current response.</div></blockquote>
 </div>
 </div>
 
@@ -360,7 +443,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
           <a href="list-hosted-zones.html" title="list-hosted-zones">next</a> |</li>
         <li class="right">
           <a href="list-geo-locations.html" title="list-geo-locations">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">route53</a> &#187;</li> 
       </ul>
@@ -376,5 +459,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53/list-health-checks.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:28 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/route53/list-health-checks.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:28 GMT -->
 </html>

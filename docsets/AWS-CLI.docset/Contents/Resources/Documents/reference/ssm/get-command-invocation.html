@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ssm/get-command-invocation.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:29 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-command-invocation &#8212; AWS CLI 1.11.61 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.11.61',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="ssm" href="index.html" />
+    <link rel="next" title="get-default-patch-baseline" href="get-default-patch-baseline.html" />
+    <link rel="prev" title="get-automation-execution" href="get-automation-execution.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="get-default-patch-baseline.html" title="get-default-patch-baseline" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="get-automation-execution.html" title="get-automation-execution" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">ssm</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-automation-execution.html" title="previous chapter (use the left arrow)">&#8592; get-automation-execution</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="get-default-patch-baseline.html" title="next chapter (use the right arrow)">get-default-patch-baseline &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-command-invocation</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/ssm/get-command-invocation">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-ssm"><em>ssm</em></a> ]</p>
+<div class="section" id="get-command-invocation">
+<span id="cli-aws-ssm-get-command-invocation"></span><h1>get-command-invocation<a name="//apple_ref/cpp/Command/aws ssm get-command-invocation" class="dashAnchor" id="aws ssm get-command-invocation"></a><a class="headerlink" href="#get-command-invocation" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Returns detailed information about command execution for an invocation or plugin.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">AWS API Documentation</a></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  get-command-invocation
+--command-id &lt;value&gt;
+--instance-id &lt;value&gt;
+[--plugin-name &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--command-id" class="dashAnchor" id="command-id"></a><span class="pre">--command-id</span></tt> (string)</p>
+<blockquote>
+<div>(Required) The parent command ID of the invocation plugin.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--instance-id" class="dashAnchor" id="instance-id"></a><span class="pre">--instance-id</span></tt> (string)</p>
+<blockquote>
+<div>(Required) The ID of the managed instance targeted by the command. A managed instance can be an Amazon EC2 instance or an instance in your hybrid environment that is configured for Systems Manager.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--plugin-name" class="dashAnchor" id="plugin-name"></a><span class="pre">--plugin-name</span></tt> (string)</p>
+<blockquote>
+<div>(Optional) The name of the plugin for which you want detailed results. If the SSM document contains only one plugin, the name can be omitted and the details will be returned.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To display the details of a command invocation</strong></p>
+<p>This example displays the details of Command ID <tt class="docutils literal"><span class="pre">bca3371c-3fdf-43f1-9323-7a7780b1b4db</span></tt> executed on Instance ID <tt class="docutils literal"><span class="pre">i-0000293ffd8c57862</span></tt>.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ssm get-command-invocation --command-id "bca3371c-3fdf-43f1-9323-7a7780b1b4db" --instance-id "i-0000293ffd8c57862"</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">"Comment"</span><span class="p">:</span> <span class="s2">"Apply association with id at creation time: a052fd99-0852-4df2-ad69-0299f2c82047"</span><span class="p">,</span>
+  <span class="s2">"Status"</span><span class="p">:</span> <span class="s2">"SUCCESS"</span><span class="p">,</span>
+  <span class="s2">"ExecutionEndDateTime"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"StandardErrorContent"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"InstanceId"</span><span class="p">:</span> <span class="s2">"i-0000293ffd8c57862"</span><span class="p">,</span>
+  <span class="s2">"StandardErrorUrl"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"DocumentName"</span><span class="p">:</span> <span class="s2">"AWS-RefreshAssociation"</span><span class="p">,</span>
+  <span class="s2">"StandardOutputContent"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"PluginName"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"ResponseCode"</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+  <span class="s2">"CommandId"</span><span class="p">:</span> <span class="s2">"bca3371c-3fdf-43f1-9323-7a7780b1b4db"</span><span class="p">,</span>
+  <span class="s2">"StandardOutputUrl"</span><span class="p">:</span> <span class="s2">""</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>CommandId -&gt; (string)</p>
+<blockquote>
+<div>The parent command ID of the invocation plugin.</div></blockquote>
+<p>InstanceId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the managed instance targeted by the command. A managed instance can be an Amazon EC2 instance or an instance in your hybrid environment that is configured for Systems Manager.</div></blockquote>
+<p>Comment -&gt; (string)</p>
+<blockquote>
+<div>The comment text for the command.</div></blockquote>
+<p>DocumentName -&gt; (string)</p>
+<blockquote>
+<div>The name of the SSM document that was executed. For example, AWS-RunShellScript is an SSM document.</div></blockquote>
+<p>PluginName -&gt; (string)</p>
+<blockquote>
+<div>The name of the plugin for which you want detailed results. For example, aws:RunShellScript is a plugin.</div></blockquote>
+<p>ResponseCode -&gt; (integer)</p>
+<blockquote>
+<div>The error level response code for the plugin script. If the response code is <tt class="docutils literal"><span class="pre">-1</span></tt> , then the command has not started executing on the instance, or it was not received by the instance.</div></blockquote>
+<p>ExecutionStartDateTime -&gt; (string)</p>
+<blockquote>
+<div>The date and time the plugin started executing. Date and time are written in ISO 8601 format. For example, August 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the string is empty.</div></blockquote>
+<p>ExecutionElapsedTime -&gt; (string)</p>
+<blockquote>
+<div>Duration since <tt class="docutils literal"><span class="pre">ExecutionStartDateTime</span></tt> .</div></blockquote>
+<p>ExecutionEndDateTime -&gt; (string)</p>
+<blockquote>
+<div>The date and time the plugin was finished executing. Date and time are written in ISO 8601 format. For example, August 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the string is empty.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status of the parent command for this invocation. This status can be different than <tt class="docutils literal"><span class="pre">StatusDetails</span></tt> .</div></blockquote>
+<p>StatusDetails -&gt; (string)</p>
+<blockquote>
+<div><p>A detailed status of the command execution for an invocation. <tt class="docutils literal"><span class="pre">StatusDetails</span></tt> includes more information than <tt class="docutils literal"><span class="pre">Status</span></tt> because it includes states resulting from error and concurrency control parameters. <tt class="docutils literal"><span class="pre">StatusDetails</span></tt> can show different results than <tt class="docutils literal"><span class="pre">Status</span></tt> . For more information about these statuses, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor Commands</a> (Linux) or <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor Commands</a> (Windows). <tt class="docutils literal"><span class="pre">StatusDetails</span></tt> can be one of the following values:</p>
+<ul class="simple">
+<li>Pending &#8211; The command has not been sent to the instance.</li>
+<li>In Progress &#8211; The command has been sent to the instance but has not reached a terminal state.</li>
+<li>Delayed &#8211; The system attempted to send the command to the target, but the target was not available. The instance might not be available because of network issues, the instance was stopped, etc. The system will try to deliver the command again.</li>
+<li>Success &#8211; The command or plugin was executed successfully. This is a terminal state.</li>
+<li>Delivery Timed Out &#8211; The command was not delivered to the instance before the delivery timeout expired. Delivery timeouts do not count against the parent command&#8217;s <tt class="docutils literal"><span class="pre">MaxErrors</span></tt> limit, but they do contribute to whether the parent command status is <tt class="docutils literal"><span class="pre">Success</span></tt> or <tt class="docutils literal"><span class="pre">Incomplete</span></tt> . This is a terminal state.</li>
+<li>Execution Timed Out &#8211; The command started to execute on the instance, but the execution was not complete before the timeout expired. Execution timeouts count against the <tt class="docutils literal"><span class="pre">MaxErrors</span></tt> limit of the parent command. This is a terminal state.</li>
+<li>Failed &#8211; The command wasn't executed successfully on the instance. For a plugin, this indicates that the result code was not zero. For a command invocation, this indicates that the result code for one or more plugins was not zero. Invocation failures count against the <tt class="docutils literal"><span class="pre">MaxErrors</span></tt> limit of the parent command. This is a terminal state.</li>
+<li>Canceled &#8211; The command was terminated before it was completed. This is a terminal state.</li>
+<li>Undeliverable &#8211; The command can't be delivered to the instance. The instance might not exist or might not be responding. Undeliverable invocations don't count against the parent command&#8217;s <tt class="docutils literal"><span class="pre">MaxErrors</span></tt> limit and don't contribute to whether the parent command status is <tt class="docutils literal"><span class="pre">Success</span></tt> or <tt class="docutils literal"><span class="pre">Incomplete</span></tt> . This is a terminal state.</li>
+<li>Terminated &#8211; The parent command exceeded its <tt class="docutils literal"><span class="pre">MaxErrors</span></tt> limit and subsequent command invocations were canceled by the system. This is a terminal state.</li>
+</ul>
+</div></blockquote>
+<p>StandardOutputContent -&gt; (string)</p>
+<blockquote>
+<div>The first 24,000 characters written by the plugin to stdout. If the command has not finished executing, if <tt class="docutils literal"><span class="pre">ExecutionStatus</span></tt> is neither <tt class="docutils literal"><span class="pre">Succeeded</span></tt> nor <tt class="docutils literal"><span class="pre">Failed</span></tt> , then this string is empty.</div></blockquote>
+<p>StandardOutputUrl -&gt; (string)</p>
+<blockquote>
+<div>The URL for the complete text written by the plugin to stdout in Amazon S3. If an Amazon S3 bucket was not specified, then this string is empty.</div></blockquote>
+<p>StandardErrorContent -&gt; (string)</p>
+<blockquote>
+<div>The first 8,000 characters written by the plugin to stderr. If the command has not finished executing, then this string is empty.</div></blockquote>
+<p>StandardErrorUrl -&gt; (string)</p>
+<blockquote>
+<div>The URL for the complete text written by the plugin to stderr. If the command has not finished executing, then this string is empty.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-automation-execution.html" title="previous chapter (use the left arrow)">&#8592; get-automation-execution</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="get-default-patch-baseline.html" title="next chapter (use the right arrow)">get-default-patch-baseline &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="get-default-patch-baseline.html" title="get-default-patch-baseline">next</a> |</li>
+        <li class="right">
+          <a href="get-automation-execution.html" title="get-automation-execution">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">ssm</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ssm/get-command-invocation.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:29 GMT -->
+</html>

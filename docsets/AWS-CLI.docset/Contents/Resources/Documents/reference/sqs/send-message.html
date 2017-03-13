@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/sqs/send-message.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/sqs/send-message.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:29 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>send-message &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>send-message &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="sqs" href="index.html" />
     <link rel="next" title="send-message-batch" href="send-message-batch.html" />
     <link rel="prev" title="remove-permission" href="remove-permission.html" />
@@ -64,7 +64,7 @@
           <a href="send-message-batch.html" title="send-message-batch" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="remove-permission.html" title="remove-permission" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">sqs</a> &#187;</li> 
       </ul>
@@ -112,7 +112,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/sqs/send-message">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/sqs/send-message">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -129,12 +129,21 @@
 <span id="cli-aws-sqs-send-message"></span><h1>send-message<a name="//apple_ref/cpp/Command/aws sqs send-message" class="dashAnchor" id="aws sqs send-message"></a><a class="headerlink" href="#send-message" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Delivers a message to the specified queue. With Amazon SQS, you now have the ability to send large payload messages that are up to 256KB (262,144 bytes) in size. To send large payloads, you must use an AWS SDK that supports SigV4 signing. To verify whether SigV4 is supported for an AWS SDK, check the SDK release notes.</p>
+<p>Delivers a message to the specified queue.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p>The following list shows the characters (in Unicode) allowed in your message, according to the W3C XML specification. For more information, go to <a class="reference external" href="http://www.w3.org/TR/REC-xml/#charsets">http://www.w3.org/TR/REC-xml/#charsets</a> If you send any characters not included in the list, your request will be rejected.</p>
-<p class="last">#x9 | #xA | #xD | [#x20 to #xD7FF] | [#xE000 to #xFFFD] | [#x10000 to #x10FFFF]</p>
+<p>The following list shows the characters (in Unicode) that are allowed in your message, according to the W3C XML specification:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">#x9</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">#xA</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">#xD</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">#x20</span></tt> to <tt class="docutils literal"><span class="pre">#xD7FF</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">#xE000</span></tt> to <tt class="docutils literal"><span class="pre">#xFFFD</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">#x10000</span></tt> to <tt class="docutils literal"><span class="pre">#x10FFFF</span></tt></li>
+</ul>
+<p class="last">For more information, see <a class="reference external" href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a> . If you send any characters that aren't included in this list, your request is rejected.</p>
 </div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage">AWS API Documentation</a></p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
@@ -143,28 +152,49 @@
 --message-body &lt;value&gt;
 [--delay-seconds &lt;value&gt;]
 [--message-attributes &lt;value&gt;]
+[--message-deduplication-id &lt;value&gt;]
+[--message-group-id &lt;value&gt;]
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
 <h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--queue-url" class="dashAnchor" id="queue-url"></a><span class="pre">--queue-url</span></tt> (string)</p>
 <blockquote>
-<div><p>The URL of the Amazon SQS queue to take action on.</p>
+<div><p>The URL of the Amazon SQS queue to which a message is sent.</p>
 <p>Queue URLs are case-sensitive.</p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--message-body" class="dashAnchor" id="message-body"></a><span class="pre">--message-body</span></tt> (string)</p>
 <blockquote>
-<div>The message to send. queue-url maximum 256 KB in size. For a list of allowed characters, see the preceding important note.</div></blockquote>
+<div><p>The message to send. The maximum string size is 256 KB.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>The following list shows the characters (in Unicode) that are allowed in your message, according to the W3C XML specification:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">#x9</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">#xA</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">#xD</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">#x20</span></tt> to <tt class="docutils literal"><span class="pre">#xD7FF</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">#xE000</span></tt> to <tt class="docutils literal"><span class="pre">#xFFFD</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">#x10000</span></tt> to <tt class="docutils literal"><span class="pre">#x10FFFF</span></tt></li>
+</ul>
+<p class="last">For more information, see <a class="reference external" href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a> . If you send any characters that aren't included in this list, your request is rejected.</p>
+</div>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--delay-seconds" class="dashAnchor" id="delay-seconds"></a><span class="pre">--delay-seconds</span></tt> (integer)</p>
 <blockquote>
-<div>The number of seconds (0 to 900 - 15 minutes) to delay a specific message. Messages with a positive <tt class="docutils literal"><span class="pre">DelaySeconds</span></tt> value become available for processing after the delay time is finished. If you don't specify a value, the default value for the queue applies.</div></blockquote>
+<div><p>The number of seconds to delay a specific message. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive <tt class="docutils literal"><span class="pre">DelaySeconds</span></tt> value become available for processing after the delay period is finished. If you don't specify a value, the default value for the queue applies.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When you set <tt class="docutils literal"><span class="pre">FifoQueue</span></tt> , you can't set <tt class="docutils literal"><span class="pre">DelaySeconds</span></tt> per message. You can set this parameter only on a queue level.</p>
+</div>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--message-attributes" class="dashAnchor" id="message-attributes"></a><span class="pre">--message-attributes</span></tt> (map)</p>
 <blockquote>
-<div>Each message attribute consists of a Name, Type, and Value. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message Attribute Items</a> .</div></blockquote>
+<div>Each message attribute consists of a <tt class="docutils literal"><span class="pre">Name</span></tt> , <tt class="docutils literal"><span class="pre">Type</span></tt> , and <tt class="docutils literal"><span class="pre">Value</span></tt> . For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message Attribute Items and Validation</a> in the <em>Amazon SQS Developer Guide</em> .</div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">KeyName1</span><span class="o">=</span><span class="n">StringValue</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">BinaryValue</span><span class="o">=</span><span class="n">blob</span><span class="p">,</span><span class="n">StringListValues</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="n">BinaryListValues</span><span class="o">=</span><span class="n">blob</span><span class="p">,</span><span class="n">blob</span><span class="p">,</span><span class="n">DataType</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">KeyName2</span><span class="o">=</span><span class="n">StringValue</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">BinaryValue</span><span class="o">=</span><span class="n">blob</span><span class="p">,</span><span class="n">StringListValues</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="n">BinaryListValues</span><span class="o">=</span><span class="n">blob</span><span class="p">,</span><span class="n">blob</span><span class="p">,</span><span class="n">DataType</span><span class="o">=</span><span class="n">string</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">KeyName1</span><span class="o">=</span><span class="n">StringValue</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">BinaryValue</span><span class="o">=</span><span class="n">blob</span><span class="p">,</span><span class="n">StringListValues</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="n">BinaryListValues</span><span class="o">=</span><span class="n">blob</span><span class="p">,</span><span class="n">blob</span><span class="p">,</span><span class="n">DataType</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">KeyName2</span><span class="o">=</span><span class="n">StringValue</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">BinaryValue</span><span class="o">=</span><span class="n">blob</span><span class="p">,</span><span class="n">StringListValues</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="n">BinaryListValues</span><span class="o">=</span><span class="n">blob</span><span class="p">,</span><span class="n">blob</span><span class="p">,</span><span class="n">DataType</span><span class="o">=</span><span class="n">string</span>
 </pre></div>
 </div>
 <p>JSON Syntax:</p>
@@ -177,10 +207,45 @@
     }
   ...}</pre>
 </div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--message-deduplication-id" class="dashAnchor" id="message-deduplication-id"></a><span class="pre">--message-deduplication-id</span></tt> (string)</p>
+<blockquote>
+<div><p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
+<p>The token used for deduplication of sent messages. If a message with a particular <tt class="docutils literal"><span class="pre">MessageDeduplicationId</span></tt> is sent successfully, any messages sent with the same <tt class="docutils literal"><span class="pre">MessageDeduplicationId</span></tt> are accepted successfully but aren't delivered during the 5-minute deduplication interval. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once Processing</a> in the <em>Amazon SQS Developer Guide</em> .</p>
+<ul class="simple">
+<li>Every message must have a unique <tt class="docutils literal"><span class="pre">MessageDeduplicationId</span></tt> ,<ul>
+<li>You may provide a <tt class="docutils literal"><span class="pre">MessageDeduplicationId</span></tt> explicitly.</li>
+<li>If you aren't able to provide a <tt class="docutils literal"><span class="pre">MessageDeduplicationId</span></tt> and you enable <tt class="docutils literal"><span class="pre">ContentBasedDeduplication</span></tt> for your queue, Amazon SQS uses a SHA-256 hash to generate the <tt class="docutils literal"><span class="pre">MessageDeduplicationId</span></tt> using the body of the message (but not the attributes of the message).</li>
+<li>If you don't provide a <tt class="docutils literal"><span class="pre">MessageDeduplicationId</span></tt> and the queue doesn't have <tt class="docutils literal"><span class="pre">ContentBasedDeduplication</span></tt> set, the action fails with an error.</li>
+<li>If the queue has <tt class="docutils literal"><span class="pre">ContentBasedDeduplication</span></tt> set, your <tt class="docutils literal"><span class="pre">MessageDeduplicationId</span></tt> overrides the generated one.</li>
+</ul>
+</li>
+<li>When <tt class="docutils literal"><span class="pre">ContentBasedDeduplication</span></tt> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</li>
+<li>You can also use <tt class="docutils literal"><span class="pre">ContentBasedDeduplication</span></tt> for messages with identical content to be treated as duplicates.</li>
+<li>If you send one message with <tt class="docutils literal"><span class="pre">ContentBasedDeduplication</span></tt> enabled and then another message with a <tt class="docutils literal"><span class="pre">MessageDeduplicationId</span></tt> that is the same as the one generated for the first <tt class="docutils literal"><span class="pre">MessageDeduplicationId</span></tt> , the two messages are treated as duplicates and only one copy of the message is delivered.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The <tt class="docutils literal"><span class="pre">MessageDeduplicationId</span></tt> is available to the recipient of the message (this can be useful for troubleshooting delivery issues).</p>
+<p class="last">If a message is sent successfully but the acknowledgement is lost and the message is resent with the same <tt class="docutils literal"><span class="pre">MessageDeduplicationId</span></tt> after the deduplication interval, Amazon SQS can't detect duplicate messages.</p>
+</div>
+<p>The length of <tt class="docutils literal"><span class="pre">MessageDeduplicationId</span></tt> is 128 characters. <tt class="docutils literal"><span class="pre">MessageDeduplicationId</span></tt> can contain alphanumeric characters (<tt class="docutils literal"><span class="pre">a-z</span></tt> , <tt class="docutils literal"><span class="pre">A-Z</span></tt> , <tt class="docutils literal"><span class="pre">0-9</span></tt> ) and punctuation (<tt class="docutils literal"><span class="pre">!"#$%'()*+,-./:;=?@[\]^_`{|}~</span></tt> ).</p>
+<p>For best practices of using <tt class="docutils literal"><span class="pre">MessageDeduplicationId</span></tt> , see <a class="reference external" href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagededuplicationid-property">Using the MessageDeduplicationId Property</a> in the <em>Amazon Simple Queue Service Developer Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--message-group-id" class="dashAnchor" id="message-group-id"></a><span class="pre">--message-group-id</span></tt> (string)</p>
+<blockquote>
+<div><p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
+<p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single queue, use <tt class="docutils literal"><span class="pre">MessageGroupId</span></tt> values (for example, session data for multiple users). In this scenario, multiple readers can process the queue, but the session data of each user is processed in a FIFO fashion.</p>
+<ul class="simple">
+<li>You must associate a non-empty <tt class="docutils literal"><span class="pre">MessageGroupId</span></tt> with a message. If you don't provide a <tt class="docutils literal"><span class="pre">MessageGroupId</span></tt> , the action fails.</li>
+<li><tt class="docutils literal"><span class="pre">receive-message</span></tt> might return messages with multiple <tt class="docutils literal"><span class="pre">MessageGroupId</span></tt> values. For each <tt class="docutils literal"><span class="pre">MessageGroupId</span></tt> , the messages are sorted by time sent. The caller can't specify a <tt class="docutils literal"><span class="pre">MessageGroupId</span></tt> .</li>
+</ul>
+<p>The length of <tt class="docutils literal"><span class="pre">MessageGroupId</span></tt> is 128 characters. Valid values are alphanumeric characters and punctuation <tt class="docutils literal"><span class="pre">(!"#$%'()*+,-./:;=?@[\]^_`{|}~)</span></tt> .</p>
+<p>For best practices of using <tt class="docutils literal"><span class="pre">MessageGroupId</span></tt> , see <a class="reference external" href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property">Using the MessageGroupId Property</a> in the <em>Amazon Simple Queue Service Developer Guide</em> .</p>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
@@ -190,7 +255,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div class="highlight-python"><pre>aws sqs send-message --queue-url https://sqs.us-east-1.amazonaws.com/80398EXAMPLE/MyQueue --message-body "Information about the largest city in Any Region." --delay-seconds 10 --message-attributes file://send-message.json</pre>
 </div>
 <p>Input file (send-message.json):</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">"City"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"DataType"</span><span class="p">:</span> <span class="s2">"String"</span><span class="p">,</span>
     <span class="s2">"StringValue"</span><span class="p">:</span> <span class="s2">"Any City"</span>
@@ -207,7 +272,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 </pre></div>
 </div>
 <p>Output:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">"MD5OfMessageBody"</span><span class="p">:</span> <span class="s2">"51b0a325...39163aa0"</span><span class="p">,</span>
   <span class="s2">"MD5OfMessageAttributes"</span><span class="p">:</span> <span class="s2">"00484c68...59e48f06"</span><span class="p">,</span>
   <span class="s2">"MessageId"</span><span class="p">:</span> <span class="s2">"da68f62c-0c07-4bee-bf5f-7e856EXAMPLE"</span>
@@ -219,13 +284,19 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
 <p>MD5OfMessageBody -&gt; (string)</p>
 <blockquote>
-<div>An MD5 digest of the non-URL-encoded message body string. This can be used to verify that Amazon SQS received the message correctly. Amazon SQS first URL decodes the message before creating the MD5 digest. For information about MD5, go to <a class="reference external" href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a> .</div></blockquote>
+<div>An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information on MD5, see <a class="reference external" href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a> .</div></blockquote>
 <p>MD5OfMessageAttributes -&gt; (string)</p>
 <blockquote>
-<div>An MD5 digest of the non-URL-encoded message attribute string. This can be used to verify that Amazon SQS received the message correctly. Amazon SQS first URL decodes the message before creating the MD5 digest. For information about MD5, go to <a class="reference external" href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a> .</div></blockquote>
+<div>An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information on MD5, see <a class="reference external" href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a> .</div></blockquote>
 <p>MessageId -&gt; (string)</p>
 <blockquote>
-<div>An element containing the message ID of the message sent to the queue. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue and Message Identifiers</a> in the <em>Amazon SQS Developer Guide</em> .</div></blockquote>
+<div>An attribute containing the <tt class="docutils literal"><span class="pre">MessageId</span></tt> of the message sent to the queue. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue and Message Identifiers</a> in the <em>Amazon SQS Developer Guide</em> .</div></blockquote>
+<p>SequenceNumber -&gt; (string)</p>
+<blockquote>
+<div><p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
+<p>A large, non-consecutive number that Amazon SQS assigns to each message.</p>
+<p>The length of <tt class="docutils literal"><span class="pre">SequenceNumber</span></tt> is 128 bits. <tt class="docutils literal"><span class="pre">SequenceNumber</span></tt> continues to increase for a particular <tt class="docutils literal"><span class="pre">MessageGroupId</span></tt> .</p>
+</div></blockquote>
 </div>
 </div>
 
@@ -265,7 +336,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
           <a href="send-message-batch.html" title="send-message-batch">next</a> |</li>
         <li class="right">
           <a href="remove-permission.html" title="remove-permission">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">sqs</a> &#187;</li> 
       </ul>
@@ -281,5 +352,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/sqs/send-message.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/sqs/send-message.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:29 GMT -->
 </html>

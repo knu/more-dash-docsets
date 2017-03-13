@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ssm/describe-available-patches.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:29 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-available-patches &#8212; AWS CLI 1.11.61 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.11.61',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="ssm" href="index.html" />
+    <link rel="next" title="describe-document" href="describe-document.html" />
+    <link rel="prev" title="describe-automation-executions" href="describe-automation-executions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="describe-document.html" title="describe-document" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="describe-automation-executions.html" title="describe-automation-executions" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">ssm</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="describe-automation-executions.html" title="previous chapter (use the left arrow)">&#8592; describe-automation-executions</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="describe-document.html" title="next chapter (use the right arrow)">describe-document &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-available-patches</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/ssm/describe-available-patches">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-ssm"><em>ssm</em></a> ]</p>
+<div class="section" id="describe-available-patches">
+<span id="cli-aws-ssm-describe-available-patches"></span><h1>describe-available-patches<a name="//apple_ref/cpp/Command/aws ssm describe-available-patches" class="dashAnchor" id="aws ssm describe-available-patches"></a><a class="headerlink" href="#describe-available-patches" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Lists all patches that could possibly be included in a patch baseline.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAvailablePatches">AWS API Documentation</a></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  describe-available-patches
+[--filters &lt;value&gt;]
+[--max-results &lt;value&gt;]
+[--next-token &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--filters" class="dashAnchor" id="filters"></a><span class="pre">--filters</span></tt> (list)</p>
+<blockquote>
+<div>Filters used to scope down the returned patches.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Key=string,Values=string,string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    "Key": "string",
+    "Values": ["string", ...]
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-results" class="dashAnchor" id="max-results"></a><span class="pre">--max-results</span></tt> (integer)</p>
+<blockquote>
+<div>The maximum number of patches to return (per page).</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--next-token" class="dashAnchor" id="next-token"></a><span class="pre">--next-token</span></tt> (string)</p>
+<blockquote>
+<div>The token for the next set of items to return. (You received this token from a previous call.)</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To get available patches</strong></p>
+<p>This example gets all available patches for Windows Server 2012 that have a MSRC severity of Critical.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ssm describe-available-patches --filters "Key=PRODUCT,Values=WindowsServer2012" "Key=MSRC_SEVERITY,Values=Critical"</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><pre>{
+  "Patches": [
+      {
+          "ContentUrl": "https://support.microsoft.com/en-us/kb/2727528",
+          "ProductFamily": "Windows",
+          "Product": "WindowsServer2012",
+          "Vendor": "Microsoft",
+          "Description": "A security issue has been identified that could allow an unauthenticated remote attacker to compromise your system and gain control over it. You can help protect your system by installing this update from Microsoft. After you install this update, you may have to restart your system.",
+          "Classification": "SecurityUpdates",
+          "Title": "Security Update for Windows Server 2012 (KB2727528)",
+          "ReleaseDate": 1352829600.0,
+          "Language": "All",
+          "MsrcSeverity": "Critical",
+          "KbNumber": "KB2727528",
+          "MsrcNumber": "MS12-072",
+          "Id": "1eb507be-2040-4eeb-803d-abc55700b715"
+      },
+      {
+          "ContentUrl": "https://support.microsoft.com/en-us/kb/2729462",
+          "ProductFamily": "Windows",
+          "Product": "WindowsServer2012",
+          "Vendor": "Microsoft",
+          "Description": "A security issue has been identified that could allow an unauthenticated remote attacker to compromise your system and gain control over it. You can help protect your system by installing this update from Microsoft. After you install this update, you may have to restart your system.",
+          "Classification": "SecurityUpdates",
+          "Title": "Security Update for Microsoft .NET Framework 3.5 on Windows 8 and Windows Server 2012 for x64-based Systems (KB2729462)",
+          "ReleaseDate": 1352829600.0,
+          "Language": "All",
+          "MsrcSeverity": "Critical",
+          "KbNumber": "KB2729462",
+          "MsrcNumber": "MS12-074",
+          "Id": "af873760-c97c-4088-ab7e-5219e120eab4"
+      },
+              ...
+      }
+}</pre>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Patches -&gt; (list)</p>
+<blockquote>
+<div><p>An array of patches. Each entry in the array is a patch structure.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents metadata about a patch.</p>
+<p>Id -&gt; (string)</p>
+<blockquote>
+<div>The ID of the patch (this is different than the Microsoft Knowledge Base ID).</div></blockquote>
+<p>ReleaseDate -&gt; (timestamp)</p>
+<blockquote>
+<div>The date the patch was released.</div></blockquote>
+<p>Title -&gt; (string)</p>
+<blockquote>
+<div>The title of the patch.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>The description of the patch.</div></blockquote>
+<p>ContentUrl -&gt; (string)</p>
+<blockquote>
+<div>The URL where more information can be obtained about the patch.</div></blockquote>
+<p>Vendor -&gt; (string)</p>
+<blockquote>
+<div>The name of the vendor providing the patch.</div></blockquote>
+<p>ProductFamily -&gt; (string)</p>
+<blockquote>
+<div>The product family the patch is applicable for (for example, Windows).</div></blockquote>
+<p>Product -&gt; (string)</p>
+<blockquote>
+<div>The specific product the patch is applicable for (for example, WindowsServer2016).</div></blockquote>
+<p>Classification -&gt; (string)</p>
+<blockquote>
+<div>The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).</div></blockquote>
+<p>MsrcSeverity -&gt; (string)</p>
+<blockquote>
+<div>The severity of the patch (for example Critical, Important, Moderate).</div></blockquote>
+<p>KbNumber -&gt; (string)</p>
+<blockquote>
+<div>The Microsoft Knowledge Base ID of the patch.</div></blockquote>
+<p>MsrcNumber -&gt; (string)</p>
+<blockquote>
+<div>The ID of the MSRC bulletin the patch is related to.</div></blockquote>
+<p>Language -&gt; (string)</p>
+<blockquote>
+<div>The language of the patch if it&#8217;s language-specific.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="describe-automation-executions.html" title="previous chapter (use the left arrow)">&#8592; describe-automation-executions</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="describe-document.html" title="next chapter (use the right arrow)">describe-document &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="describe-document.html" title="describe-document">next</a> |</li>
+        <li class="right">
+          <a href="describe-automation-executions.html" title="describe-automation-executions">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">ssm</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ssm/describe-available-patches.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:29 GMT -->
+</html>

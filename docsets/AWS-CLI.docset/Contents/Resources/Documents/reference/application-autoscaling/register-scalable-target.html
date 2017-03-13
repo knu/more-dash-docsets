@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/application-autoscaling/register-scalable-target.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:57 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/application-autoscaling/register-scalable-target.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:09:52 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>register-scalable-target &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>register-scalable-target &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="application-autoscaling" href="index.html" />
-    <link rel="next" title="autoscaling" href="../autoscaling/index.html" />
+    <link rel="next" title="appstream" href="../appstream/index.html" />
     <link rel="prev" title="put-scaling-policy" href="put-scaling-policy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
@@ -61,10 +61,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
         <li class="right">
-          <a href="../autoscaling/index.html" title="autoscaling" accesskey="N">next</a> |</li>
+          <a href="../appstream/index.html" title="appstream" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="put-scaling-policy.html" title="put-scaling-policy" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">application-autoscaling</a> &#187;</li> 
       </ul>
@@ -78,7 +78,7 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="../autoscaling/index.html" title="next chapter (use the right arrow)">autoscaling &#8594;</a></li>
+          <li><a href="../appstream/index.html" title="next chapter (use the right arrow)">appstream &#8594;</a></li>
       </ul>
     </div>
   
@@ -95,6 +95,7 @@
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
 <li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
@@ -111,7 +112,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/application-autoscaling/register-scalable-target">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/application-autoscaling/register-scalable-target">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -128,12 +129,9 @@
 <span id="cli-aws-application-autoscaling-register-scalable-target"></span><h1>register-scalable-target<a name="//apple_ref/cpp/Command/aws application-autoscaling register-scalable-target" class="dashAnchor" id="aws application-autoscaling register-scalable-target"></a><a class="headerlink" href="#register-scalable-target" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Registers or updates a scalable target. A scalable target is a resource that can be scaled up or down with Application Auto Scaling. After you have registered a scalable target, you can use this command to update the minimum and maximum values for your scalable dimension.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">At this time, Application Auto Scaling only supports scaling Amazon ECS services.</p>
-</div>
-<p>After you register a scalable target with Application Auto Scaling, you can create and apply scaling policies to it with  put-scaling-policy . You can view the existing scaling policies for a service namespace with  describe-scalable-targets . If you are no longer using a scalable target, you can deregister it with  deregister-scalable-target .</p>
+<p>Registers or updates a scalable target. A scalable target is a resource that Application Auto Scaling can scale out or scale in. After you have registered a scalable target, you can use this operation to update the minimum and maximum values for your scalable dimension.</p>
+<p>After you register a scalable target, you can create and apply scaling policies using  put-scaling-policy . You can view the scaling policies for a service namespace using  describe-scalable-targets . If you are no longer using a scalable target, you can deregister it using  deregister-scalable-target .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/RegisterScalableTarget">AWS API Documentation</a></p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
@@ -145,43 +143,80 @@
 [--max-capacity &lt;value&gt;]
 [--role-arn &lt;value&gt;]
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
 <h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--service-namespace" class="dashAnchor" id="service-namespace"></a><span class="pre">--service-namespace</span></tt> (string)</p>
 <blockquote>
-<div><p>The namespace for the AWS service that the scalable target is associated with. For Amazon ECS services, the namespace value is <tt class="docutils literal"><span class="pre">ecs</span></tt> . For more information, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+<div><p>The namespace of the AWS service. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS Service Namespaces</a> in the <em>Amazon Web Services General Reference</em> .</p>
 <p>Possible values:</p>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">ecs</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">elasticmapreduce</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ec2</span></tt></li>
 </ul>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--resource-id" class="dashAnchor" id="resource-id"></a><span class="pre">--resource-id</span></tt> (string)</p>
 <blockquote>
-<div>The unique identifier string for the resource to associate with the scalable target. For Amazon ECS services, this value is the resource type, followed by the cluster name and service name, such as <tt class="docutils literal"><span class="pre">service/default/sample-webapp</span></tt> .</div></blockquote>
+<div><p>The identifier of the resource associated with the scalable target. This string consists of the resource type and unique identifier.</p>
+<ul class="simple">
+<li>ECS service - The resource type is <tt class="docutils literal"><span class="pre">service</span></tt> and the unique identifier is the cluster name and service name. Example: <tt class="docutils literal"><span class="pre">service/default/sample-webapp</span></tt> .</li>
+<li>Spot fleet request - The resource type is <tt class="docutils literal"><span class="pre">spot-fleet-request</span></tt> and the unique identifier is the Spot fleet request ID. Example: <tt class="docutils literal"><span class="pre">spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</span></tt> .</li>
+<li>EMR cluster - The resource type is <tt class="docutils literal"><span class="pre">instancegroup</span></tt> and the unique identifier is the cluster ID and instance group ID. Example: <tt class="docutils literal"><span class="pre">instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</span></tt> .</li>
+</ul>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--scalable-dimension" class="dashAnchor" id="scalable-dimension"></a><span class="pre">--scalable-dimension</span></tt> (string)</p>
 <blockquote>
-<div><p>The scalable dimension associated with the scalable target. The scalable dimension contains the service namespace, resource type, and scaling property, such as <tt class="docutils literal"><span class="pre">ecs:service:DesiredCount</span></tt> for the desired task count of an Amazon ECS service.</p>
+<div><p>The scalable dimension associated with the scalable target. This string consists of the service namespace, resource type, and scaling property.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ecs:service:DesiredCount</span></tt> - The desired task count of an ECS service.</li>
+<li><tt class="docutils literal"><span class="pre">ec2:spot-fleet-request:TargetCapacity</span></tt> - The target capacity of a Spot fleet request.</li>
+<li><tt class="docutils literal"><span class="pre">elasticmapreduce:instancegroup:InstanceCount</span></tt> - The instance count of an EMR Instance Group.</li>
+</ul>
 <p>Possible values:</p>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">ecs:service:DesiredCount</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ec2:spot-fleet-request:TargetCapacity</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">elasticmapreduce:instancegroup:InstanceCount</span></tt></li>
 </ul>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--min-capacity" class="dashAnchor" id="min-capacity"></a><span class="pre">--min-capacity</span></tt> (integer)</p>
 <blockquote>
-<div>The minimum value for this scalable target to scale in to in response to scaling activities. This parameter is required if you are registering a new scalable target, and it is optional if you are updating an existing one.</div></blockquote>
+<div>The minimum value to scale to in response to a scale in event. This parameter is required if you are registering a scalable target and optional if you are updating one.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-capacity" class="dashAnchor" id="max-capacity"></a><span class="pre">--max-capacity</span></tt> (integer)</p>
 <blockquote>
-<div>The maximum value for this scalable target to scale out to in response to scaling activities. This parameter is required if you are registering a new scalable target, and it is optional if you are updating an existing one.</div></blockquote>
+<div>The maximum value to scale to in response to a scale out event. This parameter is required if you are registering a scalable target and optional if you are updating one.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--role-arn" class="dashAnchor" id="role-arn"></a><span class="pre">--role-arn</span></tt> (string)</p>
 <blockquote>
-<div>The ARN of the IAM role that allows Application Auto Scaling to modify your scalable target on your behalf. This parameter is required if you are registering a new scalable target, and it is optional if you are updating an existing one.</div></blockquote>
+<div>The ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf. This parameter is required when you register a scalable target and optional when you update one.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To register a new scalable target</strong></p>
+<p>This example command registers a scalable target from an Amazon ECS service called <cite>web-app</cite> that is running on the <cite>default</cite> cluster, with a minimum desired count of 1 task and a maximum desired count of 10 tasks.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws application-autoscaling register-scalable-target --resource-id service/default/web-app --service-namespace ecs --scalable-dimension ecs:service:DesiredCount --min-capacity 1 --max-capacity 10 --role-arn arn:aws:iam::012345678910:role/ApplicationAutoscalingECSRole</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">"cluster"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"status"</span><span class="p">:</span> <span class="s2">"ACTIVE"</span><span class="p">,</span>
+        <span class="s2">"clusterName"</span><span class="p">:</span> <span class="s2">"my_cluster"</span><span class="p">,</span>
+        <span class="s2">"registeredContainerInstancesCount"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">"pendingTasksCount"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">"runningTasksCount"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">"activeServicesCount"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">"clusterArn"</span><span class="p">:</span> <span class="s2">"arn:aws:ecs:&lt;region&gt;:&lt;aws_account_id&gt;:cluster/my_cluster"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="output">
 <h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
@@ -200,7 +235,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
           <span class="divider">/</span>
           
         </li>
-          <li><a href="../autoscaling/index.html" title="next chapter (use the right arrow)">autoscaling &#8594;</a></li>
+          <li><a href="../appstream/index.html" title="next chapter (use the right arrow)">appstream &#8594;</a></li>
       </ul>
     </div>
   
@@ -221,10 +256,10 @@ Prints a sample input JSON to standard output. Note the specified operation is n
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index">index</a></li>
         <li class="right">
-          <a href="../autoscaling/index.html" title="autoscaling">next</a> |</li>
+          <a href="../appstream/index.html" title="appstream">next</a> |</li>
         <li class="right">
           <a href="put-scaling-policy.html" title="put-scaling-policy">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">application-autoscaling</a> &#187;</li> 
       </ul>
@@ -240,5 +275,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/application-autoscaling/register-scalable-target.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:57 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/application-autoscaling/register-scalable-target.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:09:52 GMT -->
 </html>

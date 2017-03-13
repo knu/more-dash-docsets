@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/rds/describe-db-snapshots.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:25 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/rds/describe-db-snapshots.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:25 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>describe-db-snapshots &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>describe-db-snapshots &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="rds" href="index.html" />
     <link rel="next" title="describe-db-subnet-groups" href="describe-db-subnet-groups.html" />
     <link rel="prev" title="describe-db-snapshot-attributes" href="describe-db-snapshot-attributes.html" />
@@ -64,7 +64,7 @@
           <a href="describe-db-subnet-groups.html" title="describe-db-subnet-groups" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="describe-db-snapshot-attributes.html" title="describe-db-snapshot-attributes" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">rds</a> &#187;</li> 
       </ul>
@@ -111,7 +111,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/rds/describe-db-snapshots">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/rds/describe-db-snapshots">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -129,6 +129,7 @@
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
 <p>Returns information about DB snapshots. This API action supports pagination.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshots">AWS API Documentation</a></p>
 <p><tt class="docutils literal"><span class="pre">describe-db-snapshots</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
 When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">DBSnapshots</span></tt></p>
 </div>
@@ -145,7 +146,7 @@ When using <tt class="docutils literal"><span class="pre">--output</span> <span 
 [--starting-token &lt;value&gt;]
 [--page-size &lt;value&gt;]
 [--max-items &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
@@ -180,7 +181,7 @@ When using <tt class="docutils literal"><span class="pre">--output</span> <span 
 <li><tt class="docutils literal"><span class="pre">shared</span></tt> - Return all manual DB snapshots that have been shared to my AWS account.</li>
 <li><tt class="docutils literal"><span class="pre">public</span></tt> - Return all DB snapshots that have been marked as public.</li>
 </ul>
-<p>If you don't specify a <tt class="docutils literal"><span class="pre">SnapshotType</span></tt> value, then both automated and manual snapshots are returned. You can include shared snapshots with these results by setting the <tt class="docutils literal"><span class="pre">IncludeShared</span></tt> parameter to <tt class="docutils literal"><span class="pre">true</span></tt> . You can include public snapshots with these results by setting the <tt class="docutils literal"><span class="pre">IncludePublic</span></tt> parameter to <tt class="docutils literal"><span class="pre">true</span></tt> .</p>
+<p>If you don't specify a <tt class="docutils literal"><span class="pre">SnapshotType</span></tt> value, then both automated and manual snapshots are returned. Shared and public DB snapshots are not included in the returned results by default. You can include shared snapshots with these results by setting the <tt class="docutils literal"><span class="pre">IncludeShared</span></tt> parameter to <tt class="docutils literal"><span class="pre">true</span></tt> . You can include public snapshots with these results by setting the <tt class="docutils literal"><span class="pre">IncludePublic</span></tt> parameter to <tt class="docutils literal"><span class="pre">true</span></tt> .</p>
 <p>The <tt class="docutils literal"><span class="pre">IncludeShared</span></tt> and <tt class="docutils literal"><span class="pre">IncludePublic</span></tt> parameters don't apply for <tt class="docutils literal"><span class="pre">SnapshotType</span></tt> values of <tt class="docutils literal"><span class="pre">manual</span></tt> or <tt class="docutils literal"><span class="pre">automated</span></tt> . The <tt class="docutils literal"><span class="pre">IncludePublic</span></tt> parameter doesn't apply when <tt class="docutils literal"><span class="pre">SnapshotType</span></tt> is set to <tt class="docutils literal"><span class="pre">shared</span></tt> . The <tt class="docutils literal"><span class="pre">IncludeShared</span></tt> parameter doesn't apply when <tt class="docutils literal"><span class="pre">SnapshotType</span></tt> is set to <tt class="docutils literal"><span class="pre">public</span></tt> .</p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--filters" class="dashAnchor" id="filters"></a><span class="pre">--filters</span></tt> (list)</p>
@@ -219,8 +220,8 @@ Performs service operation based on the JSON string provided. The JSON string fo
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-items" class="dashAnchor" id="max-items"></a><span class="pre">--max-items</span></tt> (integer)</p>
 <blockquote>
 <div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">NextToken</span></tt> will be provided in the output that you can use to resume pagination. This <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element should <strong>not</strong> be used directly outside of the AWS CLI.</div></blockquote>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="output">
 <h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
@@ -297,16 +298,22 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div>The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or cross region copy.</div></blockquote>
 <p>StorageType -&gt; (string)</p>
 <blockquote>
-<div>Specifies the storage type associated with DB Snapshot.</div></blockquote>
+<div>Specifies the storage type associated with DB snapshot.</div></blockquote>
 <p>TdeCredentialArn -&gt; (string)</p>
 <blockquote>
-<div>The ARN from the Key Store with which to associate the instance for TDE encryption.</div></blockquote>
+<div>The ARN from the key store with which to associate the instance for TDE encryption.</div></blockquote>
 <p>Encrypted -&gt; (boolean)</p>
 <blockquote>
 <div>Specifies whether the DB snapshot is encrypted.</div></blockquote>
 <p>KmsKeyId -&gt; (string)</p>
 <blockquote>
 <div>If <tt class="docutils literal"><span class="pre">Encrypted</span></tt> is true, the KMS key identifier for the encrypted DB snapshot.</div></blockquote>
+<p>DBSnapshotArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) for the DB snapshot.</div></blockquote>
+<p>Timezone -&gt; (string)</p>
+<blockquote>
+<div>The time zone of the DB snapshot. In most cases, the <tt class="docutils literal"><span class="pre">Timezone</span></tt> element is empty. <tt class="docutils literal"><span class="pre">Timezone</span></tt> content appears only for snapshots taken from Microsoft SQL Server DB instances that were created with a time zone specified.</div></blockquote>
 </div></blockquote>
 </div></blockquote>
 </div>
@@ -348,7 +355,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
           <a href="describe-db-subnet-groups.html" title="describe-db-subnet-groups">next</a> |</li>
         <li class="right">
           <a href="describe-db-snapshot-attributes.html" title="describe-db-snapshot-attributes">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">rds</a> &#187;</li> 
       </ul>
@@ -364,5 +371,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/rds/describe-db-snapshots.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:25 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/rds/describe-db-snapshots.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:25 GMT -->
 </html>

@@ -1,43 +1,258 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/userguide/controlling-output.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:39 GMT -->
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/userguide/controlling-output.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:43 GMT -->
 <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-   <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Control the format of the output from the AWS Command Line Interface."><title>Controlling Command Output from the AWS Command Line Interface - AWS Command Line Interface</title><link rel="home" href="#aws-unified-cli" title="AWS Command Line Interface"><link rel="up" href="cli-chap-using.html" title="Using the AWS Command Line Interface"><link rel="prev" href="generate-cli-skeleton.html" title="Generate CLI Skeleton and CLI Input JSON Parameters"><link rel="next" href="shorthand-syntax.html" title="Using Shorthand Syntax with the AWS Command Line Interface"><meta name="keywords" content=""><meta name="deployment_region" content="IAD"><meta name="product" content="AWS Command Line Interface"><meta name="guide" content="User Guide"><meta name="guide-locale" content="en_us"><link rel="icon" type="image/ico" href="http://media.amazonwebservices.com/favicon.ico"><link rel="shortcut icon" type="image/ico" href="http://media.amazonwebservices.com/favicon.ico"><link rel="canonical" href="controlling-output.html"><link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/jquery-ui.min.css"><link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/font/css/font-awesome.min.css"><link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/google-font.css"><link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/highlight-default.css"><link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/jquery-ui.theme.css"><link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/colorbox.css"><link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/awsdocs.css"><script type="text/javascript" src="http://docs.aws.amazon.com/js/highlight.pack.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/jquery.min.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/jquery-ui.min.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/handlebars.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/jquery.colorbox.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/awsdocs.min.js"></script></head><body id="top"><div id="aws-nav" class="aws-nav-header"><div class="aws-nav-header-left"><div id="aws-nav-flyout-trigger" class="aws-nav-flyout-trigger"><i class="fa fa-bars fa-2x"></i>Menu</div><div class="aws-nav-logo"><a href="https://aws.amazon.com/"><span>Amazon Web Services</span></a></div></div><div id="aws-nav-header-right" class="aws-nav-header-right"><div class="aws-nav-cta-button-outer"><a id="aws-nav-cta-button" class="aws-nav-button" href="https://console.aws.amazon.com/console/home">Sign In to the Console</a></div><div class="aws-nav-popover-trigger" data-dropdown="aws-nav-dropdown-lang"><select id="languageSelection" onchange="SelectLanguage()"><option value="http://docs.aws.amazon.com/de_de/cli/latest/userguide/controlling-output.html">Deutsch</option><option value="/en_us/cli/latest/userguide/controlling-output.html" selected>English</option><option value="http://docs.aws.amazon.com/es_es/cli/latest/userguide/controlling-output.html">Espa&ntilde;ol</option><option value="http://docs.aws.amazon.com/fr_fr/cli/latest/userguide/controlling-output.html">Fran&ccedil;ais</option><option value="http://docs.aws.amazon.com/ja_jp/cli/latest/userguide/controlling-output.html">&#26085;&#26412;&#35486;</option><option value="http://docs.aws.amazon.com/pt_br/cli/latest/userguide/controlling-output.html">Portugu&ecirc;s</option><option value="http://docs.aws.amazon.com/ko_kr/cli/latest/userguide/controlling-output.html">&#54620;&#44397;&#50612;</option><option value="http://docs.aws.amazon.com/zh_cn/cli/latest/userguide/controlling-output.html">&#20013;&#25991; (&#31616;&#20307;)</option></select></div><div id="aws-nav-quicklinks-separator" class="aws-nav-quicklinks-separator"><div class="aws-nav-left"></div><div class="aws-nav-right"></div></div></div><div id="topnav-flyout-menu-container"><ul id="topnav-flyout-menu"><script id="flyout-item-template" type="text/x-handlebars-template">           
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Controlling Command Output from the AWS Command Line Interface - AWS Command Line Interface</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="home" href="#top" />
+      <link rel="up" href="cli-chap-using.html"
+            title="Using the AWS Command Line Interface" />
+      <link rel="prev" href="generate-cli-skeleton.html" title="" />
+      <link rel="next" href="shorthand-syntax.html"
+            title="Using Shorthand Syntax with the AWS Command Line Interface" />
+      <meta name="description"
+            content="Control the format of the output from the AWS Command Line Interface." />
+      <meta name="deployment_region" content="IAD" />
+      <meta name="product" content="AWS Command Line Interface" />
+      <meta name="guide" content="User Guide" />
+      <meta name="guide-locale" content="en_us" />
+      <link rel="icon" type="image/ico" href="http://media.amazonwebservices.com/favicon.ico" />
+      <link rel="shortcut icon" type="image/ico"
+            href="http://media.amazonwebservices.com/favicon.ico" />
+      <link rel="canonical"
+            href="controlling-output.html" />
+      <link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/jquery-ui.min.css" />
+      <link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/font/css/font-awesome.min.css" />
+      <link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/google-font.css" />
+      <link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/highlight-default.css" />
+      <link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/jquery-ui.theme.css" />
+      <link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/colorbox.css" />
+      <link rel="stylesheet" type="text/css" href="http://docs.aws.amazon.com/css/awsdocs.css" /><script type="text/javascript" src="http://docs.aws.amazon.com/js/highlight.pack.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/jquery.min.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/jquery-ui.min.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/handlebars.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/jquery.colorbox.js"></script><script type="text/javascript" src="http://docs.aws.amazon.com/js/awsdocs.min.js"></script></head>
+   <body id="top">
+      <div xmlns:db="http://docbook.org/ns/docbook" id="aws-nav" class="aws-nav-header">
+         <div class="aws-nav-header-left">
+            <div id="aws-nav-flyout-trigger" class="aws-nav-flyout-trigger"><i class="fa fa-bars fa-2x"></i>Menu
+            </div>
+            <div class="aws-nav-logo"><a href="https://aws.amazon.com/"><span>Amazon Web Services</span></a></div>
+         </div>
+         <div id="aws-nav-header-right" class="aws-nav-header-right">
+            <div class="aws-nav-cta-button-outer">
+               <div class="js-mbox" data-mbox="en_h_nav_cta"><span class="aws-nav-cta-default" id="span-conosole-signin"><a id="aws-nav-cta-button" class="aws-nav-button"
+                        href="https://console.aws.amazon.com/console/home">Sign In to the Console</a></span><span class="aws-nav-cta-default" id="span-conosole-signup" style="display:none"><a id="aws-nav-cta-button" class="aws-nav-button"
+                        href="https://portal.aws.amazon.com/gp/aws/developer/registration/index.html">Try AWS for Free</a></span></div>
+            </div>
+            <div class="aws-nav-popover-trigger" data-dropdown="aws-nav-dropdown-lang"><select id="languageSelection" onchange="SelectLanguage()">
+                  <option value="http://docs.aws.amazon.com/de_de/cli/latest/userguide/controlling-output.html">Deutsch</option>
+                  <option value="/en_us/cli/latest/userguide/controlling-output.html" selected="selected">English</option>
+                  <option value="http://docs.aws.amazon.com/es_es/cli/latest/userguide/controlling-output.html">Español</option>
+                  <option value="http://docs.aws.amazon.com/fr_fr/cli/latest/userguide/controlling-output.html">Français</option>
+                  <option value="http://docs.aws.amazon.com/ja_jp/cli/latest/userguide/controlling-output.html">日本語</option>
+                  <option value="http://docs.aws.amazon.com/ko_kr/cli/latest/userguide/controlling-output.html">한국어</option>
+                  <option value="http://docs.aws.amazon.com/pt_br/cli/latest/userguide/controlling-output.html">Português</option>
+                  <option value="http://docs.aws.amazon.com/zh_cn/cli/latest/userguide/controlling-output.html">中文 (简体)</option></select></div>
+            <div id="aws-nav-quicklinks-separator" class="aws-nav-quicklinks-separator">
+               <div class="aws-nav-left"></div>
+               <div class="aws-nav-right"></div>
+            </div>
+         </div>
+         <div xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0"
+              id="topnav-flyout-menu-container">
+            <ul id="topnav-flyout-menu"><script id="flyout-item-template" type="text/x-handlebars-template">           
                     {{#flyoutList}}
                     
                     <li>{{listItem}}
                         {{#if subList}}
                         <ul>
                             {{#subList}}
-                            <li class="awsdocs-flyout-link-wrapper"><a href="{{target}}">{{text}}</a></li>
+                            <li class="awsdocs-flyout-link-wrapper">&lt;a href="{{target}}"&gt;{{text}}&lt;/a&gt;</li>
                             {{/subList}}
                         </ul>
                         {{/if}}
                     </li>
                     
                     {{/flyoutList}}
-                </script></ul><div id="topnav-flyout-menu-spacer"></div></div></div><script type="text/javascript"><!--
-						var thispage = "controlling-output.html";
-						var tocroot = location.protocol + '//' + location.hostname + location.pathname;
-						--></script><div id="content-container"><div id="left-column" class="ui-resizable"><div id="left-col-header"><div id="left-col-top-content"><div id="service-name">AWS Command Line Interface </div><div id="search"><i id="search-icon" class="fa fa-search fa-2x"></i></div><div id="guide-info">User Guide<div id="content-button"><i id="toggle-contents" class="fa fa-bars"></i></div></div></div><form id="finegrainedSearch" method="get" onsubmit="return searchFormSubmit(this);" action="http://docs.aws.amazon.com/search/doc-search.html"><div id="search-form"><select id="search-select" name="searchPath"><option value="all">Entire Site</option><option value="AWSMarketplace">AMIs from AWS Marketplace</option><option value="amis">AMIs from All Sources</option><option value="articles">Articles &amp; Tutorials</option><option value="products_and_info">AWS Product Information</option><option value="case_studies">Case Studies</option><option value="customerapps">Customer Apps</option><option value="documentation">Documentation</option><option value="documentation-product">Documentation - This Product</option><option value="documentation-guide" selected>Documentation - This Guide</option><option value="datasets">Public Data Sets</option><option value="releasenotes">Release Notes</option><option value="solution_providers">Partners</option><option value="code">Sample Code &amp; Libraries</option></select><br><input id="search-query" name="searchQuery" type="text" placholder="$loc-search-search"><input id="search-button" src="images/search-button.png" alt="Go" type="image"></div><input type="hidden" name="this_doc_product" id="this_doc_product" value="AWS Command Line Interface"><input type="hidden" name="this_doc_guide" id="this_doc_guide" value="User Guide"><input type="hidden" name="doc_locale" value="en_us"></form></div><div id="toc"><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc" href="cli-chap-welcome.html">What Is the AWS CLI?</a></li><li class="awstoc closed"><a class="awstoc" href="cli-chap-getting-set-up.html">Getting Set Up</a><ul class="awstoc"><li class="awstoc closed"><a class="awstoc" href="installing.html">Installing the AWS CLI</a><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc" href="cli-uninstall.html">Uninstalling the AWS CLI</a></li></ul></li><li class="awstoc closed"><a class="awstoc" href="cli-chap-getting-started.html">Configuring the AWS CLI</a><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc" href="cli-http-proxy.html">Using an HTTP Proxy</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-roles.html">Assuming a Role</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-command-completion.html">Command Completion</a></li></ul></li></ul></li><li class="awstoc leaf"><a class="awstoc" href="tutorial-ec2-ubuntu.html">Tutorial: Using Amazon EC2</a></li><li class="awstoc opened"><a class="awstoc" href="cli-chap-using.html">Using the AWS CLI</a><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc" href="getting-help.html">Getting Help</a></li><li class="awstoc leaf"><a class="awstoc" href="command-structure.html">Command Structure</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-using-param.html">Specifying Parameter Values</a></li><li class="awstoc leaf"><a class="awstoc" href="generate-cli-skeleton.html">Generate CLI Skeleton</a></li><li class="awstoc leaf"><a class="awstoc selected" href="controlling-output.html">Controlling Command Output</a></li><li class="awstoc leaf"><a class="awstoc" href="shorthand-syntax.html">Shorthand Syntax</a></li><li class="awstoc leaf"><a class="awstoc" href="pagination.html">Pagination</a></li></ul></li><li class="awstoc closed"><a class="awstoc" href="chap-working-with-services.html">Working with Services</a><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc" href="cli-dynamodb.html">DynamoDB</a></li><li class="awstoc closed"><a class="awstoc" href="cli-using-ec2.html">Amazon EC2</a><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc" href="cli-ec2-keypairs.html">Using Key Pairs</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-ec2-sg.html">Using Security Groups</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-ec2-launch.html">Using Instances</a></li></ul></li><li class="awstoc leaf"><a class="awstoc" href="cli-using-glacier.html">Amazon Glacier</a></li><li class="awstoc closed"><a class="awstoc" href="cli-iam.html">AWS Identity and Access Management</a><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc" href="cli-iam-new-user-group.html">Create New IAM Users and Groups</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-iam-policy.html">Set an IAM Policy for an IAM User</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-iam-set-pw.html">Set an Initial Password for an IAM User</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-iam-create-creds.html">Create Security Credentials for an IAM User</a></li></ul></li><li class="awstoc closed"><a class="awstoc" href="cli-s3.html">Amazon S3</a><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc" href="using-s3-commands.html">Using High-Level Amazon S3 Commands</a></li><li class="awstoc leaf"><a class="awstoc" href="using-s3api-commands.html">Using API Level (s3api) Commands</a></li></ul></li><li class="awstoc leaf"><a class="awstoc" href="cli-sqs-queue-sns-topic.html">Amazon SNS</a></li><li class="awstoc closed"><a class="awstoc" href="cli-using-swf.html">Amazon SWF</a><ul class="awstoc"><li class="awstoc leaf"><a class="awstoc" href="swf-commands-by-category.html">List of Amazon SWF Commands</a></li><li class="awstoc leaf"><a class="awstoc" href="cli-using-swf-domains.html">Working with Amazon SWF Domains</a></li></ul></li></ul></li></ul></div></div><div id="main-column"><div id="main"><div id="main-content"><div id="breadcrumbs"><table summary="Breadcrumbs"><tr><td><div class="navheader"><div class="breadcrumb"><a href="http://aws.amazon.com/documentation/">AWS Documentation</a> &raquo; <a href="http://aws.amazon.com/documentation/cli">AWS Command Line Interface</a> &raquo; <a href="index.html">AWS Command Line Interface</a> &raquo; <a href="cli-chap-using.html">Using the AWS Command Line Interface</a> &raquo; <span class="breadcrumb">Controlling Command Output from the AWS Command Line Interface</span></div></div></td></tr></table></div><div id="main-col-body"><div></div><div class="section"><div class="titlepage"><div><div><h1 class="topictitle">Controlling Command Output from the AWS Command Line Interface</h1></div></div></div><p>This section describes the different ways that you can control the output from the
-    AWS CLI.</p><div class="highlights"><p><strong>Topics</strong></p><ul><li><a href="controlling-output.html#controlling-output-format">How to Select the Output Format</a></li><li><a href="controlling-output.html#controlling-output-filter">How to Filter the Output with the
-        --query Option</a></li><li><a href="controlling-output.html#controlling-output-json">JSON Output Format</a></li><li><a href="controlling-output.html#text-output">Text Output Format</a></li><li><a href="controlling-output.html#table-output">Table Output Format</a></li></ul></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="controlling-output-format">How to Select the Output Format</h2></div></div></div><p>The AWS CLI supports three different output formats:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>JSON (json)</p></li><li class="listitem"><p>Tab-delimited text (text)</p></li><li class="listitem"><p>ASCII-formatted table (table)</p></li></ul></div><p>As explained in the <a class="link" href="cli-chap-getting-started.html" title="Configuring the AWS Command Line Interface">configuration</a> topic,
-      the output format can be specified in three different ways:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Using the <code class="code">output</code> option in the configuration file. The following example
-          sets the output to <code class="code">text</code>:</p><pre class="programlisting"><code class="nohighlight">[default]
-output=text</code></pre></li><li class="listitem"><p>Using the <code class="code">AWS_DEFAULT_OUTPUT</code> environment variable. For example:</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>export AWS_DEFAULT_OUTPUT="table"</code></strong></code></pre></li><li class="listitem"><p>Using the <code class="code">--output</code> option on the command line. For example:</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws swf list-domains --registration-status REGISTERED --output text</code></strong></code></pre></li></ul></div><div class="aws-note"><p class="aws-note">Note</p><p>If the output format is specified in multiple ways, the usual <a class="link" href="cli-chap-getting-started.html#config-settings-and-precedence" title="Configuration Settings and Precedence">AWS CLI precedence rules</a> apply. For example,
-        using the <code class="code">AWS_DEFAULT_OUTPUT</code> environment variable overrides any value set in
-        the config file with <code class="code">output</code>, and a value passed to an AWS CLI command with
-          <code class="code">--output</code> overrides any value set in the environment or in the config
-        file.</p></div><p>JSON is best for handling the output programmatically via various languages or
-        <code class="code">jq</code> (a command-line JSON processor). The table format is easy for humans to
-      read, and text format works well with traditional Unix text processing tools, such as
-        <code class="code">sed</code>, <code class="code">grep</code>, and <code class="code">awk</code>, as well as Windows PowerShell
-      scripts.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="controlling-output-filter">How to Filter the Output with the
-        <code class="code">--query</code> Option</h2></div></div></div><p>The AWS CLI provides built-in output filtering capabilities with the <code class="code">--query</code>
-      option. To demonstrate how it works, we'll first start with the default JSON output below,
-      which describes two EBS (Elastic Block Storage) volumes attached to separate EC2
-      instances.</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws ec2 describe-volumes</code></strong>
+                </script></ul>
+            <div id="topnav-flyout-menu-spacer"></div>
+         </div>
+      </div>
+      <div id="content-container">
+         <div id="left-column">
+            <div id="left-col-header">
+               <div id="left-col-top-content">
+                  <div id="service-name">AWS Command Line Interface </div>
+                  <div id="search"><i id="search-icon" class="fa fa-search fa-2x"></i></div>
+                  <div id="guide-info">User Guide
+                     <div id="content-button"><i id="toggle-contents" class="fa fa-bars"></i></div>
+                  </div>
+               </div>
+               <form id="finegrainedSearch" method="get" onsubmit="return searchFormSubmit(this);"
+                     action="http://docs.aws.amazon.com/search/doc-search.html">
+                  <div id="search-form"><select id="search-select" name="searchPath">
+                        <option value="all">Entire Site</option>
+                        <option value="AWSMarketplace">AMIs from AWS Marketplace</option>
+                        <option value="amis">AMIs from All Sources</option>
+                        <option value="articles">Articles &amp; Tutorials</option>
+                        <option value="products_and_info">AWS Product Information</option>
+                        <option value="case_studies">Case Studies</option>
+                        <option value="customerapps">Customer Apps</option>
+                        <option value="documentation">Documentation</option>
+                        <option value="documentation-product">Documentation - This Product</option>
+                        <option value="documentation-guide" selected="selected">Documentation - This Guide</option>
+                        <option value="datasets">Public Data Sets</option>
+                        <option value="releasenotes">Release Notes</option>
+                        <option value="solution_providers">Partners</option>
+                        <option value="code">Sample Code &amp; Libraries</option></select><br /><input id="search-query" name="searchQuery" type="text" placeholder="Search" /><input id="search-button" src="http://docs.aws.amazon.com/images/search-button.png" alt="Go" type="image" /></div><input type="hidden" name="this_doc_product" id="this_doc_product"
+                         value="AWS Command Line Interface" /><input type="hidden" name="this_doc_guide" id="this_doc_guide" value="User Guide" /><input type="hidden" name="doc_locale" value="en_us" /></form>
+            </div>
+            <div id="toc">
+               <ul class="awstoc">
+                  <li class="awstoc leaf"><a class="awstoc" href="cli-chap-welcome.html">What Is the AWS CLI?</a></li>
+                  <li class="awstoc closed"><a class="awstoc" href="cli-chap-getting-set-up.html">Getting Set Up</a><ul class="awstoc">
+                        <li class="awstoc closed"><a class="awstoc" href="installing.html">Installing the AWS CLI</a><ul class="awstoc">
+                              <li class="awstoc leaf"><a class="awstoc" href="awscli-install-linux.html">Linux</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="awscli-install-windows.html">Windows</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-install-macos.html">macOS</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="awscli-install-virtualenv.html">Virtualenv</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="awscli-install-bundle.html">Bundled Installer</a></li>
+                           </ul>
+                        </li>
+                        <li class="awstoc closed"><a class="awstoc" href="cli-chap-getting-started.html">Configuring the AWS CLI</a><ul class="awstoc">
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-http-proxy.html">Using an HTTP Proxy</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-roles.html">Assuming a Role</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-command-completion.html">Command Completion</a></li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="awstoc leaf"><a class="awstoc" href="tutorial-ec2-ubuntu.html">Tutorial: Using Amazon EC2</a></li>
+                  <li class="awstoc opened"><a class="awstoc" href="cli-chap-using.html">Using the AWS CLI</a><ul class="awstoc">
+                        <li class="awstoc leaf"><a class="awstoc" href="getting-help.html">Getting Help</a></li>
+                        <li class="awstoc leaf"><a class="awstoc" href="command-structure.html">Command Structure</a></li>
+                        <li class="awstoc leaf"><a class="awstoc" href="cli-using-param.html">Specifying Parameter Values</a></li>
+                        <li class="awstoc leaf"><a class="awstoc" href="generate-cli-skeleton.html">Generate CLI Skeleton</a></li>
+                        <li class="awstoc leaf"><a class="awstoc selected" href="controlling-output.html">Controlling Command Output</a></li>
+                        <li class="awstoc leaf"><a class="awstoc" href="shorthand-syntax.html">Shorthand Syntax</a></li>
+                        <li class="awstoc leaf"><a class="awstoc" href="pagination.html">Pagination</a></li>
+                     </ul>
+                  </li>
+                  <li class="awstoc closed"><a class="awstoc" href="chap-working-with-services.html">Working with Services</a><ul class="awstoc">
+                        <li class="awstoc leaf"><a class="awstoc" href="cli-dynamodb.html">DynamoDB</a></li>
+                        <li class="awstoc closed"><a class="awstoc" href="cli-using-ec2.html">Amazon EC2</a><ul class="awstoc">
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-ec2-keypairs.html">Using Key Pairs</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-ec2-sg.html">Using Security Groups</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-ec2-launch.html">Using Instances</a></li>
+                           </ul>
+                        </li>
+                        <li class="awstoc leaf"><a class="awstoc" href="cli-using-glacier.html">Amazon Glacier</a></li>
+                        <li class="awstoc closed"><a class="awstoc" href="cli-iam.html">AWS Identity and Access Management</a><ul class="awstoc">
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-iam-new-user-group.html">Create New IAM Users and Groups</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-iam-policy.html">Set an IAM Policy for an IAM User</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-iam-set-pw.html">Set an Initial Password for an IAM User</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-iam-create-creds.html">Create Security Credentials for an IAM User</a></li>
+                           </ul>
+                        </li>
+                        <li class="awstoc closed"><a class="awstoc" href="cli-s3.html">Amazon S3</a><ul class="awstoc">
+                              <li class="awstoc leaf"><a class="awstoc" href="using-s3-commands.html">Using High-Level Amazon S3 Commands</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="using-s3api-commands.html">Using API Level (s3api) Commands</a></li>
+                           </ul>
+                        </li>
+                        <li class="awstoc leaf"><a class="awstoc" href="cli-sqs-queue-sns-topic.html">Amazon SNS</a></li>
+                        <li class="awstoc closed"><a class="awstoc" href="cli-using-swf.html">Amazon SWF</a><ul class="awstoc">
+                              <li class="awstoc leaf"><a class="awstoc" href="swf-commands-by-category.html">List of Amazon SWF Commands</a></li>
+                              <li class="awstoc leaf"><a class="awstoc" href="cli-using-swf-domains.html">Working with Amazon SWF Domains</a></li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div id="main-column">
+            <div id="main">
+               <div id="main-content">
+                  <table summary="Breadcrumbs">
+                     <tr>
+                        <td>
+                           <div class="breadcrumb"><a href="http://aws.amazon.com/documentation">AWS Documentation</a> » <a href="http://aws.amazon.com/documentation/cli">AWS Command Line Interface</a> » <a href="index-2.html">User Guide</a> » <a href="cli-chap-using.html">Using the AWS Command Line Interface</a> » <span class="breadcrumb">Controlling Command Output from the AWS Command Line Interface</span></div>
+                        </td>
+                     </tr>
+                  </table>
+                  <div id="main-col-body">
+                     <div></div>
+                     <h1 class="topictitle" id="controlling-output">Controlling Command Output from the AWS Command Line Interface</h1>
+                     <p>This section describes the different ways that you can control the output from the
+                        AWS CLI.
+                     </p>
+                     <div class="highlights">
+                        <p><strong>Topics</strong></p>
+                        <ul>
+                           <li><a href="#controlling-output-format">How to Select the Output Format</a></li>
+                           <li><a href="#controlling-output-filter">How to Filter the Output with the
+                                 --query Option</a></li>
+                           <li><a href="#controlling-output-json">JSON Output Format</a></li>
+                           <li><a href="#text-output">Text Output Format</a></li>
+                           <li><a href="#table-output">Table Output Format</a></li>
+                        </ul>
+                     </div>
+                     <h2 id="controlling-output-format">How to Select the Output Format</h2>
+                     <p>The AWS CLI supports three different output formats:</p>
+                     <div class="itemizedlist">
+                        <ul class="itemizedlist" type="disc">
+                           <li class="listitem">
+                              <p>JSON (json)</p>
+                           </li>
+                           <li class="listitem">
+                              <p>Tab-delimited text (text)</p>
+                           </li>
+                           <li class="listitem">
+                              <p>ASCII-formatted table (table)</p>
+                           </li>
+                        </ul>
+                     </div>
+                     <p>As explained in the <a href="cli-chap-getting-started.html">configuration</a> topic,
+                        the output format can be specified in three different ways:
+                     </p>
+                     <div class="itemizedlist">
+                        <ul class="itemizedlist" type="disc">
+                           <li class="listitem">
+                              <p>Using the <code class="code">output</code> option in the configuration file. The following example
+                                 sets the output to <code class="code">text</code>:
+                              </p><pre class="programlisting"><code class="nohighlight ">[default]
+output=text</code></pre></li>
+                           <li class="listitem">
+                              <p>Using the <code class="code">AWS_DEFAULT_OUTPUT</code> environment variable. For example:
+                              </p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>export AWS_DEFAULT_OUTPUT="table"</code></strong></code></pre></li>
+                           <li class="listitem">
+                              <p>Using the <code class="code">--output</code> option on the command line. For example:
+                              </p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws swf list-domains --registration-status REGISTERED --output text</code></strong></code></pre></li>
+                        </ul>
+                     </div>
+                     <div class="aws-note">
+                        <p class="aws-note">Note</p>
+                        <p>If the output format is specified in multiple ways, the usual <a href="cli-chap-getting-started.html#config-settings-and-precedence">AWS CLI precedence rules</a> apply. For example,
+                           using the <code class="code">AWS_DEFAULT_OUTPUT</code> environment variable overrides any value set in
+                           the config file with <code class="code">output</code>, and a value passed to an AWS CLI command with
+                           <code class="code">--output</code> overrides any value set in the environment or in the config
+                           file.
+                        </p>
+                     </div>
+                     <p>JSON is best for handling the output programmatically via various languages or
+                        <code class="code">jq</code> (a command-line JSON processor). The table format is easy for humans to
+                        read, and text format works well with traditional Unix text processing tools, such as
+                        <code class="code">sed</code>, <code class="code">grep</code>, and <code class="code">awk</code>, as well as Windows PowerShell
+                        scripts.
+                     </p>
+                     <h2 id="controlling-output-filter">How to Filter the Output with the
+                        <code class="code">--query</code> Option
+                     </h2>
+                     <p>The AWS CLI provides built-in output filtering capabilities with the <code class="code">--query</code>
+                        option. To demonstrate how it works, we'll first start with the default JSON output below,
+                        which describes two EBS (Elastic Block Storage) volumes attached to separate EC2
+                        instances.
+                     </p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws ec2 describe-volumes</code></strong>
 {
     "Volumes": [
         {
@@ -80,7 +295,8 @@ output=text</code></pre></li><li class="listitem"><p>Using the <code class="code
         }
     ]
 }</code></pre><p>First, we can display only the first volume from the <code class="code">Volumes</code> list with the
-      following command.</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws ec2 describe-volumes --query 'Volumes[0]'</code></strong>
+                        following command.
+                     </p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws ec2 describe-volumes --query 'Volumes[0]'</code></strong>
 {
     "AvailabilityZone": "us-west-2a",
     "Attachments": [
@@ -100,11 +316,12 @@ output=text</code></pre></li><li class="listitem"><p>Using the <code class="code
     "CreateTime": "2013-09-17T00:55:03.000Z",
     "Size": 30
 }</code></pre><p>Now, we use the wildcard notation <code class="code">[*]</code> to iterate over the entire list and
-      also filter out three elements: <code class="code">VolumeId</code>, <code class="code">AvailabilityZone</code>, and
-        <code class="code">Size</code>. Note that the dictionary notation requires that you provide an alias for
-      each key, like this: {Alias1:Key1,Alias2:Key2}. A dictionary is inherently
-        <span class="emphasis"><em>unordered</em></span>, so the ordering of the key-aliases within a structure may
-      not be consistent in some cases.</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws ec2 describe-volumes --query 'Volumes[*].{ID:VolumeId,AZ:AvailabilityZone,Size:Size}'</code></strong>
+                        also filter out three elements: <code class="code">VolumeId</code>, <code class="code">AvailabilityZone</code>, and
+                        <code class="code">Size</code>. Note that the dictionary notation requires that you provide an alias for
+                        each key, like this: {Alias1:Key1,Alias2:Key2}. A dictionary is inherently
+                        <em>unordered</em>, so the ordering of the key-aliases within a structure may
+                        not be consistent in some cases.
+                     </p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws ec2 describe-volumes --query 'Volumes[*].{ID:VolumeId,AZ:AvailabilityZone,Size:Size}'</code></strong>
 [
     {
         "AZ": "us-west-2a",
@@ -117,9 +334,10 @@ output=text</code></pre></li><li class="listitem"><p>Using the <code class="code
         "Size": 8
     }
 ]</code></pre><p>In the dictionary notation, you can also use chained keys such as
-        <code class="code">key1.key2[0].key3</code> to filter elements deeply nested within the structure. The
-      example below demonstrates this with the <code class="code">Attachments[0].InstanceId</code> key, aliased
-      to simply <code class="code">InstanceId</code>.</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws ec2 describe-volumes --query 'Volumes[*].{ID:VolumeId,InstanceId:Attachments[0].InstanceId,AZ:AvailabilityZone,Size:Size}'</code></strong>
+                        <code class="code">key1.key2[0].key3</code> to filter elements deeply nested within the structure. The
+                        example below demonstrates this with the <code class="code">Attachments[0].InstanceId</code> key, aliased
+                        to simply <code class="code">InstanceId</code>.
+                     </p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws ec2 describe-volumes --query 'Volumes[*].{ID:VolumeId,InstanceId:Attachments[0].InstanceId,AZ:AvailabilityZone,Size:Size}'</code></strong>
 [
     {
         "InstanceId": "i-a071c394",
@@ -134,8 +352,9 @@ output=text</code></pre></li><li class="listitem"><p>Using the <code class="code
         "Size": 8
     }
 ]</code></pre><p>You can also filter multiple elements with the list notation: <code class="code">[key1, key2]</code>.
-      This will format all filtered attributes into a single <span class="emphasis"><em>ordered</em></span> list per
-      object, regardless of type.</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws ec2 describe-volumes --query 'Volumes[*].[VolumeId, Attachments[0].InstanceId, AvailabilityZone, Size]'</code></strong>
+                        This will format all filtered attributes into a single <em>ordered</em> list per
+                        object, regardless of type.
+                     </p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws ec2 describe-volumes --query 'Volumes[*].[VolumeId, Attachments[0].InstanceId, AvailabilityZone, Size]'</code></strong>
 [
     [
         "vol-e11a5288",
@@ -150,43 +369,60 @@ output=text</code></pre></li><li class="listitem"><p>Using the <code class="code
         8
     ]
 ]</code></pre><p>To filter results by the value of a specific field, use the JMESPath "?" operator. The
-      following example query outputs only volumes in the us-west-2a availability zone:</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws ec2 describe-volumes --query 'Volumes[?AvailabilityZone==`us-west-2a`]'</code></strong></code></pre><div class="aws-note"><p class="aws-note">Note</p><p>When specifying a literal value such as "us-west-2" above in a JMESPath query
-        expression, you must surround the value in backticks (`) in order for it to be read
-        properly.</p></div><p>Combined with the three output formats that will be explained in more detail in the
-      following sections, the <code class="code">--query</code> option is a powerful tool you can use to
-      customize the content and style of outputs. For more examples and the full spec of JMESPath,
-      the underlying JSON-processing library, visit <a class="ulink" href="http://jmespath.org/specification.html" target="_blank">http://jmespath.org/specification.html</a>.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="controlling-output-json">JSON Output Format</h2></div></div></div><p>JSON is the default output format of the AWS CLI. Most languages can easily decode JSON
-      strings using built-in functions or with publicly available libraries. As shown in the
-      previous topic along with output examples, the <code class="code">--query</code> option provides powerful
-      ways to filter and format the AWS CLI's JSON formatted output. If you need more advanced
-      features that may not be possible with <code class="code">--query</code>, you can check out
-      <code class="code">jq</code>, a command line JSON processor. You can download it and find the official
-      tutorial at: <a class="ulink" href="http://stedolan.github.io/jq/" target="_blank">http://stedolan.github.io/jq/</a>.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="text-output">Text Output Format</h2></div></div></div><p>The <span class="emphasis"><em>text</em></span> format organizes the AWS CLI's output into tab-delimited
-      lines. It works well with traditional Unix text tools such as <code class="code">grep</code>,
-        <code class="code">sed</code>, and <code class="code">awk</code>, as well as Windows PowerShell. </p><p>The text output format follows the basic structure shown below. The columns are sorted
-      alphabetically by the corresponding key names of the underlying JSON object.</p><pre class="programlisting"><code class="nohighlight">IDENTIFIER  sorted-column1 sorted-column2
+                        following example query outputs only volumes in the us-west-2a availability zone:
+                     </p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws ec2 describe-volumes --query 'Volumes[?AvailabilityZone==`us-west-2a`]'</code></strong></code></pre><div class="aws-note">
+                        <p class="aws-note">Note</p>
+                        <p>When specifying a literal value such as "us-west-2" above in a JMESPath query
+                           expression, you must surround the value in backticks (`) in order for it to be read
+                           properly.
+                        </p>
+                     </div>
+                     <p>Combined with the three output formats that will be explained in more detail in the
+                        following sections, the <code class="code">--query</code> option is a powerful tool you can use to
+                        customize the content and style of outputs. For more examples and the full spec of JMESPath,
+                        the underlying JSON-processing library, visit <a href="http://jmespath.org/specification.html" target="_blank">http://jmespath.org/specification.html</a>.
+                     </p>
+                     <h2 id="controlling-output-json">JSON Output Format</h2>
+                     <p>JSON is the default output format of the AWS CLI. Most languages can easily decode JSON
+                        strings using built-in functions or with publicly available libraries. As shown in the
+                        previous topic along with output examples, the <code class="code">--query</code> option provides powerful
+                        ways to filter and format the AWS CLI's JSON formatted output. If you need more advanced
+                        features that may not be possible with <code class="code">--query</code>, you can check out
+                        <code class="code">jq</code>, a command line JSON processor. You can download it and find the official
+                        tutorial at: <a href="http://stedolan.github.io/jq/" target="_blank">http://stedolan.github.io/jq/</a>.
+                     </p>
+                     <h2 id="text-output">Text Output Format</h2>
+                     <p>The <em>text</em> format organizes the AWS CLI's output into tab-delimited
+                        lines. It works well with traditional Unix text tools such as <code class="code">grep</code>,
+                        <code class="code">sed</code>, and <code class="code">awk</code>, as well as Windows PowerShell. 
+                     </p>
+                     <p>The text output format follows the basic structure shown below. The columns are sorted
+                        alphabetically by the corresponding key names of the underlying JSON object.
+                     </p><pre class="programlisting"><code class="nohighlight ">IDENTIFIER  sorted-column1 sorted-column2
 IDENTIFIER2 sorted-column1 sorted-column2</code></pre><p>The following is an example of a text output.</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws ec2 describe-volumes --output text</code></strong>
 VOLUMES us-west-2a      2013-09-17T00:55:03.000Z        30      snap-f23ec1c8   in-use  vol-e11a5288    standard
 ATTACHMENTS     2013-09-17T00:55:03.000Z        True    /dev/sda1       i-a071c394      attached        vol-e11a5288
 VOLUMES us-west-2a      2013-09-18T20:26:15.000Z        8       snap-708e8348   in-use  vol-2e410a47    standard
-ATTACHMENTS     2013-09-18T20:26:16.000Z        True    /dev/sda1       i-4b41a37c      attached        vol-2e410a47</code></pre><p><span class="emphasis"><em>We strongly recommend that the text output be used along with the
-          <code class="code">--query</code> option to ensure consistent behavior</em></span>. This is because the
-      text format alphabetically orders output columns, and similar resources may not always have
-      the same collection of keys. For example, a JSON representation of a Linux EC2 instance may
-      have elements that are not present in the JSON representation of a Windows instance, or vice
-      versa. Also, resources may have key-value elements added or removed in future updates,
-      altering the column ordering. This is where <code class="code">--query</code> augments the functionality of
-      the text output to enable complete control over the output format. In the example below, the
-      command pre-selects which elements to display and defines the ordering of the columns with the
-      list notation <code class="code">[key1, key2, ...]</code>. This gives users full confidence that the
-      correct key values will always be displayed in the expected column. Finally, notice how the
-      AWS CLI outputs 'None' as values for keys that don't exist.</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws ec2 describe-volumes --query 'Volumes[*].[VolumeId, Attachments[0].InstanceId, AvailabilityZone, Size, FakeKey]' --output text</code></strong>
+ATTACHMENTS     2013-09-18T20:26:16.000Z        True    /dev/sda1       i-4b41a37c      attached        vol-2e410a47</code></pre><p><em>We strongly recommend that the text output be used along with the
+                           <code class="code">--query</code> option to ensure consistent behavior</em>. This is because the
+                        text format alphabetically orders output columns, and similar resources may not always have
+                        the same collection of keys. For example, a JSON representation of a Linux EC2 instance may
+                        have elements that are not present in the JSON representation of a Windows instance, or vice
+                        versa. Also, resources may have key-value elements added or removed in future updates,
+                        altering the column ordering. This is where <code class="code">--query</code> augments the functionality of
+                        the text output to enable complete control over the output format. In the example below, the
+                        command pre-selects which elements to display and defines the ordering of the columns with the
+                        list notation <code class="code">[key1, key2, ...]</code>. This gives users full confidence that the
+                        correct key values will always be displayed in the expected column. Finally, notice how the
+                        AWS CLI outputs 'None' as values for keys that don't exist.
+                     </p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws ec2 describe-volumes --query 'Volumes[*].[VolumeId, Attachments[0].InstanceId, AvailabilityZone, Size, FakeKey]' --output text</code></strong>
 vol-e11a5288    i-a071c394      us-west-2a      30      None
 vol-2e410a47    i-4b41a37c      us-west-2a      8       None</code></pre><p>Below is an example of how <code class="code">grep</code> and <code class="code">awk</code> can be used along with a
-      text output from <code class="code">aws ec2 describe-instances</code> command. The first command displays
-      the Availability Zone, state, and instance ID of each instance in text output. The second
-      command outputs only the instance IDs of all running instances in the <code class="code">us-west-2a</code>
-      Availability Zone.</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws ec2 describe-instances --query 'Reservations[*].Instances[*].[Placement.AvailabilityZone, State.Name, InstanceId]' --output text</code></strong>
+                        text output from <code class="code">aws ec2 describe-instances</code> command. The first command displays
+                        the Availability Zone, state, and instance ID of each instance in text output. The second
+                        command outputs only the instance IDs of all running instances in the <code class="code">us-west-2a</code>
+                        Availability Zone.
+                     </p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws ec2 describe-instances --query 'Reservations[*].Instances[*].[Placement.AvailabilityZone, State.Name, InstanceId]' --output text</code></strong>
 us-west-2a      running i-4b41a37c
 us-west-2a      stopped i-a071c394
 us-west-2b      stopped i-97a217a0
@@ -197,22 +433,25 @@ $ <strong class="userinput"><code>aws ec2 describe-instances --query 'Reservatio
 i-4b41a37c
 i-3045b007
 i-6fc67758</code></pre><p>The next command shows a similar example for all stopped instances and takes it one step
-      further to automate changing instance types for each stopped instance.</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws ec2 describe-instances --query 'Reservations[*].Instances[*].[State.Name, InstanceId]' --output text |</code></strong>
+                        further to automate changing instance types for each stopped instance.
+                     </p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws ec2 describe-instances --query 'Reservations[*].Instances[*].[State.Name, InstanceId]' --output text |</code></strong>
 &gt; <strong class="userinput"><code>grep stopped |</code></strong>
 &gt; <strong class="userinput"><code>awk '{print $2}' |</code></strong>
 &gt; <strong class="userinput"><code>while read line;</code></strong>
 &gt; <strong class="userinput"><code>do aws ec2 modify-instance-attribute --instance-id $line --instance-type '{"Value": "m1.medium"}';</code></strong>
 &gt; <strong class="userinput"><code>done</code></strong></code></pre><p>The text output is useful in Windows PowerShell as well. Because AWS CLI's text output is
-      tab-delimited, it is easily split into an array in PowerShell using the <code class="code">`t</code>
-      delimiter. The following command displays the value of the third column
-        (<code class="code">InstanceId</code>) if the first column (<code class="code">AvailabilityZone</code>) matches
-        <code class="literal">us-west-2a</code>.</p><pre class="programlisting"><code class="nohighlight">&gt; <strong class="userinput"><code>aws ec2 describe-instances --query 'Reservations[*].Instances[*].[Placement.AvailabilityZone, State.Name, InstanceId]' --output text |</code></strong>
-<strong class="userinput"><code>%{if ($_.split("`t")[0] -match "us-west-2a") { $_.split("`t")[2]; } }</code></strong>
+                        tab-delimited, it is easily split into an array in PowerShell using the <code class="code">`t</code>
+                        delimiter. The following command displays the value of the third column
+                        (<code class="code">InstanceId</code>) if the first column (<code class="code">AvailabilityZone</code>) matches
+                        <code class="code">us-west-2a</code>.
+                     </p><pre class="programlisting"><code class="nohighlight">&gt; <strong class="userinput"><code>aws ec2 describe-instances --query 'Reservations[*].Instances[*].[Placement.AvailabilityZone, State.Name, InstanceId]' --output text |</code></strong><strong class="userinput"><code>%{if ($_.split("`t")[0] -match "us-west-2a") { $_.split("`t")[2]; } }</code></strong>
 i-4b41a37c
 i-a071c394
 i-3045b007
-i-6fc67758</code></pre></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="table-output">Table Output Format</h2></div></div></div><p>The <code class="code">table</code> format produces human-readable representations of AWS CLI output.
-      Here is an example:</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws ec2 describe-volumes --output table</code></strong>
+i-6fc67758</code></pre><h2 id="table-output">Table Output Format</h2>
+                     <p>The <code class="code">table</code> format produces human-readable representations of AWS CLI output.
+                        Here is an example:
+                     </p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws ec2 describe-volumes --output table</code></strong>
 ---------------------------------------------------------------------------------------------------------------------
 |                                                  DescribeVolumes                                                  |
 +-------------------------------------------------------------------------------------------------------------------+
@@ -240,9 +479,10 @@ i-6fc67758</code></pre></div><div class="section"><div class="titlepage"><div><d
 ||+---------------------------+------------------------+-------------+--------------+------------+----------------+||
 |||  2013-09-18T20:26:16.000Z |  True                  |  /dev/sda1  |  i-4b41a37c  |  attached  |  vol-2e410a47  |||
 ||+---------------------------+------------------------+-------------+--------------+------------+----------------+||</code></pre><p>The <code class="code">--query</code> option can be used with the table format to display a set of
-      elements pre-selected from the raw output. Note the output differences in dictionary and list
-      notations: column names are alphabetically ordered in the first example, and unnamed columns
-      are ordered as defined by the user in the second example.</p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws ec2 describe-volumes --query 'Volumes[*].{ID:VolumeId,InstanceId:Attachments[0].InstanceId,AZ:AvailabilityZone,Size:Size}' --output table</code></strong>
+                        elements pre-selected from the raw output. Note the output differences in dictionary and list
+                        notations: column names are alphabetically ordered in the first example, and unnamed columns
+                        are ordered as defined by the user in the second example.
+                     </p><pre class="programlisting"><code class="nohighlight">$ <strong class="userinput"><code>aws ec2 describe-volumes --query 'Volumes[*].{ID:VolumeId,InstanceId:Attachments[0].InstanceId,AZ:AvailabilityZone,Size:Size}' --output table</code></strong>
 ------------------------------------------------------
 |                   DescribeVolumes                  | 
 +------------+----------------+--------------+-------+
@@ -258,10 +498,70 @@ $ <strong class="userinput"><code>aws ec2 describe-volumes --query 'Volumes[*].[
 +--------------+--------------+--------------+-----+
 |  vol-e11a5288|  i-a071c394  |  us-west-2a  |  30 |
 |  vol-2e410a47|  i-4b41a37c  |  us-west-2a  |  8  |
-+--------------+--------------+--------------+-----+</code></pre></div></div></div><img src="images/expanderarrow.png" style="display:none;height:0;width:0"><div id="main-col-footer"><div id="doc-conventions"><a target="_top" href="http://docs.aws.amazon.com/general/latest/gr/docconventions.html">Document Conventions</a></div><div id="next"><a class="awstoc" accesskey="p" href="generate-cli-skeleton.html">&laquo; Previous </a><a class="awstoc" accesskey="n" href="shorthand-syntax.html">Next &raquo;</a></div><div id="copyright-main-footer">&copy; 2016, Amazon Web Services, Inc. or its affiliates. All rights reserved.</div></div></div></div><div id="right-expanded"><div id="right-content-wrapper"><div id="right-col-header"><a id="pdf_link" href="aws-cli.pdf"> PDF </a><text> | </text><a target="_blank" href="http://www.amazon.com/dp/B00Q7K4HFG">Kindle </a></div><div id="pagetoc"><p>On this page:</p><ul class="pagetoc"><li class="pagetoc" name="How to Select the Output Format"><a class="pagetoc" href="#controlling-output-format">How to Select the Output Format</a></li><li class="pagetoc" name="How to Filter the Output with the&#xA;        --query Option"><a class="pagetoc" href="#controlling-output-filter">How to Filter the Output with the
-        --query Option</a></li><li class="pagetoc" name="JSON Output Format"><a class="pagetoc" href="#controlling-output-json">JSON Output Format</a></li><li class="pagetoc" name="Text Output Format"><a class="pagetoc" href="#text-output">Text Output Format</a></li><li class="pagetoc" name="Table Output Format"><a class="pagetoc" href="#table-output">Table Output Format</a></li></ul></div></div></div></div></div><div id="footer"><div id="footer_short_fb" class="hide" title="Feedback"><a target="_blank" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=User%20Guide&amp;hidden_api_version=&amp;hidden_file_name=controlling-output"><i class="fa fa-envelope-o"></i></a></div><div id="footer_toggle" class="mediaobject"><img id="footer_toggle_img" src="images/expanderarrow.png"><img id="footer_toggle_img_collapse" class="hide" src="images/expanderarrowright.png"></div><div id="footer-left"><a target="_top" href="http://aws.amazon.com/terms">Terms of Use</a> | &copy; 2016, Amazon Web Services, Inc. or its affiliates. All rights reserved.</div><div id="footer-right"><div id="feedback"><div id="forums"><a id="forum_link" target="_blank" href="http://forums.aws.amazon.com/forum.jspa?forumID=150">Have a question? Try the Forums.</a></div><div id="feedback-message">Did this page help you?</div><div id="feedback-yesno-buttons"><a class="awstoc btn btn-default" target="_blank" href="feedbackyes14a5.html?topic_id=controlling-output">Yes</a><a class="awstoc btn btn-default" target="_blank" href="feedbackno14a5.html?topic_id=controlling-output">No</a></div><div id="feedback-feedback-button"><a class="awstoc btn btn-default" target="_blank" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=User%20Guide&amp;hidden_api_version=&amp;hidden_file_name=controlling-output">Feedback</a></div></div></div></div><noscript><div><div><div><div id="error_messages"><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" style="float: left;" alt="Warning"><div id="js_error_message"><strong>Javascript is disabled or is unavailable in your browser.</strong><br> To use the AWS Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions. </div></div></div></div></div></noscript><!-- SiteCatalyst code version: H.25.2.
++--------------+--------------+--------------+-----+</code></pre></div>
+                  <div id="main-col-footer">
+                     <div id="doc-conventions"><a target="_top" href="http://docs.aws.amazon.com/general/latest/gr/docconventions.html">Document Conventions</a></div>
+                     <div id="next"><a class="awstoc" accesskey="p" href="generate-cli-skeleton.html">« Previous </a><a class="awstoc" accesskey="n" href="shorthand-syntax.html">Next »</a></div>
+                     <div id="copyright-main-footer">© 2017, Amazon Web Services, Inc. or its affiliates. All rights reserved.</div>
+                  </div>
+               </div>
+            </div>
+            <div id="right-expanded">
+               <div id="right-content-wrapper">
+                  <div id="right-col-header"><a id="pdf_link" href="aws-cli.pdf" target="_blank"> PDF </a> | <a target="_blank" href="http://www.amazon.com/dp/B00Q7K4HFG">Kindle </a></div>
+                  <div id="pagetoc">
+                     <p>On this page:</p>
+                     <ul class="pagetoc">
+                        <li class="pagetoc" name="How to Select the Output Format"><a class="pagetoc" href="#controlling-output-format">How to Select the Output Format</a></li>
+                        <li class="pagetoc" name="How to Filter the Output with the&#xA;         Option"><a class="pagetoc" href="#controlling-output-filter">How to Filter the Output with the
+                               Option</a></li>
+                        <li class="pagetoc" name="JSON Output Format"><a class="pagetoc" href="#controlling-output-json">JSON Output Format</a></li>
+                        <li class="pagetoc" name="Text Output Format"><a class="pagetoc" href="#text-output">Text Output Format</a></li>
+                        <li class="pagetoc" name="Table Output Format"><a class="pagetoc" href="#table-output">Table Output Format</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="footer">
+         <div id="footer_short_fb" class="hide" title="Feedback"><a target="_blank"
+               href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=User%20Guide&amp;hidden_api_version=&amp;hidden_file_name=controlling-output"><i class="fa fa-envelope-o"></i></a></div>
+         <div id="footer_toggle" class="mediaobject"><img id="footer_toggle_img" src="http://docs.aws.amazon.com/images/expanderarrow.png" /><img id="footer_toggle_img_collapse" class="hide"
+                 src="http://docs.aws.amazon.com/images/expanderarrowright.png" /></div>
+         <div id="footer-left"><a target="_top" href="http://aws.amazon.com/terms">Terms of Use</a> | © 2017, Amazon Web Services, Inc. or its affiliates. All rights reserved.
+         </div>
+         <div id="footer-right">
+            <div id="feedback">
+               <div id="forums"><a id="forum_link" target="_blank"
+                     href="http://forums.aws.amazon.com/forum.jspa?forumID=150">Have a question? Try the Forums.</a></div>
+               <div id="feedback-message">Did this page help you?</div>
+               <div id="feedback-yesno-buttons"><a class="awstoc btn btn-default" target="_blank"
+                     href="feedbackyesc658.html?topic_url=http://docs.aws.amazon.com/cli/latest/userguide/controlling-output.html">Yes</a><a class="awstoc btn btn-default" target="_blank"
+                     href="feedbacknoc658.html?topic_url=http://docs.aws.amazon.com/cli/latest/userguide/controlling-output.html">No</a></div>
+               <div id="feedback-feedback-button"><a class="awstoc btn btn-default" target="_blank"
+                     href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;topic_url=http://docs.aws.amazon.com/cli/latest/userguide/controlling-output.html&amp;hidden_guide_name=User%20Guide&amp;hidden_api_version=&amp;hidden_file_name=controlling-output">Feedback</a></div>
+            </div>
+         </div>
+      </div>
+      <noscript>
+         <div>
+            <div>
+               <div>
+                  <div id="error_messages"><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png"
+                          style="float: left;"
+                          alt="Warning" /><div id="js_error_message"><strong>Javascript is disabled or is unavailable in your browser.</strong><br /> To use the AWS Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions. 
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </noscript>
+      <!-- SiteCatalyst code version: H.25.2.
             Copyright 1996-2012 Adobe, Inc. All Rights Reserved
-            More info available at http://www.omniture.com --><script language="JavaScript" type="text/javascript" src="https://a0.awsstatic.com/s_code/js/1.0/awshome_s_code.js"></script><script language="JavaScript" type="text/javascript"><!--
+            More info available at http://www.omniture.com --><script language="JavaScript" type="text/javascript"
+              src="https://a0.awsstatic.com/s_code/js/1.0/awshome_s_code.js"></script><script language="JavaScript" type="text/javascript">
+         <!--
 
             // Documentation Service Name
             s.prop66='AWS Command Line Interface';
@@ -271,8 +571,17 @@ $ <strong class="userinput"><code>aws ec2 describe-volumes --query 'Volumes[*].[
             s.prop65='User Guide';
             s.eVar65='D=c65';
 
-            var s_code=s.t();if(s_code)document.write(s_code)//--></script><script language="JavaScript" type="text/javascript"><!--
+            var s_code=s.t();if(s_code)document.write(s_code)//--></script><script language="JavaScript" type="text/javascript">
+         <!--
                 if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
-                //--></script><noscript><img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt=""></noscript><!--/DO NOT REMOVE/--><!-- End SiteCatalyst code version: H.25.2. --></body>
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/userguide/controlling-output.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:40 GMT -->
+                //--></script><noscript><img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0"
+              height="1"
+              width="1"
+              border="0"
+              alt="" /></noscript>
+      <!--/DO NOT REMOVE/-->
+      <!-- End SiteCatalyst code version: H.25.2. -->
+   </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/userguide/controlling-output.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:44 GMT -->
 </html>

@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/sns/publish.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/sns/publish.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:29 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>publish &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>publish &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,10 +25,10 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="sns" href="index.html" />
     <link rel="next" title="remove-permission" href="remove-permission.html" />
-    <link rel="prev" title="list-topics" href="list-topics.html" />
+    <link rel="prev" title="opt-in-phone-number" href="opt-in-phone-number.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
   
@@ -63,8 +63,8 @@
         <li class="right">
           <a href="remove-permission.html" title="remove-permission" accesskey="N">next</a> |</li>
         <li class="right">
-          <a href="list-topics.html" title="list-topics" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <a href="opt-in-phone-number.html" title="opt-in-phone-number" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">sns</a> &#187;</li> 
       </ul>
@@ -74,7 +74,7 @@
     <div class="top-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="list-topics.html" title="previous chapter (use the left arrow)">&#8592; list-topics</a>
+          <a href="opt-in-phone-number.html" title="previous chapter (use the left arrow)">&#8592; opt-in-phone-number</a>
           <span class="divider">/</span>
           
         </li>
@@ -112,7 +112,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/sns/publish">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/sns/publish">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -129,35 +129,47 @@
 <span id="cli-aws-sns-publish"></span><h1>publish<a name="//apple_ref/cpp/Command/aws sns publish" class="dashAnchor" id="aws sns publish"></a><a class="headerlink" href="#publish" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Sends a message to all of a topic's subscribed endpoints. When a <tt class="docutils literal"><span class="pre">messageId</span></tt> is returned, the message has been saved and Amazon SNS will attempt to deliver it to the topic's subscribers shortly. The format of the outgoing message to each subscribed endpoint depends on the notification protocol selected.</p>
-<p>To use the <tt class="docutils literal"><span class="pre">publish</span></tt> action for sending a message to a mobile endpoint, such as an app on a Kindle device or mobile phone, you must specify the EndpointArn. The EndpointArn is returned when making a call with the <tt class="docutils literal"><span class="pre">create-platform-endpoint</span></tt> action. The second example below shows a request and response for publishing to a mobile endpoint.</p>
+<p>Sends a message to all of a topic's subscribed endpoints. When a <tt class="docutils literal"><span class="pre">messageId</span></tt> is returned, the message has been saved and Amazon SNS will attempt to deliver it to the topic's subscribers shortly. The format of the outgoing message to each subscribed endpoint depends on the notification protocol.</p>
+<p>To use the <tt class="docutils literal"><span class="pre">publish</span></tt> action for sending a message to a mobile endpoint, such as an app on a Kindle device or mobile phone, you must specify the EndpointArn for the TargetArn parameter. The EndpointArn is returned when making a call with the <tt class="docutils literal"><span class="pre">create-platform-endpoint</span></tt> action.</p>
+<p>For more information about formatting messages, see <a class="reference external" href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send Custom Platform-Specific Payloads in Messages to Mobile Devices</a> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">AWS API Documentation</a></p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python"><pre>  publish
 [--topic-arn &lt;value&gt;]
 [--target-arn &lt;value&gt;]
+[--phone-number &lt;value&gt;]
 --message &lt;value&gt;
 [--subject &lt;value&gt;]
 [--message-structure &lt;value&gt;]
 [--message-attributes &lt;value&gt;]
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
 <h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--topic-arn" class="dashAnchor" id="topic-arn"></a><span class="pre">--topic-arn</span></tt> (string)</p>
 <blockquote>
-<div>The topic you want to publish to.</div></blockquote>
+<div><p>The topic you want to publish to.</p>
+<p>If you don't specify a value for the <tt class="docutils literal"><span class="pre">TopicArn</span></tt> parameter, you must specify a value for the <tt class="docutils literal"><span class="pre">PhoneNumber</span></tt> or <tt class="docutils literal"><span class="pre">TargetArn</span></tt> parameters.</p>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--target-arn" class="dashAnchor" id="target-arn"></a><span class="pre">--target-arn</span></tt> (string)</p>
 <blockquote>
-<div>Either TopicArn or EndpointArn, but not both.</div></blockquote>
+<div><p>Either TopicArn or EndpointArn, but not both.</p>
+<p>If you don't specify a value for the <tt class="docutils literal"><span class="pre">TargetArn</span></tt> parameter, you must specify a value for the <tt class="docutils literal"><span class="pre">PhoneNumber</span></tt> or <tt class="docutils literal"><span class="pre">TopicArn</span></tt> parameters.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--phone-number" class="dashAnchor" id="phone-number"></a><span class="pre">--phone-number</span></tt> (string)</p>
+<blockquote>
+<div><p>The phone number to which you want to deliver an SMS message. Use E.164 format.</p>
+<p>If you don't specify a value for the <tt class="docutils literal"><span class="pre">PhoneNumber</span></tt> parameter, you must specify a value for the <tt class="docutils literal"><span class="pre">TargetArn</span></tt> or <tt class="docutils literal"><span class="pre">TopicArn</span></tt> parameters.</p>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--message" class="dashAnchor" id="message"></a><span class="pre">--message</span></tt> (string)</p>
 <blockquote>
 <div><p>The message you want to send to the topic.</p>
 <p>If you want to send the same message to all transport protocols, include the text of the message as a target-arn value.</p>
-<p>If you want to send different messages for each transport protocol, set the value of the <tt class="docutils literal"><span class="pre">MessageStructure</span></tt> parameter to <tt class="docutils literal"><span class="pre">json</span></tt> and use a JSON object for the <tt class="docutils literal"><span class="pre">Message</span></tt> parameter. See the Examples section for the format of the JSON object.</p>
+<p>If you want to send different messages for each transport protocol, set the value of the <tt class="docutils literal"><span class="pre">MessageStructure</span></tt> parameter to <tt class="docutils literal"><span class="pre">json</span></tt> and use a JSON object for the <tt class="docutils literal"><span class="pre">Message</span></tt> parameter.</p>
 <p>Constraints: Messages must be UTF-8 encoded strings at most 256 KB in size (262144 bytes, not 262144 characters).</p>
 <p>JSON-specific constraints:</p>
 <ul class="simple">
@@ -192,7 +204,7 @@
 <blockquote>
 <div>Message attributes for publish action.</div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">KeyName1</span><span class="o">=</span><span class="n">DataType</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">StringValue</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">BinaryValue</span><span class="o">=</span><span class="n">blob</span><span class="p">,</span><span class="n">KeyName2</span><span class="o">=</span><span class="n">DataType</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">StringValue</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">BinaryValue</span><span class="o">=</span><span class="n">blob</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">KeyName1</span><span class="o">=</span><span class="n">DataType</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">StringValue</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">BinaryValue</span><span class="o">=</span><span class="n">blob</span><span class="p">,</span><span class="n">KeyName2</span><span class="o">=</span><span class="n">DataType</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">StringValue</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">BinaryValue</span><span class="o">=</span><span class="n">blob</span>
 </pre></div>
 </div>
 <p>JSON Syntax:</p>
@@ -205,8 +217,8 @@
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
@@ -237,7 +249,7 @@ Second Line</pre>
     <div class="footer-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="list-topics.html" title="previous chapter (use the left arrow)">&#8592; list-topics</a>
+          <a href="opt-in-phone-number.html" title="previous chapter (use the left arrow)">&#8592; opt-in-phone-number</a>
           <span class="divider">/</span>
           
         </li>
@@ -264,8 +276,8 @@ Second Line</pre>
         <li class="right">
           <a href="remove-permission.html" title="remove-permission">next</a> |</li>
         <li class="right">
-          <a href="list-topics.html" title="list-topics">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <a href="opt-in-phone-number.html" title="opt-in-phone-number">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">sns</a> &#187;</li> 
       </ul>
@@ -281,5 +293,5 @@ Second Line</pre>
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/sns/publish.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/sns/publish.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:29 GMT -->
 </html>

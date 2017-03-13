@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/codebuild/stop-build.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:09:56 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>stop-build &#8212; AWS CLI 1.11.61 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.11.61',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="codebuild" href="index.html" />
+    <link rel="next" title="update-project" href="update-project.html" />
+    <link rel="prev" title="start-build" href="start-build.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="update-project.html" title="update-project" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="start-build.html" title="start-build" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">codebuild</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="start-build.html" title="previous chapter (use the left arrow)">&#8592; start-build</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="update-project.html" title="next chapter (use the right arrow)">update-project &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">stop-build</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/codebuild/stop-build">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-codebuild"><em>codebuild</em></a> ]</p>
+<div class="section" id="stop-build">
+<span id="cli-aws-codebuild-stop-build"></span><h1>stop-build<a name="//apple_ref/cpp/Command/aws codebuild stop-build" class="dashAnchor" id="aws codebuild stop-build"></a><a class="headerlink" href="#stop-build" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Attempts to stop running a build.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild">AWS API Documentation</a></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  stop-build
+--id &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--id" class="dashAnchor" id="id"></a><span class="pre">--id</span></tt> (string)</p>
+<blockquote>
+<div>The ID of the build.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>build -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about the build.</p>
+<p>id -&gt; (string)</p>
+<blockquote>
+<div>The unique ID for the build.</div></blockquote>
+<p>arn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the build.</div></blockquote>
+<p>startTime -&gt; (timestamp)</p>
+<blockquote>
+<div>When the build process started, expressed in Unix time format.</div></blockquote>
+<p>endTime -&gt; (timestamp)</p>
+<blockquote>
+<div>When the build process ended, expressed in Unix time format.</div></blockquote>
+<p>currentPhase -&gt; (string)</p>
+<blockquote>
+<div>The current build phase.</div></blockquote>
+<p>buildStatus -&gt; (string)</p>
+<blockquote>
+<div><p>The current status of the build. Valid values include:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">FAILED</span></tt> : The build failed.</li>
+<li><tt class="docutils literal"><span class="pre">FAULT</span></tt> : The build faulted.</li>
+<li><tt class="docutils literal"><span class="pre">IN_PROGRESS</span></tt> : The build is still in progress.</li>
+<li><tt class="docutils literal"><span class="pre">STOPPED</span></tt> : The build stopped.</li>
+<li><tt class="docutils literal"><span class="pre">SUCCEEDED</span></tt> : The build succeeded.</li>
+<li><tt class="docutils literal"><span class="pre">TIMED_OUT</span></tt> : The build timed out.</li>
+</ul>
+</div></blockquote>
+<p>sourceVersion -&gt; (string)</p>
+<blockquote>
+<div>Any version identifier for the version of the source code to be built.</div></blockquote>
+<p>projectName -&gt; (string)</p>
+<blockquote>
+<div>The name of the build project.</div></blockquote>
+<p>phases -&gt; (list)</p>
+<blockquote>
+<div><p>Information about all previous build phases that are completed and information about any current build phase that is not yet complete.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Information about a stage for a build.</p>
+<p>phaseType -&gt; (string)</p>
+<blockquote>
+<div><p>The name of the build phase. Valid values include:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">BUILD</span></tt> : Core build activities typically occur in this build phase.</li>
+<li><tt class="docutils literal"><span class="pre">COMPLETED</span></tt> : The build has been completed.</li>
+<li><tt class="docutils literal"><span class="pre">DOWNLOAD_SOURCE</span></tt> : Source code is being downloaded in this build phase.</li>
+<li><tt class="docutils literal"><span class="pre">FINALIZING</span></tt> : The build process is completing in this build phase.</li>
+<li><tt class="docutils literal"><span class="pre">INSTALL</span></tt> : Installation activities typically occur in this build phase.</li>
+<li><tt class="docutils literal"><span class="pre">POST_BUILD</span></tt> : Post-build activities typically occur in this build phase.</li>
+<li><tt class="docutils literal"><span class="pre">PRE_BUILD</span></tt> : Pre-build activities typically occur in this build phase.</li>
+<li><tt class="docutils literal"><span class="pre">PROVISIONING</span></tt> : The build environment is being set up.</li>
+<li><tt class="docutils literal"><span class="pre">SUBMITTED</span></tt> : The build has been submitted.</li>
+<li><tt class="docutils literal"><span class="pre">UPLOAD_ARTIFACTS</span></tt> : Build output artifacts are being uploaded to the output location.</li>
+</ul>
+</div></blockquote>
+<p>phaseStatus -&gt; (string)</p>
+<blockquote>
+<div><p>The current status of the build phase. Valid values include:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">FAILED</span></tt> : The build phase failed.</li>
+<li><tt class="docutils literal"><span class="pre">FAULT</span></tt> : The build phase faulted.</li>
+<li><tt class="docutils literal"><span class="pre">IN_PROGRESS</span></tt> : The build phase is still in progress.</li>
+<li><tt class="docutils literal"><span class="pre">STOPPED</span></tt> : The build phase stopped.</li>
+<li><tt class="docutils literal"><span class="pre">SUCCEEDED</span></tt> : The build phase succeeded.</li>
+<li><tt class="docutils literal"><span class="pre">TIMED_OUT</span></tt> : The build phase timed out.</li>
+</ul>
+</div></blockquote>
+<p>startTime -&gt; (timestamp)</p>
+<blockquote>
+<div>When the build phase started, expressed in Unix time format.</div></blockquote>
+<p>endTime -&gt; (timestamp)</p>
+<blockquote>
+<div>When the build phase ended, expressed in Unix time format.</div></blockquote>
+<p>durationInSeconds -&gt; (long)</p>
+<blockquote>
+<div>How long, in seconds, between the starting and ending times of the build's phase.</div></blockquote>
+<p>contexts -&gt; (list)</p>
+<blockquote>
+<div><p>Additional information about a build phase, especially to help troubleshoot a failed build.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Additional information about a build phase that has an error. You can use this information to help troubleshoot a failed build.</p>
+<p>statusCode -&gt; (string)</p>
+<blockquote>
+<div>The status code for the context of the build phase.</div></blockquote>
+<p>message -&gt; (string)</p>
+<blockquote>
+<div>An explanation of the build phase's context. This explanation might include a command ID and an exit code.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>source -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about the source code to be built.</p>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div><p>The type of repository that contains the source code to be built. Valid values include:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">CODECOMMIT</span></tt> : The source code is in an AWS CodeCommit repository.</li>
+<li><tt class="docutils literal"><span class="pre">CODEPIPELINE</span></tt> : The source code settings are specified in the source action of a pipeline in AWS CodePipeline.</li>
+<li><tt class="docutils literal"><span class="pre">GITHUB</span></tt> : The source code is in a GitHub repository.</li>
+<li><tt class="docutils literal"><span class="pre">S3</span></tt> : The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</li>
+</ul>
+</div></blockquote>
+<p>location -&gt; (string)</p>
+<blockquote>
+<div><p>Information about the location of the source code to be built. Valid values include:</p>
+<ul class="simple">
+<li>For source code settings that are specified in the source action of a pipeline in AWS CodePipeline, <tt class="docutils literal"><span class="pre">location</span></tt> should not be specified. If it is specified, AWS CodePipeline will ignore it. This is because AWS CodePipeline uses the settings in a pipeline's source action instead of this value.</li>
+<li>For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the source code and the build spec (for example, <a href="#id1"><span class="problematic" id="id2">``</span></a><a class="reference external" href="https://git-codecommit.*region-id*/">https://git-codecommit.*region-ID*</a> .amazonaws.com/v1/repos/<em>repo-name</em> `` ).</li>
+<li>For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, the path to the ZIP file that contains the source code (for example, `` <em>bucket-name</em> /<em>path</em> /<em>to</em> /<em>object-name</em> .zip`` )</li>
+<li>For source code in a GitHub repository, instead of specifying a value here, you connect your AWS account to your GitHub account. To do this, use the AWS CodeBuild console to begin creating a build project, and follow the on-screen instructions to complete the connection. (After you have connected to your GitHub account, you do not need to finish creating the build project, and you may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then use this connection, in the <tt class="docutils literal"><span class="pre">source</span></tt> object, set the <tt class="docutils literal"><span class="pre">auth</span></tt> object's <tt class="docutils literal"><span class="pre">type</span></tt> value to <tt class="docutils literal"><span class="pre">OAUTH</span></tt> .</li>
+</ul>
+</div></blockquote>
+<p>buildspec -&gt; (string)</p>
+<blockquote>
+<div><p>The build spec declaration to use for the builds in this build project.</p>
+<p>If this value is not specified, a build spec must be included along with the source code to be built.</p>
+</div></blockquote>
+<p>auth -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about the authorization settings for AWS CodeBuild to access the source code to be built.</p>
+<p>This information is for the AWS CodeBuild console's use only. Your code should not get or set this information directly (unless the build project's source <tt class="docutils literal"><span class="pre">type</span></tt> value is <tt class="docutils literal"><span class="pre">GITHUB</span></tt> ).</p>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div>The authorization type to use. The only valid value is <tt class="docutils literal"><span class="pre">OAUTH</span></tt> , which represents the OAuth authorization type.</div></blockquote>
+<p>resource -&gt; (string)</p>
+<blockquote>
+<div>The resource value that applies to the specified authorization type.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>artifacts -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about the output artifacts for the build.</p>
+<p>location -&gt; (string)</p>
+<blockquote>
+<div>Information about the location of the build artifacts.</div></blockquote>
+<p>sha256sum -&gt; (string)</p>
+<blockquote>
+<div><p>The SHA-256 hash of the build artifact.</p>
+<p>You can use this hash along with a checksum tool to confirm both file integrity and authenticity.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This value is available only if the build project's <tt class="docutils literal"><span class="pre">packaging</span></tt> value is set to <tt class="docutils literal"><span class="pre">ZIP</span></tt> .</p>
+</div>
+</div></blockquote>
+<p>md5sum -&gt; (string)</p>
+<blockquote>
+<div><p>The MD5 hash of the build artifact.</p>
+<p>You can use this hash along with a checksum tool to confirm both file integrity and authenticity.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This value is available only if the build project's <tt class="docutils literal"><span class="pre">packaging</span></tt> value is set to <tt class="docutils literal"><span class="pre">ZIP</span></tt> .</p>
+</div>
+</div></blockquote>
+</div></blockquote>
+<p>environment -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about the build environment for this build.</p>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div>The type of build environment to use for related builds.</div></blockquote>
+<p>image -&gt; (string)</p>
+<blockquote>
+<div>The ID of the Docker image to use for this build project.</div></blockquote>
+<p>computeType -&gt; (string)</p>
+<blockquote>
+<div><p>Information about the compute resources the build project will use. Available values include:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">BUILD_GENERAL1_SMALL</span></tt> : Use up to 3 GB memory and 2 vCPUs for builds.</li>
+<li><tt class="docutils literal"><span class="pre">BUILD_GENERAL1_MEDIUM</span></tt> : Use up to 7 GB memory and 4 vCPUs for builds.</li>
+<li><tt class="docutils literal"><span class="pre">BUILD_GENERAL1_LARGE</span></tt> : Use up to 15 GB memory and 8 vCPUs for builds.</li>
+</ul>
+</div></blockquote>
+<p>environmentVariables -&gt; (list)</p>
+<blockquote>
+<div><p>A set of environment variables to make available to builds for this build project.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Information about an environment variable for a build project or a build.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name or key of the environment variable.</div></blockquote>
+<p>value -&gt; (string)</p>
+<blockquote>
+<div>The value of the environment variable.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>logs -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about the build's logs in Amazon CloudWatch Logs.</p>
+<p>groupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the Amazon CloudWatch Logs group for the build logs.</div></blockquote>
+<p>streamName -&gt; (string)</p>
+<blockquote>
+<div>The name of the Amazon CloudWatch Logs stream for the build logs.</div></blockquote>
+<p>deepLink -&gt; (string)</p>
+<blockquote>
+<div>The URL to an individual build log in Amazon CloudWatch Logs.</div></blockquote>
+</div></blockquote>
+<p>timeoutInMinutes -&gt; (integer)</p>
+<blockquote>
+<div>How long, in minutes, for AWS CodeBuild to wait before timing out this build if it does not get marked as completed.</div></blockquote>
+<p>buildComplete -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the build has finished. True if completed; otherwise, false.</div></blockquote>
+<p>initiator -&gt; (string)</p>
+<blockquote>
+<div><p>The entity that started the build. Valid values include:</p>
+<ul class="simple">
+<li>If AWS CodePipeline started the build, the pipeline's name (for example, <tt class="docutils literal"><span class="pre">codepipeline/my-demo-pipeline</span></tt> ).</li>
+<li>If an AWS Identity and Access Management (IAM) user started the build, the user's name (for example <tt class="docutils literal"><span class="pre">MyUserName</span></tt> ).</li>
+<li>If the Jenkins plugin for AWS CodeBuild started the build, the string <tt class="docutils literal"><span class="pre">CodeBuild-Jenkins-Plugin</span></tt> .</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="start-build.html" title="previous chapter (use the left arrow)">&#8592; start-build</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="update-project.html" title="next chapter (use the right arrow)">update-project &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="update-project.html" title="update-project">next</a> |</li>
+        <li class="right">
+          <a href="start-build.html" title="start-build">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">codebuild</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/codebuild/stop-build.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:09:56 GMT -->
+</html>

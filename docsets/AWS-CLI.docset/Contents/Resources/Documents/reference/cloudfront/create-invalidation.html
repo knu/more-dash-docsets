@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudfront/create-invalidation.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:59 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudfront/create-invalidation.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:09:55 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>create-invalidation &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>create-invalidation &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,10 +25,10 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="cloudfront" href="index.html" />
     <link rel="next" title="create-streaming-distribution" href="create-streaming-distribution.html" />
-    <link rel="prev" title="create-distribution" href="create-distribution.html" />
+    <link rel="prev" title="create-distribution-with-tags" href="create-distribution-with-tags.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
   
@@ -63,8 +63,8 @@
         <li class="right">
           <a href="create-streaming-distribution.html" title="create-streaming-distribution" accesskey="N">next</a> |</li>
         <li class="right">
-          <a href="create-distribution.html" title="create-distribution" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <a href="create-distribution-with-tags.html" title="create-distribution-with-tags" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">cloudfront</a> &#187;</li> 
       </ul>
@@ -74,7 +74,7 @@
     <div class="top-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="create-distribution.html" title="previous chapter (use the left arrow)">&#8592; create-distribution</a>
+          <a href="create-distribution-with-tags.html" title="previous chapter (use the left arrow)">&#8592; create-distribution-with-tags</a>
           <span class="divider">/</span>
           
         </li>
@@ -112,7 +112,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/cloudfront/create-invalidation">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/cloudfront/create-invalidation">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -130,6 +130,7 @@
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
 <p>Create a new invalidation.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateInvalidation">AWS API Documentation</a></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last"><strong>AWS CLI support for this service is only available in a preview stage.</strong> You can enable this service by running: <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">configure</span> <span class="pre">set</span> <span class="pre">preview.cloudfront</span> <span class="pre">true</span></tt></p>
@@ -142,20 +143,22 @@
 [--invalidation-batch &lt;value&gt;]
 [--paths &lt;value&gt;]
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
 <h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--distribution-id" class="dashAnchor" id="distribution-id"></a><span class="pre">--distribution-id</span></tt> (string)
-The distribution's id.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--invalidation-batch" class="dashAnchor" id="invalidation-batch"></a><span class="pre">--invalidation-batch</span></tt> (structure)
-The batch information for the invalidation.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--distribution-id" class="dashAnchor" id="distribution-id"></a><span class="pre">--distribution-id</span></tt> (string)</p>
+<blockquote>
+<div>The distribution's id.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--invalidation-batch" class="dashAnchor" id="invalidation-batch"></a><span class="pre">--invalidation-batch</span></tt> (structure)</p>
+<blockquote>
+<div>The batch information for the invalidation.</div></blockquote>
 <p>Shorthand Syntax:</p>
 <div class="highlight-python"><pre>Paths={Quantity=integer,Items=[string,string]},CallerReference=string</pre>
 </div>
 <p>JSON Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">"Paths"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Quantity"</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
     <span class="s2">"Items"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"string"</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
@@ -168,8 +171,8 @@ The batch information for the invalidation.</p>
 The space-separated paths to be invalidated. Note: --invalidation-batch and --paths are mututally exclusive.</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON distribution-id provided. The JSON distribution-id follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
@@ -183,7 +186,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 </div>
 <p>The distribution ID is available in the output of <tt class="docutils literal"><span class="pre">create-distribution</span></tt> and <tt class="docutils literal"><span class="pre">list-distributions</span></tt>.</p>
 <p>The file <tt class="docutils literal"><span class="pre">invbatch.json</span></tt> is a JSON document in the current folder that specifies two paths to invalidate:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">"Paths"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Quantity"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
     <span class="s2">"Items"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"/index.html"</span><span class="p">,</span> <span class="s2">"/error.html"</span><span class="p">]</span>
@@ -193,7 +196,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 </pre></div>
 </div>
 <p>Output of both commands:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">"Invalidation"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"Status"</span><span class="p">:</span> <span class="s2">"InProgress"</span><span class="p">,</span>
         <span class="s2">"InvalidationBatch"</span><span class="p">:</span> <span class="p">{</span>
@@ -218,16 +221,16 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
 <p>Location -&gt; (string)</p>
 <blockquote>
-<div>The fully qualified URI of the distribution and invalidation batch request, including the Invalidation ID.</div></blockquote>
+<div>The fully qualified URI of the distribution and invalidation batch request, including the <tt class="docutils literal"><span class="pre">Invalidation</span> <span class="pre">ID</span></tt> .</div></blockquote>
 <p>Invalidation -&gt; (structure)</p>
 <blockquote>
 <div><p>The invalidation's information.</p>
 <p>Id -&gt; (string)</p>
 <blockquote>
-<div>The identifier for the invalidation request. For example: IDFDVBD632BHDS5.</div></blockquote>
+<div>The identifier for the invalidation request. For example: <tt class="docutils literal"><span class="pre">IDFDVBD632BHDS5</span></tt> .</div></blockquote>
 <p>Status -&gt; (string)</p>
 <blockquote>
-<div>The status of the invalidation request. When the invalidation batch is finished, the status is Completed.</div></blockquote>
+<div>The status of the invalidation request. When the invalidation batch is finished, the status is <tt class="docutils literal"><span class="pre">Completed</span></tt> .</div></blockquote>
 <p>CreateTime -&gt; (timestamp)</p>
 <blockquote>
 <div>The date and time the invalidation request was first made.</div></blockquote>
@@ -236,19 +239,22 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div><p>The current invalidation information for the batch request.</p>
 <p>Paths -&gt; (structure)</p>
 <blockquote>
-<div><p>The path of the object to invalidate. The path is relative to the distribution and must begin with a slash (/). You must enclose each invalidation object with the Path element tags. If the path includes non-ASCII characters or unsafe characters as defined in RFC 1783 (<a class="reference external" href="http://www.ietf.org/rfc/rfc1738.txt">http://www.ietf.org/rfc/rfc1738.txt</a>), URL encode those characters. Do not URL encode any other characters in the path, or CloudFront will not invalidate the old version of the updated object.</p>
+<div><p>A complex type that contains information about the objects that you want to invalidate. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying the Objects to Invalidate</a> in the <em>Amazon CloudFront Developer Guide</em> .</p>
 <p>Quantity -&gt; (integer)</p>
 <blockquote>
 <div>The number of objects that you want to invalidate.</div></blockquote>
 <p>Items -&gt; (list)</p>
 <blockquote>
-<div><p>A complex type that contains a list of the objects that you want to invalidate.</p>
+<div><p>A complex type that contains a list of the paths that you want to invalidate.</p>
 <p>(string)</p>
 </div></blockquote>
 </div></blockquote>
 <p>CallerReference -&gt; (string)</p>
 <blockquote>
-<div>A unique name that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the Path object), a new distribution is created. If the CallerReference is a value you already sent in a previous request to create an invalidation batch, and the content of each Path element is identical to the original request, the response includes the same information returned to the original request. If the CallerReference is a value you already sent in a previous request to create a distribution but the content of any Path is different from the original request, CloudFront returns an InvalidationBatchAlreadyExists error.</div></blockquote>
+<div><p>A value that you specify to uniquely identify an invalidation request. CloudFront uses the value to prevent you from accidentally resubmitting an identical request. Whenever you create a new invalidation request, you must specify a new value for <tt class="docutils literal"><span class="pre">CallerReference</span></tt> and change other values in the request as applicable. One way to ensure that the value of <tt class="docutils literal"><span class="pre">CallerReference</span></tt> is unique is to use a <tt class="docutils literal"><span class="pre">timestamp</span></tt> , for example, <tt class="docutils literal"><span class="pre">20120301090000</span></tt> .</p>
+<p>If you make a second invalidation request with the same value for <tt class="docutils literal"><span class="pre">CallerReference</span></tt> , and if the rest of the request is the same, CloudFront doesn't create a new invalidation request. Instead, CloudFront returns information about the invalidation request that you previously created with the same <tt class="docutils literal"><span class="pre">CallerReference</span></tt> .</p>
+<p>If <tt class="docutils literal"><span class="pre">CallerReference</span></tt> is a value you already sent in a previous invalidation batch request but the content of any <tt class="docutils literal"><span class="pre">Path</span></tt> is different from the original request, CloudFront returns an <tt class="docutils literal"><span class="pre">InvalidationBatchAlreadyExists</span></tt> error.</p>
+</div></blockquote>
 </div></blockquote>
 </div></blockquote>
 </div>
@@ -262,7 +268,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
     <div class="footer-links">
       <ul class="breadcrumb pull-right">
         <li>
-          <a href="create-distribution.html" title="previous chapter (use the left arrow)">&#8592; create-distribution</a>
+          <a href="create-distribution-with-tags.html" title="previous chapter (use the left arrow)">&#8592; create-distribution-with-tags</a>
           <span class="divider">/</span>
           
         </li>
@@ -289,8 +295,8 @@ Prints a sample input JSON to standard output. Note the specified operation is n
         <li class="right">
           <a href="create-streaming-distribution.html" title="create-streaming-distribution">next</a> |</li>
         <li class="right">
-          <a href="create-distribution.html" title="create-distribution">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+          <a href="create-distribution-with-tags.html" title="create-distribution-with-tags">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">cloudfront</a> &#187;</li> 
       </ul>
@@ -306,5 +312,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudfront/create-invalidation.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:59 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudfront/create-invalidation.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:09:55 GMT -->
 </html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/batch/describe-job-definitions.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:09:52 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-job-definitions &#8212; AWS CLI 1.11.61 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.11.61',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="batch" href="index.html" />
+    <link rel="next" title="describe-job-queues" href="describe-job-queues.html" />
+    <link rel="prev" title="describe-compute-environments" href="describe-compute-environments.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="describe-job-queues.html" title="describe-job-queues" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="describe-compute-environments.html" title="describe-compute-environments" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">batch</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="describe-compute-environments.html" title="previous chapter (use the left arrow)">&#8592; describe-compute-environments</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="describe-job-queues.html" title="next chapter (use the right arrow)">describe-job-queues &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-job-definitions</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/batch/describe-job-definitions">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-batch"><em>batch</em></a> ]</p>
+<div class="section" id="describe-job-definitions">
+<span id="cli-aws-batch-describe-job-definitions"></span><h1>describe-job-definitions<a name="//apple_ref/cpp/Command/aws batch describe-job-definitions" class="dashAnchor" id="aws batch describe-job-definitions"></a><a class="headerlink" href="#describe-job-definitions" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Describes a list of job definitions. You can specify a <tt class="docutils literal"><span class="pre">status</span></tt> (such as <tt class="docutils literal"><span class="pre">ACTIVE</span></tt> ) to only return job definitions that match that status.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobDefinitions">AWS API Documentation</a></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  describe-job-definitions
+[--job-definitions &lt;value&gt;]
+[--max-results &lt;value&gt;]
+[--job-definition-name &lt;value&gt;]
+[--status &lt;value&gt;]
+[--next-token &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--job-definitions" class="dashAnchor" id="job-definitions"></a><span class="pre">--job-definitions</span></tt> (list)</p>
+<blockquote>
+<div>A space-separated list of up to 100 job definition names or full Amazon Resource Name (ARN) entries.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>"string" "string" ...</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-results" class="dashAnchor" id="max-results"></a><span class="pre">--max-results</span></tt> (integer)</p>
+<blockquote>
+<div>The maximum number of results returned by <tt class="docutils literal"><span class="pre">describe-job-definitions</span></tt> in paginated output. When this parameter is used, <tt class="docutils literal"><span class="pre">describe-job-definitions</span></tt> only returns <tt class="docutils literal"><span class="pre">maxResults</span></tt> results in a single page along with a <tt class="docutils literal"><span class="pre">nextToken</span></tt> response element. The remaining results of the initial request can be seen by sending another <tt class="docutils literal"><span class="pre">describe-job-definitions</span></tt> request with the returned <tt class="docutils literal"><span class="pre">nextToken</span></tt> value. This value can be between 1 and 100. If this parameter is not used, then <tt class="docutils literal"><span class="pre">describe-job-definitions</span></tt> returns up to 100 results and a <tt class="docutils literal"><span class="pre">nextToken</span></tt> value if applicable.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--job-definition-name" class="dashAnchor" id="job-definition-name"></a><span class="pre">--job-definition-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the job definition to describe.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--status" class="dashAnchor" id="status"></a><span class="pre">--status</span></tt> (string)</p>
+<blockquote>
+<div>The status with which to filter job definitions.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--next-token" class="dashAnchor" id="next-token"></a><span class="pre">--next-token</span></tt> (string)</p>
+<blockquote>
+<div><p>The <tt class="docutils literal"><span class="pre">nextToken</span></tt> value returned from a previous paginated <tt class="docutils literal"><span class="pre">describe-job-definitions</span></tt> request where <tt class="docutils literal"><span class="pre">maxResults</span></tt> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <tt class="docutils literal"><span class="pre">nextToken</span></tt> value. This value is <tt class="docutils literal"><span class="pre">null</span></tt> when there are no more results to return.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To describe active job definitions</strong></p>
+<p>This example describes all of your active job definitions.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws batch describe-job-definitions --status ACTIVE</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">"jobDefinitions"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"status"</span><span class="p">:</span> <span class="s2">"ACTIVE"</span><span class="p">,</span>
+            <span class="s2">"jobDefinitionArn"</span><span class="p">:</span> <span class="s2">"arn:aws:batch:us-east-1:012345678910:job-definition/sleep60:1"</span><span class="p">,</span>
+            <span class="s2">"containerProperties"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"mountPoints"</span><span class="p">:</span> <span class="p">[],</span>
+                <span class="s2">"parameters"</span><span class="p">:</span> <span class="p">{},</span>
+                <span class="s2">"image"</span><span class="p">:</span> <span class="s2">"busybox"</span><span class="p">,</span>
+                <span class="s2">"environment"</span><span class="p">:</span> <span class="p">{},</span>
+                <span class="s2">"vcpus"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="s2">"command"</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s2">"sleep"</span><span class="p">,</span>
+                    <span class="s2">"60"</span>
+                <span class="p">],</span>
+                <span class="s2">"volumes"</span><span class="p">:</span> <span class="p">[],</span>
+                <span class="s2">"memory"</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+                <span class="s2">"ulimits"</span><span class="p">:</span> <span class="p">[]</span>
+            <span class="p">},</span>
+            <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"container"</span><span class="p">,</span>
+            <span class="s2">"jobDefinitionName"</span><span class="p">:</span> <span class="s2">"sleep60"</span><span class="p">,</span>
+            <span class="s2">"revision"</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>jobDefinitions -&gt; (list)</p>
+<blockquote>
+<div><p>The list of job definitions.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>An object representing an AWS Batch job definition.</p>
+<p>jobDefinitionName -&gt; (string)</p>
+<blockquote>
+<div>The name of the job definition.</div></blockquote>
+<p>jobDefinitionArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) for the job definition.</div></blockquote>
+<p>revision -&gt; (integer)</p>
+<blockquote>
+<div>The revision of the job definition.</div></blockquote>
+<p>status -&gt; (string)</p>
+<blockquote>
+<div>The status of the job definition.</div></blockquote>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div>The type of job definition.</div></blockquote>
+<p>parameters -&gt; (map)</p>
+<blockquote>
+<div><p>Default parameters or parameter substitution placeholders that are set in the job definition. Parameters are specified as a key-value pair mapping. Parameters in a <tt class="docutils literal"><span class="pre">submit-job</span></tt> request override any corresponding parameter defaults from the job definition.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+<p>containerProperties -&gt; (structure)</p>
+<blockquote>
+<div><p>An object with various properties specific to container-based jobs.</p>
+<p>image -&gt; (string)</p>
+<blockquote>
+<div><p>The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with `` <em>repository-url</em> /<em>image</em> :<em>tag</em> `` . Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter maps to <tt class="docutils literal"><span class="pre">Image</span></tt> in the <a class="reference external" href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a container</a> section of the <a class="reference external" href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the <tt class="docutils literal"><span class="pre">IMAGE</span></tt> parameter of <a class="reference external" href="https://docs.docker.com/engine/reference/run/">docker run</a> .</p>
+<ul class="simple">
+<li>Images in Amazon ECR repositories use the full registry and repository URI (for example, <tt class="docutils literal"><span class="pre">012345678910.dkr.ecr.region-name.amazonaws.com/repository-name</span></tt> ).</li>
+<li>Images in official repositories on Docker Hub use a single name (for example, <tt class="docutils literal"><span class="pre">ubuntu</span></tt> or <tt class="docutils literal"><span class="pre">mongo</span></tt> ).</li>
+<li>Images in other repositories on Docker Hub are qualified with an organization name (for example, <tt class="docutils literal"><span class="pre">amazon/amazon-ecs-agent</span></tt> ).</li>
+<li>Images in other online repositories are qualified further by a domain name (for example, <tt class="docutils literal"><span class="pre">quay.io/assemblyline/ubuntu</span></tt> ).</li>
+</ul>
+</div></blockquote>
+<p>vcpus -&gt; (integer)</p>
+<blockquote>
+<div>The number of vCPUs reserved for the container. This parameter maps to <tt class="docutils literal"><span class="pre">CpuShares</span></tt> in the <a class="reference external" href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a container</a> section of the <a class="reference external" href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the <tt class="docutils literal"><span class="pre">--cpu-shares</span></tt> option to <a class="reference external" href="https://docs.docker.com/engine/reference/run/">docker run</a> . Each vCPU is equivalent to 1,024 CPU shares.</div></blockquote>
+<p>memory -&gt; (integer)</p>
+<blockquote>
+<div>The hard limit (in MiB) of memory to present to the container. If your container attempts to exceed the memory specified here, the container is killed. This parameter maps to <tt class="docutils literal"><span class="pre">Memory</span></tt> in the <a class="reference external" href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a container</a> section of the <a class="reference external" href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the <tt class="docutils literal"><span class="pre">--memory</span></tt> option to <a class="reference external" href="https://docs.docker.com/engine/reference/run/">docker run</a> .</div></blockquote>
+<p>command -&gt; (list)</p>
+<blockquote>
+<div><p>The command that is passed to the container. This parameter maps to <tt class="docutils literal"><span class="pre">Cmd</span></tt> in the <a class="reference external" href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a container</a> section of the <a class="reference external" href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the <tt class="docutils literal"><span class="pre">COMMAND</span></tt> parameter to <a class="reference external" href="https://docs.docker.com/engine/reference/run/">docker run</a> . For more information, see <a class="reference external" href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a> .</p>
+<p>(string)</p>
+</div></blockquote>
+<p>jobRoleArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS permissions.</div></blockquote>
+<p>volumes -&gt; (list)</p>
+<blockquote>
+<div><p>A list of data volumes used in a job.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A data volume used in a job's container properties.</p>
+<p>host -&gt; (structure)</p>
+<blockquote>
+<div><p>The contents of the <tt class="docutils literal"><span class="pre">host</span></tt> parameter determine whether your data volume persists on the host container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.</p>
+<p>sourcePath -&gt; (string)</p>
+<blockquote>
+<div>The path on the host container instance that is presented to the container. If this parameter is empty, then the Docker daemon has assigned a host path for you. If the <tt class="docutils literal"><span class="pre">host</span></tt> parameter contains a <tt class="docutils literal"><span class="pre">sourcePath</span></tt> file location, then the data volume persists at the specified location on the host container instance until you delete it manually. If the <tt class="docutils literal"><span class="pre">sourcePath</span></tt> value does not exist on the host container instance, the Docker daemon creates it. If the location does exist, the contents of the source path folder are exported.</div></blockquote>
+</div></blockquote>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. This name is referenced in the <tt class="docutils literal"><span class="pre">sourceVolume</span></tt> parameter of container definition <tt class="docutils literal"><span class="pre">mountPoints</span></tt> .</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>environment -&gt; (list)</p>
+<blockquote>
+<div><p>The environment variables to pass to a container. This parameter maps to <tt class="docutils literal"><span class="pre">Env</span></tt> in the <a class="reference external" href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a container</a> section of the <a class="reference external" href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the <tt class="docutils literal"><span class="pre">--env</span></tt> option to <a class="reference external" href="https://docs.docker.com/engine/reference/run/">docker run</a> .</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">We do not recommend using plain text environment variables for sensitive information, such as credential data.</p>
+</div>
+<p>(structure)</p>
+<blockquote>
+<div><p>A key-value pair object.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name of the key value pair. For environment variables, this is the name of the environment variable.</div></blockquote>
+<p>value -&gt; (string)</p>
+<blockquote>
+<div>The value of the key value pair. For environment variables, this is the value of the environment variable.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>mountPoints -&gt; (list)</p>
+<blockquote>
+<div><p>The mount points for data volumes in your container. This parameter maps to <tt class="docutils literal"><span class="pre">Volumes</span></tt> in the <a class="reference external" href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a container</a> section of the <a class="reference external" href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the <tt class="docutils literal"><span class="pre">--volume</span></tt> option to <a class="reference external" href="https://docs.docker.com/engine/reference/run/">docker run</a> .</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Details on a volume mount point that is used in a job's container properties.</p>
+<p>containerPath -&gt; (string)</p>
+<blockquote>
+<div>The path on the container at which to mount the host volume.</div></blockquote>
+<p>readOnly -&gt; (boolean)</p>
+<blockquote>
+<div>If this value is <tt class="docutils literal"><span class="pre">true</span></tt> , the container has read-only access to the volume; otherwise, the container can write to the volume. The default value is <tt class="docutils literal"><span class="pre">false</span></tt> .</div></blockquote>
+<p>sourceVolume -&gt; (string)</p>
+<blockquote>
+<div>The name of the volume to mount.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>readonlyRootFilesystem -&gt; (boolean)</p>
+<blockquote>
+<div>When this parameter is true, the container is given read-only access to its root file system. This parameter maps to <tt class="docutils literal"><span class="pre">ReadonlyRootfs</span></tt> in the <a class="reference external" href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a container</a> section of the <a class="reference external" href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the <tt class="docutils literal"><span class="pre">--read-only</span></tt> option to <tt class="docutils literal"><span class="pre">docker</span> <span class="pre">run</span></tt> .</div></blockquote>
+<p>privileged -&gt; (boolean)</p>
+<blockquote>
+<div>When this parameter is true, the container is given elevated privileges on the host container instance (similar to the <tt class="docutils literal"><span class="pre">root</span></tt> user). This parameter maps to <tt class="docutils literal"><span class="pre">Privileged</span></tt> in the <a class="reference external" href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a container</a> section of the <a class="reference external" href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the <tt class="docutils literal"><span class="pre">--privileged</span></tt> option to <a class="reference external" href="https://docs.docker.com/engine/reference/run/">docker run</a> .</div></blockquote>
+<p>ulimits -&gt; (list)</p>
+<blockquote>
+<div><p>A list of <tt class="docutils literal"><span class="pre">ulimits</span></tt> to set in the container. This parameter maps to <tt class="docutils literal"><span class="pre">Ulimits</span></tt> in the <a class="reference external" href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a container</a> section of the <a class="reference external" href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the <tt class="docutils literal"><span class="pre">--ulimit</span></tt> option to <a class="reference external" href="https://docs.docker.com/engine/reference/run/">docker run</a> .</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The <tt class="docutils literal"><span class="pre">ulimit</span></tt> settings to pass to the container.</p>
+<p>hardLimit -&gt; (integer)</p>
+<blockquote>
+<div>The hard limit for the <tt class="docutils literal"><span class="pre">ulimit</span></tt> type.</div></blockquote>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">type</span></tt> of the <tt class="docutils literal"><span class="pre">ulimit</span></tt> .</div></blockquote>
+<p>softLimit -&gt; (integer)</p>
+<blockquote>
+<div>The soft limit for the <tt class="docutils literal"><span class="pre">ulimit</span></tt> type.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>user -&gt; (string)</p>
+<blockquote>
+<div>The user name to use inside the container. This parameter maps to <tt class="docutils literal"><span class="pre">User</span></tt> in the <a class="reference external" href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a container</a> section of the <a class="reference external" href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the <tt class="docutils literal"><span class="pre">--user</span></tt> option to <a class="reference external" href="https://docs.docker.com/engine/reference/run/">docker run</a> .</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>nextToken -&gt; (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">nextToken</span></tt> value to include in a future <tt class="docutils literal"><span class="pre">describe-job-definitions</span></tt> request. When the results of a <tt class="docutils literal"><span class="pre">describe-job-definitions</span></tt> request exceed <tt class="docutils literal"><span class="pre">maxResults</span></tt> , this value can be used to retrieve the next page of results. This value is <tt class="docutils literal"><span class="pre">null</span></tt> when there are no more results to return.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="describe-compute-environments.html" title="previous chapter (use the left arrow)">&#8592; describe-compute-environments</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="describe-job-queues.html" title="next chapter (use the right arrow)">describe-job-queues &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="describe-job-queues.html" title="describe-job-queues">next</a> |</li>
+        <li class="right">
+          <a href="describe-compute-environments.html" title="describe-compute-environments">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">batch</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/batch/describe-job-definitions.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:09:52 GMT -->
+</html>

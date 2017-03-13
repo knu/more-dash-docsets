@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/application-autoscaling/describe-scaling-policies.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:57 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/application-autoscaling/describe-scaling-policies.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:09:52 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>describe-scaling-policies &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>describe-scaling-policies &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="application-autoscaling" href="index.html" />
     <link rel="next" title="put-scaling-policy" href="put-scaling-policy.html" />
     <link rel="prev" title="describe-scaling-activities" href="describe-scaling-activities.html" />
@@ -64,7 +64,7 @@
           <a href="put-scaling-policy.html" title="put-scaling-policy" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="describe-scaling-activities.html" title="describe-scaling-activities" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">application-autoscaling</a> &#187;</li> 
       </ul>
@@ -95,6 +95,7 @@
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
 <li><a class="reference internal" href="#output">Output</a></li>
 </ul>
 </li>
@@ -111,7 +112,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/application-autoscaling/describe-scaling-policies">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/application-autoscaling/describe-scaling-policies">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -128,9 +129,12 @@
 <span id="cli-aws-application-autoscaling-describe-scaling-policies"></span><h1>describe-scaling-policies<a name="//apple_ref/cpp/Command/aws application-autoscaling describe-scaling-policies" class="dashAnchor" id="aws application-autoscaling describe-scaling-policies"></a><a class="headerlink" href="#describe-scaling-policies" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Provides descriptive information for scaling policies with a specified service namespace.</p>
-<p>You can filter the results in a service namespace with the <tt class="docutils literal"><span class="pre">ResourceId</span></tt> , <tt class="docutils literal"><span class="pre">scalable-dimension</span></tt> , and <tt class="docutils literal"><span class="pre">PolicyNames</span></tt> parameters.</p>
-<p>To create a new scaling policy or update an existing one, see  put-scaling-policy . If you are no longer using a scaling policy, you can delete it with  delete-scaling-policy .</p>
+<p>Provides descriptive information about the scaling policies in the specified namespace.</p>
+<p>You can filter the results using the <tt class="docutils literal"><span class="pre">ResourceId</span></tt> , <tt class="docutils literal"><span class="pre">scalable-dimension</span></tt> , and <tt class="docutils literal"><span class="pre">PolicyNames</span></tt> parameters.</p>
+<p>To create a scaling policy or update an existing one, see  put-scaling-policy . If you are no longer using a scaling policy, you can delete it using  delete-scaling-policy .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingPolicies">AWS API Documentation</a></p>
+<p><tt class="docutils literal"><span class="pre">describe-scaling-policies</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">ScalingPolicies</span></tt></p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
@@ -139,10 +143,11 @@
 --service-namespace &lt;value&gt;
 [--resource-id &lt;value&gt;]
 [--scalable-dimension &lt;value&gt;]
-[--max-results &lt;value&gt;]
-[--next-token &lt;value&gt;]
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--starting-token &lt;value&gt;]
+[--page-size &lt;value&gt;]
+[--max-items &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
@@ -155,33 +160,116 @@
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--service-namespace" class="dashAnchor" id="service-namespace"></a><span class="pre">--service-namespace</span></tt> (string)</p>
 <blockquote>
-<div><p>The AWS service namespace of the scalable target that the scaling policy is associated with. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+<div><p>The namespace of the AWS service. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS Service Namespaces</a> in the <em>Amazon Web Services General Reference</em> .</p>
 <p>Possible values:</p>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">ecs</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">elasticmapreduce</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ec2</span></tt></li>
 </ul>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--resource-id" class="dashAnchor" id="resource-id"></a><span class="pre">--resource-id</span></tt> (string)</p>
 <blockquote>
-<div>The unique resource identifier string of the scalable target that the scaling policy is associated with. For Amazon ECS services, this value is the resource type, followed by the cluster name and service name, such as <tt class="docutils literal"><span class="pre">service/default/sample-webapp</span></tt> . If you specify a scalable dimension, you must also specify a resource ID.</div></blockquote>
+<div><p>The identifier of the resource associated with the scaling policy. This string consists of the resource type and unique identifier. If you specify a scalable dimension, you must also specify a resource ID.</p>
+<ul class="simple">
+<li>ECS service - The resource type is <tt class="docutils literal"><span class="pre">service</span></tt> and the unique identifier is the cluster name and service name. Example: <tt class="docutils literal"><span class="pre">service/default/sample-webapp</span></tt> .</li>
+<li>Spot fleet request - The resource type is <tt class="docutils literal"><span class="pre">spot-fleet-request</span></tt> and the unique identifier is the Spot fleet request ID. Example: <tt class="docutils literal"><span class="pre">spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</span></tt> .</li>
+<li>EMR cluster - The resource type is <tt class="docutils literal"><span class="pre">instancegroup</span></tt> and the unique identifier is the cluster ID and instance group ID. Example: <tt class="docutils literal"><span class="pre">instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</span></tt> .</li>
+</ul>
+</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--scalable-dimension" class="dashAnchor" id="scalable-dimension"></a><span class="pre">--scalable-dimension</span></tt> (string)</p>
 <blockquote>
-<div><p>The scalable dimension of the scalable target that the scaling policy is associated with. The scalable dimension contains the service namespace, resource type, and scaling property, such as <tt class="docutils literal"><span class="pre">ecs:service:DesiredCount</span></tt> for the desired task count of an Amazon ECS service. If you specify a scalable dimension, you must also specify a resource ID.</p>
+<div><p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property. If you specify a scalable dimension, you must also specify a resource ID.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ecs:service:DesiredCount</span></tt> - The desired task count of an ECS service.</li>
+<li><tt class="docutils literal"><span class="pre">ec2:spot-fleet-request:TargetCapacity</span></tt> - The target capacity of a Spot fleet request.</li>
+<li><tt class="docutils literal"><span class="pre">elasticmapreduce:instancegroup:InstanceCount</span></tt> - The instance count of an EMR Instance Group.</li>
+</ul>
 <p>Possible values:</p>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">ecs:service:DesiredCount</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ec2:spot-fleet-request:TargetCapacity</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">elasticmapreduce:instancegroup:InstanceCount</span></tt></li>
 </ul>
 </div></blockquote>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-results" class="dashAnchor" id="max-results"></a><span class="pre">--max-results</span></tt> (integer)</p>
-<blockquote>
-<div>The maximum number of scaling policy results returned by <tt class="docutils literal"><span class="pre">describe-scaling-policies</span></tt> in paginated output. When this parameter is used, <tt class="docutils literal"><span class="pre">describe-scaling-policies</span></tt> returns up to <tt class="docutils literal"><span class="pre">max-results</span></tt> results in a single page along with a <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element. The remaining results of the initial request can be seen by sending another <tt class="docutils literal"><span class="pre">describe-scaling-policies</span></tt> request with the returned <tt class="docutils literal"><span class="pre">NextToken</span></tt> value. This value can be between 1 and 50. If this parameter is not used, then <tt class="docutils literal"><span class="pre">describe-scaling-policies</span></tt> returns up to 50 results and a <tt class="docutils literal"><span class="pre">NextToken</span></tt> value, if applicable.</div></blockquote>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--next-token" class="dashAnchor" id="next-token"></a><span class="pre">--next-token</span></tt> (string)</p>
-<blockquote>
-<div>The <tt class="docutils literal"><span class="pre">NextToken</span></tt> value returned from a previous paginated <tt class="docutils literal"><span class="pre">describe-scaling-policies</span></tt> request. Pagination continues from the end of the previous results that returned the <tt class="docutils literal"><span class="pre">NextToken</span></tt> value. This value is <tt class="docutils literal"><span class="pre">null</span></tt> when there are no more results to return.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--starting-token" class="dashAnchor" id="starting-token"></a><span class="pre">--starting-token</span></tt> (string)</p>
+<blockquote>
+<div>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--page-size" class="dashAnchor" id="page-size"></a><span class="pre">--page-size</span></tt> (integer)</p>
+<blockquote>
+<div>The size of each page.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-items" class="dashAnchor" id="max-items"></a><span class="pre">--max-items</span></tt> (integer)</p>
+<blockquote>
+<div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">NextToken</span></tt> will be provided in the output that you can use to resume pagination. This <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element should <strong>not</strong> be used directly outside of the AWS CLI.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To describe scaling policies</strong></p>
+<p>This example command describes the scaling policies for the <cite>ecs</cite> service namespace.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws application-autoscaling describe-scaling-policies --service-namespace ecs</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">"ScalingPolicies"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"PolicyName"</span><span class="p">:</span> <span class="s2">"web-app-cpu-gt-75"</span><span class="p">,</span>
+            <span class="s2">"ScalableDimension"</span><span class="p">:</span> <span class="s2">"ecs:service:DesiredCount"</span><span class="p">,</span>
+            <span class="s2">"ResourceId"</span><span class="p">:</span> <span class="s2">"service/default/web-app"</span><span class="p">,</span>
+            <span class="s2">"CreationTime"</span><span class="p">:</span> <span class="mf">1462561899.23</span><span class="p">,</span>
+            <span class="s2">"StepScalingPolicyConfiguration"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"Cooldown"</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
+                <span class="s2">"StepAdjustments"</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">"ScalingAdjustment"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+                        <span class="s2">"MetricIntervalLowerBound"</span><span class="p">:</span> <span class="mf">0.0</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="s2">"AdjustmentType"</span><span class="p">:</span> <span class="s2">"PercentChangeInCapacity"</span>
+            <span class="p">},</span>
+            <span class="s2">"PolicyARN"</span><span class="p">:</span> <span class="s2">"arn:aws:autoscaling:us-west-2:012345678910:scalingPolicy:6d8972f3-efc8-437c-92d1-6270f29a66e7:resource/ecs/service/default/web-app:policyName/web-app-cpu-gt-75"</span><span class="p">,</span>
+            <span class="s2">"PolicyType"</span><span class="p">:</span> <span class="s2">"StepScaling"</span><span class="p">,</span>
+            <span class="s2">"Alarms"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">"AlarmName"</span><span class="p">:</span> <span class="s2">"web-app-cpu-gt-75"</span><span class="p">,</span>
+                    <span class="s2">"AlarmARN"</span><span class="p">:</span> <span class="s2">"arn:aws:cloudwatch:us-west-2:012345678910:alarm:web-app-cpu-gt-75"</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s2">"ServiceNamespace"</span><span class="p">:</span> <span class="s2">"ecs"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"PolicyName"</span><span class="p">:</span> <span class="s2">"web-app-cpu-lt-25"</span><span class="p">,</span>
+            <span class="s2">"ScalableDimension"</span><span class="p">:</span> <span class="s2">"ecs:service:DesiredCount"</span><span class="p">,</span>
+            <span class="s2">"ResourceId"</span><span class="p">:</span> <span class="s2">"service/default/web-app"</span><span class="p">,</span>
+            <span class="s2">"CreationTime"</span><span class="p">:</span> <span class="mf">1462562575.099</span><span class="p">,</span>
+            <span class="s2">"StepScalingPolicyConfiguration"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"Cooldown"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="s2">"StepAdjustments"</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">"ScalingAdjustment"</span><span class="p">:</span> <span class="o">-</span><span class="mi">50</span><span class="p">,</span>
+                        <span class="s2">"MetricIntervalUpperBound"</span><span class="p">:</span> <span class="mf">0.0</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="s2">"AdjustmentType"</span><span class="p">:</span> <span class="s2">"PercentChangeInCapacity"</span>
+            <span class="p">},</span>
+            <span class="s2">"PolicyARN"</span><span class="p">:</span> <span class="s2">"arn:aws:autoscaling:us-west-2:012345678910:scalingPolicy:6d8972f3-efc8-437c-92d1-6270f29a66e7:resource/ecs/service/default/web-app:policyName/web-app-cpu-lt-25"</span><span class="p">,</span>
+            <span class="s2">"PolicyType"</span><span class="p">:</span> <span class="s2">"StepScaling"</span><span class="p">,</span>
+            <span class="s2">"Alarms"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">"AlarmName"</span><span class="p">:</span> <span class="s2">"web-app-cpu-lt-25"</span><span class="p">,</span>
+                    <span class="s2">"AlarmARN"</span><span class="p">:</span> <span class="s2">"arn:aws:cloudwatch:us-west-2:012345678910:alarm:web-app-cpu-lt-25"</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s2">"ServiceNamespace"</span><span class="p">:</span> <span class="s2">"ecs"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="output">
 <h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
@@ -190,7 +278,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div><p>A list of scaling policy objects.</p>
 <p>(structure)</p>
 <blockquote>
-<div><p>An object representing a scaling policy.</p>
+<div><p>Represents a scaling policy.</p>
 <p>PolicyARN -&gt; (string)</p>
 <blockquote>
 <div>The Amazon Resource Name (ARN) of the scaling policy.</div></blockquote>
@@ -199,13 +287,25 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div>The name of the scaling policy.</div></blockquote>
 <p>ServiceNamespace -&gt; (string)</p>
 <blockquote>
-<div>The namespace for the AWS service that the scaling policy is associated with. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS Service Namespaces</a> in the Amazon Web Services General Reference.</div></blockquote>
+<div>The namespace of the AWS service. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS Service Namespaces</a> in the <em>Amazon Web Services General Reference</em> .</div></blockquote>
 <p>ResourceId -&gt; (string)</p>
 <blockquote>
-<div>The unique identifier string for the resource associated with the scaling policy. For Amazon ECS services, this value is the resource type, followed by the cluster name and service name, such as <tt class="docutils literal"><span class="pre">service/default/sample-webapp</span></tt> .</div></blockquote>
+<div><p>The identifier of the resource associated with the scaling policy. This string consists of the resource type and unique identifier.</p>
+<ul class="simple">
+<li>ECS service - The resource type is <tt class="docutils literal"><span class="pre">service</span></tt> and the unique identifier is the cluster name and service name. Example: <tt class="docutils literal"><span class="pre">service/default/sample-webapp</span></tt> .</li>
+<li>Spot fleet request - The resource type is <tt class="docutils literal"><span class="pre">spot-fleet-request</span></tt> and the unique identifier is the Spot fleet request ID. Example: <tt class="docutils literal"><span class="pre">spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</span></tt> .</li>
+<li>EMR cluster - The resource type is <tt class="docutils literal"><span class="pre">instancegroup</span></tt> and the unique identifier is the cluster ID and instance group ID. Example: <tt class="docutils literal"><span class="pre">instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</span></tt> .</li>
+</ul>
+</div></blockquote>
 <p>ScalableDimension -&gt; (string)</p>
 <blockquote>
-<div>The scalable dimension associated with the scaling policy. The scalable dimension contains the service namespace, resource type, and scaling property, such as <tt class="docutils literal"><span class="pre">ecs:service:DesiredCount</span></tt> for the desired task count of an Amazon ECS service.</div></blockquote>
+<div><p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ecs:service:DesiredCount</span></tt> - The desired task count of an ECS service.</li>
+<li><tt class="docutils literal"><span class="pre">ec2:spot-fleet-request:TargetCapacity</span></tt> - The target capacity of a Spot fleet request.</li>
+<li><tt class="docutils literal"><span class="pre">elasticmapreduce:instancegroup:InstanceCount</span></tt> - The instance count of an EMR Instance Group.</li>
+</ul>
+</div></blockquote>
 <p>PolicyType -&gt; (string)</p>
 <blockquote>
 <div>The scaling policy type.</div></blockquote>
@@ -220,11 +320,11 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div><p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
 <p>(structure)</p>
 <blockquote>
-<div><p>An object representing a step adjustment for a  StepScalingPolicyConfiguration . Describes an adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach threshold that you've defined for the alarm.</p>
+<div><p>Represents a step adjustment for a  StepScalingPolicyConfiguration . Describes an adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach threshold that you've defined for the alarm.</p>
 <p>For the following examples, suppose that you have an alarm with a breach threshold of 50:</p>
 <ul class="simple">
-<li>If you want the adjustment to be triggered when the metric is greater than or equal to 50 and less than 60, specify a lower bound of 0 and an upper bound of 10.</li>
-<li>If you want the adjustment to be triggered when the metric is greater than 40 and less than or equal to 50, specify a lower bound of -10 and an upper bound of 0.</li>
+<li>To trigger the adjustment when the metric is greater than or equal to 50 and less than 60, specify a lower bound of 0 and an upper bound of 10.</li>
+<li>To trigger the adjustment when the metric is greater than 40 and less than or equal to 50, specify a lower bound of -10 and an upper bound of 0.</li>
 </ul>
 <p>There are a few rules for the step adjustments for your step policy:</p>
 <ul class="simple">
@@ -261,10 +361,10 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 </div></blockquote>
 <p>Alarms -&gt; (list)</p>
 <blockquote>
-<div><p>The CloudWatch alarms that are associated with the scaling policy.</p>
+<div><p>The CloudWatch alarms associated with the scaling policy.</p>
 <p>(structure)</p>
 <blockquote>
-<div><p>An object representing a CloudWatch alarm associated with a scaling policy.</p>
+<div><p>Represents a CloudWatch alarm associated with a scaling policy.</p>
 <p>AlarmName -&gt; (string)</p>
 <blockquote>
 <div>The name of the alarm.</div></blockquote>
@@ -280,7 +380,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 </div></blockquote>
 <p>NextToken -&gt; (string)</p>
 <blockquote>
-<div>The <tt class="docutils literal"><span class="pre">NextToken</span></tt> value to include in a future <tt class="docutils literal"><span class="pre">describe-scaling-policies</span></tt> request. When the results of a <tt class="docutils literal"><span class="pre">describe-scaling-policies</span></tt> request exceed <tt class="docutils literal"><span class="pre">max-results</span></tt> , this value can be used to retrieve the next page of results. This value is <tt class="docutils literal"><span class="pre">null</span></tt> when there are no more results to return.</div></blockquote>
+<div>The token required to get the next set of results. This value is <tt class="docutils literal"><span class="pre">null</span></tt> if there are no more results to return.</div></blockquote>
 </div>
 </div>
 
@@ -320,7 +420,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
           <a href="put-scaling-policy.html" title="put-scaling-policy">next</a> |</li>
         <li class="right">
           <a href="describe-scaling-activities.html" title="describe-scaling-activities">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">application-autoscaling</a> &#187;</li> 
       </ul>
@@ -336,5 +436,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/application-autoscaling/describe-scaling-policies.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:35:57 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/application-autoscaling/describe-scaling-policies.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:09:52 GMT -->
 </html>

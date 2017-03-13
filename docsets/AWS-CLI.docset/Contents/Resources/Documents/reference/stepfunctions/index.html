@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/stepfunctions/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:07:47 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>stepfunctions &#8212; AWS CLI 1.11.61 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.11.61',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="create-activity" href="create-activity.html" />
+    <link rel="prev" title="update-patch-baseline" href="../ssm/update-patch-baseline.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="create-activity.html" title="create-activity" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="../ssm/update-patch-baseline.html" title="update-patch-baseline" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ssm/update-patch-baseline.html" title="previous chapter (use the left arrow)">&#8592; update-patch-baseline</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-activity.html" title="next chapter (use the right arrow)">create-activity &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">stepfunctions</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/stepfunctions/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="stepfunctions">
+<span id="cli-aws-stepfunctions"></span><h1>stepfunctions<a name="//apple_ref/cpp/Command/aws stepfunctions" class="dashAnchor" id="aws stepfunctions"></a><a class="headerlink" href="#stepfunctions" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>AWS Step Functions is a web service that enables you to coordinate the components of distributed applications and microservices using visual workflows. You build applications from individual components that each perform a discrete function, or <em>task</em> , allowing you to scale and change applications quickly. Step Functions provides a graphical console to visualize the components of your application as a series of steps. It automatically triggers and tracks each step, and retries when there are errors, so your application executes in order and as expected, every time. Step Functions logs the state of each step, so when things do go wrong, you can diagnose and debug problems quickly.</p>
+<p>Step Functions manages the operations and underlying infrastructure for you to ensure your application is available at any scale. You can run tasks on the AWS cloud, on your own servers, or an any system that has access to AWS. Step Functions can be accessed and used with the Step Functions console, the AWS SDKs (included with your Beta release invitation email), or an HTTP API (the subject of this document).</p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a name="//apple_ref/cpp/Section/Available Commands" class="dashAnchor" id="Available Commands"></a><a class="headerlink" href="#available-commands" title="Permalink to this headline">&#182;</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-activity" class="dashAnchor" id="create-activity"></a><a class="reference internal" href="create-activity.html">create-activity</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-state-machine" class="dashAnchor" id="create-state-machine"></a><a class="reference internal" href="create-state-machine.html">create-state-machine</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-activity" class="dashAnchor" id="delete-activity"></a><a class="reference internal" href="delete-activity.html">delete-activity</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-state-machine" class="dashAnchor" id="delete-state-machine"></a><a class="reference internal" href="delete-state-machine.html">delete-state-machine</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-activity" class="dashAnchor" id="describe-activity"></a><a class="reference internal" href="describe-activity.html">describe-activity</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-execution" class="dashAnchor" id="describe-execution"></a><a class="reference internal" href="describe-execution.html">describe-execution</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-state-machine" class="dashAnchor" id="describe-state-machine"></a><a class="reference internal" href="describe-state-machine.html">describe-state-machine</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-activity-task" class="dashAnchor" id="get-activity-task"></a><a class="reference internal" href="get-activity-task.html">get-activity-task</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-execution-history" class="dashAnchor" id="get-execution-history"></a><a class="reference internal" href="get-execution-history.html">get-execution-history</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-activities" class="dashAnchor" id="list-activities"></a><a class="reference internal" href="list-activities.html">list-activities</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-executions" class="dashAnchor" id="list-executions"></a><a class="reference internal" href="list-executions.html">list-executions</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-state-machines" class="dashAnchor" id="list-state-machines"></a><a class="reference internal" href="list-state-machines.html">list-state-machines</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/send-task-failure" class="dashAnchor" id="send-task-failure"></a><a class="reference internal" href="send-task-failure.html">send-task-failure</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/send-task-heartbeat" class="dashAnchor" id="send-task-heartbeat"></a><a class="reference internal" href="send-task-heartbeat.html">send-task-heartbeat</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/send-task-success" class="dashAnchor" id="send-task-success"></a><a class="reference internal" href="send-task-success.html">send-task-success</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/start-execution" class="dashAnchor" id="start-execution"></a><a class="reference internal" href="start-execution.html">start-execution</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/stop-execution" class="dashAnchor" id="stop-execution"></a><a class="reference internal" href="stop-execution.html">stop-execution</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ssm/update-patch-baseline.html" title="previous chapter (use the left arrow)">&#8592; update-patch-baseline</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="create-activity.html" title="next chapter (use the right arrow)">create-activity &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="create-activity.html" title="create-activity">next</a> |</li>
+        <li class="right">
+          <a href="../ssm/update-patch-baseline.html" title="update-patch-baseline">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/stepfunctions/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:07:54 GMT -->
+</html>

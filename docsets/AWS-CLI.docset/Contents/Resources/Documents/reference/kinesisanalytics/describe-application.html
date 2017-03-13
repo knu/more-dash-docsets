@@ -1,0 +1,479 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/kinesisanalytics/describe-application.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:19 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-application &#8212; AWS CLI 1.11.61 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.11.61',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="kinesisanalytics" href="index.html" />
+    <link rel="next" title="discover-input-schema" href="discover-input-schema.html" />
+    <link rel="prev" title="delete-application-reference-data-source" href="delete-application-reference-data-source.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="discover-input-schema.html" title="discover-input-schema" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="delete-application-reference-data-source.html" title="delete-application-reference-data-source" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">kinesisanalytics</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="delete-application-reference-data-source.html" title="previous chapter (use the left arrow)">&#8592; delete-application-reference-data-source</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="discover-input-schema.html" title="next chapter (use the right arrow)">discover-input-schema &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-application</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/kinesisanalytics/describe-application">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-kinesisanalytics"><em>kinesisanalytics</em></a> ]</p>
+<div class="section" id="describe-application">
+<span id="cli-aws-kinesisanalytics-describe-application"></span><h1>describe-application<a name="//apple_ref/cpp/Command/aws kinesisanalytics describe-application" class="dashAnchor" id="aws kinesisanalytics describe-application"></a><a class="headerlink" href="#describe-application" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Returns information about a specific Amazon Kinesis Analytics application.</p>
+<p>If you want to retrieve a list of all applications in your account, use the  list-applications operation.</p>
+<p>This operation requires permissions to perform the <tt class="docutils literal"><span class="pre">kinesisanalytics:DescribeApplication</span></tt> action. You can use <tt class="docutils literal"><span class="pre">describe-application</span></tt> to get the current application versionId, which you need to call other operations such as <tt class="docutils literal"><span class="pre">Update</span></tt> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DescribeApplication">AWS API Documentation</a></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  describe-application
+--application-name &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--application-name" class="dashAnchor" id="application-name"></a><span class="pre">--application-name</span></tt> (string)</p>
+<blockquote>
+<div>Name of the application.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>ApplicationDetail -&gt; (structure)</p>
+<blockquote>
+<div><p>Provides a description of the application, such as the application Amazon Resource Name (ARN), status, latest version, and input and output configuration details.</p>
+<p>ApplicationName -&gt; (string)</p>
+<blockquote>
+<div>Name of the application.</div></blockquote>
+<p>ApplicationDescription -&gt; (string)</p>
+<blockquote>
+<div>Description of the application.</div></blockquote>
+<p>ApplicationARN -&gt; (string)</p>
+<blockquote>
+<div>ARN of the application.</div></blockquote>
+<p>ApplicationStatus -&gt; (string)</p>
+<blockquote>
+<div>Status of the application.</div></blockquote>
+<p>CreateTimestamp -&gt; (timestamp)</p>
+<blockquote>
+<div>Timestamp when the application version was created.</div></blockquote>
+<p>LastUpdateTimestamp -&gt; (timestamp)</p>
+<blockquote>
+<div>Timestamp when the application was last updated.</div></blockquote>
+<p>InputDescriptions -&gt; (list)</p>
+<blockquote>
+<div><p>Describes the application input configuration. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a> .</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the application input configuration. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a> .</p>
+<p>InputId -&gt; (string)</p>
+<blockquote>
+<div>Input ID associated with the application input. This is the ID that Amazon Kinesis Analytics assigns to each input configuration you add to your application.</div></blockquote>
+<p>NamePrefix -&gt; (string)</p>
+<blockquote>
+<div>In-application name prefix.</div></blockquote>
+<p>InAppStreamNames -&gt; (list)</p>
+<blockquote>
+<div><p>Returns the in-application stream names that are mapped to the stream source.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>KinesisStreamsInputDescription -&gt; (structure)</p>
+<blockquote>
+<div><p>If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
+<p>ResourceARN -&gt; (string)</p>
+<blockquote>
+<div>Amazon Resource Name (ARN) of the Amazon Kinesis stream.</div></blockquote>
+<p>RoleARN -&gt; (string)</p>
+<blockquote>
+<div>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream.</div></blockquote>
+</div></blockquote>
+<p>KinesisFirehoseInputDescription -&gt; (structure)</p>
+<blockquote>
+<div><p>If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the Firehose delivery stream's Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
+<p>ResourceARN -&gt; (string)</p>
+<blockquote>
+<div>Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream.</div></blockquote>
+<p>RoleARN -&gt; (string)</p>
+<blockquote>
+<div>ARN of the IAM role that Amazon Kinesis Analytics assumes to access the stream.</div></blockquote>
+</div></blockquote>
+<p>InputSchema -&gt; (structure)</p>
+<blockquote>
+<div><p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
+<p>RecordFormat -&gt; (structure)</p>
+<blockquote>
+<div><p>Specifies the format of the records on the streaming source.</p>
+<p>RecordFormatType -&gt; (string)</p>
+<blockquote>
+<div>The type of record format.</div></blockquote>
+<p>MappingParameters -&gt; (structure)</p>
+<blockquote>
+<div><p>When configuring application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.</p>
+<p>JSONMappingParameters -&gt; (structure)</p>
+<blockquote>
+<div><p>Provides additional mapping information when JSON is the record format on the streaming source.</p>
+<p>RecordRowPath -&gt; (string)</p>
+<blockquote>
+<div><p>Path to the top-level parent that contains the records.</p>
+<p>For example, consider the following JSON record:</p>
+<p>In the <tt class="docutils literal"><span class="pre">RecordRowPath</span></tt> , <tt class="docutils literal"><span class="pre">"$"</span></tt> refers to the root and path <tt class="docutils literal"><span class="pre">"$.vehicle.Model"</span></tt> refers to the specific <tt class="docutils literal"><span class="pre">"Model"</span></tt> key in the JSON.</p>
+</div></blockquote>
+</div></blockquote>
+<p>CSVMappingParameters -&gt; (structure)</p>
+<blockquote>
+<div><p>Provides additional mapping information when the record format uses delimiters (for example, CSV).</p>
+<p>RecordRowDelimiter -&gt; (string)</p>
+<blockquote>
+<div>Row delimiter. For example, in a CSV format, <em>'n'</em> is the typical row delimiter.</div></blockquote>
+<p>RecordColumnDelimiter -&gt; (string)</p>
+<blockquote>
+<div>Column delimiter. For example, in a CSV format, a comma (",") is the typical column delimiter.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>RecordEncoding -&gt; (string)</p>
+<blockquote>
+<div>Specifies the encoding of the records in the streaming source. For example, UTF-8.</div></blockquote>
+<p>RecordColumns -&gt; (list)</p>
+<blockquote>
+<div><p>A list of <tt class="docutils literal"><span class="pre">RecordColumn</span></tt> objects.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.</p>
+<p>Also used to describe the format of the reference data source.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>Name of the column created in the in-application input stream or reference table.</div></blockquote>
+<p>Mapping -&gt; (string)</p>
+<blockquote>
+<div>Reference to the data element in the streaming input of the reference data source.</div></blockquote>
+<p>SqlType -&gt; (string)</p>
+<blockquote>
+<div>Type of column created in the in-application input stream or reference table.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>InputParallelism -&gt; (structure)</p>
+<blockquote>
+<div><p>Describes the configured parallelism (number of in-application streams mapped to the streaming source).</p>
+<p>Count -&gt; (integer)</p>
+<blockquote>
+<div>Number of in-application streams to create. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a> .</div></blockquote>
+</div></blockquote>
+<p>InputStartingPositionConfiguration -&gt; (structure)</p>
+<blockquote>
+<div><p>Point at which the application is configured to read from the input stream.</p>
+<p>InputStartingPosition -&gt; (string)</p>
+<blockquote>
+<div><p>The starting position on the stream.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">LATEST</span></tt> - Start reading just after the most recent record in the stream.</li>
+<li><tt class="docutils literal"><span class="pre">TRIM_HORIZON</span></tt> - Start reading at the last untrimmed record in the stream, which is the oldest record available in the stream. This option is not available for an Amazon Kinesis Firehose delivery stream.</li>
+<li><tt class="docutils literal"><span class="pre">LAST_STOPPED_POINT</span></tt> - Resume reading from where the application last stopped reading.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>OutputDescriptions -&gt; (list)</p>
+<blockquote>
+<div><p>Describes the application output configuration. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a> .</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the application output configuration, which includes the in-application stream name and the destination where the stream data is written. The destination can be an Amazon Kinesis stream or an Amazon Kinesis Firehose delivery stream.</p>
+<p>OutputId -&gt; (string)</p>
+<blockquote>
+<div>A unique identifier for the output configuration.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>Name of the in-application stream configured as output.</div></blockquote>
+<p>KinesisStreamsOutputDescription -&gt; (structure)</p>
+<blockquote>
+<div><p>Describes Amazon Kinesis stream configured as the destination where output is written.</p>
+<p>ResourceARN -&gt; (string)</p>
+<blockquote>
+<div>Amazon Resource Name (ARN) of the Amazon Kinesis stream.</div></blockquote>
+<p>RoleARN -&gt; (string)</p>
+<blockquote>
+<div>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream.</div></blockquote>
+</div></blockquote>
+<p>KinesisFirehoseOutputDescription -&gt; (structure)</p>
+<blockquote>
+<div><p>Describes the Amazon Kinesis Firehose delivery stream configured as the destination where output is written.</p>
+<p>ResourceARN -&gt; (string)</p>
+<blockquote>
+<div>Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream.</div></blockquote>
+<p>RoleARN -&gt; (string)</p>
+<blockquote>
+<div>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream.</div></blockquote>
+</div></blockquote>
+<p>DestinationSchema -&gt; (structure)</p>
+<blockquote>
+<div><p>Data format used for writing data to the destination.</p>
+<p>RecordFormatType -&gt; (string)</p>
+<blockquote>
+<div>Specifies the format of the records on the output stream.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ReferenceDataSourceDescriptions -&gt; (list)</p>
+<blockquote>
+<div><p>Describes reference data sources configured for the application. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a> .</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the reference data source configured for an application.</p>
+<p>ReferenceId -&gt; (string)</p>
+<blockquote>
+<div>ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the reference data source to your application using the  add-application-reference-data-source operation.</div></blockquote>
+<p>TableName -&gt; (string)</p>
+<blockquote>
+<div>The in-application table name created by the specific reference data source configuration.</div></blockquote>
+<p>S3ReferenceDataSourceDescription -&gt; (structure)</p>
+<blockquote>
+<div><p>Provides the S3 bucket name, the object key name that contains the reference data. It also provides the Amazon Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and populate the in-application reference table.</p>
+<p>BucketARN -&gt; (string)</p>
+<blockquote>
+<div>Amazon Resource Name (ARN) of the S3 bucket.</div></blockquote>
+<p>FileKey -&gt; (string)</p>
+<blockquote>
+<div>Amazon S3 object key name.</div></blockquote>
+<p>ReferenceRoleARN -&gt; (string)</p>
+<blockquote>
+<div>ARN of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object on your behalf to populate the in-application reference table.</div></blockquote>
+</div></blockquote>
+<p>ReferenceSchema -&gt; (structure)</p>
+<blockquote>
+<div><p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
+<p>RecordFormat -&gt; (structure)</p>
+<blockquote>
+<div><p>Specifies the format of the records on the streaming source.</p>
+<p>RecordFormatType -&gt; (string)</p>
+<blockquote>
+<div>The type of record format.</div></blockquote>
+<p>MappingParameters -&gt; (structure)</p>
+<blockquote>
+<div><p>When configuring application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.</p>
+<p>JSONMappingParameters -&gt; (structure)</p>
+<blockquote>
+<div><p>Provides additional mapping information when JSON is the record format on the streaming source.</p>
+<p>RecordRowPath -&gt; (string)</p>
+<blockquote>
+<div><p>Path to the top-level parent that contains the records.</p>
+<p>For example, consider the following JSON record:</p>
+<p>In the <tt class="docutils literal"><span class="pre">RecordRowPath</span></tt> , <tt class="docutils literal"><span class="pre">"$"</span></tt> refers to the root and path <tt class="docutils literal"><span class="pre">"$.vehicle.Model"</span></tt> refers to the specific <tt class="docutils literal"><span class="pre">"Model"</span></tt> key in the JSON.</p>
+</div></blockquote>
+</div></blockquote>
+<p>CSVMappingParameters -&gt; (structure)</p>
+<blockquote>
+<div><p>Provides additional mapping information when the record format uses delimiters (for example, CSV).</p>
+<p>RecordRowDelimiter -&gt; (string)</p>
+<blockquote>
+<div>Row delimiter. For example, in a CSV format, <em>'n'</em> is the typical row delimiter.</div></blockquote>
+<p>RecordColumnDelimiter -&gt; (string)</p>
+<blockquote>
+<div>Column delimiter. For example, in a CSV format, a comma (",") is the typical column delimiter.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>RecordEncoding -&gt; (string)</p>
+<blockquote>
+<div>Specifies the encoding of the records in the streaming source. For example, UTF-8.</div></blockquote>
+<p>RecordColumns -&gt; (list)</p>
+<blockquote>
+<div><p>A list of <tt class="docutils literal"><span class="pre">RecordColumn</span></tt> objects.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.</p>
+<p>Also used to describe the format of the reference data source.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>Name of the column created in the in-application input stream or reference table.</div></blockquote>
+<p>Mapping -&gt; (string)</p>
+<blockquote>
+<div>Reference to the data element in the streaming input of the reference data source.</div></blockquote>
+<p>SqlType -&gt; (string)</p>
+<blockquote>
+<div>Type of column created in the in-application input stream or reference table.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ApplicationCode -&gt; (string)</p>
+<blockquote>
+<div>Returns the application code that you provided to perform data analysis on any of the in-application streams in your application.</div></blockquote>
+<p>ApplicationVersionId -&gt; (long)</p>
+<blockquote>
+<div>Provides the current application version.</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="delete-application-reference-data-source.html" title="previous chapter (use the left arrow)">&#8592; delete-application-reference-data-source</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="discover-input-schema.html" title="next chapter (use the right arrow)">discover-input-schema &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="discover-input-schema.html" title="discover-input-schema">next</a> |</li>
+        <li class="right">
+          <a href="delete-application-reference-data-source.html" title="delete-application-reference-data-source">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">kinesisanalytics</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/kinesisanalytics/describe-application.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:19 GMT -->
+</html>

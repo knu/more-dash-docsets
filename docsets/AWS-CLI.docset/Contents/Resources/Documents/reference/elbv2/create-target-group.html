@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elbv2/create-target-group.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:17 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-target-group &#8212; AWS CLI 1.11.61 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.11.61',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="elbv2" href="index.html" />
+    <link rel="next" title="delete-listener" href="delete-listener.html" />
+    <link rel="prev" title="create-rule" href="create-rule.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="delete-listener.html" title="delete-listener" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="create-rule.html" title="create-rule" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">elbv2</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="create-rule.html" title="previous chapter (use the left arrow)">&#8592; create-rule</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="delete-listener.html" title="next chapter (use the right arrow)">delete-listener &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-target-group</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/elbv2/create-target-group">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-elbv2"><em>elbv2</em></a> ]</p>
+<div class="section" id="create-target-group">
+<span id="cli-aws-elbv2-create-target-group"></span><h1>create-target-group<a name="//apple_ref/cpp/Command/aws elbv2 create-target-group" class="dashAnchor" id="aws elbv2 create-target-group"></a><a class="headerlink" href="#create-target-group" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Creates a target group.</p>
+<p>To register targets with the target group, use  register-targets . To update the health check settings for the target group, use  modify-target-group . To monitor the health of targets in the target group, use  describe-target-health .</p>
+<p>To route traffic to the targets in a target group, specify the target group in an action using  create-listener or  create-rule .</p>
+<p>To delete a target group, use  delete-target-group .</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">Target Groups for Your Application Load Balancers</a> in the <em>Application Load Balancers Guide</em> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTargetGroup">AWS API Documentation</a></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  create-target-group
+--name &lt;value&gt;
+--protocol &lt;value&gt;
+--port &lt;value&gt;
+--vpc-id &lt;value&gt;
+[--health-check-protocol &lt;value&gt;]
+[--health-check-port &lt;value&gt;]
+[--health-check-path &lt;value&gt;]
+[--health-check-interval-seconds &lt;value&gt;]
+[--health-check-timeout-seconds &lt;value&gt;]
+[--healthy-threshold-count &lt;value&gt;]
+[--unhealthy-threshold-count &lt;value&gt;]
+[--matcher &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--name" class="dashAnchor" id="name"></a><span class="pre">--name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the target group.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--protocol" class="dashAnchor" id="protocol"></a><span class="pre">--protocol</span></tt> (string)</p>
+<blockquote>
+<div><p>The protocol to use for routing traffic to the targets.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">HTTP</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">HTTPS</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--port" class="dashAnchor" id="port"></a><span class="pre">--port</span></tt> (integer)</p>
+<blockquote>
+<div>The port on which the targets receive traffic. This port is used unless you specify a port override when registering the target.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--vpc-id" class="dashAnchor" id="vpc-id"></a><span class="pre">--vpc-id</span></tt> (string)</p>
+<blockquote>
+<div>The identifier of the virtual private cloud (VPC).</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--health-check-protocol" class="dashAnchor" id="health-check-protocol"></a><span class="pre">--health-check-protocol</span></tt> (string)</p>
+<blockquote>
+<div><p>The protocol the load balancer uses when performing health checks on targets. The default is the HTTP protocol.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">HTTP</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">HTTPS</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--health-check-port" class="dashAnchor" id="health-check-port"></a><span class="pre">--health-check-port</span></tt> (string)</p>
+<blockquote>
+<div>The port the load balancer uses when performing health checks on targets. The default is <tt class="docutils literal"><span class="pre">traffic-port</span></tt> , which indicates the port on which each target receives traffic from the load balancer.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--health-check-path" class="dashAnchor" id="health-check-path"></a><span class="pre">--health-check-path</span></tt> (string)</p>
+<blockquote>
+<div>The ping path that is the destination on the targets for health checks. The default is /.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--health-check-interval-seconds" class="dashAnchor" id="health-check-interval-seconds"></a><span class="pre">--health-check-interval-seconds</span></tt> (integer)</p>
+<blockquote>
+<div>The approximate amount of time, in seconds, between health checks of an individual target. The default is 30 seconds.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--health-check-timeout-seconds" class="dashAnchor" id="health-check-timeout-seconds"></a><span class="pre">--health-check-timeout-seconds</span></tt> (integer)</p>
+<blockquote>
+<div>The amount of time, in seconds, during which no response from a target means a failed health check. The default is 5 seconds.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--healthy-threshold-count" class="dashAnchor" id="healthy-threshold-count"></a><span class="pre">--healthy-threshold-count</span></tt> (integer)</p>
+<blockquote>
+<div>The number of consecutive health checks successes required before considering an unhealthy target healthy. The default is 5.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--unhealthy-threshold-count" class="dashAnchor" id="unhealthy-threshold-count"></a><span class="pre">--unhealthy-threshold-count</span></tt> (integer)</p>
+<blockquote>
+<div>The number of consecutive health check failures required before considering a target unhealthy. The default is 2.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--matcher" class="dashAnchor" id="matcher"></a><span class="pre">--matcher</span></tt> (structure)</p>
+<blockquote>
+<div>The HTTP codes to use when checking for a successful response from a target. The default is 200.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">HttpCode</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">"HttpCode"</span><span class="p">:</span> <span class="s2">"string"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To create a target group</strong></p>
+<p>This example creates a target group that you can use to route traffic to targets using HTTP on port 80. This target group uses the default health check configuration.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws elbv2 create-target-group --name my-targets --protocol HTTP --port 80 --vpc-id vpc-3ac0fb5f</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">"TargetGroups"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">"HealthCheckPath"</span><span class="p">:</span> <span class="s2">"/"</span><span class="p">,</span>
+          <span class="s2">"HealthCheckIntervalSeconds"</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+          <span class="s2">"VpcId"</span><span class="p">:</span> <span class="s2">"vpc-3ac0fb5f"</span><span class="p">,</span>
+          <span class="s2">"Protocol"</span><span class="p">:</span> <span class="s2">"HTTP"</span><span class="p">,</span>
+          <span class="s2">"HealthCheckTimeoutSeconds"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+          <span class="s2">"HealthCheckProtocol"</span><span class="p">:</span> <span class="s2">"HTTP"</span><span class="p">,</span>
+          <span class="s2">"UnhealthyThresholdCount"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+          <span class="s2">"HealthyThresholdCount"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+          <span class="s2">"TargetGroupArn"</span><span class="p">:</span> <span class="s2">"arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067"</span><span class="p">,</span>
+          <span class="s2">"Matcher"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">"HttpCode"</span><span class="p">:</span> <span class="s2">"200"</span>
+          <span class="p">},</span>
+          <span class="s2">"HealthCheckPort"</span><span class="p">:</span> <span class="s2">"traffic-port"</span><span class="p">,</span>
+          <span class="s2">"Port"</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+          <span class="s2">"TargetGroupName"</span><span class="p">:</span> <span class="s2">"my-targets"</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>TargetGroups -&gt; (list)</p>
+<blockquote>
+<div><p>Information about the target group.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Information about a target group.</p>
+<p>TargetGroupArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the target group.</div></blockquote>
+<p>TargetGroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the target group.</div></blockquote>
+<p>Protocol -&gt; (string)</p>
+<blockquote>
+<div>The protocol to use for routing traffic to the targets.</div></blockquote>
+<p>Port -&gt; (integer)</p>
+<blockquote>
+<div>The port on which the targets are listening.</div></blockquote>
+<p>VpcId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the VPC for the targets.</div></blockquote>
+<p>HealthCheckProtocol -&gt; (string)</p>
+<blockquote>
+<div>The protocol to use to connect with the target.</div></blockquote>
+<p>HealthCheckPort -&gt; (string)</p>
+<blockquote>
+<div>The port to use to connect with the target.</div></blockquote>
+<p>HealthCheckIntervalSeconds -&gt; (integer)</p>
+<blockquote>
+<div>The approximate amount of time, in seconds, between health checks of an individual target.</div></blockquote>
+<p>HealthCheckTimeoutSeconds -&gt; (integer)</p>
+<blockquote>
+<div>The amount of time, in seconds, during which no response means a failed health check.</div></blockquote>
+<p>HealthyThresholdCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of consecutive health checks successes required before considering an unhealthy target healthy.</div></blockquote>
+<p>UnhealthyThresholdCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of consecutive health check failures required before considering the target unhealthy.</div></blockquote>
+<p>HealthCheckPath -&gt; (string)</p>
+<blockquote>
+<div>The destination for the health check request.</div></blockquote>
+<p>Matcher -&gt; (structure)</p>
+<blockquote>
+<div><p>The HTTP codes to use when checking for a successful response from a target.</p>
+<p>HttpCode -&gt; (string)</p>
+<blockquote>
+<div>The HTTP codes. The default value is 200. You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").</div></blockquote>
+</div></blockquote>
+<p>LoadBalancerArns -&gt; (list)</p>
+<blockquote>
+<div><p>The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="create-rule.html" title="previous chapter (use the left arrow)">&#8592; create-rule</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="delete-listener.html" title="next chapter (use the right arrow)">delete-listener &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="delete-listener.html" title="delete-listener">next</a> |</li>
+        <li class="right">
+          <a href="create-rule.html" title="create-rule">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">elbv2</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elbv2/create-target-group.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:17 GMT -->
+</html>

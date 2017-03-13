@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/pinpoint/get-import-job.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:24 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-import-job &#8212; AWS CLI 1.11.61 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.11.61',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="pinpoint" href="index.html" />
+    <link rel="next" title="get-import-jobs" href="get-import-jobs.html" />
+    <link rel="prev" title="get-gcm-channel" href="get-gcm-channel.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="get-import-jobs.html" title="get-import-jobs" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="get-gcm-channel.html" title="get-gcm-channel" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">pinpoint</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-gcm-channel.html" title="previous chapter (use the left arrow)">&#8592; get-gcm-channel</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="get-import-jobs.html" title="next chapter (use the right arrow)">get-import-jobs &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-import-job</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/pinpoint/get-import-job">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-pinpoint"><em>pinpoint</em></a> ]</p>
+<div class="section" id="get-import-job">
+<span id="cli-aws-pinpoint-get-import-job"></span><h1>get-import-job<a name="//apple_ref/cpp/Command/aws pinpoint get-import-job" class="dashAnchor" id="aws pinpoint get-import-job"></a><a class="headerlink" href="#get-import-job" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Returns information about an import job.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  get-import-job
+--application-id &lt;value&gt;
+--job-id &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--application-id" class="dashAnchor" id="application-id"></a><span class="pre">--application-id</span></tt> (string)</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--job-id" class="dashAnchor" id="job-id"></a><span class="pre">--job-id</span></tt> (string)</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>ImportJobResponse -&gt; (structure)</p>
+<blockquote>
+<div><p>ApplicationId -&gt; (string)</p>
+<blockquote>
+<div>The unique ID of the application to which the import job applies.</div></blockquote>
+<p>CompletedPieces -&gt; (integer)</p>
+<blockquote>
+<div>The number of pieces that have successfully imported as of the time of the request.</div></blockquote>
+<p>CompletionDate -&gt; (string)</p>
+<blockquote>
+<div>The date the import job completed in ISO 8601 format.</div></blockquote>
+<p>CreationDate -&gt; (string)</p>
+<blockquote>
+<div>The date the import job was created in ISO 8601 format.</div></blockquote>
+<p>Definition -&gt; (structure)</p>
+<blockquote>
+<div><p>The import job settings.</p>
+<p>DefineSegment -&gt; (boolean)</p>
+<blockquote>
+<div>Sets whether the endpoints create a segment when they are imported.</div></blockquote>
+<p>ExternalId -&gt; (string)</p>
+<blockquote>
+<div>A unique, custom ID assigned to the IAM role that restricts who can assume the role.</div></blockquote>
+<p>Format -&gt; (string)</p>
+<blockquote>
+<div>The format of the files that contain the endpoint definitions. Valid values: CSV, JSON</div></blockquote>
+<p>RegisterEndpoints -&gt; (boolean)</p>
+<blockquote>
+<div>Sets whether the endpoints are registered with Amazon Pinpoint when they are imported.</div></blockquote>
+<p>RoleArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access to the Amazon S3 location that contains the endpoints to import.</div></blockquote>
+<p>S3Url -&gt; (string)</p>
+<blockquote>
+<div>A URL that points to the location within an Amazon S3 bucket that contains the endpoints to import. The location can be a folder or a single file. The URL should follow this format: s3://bucket-name/folder-name/file-name Amazon Pinpoint will import endpoints from this location and any subfolders it contains.</div></blockquote>
+<p>SegmentId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the segment to update if the import job is meant to update an existing segment.</div></blockquote>
+<p>SegmentName -&gt; (string)</p>
+<blockquote>
+<div>A custom name for the segment created by the import job. Use if DefineSegment is true.</div></blockquote>
+</div></blockquote>
+<p>FailedPieces -&gt; (integer)</p>
+<blockquote>
+<div>The number of pieces that have failed to import as of the time of the request.</div></blockquote>
+<p>Failures -&gt; (list)</p>
+<blockquote>
+<div><p>Provides up to 100 of the first failed entries for the job, if any exist.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>Id -&gt; (string)</p>
+<blockquote>
+<div>The unique ID of the import job.</div></blockquote>
+<p>JobStatus -&gt; (string)</p>
+<blockquote>
+<div>The status of the import job. Valid values: CREATED, INITIALIZING, PROCESSING, COMPLETING, COMPLETED, FAILING, FAILED The job status is FAILED if one or more pieces failed to import.</div></blockquote>
+<p>TotalFailures -&gt; (integer)</p>
+<blockquote>
+<div>The number of endpoints that failed to import; for example, because of syntax errors.</div></blockquote>
+<p>TotalPieces -&gt; (integer)</p>
+<blockquote>
+<div>The total number of pieces that must be imported to finish the job. Each piece is an approximately equal portion of the endpoints to import.</div></blockquote>
+<p>TotalProcessed -&gt; (integer)</p>
+<blockquote>
+<div>The number of endpoints that were processed by the import job.</div></blockquote>
+<p>Type -&gt; (string)</p>
+<blockquote>
+<div>The job type. Will be Import.</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-gcm-channel.html" title="previous chapter (use the left arrow)">&#8592; get-gcm-channel</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="get-import-jobs.html" title="next chapter (use the right arrow)">get-import-jobs &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="get-import-jobs.html" title="get-import-jobs">next</a> |</li>
+        <li class="right">
+          <a href="get-gcm-channel.html" title="get-gcm-channel">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">pinpoint</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/pinpoint/get-import-job.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:24 GMT -->
+</html>

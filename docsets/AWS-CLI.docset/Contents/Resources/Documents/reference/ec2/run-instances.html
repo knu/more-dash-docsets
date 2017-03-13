@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/run-instances.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/run-instances.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:00 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>run-instances &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>run-instances &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="ec2" href="index.html" />
     <link rel="next" title="run-scheduled-instances" href="run-scheduled-instances.html" />
     <link rel="prev" title="revoke-security-group-ingress" href="revoke-security-group-ingress.html" />
@@ -64,7 +64,7 @@
           <a href="run-scheduled-instances.html" title="run-scheduled-instances" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="revoke-security-group-ingress.html" title="revoke-security-group-ingress" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">ec2</a> &#187;</li> 
       </ul>
@@ -112,7 +112,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ec2/run-instances">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/ec2/run-instances">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -130,17 +130,21 @@
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
 <p>Launches the specified number of instances using an AMI for which you have permissions.</p>
-<p>When you launch an instance, it enters the <tt class="docutils literal"><span class="pre">pending</span></tt> state. After the instance is ready for you, it enters the <tt class="docutils literal"><span class="pre">running</span></tt> state. To check the state of your instance, call  describe-instances .</p>
-<p>To ensure faster instance launches, break up large requests into smaller batches. For example, create five separate launch requests for 100 instances each instead of one launch request for 500 instances.</p>
-<p>To tag your instance, ensure that it is <tt class="docutils literal"><span class="pre">running</span></tt> as  create-tags requires a resource ID. For more information about tagging, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a> .</p>
-<p>If you don't specify a security group when launching an instance, Amazon EC2 uses the default security group. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security Groups</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
-<p>[EC2-VPC only accounts] If you don't specify a subnet in the request, we choose a default subnet from your default VPC for you.</p>
-<p>[EC2-Classic accounts] If you're launching into EC2-Classic and you don't specify an Availability Zone, we choose one for you.</p>
+<p>You can specify a number of options, or leave the default options. The following rules apply:</p>
+<ul class="simple">
+<li>[EC2-VPC] If you don't specify a subnet ID, we choose a default subnet from your default VPC for you. If you don't have a default VPC, you must specify a subnet ID in the request.</li>
+<li>[EC2-Classic] If don't specify an Availability Zone, we choose one for you.</li>
+<li>Some instance types must be launched into a VPC. If you do not have a default VPC, or if you do not specify a subnet ID, the request fails. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance Types Available Only in a VPC</a> .</li>
+<li>[EC2-VPC] All instances have a network interface with a primary private IPv4 address. If you don't specify this address, we choose one from the IPv4 range of your subnet.</li>
+<li>Not all instance types support IPv6 addresses. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> .</li>
+<li>If you don't specify a security group ID, we use the default security group. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security Groups</a> .</li>
+<li>If any of the AMIs have a product code attached for which the user has not subscribed, the request fails.</li>
+</ul>
+<p>To ensure faster instance launches, break up large requests into smaller batches. For example, create 5 separate launch requests for 100 instances each instead of 1 launch request for 500 instances.</p>
+<p>An instance is ready for you to use when it's in the <tt class="docutils literal"><span class="pre">running</span></tt> state. You can check the state of your instance using  describe-instances . After launch, you can apply tags to your running instance (requires a resource ID). For more information, see  create-tags and <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a> .</p>
 <p>Linux instances have access to the public key of the key pair at boot. You can use this key to provide secure access to the instance. Amazon EC2 public images use this feature to provide secure access without passwords. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key Pairs</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
-<p>You can provide optional user data when launching an instance. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
-<p>If any of the AMIs have a product code attached for which the user has not subscribed, <tt class="docutils literal"><span class="pre">run-instances</span></tt> fails.</p>
-<p>Some instance types can only be launched into a VPC. If you do not have a default VPC, or if you do not specify a subnet ID in the request, <tt class="docutils literal"><span class="pre">run-instances</span></tt> fails. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance Types Available Only in a VPC</a> .</p>
-<p>For more information about troubleshooting, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What To Do If An Instance Immediately Terminates</a> , and <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting Connecting to Your Instance</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
+<p>For troubleshooting, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What To Do If An Instance Immediately Terminates</a> , and <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting Connecting to Your Instance</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunInstances">AWS API Documentation</a></p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
@@ -161,6 +165,8 @@
 [--disable-api-termination | --enable-api-termination]
 [--instance-initiated-shutdown-behavior &lt;value&gt;]
 [--private-ip-address &lt;value&gt;]
+[--ipv6-addresses &lt;value&gt;]
+[--ipv6-address-count &lt;value&gt;]
 [--client-token &lt;value&gt;]
 [--additional-info &lt;value&gt;]
 [--network-interfaces &lt;value&gt;]
@@ -171,7 +177,7 @@
 [--secondary-private-ip-address-count &lt;value&gt;]
 [--associate-public-ip-address | --no-associate-public-ip-address]
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
@@ -208,7 +214,7 @@
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--user-data" class="dashAnchor" id="user-data"></a><span class="pre">--user-data</span></tt> (string)</p>
 <blockquote>
-<div>Data to configure the instance, or a script to run during instance launch. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance at Launch</a> (Linux) and <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding User Data</a> (Windows). For API calls, the text must be base64-encoded. For command line tools, the encoding is performed for you, and you can load the text from a file.</div></blockquote>
+<div>The user data to make available to the instance. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance at Launch</a> (Linux) and <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide Base64-encoded text.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--instance-type" class="dashAnchor" id="instance-type"></a><span class="pre">--instance-type</span></tt> (string)</p>
 <blockquote>
 <div><p>The instance type. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
@@ -216,6 +222,13 @@
 <p>Possible values:</p>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">t1.micro</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">t2.nano</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">t2.micro</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">t2.small</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">t2.medium</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">t2.large</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">t2.xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">t2.2xlarge</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">m1.small</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">m1.medium</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">m1.large</span></tt></li>
@@ -229,23 +242,34 @@
 <li><tt class="docutils literal"><span class="pre">m4.2xlarge</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">m4.4xlarge</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">m4.10xlarge</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">t2.nano</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">t2.micro</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">t2.small</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">t2.medium</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">t2.large</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">m4.16xlarge</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">m2.xlarge</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">m2.2xlarge</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">m2.4xlarge</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">cr1.8xlarge</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">x1.4xlarge</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">x1.8xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">r3.large</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">r3.xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">r3.2xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">r3.4xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">r3.8xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">r4.large</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">r4.xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">r4.2xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">r4.4xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">r4.8xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">r4.16xlarge</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">x1.16xlarge</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">x1.32xlarge</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">i2.xlarge</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">i2.2xlarge</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">i2.4xlarge</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">i2.8xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">i3.large</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">i3.xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">i3.2xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">i3.4xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">i3.8xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">i3.16xlarge</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">hi1.4xlarge</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">hs1.8xlarge</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">c1.medium</span></tt></li>
@@ -265,26 +289,26 @@
 <li><tt class="docutils literal"><span class="pre">g2.2xlarge</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">g2.8xlarge</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">cg1.4xlarge</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">r3.large</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">r3.xlarge</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">r3.2xlarge</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">r3.4xlarge</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">r3.8xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">p2.xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">p2.8xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">p2.16xlarge</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">d2.xlarge</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">d2.2xlarge</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">d2.4xlarge</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">d2.8xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">f1.2xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">f1.16xlarge</span></tt></li>
 </ul>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--placement" class="dashAnchor" id="placement"></a><span class="pre">--placement</span></tt> (structure)</p>
 <blockquote>
 <div>The placement for the instance.</div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">AvailabilityZone</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">GroupName</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">Tenancy</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">HostId</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">Affinity</span><span class="o">=</span><span class="n">string</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">AvailabilityZone</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">GroupName</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">Tenancy</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">HostId</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">Affinity</span><span class="o">=</span><span class="n">string</span>
 </pre></div>
 </div>
 <p>JSON Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">"AvailabilityZone"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
   <span class="s2">"GroupName"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
   <span class="s2">"Tenancy"</span><span class="p">:</span> <span class="s2">"default"</span><span class="o">|</span><span class="s2">"dedicated"</span><span class="o">|</span><span class="s2">"host"</span><span class="p">,</span>
@@ -311,7 +335,12 @@
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--block-device-mappings" class="dashAnchor" id="block-device-mappings"></a><span class="pre">--block-device-mappings</span></tt> (list)</p>
 <blockquote>
-<div>The block device mapping.</div></blockquote>
+<div><p>The block device mapping.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Supplying both a snapshot ID and an encryption value as arguments for block-device mapping results in an error. This is because only blank volumes can be encrypted on start, and these are not created from a snapshot. If a snapshot is the basis for the volume, it contains data by definition and its encryption status cannot be changed using this action.</p>
+</div>
+</div></blockquote>
 <p>Shorthand Syntax:</p>
 <div class="highlight-python"><pre>VirtualName=string,DeviceName=string,Ebs={SnapshotId=string,VolumeSize=integer,DeleteOnTermination=boolean,VolumeType=string,Iops=integer,Encrypted=boolean},NoDevice=string ...</pre>
 </div>
@@ -337,11 +366,11 @@
 <blockquote>
 <div>The monitoring for the instance.</div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">Enabled</span><span class="o">=</span><span class="n">boolean</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Enabled</span><span class="o">=</span><span class="n">boolean</span>
 </pre></div>
 </div>
 <p>JSON Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">"Enabled"</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span>
 <span class="p">}</span>
 </pre></div>
@@ -351,7 +380,7 @@
 <div>[EC2-VPC] The ID of the subnet to launch the instance into.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--disable-api-termination" class="dashAnchor" id="disable-api-termination"></a><span class="pre">--disable-api-termination</span></tt> | <tt class="docutils literal"><span class="pre">--enable-api-termination</span></tt> (boolean)</p>
 <blockquote>
-<div><p>If you set this parameter to <tt class="docutils literal"><span class="pre">true</span></tt> , you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. If you set this parameter to <tt class="docutils literal"><span class="pre">true</span></tt> and then later want to be able to terminate the instance, you must first change the value of the <tt class="docutils literal"><span class="pre">disableApiTermination</span></tt> attribute to <tt class="docutils literal"><span class="pre">false</span></tt> using  modify-instance-attribute . Alternatively, if you set <tt class="docutils literal"><span class="pre">InstanceInitiatedShutdownBehavior</span></tt> to <tt class="docutils literal"><span class="pre">terminate</span></tt> , you can terminate the instance by running the shutdown command from the instance.</p>
+<div><p>If you set this parameter to <tt class="docutils literal"><span class="pre">true</span></tt> , you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute to <tt class="docutils literal"><span class="pre">false</span></tt> after launch, use  modify-instance-attribute . Alternatively, if you set <tt class="docutils literal"><span class="pre">InstanceInitiatedShutdownBehavior</span></tt> to <tt class="docutils literal"><span class="pre">terminate</span></tt> , you can terminate the instance by running the shutdown command from the instance.</p>
 <p>Default: <tt class="docutils literal"><span class="pre">false</span></tt></p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--instance-initiated-shutdown-behavior" class="dashAnchor" id="instance-initiated-shutdown-behavior"></a><span class="pre">--instance-initiated-shutdown-behavior</span></tt> (string)</p>
@@ -366,10 +395,26 @@
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--private-ip-address" class="dashAnchor" id="private-ip-address"></a><span class="pre">--private-ip-address</span></tt> (string)</p>
 <blockquote>
-<div><p>[EC2-VPC] The primary IP address. You must specify a value from the IP address range of the subnet.</p>
-<p>Only one private IP address can be designated as primary. Therefore, you can't specify this parameter if <tt class="docutils literal"><span class="pre">PrivateIpAddresses.n.Primary</span></tt> is set to <tt class="docutils literal"><span class="pre">true</span></tt> and <tt class="docutils literal"><span class="pre">PrivateIpAddresses.n.PrivateIpAddress</span></tt> is set to an IP address.</p>
-<p>Default: We select an IP address from the IP address range of the subnet.</p>
+<div><p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
+<p>Only one private IP address can be designated as primary. You can't specify this option if you've specified the option to designate a private IP address as the primary IP address in a network interface specification. You cannot specify this option if you're launching more than one instance in the request.</p>
 </div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ipv6-addresses" class="dashAnchor" id="ipv6-addresses"></a><span class="pre">--ipv6-addresses</span></tt> (list)</p>
+<blockquote>
+<div>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to associate with the primary network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify this option if you've specified a minimum number of instances to launch.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Ipv6Address=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    "Ipv6Address": "string"
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--ipv6-address-count" class="dashAnchor" id="ipv6-address-count"></a><span class="pre">--ipv6-address-count</span></tt> (integer)</p>
+<blockquote>
+<div>[EC2-VPC] A number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances to launch.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--client-token" class="dashAnchor" id="client-token"></a><span class="pre">--client-token</span></tt> (string)</p>
 <blockquote>
 <div><p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a> .</p>
@@ -382,7 +427,7 @@
 <blockquote>
 <div>One or more network interfaces.</div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><pre>NetworkInterfaceId=string,DeviceIndex=integer,SubnetId=string,Description=string,PrivateIpAddress=string,Groups=string,string,DeleteOnTermination=boolean,PrivateIpAddresses=[{PrivateIpAddress=string,Primary=boolean},{PrivateIpAddress=string,Primary=boolean}],SecondaryPrivateIpAddressCount=integer,AssociatePublicIpAddress=boolean ...</pre>
+<div class="highlight-python"><pre>NetworkInterfaceId=string,DeviceIndex=integer,SubnetId=string,Description=string,PrivateIpAddress=string,Groups=string,string,DeleteOnTermination=boolean,PrivateIpAddresses=[{PrivateIpAddress=string,Primary=boolean},{PrivateIpAddress=string,Primary=boolean}],SecondaryPrivateIpAddressCount=integer,AssociatePublicIpAddress=boolean,Ipv6Addresses=[{Ipv6Address=string},{Ipv6Address=string}],Ipv6AddressCount=integer ...</pre>
 </div>
 <p>JSON Syntax:</p>
 <div class="highlight-python"><pre>[
@@ -402,7 +447,14 @@
       ...
     ],
     "SecondaryPrivateIpAddressCount": integer,
-    "AssociatePublicIpAddress": true|false
+    "AssociatePublicIpAddress": true|false,
+    "Ipv6Addresses": [
+      {
+        "Ipv6Address": "string"
+      }
+      ...
+    ],
+    "Ipv6AddressCount": integer
   }
   ...
 ]</pre>
@@ -411,11 +463,11 @@
 <blockquote>
 <div>The IAM instance profile.</div></blockquote>
 <p>Shorthand Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">Arn</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">Name</span><span class="o">=</span><span class="n">string</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Arn</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">Name</span><span class="o">=</span><span class="n">string</span>
 </pre></div>
 </div>
 <p>JSON Syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">"Arn"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
   <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"string"</span>
 <span class="p">}</span>
@@ -437,19 +489,19 @@
 [EC2-VPC] If specified a public IP address will be assigned to the new instance in a VPC.</p>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
 <p><strong>To launch an instance in EC2-Classic</strong></p>
-<p>This example launches a single instance of type <tt class="docutils literal"><span class="pre">t1.micro</span></tt>.</p>
+<p>This example launches a single instance of type <tt class="docutils literal"><span class="pre">c3.large</span></tt>.</p>
 <p>The key pair and security group, named <tt class="docutils literal"><span class="pre">MyKeyPair</span></tt> and <tt class="docutils literal"><span class="pre">MySecurityGroup</span></tt>, must exist.</p>
 <p>Command:</p>
-<div class="highlight-python"><pre>aws ec2 run-instances --image-id ami-1a2b3c4d --count 1 --instance-type t1.micro --key-name MyKeyPair --security-groups MySecurityGroup</pre>
+<div class="highlight-python"><pre>aws ec2 run-instances --image-id ami-1a2b3c4d --count 1 --instance-type c3.large --key-name MyKeyPair --security-groups MySecurityGroup</pre>
 </div>
 <p>Output:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">"OwnerId"</span><span class="p">:</span> <span class="s2">"123456789012"</span><span class="p">,</span>
     <span class="s2">"ReservationId"</span><span class="p">:</span> <span class="s2">"r-08626e73c547023b1"</span><span class="p">,</span>
     <span class="s2">"Groups"</span><span class="p">:</span> <span class="p">[</span>
@@ -484,7 +536,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
                 <span class="p">}</span>
             <span class="p">],</span>
             <span class="s2">"ClientToken"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-            <span class="s2">"InstanceType"</span><span class="p">:</span> <span class="s2">"t1.micro"</span><span class="p">,</span>
+            <span class="s2">"InstanceType"</span><span class="p">:</span> <span class="s2">"c3.large"</span><span class="p">,</span>
             <span class="s2">"NetworkInterfaces"</span><span class="p">:</span> <span class="p">[],</span>
             <span class="s2">"Placement"</span><span class="p">:</span> <span class="p">{</span>
                 <span class="s2">"Tenancy"</span><span class="p">:</span> <span class="s2">"default"</span><span class="p">,</span>
@@ -513,7 +565,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div class="highlight-python"><pre>aws ec2 run-instances --image-id ami-abc12345 --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids sg-903004f8 --subnet-id subnet-6e7f829e</pre>
 </div>
 <p>Output:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">"OwnerId"</span><span class="p">:</span> <span class="s2">"123456789012"</span><span class="p">,</span>
     <span class="s2">"ReservationId"</span><span class="p">:</span> <span class="s2">"r-08626e73c547023b2"</span><span class="p">,</span>
     <span class="s2">"Groups"</span><span class="p">:</span> <span class="p">[],</span>
@@ -561,6 +613,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
                             <span class="s2">"PrivateIpAddress"</span><span class="p">:</span> <span class="s2">"10.0.1.114"</span>
                         <span class="p">}</span>
                     <span class="p">],</span>
+                    <span class="s2">"Ipv6Addresses"</span><span class="p">:</span> <span class="p">[],</span>
                     <span class="s2">"PrivateDnsName"</span><span class="p">:</span> <span class="s2">"ip-10-0-1-114.ec2.internal"</span><span class="p">,</span>
                     <span class="s2">"Attachment"</span><span class="p">:</span> <span class="p">{</span>
                         <span class="s2">"Status"</span><span class="p">:</span> <span class="s2">"attached"</span><span class="p">,</span>
@@ -603,14 +656,14 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 </div>
 <p>The following example requests a public IP address for an instance that you're launching into a nondefault subnet:</p>
 <p>Command:</p>
-<div class="highlight-python"><pre>aws ec2 run-instances --image-id ami-c3b8d6aa --count 1 --instance-type t1.micro --key-name MyKeyPair --security-group-ids sg-903004f8 --subnet-id subnet-6e7f829e --associate-public-ip-address</pre>
+<div class="highlight-python"><pre>aws ec2 run-instances --image-id ami-c3b8d6aa --count 1 --instance-type t2.medium --key-name MyKeyPair --security-group-ids sg-903004f8 --subnet-id subnet-6e7f829e --associate-public-ip-address</pre>
 </div>
 <p><strong>To launch an instance using a block device mapping</strong></p>
 <p>Add the following parameter to your <tt class="docutils literal"><span class="pre">run-instances</span></tt> command to specify block devices:</p>
 <div class="highlight-python"><pre>--block-device-mappings file://mapping.json</pre>
 </div>
 <p>To add an Amazon EBS volume with the device name <tt class="docutils literal"><span class="pre">/dev/sdh</span></tt> and a volume size of 100, specify the following in mapping.json:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">[</span>
   <span class="p">{</span>
     <span class="s2">"DeviceName"</span><span class="p">:</span> <span class="s2">"/dev/sdh"</span><span class="p">,</span>
     <span class="s2">"Ebs"</span><span class="p">:</span> <span class="p">{</span>
@@ -621,7 +674,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 </pre></div>
 </div>
 <p>To add <tt class="docutils literal"><span class="pre">ephemeral1</span></tt> as an instance store volume with the device name <tt class="docutils literal"><span class="pre">/dev/sdc</span></tt>, specify the following in mapping.json:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">[</span>
   <span class="p">{</span>
     <span class="s2">"DeviceName"</span><span class="p">:</span> <span class="s2">"/dev/sdc"</span><span class="p">,</span>
     <span class="s2">"VirtualName"</span><span class="p">:</span> <span class="s2">"ephemeral1"</span>
@@ -630,7 +683,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 </pre></div>
 </div>
 <p>To omit a device specified by the AMI used to launch the instance (for example, <tt class="docutils literal"><span class="pre">/dev/sdf</span></tt>), specify the following in mapping.json:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">[</span>
   <span class="p">{</span>
     <span class="s2">"DeviceName"</span><span class="p">:</span> <span class="s2">"/dev/sdf"</span><span class="p">,</span>
     <span class="s2">"NoDevice"</span><span class="p">:</span> <span class="s2">""</span>
@@ -643,7 +696,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div class="highlight-python"><pre>curl http://169.254.169.254/latest/meta-data/block-device-mapping/</pre>
 </div>
 <p>Output:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">ami</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">ami</span>
 <span class="n">ephemeral1</span>
 </pre></div>
 </div>
@@ -652,17 +705,17 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div class="highlight-python"><pre>curl http://169.254.169.254/latest/meta-data/block-device-mapping/ephemeral1</pre>
 </div>
 <p>Output:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">sdc</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">sdc</span>
 </pre></div>
 </div>
 <p><strong>To launch an instance with a modified block device mapping</strong></p>
 <p>You can change individual characteristics of existing AMI block device mappings to suit your needs. Perhaps you want to use an existing AMI, but you want a larger root volume than the usual 8 GiB. Or, you would like to use a General Purpose (SSD) volume for an AMI that currently uses a Magnetic volume.</p>
 <p>Use the <tt class="docutils literal"><span class="pre">describe-images</span></tt> command with the image ID of the AMI you want to use to find its existing block device mapping. You should see a block device mapping in the output:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">"DeviceName"</span><span class="p">:</span> <span class="s2">"/dev/sda1"</span><span class="p">,</span>
   <span class="s2">"Ebs"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"DeleteOnTermination"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-    <span class="s2">"SnapshotId"</span><span class="p">:</span> <span class="s2">"snap-b047276d"</span><span class="p">,</span>
+    <span class="s2">"SnapshotId"</span><span class="p">:</span> <span class="s2">"snap-1234567890abcdef0"</span><span class="p">,</span>
     <span class="s2">"VolumeSize"</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
     <span class="s2">"VolumeType"</span><span class="p">:</span> <span class="s2">"standard"</span><span class="p">,</span>
     <span class="s2">"Encrypted"</span><span class="p">:</span> <span class="n">false</span>
@@ -674,12 +727,12 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div class="highlight-python"><pre>--block-device-mappings file://mapping.json</pre>
 </div>
 <p>Where mapping.json contains the following:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">[</span>
   <span class="p">{</span>
     <span class="s2">"DeviceName"</span><span class="p">:</span> <span class="s2">"/dev/sda1"</span><span class="p">,</span>
     <span class="s2">"Ebs"</span><span class="p">:</span> <span class="p">{</span>
       <span class="s2">"DeleteOnTermination"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-      <span class="s2">"SnapshotId"</span><span class="p">:</span> <span class="s2">"snap-b047276d"</span><span class="p">,</span>
+      <span class="s2">"SnapshotId"</span><span class="p">:</span> <span class="s2">"snap-1234567890abcdef0"</span><span class="p">,</span>
       <span class="s2">"VolumeSize"</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
       <span class="s2">"VolumeType"</span><span class="p">:</span> <span class="s2">"gp2"</span>
     <span class="p">}</span>
@@ -757,10 +810,12 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 </div></blockquote>
 <p>PrivateDnsName -&gt; (string)</p>
 <blockquote>
-<div>The private DNS name assigned to the instance. This DNS name can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <tt class="docutils literal"><span class="pre">running</span></tt> state. For EC2-VPC, this name is only available if you've enabled DNS hostnames for your VPC.</div></blockquote>
+<div><p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <tt class="docutils literal"><span class="pre">running</span></tt> state.</p>
+<p>[EC2-VPC] The Amazon-provided DNS server will resolve Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
+</div></blockquote>
 <p>PublicDnsName -&gt; (string)</p>
 <blockquote>
-<div>The public DNS name assigned to the instance. This name is not available until the instance enters the <tt class="docutils literal"><span class="pre">running</span></tt> state. For EC2-VPC, this name is only available if you've enabled DNS hostnames for your VPC.</div></blockquote>
+<div>(IPv4 only) The public DNS name assigned to the instance. This name is not available until the instance enters the <tt class="docutils literal"><span class="pre">running</span></tt> state. For EC2-VPC, this name is only available if you've enabled DNS hostnames for your VPC.</div></blockquote>
 <p>StateTransitionReason -&gt; (string)</p>
 <blockquote>
 <div>The reason for the most recent state transition. This might be an empty string.</div></blockquote>
@@ -804,10 +859,10 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div>The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of <tt class="docutils literal"><span class="pre">dedicated</span></tt> runs on single-tenant hardware. The <tt class="docutils literal"><span class="pre">host</span></tt> tenancy is not supported for the  import-instance command.</div></blockquote>
 <p>HostId -&gt; (string)</p>
 <blockquote>
-<div>The ID of the Dedicted host on which the instance resides. This parameter is not support for the  import-instance command.</div></blockquote>
+<div>The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the  import-instance command.</div></blockquote>
 <p>Affinity -&gt; (string)</p>
 <blockquote>
-<div>The affinity setting for the instance on the Dedicated host. This parameter is not supported for the  import-instance command.</div></blockquote>
+<div>The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the  import-instance command.</div></blockquote>
 </div></blockquote>
 <p>KernelId -&gt; (string)</p>
 <blockquote>
@@ -820,10 +875,10 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div>The value is <tt class="docutils literal"><span class="pre">Windows</span></tt> for Windows instances; otherwise blank.</div></blockquote>
 <p>Monitoring -&gt; (structure)</p>
 <blockquote>
-<div><p>The monitoring information for the instance.</p>
+<div><p>The monitoring for the instance.</p>
 <p>State -&gt; (string)</p>
 <blockquote>
-<div>Indicates whether monitoring is enabled for the instance.</div></blockquote>
+<div>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</div></blockquote>
 </div></blockquote>
 <p>SubnetId -&gt; (string)</p>
 <blockquote>
@@ -833,10 +888,10 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div>[EC2-VPC] The ID of the VPC in which the instance is running.</div></blockquote>
 <p>PrivateIpAddress -&gt; (string)</p>
 <blockquote>
-<div>The private IP address assigned to the instance.</div></blockquote>
+<div>The private IPv4 address assigned to the instance.</div></blockquote>
 <p>PublicIpAddress -&gt; (string)</p>
 <blockquote>
-<div>The public IP address assigned to the instance, if applicable.</div></blockquote>
+<div>The public IPv4 address assigned to the instance, if applicable.</div></blockquote>
 <p>StateReason -&gt; (structure)</p>
 <blockquote>
 <div><p>The reason for the most recent state transition.</p>
@@ -847,9 +902,10 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <blockquote>
 <div><p>The message for the state change.</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">Server.SpotInstanceTermination</span></tt> : A Spot instance was terminated due to an increase in the market price.</li>
-<li><tt class="docutils literal"><span class="pre">Server.InternalError</span></tt> : An internal error occurred during instance launch, resulting in termination.</li>
 <li><tt class="docutils literal"><span class="pre">Server.InsufficientInstanceCapacity</span></tt> : There was insufficient instance capacity to satisfy the launch request.</li>
+<li><tt class="docutils literal"><span class="pre">Server.InternalError</span></tt> : An internal error occurred during instance launch, resulting in termination.</li>
+<li><tt class="docutils literal"><span class="pre">Server.ScheduledStop</span></tt> : The instance was stopped due to a scheduled retirement.</li>
+<li><tt class="docutils literal"><span class="pre">Server.SpotInstanceTermination</span></tt> : A Spot instance was terminated due to an increase in the market price.</li>
 <li><tt class="docutils literal"><span class="pre">Client.InternalError</span></tt> : A client error caused the instance to terminate on launch.</li>
 <li><tt class="docutils literal"><span class="pre">Client.InstanceInitiatedShutdown</span></tt> : The instance was shut down using the <tt class="docutils literal"><span class="pre">shutdown</span> <span class="pre">-h</span></tt> command from the instance.</li>
 <li><tt class="docutils literal"><span class="pre">Client.UserInitiatedShutdown</span></tt> : The instance was shut down using the Amazon EC2 API.</li>
@@ -973,7 +1029,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div>The MAC address.</div></blockquote>
 <p>PrivateIpAddress -&gt; (string)</p>
 <blockquote>
-<div>The IP address of the network interface within the subnet.</div></blockquote>
+<div>The IPv4 address of the network interface within the subnet.</div></blockquote>
 <p>PrivateDnsName -&gt; (string)</p>
 <blockquote>
 <div>The private DNS name.</div></blockquote>
@@ -1015,7 +1071,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 </div></blockquote>
 <p>Association -&gt; (structure)</p>
 <blockquote>
-<div><p>The association information for an Elastic IP associated with the network interface.</p>
+<div><p>The association information for an Elastic IPv4 associated with the network interface.</p>
 <p>PublicIp -&gt; (string)</p>
 <blockquote>
 <div>The public IP address or Elastic IP address bound to the network interface.</div></blockquote>
@@ -1028,19 +1084,19 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 </div></blockquote>
 <p>PrivateIpAddresses -&gt; (list)</p>
 <blockquote>
-<div><p>The private IP addresses associated with the network interface.</p>
+<div><p>One or more private IPv4 addresses associated with the network interface.</p>
 <p>(structure)</p>
 <blockquote>
-<div><p>Describes a private IP address.</p>
+<div><p>Describes a private IPv4 address.</p>
 <p>PrivateIpAddress -&gt; (string)</p>
 <blockquote>
-<div>The private IP address of the network interface.</div></blockquote>
+<div>The private IPv4 address of the network interface.</div></blockquote>
 <p>PrivateDnsName -&gt; (string)</p>
 <blockquote>
-<div>The private DNS name.</div></blockquote>
+<div>The private IPv4 DNS name.</div></blockquote>
 <p>Primary -&gt; (boolean)</p>
 <blockquote>
-<div>Indicates whether this IP address is the primary private IP address of the network interface.</div></blockquote>
+<div>Indicates whether this IPv4 address is the primary private IP address of the network interface.</div></blockquote>
 <p>Association -&gt; (structure)</p>
 <blockquote>
 <div><p>The association information for an Elastic IP address for the network interface.</p>
@@ -1054,6 +1110,17 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <blockquote>
 <div>The ID of the owner of the Elastic IP address.</div></blockquote>
 </div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Ipv6Addresses -&gt; (list)</p>
+<blockquote>
+<div><p>One or more IPv6 addresses associated with the network interface.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes an IPv6 address.</p>
+<p>Ipv6Address -&gt; (string)</p>
+<blockquote>
+<div>The IPv6 address.</div></blockquote>
 </div></blockquote>
 </div></blockquote>
 </div></blockquote>
@@ -1073,7 +1140,10 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div>Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</div></blockquote>
 <p>SriovNetSupport -&gt; (string)</p>
 <blockquote>
-<div>Specifies whether enhanced networking is enabled.</div></blockquote>
+<div>Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</div></blockquote>
+<p>EnaSupport -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether enhanced networking with ENA is enabled.</div></blockquote>
 </div></blockquote>
 </div></blockquote>
 </div>
@@ -1115,7 +1185,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
           <a href="run-scheduled-instances.html" title="run-scheduled-instances">next</a> |</li>
         <li class="right">
           <a href="revoke-security-group-ingress.html" title="revoke-security-group-ingress">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">ec2</a> &#187;</li> 
       </ul>
@@ -1131,5 +1201,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/run-instances.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:02 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/run-instances.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:00 GMT -->
 </html>

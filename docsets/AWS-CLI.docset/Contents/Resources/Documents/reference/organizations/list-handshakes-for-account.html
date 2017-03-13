@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/organizations/list-handshakes-for-account.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:24 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>list-handshakes-for-account &#8212; AWS CLI 1.11.61 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.11.61',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="organizations" href="index.html" />
+    <link rel="next" title="list-handshakes-for-organization" href="list-handshakes-for-organization.html" />
+    <link rel="prev" title="list-create-account-status" href="list-create-account-status.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="list-handshakes-for-organization.html" title="list-handshakes-for-organization" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="list-create-account-status.html" title="list-create-account-status" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">organizations</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="list-create-account-status.html" title="previous chapter (use the left arrow)">&#8592; list-create-account-status</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="list-handshakes-for-organization.html" title="next chapter (use the right arrow)">list-handshakes-for-organization &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">list-handshakes-for-account</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/organizations/list-handshakes-for-account">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-organizations"><em>organizations</em></a> ]</p>
+<div class="section" id="list-handshakes-for-account">
+<span id="cli-aws-organizations-list-handshakes-for-account"></span><h1>list-handshakes-for-account<a name="//apple_ref/cpp/Command/aws organizations list-handshakes-for-account" class="dashAnchor" id="aws organizations list-handshakes-for-account"></a><a class="headerlink" href="#list-handshakes-for-account" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Lists the current handshakes that are associated with the account of the requesting user.</p>
+<p>This operation can be called from any account in the organization.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForAccount">AWS API Documentation</a></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  list-handshakes-for-account
+[--filter &lt;value&gt;]
+[--next-token &lt;value&gt;]
+[--max-results &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--filter" class="dashAnchor" id="filter"></a><span class="pre">--filter</span></tt> (structure)</p>
+<blockquote>
+<div>Filters the handshakes that you want included in the response. The default is all types. Use the <tt class="docutils literal"><span class="pre">ActionType</span></tt> element to limit the output to only a specified type, such as <tt class="docutils literal"><span class="pre">INVITE</span></tt> , <tt class="docutils literal"><span class="pre">ENABLE-FULL-CONTROL</span></tt> , or <tt class="docutils literal"><span class="pre">APPROVE-FULL-CONTROL</span></tt> . Alternatively, for the <tt class="docutils literal"><span class="pre">ENABLE-FULL-CONTROL</span></tt> handshake that generates a separate child handshake for each member account, you can specify <tt class="docutils literal"><span class="pre">ParentHandshakeId</span></tt> to see only the handshakes that were generated by that parent request.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">ActionType</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">ParentHandshakeId</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">"ActionType"</span><span class="p">:</span> <span class="s2">"INVITE"</span><span class="o">|</span><span class="s2">"ENABLE_ALL_FEATURES"</span><span class="o">|</span><span class="s2">"APPROVE_ALL_FEATURES"</span><span class="p">,</span>
+  <span class="s2">"ParentHandshakeId"</span><span class="p">:</span> <span class="s2">"string"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--next-token" class="dashAnchor" id="next-token"></a><span class="pre">--next-token</span></tt> (string)</p>
+<blockquote>
+<div>Use this parameter if you receive a <tt class="docutils literal"><span class="pre">next-token</span></tt> response in a previous request that indicates that there is more output available. Set it to the value of the previous call's <tt class="docutils literal"><span class="pre">next-token</span></tt> response to indicate where the output should continue from.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-results" class="dashAnchor" id="max-results"></a><span class="pre">--max-results</span></tt> (integer)</p>
+<blockquote>
+<div>(Optional) Use this to limit the number of results you want included in the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <tt class="docutils literal"><span class="pre">next-token</span></tt> response element is present and has a value (is not null). Include that value as the <tt class="docutils literal"><span class="pre">next-token</span></tt> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <tt class="docutils literal"><span class="pre">next-token</span></tt> after every operation to ensure that you receive all of the results.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>Handshakes -&gt; (list)</p>
+<blockquote>
+<div><p>A list of  Handshake objects with details about each of the handshakes that is associated with the specified account.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Contains information that must be exchanged to securely establish a relationship between two accounts (an <em>originator</em> and a <em>recipient</em> ). For example, when a master account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.</p>
+<p>Id -&gt; (string)</p>
+<blockquote>
+<div><p>The unique identifier (ID) of a handshake. The originating account creates the ID when it initiates the handshake.</p>
+<p>The <a class="reference external" href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+</div></blockquote>
+<p>Arn -&gt; (string)</p>
+<blockquote>
+<div><p>The Amazon Resource Name (ARN) of a handshake.</p>
+<p>For more information about ARNs in Organizations, see <a class="reference external" href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN Formats Supported by Organizations</a> in the <em>AWS Organizations User Guide</em> .</p>
+</div></blockquote>
+<p>Parties -&gt; (list)</p>
+<blockquote>
+<div><p>Information about the two accounts that are participating in the handshake.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Identifies a participant in a handshake.</p>
+<p>Id -&gt; (string)</p>
+<blockquote>
+<div><p>The unique identifier (ID) for the party.</p>
+<p>The <a class="reference external" href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+</div></blockquote>
+<p>Type -&gt; (string)</p>
+<blockquote>
+<div>The type of party.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div><p>The current state of the handshake. Use the state to trace the flow of the handshake through the process from its creation to its acceptance. The meaning of each of the valid values is as follows:</p>
+<ul class="simple">
+<li><strong>REQUESTED</strong> : This handshake was sent to multiple recipients (applicable to only some handshake types) and not all recipients have responded yet. The request stays in this state until all recipients respond.</li>
+<li><strong>OPEN</strong> : This handshake was sent to multiple recipients (applicable to only some policy types) and all recipients have responded, allowing the originator to complete the handshake action.</li>
+<li><strong>CANCELED</strong> : This handshake is no longer active because it was canceled by the originating account.</li>
+<li><strong>ACCEPTED</strong> : This handshake is complete because it has been accepted by the recipient.</li>
+<li><strong>DECLINED</strong> : This handshake is no longer active because it was declined by the recipient account.</li>
+<li><strong>EXPIRED</strong> : This handshake is no longer active because the originator did not receive a response of any kind from the recipient before the expiration time (15 days).</li>
+</ul>
+</div></blockquote>
+<p>RequestedTimestamp -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time that the handshake request was made.</div></blockquote>
+<p>ExpirationTimestamp -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time that the handshake expires. If the recipient of the handshake request fails to respond before the specified date and time, the handshake becomes inactive and is no longer valid.</div></blockquote>
+<p>Action -&gt; (string)</p>
+<blockquote>
+<div>The type of handshake, indicating what action occurs when the recipient accepts the handshake.</div></blockquote>
+<p>Resources -&gt; (list)</p>
+<blockquote>
+<div><p>Additional information that is needed to process the handshake.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Contains additional data that is needed to process a handshake.</p>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div>The information that is passed to the other party in the handshake. The format of the value string must match the requirements of the specified type.</div></blockquote>
+<p>Type -&gt; (string)</p>
+<blockquote>
+<div><p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ACCOUNT</span></tt> - Specifies an AWS account ID number.</li>
+<li><tt class="docutils literal"><span class="pre">ORGANIZATION</span></tt> - Specifies an organization ID number.</li>
+<li><tt class="docutils literal"><span class="pre">EMAIL</span></tt> - Specifies the email address that is associated with the account that receives the handshake.</li>
+<li><tt class="docutils literal"><span class="pre">OWNER_EMAIL</span></tt> - Specifies the email address associated with the master account. Included as information about an organization.</li>
+<li><tt class="docutils literal"><span class="pre">OWNER_NAME</span></tt> - Specifies the name associated with the master account. Included as information about an organization.</li>
+<li><tt class="docutils literal"><span class="pre">NOTES</span></tt> - Additional text provided by the handshake initiator and intended for the recipient to read.</li>
+</ul>
+</div></blockquote>
+<p>Resources -&gt; (list)</p>
+<blockquote>
+<div><p>When needed, contains an additional array of <tt class="docutils literal"><span class="pre">HandshakeResource</span></tt> objects.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Contains additional data that is needed to process a handshake.</p>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div>The information that is passed to the other party in the handshake. The format of the value string must match the requirements of the specified type.</div></blockquote>
+<p>Type -&gt; (string)</p>
+<blockquote>
+<div><p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ACCOUNT</span></tt> - Specifies an AWS account ID number.</li>
+<li><tt class="docutils literal"><span class="pre">ORGANIZATION</span></tt> - Specifies an organization ID number.</li>
+<li><tt class="docutils literal"><span class="pre">EMAIL</span></tt> - Specifies the email address that is associated with the account that receives the handshake.</li>
+<li><tt class="docutils literal"><span class="pre">OWNER_EMAIL</span></tt> - Specifies the email address associated with the master account. Included as information about an organization.</li>
+<li><tt class="docutils literal"><span class="pre">OWNER_NAME</span></tt> - Specifies the name associated with the master account. Included as information about an organization.</li>
+<li><tt class="docutils literal"><span class="pre">NOTES</span></tt> - Additional text provided by the handshake initiator and intended for the recipient to read.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>If present, this value indicates that there is more output available than is included in the current response. Use this value in the <tt class="docutils literal"><span class="pre">next-token</span></tt> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <tt class="docutils literal"><span class="pre">next-token</span></tt> response element comes back as <tt class="docutils literal"><span class="pre">null</span></tt> .</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="list-create-account-status.html" title="previous chapter (use the left arrow)">&#8592; list-create-account-status</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="list-handshakes-for-organization.html" title="next chapter (use the right arrow)">list-handshakes-for-organization &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="list-handshakes-for-organization.html" title="list-handshakes-for-organization">next</a> |</li>
+        <li class="right">
+          <a href="list-create-account-status.html" title="list-create-account-status">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">organizations</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/organizations/list-handshakes-for-account.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:24 GMT -->
+</html>

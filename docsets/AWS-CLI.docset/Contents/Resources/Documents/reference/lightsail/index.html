@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/lightsail/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:01:41 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>lightsail &#8212; AWS CLI 1.11.61 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.11.61',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="allocate-static-ip" href="allocate-static-ip.html" />
+    <link rel="prev" title="post-text" href="../lex-runtime/post-text.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="allocate-static-ip.html" title="allocate-static-ip" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="../lex-runtime/post-text.html" title="post-text" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../lex-runtime/post-text.html" title="previous chapter (use the left arrow)">&#8592; post-text</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="allocate-static-ip.html" title="next chapter (use the right arrow)">allocate-static-ip &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">lightsail</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/lightsail/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="lightsail">
+<span id="cli-aws-lightsail"></span><h1>lightsail<a name="//apple_ref/cpp/Command/aws lightsail" class="dashAnchor" id="aws lightsail"></a><a class="headerlink" href="#lightsail" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Amazon Lightsail is the easiest way to get started with AWS for developers who just need virtual private servers. Lightsail includes everything you need to launch your project quickly - a virtual machine, SSD-based storage, data transfer, DNS management, and a static IP - for a low, predictable price. You manage those Lightsail servers through the Lightsail console or by using the API or command-line interface (CLI).</p>
+<p>For more information about Lightsail concepts and tasks, see the <a class="reference external" href="http://lightsail.aws.amazon.com/ls/docs/how-to/articles/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli">Lightsail Dev Guide</a> .</p>
+<p>To use the Lightsail API or the CLI, you will need to use AWS Identity and Access Management (IAM) to generate access keys. For details about how to set this up, see the <a class="reference external" href="http://lightsail.aws.amazon.com/ls/docs/how-to/articles/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli">Lightsail Dev Guide</a> .</p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a name="//apple_ref/cpp/Section/Available Commands" class="dashAnchor" id="Available Commands"></a><a class="headerlink" href="#available-commands" title="Permalink to this headline">&#182;</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/allocate-static-ip" class="dashAnchor" id="allocate-static-ip"></a><a class="reference internal" href="allocate-static-ip.html">allocate-static-ip</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/attach-static-ip" class="dashAnchor" id="attach-static-ip"></a><a class="reference internal" href="attach-static-ip.html">attach-static-ip</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/close-instance-public-ports" class="dashAnchor" id="close-instance-public-ports"></a><a class="reference internal" href="close-instance-public-ports.html">close-instance-public-ports</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-domain" class="dashAnchor" id="create-domain"></a><a class="reference internal" href="create-domain.html">create-domain</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-domain-entry" class="dashAnchor" id="create-domain-entry"></a><a class="reference internal" href="create-domain-entry.html">create-domain-entry</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-instance-snapshot" class="dashAnchor" id="create-instance-snapshot"></a><a class="reference internal" href="create-instance-snapshot.html">create-instance-snapshot</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-instances" class="dashAnchor" id="create-instances"></a><a class="reference internal" href="create-instances.html">create-instances</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-instances-from-snapshot" class="dashAnchor" id="create-instances-from-snapshot"></a><a class="reference internal" href="create-instances-from-snapshot.html">create-instances-from-snapshot</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-key-pair" class="dashAnchor" id="create-key-pair"></a><a class="reference internal" href="create-key-pair.html">create-key-pair</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-domain" class="dashAnchor" id="delete-domain"></a><a class="reference internal" href="delete-domain.html">delete-domain</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-domain-entry" class="dashAnchor" id="delete-domain-entry"></a><a class="reference internal" href="delete-domain-entry.html">delete-domain-entry</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-instance" class="dashAnchor" id="delete-instance"></a><a class="reference internal" href="delete-instance.html">delete-instance</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-instance-snapshot" class="dashAnchor" id="delete-instance-snapshot"></a><a class="reference internal" href="delete-instance-snapshot.html">delete-instance-snapshot</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-key-pair" class="dashAnchor" id="delete-key-pair"></a><a class="reference internal" href="delete-key-pair.html">delete-key-pair</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/detach-static-ip" class="dashAnchor" id="detach-static-ip"></a><a class="reference internal" href="detach-static-ip.html">detach-static-ip</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/download-default-key-pair" class="dashAnchor" id="download-default-key-pair"></a><a class="reference internal" href="download-default-key-pair.html">download-default-key-pair</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-active-names" class="dashAnchor" id="get-active-names"></a><a class="reference internal" href="get-active-names.html">get-active-names</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-blueprints" class="dashAnchor" id="get-blueprints"></a><a class="reference internal" href="get-blueprints.html">get-blueprints</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-bundles" class="dashAnchor" id="get-bundles"></a><a class="reference internal" href="get-bundles.html">get-bundles</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-domain" class="dashAnchor" id="get-domain"></a><a class="reference internal" href="get-domain.html">get-domain</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-domains" class="dashAnchor" id="get-domains"></a><a class="reference internal" href="get-domains.html">get-domains</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-instance" class="dashAnchor" id="get-instance"></a><a class="reference internal" href="get-instance.html">get-instance</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-instance-access-details" class="dashAnchor" id="get-instance-access-details"></a><a class="reference internal" href="get-instance-access-details.html">get-instance-access-details</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-instance-metric-data" class="dashAnchor" id="get-instance-metric-data"></a><a class="reference internal" href="get-instance-metric-data.html">get-instance-metric-data</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-instance-port-states" class="dashAnchor" id="get-instance-port-states"></a><a class="reference internal" href="get-instance-port-states.html">get-instance-port-states</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-instance-snapshot" class="dashAnchor" id="get-instance-snapshot"></a><a class="reference internal" href="get-instance-snapshot.html">get-instance-snapshot</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-instance-snapshots" class="dashAnchor" id="get-instance-snapshots"></a><a class="reference internal" href="get-instance-snapshots.html">get-instance-snapshots</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-instance-state" class="dashAnchor" id="get-instance-state"></a><a class="reference internal" href="get-instance-state.html">get-instance-state</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-instances" class="dashAnchor" id="get-instances"></a><a class="reference internal" href="get-instances.html">get-instances</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-key-pair" class="dashAnchor" id="get-key-pair"></a><a class="reference internal" href="get-key-pair.html">get-key-pair</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-key-pairs" class="dashAnchor" id="get-key-pairs"></a><a class="reference internal" href="get-key-pairs.html">get-key-pairs</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-operation" class="dashAnchor" id="get-operation"></a><a class="reference internal" href="get-operation.html">get-operation</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-operations" class="dashAnchor" id="get-operations"></a><a class="reference internal" href="get-operations.html">get-operations</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-operations-for-resource" class="dashAnchor" id="get-operations-for-resource"></a><a class="reference internal" href="get-operations-for-resource.html">get-operations-for-resource</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-regions" class="dashAnchor" id="get-regions"></a><a class="reference internal" href="get-regions.html">get-regions</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-static-ip" class="dashAnchor" id="get-static-ip"></a><a class="reference internal" href="get-static-ip.html">get-static-ip</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-static-ips" class="dashAnchor" id="get-static-ips"></a><a class="reference internal" href="get-static-ips.html">get-static-ips</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/import-key-pair" class="dashAnchor" id="import-key-pair"></a><a class="reference internal" href="import-key-pair.html">import-key-pair</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/is-vpc-peered" class="dashAnchor" id="is-vpc-peered"></a><a class="reference internal" href="is-vpc-peered.html">is-vpc-peered</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/open-instance-public-ports" class="dashAnchor" id="open-instance-public-ports"></a><a class="reference internal" href="open-instance-public-ports.html">open-instance-public-ports</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/peer-vpc" class="dashAnchor" id="peer-vpc"></a><a class="reference internal" href="peer-vpc.html">peer-vpc</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/reboot-instance" class="dashAnchor" id="reboot-instance"></a><a class="reference internal" href="reboot-instance.html">reboot-instance</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/release-static-ip" class="dashAnchor" id="release-static-ip"></a><a class="reference internal" href="release-static-ip.html">release-static-ip</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/start-instance" class="dashAnchor" id="start-instance"></a><a class="reference internal" href="start-instance.html">start-instance</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/stop-instance" class="dashAnchor" id="stop-instance"></a><a class="reference internal" href="stop-instance.html">stop-instance</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/unpeer-vpc" class="dashAnchor" id="unpeer-vpc"></a><a class="reference internal" href="unpeer-vpc.html">unpeer-vpc</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-domain-entry" class="dashAnchor" id="update-domain-entry"></a><a class="reference internal" href="update-domain-entry.html">update-domain-entry</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../lex-runtime/post-text.html" title="previous chapter (use the left arrow)">&#8592; post-text</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="allocate-static-ip.html" title="next chapter (use the right arrow)">allocate-static-ip &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="allocate-static-ip.html" title="allocate-static-ip">next</a> |</li>
+        <li class="right">
+          <a href="../lex-runtime/post-text.html" title="post-text">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/lightsail/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:02:00 GMT -->
+</html>

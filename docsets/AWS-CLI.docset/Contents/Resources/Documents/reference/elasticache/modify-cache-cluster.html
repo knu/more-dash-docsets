@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elasticache/modify-cache-cluster.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:16 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elasticache/modify-cache-cluster.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:14 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>modify-cache-cluster &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>modify-cache-cluster &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="elasticache" href="index.html" />
     <link rel="next" title="modify-cache-parameter-group" href="modify-cache-parameter-group.html" />
     <link rel="prev" title="list-tags-for-resource" href="list-tags-for-resource.html" />
@@ -64,7 +64,7 @@
           <a href="modify-cache-parameter-group.html" title="modify-cache-parameter-group" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="list-tags-for-resource.html" title="list-tags-for-resource" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">elasticache</a> &#187;</li> 
       </ul>
@@ -111,7 +111,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/elasticache/modify-cache-cluster">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/elasticache/modify-cache-cluster">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -128,7 +128,8 @@
 <span id="cli-aws-elasticache-modify-cache-cluster"></span><h1>modify-cache-cluster<a name="//apple_ref/cpp/Command/aws elasticache modify-cache-cluster" class="dashAnchor" id="aws elasticache modify-cache-cluster"></a><a class="headerlink" href="#modify-cache-cluster" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>The <em>modify-cache-cluster</em> action modifies the settings for a cache cluster. You can use this action to change one or more cluster configuration parameters by specifying the parameters and the new values.</p>
+<p>Modifies the settings for a cache cluster. You can use this operation to change one or more cluster configuration parameters by specifying the parameters and the new values.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheCluster">AWS API Documentation</a></p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
@@ -151,7 +152,7 @@
 [--snapshot-window &lt;value&gt;]
 [--cache-node-type &lt;value&gt;]
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
@@ -161,18 +162,18 @@
 <div>The cache cluster identifier. This value is stored as a lowercase string.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--num-cache-nodes" class="dashAnchor" id="num-cache-nodes"></a><span class="pre">--num-cache-nodes</span></tt> (integer)</p>
 <blockquote>
-<div><p>The number of cache nodes that the cache cluster should have. If the value for <tt class="docutils literal"><span class="pre">NumCacheNodes</span></tt> is greater than the sum of the number of current cache nodes and the number of cache nodes pending creation (which may be zero), then more nodes will be added. If the value is less than the number of existing cache nodes, then nodes will be removed. If the value is equal to the number of current cache nodes, then any pending add or remove requests are canceled.</p>
+<div><p>The number of cache nodes that the cache cluster should have. If the value for <tt class="docutils literal"><span class="pre">NumCacheNodes</span></tt> is greater than the sum of the number of current cache nodes and the number of cache nodes pending creation (which may be zero), more nodes are added. If the value is less than the number of existing cache nodes, nodes are removed. If the value is equal to the number of current cache nodes, any pending add or remove requests are canceled.</p>
 <p>If you are removing cache nodes, you must use the <tt class="docutils literal"><span class="pre">CacheNodeIdsToRemove</span></tt> parameter to provide the IDs of the specific cache nodes to remove.</p>
 <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 20.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>Adding or removing Memcached cache nodes can be applied immediately or as a pending action. See <tt class="docutils literal"><span class="pre">ApplyImmediately</span></tt> .</p>
-<p class="last">A pending action to modify the number of cache nodes in a cluster during its maintenance window, whether by adding or removing nodes in accordance with the scale out architecture, is not queued. The customer's latest request to add or remove nodes to the cluster overrides any previous pending actions to modify the number of cache nodes in the cluster. For example, a request to remove 2 nodes would override a previous pending action to remove 3 nodes. Similarly, a request to add 2 nodes would override a previous pending action to remove 3 nodes and vice versa. As Memcached cache nodes may now be provisioned in different Availability Zones with flexible cache node placement, a request to add nodes does not automatically override a previous pending action to add nodes. The customer can modify the previous pending action to add more nodes or explicitly cancel the pending request and retry the new request. To cancel pending actions to modify the number of cache nodes in a cluster, use the <tt class="docutils literal"><span class="pre">modify-cache-cluster</span></tt> request and set <em>NumCacheNodes</em> equal to the number of cache nodes currently in the cache cluster.</p>
+<p>Adding or removing Memcached cache nodes can be applied immediately or as a pending operation (see <tt class="docutils literal"><span class="pre">ApplyImmediately</span></tt> ).</p>
+<p class="last">A pending operation to modify the number of cache nodes in a cluster during its maintenance window, whether by adding or removing nodes in accordance with the scale out architecture, is not queued. The customer's latest request to add or remove nodes to the cluster overrides any previous pending operations to modify the number of cache nodes in the cluster. For example, a request to remove 2 nodes would override a previous pending operation to remove 3 nodes. Similarly, a request to add 2 nodes would override a previous pending operation to remove 3 nodes and vice versa. As Memcached cache nodes may now be provisioned in different Availability Zones with flexible cache node placement, a request to add nodes does not automatically override a previous pending operation to add nodes. The customer can modify the previous pending operation to add more nodes or explicitly cancel the pending request and retry the new request. To cancel pending operations to modify the number of cache nodes in a cluster, use the <tt class="docutils literal"><span class="pre">modify-cache-cluster</span></tt> request and set <tt class="docutils literal"><span class="pre">NumCacheNodes</span></tt> equal to the number of cache nodes currently in the cache cluster.</p>
 </div>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cache-node-ids-to-remove" class="dashAnchor" id="cache-node-ids-to-remove"></a><span class="pre">--cache-node-ids-to-remove</span></tt> (list)</p>
 <blockquote>
-<div><p>A list of cache node IDs to be removed. A node ID is a numeric identifier (0001, 0002, etc.). This parameter is only valid when <em>NumCacheNodes</em> is less than the existing number of cache nodes. The number of cache node IDs supplied in this parameter must match the difference between the existing number of cache nodes in the cluster or pending cache nodes, whichever is greater, and the value of <em>NumCacheNodes</em> in the request.</p>
+<div><p>A list of cache node IDs to be removed. A node ID is a numeric identifier (0001, 0002, etc.). This parameter is only valid when <tt class="docutils literal"><span class="pre">NumCacheNodes</span></tt> is less than the existing number of cache nodes. The number of cache node IDs supplied in this parameter must match the difference between the existing number of cache nodes in the cluster or pending cache nodes, whichever is greater, and the value of <tt class="docutils literal"><span class="pre">NumCacheNodes</span></tt> in the request.</p>
 <p>For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in this <tt class="docutils literal"><span class="pre">ModifyCacheCluser</span></tt> call is 5, you must list 2 (7 - 5) cache node IDs to remove.</p>
 </div></blockquote>
 <p>Syntax:</p>
@@ -186,7 +187,7 @@
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>You cannot specify <tt class="docutils literal"><span class="pre">single-az</span></tt> if the Memcached cache cluster already has cache nodes in different Availability Zones. If <tt class="docutils literal"><span class="pre">cross-az</span></tt> is specified, existing Memcached nodes remain in their current Availability Zone.</p>
-<p class="last">Only newly created nodes will be located in different Availability Zones. For instructions on how to move existing Memcached nodes to different Availability Zones, see the <strong>Availability Zone Considerations</strong> section of <a class="reference external" href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node Considerations for Memcached</a> .</p>
+<p class="last">Only newly created nodes are located in different Availability Zones. For instructions on how to move existing Memcached nodes to different Availability Zones, see the <strong>Availability Zone Considerations</strong> section of <a class="reference external" href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node Considerations for Memcached</a> .</p>
 </div>
 <p>Possible values:</p>
 <ul class="simple">
@@ -196,14 +197,14 @@
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--new-availability-zones" class="dashAnchor" id="new-availability-zones"></a><span class="pre">--new-availability-zones</span></tt> (list)</p>
 <blockquote>
-<div><p>The list of Availability Zones where the new Memcached cache nodes will be created.</p>
-<p>This parameter is only valid when <em>NumCacheNodes</em> in the request is greater than the sum of the number of active cache nodes and the number of cache nodes pending creation (which may be zero). The number of Availability Zones supplied in this list must match the cache nodes being added in this request.</p>
+<div><p>The list of Availability Zones where the new Memcached cache nodes are created.</p>
+<p>This parameter is only valid when <tt class="docutils literal"><span class="pre">NumCacheNodes</span></tt> in the request is greater than the sum of the number of active cache nodes and the number of cache nodes pending creation (which may be zero). The number of Availability Zones supplied in this list must match the cache nodes being added in this request.</p>
 <p>This option is only supported on Memcached clusters.</p>
 <p>Scenarios:</p>
 <ul class="simple">
 <li><strong>Scenario 1:</strong> You have 3 active nodes and wish to add 2 nodes. Specify <tt class="docutils literal"><span class="pre">NumCacheNodes=5</span></tt> (3 + 2) and optionally specify two Availability Zones for the two new nodes.</li>
 <li><strong>Scenario 2:</strong> You have 3 active nodes and 2 nodes pending creation (from the scenario 1 call) and want to add 1 more node. Specify <tt class="docutils literal"><span class="pre">NumCacheNodes=6</span></tt> ((3 + 2) + 1) and optionally specify an Availability Zone for the new node.</li>
-<li><strong>Scenario 3:</strong> You want to cancel all pending actions. Specify <tt class="docutils literal"><span class="pre">NumCacheNodes=3</span></tt> to cancel all pending actions.</li>
+<li><strong>Scenario 3:</strong> You want to cancel all pending operations. Specify <tt class="docutils literal"><span class="pre">NumCacheNodes=3</span></tt> to cancel all pending operations.</li>
 </ul>
 <p>The Availability Zone placement of nodes pending creation cannot be modified. If you wish to cancel any nodes pending creation, add 0 nodes by setting <tt class="docutils literal"><span class="pre">NumCacheNodes</span></tt> to the number of current nodes.</p>
 <p>If <tt class="docutils literal"><span class="pre">cross-az</span></tt> is specified, existing Memcached nodes remain in their current Availability Zone. Only newly created nodes can be located in different Availability Zones. For guidance on how to move existing Memcached nodes to different Availability Zones, see the <strong>Availability Zone Considerations</strong> section of <a class="reference external" href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node Considerations for Memcached</a> .</p>
@@ -243,9 +244,6 @@
 </div>
 </li>
 </ul>
-<p>Example:</p>
-<blockquote>
-<div><tt class="docutils literal"><span class="pre">NewAvailabilityZones.member.1=us-west-2aamp;NewAvailabilityZones.member.2=us-west-2bamp;NewAvailabilityZones.member.3=us-west-2c</span></tt></div></blockquote>
 </div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
@@ -253,7 +251,7 @@
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cache-security-group-names" class="dashAnchor" id="cache-security-group-names"></a><span class="pre">--cache-security-group-names</span></tt> (list)</p>
 <blockquote>
 <div><p>A list of cache security group names to authorize on this cache cluster. This change is asynchronously applied as soon as possible.</p>
-<p>This parameter can be used only with clusters that are created outside of an Amazon Virtual Private Cloud (VPC).</p>
+<p>You can use this parameter only with clusters that are created outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
 <p>Constraints: Must contain no more than 255 alphanumeric characters. Must not be "Default".</p>
 </div></blockquote>
 <p>Syntax:</p>
@@ -262,14 +260,15 @@
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--security-group-ids" class="dashAnchor" id="security-group-ids"></a><span class="pre">--security-group-ids</span></tt> (list)</p>
 <blockquote>
 <div><p>Specifies the VPC Security Groups associated with the cache cluster.</p>
-<p>This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (VPC).</p>
+<p>This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (Amazon VPC).</p>
 </div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--preferred-maintenance-window" class="dashAnchor" id="preferred-maintenance-window"></a><span class="pre">--preferred-maintenance-window</span></tt> (string)</p>
 <blockquote>
-<div><p>Specifies the weekly time range during which maintenance on the cache cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <tt class="docutils literal"><span class="pre">ddd</span></tt> are:</p>
+<div><p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
+<p>Valid values for <tt class="docutils literal"><span class="pre">ddd</span></tt> are:</p>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">sun</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">mon</span></tt></li>
@@ -279,11 +278,11 @@
 <li><tt class="docutils literal"><span class="pre">fri</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">sat</span></tt></li>
 </ul>
-<p>Example: <tt class="docutils literal"><span class="pre">sun:05:00-sun:09:00</span></tt></p>
+<p>Example: <tt class="docutils literal"><span class="pre">sun:23:00-mon:01:30</span></tt></p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--notification-topic-arn" class="dashAnchor" id="notification-topic-arn"></a><span class="pre">--notification-topic-arn</span></tt> (string)</p>
 <blockquote>
-<div><p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p>
+<div><p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The Amazon SNS topic owner must be same as the cache cluster owner.</p>
@@ -291,16 +290,16 @@
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cache-parameter-group-name" class="dashAnchor" id="cache-parameter-group-name"></a><span class="pre">--cache-parameter-group-name</span></tt> (string)</p>
 <blockquote>
-<div>The name of the cache parameter group to apply to this cache cluster. This change is asynchronously applied as soon as possible for parameters when the <em>ApplyImmediately</em> parameter is specified as <em>true</em> for this request.</div></blockquote>
+<div>The name of the cache parameter group to apply to this cache cluster. This change is asynchronously applied as soon as possible for parameters when the <tt class="docutils literal"><span class="pre">ApplyImmediately</span></tt> parameter is specified as <tt class="docutils literal"><span class="pre">true</span></tt> for this request.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--notification-topic-status" class="dashAnchor" id="notification-topic-status"></a><span class="pre">--notification-topic-status</span></tt> (string)</p>
 <blockquote>
-<div><p>The status of the Amazon SNS notification topic. Notifications are sent only if the status is <em>active</em> .</p>
+<div><p>The status of the Amazon SNS notification topic. Notifications are sent only if the status is <tt class="docutils literal"><span class="pre">active</span></tt> .</p>
 <p>Valid values: <tt class="docutils literal"><span class="pre">active</span></tt> | <tt class="docutils literal"><span class="pre">inactive</span></tt></p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--apply-immediately" class="dashAnchor" id="apply-immediately"></a><span class="pre">--apply-immediately</span></tt> | <tt class="docutils literal"><span class="pre">--no-apply-immediately</span></tt> (boolean)</p>
 <blockquote>
-<div><p>If <tt class="docutils literal"><span class="pre">true</span></tt> , this parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible, regardless of the <em>PreferredMaintenanceWindow</em> setting for the cache cluster.</p>
-<p>If <tt class="docutils literal"><span class="pre">false</span></tt> , then changes to the cache cluster are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p>
+<div><p>If <tt class="docutils literal"><span class="pre">true</span></tt> , this parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible, regardless of the <tt class="docutils literal"><span class="pre">PreferredMaintenanceWindow</span></tt> setting for the cache cluster.</p>
+<p>If <tt class="docutils literal"><span class="pre">false</span></tt> , changes to the cache cluster are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">If you perform a <tt class="docutils literal"><span class="pre">modify-cache-cluster</span></tt> before a pending modification is applied, the pending modification is replaced by the newer modification.</p>
@@ -319,22 +318,22 @@
 <div>This parameter is currently disabled.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--snapshot-retention-limit" class="dashAnchor" id="snapshot-retention-limit"></a><span class="pre">--snapshot-retention-limit</span></tt> (integer)</p>
 <blockquote>
-<div><p>The number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting them. For example, if you set <em>SnapshotRetentionLimit</em> to 5, then a snapshot that was taken today will be retained for 5 days before being deleted.</p>
+<div><p>The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them. For example, if you set <tt class="docutils literal"><span class="pre">SnapshotRetentionLimit</span></tt> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
+<p class="last">If the value of <tt class="docutils literal"><span class="pre">SnapshotRetentionLimit</span></tt> is set to zero (0), backups are turned off.</p>
 </div>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--snapshot-window" class="dashAnchor" id="snapshot-window"></a><span class="pre">--snapshot-window</span></tt> (string)</p>
 <blockquote>
-<div>The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your cache cluster.</div></blockquote>
+<div>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cache cluster.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cache-node-type" class="dashAnchor" id="cache-node-type"></a><span class="pre">--cache-node-type</span></tt> (string)</p>
 <blockquote>
-<div>A valid cache node type that you want to scale this cache cluster to. The value of this parameter must be one of the <em>ScaleUpModifications</em> values returned by the <tt class="docutils literal"><span class="pre">ListAllowedCacheNodeTypeModification</span></tt> action.</div></blockquote>
+<div>A valid cache node type that you want to scale this cache cluster up to.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="output">
 <h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
@@ -363,7 +362,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <p>Valid node types are as follows:</p>
 <ul class="simple">
 <li>General purpose:<ul>
-<li>Current generation: <tt class="docutils literal"><span class="pre">cache.t2.micro</span></tt> , <tt class="docutils literal"><span class="pre">cache.t2.small</span></tt> , <tt class="docutils literal"><span class="pre">cache.t2.medium</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.medium</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.large</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.2xlarge</span></tt></li>
+<li>Current generation: <tt class="docutils literal"><span class="pre">cache.t2.micro</span></tt> , <tt class="docutils literal"><span class="pre">cache.t2.small</span></tt> , <tt class="docutils literal"><span class="pre">cache.t2.medium</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.medium</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.large</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.2xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.m4.large</span></tt> , <tt class="docutils literal"><span class="pre">cache.m4.xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.m4.2xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.m4.4xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.m4.10xlarge</span></tt></li>
 <li>Previous generation: <tt class="docutils literal"><span class="pre">cache.t1.micro</span></tt> , <tt class="docutils literal"><span class="pre">cache.m1.small</span></tt> , <tt class="docutils literal"><span class="pre">cache.m1.medium</span></tt> , <tt class="docutils literal"><span class="pre">cache.m1.large</span></tt> , <tt class="docutils literal"><span class="pre">cache.m1.xlarge</span></tt></li>
 </ul>
 </li>
@@ -377,21 +376,21 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <blockquote>
 <div><strong>Notes:</strong></div></blockquote>
 <ul class="simple">
-<li>All t2 instances are created in an Amazon Virtual Private Cloud (VPC).</li>
-<li>Redis backup/restore is not supported for t2 instances.</li>
-<li>Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.</li>
+<li>All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).</li>
+<li>Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is supported on Redis (cluster mode enabled) T2 instances.</li>
+<li>Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.</li>
 </ul>
-<p>For a complete listing of cache node types and specifications, see <a class="reference external" href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a class="reference external" href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache Node Type-Specific Parameters for Memcached</a> or <a class="reference external" href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache Node Type-Specific Parameters for Redis</a> .</p>
+<p>For a complete listing of node types and specifications, see <a class="reference external" href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either <a class="reference external" href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache Node Type-Specific Parameters for Memcached</a> or <a class="reference external" href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache Node Type-Specific Parameters for Redis</a> .</p>
 </div></blockquote>
 <p>Engine -&gt; (string)</p>
 <blockquote>
-<div>The name of the cache engine (<em>memcached</em> or <em>redis</em> ) to be used for this cache cluster.</div></blockquote>
+<div>The name of the cache engine (<tt class="docutils literal"><span class="pre">memcached</span></tt> or <tt class="docutils literal"><span class="pre">redis</span></tt> ) to be used for this cache cluster.</div></blockquote>
 <p>EngineVersion -&gt; (string)</p>
 <blockquote>
 <div>The version of the cache engine that is used in this cache cluster.</div></blockquote>
 <p>CacheClusterStatus -&gt; (string)</p>
 <blockquote>
-<div>The current state of this cache cluster, one of the following values: <em>available</em> , <em>creating</em> , <em>deleted</em> , <em>deleting</em> , <em>incompatible-network</em> , <em>modifying</em> , <em>rebooting cache cluster nodes</em> , <em>restore-failed</em> , or <em>snapshotting</em> .</div></blockquote>
+<div>The current state of this cache cluster, one of the following values: <tt class="docutils literal"><span class="pre">available</span></tt> , <tt class="docutils literal"><span class="pre">creating</span></tt> , <tt class="docutils literal"><span class="pre">deleted</span></tt> , <tt class="docutils literal"><span class="pre">deleting</span></tt> , <tt class="docutils literal"><span class="pre">incompatible-network</span></tt> , <tt class="docutils literal"><span class="pre">modifying</span></tt> , <tt class="docutils literal"><span class="pre">rebooting</span> <span class="pre">cache</span> <span class="pre">cluster</span> <span class="pre">nodes</span></tt> , <tt class="docutils literal"><span class="pre">restore-failed</span></tt> , or <tt class="docutils literal"><span class="pre">snapshotting</span></tt> .</div></blockquote>
 <p>NumCacheNodes -&gt; (integer)</p>
 <blockquote>
 <div><p>The number of cache nodes in the cache cluster.</p>
@@ -405,7 +404,8 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div>The date and time when the cache cluster was created.</div></blockquote>
 <p>PreferredMaintenanceWindow -&gt; (string)</p>
 <blockquote>
-<div><p>Specifies the weekly time range during which maintenance on the cache cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <tt class="docutils literal"><span class="pre">ddd</span></tt> are:</p>
+<div><p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
+<p>Valid values for <tt class="docutils literal"><span class="pre">ddd</span></tt> are:</p>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">sun</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">mon</span></tt></li>
@@ -415,11 +415,11 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <li><tt class="docutils literal"><span class="pre">fri</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">sat</span></tt></li>
 </ul>
-<p>Example: <tt class="docutils literal"><span class="pre">sun:05:00-sun:09:00</span></tt></p>
+<p>Example: <tt class="docutils literal"><span class="pre">sun:23:00-mon:01:30</span></tt></p>
 </div></blockquote>
 <p>PendingModifiedValues -&gt; (structure)</p>
 <blockquote>
-<div><p>A group of settings that will be applied to the cache cluster in the future, or that are currently being applied.</p>
+<div><p>A group of settings that are applied to the cache cluster in the future, or that are currently being applied.</p>
 <p>NumCacheNodes -&gt; (integer)</p>
 <blockquote>
 <div><p>The new number of cache nodes for the cache cluster.</p>
@@ -432,10 +432,10 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 </div></blockquote>
 <p>EngineVersion -&gt; (string)</p>
 <blockquote>
-<div>The new cache engine version that the cache cluster will run.</div></blockquote>
+<div>The new cache engine version that the cache cluster runs.</div></blockquote>
 <p>CacheNodeType -&gt; (string)</p>
 <blockquote>
-<div>The cache node type that this cache cluster or replication group will be scaled to.</div></blockquote>
+<div>The cache node type that this cache cluster or replication group is scaled to.</div></blockquote>
 </div></blockquote>
 <p>NotificationConfiguration -&gt; (structure)</p>
 <blockquote>
@@ -463,7 +463,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 </div></blockquote>
 <p>CacheParameterGroup -&gt; (structure)</p>
 <blockquote>
-<div><p>The status of the cache parameter group.</p>
+<div><p>Status of the cache parameter group.</p>
 <p>CacheParameterGroupName -&gt; (string)</p>
 <blockquote>
 <div>The name of the cache parameter group.</div></blockquote>
@@ -488,7 +488,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <p>Valid node types are as follows:</p>
 <ul class="simple">
 <li>General purpose:<ul>
-<li>Current generation: <tt class="docutils literal"><span class="pre">cache.t2.micro</span></tt> , <tt class="docutils literal"><span class="pre">cache.t2.small</span></tt> , <tt class="docutils literal"><span class="pre">cache.t2.medium</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.medium</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.large</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.2xlarge</span></tt></li>
+<li>Current generation: <tt class="docutils literal"><span class="pre">cache.t2.micro</span></tt> , <tt class="docutils literal"><span class="pre">cache.t2.small</span></tt> , <tt class="docutils literal"><span class="pre">cache.t2.medium</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.medium</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.large</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.m3.2xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.m4.large</span></tt> , <tt class="docutils literal"><span class="pre">cache.m4.xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.m4.2xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.m4.4xlarge</span></tt> , <tt class="docutils literal"><span class="pre">cache.m4.10xlarge</span></tt></li>
 <li>Previous generation: <tt class="docutils literal"><span class="pre">cache.t1.micro</span></tt> , <tt class="docutils literal"><span class="pre">cache.m1.small</span></tt> , <tt class="docutils literal"><span class="pre">cache.m1.medium</span></tt> , <tt class="docutils literal"><span class="pre">cache.m1.large</span></tt> , <tt class="docutils literal"><span class="pre">cache.m1.xlarge</span></tt></li>
 </ul>
 </li>
@@ -502,11 +502,11 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <blockquote>
 <div><strong>Notes:</strong></div></blockquote>
 <ul class="simple">
-<li>All t2 instances are created in an Amazon Virtual Private Cloud (VPC).</li>
-<li>Redis backup/restore is not supported for t2 instances.</li>
-<li>Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.</li>
+<li>All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).</li>
+<li>Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is supported on Redis (cluster mode enabled) T2 instances.</li>
+<li>Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.</li>
 </ul>
-<p>For a complete listing of cache node types and specifications, see <a class="reference external" href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either <a class="reference external" href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache Node Type-Specific Parameters for Memcached</a> or <a class="reference external" href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache Node Type-Specific Parameters for Redis</a> .</p>
+<p>For a complete listing of node types and specifications, see <a class="reference external" href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either <a class="reference external" href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache Node Type-Specific Parameters for Memcached</a> or <a class="reference external" href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache Node Type-Specific Parameters for Redis</a> .</p>
 <p>CacheNodeId -&gt; (string)</p>
 <blockquote>
 <div>The cache node identifier. A node ID is a numeric identifier (0001, 0002, etc.). The combination of cluster ID and node ID uniquely identifies every cache node used in a customer's AWS account.</div></blockquote>
@@ -531,7 +531,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div>The status of the parameter group applied to this cache node.</div></blockquote>
 <p>SourceCacheNodeId -&gt; (string)</p>
 <blockquote>
-<div>The ID of the primary node to which this read replica node is synchronized. If this field is empty, then this node is not associated with a primary cache cluster.</div></blockquote>
+<div>The ID of the primary node to which this read replica node is synchronized. If this field is empty, this node is not associated with a primary cache cluster.</div></blockquote>
 <p>CustomerAvailabilityZone -&gt; (string)</p>
 <blockquote>
 <div>The Availability Zone where this node was created and now resides.</div></blockquote>
@@ -559,7 +559,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div>The replication group to which this cache cluster belongs. If this field is empty, the cache cluster is not associated with any replication group.</div></blockquote>
 <p>SnapshotRetentionLimit -&gt; (integer)</p>
 <blockquote>
-<div><p>The number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting them. For example, if you set <em>SnapshotRetentionLimit</em> to 5, then a snapshot that was taken today will be retained for 5 days before being deleted.</p>
+<div><p>The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them. For example, if you set <tt class="docutils literal"><span class="pre">SnapshotRetentionLimit</span></tt> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
@@ -567,7 +567,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 </div></blockquote>
 <p>SnapshotWindow -&gt; (string)</p>
 <blockquote>
-<div><p>The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your cache cluster.</p>
+<div><p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cache cluster.</p>
 <p>Example: <tt class="docutils literal"><span class="pre">05:00-09:00</span></tt></p>
 </div></blockquote>
 </div></blockquote>
@@ -610,7 +610,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
           <a href="modify-cache-parameter-group.html" title="modify-cache-parameter-group">next</a> |</li>
         <li class="right">
           <a href="list-tags-for-resource.html" title="list-tags-for-resource">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">elasticache</a> &#187;</li> 
       </ul>
@@ -626,5 +626,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elasticache/modify-cache-cluster.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:16 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/elasticache/modify-cache-cluster.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:14 GMT -->
 </html>

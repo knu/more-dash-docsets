@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ssm/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:34:26 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ssm/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:07:15 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>ssm &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>ssm &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="aws" href="../index.html" />
-    <link rel="next" title="cancel-command" href="cancel-command.html" />
+    <link rel="next" title="add-tags-to-resource" href="add-tags-to-resource.html" />
     <link rel="prev" title="set-queue-attributes" href="../sqs/set-queue-attributes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
@@ -61,10 +61,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
         <li class="right">
-          <a href="cancel-command.html" title="cancel-command" accesskey="N">next</a> |</li>
+          <a href="add-tags-to-resource.html" title="add-tags-to-resource" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="../sqs/set-queue-attributes.html" title="set-queue-attributes" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html" accesskey="U">aws</a> &#187;</li> 
       </ul>
     </div>
@@ -77,7 +77,7 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="cancel-command.html" title="next chapter (use the right arrow)">cancel-command &#8594;</a></li>
+          <li><a href="add-tags-to-resource.html" title="next chapter (use the right arrow)">add-tags-to-resource &#8594;</a></li>
       </ul>
     </div>
   
@@ -110,7 +110,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/ssm/index">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/ssm/index">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -127,69 +127,94 @@
 <span id="cli-aws-ssm"></span><h1>ssm<a name="//apple_ref/cpp/Command/aws ssm" class="dashAnchor" id="aws ssm"></a><a class="headerlink" href="#ssm" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>This is the Amazon Simple Systems Manager (SSM) API Reference. SSM enables you to remotely manage the configuration of your Amazon EC2 instance using scripts or commands with either an on-demand solution called <em>SSM Run Command</em> or a lightweight instance configuration solution called <em>SSM Config</em> .</p>
-<p>This references is intended to be used with the SSM User Guide for <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/remote-commands-prereq.html">Linux</a> or <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/remote-commands-prereq.html">Windows</a> .</p>
-<blockquote>
-<div><strong>Run Command</strong></div></blockquote>
-<p>Run Command provides an on-demand experience for executing commands. You can use pre-defined Amazon SSM documents to perform the actions listed later in this section, or you can create your own documents. With these documents, you can remotely configure your instances by sending commands using the <strong>Commands</strong> page in the <a class="reference external" href="http://console.aws.amazon.com/ec2/">Amazon EC2 console</a> , <a class="reference external" href="http://docs.aws.amazon.com/powershell/latest/reference/items/Amazon_Simple_Systems_Management_cmdlets.html">AWS Tools for Windows PowerShell</a> , the <a class="reference external" href="index.html">AWS CLI</a> , or AWS SDKs.</p>
-<p>Run Command reports the status of the command execution for each instance targeted by a command. You can also audit the command execution to understand who executed commands, when, and what changes were made. By switching between different SSM documents, you can quickly configure your instances with different types of commands. To get started with Run Command, verify that your environment meets the prerequisites for remotely running commands on EC2 instances (<a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/remote-commands-prereq.html">Linux</a> or <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/remote-commands-prereq.html">Windows</a> ).</p>
-<blockquote>
-<div><strong>SSM Config</strong></div></blockquote>
-<p>SSM Config is a lightweight instance configuration solution. SSM Config is currently only available for Windows instances. With SSM Config, you can specify a setup configuration for your instances. SSM Config is similar to EC2 User Data, which is another way of running one-time scripts or applying settings during instance launch. SSM Config is an extension of this capability. Using SSM documents, you can specify which actions the system should perform on your instances, including which applications to install, which AWS Directory Service directory to join, which Microsoft PowerShell modules to install, etc. If an instance is missing one or more of these configurations, the system makes those changes. By default, the system checks every five minutes to see if there is a new configuration to apply as defined in a new SSM document. If so, the system updates the instances accordingly. In this way, you can remotely maintain a consistent configuration baseline on your instances. SSM Config is available using the AWS CLI or the AWS Tools for Windows PowerShell. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-configuration-manage.html">Managing Windows Instance Configuration</a> .</p>
-<p>SSM Config and SSM Run Command include the following pre-defined documents.</p>
-<blockquote>
-<div><strong>Linux</strong></div></blockquote>
-<ul class="simple">
-<li><strong>AWS-RunShellScript</strong> to run shell scripts</li>
-<li><strong>AWS-UpdateSSMAgent</strong> to update the Amazon SSM agent</li>
-</ul>
-<blockquote>
-<div><strong>Windows</strong></div></blockquote>
-<ul class="simple">
-<li><strong>AWS-JoinDirectoryServiceDomain</strong> to join an AWS Directory</li>
-<li><strong>AWS-RunPowerShellScript</strong> to run PowerShell commands or scripts</li>
-<li><strong>AWS-UpdateEC2Config</strong> to update the EC2Config service</li>
-<li><strong>AWS-ConfigureWindowsUpdate</strong> to configure Windows Update settings</li>
-<li><strong>AWS-InstallApplication</strong> to install, repair, or uninstall software using an MSI package</li>
-<li><strong>AWS-InstallPowerShellModule</strong> to install PowerShell modules</li>
-<li><strong>AWS-ConfigureCloudWatch</strong> to configure Amazon CloudWatch Logs to monitor applications and systems</li>
-<li><strong>AWS-ListWindowsInventory</strong> to collect information about an EC2 instance running in Windows.</li>
-<li><strong>AWS-FindWindowsUpdates</strong> to scan an instance and determines which updates are missing.</li>
-<li><strong>AWS-InstallMissingWindowsUpdates</strong> to install missing updates on your EC2 instance.</li>
-<li><strong>AWS-InstallSpecificWindowsUpdates</strong> to install one or more specific updates.</li>
-</ul>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">The commands or scripts specified in SSM documents run with administrative privilege on your instances because the Amazon SSM agent runs as root on Linux and the EC2Config service runs in the Local System account on Windows. If a user has permission to execute any of the pre-defined SSM documents (any document that begins with AWS-<em>) then that user also has administrator access to the instance. Delegate access to SSM and Run Command judiciously. This becomes extremely important if you create your own SSM documents. Amazon Web Services does not provide guidance about how to create secure SSM documents. You create SSM documents and delegate access to Run Command at your own risk. As a security best practice, we recommend that you assign access to "AWS-</em>" documents, especially the AWS-RunShellScript document on Linux and the AWS-RunPowerShellScript document on Windows, to trusted administrators only. You can create SSM documents for specific tasks and delegate access to non-administrators.</p>
-</div>
-<p>For information about creating and sharing SSM documents, see the following topics in the SSM User Guide:</p>
-<ul class="simple">
-<li><a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/create-ssm-doc.html">Creating SSM Documents</a> and <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ssm-sharing.html">Sharing SSM Documents</a> (Linux)</li>
-<li><a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/create-ssm-doc.html">Creating SSM Documents</a> and <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ssm-sharing.html">Sharing SSM Documents</a> (Windows)</li>
-</ul>
+<p>Amazon EC2 Systems Manager is a collection of capabilities that helps you automate management tasks such as collecting system inventory, applying operating system (OS) patches, automating the creation of Amazon Machine Images (AMIs), and configuring operating systems (OSs) and applications at scale. Systems Manager works with managed instances: Amazon EC2 instances and servers or virtual machines (VMs) in your on-premises environment that are configured for Systems Manager.</p>
+<p>This references is intended to be used with the EC2 Systems Manager User Guide (<a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/systems-manager-prereqs.html">Linux</a> ) (<a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/systems-manager-prereqs.html">Windows</a> ).</p>
+<p>To get started, verify prerequisites and configure managed instances (<a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/systems-manager-prereqs.html">Linux</a> ) (<a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/systems-manager-prereqs.html">Windows</a> ).</p>
 </div>
 <div class="section" id="available-commands">
 <h2>Available Commands<a name="//apple_ref/cpp/Section/Available Commands" class="dashAnchor" id="Available Commands"></a><a class="headerlink" href="#available-commands" title="Permalink to this headline">&#182;</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/add-tags-to-resource" class="dashAnchor" id="add-tags-to-resource"></a><a class="reference internal" href="add-tags-to-resource.html">add-tags-to-resource</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/cancel-command" class="dashAnchor" id="cancel-command"></a><a class="reference internal" href="cancel-command.html">cancel-command</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-activation" class="dashAnchor" id="create-activation"></a><a class="reference internal" href="create-activation.html">create-activation</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-association" class="dashAnchor" id="create-association"></a><a class="reference internal" href="create-association.html">create-association</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-association-batch" class="dashAnchor" id="create-association-batch"></a><a class="reference internal" href="create-association-batch.html">create-association-batch</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-document" class="dashAnchor" id="create-document"></a><a class="reference internal" href="create-document.html">create-document</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-maintenance-window" class="dashAnchor" id="create-maintenance-window"></a><a class="reference internal" href="create-maintenance-window.html">create-maintenance-window</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/create-patch-baseline" class="dashAnchor" id="create-patch-baseline"></a><a class="reference internal" href="create-patch-baseline.html">create-patch-baseline</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-activation" class="dashAnchor" id="delete-activation"></a><a class="reference internal" href="delete-activation.html">delete-activation</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-association" class="dashAnchor" id="delete-association"></a><a class="reference internal" href="delete-association.html">delete-association</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-document" class="dashAnchor" id="delete-document"></a><a class="reference internal" href="delete-document.html">delete-document</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-maintenance-window" class="dashAnchor" id="delete-maintenance-window"></a><a class="reference internal" href="delete-maintenance-window.html">delete-maintenance-window</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-parameter" class="dashAnchor" id="delete-parameter"></a><a class="reference internal" href="delete-parameter.html">delete-parameter</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/delete-patch-baseline" class="dashAnchor" id="delete-patch-baseline"></a><a class="reference internal" href="delete-patch-baseline.html">delete-patch-baseline</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/deregister-managed-instance" class="dashAnchor" id="deregister-managed-instance"></a><a class="reference internal" href="deregister-managed-instance.html">deregister-managed-instance</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/deregister-patch-baseline-for-patch-group" class="dashAnchor" id="deregister-patch-baseline-for-patch-group"></a><a class="reference internal" href="deregister-patch-baseline-for-patch-group.html">deregister-patch-baseline-for-patch-group</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/deregister-target-from-maintenance-window" class="dashAnchor" id="deregister-target-from-maintenance-window"></a><a class="reference internal" href="deregister-target-from-maintenance-window.html">deregister-target-from-maintenance-window</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/deregister-task-from-maintenance-window" class="dashAnchor" id="deregister-task-from-maintenance-window"></a><a class="reference internal" href="deregister-task-from-maintenance-window.html">deregister-task-from-maintenance-window</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-activations" class="dashAnchor" id="describe-activations"></a><a class="reference internal" href="describe-activations.html">describe-activations</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-association" class="dashAnchor" id="describe-association"></a><a class="reference internal" href="describe-association.html">describe-association</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-automation-executions" class="dashAnchor" id="describe-automation-executions"></a><a class="reference internal" href="describe-automation-executions.html">describe-automation-executions</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-available-patches" class="dashAnchor" id="describe-available-patches"></a><a class="reference internal" href="describe-available-patches.html">describe-available-patches</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-document" class="dashAnchor" id="describe-document"></a><a class="reference internal" href="describe-document.html">describe-document</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-document-permission" class="dashAnchor" id="describe-document-permission"></a><a class="reference internal" href="describe-document-permission.html">describe-document-permission</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-effective-instance-associations" class="dashAnchor" id="describe-effective-instance-associations"></a><a class="reference internal" href="describe-effective-instance-associations.html">describe-effective-instance-associations</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-effective-patches-for-patch-baseline" class="dashAnchor" id="describe-effective-patches-for-patch-baseline"></a><a class="reference internal" href="describe-effective-patches-for-patch-baseline.html">describe-effective-patches-for-patch-baseline</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-instance-associations-status" class="dashAnchor" id="describe-instance-associations-status"></a><a class="reference internal" href="describe-instance-associations-status.html">describe-instance-associations-status</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-instance-information" class="dashAnchor" id="describe-instance-information"></a><a class="reference internal" href="describe-instance-information.html">describe-instance-information</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-instance-patch-states" class="dashAnchor" id="describe-instance-patch-states"></a><a class="reference internal" href="describe-instance-patch-states.html">describe-instance-patch-states</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-instance-patch-states-for-patch-group" class="dashAnchor" id="describe-instance-patch-states-for-patch-group"></a><a class="reference internal" href="describe-instance-patch-states-for-patch-group.html">describe-instance-patch-states-for-patch-group</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-instance-patches" class="dashAnchor" id="describe-instance-patches"></a><a class="reference internal" href="describe-instance-patches.html">describe-instance-patches</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-maintenance-window-execution-task-invocations" class="dashAnchor" id="describe-maintenance-window-execution-task-invocations"></a><a class="reference internal" href="describe-maintenance-window-execution-task-invocations.html">describe-maintenance-window-execution-task-invocations</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-maintenance-window-execution-tasks" class="dashAnchor" id="describe-maintenance-window-execution-tasks"></a><a class="reference internal" href="describe-maintenance-window-execution-tasks.html">describe-maintenance-window-execution-tasks</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-maintenance-window-executions" class="dashAnchor" id="describe-maintenance-window-executions"></a><a class="reference internal" href="describe-maintenance-window-executions.html">describe-maintenance-window-executions</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-maintenance-window-targets" class="dashAnchor" id="describe-maintenance-window-targets"></a><a class="reference internal" href="describe-maintenance-window-targets.html">describe-maintenance-window-targets</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-maintenance-window-tasks" class="dashAnchor" id="describe-maintenance-window-tasks"></a><a class="reference internal" href="describe-maintenance-window-tasks.html">describe-maintenance-window-tasks</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-maintenance-windows" class="dashAnchor" id="describe-maintenance-windows"></a><a class="reference internal" href="describe-maintenance-windows.html">describe-maintenance-windows</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-parameters" class="dashAnchor" id="describe-parameters"></a><a class="reference internal" href="describe-parameters.html">describe-parameters</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-patch-baselines" class="dashAnchor" id="describe-patch-baselines"></a><a class="reference internal" href="describe-patch-baselines.html">describe-patch-baselines</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-patch-group-state" class="dashAnchor" id="describe-patch-group-state"></a><a class="reference internal" href="describe-patch-group-state.html">describe-patch-group-state</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/describe-patch-groups" class="dashAnchor" id="describe-patch-groups"></a><a class="reference internal" href="describe-patch-groups.html">describe-patch-groups</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-automation-execution" class="dashAnchor" id="get-automation-execution"></a><a class="reference internal" href="get-automation-execution.html">get-automation-execution</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-command-invocation" class="dashAnchor" id="get-command-invocation"></a><a class="reference internal" href="get-command-invocation.html">get-command-invocation</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-default-patch-baseline" class="dashAnchor" id="get-default-patch-baseline"></a><a class="reference internal" href="get-default-patch-baseline.html">get-default-patch-baseline</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-deployable-patch-snapshot-for-instance" class="dashAnchor" id="get-deployable-patch-snapshot-for-instance"></a><a class="reference internal" href="get-deployable-patch-snapshot-for-instance.html">get-deployable-patch-snapshot-for-instance</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-document" class="dashAnchor" id="get-document"></a><a class="reference internal" href="get-document.html">get-document</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-inventory" class="dashAnchor" id="get-inventory"></a><a class="reference internal" href="get-inventory.html">get-inventory</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-inventory-schema" class="dashAnchor" id="get-inventory-schema"></a><a class="reference internal" href="get-inventory-schema.html">get-inventory-schema</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-maintenance-window" class="dashAnchor" id="get-maintenance-window"></a><a class="reference internal" href="get-maintenance-window.html">get-maintenance-window</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-maintenance-window-execution" class="dashAnchor" id="get-maintenance-window-execution"></a><a class="reference internal" href="get-maintenance-window-execution.html">get-maintenance-window-execution</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-maintenance-window-execution-task" class="dashAnchor" id="get-maintenance-window-execution-task"></a><a class="reference internal" href="get-maintenance-window-execution-task.html">get-maintenance-window-execution-task</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-parameter-history" class="dashAnchor" id="get-parameter-history"></a><a class="reference internal" href="get-parameter-history.html">get-parameter-history</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-parameters" class="dashAnchor" id="get-parameters"></a><a class="reference internal" href="get-parameters.html">get-parameters</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-patch-baseline" class="dashAnchor" id="get-patch-baseline"></a><a class="reference internal" href="get-patch-baseline.html">get-patch-baseline</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/get-patch-baseline-for-patch-group" class="dashAnchor" id="get-patch-baseline-for-patch-group"></a><a class="reference internal" href="get-patch-baseline-for-patch-group.html">get-patch-baseline-for-patch-group</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-associations" class="dashAnchor" id="list-associations"></a><a class="reference internal" href="list-associations.html">list-associations</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-command-invocations" class="dashAnchor" id="list-command-invocations"></a><a class="reference internal" href="list-command-invocations.html">list-command-invocations</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-commands" class="dashAnchor" id="list-commands"></a><a class="reference internal" href="list-commands.html">list-commands</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-document-versions" class="dashAnchor" id="list-document-versions"></a><a class="reference internal" href="list-document-versions.html">list-document-versions</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-documents" class="dashAnchor" id="list-documents"></a><a class="reference internal" href="list-documents.html">list-documents</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-inventory-entries" class="dashAnchor" id="list-inventory-entries"></a><a class="reference internal" href="list-inventory-entries.html">list-inventory-entries</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/list-tags-for-resource" class="dashAnchor" id="list-tags-for-resource"></a><a class="reference internal" href="list-tags-for-resource.html">list-tags-for-resource</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/modify-document-permission" class="dashAnchor" id="modify-document-permission"></a><a class="reference internal" href="modify-document-permission.html">modify-document-permission</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/put-inventory" class="dashAnchor" id="put-inventory"></a><a class="reference internal" href="put-inventory.html">put-inventory</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/put-parameter" class="dashAnchor" id="put-parameter"></a><a class="reference internal" href="put-parameter.html">put-parameter</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/register-default-patch-baseline" class="dashAnchor" id="register-default-patch-baseline"></a><a class="reference internal" href="register-default-patch-baseline.html">register-default-patch-baseline</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/register-patch-baseline-for-patch-group" class="dashAnchor" id="register-patch-baseline-for-patch-group"></a><a class="reference internal" href="register-patch-baseline-for-patch-group.html">register-patch-baseline-for-patch-group</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/register-target-with-maintenance-window" class="dashAnchor" id="register-target-with-maintenance-window"></a><a class="reference internal" href="register-target-with-maintenance-window.html">register-target-with-maintenance-window</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/register-task-with-maintenance-window" class="dashAnchor" id="register-task-with-maintenance-window"></a><a class="reference internal" href="register-task-with-maintenance-window.html">register-task-with-maintenance-window</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/remove-tags-from-resource" class="dashAnchor" id="remove-tags-from-resource"></a><a class="reference internal" href="remove-tags-from-resource.html">remove-tags-from-resource</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/send-command" class="dashAnchor" id="send-command"></a><a class="reference internal" href="send-command.html">send-command</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/start-automation-execution" class="dashAnchor" id="start-automation-execution"></a><a class="reference internal" href="start-automation-execution.html">start-automation-execution</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/stop-automation-execution" class="dashAnchor" id="stop-automation-execution"></a><a class="reference internal" href="stop-automation-execution.html">stop-automation-execution</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-association" class="dashAnchor" id="update-association"></a><a class="reference internal" href="update-association.html">update-association</a></li>
 <li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-association-status" class="dashAnchor" id="update-association-status"></a><a class="reference internal" href="update-association-status.html">update-association-status</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-document" class="dashAnchor" id="update-document"></a><a class="reference internal" href="update-document.html">update-document</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-document-default-version" class="dashAnchor" id="update-document-default-version"></a><a class="reference internal" href="update-document-default-version.html">update-document-default-version</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-maintenance-window" class="dashAnchor" id="update-maintenance-window"></a><a class="reference internal" href="update-maintenance-window.html">update-maintenance-window</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-managed-instance-role" class="dashAnchor" id="update-managed-instance-role"></a><a class="reference internal" href="update-managed-instance-role.html">update-managed-instance-role</a></li>
+<li class="toctree-l1"><a name="//apple_ref/cpp/Option/update-patch-baseline" class="dashAnchor" id="update-patch-baseline"></a><a class="reference internal" href="update-patch-baseline.html">update-patch-baseline</a></li>
 </ul>
 </div>
 </div>
@@ -207,7 +232,7 @@
           <span class="divider">/</span>
           
         </li>
-          <li><a href="cancel-command.html" title="next chapter (use the right arrow)">cancel-command &#8594;</a></li>
+          <li><a href="add-tags-to-resource.html" title="next chapter (use the right arrow)">add-tags-to-resource &#8594;</a></li>
       </ul>
     </div>
   
@@ -228,10 +253,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index">index</a></li>
         <li class="right">
-          <a href="cancel-command.html" title="cancel-command">next</a> |</li>
+          <a href="add-tags-to-resource.html" title="add-tags-to-resource">next</a> |</li>
         <li class="right">
           <a href="../sqs/set-queue-attributes.html" title="set-queue-attributes">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li> 
       </ul>
     </div>
@@ -246,5 +271,5 @@
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ssm/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:34:33 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ssm/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:07:47 GMT -->
 </html>

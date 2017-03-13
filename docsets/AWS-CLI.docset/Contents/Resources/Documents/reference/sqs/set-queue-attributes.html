@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/sqs/set-queue-attributes.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/sqs/set-queue-attributes.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:29 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>set-queue-attributes &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>set-queue-attributes &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="sqs" href="index.html" />
     <link rel="next" title="ssm" href="../ssm/index.html" />
     <link rel="prev" title="send-message-batch" href="send-message-batch.html" />
@@ -64,7 +64,7 @@
           <a href="../ssm/index.html" title="ssm" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="send-message-batch.html" title="send-message-batch" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">sqs</a> &#187;</li> 
       </ul>
@@ -112,7 +112,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/sqs/set-queue-attributes">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/sqs/set-queue-attributes">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -129,11 +129,12 @@
 <span id="cli-aws-sqs-set-queue-attributes"></span><h1>set-queue-attributes<a name="//apple_ref/cpp/Command/aws sqs set-queue-attributes" class="dashAnchor" id="aws sqs set-queue-attributes"></a><a class="headerlink" href="#set-queue-attributes" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Sets the value of one or more queue attributes. When you change a queue's attributes, the change can take up to 60 seconds for most of the attributes to propagate throughout the SQS system. Changes made to the <tt class="docutils literal"><span class="pre">MessageRetentionPeriod</span></tt> attribute can take up to 15 minutes.</p>
+<p>Sets the value of one or more queue attributes. When you change a queue's attributes, the change can take up to 60 seconds for most of the attributes to propagate throughout the Amazon SQS system. Changes made to the <tt class="docutils literal"><span class="pre">MessageRetentionPeriod</span></tt> attribute can take up to 15 minutes.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Going forward, new attributes might be added. If you are writing code that calls this action, we recommend that you structure your code so that it can handle new attributes gracefully.</p>
+<p class="last">In the future, new attributes might be added. If you write code that calls this action, we recommend that you structure your code so that it can handle new attributes gracefully.</p>
 </div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">AWS API Documentation</a></p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
@@ -141,35 +142,66 @@
 --queue-url &lt;value&gt;
 --attributes &lt;value&gt;
 [--cli-input-json &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
 <h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--queue-url" class="dashAnchor" id="queue-url"></a><span class="pre">--queue-url</span></tt> (string)</p>
 <blockquote>
-<div><p>The URL of the Amazon SQS queue to take action on.</p>
+<div><p>The URL of the Amazon SQS queue whose attributes are set.</p>
 <p>Queue URLs are case-sensitive.</p>
 </div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--attributes" class="dashAnchor" id="attributes"></a><span class="pre">--attributes</span></tt> (map)</p>
 <blockquote>
 <div><p>A map of attributes to set.</p>
-<p>The following lists the names, descriptions, and values of the special request parameters the <tt class="docutils literal"><span class="pre">set-queue-attributes</span></tt> action uses:</p>
+<p>The following lists the names, descriptions, and values of the special request parameters that the <tt class="docutils literal"><span class="pre">set-queue-attributes</span></tt> action uses:</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">DelaySeconds</span></tt> - The time in seconds that the delivery of all messages in the queue will be delayed. An integer from 0 to 900 (15 minutes). The default for this attribute is 0 (zero).</li>
-<li><tt class="docutils literal"><span class="pre">MaximumMessageSize</span></tt> - The limit of how many bytes a message can contain before Amazon SQS rejects it. An integer from 1024 bytes (1 KiB) up to 262144 bytes (256 KiB). The default for this attribute is 262144 (256 KiB).</li>
-<li><tt class="docutils literal"><span class="pre">MessageRetentionPeriod</span></tt> - The number of seconds Amazon SQS retains a message. Integer representing seconds, from 60 (1 minute) to 1209600 (14 days). The default for this attribute is 345600 (4 days).</li>
+<li><tt class="docutils literal"><span class="pre">DelaySeconds</span></tt> - The number of seconds for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 (15 minutes). The default is 0 (zero).</li>
+<li><tt class="docutils literal"><span class="pre">MaximumMessageSize</span></tt> - The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB).</li>
+<li><tt class="docutils literal"><span class="pre">MessageRetentionPeriod</span></tt> - The number of seconds for which Amazon SQS retains a message. Valid values: An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is 345,600 (4 days).</li>
 <li><tt class="docutils literal"><span class="pre">Policy</span></tt> - The queue's policy. A valid AWS policy. For more information about policy structure, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of AWS IAM Policies</a> in the <em>Amazon IAM User Guide</em> .</li>
-<li><tt class="docutils literal"><span class="pre">ReceiveMessageWaitTimeSeconds</span></tt> - The time for which a receive-message call will wait for a message to arrive. An integer from 0 to 20 (seconds). The default for this attribute is 0.</li>
-<li><tt class="docutils literal"><span class="pre">VisibilityTimeout</span></tt> - The visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The default for this attribute is 30. For more information about visibility timeout, see Visibility Timeout in the <em>Amazon SQS Developer Guide</em> .</li>
-<li><tt class="docutils literal"><span class="pre">RedrivePolicy</span></tt> - The parameters for dead letter queue functionality of the source queue. For more information about RedrivePolicy and dead letter queues, see Using Amazon SQS Dead Letter Queues in the <em>Amazon SQS Developer Guide</em> .</li>
+<li><tt class="docutils literal"><span class="pre">ReceiveMessageWaitTimeSeconds</span></tt> - The number of seconds for which a ``  receive-message `` action waits for a message to arrive. Valid values: an integer from 0 to 20 (seconds). The default is 0.</li>
+<li><tt class="docutils literal"><span class="pre">RedrivePolicy</span></tt> - The parameters for the dead letter queue functionality of the source queue. For more information about the redrive policy and dead letter queues, see <a class="reference external" href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead Letter Queues</a> in the <em>Amazon SQS Developer Guide</em> .</li>
 </ul>
-<p>Any other valid special request parameters that are specified (such as <tt class="docutils literal"><span class="pre">ApproximateNumberOfMessages</span></tt> , <tt class="docutils literal"><span class="pre">ApproximateNumberOfMessagesDelayed</span></tt> , <tt class="docutils literal"><span class="pre">ApproximateNumberOfMessagesNotVisible</span></tt> , <tt class="docutils literal"><span class="pre">CreatedTimestamp</span></tt> , <tt class="docutils literal"><span class="pre">LastModifiedTimestamp</span></tt> , and <tt class="docutils literal"><span class="pre">QueueArn</span></tt> ) will be ignored.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The dead letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead letter queue of a standard queue must also be a standard queue.</p>
+</div>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">VisibilityTimeout</span></tt> - The visibility timeout for the queue. Valid values: an integer from 0 to 43,200 (12 hours). The default is 30. For more information about the visibility timeout, see <a class="reference external" href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <em>Amazon SQS Developer Guide</em> .</li>
+</ul>
+<p>The following attribute applies only to <a class="reference external" href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a> :</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ContentBasedDeduplication</span></tt> - Enables content-based deduplication. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once Processing</a> in the <em>Amazon SQS Developer Guide</em> .<ul>
+<li>Every message must have a unique <tt class="docutils literal"><span class="pre">MessageDeduplicationId</span></tt> ,<ul>
+<li>You may provide a <tt class="docutils literal"><span class="pre">MessageDeduplicationId</span></tt> explicitly.</li>
+<li>If you aren't able to provide a <tt class="docutils literal"><span class="pre">MessageDeduplicationId</span></tt> and you enable <tt class="docutils literal"><span class="pre">ContentBasedDeduplication</span></tt> for your queue, Amazon SQS uses a SHA-256 hash to generate the <tt class="docutils literal"><span class="pre">MessageDeduplicationId</span></tt> using the body of the message (but not the attributes of the message).</li>
+<li>If you don't provide a <tt class="docutils literal"><span class="pre">MessageDeduplicationId</span></tt> and the queue doesn't have <tt class="docutils literal"><span class="pre">ContentBasedDeduplication</span></tt> set, the action fails with an error.</li>
+<li>If the queue has <tt class="docutils literal"><span class="pre">ContentBasedDeduplication</span></tt> set, your <tt class="docutils literal"><span class="pre">MessageDeduplicationId</span></tt> overrides the generated one.</li>
+</ul>
+</li>
+<li>When <tt class="docutils literal"><span class="pre">ContentBasedDeduplication</span></tt> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</li>
+<li>You can also use <tt class="docutils literal"><span class="pre">ContentBasedDeduplication</span></tt> for messages with identical content to be treated as duplicates.</li>
+<li>If you send one message with <tt class="docutils literal"><span class="pre">ContentBasedDeduplication</span></tt> enabled and then another message with a <tt class="docutils literal"><span class="pre">MessageDeduplicationId</span></tt> that is the same as the one generated for the first <tt class="docutils literal"><span class="pre">MessageDeduplicationId</span></tt> , the two messages are treated as duplicates and only one copy of the message is delivered.</li>
+</ul>
+</li>
+</ul>
+<p>Any other valid special request parameters (such as the following) are ignored:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ApproximateNumberOfMessages</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ApproximateNumberOfMessagesDelayed</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ApproximateNumberOfMessagesNotVisible</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">CreatedTimestamp</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">LastModifiedTimestamp</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">QueueArn</span></tt></li>
+</ul>
 </div></blockquote>
 <p>Shorthand Syntax:</p>
 <div class="highlight-python"><pre>  KeyName1=string,KeyName2=string
 
 Where valid key names are:
+  All
   Policy
   VisibilityTimeout
   MaximumMessageSize
@@ -182,16 +214,18 @@ Where valid key names are:
   ApproximateNumberOfMessagesDelayed
   DelaySeconds
   ReceiveMessageWaitTimeSeconds
-  RedrivePolicy</pre>
+  RedrivePolicy
+  FifoQueue
+  ContentBasedDeduplication</pre>
 </div>
 <p>JSON Syntax:</p>
-<div class="highlight-python"><pre>{"Policy"|"VisibilityTimeout"|"MaximumMessageSize"|"MessageRetentionPeriod"|"ApproximateNumberOfMessages"|"ApproximateNumberOfMessagesNotVisible"|"CreatedTimestamp"|"LastModifiedTimestamp"|"QueueArn"|"ApproximateNumberOfMessagesDelayed"|"DelaySeconds"|"ReceiveMessageWaitTimeSeconds"|"RedrivePolicy": "string"
+<div class="highlight-python"><pre>{"All"|"Policy"|"VisibilityTimeout"|"MaximumMessageSize"|"MessageRetentionPeriod"|"ApproximateNumberOfMessages"|"ApproximateNumberOfMessagesNotVisible"|"CreatedTimestamp"|"LastModifiedTimestamp"|"QueueArn"|"ApproximateNumberOfMessagesDelayed"|"DelaySeconds"|"ReceiveMessageWaitTimeSeconds"|"RedrivePolicy"|"FifoQueue"|"ContentBasedDeduplication": "string"
   ...}</pre>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
 Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
@@ -201,7 +235,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div class="highlight-python"><pre>aws sqs set-queue-attributes --queue-url https://sqs.us-east-1.amazonaws.com/80398EXAMPLE/MyNewQueue --attributes file://set-queue-attributes.json</pre>
 </div>
 <p>Input file (set-queue-attributes.json):</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">"DelaySeconds"</span><span class="p">:</span> <span class="s2">"10"</span><span class="p">,</span>
   <span class="s2">"MaximumMessageSize"</span><span class="p">:</span> <span class="s2">"131072"</span><span class="p">,</span>
   <span class="s2">"MessageRetentionPeriod"</span><span class="p">:</span> <span class="s2">"259200"</span><span class="p">,</span>
@@ -257,7 +291,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
           <a href="../ssm/index.html" title="ssm">next</a> |</li>
         <li class="right">
           <a href="send-message-batch.html" title="send-message-batch">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">sqs</a> &#187;</li> 
       </ul>
@@ -273,5 +307,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/sqs/set-queue-attributes.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:29 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/sqs/set-queue-attributes.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:29 GMT -->
 </html>

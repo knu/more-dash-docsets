@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ssm/get-patch-baseline.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:29 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-patch-baseline &#8212; AWS CLI 1.11.61 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.11.61',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="ssm" href="index.html" />
+    <link rel="next" title="get-patch-baseline-for-patch-group" href="get-patch-baseline-for-patch-group.html" />
+    <link rel="prev" title="get-parameters" href="get-parameters.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="get-patch-baseline-for-patch-group.html" title="get-patch-baseline-for-patch-group" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="get-parameters.html" title="get-parameters" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">ssm</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-parameters.html" title="previous chapter (use the left arrow)">&#8592; get-parameters</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="get-patch-baseline-for-patch-group.html" title="next chapter (use the right arrow)">get-patch-baseline-for-patch-group &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-patch-baseline</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/ssm/get-patch-baseline">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-ssm"><em>ssm</em></a> ]</p>
+<div class="section" id="get-patch-baseline">
+<span id="cli-aws-ssm-get-patch-baseline"></span><h1>get-patch-baseline<a name="//apple_ref/cpp/Command/aws ssm get-patch-baseline" class="dashAnchor" id="aws ssm get-patch-baseline"></a><a class="headerlink" href="#get-patch-baseline" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Retrieves information about a patch baseline.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaseline">AWS API Documentation</a></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  get-patch-baseline
+--baseline-id &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--baseline-id" class="dashAnchor" id="baseline-id"></a><span class="pre">--baseline-id</span></tt> (string)</p>
+<blockquote>
+<div>The ID of the patch baseline to retrieve.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
+<p><strong>To display a patch baseline</strong></p>
+<p>This example displays the details for patch baseline <tt class="docutils literal"><span class="pre">pb-00dbb759999aa2bc3</span></tt>.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ssm get-patch-baseline --baseline-id "pb-00dbb759999aa2bc3"</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+      <span class="s2">"BaselineId"</span><span class="p">:</span><span class="s2">"pb-00dbb759999aa2bc3"</span><span class="p">,</span>
+      <span class="s2">"Name"</span><span class="p">:</span><span class="s2">"Windows-Server-2012R2"</span><span class="p">,</span>
+      <span class="s2">"PatchGroups"</span><span class="p">:[</span>
+              <span class="s2">"Web Servers"</span>
+      <span class="p">],</span>
+      <span class="s2">"RejectedPatches"</span><span class="p">:[</span>
+
+      <span class="p">],</span>
+      <span class="s2">"GlobalFilters"</span><span class="p">:{</span>
+              <span class="s2">"PatchFilters"</span><span class="p">:[</span>
+
+              <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">"ApprovalRules"</span><span class="p">:{</span>
+              <span class="s2">"PatchRules"</span><span class="p">:[</span>
+                      <span class="p">{</span>
+                              <span class="s2">"PatchFilterGroup"</span><span class="p">:{</span>
+                              <span class="s2">"PatchFilters"</span><span class="p">:[</span>
+                                      <span class="p">{</span>
+                                              <span class="s2">"Values"</span><span class="p">:[</span>
+                                                      <span class="s2">"Important"</span><span class="p">,</span>
+                                                      <span class="s2">"Critical"</span>
+                                              <span class="p">],</span>
+                                              <span class="s2">"Key"</span><span class="p">:</span><span class="s2">"MSRC_SEVERITY"</span>
+                                      <span class="p">},</span>
+                                      <span class="p">{</span>
+                                              <span class="s2">"Values"</span><span class="p">:[</span>
+                                                      <span class="s2">"SecurityUpdates"</span>
+                                              <span class="p">],</span>
+                                              <span class="s2">"Key"</span><span class="p">:</span><span class="s2">"CLASSIFICATION"</span>
+                                      <span class="p">},</span>
+                                      <span class="p">{</span>
+                                              <span class="s2">"Values"</span><span class="p">:[</span>
+                                                      <span class="s2">"WindowsServer2012R2"</span>
+                                              <span class="p">],</span>
+                                              <span class="s2">"Key"</span><span class="p">:</span><span class="s2">"PRODUCT"</span>
+                                      <span class="p">}</span>
+                              <span class="p">]</span>
+                              <span class="p">},</span>
+                              <span class="s2">"ApproveAfterDays"</span><span class="p">:</span><span class="mi">5</span>
+                      <span class="p">}</span>
+              <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">"ModifiedDate"</span><span class="p">:</span><span class="mf">1480997823.81</span><span class="p">,</span>
+      <span class="s2">"CreatedDate"</span><span class="p">:</span><span class="mf">1480997823.81</span><span class="p">,</span>
+      <span class="s2">"ApprovedPatches"</span><span class="p">:[</span>
+
+      <span class="p">],</span>
+      <span class="s2">"Description"</span><span class="p">:</span><span class="s2">"Windows Server 2012 R2, Important and Critical security updates"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>BaselineId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the retrieved patch baseline.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the patch baseline.</div></blockquote>
+<p>GlobalFilters -&gt; (structure)</p>
+<blockquote>
+<div><p>A set of global filters used to exclude patches from the baseline.</p>
+<p>PatchFilters -&gt; (list)</p>
+<blockquote>
+<div><p>The set of patch filters that make up the group.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Defines a patch filter.</p>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div>The key for the filter (PRODUCT, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID)</div></blockquote>
+<p>Values -&gt; (list)</p>
+<blockquote>
+<div><p>The value for the filter key.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ApprovalRules -&gt; (structure)</p>
+<blockquote>
+<div><p>A set of rules used to include patches in the baseline.</p>
+<p>PatchRules -&gt; (list)</p>
+<blockquote>
+<div><p>The rules that make up the rule group.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Defines an approval rule for a patch baseline.</p>
+<p>PatchFilterGroup -&gt; (structure)</p>
+<blockquote>
+<div><p>The patch filter group that defines the criteria for the rule.</p>
+<p>PatchFilters -&gt; (list)</p>
+<blockquote>
+<div><p>The set of patch filters that make up the group.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Defines a patch filter.</p>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div>The key for the filter (PRODUCT, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID)</div></blockquote>
+<p>Values -&gt; (list)</p>
+<blockquote>
+<div><p>The value for the filter key.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ApproveAfterDays -&gt; (integer)</p>
+<blockquote>
+<div>The number of days after the release date of each patch matched by the rule the patch is marked as approved in the patch baseline.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ApprovedPatches -&gt; (list)</p>
+<blockquote>
+<div><p>A list of explicitly approved patches for the baseline.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>RejectedPatches -&gt; (list)</p>
+<blockquote>
+<div><p>A list of explicitly rejected patches for the baseline.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>PatchGroups -&gt; (list)</p>
+<blockquote>
+<div><p>Patch groups included in the patch baseline.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>CreatedDate -&gt; (timestamp)</p>
+<blockquote>
+<div>The date the patch baseline was created.</div></blockquote>
+<p>ModifiedDate -&gt; (timestamp)</p>
+<blockquote>
+<div>The date the patch baseline was last modified.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>A description of the patch baseline.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-parameters.html" title="previous chapter (use the left arrow)">&#8592; get-parameters</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="get-patch-baseline-for-patch-group.html" title="next chapter (use the right arrow)">get-patch-baseline-for-patch-group &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="get-patch-baseline-for-patch-group.html" title="get-patch-baseline-for-patch-group">next</a> |</li>
+        <li class="right">
+          <a href="get-parameters.html" title="get-parameters">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">ssm</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ssm/get-patch-baseline.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:29 GMT -->
+</html>

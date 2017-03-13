@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/lex-runtime/post-text.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:20 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>post-text &#8212; AWS CLI 1.11.61 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.11.61',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="lex-runtime" href="index.html" />
+    <link rel="next" title="lightsail" href="../lightsail/index.html" />
+    <link rel="prev" title="lex-runtime" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="../lightsail/index.html" title="lightsail" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="index.html" title="lex-runtime" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">lex-runtime</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="index.html" title="previous chapter (use the left arrow)">&#8592; lex-runtime</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../lightsail/index.html" title="next chapter (use the right arrow)">lightsail &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">post-text</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/lex-runtime/post-text">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-lex-runtime"><em>lex-runtime</em></a> ]</p>
+<div class="section" id="post-text">
+<span id="cli-aws-lex-runtime-post-text"></span><h1>post-text<a name="//apple_ref/cpp/Command/aws lex-runtime post-text" class="dashAnchor" id="aws lex-runtime post-text"></a><a class="headerlink" href="#post-text" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Sends user input text to Amazon Lex at runtime. Amazon Lex uses the machine learning model that the service built for the application to interpret user input.</p>
+<p>In response, Amazon Lex returns the next message to convey to the user (based on the context of the user interaction) and whether to expect a user response to the message (<tt class="docutils literal"><span class="pre">dialogState</span></tt> ). For example, consider the following response messages:</p>
+<ul class="simple">
+<li>"What pizza toppings would you like?" &#8211; In this case, the <tt class="docutils literal"><span class="pre">dialogState</span></tt> would be <tt class="docutils literal"><span class="pre">ElicitSlot</span></tt> (that is, a user response is expected).</li>
+<li>"Your order has been placed." &#8211; In this case, Amazon Lex returns one of the following <tt class="docutils literal"><span class="pre">dialogState</span></tt> values depending on how the intent fulfillment is configured (see <tt class="docutils literal"><span class="pre">fulfillmentActivity</span></tt> in <tt class="docutils literal"><span class="pre">CreateIntent</span></tt> ):<ul>
+<li><tt class="docutils literal"><span class="pre">FulFilled</span></tt> &#8211; The intent fulfillment is configured through a Lambda function.</li>
+<li><tt class="docutils literal"><span class="pre">ReadyForFulfilment</span></tt> &#8211; The intent's <tt class="docutils literal"><span class="pre">fulfillmentActivity</span></tt> is to simply return the intent data back to the client application.</li>
+</ul>
+</li>
+</ul>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostText">AWS API Documentation</a></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  post-text
+--bot-name &lt;value&gt;
+--bot-alias &lt;value&gt;
+--user-id &lt;value&gt;
+[--session-attributes &lt;value&gt;]
+--input-text &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--bot-name" class="dashAnchor" id="bot-name"></a><span class="pre">--bot-name</span></tt> (string)</p>
+<blockquote>
+<div>Name of the Amazon Lex bot.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--bot-alias" class="dashAnchor" id="bot-alias"></a><span class="pre">--bot-alias</span></tt> (string)</p>
+<blockquote>
+<div>Alias of the Amazon Lex bot.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--user-id" class="dashAnchor" id="user-id"></a><span class="pre">--user-id</span></tt> (string)</p>
+<blockquote>
+<div><p>User ID of your client application. Typically, each of your application users should have a unique ID. Note the following considerations:</p>
+<ul class="simple">
+<li>If you want a user to start a conversation on one mobile device and continue the conversation on another device, you might choose a user-specific identifier, such as a login or Amazon Cognito user ID (assuming your application is using Amazon Cognito).</li>
+<li>If you want the same user to be able to have two independent conversations on two different devices, you might choose a device-specific identifier, such as device ID, or some globally unique identifier.</li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--session-attributes" class="dashAnchor" id="session-attributes"></a><span class="pre">--session-attributes</span></tt> (map)</p>
+<blockquote>
+<div><p>A session represents the dialog between a user and Amazon Lex. At runtime, a client application can pass contextual information (session attributes) in the request. For example, <tt class="docutils literal"><span class="pre">"FirstName"</span> <span class="pre">:</span> <span class="pre">"Joe"</span></tt> . Amazon Lex passes these session attributes to the AWS Lambda functions configured for the intent (see <tt class="docutils literal"><span class="pre">dialogCodeHook</span></tt> and <tt class="docutils literal"><span class="pre">fulfillmentActivity.codeHook</span></tt> in <tt class="docutils literal"><span class="pre">CreateIntent</span></tt> ).</p>
+<p>In your Lambda function, you can use the session attributes for customization. Some examples are:</p>
+<ul class="simple">
+<li>In a pizza ordering application, if you can pass user location as a session attribute (for example, <tt class="docutils literal"><span class="pre">"Location"</span> <span class="pre">:</span> <span class="pre">"111</span> <span class="pre">Maple</span> <span class="pre">street"</span></tt> ), your Lambda function might use this information to determine the closest pizzeria to place the order.</li>
+<li>Use session attributes to personalize prompts. For example, you pass in user name as a session attribute (<tt class="docutils literal"><span class="pre">"FirstName"</span> <span class="pre">:</span> <span class="pre">"Joe"</span></tt> ), you might configure subsequent prompts to refer to this attribute, as <tt class="docutils literal"><span class="pre">$session.FirstName"</span></tt> . At runtime, Amazon Lex substitutes a real value when it generates a prompt, such as "Hello Joe, what would you like to order?"</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Amazon Lex does not persist session attributes.</p>
+<p>If the intent is configured without a Lambda function to process the intent (that is, the client application to process the intent), Amazon Lex simply returns the session attributes back to the client application.</p>
+<p class="last">If the intent is configured with a Lambda function to process the intent, Amazon Lex passes the incoming session attributes to the Lambda function. The Lambda function must return these session attributes if you want Amazon Lex to return them back to the client.</p>
+</div>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">KeyName1</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">KeyName2</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{"string": "string"
+  ...}</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--input-text" class="dashAnchor" id="input-text"></a><span class="pre">--input-text</span></tt> (string)</p>
+<blockquote>
+<div>input-text user entered (Amazon Lex interprets this text).</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>intentName -&gt; (string)</p>
+<blockquote>
+<div>Intent Amazon Lex inferred from the user input text. This is one of the intents configured for the bot.</div></blockquote>
+<p>slots -&gt; (map)</p>
+<blockquote>
+<div><p>Intent slots (name/value pairs) Amazon Lex detected so far from the user input in the conversation.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+<p>sessionAttributes -&gt; (map)</p>
+<blockquote>
+<div><p>Map of key value pairs representing the session specific context information.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+<p>message -&gt; (string)</p>
+<blockquote>
+<div>Prompt (or statement) to convey to the user. This is based on the application configuration and context. For example, if Amazon Lex did not understand the user intent, it sends the <tt class="docutils literal"><span class="pre">clarificationPrompt</span></tt> configured for the application. In another example, if the intent requires confirmation before taking the fulfillment action, it sends the <tt class="docutils literal"><span class="pre">confirmationPrompt</span></tt> . Suppose the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. In that situation, Amazon Lex sends that message in the response.</div></blockquote>
+<p>dialogState -&gt; (string)</p>
+<blockquote>
+<div><p>Represents the message type to be conveyed to the user. For example:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ElicitIntent</span></tt> &#8211; Amazon Lex wants to elicit user intent. For example, Amazon Lex did not understand the first utterances such as "I want to order pizza", which indicates the OrderPizza intent. If Amazon Lex doesn't understand the intent, it returns this <tt class="docutils literal"><span class="pre">dialogState</span></tt> . Another example is when your intent is configured with a follow up prompt. For example, after OrderPizza intent is fulfilled, the intent might have a follow up prompt such as " Do you want to order a drink or desert?" In this case, Amazon Lex returns this <tt class="docutils literal"><span class="pre">dialogState</span></tt> .</li>
+<li><tt class="docutils literal"><span class="pre">ConfirmIntent</span></tt> &#8211; Amazon Lex is expecting a yes/no response from the user indicating whether to go ahead and fulfill the intent (for example, OK to go ahead and order the pizza). In addition to a yes/no reply, the user might provide a response with additional slot information (either new slot information or changes to the existing slot values). For example, "Yes, but change to thick crust." Amazon Lex understands the additional information and updates the intent slots accordingly.  Consider another example. Before fulfilling an order, your application might prompt for confirmation such as "Do you want to place this pizza order?" A user might reply with "No, I want to order a drink." Amazon Lex recognizes the new OrderDrink intent.</li>
+<li><tt class="docutils literal"><span class="pre">ElicitSlot</span></tt> &#8211; Amazon Lex is expecting a value of a slot for the current intent. For example, suppose Amazon Lex asks, "What size pizza would you like?" A user might reply with "Medium pepperoni pizza." Amazon Lex recognizes the size and the topping as the two separate slot values.</li>
+<li><tt class="docutils literal"><span class="pre">Fulfilled</span></tt> &#8211; Conveys that the Lambda function has successfully fulfilled the intent. If Lambda function returns a statement/message to convey the fulfillment result, Amazon Lex passes this string to the client. If not, Amazon Lex looks for <tt class="docutils literal"><span class="pre">conclusionStatement</span></tt> that you configured for the intent.  If both the Lambda function statement and the <tt class="docutils literal"><span class="pre">conclusionStatement</span></tt> are missing, Amazon Lex throws a bad request exception.</li>
+<li><tt class="docutils literal"><span class="pre">ReadyForFulfillment</span></tt> &#8211; conveys that the client has to do the fulfillment work for the intent. This is the case when the current intent is configured with <tt class="docutils literal"><span class="pre">ReturnIntent</span></tt> as the <tt class="docutils literal"><span class="pre">fulfillmentActivity</span></tt> , where Amazon Lex returns this state to client.</li>
+<li><tt class="docutils literal"><span class="pre">Failed</span></tt> &#8211; Conversation with the user failed. Some of the reasons for this <tt class="docutils literal"><span class="pre">dialogState</span></tt> are: after the configured number of attempts the user didn't provide an appropriate response, or the Lambda function failed to fulfill an intent.</li>
+</ul>
+</div></blockquote>
+<p>slotToElicit -&gt; (string)</p>
+<blockquote>
+<div>If <tt class="docutils literal"><span class="pre">dialogState</span></tt> value is <tt class="docutils literal"><span class="pre">ElicitSlot</span></tt> , returns the name of the slot for which Amazon Lex is eliciting a value.</div></blockquote>
+<p>responseCard -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents the options that the user has to respond to the current prompt. Amazon Lex sends this in the response only if the <tt class="docutils literal"><span class="pre">dialogState</span></tt> value indicates that a user response is expected.</p>
+<p>version -&gt; (string)</p>
+<blockquote>
+<div>Version of response card format.</div></blockquote>
+<p>contentType -&gt; (string)</p>
+<blockquote>
+<div>Content type of the response.</div></blockquote>
+<p>genericAttachments -&gt; (list)</p>
+<blockquote>
+<div><p>An array of attachment objects representing options.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents an option rendered to the user when a prompt is shown. It could be an image, a button, a link, or text.</p>
+<p>title -&gt; (string)</p>
+<blockquote>
+<div>Title of the option.</div></blockquote>
+<p>subTitle -&gt; (string)</p>
+<blockquote>
+<div>Subtitle shown below the title.</div></blockquote>
+<p>attachmentLinkUrl -&gt; (string)</p>
+<p>imageUrl -&gt; (string)</p>
+<blockquote>
+<div>URL of an image that is displayed to the user.</div></blockquote>
+<p>buttons -&gt; (list)</p>
+<blockquote>
+<div><p>List of options to show to the user.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents an option to be shown on the client platform (Facebook, Slack, etc.)</p>
+<p>text -&gt; (string)</p>
+<blockquote>
+<div>input-text visible to the user on the button.</div></blockquote>
+<p>value -&gt; (string)</p>
+<blockquote>
+<div>Value sent to Amazon Lex when user clicks the button. For example, consider button text "NYC". When the user clicks the button, the value sent can be "New York City".</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="index.html" title="previous chapter (use the left arrow)">&#8592; lex-runtime</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../lightsail/index.html" title="next chapter (use the right arrow)">lightsail &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="../lightsail/index.html" title="lightsail">next</a> |</li>
+        <li class="right">
+          <a href="index.html" title="lex-runtime">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">lex-runtime</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/lex-runtime/post-text.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:20 GMT -->
+</html>

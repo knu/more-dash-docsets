@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/get-reserved-instances-exchange-quote.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:00 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-reserved-instances-exchange-quote &#8212; AWS CLI 1.11.61 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.11.61',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="ec2" href="index.html" />
+    <link rel="next" title="import-image" href="import-image.html" />
+    <link rel="prev" title="get-password-data" href="get-password-data.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="import-image.html" title="import-image" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="get-password-data.html" title="get-password-data" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">ec2</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-password-data.html" title="previous chapter (use the left arrow)">&#8592; get-password-data</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="import-image.html" title="next chapter (use the right arrow)">import-image &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-reserved-instances-exchange-quote</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/ec2/get-reserved-instances-exchange-quote">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-ec2"><em>ec2</em></a> ]</p>
+<div class="section" id="get-reserved-instances-exchange-quote">
+<span id="cli-aws-ec2-get-reserved-instances-exchange-quote"></span><h1>get-reserved-instances-exchange-quote<a name="//apple_ref/cpp/Command/aws ec2 get-reserved-instances-exchange-quote" class="dashAnchor" id="aws ec2 get-reserved-instances-exchange-quote"></a><a class="headerlink" href="#get-reserved-instances-exchange-quote" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Returns details about the values and term of your specified Convertible Reserved Instances. When a target configuration is specified, it returns information about whether the exchange is valid and can be performed.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetReservedInstancesExchangeQuote">AWS API Documentation</a></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  get-reserved-instances-exchange-quote
+[--dry-run | --no-dry-run]
+--reserved-instance-ids &lt;value&gt;
+[--target-configurations &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--dry-run" class="dashAnchor" id="dry-run"></a><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><span class="pre">--no-dry-run</span></tt> (boolean)</p>
+<blockquote>
+<div>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt> . Otherwise, it is <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--reserved-instance-ids" class="dashAnchor" id="reserved-instance-ids"></a><span class="pre">--reserved-instance-ids</span></tt> (list)</p>
+<blockquote>
+<div>The IDs of the Convertible Reserved Instances to exchange.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>"string" "string" ...</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--target-configurations" class="dashAnchor" id="target-configurations"></a><span class="pre">--target-configurations</span></tt> (list)</p>
+<blockquote>
+<div>The configuration requirements of the Convertible Reserved Instances to exchange for your current Convertible Reserved Instances.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>OfferingId=string,InstanceCount=integer ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    "OfferingId": "string",
+    "InstanceCount": integer
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>ReservedInstanceValueSet -&gt; (list)</p>
+<blockquote>
+<div><p>The configuration of your Convertible Reserved Instances.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The total value of the Convertible Reserved Instance.</p>
+<p>ReservedInstanceId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the Convertible Reserved Instance that you are exchanging.</div></blockquote>
+<p>ReservationValue -&gt; (structure)</p>
+<blockquote>
+<div><p>The total value of the Convertible Reserved Instance that you are exchanging.</p>
+<p>RemainingTotalValue -&gt; (string)</p>
+<blockquote>
+<div>The balance of the total value (the sum of remainingUpfrontValue + hourlyPrice * number of hours remaining).</div></blockquote>
+<p>RemainingUpfrontValue -&gt; (string)</p>
+<blockquote>
+<div>The remaining upfront cost of the reservation.</div></blockquote>
+<p>HourlyPrice -&gt; (string)</p>
+<blockquote>
+<div>The hourly rate of the reservation.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ReservedInstanceValueRollup -&gt; (structure)</p>
+<blockquote>
+<div><p>The cost associated with the Reserved Instance.</p>
+<p>RemainingTotalValue -&gt; (string)</p>
+<blockquote>
+<div>The balance of the total value (the sum of remainingUpfrontValue + hourlyPrice * number of hours remaining).</div></blockquote>
+<p>RemainingUpfrontValue -&gt; (string)</p>
+<blockquote>
+<div>The remaining upfront cost of the reservation.</div></blockquote>
+<p>HourlyPrice -&gt; (string)</p>
+<blockquote>
+<div>The hourly rate of the reservation.</div></blockquote>
+</div></blockquote>
+<p>TargetConfigurationValueSet -&gt; (list)</p>
+<blockquote>
+<div><p>The values of the target Convertible Reserved Instances.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The total value of the new Convertible Reserved Instances.</p>
+<p>TargetConfiguration -&gt; (structure)</p>
+<blockquote>
+<div><p>The configuration of the Convertible Reserved Instances that make up the exchange.</p>
+<p>OfferingId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the Convertible Reserved Instance offering.</div></blockquote>
+<p>InstanceCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of instances the Convertible Reserved Instance offering can be applied to. This parameter is reserved and cannot be specified in a request</div></blockquote>
+</div></blockquote>
+<p>ReservationValue -&gt; (structure)</p>
+<blockquote>
+<div><p>The total value of the Convertible Reserved Instances that make up the exchange. This is the sum of the list value, remaining upfront price, and additional upfront cost of the exchange.</p>
+<p>RemainingTotalValue -&gt; (string)</p>
+<blockquote>
+<div>The balance of the total value (the sum of remainingUpfrontValue + hourlyPrice * number of hours remaining).</div></blockquote>
+<p>RemainingUpfrontValue -&gt; (string)</p>
+<blockquote>
+<div>The remaining upfront cost of the reservation.</div></blockquote>
+<p>HourlyPrice -&gt; (string)</p>
+<blockquote>
+<div>The hourly rate of the reservation.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>TargetConfigurationValueRollup -&gt; (structure)</p>
+<blockquote>
+<div><p>The cost associated with the Reserved Instance.</p>
+<p>RemainingTotalValue -&gt; (string)</p>
+<blockquote>
+<div>The balance of the total value (the sum of remainingUpfrontValue + hourlyPrice * number of hours remaining).</div></blockquote>
+<p>RemainingUpfrontValue -&gt; (string)</p>
+<blockquote>
+<div>The remaining upfront cost of the reservation.</div></blockquote>
+<p>HourlyPrice -&gt; (string)</p>
+<blockquote>
+<div>The hourly rate of the reservation.</div></blockquote>
+</div></blockquote>
+<p>PaymentDue -&gt; (string)</p>
+<blockquote>
+<div>The total true upfront charge for the exchange.</div></blockquote>
+<p>CurrencyCode -&gt; (string)</p>
+<blockquote>
+<div>The currency of the transaction.</div></blockquote>
+<p>OutputReservedInstancesWillExpireAt -&gt; (timestamp)</p>
+<blockquote>
+<div>The new end date of the reservation term.</div></blockquote>
+<p>IsValidExchange -&gt; (boolean)</p>
+<blockquote>
+<div>If <tt class="docutils literal"><span class="pre">true</span></tt> , the exchange is valid. If <tt class="docutils literal"><span class="pre">false</span></tt> , the exchange cannot be completed.</div></blockquote>
+<p>ValidationFailureReason -&gt; (string)</p>
+<blockquote>
+<div>Describes the reason why the exchange cannot be completed.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-password-data.html" title="previous chapter (use the left arrow)">&#8592; get-password-data</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="import-image.html" title="next chapter (use the right arrow)">import-image &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="import-image.html" title="import-image">next</a> |</li>
+        <li class="right">
+          <a href="get-password-data.html" title="get-password-data">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">ec2</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/ec2/get-reserved-instances-exchange-quote.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:00 GMT -->
+</html>

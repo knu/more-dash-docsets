@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudwatch/describe-alarms.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:00 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudwatch/describe-alarms.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:09:56 GMT -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
   
-    <title>describe-alarms &#8212; AWS CLI 1.10.36 Command Reference</title>
+    <title>describe-alarms &#8212; AWS CLI 1.11.61 Command Reference</title>
   <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
   <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
     
@@ -16,7 +16,7 @@
     <script type="text/javascript"><![CDATA[
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.10.36',
+        VERSION:     '1.11.61',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="AWS CLI 1.10.36 Command Reference" href="../../index-2.html" />
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
     <link rel="up" title="cloudwatch" href="index.html" />
     <link rel="next" title="describe-alarms-for-metric" href="describe-alarms-for-metric.html" />
     <link rel="prev" title="describe-alarm-history" href="describe-alarm-history.html" />
@@ -64,7 +64,7 @@
           <a href="describe-alarms-for-metric.html" title="describe-alarms-for-metric" accesskey="N">next</a> |</li>
         <li class="right">
           <a href="describe-alarm-history.html" title="describe-alarm-history" accesskey="P">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html" accesskey="U">cloudwatch</a> &#187;</li> 
       </ul>
@@ -112,7 +112,7 @@
 </div>
 <script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
   <h3>Feedback</h3>
-  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://portal.aws.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04?service_name=AWS%20Command%20Line%20Interface&amp;guide_name=Reference&amp;api_version=1.10.&amp;file_name=reference/cloudwatch/describe-alarms">Give us feedback</a> or
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/cloudwatch/describe-alarms">Give us feedback</a> or
   send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
 </div><div class="left-bar-other">
   <h3>User Guide</h3>
@@ -129,7 +129,8 @@
 <span id="cli-aws-cloudwatch-describe-alarms"></span><h1>describe-alarms<a name="//apple_ref/cpp/Command/aws cloudwatch describe-alarms" class="dashAnchor" id="aws cloudwatch describe-alarms"></a><a class="headerlink" href="#describe-alarms" title="Permalink to this headline">&#182;</a></h1>
 <div class="section" id="description">
 <h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
-<p>Retrieves alarms with the specified names. If no name is specified, all alarms for the user are returned. Alarms can be retrieved by using only a prefix for the alarm name, the alarm state, or a prefix for any action.</p>
+<p>Retrieves the specified alarms. If no alarms are specified, all alarms are returned. Alarms can be retrieved by using only a prefix for the alarm name, the alarm state, or a prefix for any action.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms">AWS API Documentation</a></p>
 <p><tt class="docutils literal"><span class="pre">describe-alarms</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
 When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">MetricAlarms</span></tt></p>
 </div>
@@ -144,20 +145,20 @@ When using <tt class="docutils literal"><span class="pre">--output</span> <span 
 [--starting-token &lt;value&gt;]
 [--page-size &lt;value&gt;]
 [--max-items &lt;value&gt;]
-[--generate-cli-skeleton]</pre>
+[--generate-cli-skeleton &lt;value&gt;]</pre>
 </div>
 </div>
 <div class="section" id="options">
 <h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--alarm-names" class="dashAnchor" id="alarm-names"></a><span class="pre">--alarm-names</span></tt> (list)</p>
 <blockquote>
-<div>A list of alarm names to retrieve information for.</div></blockquote>
+<div>The names of the alarms.</div></blockquote>
 <p>Syntax:</p>
 <div class="highlight-python"><pre>"string" "string" ...</pre>
 </div>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--alarm-name-prefix" class="dashAnchor" id="alarm-name-prefix"></a><span class="pre">--alarm-name-prefix</span></tt> (string)</p>
 <blockquote>
-<div>The alarm name prefix. <tt class="docutils literal"><span class="pre">alarm-names</span></tt> cannot be specified if this parameter is specified.</div></blockquote>
+<div>The alarm name prefix. You cannot specify <tt class="docutils literal"><span class="pre">alarm-names</span></tt> if this parameter is specified.</div></blockquote>
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--state-value" class="dashAnchor" id="state-value"></a><span class="pre">--state-value</span></tt> (string)</p>
 <blockquote>
 <div><p>The state value to be used in matching alarms.</p>
@@ -182,8 +183,8 @@ Performs service operation based on the JSON string provided. The JSON string fo
 <p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-items" class="dashAnchor" id="max-items"></a><span class="pre">--max-items</span></tt> (integer)</p>
 <blockquote>
 <div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">next-token</span></tt> will be provided in the output that you can use to resume pagination. This <tt class="docutils literal"><span class="pre">next-token</span></tt> response element should <strong>not</strong> be used directly outside of the AWS CLI.</div></blockquote>
-<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (boolean)
-Prints a sample input JSON to standard output. Note the specified operation is not run if this argument is specified. The sample input can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a name="//apple_ref/cpp/Section/Examples" class="dashAnchor" id="Examples"></a><a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h2>
@@ -192,7 +193,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div class="highlight-python"><pre>aws cloudwatch describe-alarms --alarm-names "myalarm"</pre>
 </div>
 <p>Output:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">"MetricAlarms"</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="s2">"EvaluationPeriods"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -232,10 +233,10 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
 <p>MetricAlarms -&gt; (list)</p>
 <blockquote>
-<div><p>A list of information for the specified alarms.</p>
+<div><p>The information for the specified alarms.</p>
 <p>(structure)</p>
 <blockquote>
-<div><p>The  MetricAlarm data type represents an alarm. You can use  put-metric-alarm to create or update an alarm.</p>
+<div><p>Represents an alarm.</p>
 <p>AlarmName -&gt; (string)</p>
 <blockquote>
 <div>The name of the alarm.</div></blockquote>
@@ -244,30 +245,26 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div>The Amazon Resource Name (ARN) of the alarm.</div></blockquote>
 <p>AlarmDescription -&gt; (string)</p>
 <blockquote>
-<div>The description for the alarm.</div></blockquote>
+<div>The description of the alarm.</div></blockquote>
 <p>AlarmConfigurationUpdatedTimestamp -&gt; (timestamp)</p>
 <blockquote>
 <div>The time stamp of the last update to the alarm configuration.</div></blockquote>
 <p>ActionsEnabled -&gt; (boolean)</p>
 <blockquote>
-<div>Indicates whether actions should be executed during any changes to the alarm's state.</div></blockquote>
+<div>Indicates whether actions should be executed during any changes to the alarm state.</div></blockquote>
 <p>OKActions -&gt; (list)</p>
 <blockquote>
-<div><p>The list of actions to execute when this alarm transitions into an <tt class="docutils literal"><span class="pre">OK</span></tt> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+<div><p>The actions to execute when this alarm transitions to the <tt class="docutils literal"><span class="pre">OK</span></tt> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
 <p>(string)</p>
 </div></blockquote>
 <p>AlarmActions -&gt; (list)</p>
 <blockquote>
-<div><p>The list of actions to execute when this alarm transitions into an <tt class="docutils literal"><span class="pre">ALARM</span></tt> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+<div><p>The actions to execute when this alarm transitions to the <tt class="docutils literal"><span class="pre">ALARM</span></tt> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
 <p>(string)</p>
 </div></blockquote>
 <p>InsufficientDataActions -&gt; (list)</p>
 <blockquote>
-<div><p>The list of actions to execute when this alarm transitions into an <tt class="docutils literal"><span class="pre">INSUFFICIENT_DATA</span></tt> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">The current WSDL lists this attribute as <tt class="docutils literal"><span class="pre">UnknownActions</span></tt> .</p>
-</div>
+<div><p>The actions to execute when this alarm transitions to the <tt class="docutils literal"><span class="pre">INSUFFICIENT_DATA</span></tt> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
 <p>(string)</p>
 </div></blockquote>
 <p>StateValue -&gt; (string)</p>
@@ -275,57 +272,59 @@ Prints a sample input JSON to standard output. Note the specified operation is n
 <div>The state value for the alarm.</div></blockquote>
 <p>StateReason -&gt; (string)</p>
 <blockquote>
-<div>A human-readable explanation for the alarm's state.</div></blockquote>
+<div>An explanation for the alarm state, in text format.</div></blockquote>
 <p>StateReasonData -&gt; (string)</p>
 <blockquote>
-<div>An explanation for the alarm's state in machine-readable JSON format</div></blockquote>
+<div>An explanation for the alarm state, in JSON format.</div></blockquote>
 <p>StateUpdatedTimestamp -&gt; (timestamp)</p>
 <blockquote>
-<div>The time stamp of the last update to the alarm's state.</div></blockquote>
+<div>The time stamp of the last update to the alarm state.</div></blockquote>
 <p>MetricName -&gt; (string)</p>
 <blockquote>
-<div>The name of the alarm's metric.</div></blockquote>
+<div>The name of the metric associated with the alarm.</div></blockquote>
 <p>Namespace -&gt; (string)</p>
 <blockquote>
-<div>The namespace of alarm's associated metric.</div></blockquote>
+<div>The namespace of the metric associated with the alarm.</div></blockquote>
 <p>Statistic -&gt; (string)</p>
 <blockquote>
-<div>The statistic to apply to the alarm's associated metric.</div></blockquote>
+<div>The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use <tt class="docutils literal"><span class="pre">ExtendedStatistic</span></tt> .</div></blockquote>
+<p>ExtendedStatistic -&gt; (string)</p>
+<blockquote>
+<div>The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100.</div></blockquote>
 <p>Dimensions -&gt; (list)</p>
 <blockquote>
-<div><p>The list of dimensions associated with the alarm's associated metric.</p>
+<div><p>The dimensions for the metric associated with the alarm.</p>
 <p>(structure)</p>
 <blockquote>
-<div><p>The <tt class="docutils literal"><span class="pre">Dimension</span></tt> data type further expands on the identity of a metric using a Name, Value pair.</p>
-<p>For examples that use one or more dimensions, see  put-metric-data .</p>
+<div><p>Expands the identity of a metric.</p>
 <p>Name -&gt; (string)</p>
 <blockquote>
 <div>The name of the dimension.</div></blockquote>
 <p>Value -&gt; (string)</p>
 <blockquote>
-<div>The value representing the dimension measurement</div></blockquote>
+<div>The value representing the dimension measurement.</div></blockquote>
 </div></blockquote>
 </div></blockquote>
 <p>Period -&gt; (integer)</p>
 <blockquote>
-<div>The period in seconds over which the statistic is applied.</div></blockquote>
+<div>The period, in seconds, over which the statistic is applied.</div></blockquote>
 <p>Unit -&gt; (string)</p>
 <blockquote>
-<div>The unit of the alarm's associated metric.</div></blockquote>
+<div>The unit of the metric associated with the alarm.</div></blockquote>
 <p>EvaluationPeriods -&gt; (integer)</p>
 <blockquote>
 <div>The number of periods over which data is compared to the specified threshold.</div></blockquote>
 <p>Threshold -&gt; (double)</p>
 <blockquote>
-<div>The value against which the specified statistic is compared.</div></blockquote>
+<div>The value to compare with the specified statistic.</div></blockquote>
 <p>ComparisonOperator -&gt; (string)</p>
 <blockquote>
-<div>The arithmetic operation to use when comparing the specified <tt class="docutils literal"><span class="pre">Statistic</span></tt> and <tt class="docutils literal"><span class="pre">Threshold</span></tt> . The specified <tt class="docutils literal"><span class="pre">Statistic</span></tt> value is used as the first operand.</div></blockquote>
+<div>The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</div></blockquote>
 </div></blockquote>
 </div></blockquote>
 <p>NextToken -&gt; (string)</p>
 <blockquote>
-<div>A string that marks the start of the next batch of returned results.</div></blockquote>
+<div>The token that marks the start of the next batch of returned results.</div></blockquote>
 </div>
 </div>
 
@@ -365,7 +364,7 @@ Prints a sample input JSON to standard output. Note the specified operation is n
           <a href="describe-alarms-for-metric.html" title="describe-alarms-for-metric">next</a> |</li>
         <li class="right">
           <a href="describe-alarm-history.html" title="describe-alarm-history">previous</a> |</li>
-        <li><a href="../../index-2.html">AWS CLI 1.10.36 Command Reference</a> &#187;</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
           <li><a href="../index.html">aws</a> &#187;</li>
           <li><a href="index.html">cloudwatch</a> &#187;</li> 
       </ul>
@@ -381,5 +380,5 @@ Prints a sample input JSON to standard output. Note the specified operation is n
   
   </body>
 
-<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudwatch/describe-alarms.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 08 Jun 2016 08:36:00 GMT -->
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/cloudwatch/describe-alarms.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:09:56 GMT -->
 </html>

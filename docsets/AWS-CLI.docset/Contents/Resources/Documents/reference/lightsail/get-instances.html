@@ -1,0 +1,396 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/lightsail/get-instances.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:20 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-instances &#8212; AWS CLI 1.11.61 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript"><![CDATA[
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.11.61',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    ]]></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.11.61 Command Reference" href="../../index-2.html" />
+    <link rel="up" title="lightsail" href="index.html" />
+    <link rel="next" title="get-key-pair" href="get-key-pair.html" />
+    <link rel="prev" title="get-instance-state" href="get-instance-state.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index-2.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index-2.html">Home</a></li>
+<li><a href="../../userguide/index.html">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="http://ghbtns.com/github-btn.html?user=aws&amp;repo=aws-cli&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="get-key-pair.html" title="get-key-pair" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="get-instance-state.html" title="get-instance-state" accesskey="P">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html" accesskey="U">lightsail</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-instance-state.html" title="previous chapter (use the left arrow)">&#8592; get-instance-state</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="get-key-pair.html" title="next chapter (use the right arrow)">get-key-pair &#8594;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index-2.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index-2.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-instances</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="http://docs.aws.amazon.com/cli/latest/search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript"><![CDATA[$('#searchbox').show(0);]]></script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&amp;hidden_guide_name=Reference&amp;hidden_api_version=1.11.&amp;hidden_file_name=reference/lightsail/get-instances">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="../../userguide/index.html">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="index.html#cli-aws-lightsail"><em>lightsail</em></a> ]</p>
+<div class="section" id="get-instances">
+<span id="cli-aws-lightsail-get-instances"></span><h1>get-instances<a name="//apple_ref/cpp/Command/aws lightsail get-instances" class="dashAnchor" id="aws lightsail get-instances"></a><a class="headerlink" href="#get-instances" title="Permalink to this headline">&#182;</a></h1>
+<div class="section" id="description">
+<h2>Description<a name="//apple_ref/cpp/Section/Description" class="dashAnchor" id="Description"></a><a class="headerlink" href="#description" title="Permalink to this headline">&#182;</a></h2>
+<p>Returns information about all Amazon Lightsail virtual private servers, or <em>instances</em> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstances">AWS API Documentation</a></p>
+<p><tt class="docutils literal"><span class="pre">get-instances</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">instances</span></tt></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a name="//apple_ref/cpp/Section/Synopsis" class="dashAnchor" id="Synopsis"></a><a class="headerlink" href="#synopsis" title="Permalink to this headline">&#182;</a></h2>
+<div class="highlight-python"><pre>  get-instances
+[--cli-input-json &lt;value&gt;]
+[--starting-token &lt;value&gt;]
+[--max-items &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a name="//apple_ref/cpp/Section/Options" class="dashAnchor" id="Options"></a><a class="headerlink" href="#options" title="Permalink to this headline">&#182;</a></h2>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--cli-input-json" class="dashAnchor" id="cli-input-json"></a><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON page-token provided. The JSON page-token follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values.</p>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--starting-token" class="dashAnchor" id="starting-token"></a><span class="pre">--starting-token</span></tt> (string)</p>
+<blockquote>
+<div>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--max-items" class="dashAnchor" id="max-items"></a><span class="pre">--max-items</span></tt> (integer)</p>
+<blockquote>
+<div>The total number of items to return. If the total number of items available is more than the value specified in max-items then a <tt class="docutils literal"><span class="pre">NextToken</span></tt> will be provided in the output that you can use to resume pagination. This <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element should <strong>not</strong> be used directly outside of the AWS CLI.</div></blockquote>
+<p><tt class="docutils literal"><a name="//apple_ref/cpp/Option/--generate-cli-skeleton" class="dashAnchor" id="generate-cli-skeleton"></a><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a name="//apple_ref/cpp/Section/Output" class="dashAnchor" id="Output"></a><a class="headerlink" href="#output" title="Permalink to this headline">&#182;</a></h2>
+<p>instances -&gt; (list)</p>
+<blockquote>
+<div><p>An array of key-value pairs containing information about your instances.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes an instance (a virtual private server).</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name the user gave the instance (e.g., <tt class="docutils literal"><span class="pre">Amazon_Linux-1GB-Virginia-1</span></tt> ).</div></blockquote>
+<p>arn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the instance (e.g., <tt class="docutils literal"><span class="pre">arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</span></tt> ).</div></blockquote>
+<p>supportCode -&gt; (string)</p>
+<blockquote>
+<div>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</div></blockquote>
+<p>createdAt -&gt; (timestamp)</p>
+<blockquote>
+<div>The timestamp when the instance was created (e.g., <tt class="docutils literal"><span class="pre">1479734909.17</span></tt> ).</div></blockquote>
+<p>location -&gt; (structure)</p>
+<blockquote>
+<div><p>The region name and availability zone where the instance is located.</p>
+<p>availabilityZone -&gt; (string)</p>
+<blockquote>
+<div>The Availability Zone.</div></blockquote>
+<p>regionName -&gt; (string)</p>
+<blockquote>
+<div>The AWS Region name.</div></blockquote>
+</div></blockquote>
+<p>resourceType -&gt; (string)</p>
+<blockquote>
+<div>The type of resource (usually <tt class="docutils literal"><span class="pre">Instance</span></tt> ).</div></blockquote>
+<p>blueprintId -&gt; (string)</p>
+<blockquote>
+<div>The blueprint ID (e.g., <tt class="docutils literal"><span class="pre">os_amlinux_2016_03</span></tt> ).</div></blockquote>
+<p>blueprintName -&gt; (string)</p>
+<blockquote>
+<div>The friendly name of the blueprint (e.g., <tt class="docutils literal"><span class="pre">Amazon</span> <span class="pre">Linux</span></tt> ).</div></blockquote>
+<p>bundleId -&gt; (string)</p>
+<blockquote>
+<div>The bundle for the instance (e.g., <tt class="docutils literal"><span class="pre">micro_1_0</span></tt> ).</div></blockquote>
+<p>isStaticIp -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean value indicating whether this instance has a static IP assigned to it.</div></blockquote>
+<p>privateIpAddress -&gt; (string)</p>
+<blockquote>
+<div>The private IP address of the instance.</div></blockquote>
+<p>publicIpAddress -&gt; (string)</p>
+<blockquote>
+<div>The public IP address of the instance.</div></blockquote>
+<p>ipv6Address -&gt; (string)</p>
+<blockquote>
+<div>The IPv6 address of the instance.</div></blockquote>
+<p>hardware -&gt; (structure)</p>
+<blockquote>
+<div><p>The size of the vCPU and the amount of RAM for the instance.</p>
+<p>cpuCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of vCPUs the instance has.</div></blockquote>
+<p>disks -&gt; (list)</p>
+<blockquote>
+<div><p>The disks attached to the instance.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the hard disk (an SSD).</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name of the disk.</div></blockquote>
+<p>arn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the disk.</div></blockquote>
+<p>supportCode -&gt; (string)</p>
+<blockquote>
+<div>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</div></blockquote>
+<p>createdAt -&gt; (timestamp)</p>
+<blockquote>
+<div>The date when the disk was created.</div></blockquote>
+<p>location -&gt; (structure)</p>
+<blockquote>
+<div><p>The region and Availability Zone where the disk is located.</p>
+<p>availabilityZone -&gt; (string)</p>
+<blockquote>
+<div>The Availability Zone.</div></blockquote>
+<p>regionName -&gt; (string)</p>
+<blockquote>
+<div>The AWS Region name.</div></blockquote>
+</div></blockquote>
+<p>resourceType -&gt; (string)</p>
+<blockquote>
+<div>The resource type of the disk.</div></blockquote>
+<p>sizeInGb -&gt; (integer)</p>
+<blockquote>
+<div>The size of the disk in GB.</div></blockquote>
+<p>gbInUse -&gt; (integer)</p>
+<blockquote>
+<div>The number of GB in use by the disk.</div></blockquote>
+<p>isSystemDisk -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean value indicating whether this disk is a system disk (has an operating system loaded on it).</div></blockquote>
+<p>iops -&gt; (integer)</p>
+<blockquote>
+<div>The input/output operations per second (IOPS) of the disk.</div></blockquote>
+<p>path -&gt; (string)</p>
+<blockquote>
+<div>The disk path.</div></blockquote>
+<p>attachedTo -&gt; (string)</p>
+<blockquote>
+<div>The resources to which the disk is attached.</div></blockquote>
+<p>isAttached -&gt; (boolean)</p>
+<blockquote>
+<div>A Boolean value indicating whether the disk is attached.</div></blockquote>
+<p>attachmentState -&gt; (string)</p>
+<blockquote>
+<div>The attachment state of the disk.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ramSizeInGb -&gt; (float)</p>
+<blockquote>
+<div>The amount of RAM in GB on the instance (e.g., <tt class="docutils literal"><span class="pre">1.0</span></tt> ).</div></blockquote>
+</div></blockquote>
+<p>networking -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about the public ports and monthly data transfer rates for the instance.</p>
+<p>monthlyTransfer -&gt; (structure)</p>
+<blockquote>
+<div><p>The amount of data in GB allocated for monthly data transfers.</p>
+<p>gbPerMonthAllocated -&gt; (integer)</p>
+<blockquote>
+<div>The amount allocated per month (in GB).</div></blockquote>
+</div></blockquote>
+<p>ports -&gt; (list)</p>
+<blockquote>
+<div><p>An array of key-value pairs containing information about the ports on the instance.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes information about the instance ports.</p>
+<p>fromPort -&gt; (integer)</p>
+<blockquote>
+<div>The first port in the range.</div></blockquote>
+<p>toPort -&gt; (integer)</p>
+<blockquote>
+<div>The last port in the range.</div></blockquote>
+<p>protocol -&gt; (string)</p>
+<blockquote>
+<div>The protocol.</div></blockquote>
+<p>accessFrom -&gt; (string)</p>
+<blockquote>
+<div>The location from which access is allowed (e.g., <tt class="docutils literal"><span class="pre">Anywhere</span> <span class="pre">(0.0.0.0/0)</span></tt> ).</div></blockquote>
+<p>accessType -&gt; (string)</p>
+<blockquote>
+<div>The type of access (<tt class="docutils literal"><span class="pre">Public</span></tt> or <tt class="docutils literal"><span class="pre">Private</span></tt> ).</div></blockquote>
+<p>commonName -&gt; (string)</p>
+<blockquote>
+<div>The common name.</div></blockquote>
+<p>accessDirection -&gt; (string)</p>
+<blockquote>
+<div>The access direction (<tt class="docutils literal"><span class="pre">inbound</span></tt> or <tt class="docutils literal"><span class="pre">outbound</span></tt> ).</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>state -&gt; (structure)</p>
+<blockquote>
+<div><p>The status code and the state (e.g., <tt class="docutils literal"><span class="pre">running</span></tt> ) for the instance.</p>
+<p>code -&gt; (integer)</p>
+<blockquote>
+<div>The status code for the instance.</div></blockquote>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The state of the instance (e.g., <tt class="docutils literal"><span class="pre">running</span></tt> or <tt class="docutils literal"><span class="pre">pending</span></tt> ).</div></blockquote>
+</div></blockquote>
+<p>username -&gt; (string)</p>
+<blockquote>
+<div>The user name for connecting to the instance (e.g., <tt class="docutils literal"><span class="pre">ec2-user</span></tt> ).</div></blockquote>
+<p>sshKeyName -&gt; (string)</p>
+<blockquote>
+<div>The name of the SSH key being used to connect to the instance (e.g., <tt class="docutils literal"><span class="pre">LightsailDefaultKeyPair</span></tt> ).</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>nextPageToken -&gt; (string)</p>
+<blockquote>
+<div>A token used for advancing to the next page of results from your get instances request.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="get-instance-state.html" title="previous chapter (use the left arrow)">&#8592; get-instance-state</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="get-key-pair.html" title="next chapter (use the right arrow)">get-key-pair &#8594;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript"><![CDATA[
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  ]]></script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="get-key-pair.html" title="get-key-pair">next</a> |</li>
+        <li class="right">
+          <a href="get-instance-state.html" title="get-instance-state">previous</a> |</li>
+        <li><a href="../../index-2.html">AWS CLI 1.11.61 Command Reference</a> &#187;</li>
+          <li><a href="../index.html">aws</a> &#187;</li>
+          <li><a href="index.html">lightsail</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &#169; Copyright 2016, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+
+<!-- Mirrored from docs.aws.amazon.com/cli/latest/reference/lightsail/get-instances.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Mar 2017 09:10:20 GMT -->
+</html>
